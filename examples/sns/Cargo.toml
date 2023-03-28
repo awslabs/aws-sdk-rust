@@ -10,7 +10,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-sns]
 path = "../../sdk/sns"
-version = "0.43.0"
+version = "0.44.0"
 
 [dependencies.tokio]
 version = "1.20.1"
