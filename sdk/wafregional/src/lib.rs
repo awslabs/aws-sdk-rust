@@ -4,11 +4,12 @@
 #![allow(clippy::large_enum_variant)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
-#![allow(clippy::blacklisted_name)]
+#![allow(clippy::disallowed_names)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::needless_return)]
 #![allow(clippy::derive_partial_eq_without_eq)]
+#![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for

@@ -135,7 +135,7 @@ expect_fn!(
 macro_rules! expect_value_or_null_fn {
     ($name:ident, $token:ident, $typ:ident, $doc:tt) => {
         #[doc=$doc]
-        pub fn $name(token: Option<Result<Token, Error>>) -> Result<Option<$typ>, Error> {
+        pub fn $name(token: Option<Result<Token<'_>, Error>>) -> Result<Option<$typ>, Error> {
             match token.transpose()? {
                 Some(Token::ValueNull { .. }) => Ok(None),
                 Some(Token::$token { value, .. }) => Ok(Some(value)),
@@ -364,7 +364,7 @@ pub mod test {
         }))
     }
 
-    pub fn object_key(offset: usize, key: &str) -> Option<Result<Token, Error>> {
+    pub fn object_key(offset: usize, key: &str) -> Option<Result<Token<'_>, Error>> {
         Some(Ok(Token::ObjectKey {
             offset: Offset(offset),
             key: EscapedStr::new(key),
@@ -391,7 +391,7 @@ pub mod test {
         }))
     }
 
-    pub fn value_string(offset: usize, string: &str) -> Option<Result<Token, Error>> {
+    pub fn value_string(offset: usize, string: &str) -> Option<Result<Token<'_>, Error>> {
         Some(Ok(Token::ValueString {
             offset: Offset(offset),
             value: EscapedStr::new(string),

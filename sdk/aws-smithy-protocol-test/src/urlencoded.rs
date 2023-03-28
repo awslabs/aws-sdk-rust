@@ -40,7 +40,7 @@ fn rewrite_url_encoded_body(input: &str) -> String {
     entries.join("\n&")
 }
 
-pub fn try_url_encoded_form_equivalent(
+pub(crate) fn try_url_encoded_form_equivalent(
     actual: &str,
     expected: &str,
 ) -> Result<(), ProtocolTestFailure> {

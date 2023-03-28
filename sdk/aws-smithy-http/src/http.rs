@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Types for abstracting over HTTP requests and responses.
+
 use http::{HeaderMap, HeaderValue};
 
 /// Trait for accessing HTTP headers.

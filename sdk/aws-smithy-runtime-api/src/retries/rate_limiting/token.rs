@@ -46,9 +46,8 @@ impl Token for Standard {
     }
 
     fn forget(self) {
-        match self.permit {
-            Some(permit) => permit.forget(),
-            None => (),
+        if let Some(permit) = self.permit {
+            permit.forget()
         }
     }
 }

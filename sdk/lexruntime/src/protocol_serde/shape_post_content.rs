@@ -4,7 +4,7 @@ pub fn ser_post_content_headers(
     mut builder: http::request::Builder,
 ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
     if let Some(inner_1) = &input.session_attributes {
-        let formatted_2 = aws_smithy_types::base64::encode(&inner_1);
+        let formatted_2 = aws_smithy_types::base64::encode(inner_1);
         if !formatted_2.is_empty() {
             let header_value = formatted_2;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
@@ -20,7 +20,7 @@ pub fn ser_post_content_headers(
         }
     }
     if let Some(inner_3) = &input.request_attributes {
-        let formatted_4 = aws_smithy_types::base64::encode(&inner_3);
+        let formatted_4 = aws_smithy_types::base64::encode(inner_3);
         if !formatted_4.is_empty() {
             let header_value = formatted_4;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {
@@ -68,7 +68,7 @@ pub fn ser_post_content_headers(
         }
     }
     if let Some(inner_9) = &input.active_contexts {
-        let formatted_10 = aws_smithy_types::base64::encode(&inner_9);
+        let formatted_10 = aws_smithy_types::base64::encode(inner_9);
         if !formatted_10.is_empty() {
             let header_value = formatted_10;
             let header_value: http::HeaderValue = header_value.parse().map_err(|err| {

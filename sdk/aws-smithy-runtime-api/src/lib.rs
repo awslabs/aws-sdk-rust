@@ -3,6 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![warn(
+    // missing_docs,
+    rustdoc::missing_crate_level_docs,
+    unreachable_pub,
+    rust_2018_idioms
+)]
+
+//! Basic types for the new smithy client orchestrator.
+
 /// Smithy interceptors for smithy clients.
 ///
 /// Interceptors are lifecycle hooks that can read/modify requests and responses.

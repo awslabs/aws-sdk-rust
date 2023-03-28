@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Types for representing the interaction between a service an a client, referred to as an "operation" in smithy.
+//! Clients "send" operations to services, which are composed of 1 or more HTTP requests.
+
 use crate::body::SdkBody;
 use crate::property_bag::{PropertyBag, SharedPropertyBag};
 use crate::retry::DefaultResponseRetryClassifier;
@@ -49,8 +52,11 @@ impl Metadata {
 #[non_exhaustive]
 #[derive(Clone, Debug)]
 pub struct Parts<H, R> {
+    /// The response deserializer that will convert the connector's response into an `operation::Response`
     pub response_handler: H,
+    /// The classifier that will determine if an HTTP response indicates that a request failed for a retryable reason.
     pub retry_classifier: R,
+    /// Metadata describing this operation and the service it relates to.
     pub metadata: Option<Metadata>,
 }
 

@@ -11,7 +11,7 @@ use std::fmt::Write;
 ///
 /// This will normalize documents and attempts to determine if it is OK to sort members or not by
 /// using a heuristic to determine if the tag represents a list (which should not be reordered)
-pub fn try_xml_equivalent(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
+pub(crate) fn try_xml_equivalent(actual: &str, expected: &str) -> Result<(), ProtocolTestFailure> {
     let norm_1 = normalize_xml(actual).map_err(|e| ProtocolTestFailure::InvalidBodyFormat {
         expected: "actual document to be valid XML".to_string(),
         found: format!("{}\n{}", e, actual),
@@ -34,20 +34,20 @@ pub fn try_xml_equivalent(actual: &str, expected: &str) -> Result<(), ProtocolTe
 ///
 /// This will normalize documents and attempts to determine if it is OK to sort members or not by
 /// using a heuristic to determine if the tag represents a list (which should not be reordered)
-pub fn normalize_xml(s: &str) -> Result<String, roxmltree::Error> {
+pub(crate) fn normalize_xml(s: &str) -> Result<String, roxmltree::Error> {
     let rotree = roxmltree::Document::parse(s)?;
     let root = rotree.root().first_child().unwrap();
     Ok(unparse_tag(root, 1))
 }
 
-/// Unparse a "tag" (a subtree) of an XML document
+/// Un-parse a "tag" (a subtree) of an XML document
 ///
 /// This function will first convert each of the tag's children into a normalized string
 /// then, assuming the node does not represent a list, it will simply lexicographically sort the fully
 /// rendered nodes themselves (avoiding the need to sort on keys then values then attributes, etc.).
 ///
 /// This is not a fast algorithm ;-), but the test data it's running on is not large.
-fn unparse_tag(tag: Node, depth: usize) -> String {
+fn unparse_tag(tag: Node<'_, '_>, depth: usize) -> String {
     let mut out = String::new();
     out.push_str(&unparse_start_element(tag));
     let mut child_nodes = tag
@@ -78,7 +78,7 @@ fn unparse_tag(tag: Node, depth: usize) -> String {
 /// If the node is a start element, it will recursively convert all of its children
 /// If the node is text, it will return the text, stripped of whitespace
 /// If the node is neither, it is ignored
-fn unparse_node(n: Node, depth: usize) -> Option<String> {
+fn unparse_node(n: Node<'_, '_>, depth: usize) -> Option<String> {
     match n.node_type() {
         NodeType::Element => Some(unparse_tag(n, depth)),
         NodeType::Text => {
@@ -96,7 +96,7 @@ fn unparse_node(n: Node, depth: usize) -> Option<String> {
 /// Convert a node back into a string. Attributes are sorted by key, value, and namespace
 ///
 /// Produces output like: `<a key="foo">`
-fn unparse_start_element(n: Node) -> String {
+fn unparse_start_element(n: Node<'_, '_>) -> String {
     let mut out = String::new();
     out.push('<');
     out.push_str(n.tag_name().name());
@@ -121,7 +121,7 @@ fn unparse_start_element(n: Node) -> String {
     out
 }
 
-fn is_list(node: Node) -> bool {
+fn is_list(node: Node<'_, '_>) -> bool {
     // a flat list looks like:
     // <Foo>
     //     <flat>example1</flat>

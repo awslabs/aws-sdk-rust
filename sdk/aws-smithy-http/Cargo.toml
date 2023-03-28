@@ -27,7 +27,7 @@ percent-encoding = "2.1.0"
 pin-project-lite = "0.2.9"
 pin-utils = "0.1.0"
 tracing = "0.1"
-hyper = "0.14.12"
+hyper = "0.14.25"
 futures-core = "0.3.14"
 
 [dependencies.aws-smithy-eventstream]
@@ -57,7 +57,7 @@ tempfile = "3.2.0"
 tracing-test = "0.2.1"
 
 [dev-dependencies.hyper]
-version = "0.14.12"
+version = "0.14.25"
 features = ["stream"]
 
 [dev-dependencies.tokio]

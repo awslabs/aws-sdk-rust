@@ -25,7 +25,7 @@ pub use token::{EscapeError, EscapedStr, Offset, Token};
 /// The parser *will* accept multiple valid JSON values. For example, `b"null true"` will
 /// yield `ValueNull` and `ValueTrue`. It is the responsibility of the caller to handle this for
 /// their use-case.
-pub fn json_token_iter(input: &[u8]) -> JsonTokenIterator {
+pub fn json_token_iter(input: &[u8]) -> JsonTokenIterator<'_> {
     JsonTokenIterator {
         input,
         index: 0,
@@ -513,7 +513,10 @@ mod tests {
     use proptest::prelude::*;
 
     #[track_caller]
-    fn expect_token(expected: Option<Result<Token, Error>>, actual: Option<Result<Token, Error>>) {
+    fn expect_token(
+        expected: Option<Result<Token<'_>, Error>>,
+        actual: Option<Result<Token<'_>, Error>>,
+    ) {
         let (expected, actual) = (
             expected.transpose().expect("err in expected"),
             actual.transpose().expect("err in actual"),
@@ -670,7 +673,7 @@ mod tests {
     fn invalid_numbers() {
         macro_rules! unexpected_token {
             ($input:expr, $token:pat, $offset:expr, $msg:pat) => {
-                let tokens: Vec<Result<Token, Error>> = json_token_iter($input).collect();
+                let tokens: Vec<Result<Token<'_>, Error>> = json_token_iter($input).collect();
                 assert_eq!(1, tokens.len());
                 expect_err!(
                     ErrorKind::UnexpectedToken($token, $msg),
@@ -681,7 +684,7 @@ mod tests {
         }
 
         let invalid_number = |input, offset| {
-            let tokens: Vec<Result<Token, Error>> = json_token_iter(input).collect();
+            let tokens: Vec<Result<Token<'_>, Error>> = json_token_iter(input).collect();
             assert_eq!(1, tokens.len());
             expect_err!(
                 ErrorKind::InvalidNumber,
