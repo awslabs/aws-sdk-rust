@@ -38,7 +38,15 @@ pub use aws_credential_types::Credentials;
 
 pub use aws_types::region::Region;
 
+pub(crate) static API_METADATA: aws_http::user_agent::ApiMetadata =
+    aws_http::user_agent::ApiMetadata::new("lexmodelbuildingservice", crate::PKG_VERSION);
+
+pub use aws_types::app_name::AppName;
+
 pub use aws_smithy_http::endpoint::Endpoint;
+
+/// Crate version number.
+pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 /// Client and fluent builders for calling the service.
 pub mod client;
@@ -94,10 +102,5 @@ mod endpoint_lib;
 
 mod json_errors;
 
-/// Crate version number.
-pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-static API_METADATA: aws_http::user_agent::ApiMetadata =
-    aws_http::user_agent::ApiMetadata::new("lexmodelbuildingservice", PKG_VERSION);
-pub use aws_types::app_name::AppName;
 #[doc(inline)]
 pub use client::Client;
