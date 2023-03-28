@@ -21,7 +21,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 rt-tokio = ["aws-smithy-async/rt-tokio"]
 test-util = ["aws-smithy-protocol-test", "serde/derive", "rustls", "hyper/server", "hyper/h2", "tokio/full"]
 native-tls = ["client-hyper", "hyper-tls", "rt-tokio"]
-rustls = ["client-hyper", "hyper-rustls", "rt-tokio", "lazy_static"]
+rustls = ["client-hyper", "hyper-rustls", "rt-tokio", "lazy_static", "dep:rustls"]
 client-hyper = ["hyper"]
 hyper-webpki-doctest-only = ["hyper-rustls/webpki-roots"]
 
@@ -66,6 +66,10 @@ features = ["rustls-native-certs", "http2"]
 
 [dependencies.hyper-tls]
 version = "0.5.0"
+optional = true
+
+[dependencies.rustls]
+version = "0.20"
 optional = true
 
 [dependencies.lazy_static]
