@@ -89,80 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`DescribeAcceleratorOfferings`](crate::client::fluent_builders::DescribeAcceleratorOfferings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_type(LocationType)`](crate::client::fluent_builders::DescribeAcceleratorOfferings::location_type) / [`set_location_type(Option<LocationType>)`](crate::client::fluent_builders::DescribeAcceleratorOfferings::set_location_type): <p> The location type that you want to describe accelerator type offerings for. It can assume the following values: region: will return the accelerator type offering at the regional level. availability-zone: will return the accelerator type offering at the availability zone level. availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id. </p>
-    ///   - [`accelerator_types(Vec<String>)`](crate::client::fluent_builders::DescribeAcceleratorOfferings::accelerator_types) / [`set_accelerator_types(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAcceleratorOfferings::set_accelerator_types): <p> The list of accelerator types to describe. </p>
-    /// - On success, responds with [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput) with field(s):
-    ///   - [`accelerator_type_offerings(Option<Vec<AcceleratorTypeOffering>>)`](crate::output::DescribeAcceleratorOfferingsOutput::accelerator_type_offerings): <p> The list of accelerator type offerings for a specific location. </p>
-    /// - On failure, responds with [`SdkError<DescribeAcceleratorOfferingsError>`](crate::error::DescribeAcceleratorOfferingsError)
-    pub fn describe_accelerator_offerings(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAcceleratorOfferings {
-        crate::client::fluent_builders::DescribeAcceleratorOfferings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAccelerators`](crate::client::fluent_builders::DescribeAccelerators) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAccelerators::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accelerator_ids(Vec<String>)`](crate::client::fluent_builders::DescribeAccelerators::accelerator_ids) / [`set_accelerator_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAccelerators::set_accelerator_ids): <p> The IDs of the accelerators to describe. </p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeAccelerators::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeAccelerators::set_filters): <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeAccelerators::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeAccelerators::set_max_results): <p> The total number of items to return in the command's output. If the total number of items available is more than the value specified, a NextToken is provided in the command's output. To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command. Do not use the NextToken response element directly outside of the AWS CLI. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAccelerators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAccelerators::set_next_token): <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
-    /// - On success, responds with [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput) with field(s):
-    ///   - [`accelerator_set(Option<Vec<ElasticInferenceAccelerator>>)`](crate::output::DescribeAcceleratorsOutput::accelerator_set): <p> The details of the Elastic Inference Accelerators. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeAcceleratorsOutput::next_token): <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
-    /// - On failure, responds with [`SdkError<DescribeAcceleratorsError>`](crate::error::DescribeAcceleratorsError)
-    pub fn describe_accelerators(&self) -> crate::client::fluent_builders::DescribeAccelerators {
-        crate::client::fluent_builders::DescribeAccelerators::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAcceleratorTypes`](crate::client::fluent_builders::DescribeAcceleratorTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAcceleratorTypes::send) it.
-
-    /// - On success, responds with [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput) with field(s):
-    ///   - [`accelerator_types(Option<Vec<AcceleratorType>>)`](crate::output::DescribeAcceleratorTypesOutput::accelerator_types): <p> The available accelerator types. </p>
-    /// - On failure, responds with [`SdkError<DescribeAcceleratorTypesError>`](crate::error::DescribeAcceleratorTypesError)
-    pub fn describe_accelerator_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAcceleratorTypes {
-        crate::client::fluent_builders::DescribeAcceleratorTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p> The ARN of the Elastic Inference Accelerator to list the tags for. </p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p> The tags of the Elastic Inference Accelerator. </p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p> The ARN of the Elastic Inference Accelerator to tag. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p> The tags to add to the Elastic Inference Accelerator. </p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p> The ARN of the Elastic Inference Accelerator to untag. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p> The list of tags to remove from the Elastic Inference Accelerator. </p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -248,9 +174,21 @@ impl Client {
     }
 }
 
+mod describe_accelerator_offerings;
+
+mod describe_accelerator_types;
+
+mod describe_accelerators;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;

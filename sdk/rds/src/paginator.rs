@@ -90,7 +90,10 @@ impl DescribeBlueGreenDeploymentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_blue_green_deployments_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_blue_green_deployments_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -208,7 +211,8 @@ impl DescribeCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_certificates_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_certificates_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -326,7 +330,10 @@ impl DescribeDbClusterBacktracksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_backtracks_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_cluster_backtracks_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -444,7 +451,10 @@ impl DescribeDbClusterEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_endpoints_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_cluster_endpoints_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -562,7 +572,7 @@ impl DescribeDbClusterParameterGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_parameter_groups_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_db_cluster_parameter_groups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -680,7 +690,10 @@ impl DescribeDbClusterParametersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_parameters_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_cluster_parameters_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -798,7 +811,8 @@ impl DescribeDbClustersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_clusters_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_clusters_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -916,7 +930,10 @@ impl DescribeDbClusterSnapshotsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_cluster_snapshots_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_cluster_snapshots_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1034,7 +1051,10 @@ impl DescribeDbEngineVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_engine_versions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_engine_versions_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1154,7 +1174,7 @@ impl DescribeDbInstanceAutomatedBackupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_instance_automated_backups_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_db_instance_automated_backups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1272,7 +1292,8 @@ impl DescribeDbInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_instances_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_instances_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1390,7 +1411,8 @@ impl DescribeDbLogFilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_log_files_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_log_files_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1508,7 +1530,10 @@ impl DescribeDbParameterGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_parameter_groups_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_parameter_groups_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1626,7 +1651,8 @@ impl DescribeDbParametersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_parameters_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_parameters_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1744,7 +1770,8 @@ impl DescribeDbProxiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_proxies_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1862,7 +1889,10 @@ impl DescribeDbProxyEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_endpoints_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_proxy_endpoints_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1980,7 +2010,10 @@ impl DescribeDbProxyTargetGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_target_groups_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_proxy_target_groups_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2098,7 +2131,8 @@ impl DescribeDbProxyTargetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_proxy_targets_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_proxy_targets_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2216,7 +2250,10 @@ impl DescribeDbSecurityGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_security_groups_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_security_groups_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2334,7 +2371,8 @@ impl DescribeDbSnapshotsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_snapshots_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_snapshots_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2452,7 +2490,8 @@ impl DescribeDbSubnetGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_db_subnet_groups_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_db_subnet_groups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2570,7 +2609,7 @@ impl DescribeEngineDefaultParametersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_engine_default_parameters_output_engine_defaults_marker(resp);
+                            let new_token = crate::lens::reflens_describe_engine_default_parameters_output_engine_defaults_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2688,7 +2727,8 @@ impl DescribeEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_events_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_events_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2806,7 +2846,10 @@ impl DescribeEventSubscriptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_event_subscriptions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_event_subscriptions_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2924,7 +2967,8 @@ impl DescribeExportTasksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_export_tasks_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_export_tasks_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3042,7 +3086,8 @@ impl DescribeGlobalClustersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_global_clusters_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_global_clusters_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3160,7 +3205,10 @@ impl DescribeOptionGroupOptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_option_group_options_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_option_group_options_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3278,7 +3326,8 @@ impl DescribeOptionGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_option_groups_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_option_groups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3398,7 +3447,7 @@ impl DescribeOrderableDbInstanceOptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_orderable_db_instance_options_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_orderable_db_instance_options_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3516,7 +3565,7 @@ impl DescribePendingMaintenanceActionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_pending_maintenance_actions_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_pending_maintenance_actions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3634,7 +3683,10 @@ impl DescribeReservedDbInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_db_instances_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_reserved_db_instances_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3754,7 +3806,7 @@ impl DescribeReservedDbInstancesOfferingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_db_instances_offerings_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_reserved_db_instances_offerings_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3872,7 +3924,8 @@ impl DescribeSourceRegionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_source_regions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_source_regions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3982,7 +4035,10 @@ impl DownloadDbLogFilePortionPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_download_db_log_file_portion_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_download_db_log_file_portion_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -4028,7 +4084,11 @@ impl DescribeBlueGreenDeploymentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeBlueGreenDeploymentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_blue_green_deployments_output_blue_green_deployments(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_blue_green_deployments_output_blue_green_deployments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4052,7 +4112,7 @@ impl DescribeCertificatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_certificates_output_certificates(page)
+            crate::lens::lens_describe_certificates_output_certificates(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4078,7 +4138,11 @@ impl DescribeDbClusterBacktracksPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterBacktracksError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_backtracks_output_db_cluster_backtracks(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_cluster_backtracks_output_db_cluster_backtracks(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4101,7 +4165,11 @@ impl DescribeDbClusterEndpointsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterEndpointsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_endpoints_output_db_cluster_endpoints(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_cluster_endpoints_output_db_cluster_endpoints(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4126,7 +4194,7 @@ impl DescribeDbClusterParameterGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterParameterGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_parameter_groups_output_db_cluster_parameter_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_cluster_parameter_groups_output_db_cluster_parameter_groups(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -4149,7 +4217,11 @@ impl DescribeDbClusterParametersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterParametersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_parameters_output_parameters(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_cluster_parameters_output_parameters(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4173,7 +4245,7 @@ impl DescribeDbClustersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_clusters_output_db_clusters(page)
+            crate::lens::lens_describe_db_clusters_output_db_clusters(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4199,7 +4271,11 @@ impl DescribeDbClusterSnapshotsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBClusterSnapshotsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_cluster_snapshots_output_db_cluster_snapshots(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_cluster_snapshots_output_db_cluster_snapshots(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4222,7 +4298,11 @@ impl DescribeDbEngineVersionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBEngineVersionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_engine_versions_output_db_engine_versions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_engine_versions_output_db_engine_versions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4249,7 +4329,7 @@ impl DescribeDbInstanceAutomatedBackupsPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_instance_automated_backups_output_db_instance_automated_backups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_db_instance_automated_backups_output_db_instance_automated_backups(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -4273,7 +4353,7 @@ impl DescribeDbInstancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_instances_output_db_instances(page)
+            crate::lens::lens_describe_db_instances_output_db_instances(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4299,7 +4379,11 @@ impl DescribeDbLogFilesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBLogFilesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_log_files_output_describe_db_log_files(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_log_files_output_describe_db_log_files(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4322,7 +4406,11 @@ impl DescribeDbParameterGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBParameterGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_parameter_groups_output_db_parameter_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_parameter_groups_output_db_parameter_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4346,7 +4434,7 @@ impl DescribeDbParametersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_parameters_output_parameters(page)
+            crate::lens::lens_describe_db_parameters_output_parameters(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4373,7 +4461,7 @@ impl DescribeDbProxiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_proxies_output_db_proxies(page)
+            crate::lens::lens_describe_db_proxies_output_db_proxies(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4399,7 +4487,11 @@ impl DescribeDbProxyEndpointsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBProxyEndpointsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxy_endpoints_output_db_proxy_endpoints(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_proxy_endpoints_output_db_proxy_endpoints(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4422,7 +4514,11 @@ impl DescribeDbProxyTargetGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBProxyTargetGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_proxy_target_groups_output_target_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_proxy_target_groups_output_target_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4446,7 +4542,7 @@ impl DescribeDbProxyTargetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_proxy_targets_output_targets(page)
+            crate::lens::lens_describe_db_proxy_targets_output_targets(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4472,7 +4568,11 @@ impl DescribeDbSecurityGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBSecurityGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_security_groups_output_db_security_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_security_groups_output_db_security_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4496,7 +4596,7 @@ impl DescribeDbSnapshotsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_db_snapshots_output_db_snapshots(page)
+            crate::lens::lens_describe_db_snapshots_output_db_snapshots(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4522,7 +4622,11 @@ impl DescribeDbSubnetGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDBSubnetGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_db_subnet_groups_output_db_subnet_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_db_subnet_groups_output_db_subnet_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4545,7 +4649,13 @@ impl DescribeEngineDefaultParametersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeEngineDefaultParametersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_engine_default_parameters_output_engine_defaults_parameters(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_engine_default_parameters_output_engine_defaults_parameters(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -4569,7 +4679,7 @@ impl DescribeEventsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_events_output_events(page)
+            crate::lens::lens_describe_events_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4595,7 +4705,11 @@ impl DescribeEventSubscriptionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_event_subscriptions_output_event_subscriptions_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_event_subscriptions_output_event_subscriptions_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4619,7 +4733,7 @@ impl DescribeExportTasksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_export_tasks_output_export_tasks(page)
+            crate::lens::lens_describe_export_tasks_output_export_tasks(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -4645,7 +4759,11 @@ impl DescribeGlobalClustersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeGlobalClustersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_global_clusters_output_global_clusters(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_global_clusters_output_global_clusters(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4668,7 +4786,11 @@ impl DescribeOptionGroupOptionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeOptionGroupOptionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_option_group_options_output_option_group_options(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_option_group_options_output_option_group_options(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4691,7 +4813,11 @@ impl DescribeOptionGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeOptionGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_option_groups_output_option_groups_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_option_groups_output_option_groups_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4718,7 +4844,7 @@ impl DescribeOrderableDbInstanceOptionsPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_orderable_db_instance_options_output_orderable_db_instance_options(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_orderable_db_instance_options_output_orderable_db_instance_options(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -4743,7 +4869,7 @@ impl DescribePendingMaintenanceActionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribePendingMaintenanceActionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_pending_maintenance_actions_output_pending_maintenance_actions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_pending_maintenance_actions_output_pending_maintenance_actions(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -4766,7 +4892,11 @@ impl DescribeReservedDbInstancesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeReservedDBInstancesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_reserved_db_instances_output_reserved_db_instances(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_reserved_db_instances_output_reserved_db_instances(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -4793,7 +4923,7 @@ impl DescribeReservedDbInstancesOfferingsPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_reserved_db_instances_offerings_output_reserved_db_instances_offerings(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_reserved_db_instances_offerings_output_reserved_db_instances_offerings(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -4817,11 +4947,9 @@ impl DescribeSourceRegionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_source_regions_output_source_regions(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_source_regions_output_source_regions(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

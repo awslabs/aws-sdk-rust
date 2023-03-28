@@ -82,7 +82,10 @@ impl DescribeConnectorProfilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_connector_profiles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_connector_profiles_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +195,8 @@ impl DescribeConnectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_connectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_connectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +306,7 @@ impl DescribeFlowExecutionRecordsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_flow_execution_records_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_flow_execution_records_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +416,8 @@ impl ListConnectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_connectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_connectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -522,7 +527,7 @@ impl ListFlowsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_flows_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_flows_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

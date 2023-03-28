@@ -90,7 +90,10 @@ impl DescribeBatchPredictionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_batch_predictions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_batch_predictions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,8 @@ impl DescribeDataSourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_data_sources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_data_sources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,8 @@ impl DescribeEvaluationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_evaluations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_evaluations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +449,8 @@ impl DescribeMlModelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_ml_models_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_ml_models_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -491,7 +497,7 @@ impl DescribeBatchPredictionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_batch_predictions_output_results(page)
+            crate::lens::lens_describe_batch_predictions_output_results(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -518,7 +524,7 @@ impl DescribeDataSourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_data_sources_output_results(page)
+            crate::lens::lens_describe_data_sources_output_results(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -545,7 +551,7 @@ impl DescribeEvaluationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_evaluations_output_results(page)
+            crate::lens::lens_describe_evaluations_output_results(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -572,7 +578,7 @@ impl DescribeMlModelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_ml_models_output_results(page)
+            crate::lens::lens_describe_ml_models_output_results(page)
                 .unwrap_or_default()
                 .into_iter()
         })

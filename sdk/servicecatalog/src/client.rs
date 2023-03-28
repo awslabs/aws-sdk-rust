@@ -89,1383 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AcceptPortfolioShare`](crate::client::fluent_builders::AcceptPortfolioShare) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::AcceptPortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::AcceptPortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::AcceptPortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::AcceptPortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`portfolio_share_type(PortfolioShareType)`](crate::client::fluent_builders::AcceptPortfolioShare::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::client::fluent_builders::AcceptPortfolioShare::set_portfolio_share_type): <p>The type of shared portfolios to accept. The default is to accept imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account of your organization.</p> </li>   <li> <p> <code>IMPORTED</code> - Accept imported portfolios.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>  </ul>  <p>For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    /// - On success, responds with [`AcceptPortfolioShareOutput`](crate::output::AcceptPortfolioShareOutput)
-
-    /// - On failure, responds with [`SdkError<AcceptPortfolioShareError>`](crate::error::AcceptPortfolioShareError)
-    pub fn accept_portfolio_share(&self) -> crate::client::fluent_builders::AcceptPortfolioShare {
-        crate::client::fluent_builders::AcceptPortfolioShare::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateBudgetWithResource`](crate::client::fluent_builders::AssociateBudgetWithResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::AssociateBudgetWithResource::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::AssociateBudgetWithResource::set_budget_name): <p>The name of the budget you want to associate.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AssociateBudgetWithResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AssociateBudgetWithResource::set_resource_id): <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-    /// - On success, responds with [`AssociateBudgetWithResourceOutput`](crate::output::AssociateBudgetWithResourceOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateBudgetWithResourceError>`](crate::error::AssociateBudgetWithResourceError)
-    pub fn associate_budget_with_resource(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateBudgetWithResource {
-        crate::client::fluent_builders::AssociateBudgetWithResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociatePrincipalWithPortfolio`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>  <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
-    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::AssociatePrincipalWithPortfolio::set_principal_type): <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
-    /// - On success, responds with [`AssociatePrincipalWithPortfolioOutput`](crate::output::AssociatePrincipalWithPortfolioOutput)
-
-    /// - On failure, responds with [`SdkError<AssociatePrincipalWithPortfolioError>`](crate::error::AssociatePrincipalWithPortfolioError)
-    pub fn associate_principal_with_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::AssociatePrincipalWithPortfolio {
-        crate::client::fluent_builders::AssociatePrincipalWithPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateProductWithPortfolio`](crate::client::fluent_builders::AssociateProductWithPortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::set_product_id): <p>The product identifier.</p>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`source_portfolio_id(impl Into<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::source_portfolio_id) / [`set_source_portfolio_id(Option<String>)`](crate::client::fluent_builders::AssociateProductWithPortfolio::set_source_portfolio_id): <p>The identifier of the source portfolio.</p>
-    /// - On success, responds with [`AssociateProductWithPortfolioOutput`](crate::output::AssociateProductWithPortfolioOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateProductWithPortfolioError>`](crate::error::AssociateProductWithPortfolioError)
-    pub fn associate_product_with_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateProductWithPortfolio {
-        crate::client::fluent_builders::AssociateProductWithPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateServiceActionWithProvisioningArtifact`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::set_product_id): <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::set_service_action_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`AssociateServiceActionWithProvisioningArtifactOutput`](crate::output::AssociateServiceActionWithProvisioningArtifactOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateServiceActionWithProvisioningArtifactError>`](crate::error::AssociateServiceActionWithProvisioningArtifactError)
-    pub fn associate_service_action_with_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact {
-        crate::client::fluent_builders::AssociateServiceActionWithProvisioningArtifact::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`AssociateTagOptionWithResource`](crate::client::fluent_builders::AssociateTagOptionWithResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTagOptionWithResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AssociateTagOptionWithResource::set_resource_id): <p>The resource identifier.</p>
-    ///   - [`tag_option_id(impl Into<String>)`](crate::client::fluent_builders::AssociateTagOptionWithResource::tag_option_id) / [`set_tag_option_id(Option<String>)`](crate::client::fluent_builders::AssociateTagOptionWithResource::set_tag_option_id): <p>The TagOption identifier.</p>
-    /// - On success, responds with [`AssociateTagOptionWithResourceOutput`](crate::output::AssociateTagOptionWithResourceOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateTagOptionWithResourceError>`](crate::error::AssociateTagOptionWithResourceError)
-    pub fn associate_tag_option_with_resource(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateTagOptionWithResource {
-        crate::client::fluent_builders::AssociateTagOptionWithResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchAssociateServiceActionWithProvisioningArtifact`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_action_associations(Vec<ServiceActionAssociation>)`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact::service_action_associations) / [`set_service_action_associations(Option<Vec<ServiceActionAssociation>>)`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact::set_service_action_associations): <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`BatchAssociateServiceActionWithProvisioningArtifactOutput`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput) with field(s):
-    ///   - [`failed_service_action_associations(Option<Vec<FailedServiceActionAssociation>>)`](crate::output::BatchAssociateServiceActionWithProvisioningArtifactOutput::failed_service_action_associations): <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    /// - On failure, responds with [`SdkError<BatchAssociateServiceActionWithProvisioningArtifactError>`](crate::error::BatchAssociateServiceActionWithProvisioningArtifactError)
-    pub fn batch_associate_service_action_with_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact {
-        crate::client::fluent_builders::BatchAssociateServiceActionWithProvisioningArtifact::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`BatchDisassociateServiceActionFromProvisioningArtifact`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_action_associations(Vec<ServiceActionAssociation>)`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact::service_action_associations) / [`set_service_action_associations(Option<Vec<ServiceActionAssociation>>)`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact::set_service_action_associations): <p>One or more associations, each consisting of the Action ID, the Product ID, and the Provisioning Artifact ID.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`BatchDisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput) with field(s):
-    ///   - [`failed_service_action_associations(Option<Vec<FailedServiceActionAssociation>>)`](crate::output::BatchDisassociateServiceActionFromProvisioningArtifactOutput::failed_service_action_associations): <p>An object that contains a list of errors, along with information to help you identify the self-service action.</p>
-    /// - On failure, responds with [`SdkError<BatchDisassociateServiceActionFromProvisioningArtifactError>`](crate::error::BatchDisassociateServiceActionFromProvisioningArtifactError)
-    pub fn batch_disassociate_service_action_from_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact
-    {
-        crate::client::fluent_builders::BatchDisassociateServiceActionFromProvisioningArtifact::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CopyProduct`](crate::client::fluent_builders::CopyProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CopyProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CopyProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`source_product_arn(impl Into<String>)`](crate::client::fluent_builders::CopyProduct::source_product_arn) / [`set_source_product_arn(Option<String>)`](crate::client::fluent_builders::CopyProduct::set_source_product_arn): <p>The Amazon Resource Name (ARN) of the source product.</p>
-    ///   - [`target_product_id(impl Into<String>)`](crate::client::fluent_builders::CopyProduct::target_product_id) / [`set_target_product_id(Option<String>)`](crate::client::fluent_builders::CopyProduct::set_target_product_id): <p>The identifier of the target product. By default, a new product is created.</p>
-    ///   - [`target_product_name(impl Into<String>)`](crate::client::fluent_builders::CopyProduct::target_product_name) / [`set_target_product_name(Option<String>)`](crate::client::fluent_builders::CopyProduct::set_target_product_name): <p>A name for the target product. The default is the name of the source product.</p>
-    ///   - [`source_provisioning_artifact_identifiers(Vec<HashMap<ProvisioningArtifactPropertyName, String>>)`](crate::client::fluent_builders::CopyProduct::source_provisioning_artifact_identifiers) / [`set_source_provisioning_artifact_identifiers(Option<Vec<HashMap<ProvisioningArtifactPropertyName, String>>>)`](crate::client::fluent_builders::CopyProduct::set_source_provisioning_artifact_identifiers): <p>The identifiers of the provisioning artifacts (also known as versions) of the product to copy. By default, all provisioning artifacts are copied.</p>
-    ///   - [`copy_options(Vec<CopyOption>)`](crate::client::fluent_builders::CopyProduct::copy_options) / [`set_copy_options(Option<Vec<CopyOption>>)`](crate::client::fluent_builders::CopyProduct::set_copy_options): <p>The copy options. If the value is <code>CopyTags</code>, the tags from the source product are copied to the target product.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CopyProduct::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CopyProduct::set_idempotency_token): <p> A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request. </p>
-    /// - On success, responds with [`CopyProductOutput`](crate::output::CopyProductOutput) with field(s):
-    ///   - [`copy_product_token(Option<String>)`](crate::output::CopyProductOutput::copy_product_token): <p>The token to use to track the progress of the operation.</p>
-    /// - On failure, responds with [`SdkError<CopyProductError>`](crate::error::CopyProductError)
-    pub fn copy_product(&self) -> crate::client::fluent_builders::CopyProduct {
-        crate::client::fluent_builders::CopyProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateConstraint`](crate::client::fluent_builders::CreateConstraint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_product_id): <p>The product identifier.</p>
-    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
-    ///   - [`r#type(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::type) / [`set_type(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_type): <p>The type of constraint.</p>  <ul>   <li> <p> <code>LAUNCH</code> </p> </li>   <li> <p> <code>NOTIFICATION</code> </p> </li>   <li> <p> <code>RESOURCE_UPDATE</code> </p> </li>   <li> <p> <code>STACKSET</code> </p> </li>   <li> <p> <code>TEMPLATE</code> </p> </li>  </ul>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_description): <p>The description of the constraint.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateConstraint::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateConstraint::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`CreateConstraintOutput`](crate::output::CreateConstraintOutput) with field(s):
-    ///   - [`constraint_detail(Option<ConstraintDetail>)`](crate::output::CreateConstraintOutput::constraint_detail): <p>Information about the constraint.</p>
-    ///   - [`constraint_parameters(Option<String>)`](crate::output::CreateConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
-    ///   - [`status(Option<Status>)`](crate::output::CreateConstraintOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<CreateConstraintError>`](crate::error::CreateConstraintError)
-    pub fn create_constraint(&self) -> crate::client::fluent_builders::CreateConstraint {
-        crate::client::fluent_builders::CreateConstraint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePortfolio`](crate::client::fluent_builders::CreatePortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreatePortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreatePortfolio::set_display_name): <p>The name to use for display purposes.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolio::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePortfolio::set_description): <p>The description of the portfolio.</p>
-    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolio::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::CreatePortfolio::set_provider_name): <p>The name of the portfolio provider.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreatePortfolio::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreatePortfolio::set_tags): <p>One or more tags.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolio::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreatePortfolio::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`CreatePortfolioOutput`](crate::output::CreatePortfolioOutput) with field(s):
-    ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::output::CreatePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreatePortfolioOutput::tags): <p>Information about the tags associated with the portfolio.</p>
-    /// - On failure, responds with [`SdkError<CreatePortfolioError>`](crate::error::CreatePortfolioError)
-    pub fn create_portfolio(&self) -> crate::client::fluent_builders::CreatePortfolio {
-        crate::client::fluent_builders::CreatePortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePortfolioShare`](crate::client::fluent_builders::CreatePortfolioShare) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreatePortfolioShare::set_account_id): <p>The Amazon Web Services account ID. For example, <code>123456789012</code>.</p>
-    ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::CreatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::CreatePortfolioShare::set_organization_node): <p>The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>, it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>, which enables the administrator to monitor the status of the <code>PortfolioShare</code> creation process.</p>
-    ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::share_tag_options) / [`set_share_tag_options(bool)`](crate::client::fluent_builders::CreatePortfolioShare::set_share_tag_options): <p>Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not provided, TagOptions sharing is disabled.</p>
-    ///   - [`share_principals(bool)`](crate::client::fluent_builders::CreatePortfolioShare::share_principals) / [`set_share_principals(bool)`](crate::client::fluent_builders::CreatePortfolioShare::set_share_principals): <p>Enables or disables <code>Principal</code> sharing when creating the portfolio share. If this flag is not provided, principal sharing is disabled. </p>  <p>When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account before or after creating the share. </p>
-    /// - On success, responds with [`CreatePortfolioShareOutput`](crate::output::CreatePortfolioShareOutput) with field(s):
-    ///   - [`portfolio_share_token(Option<String>)`](crate::output::CreatePortfolioShareOutput::portfolio_share_token): <p>The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.</p>
-    /// - On failure, responds with [`SdkError<CreatePortfolioShareError>`](crate::error::CreatePortfolioShareError)
-    pub fn create_portfolio_share(&self) -> crate::client::fluent_builders::CreatePortfolioShare {
-        crate::client::fluent_builders::CreatePortfolioShare::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProduct`](crate::client::fluent_builders::CreateProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_name): <p>The name of the product.</p>
-    ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_owner): <p>The owner of the product.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_description): <p>The description of the product.</p>
-    ///   - [`distributor(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::distributor) / [`set_distributor(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_distributor): <p>The distributor of the product.</p>
-    ///   - [`support_description(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::support_description) / [`set_support_description(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_support_description): <p>The support information about the product.</p>
-    ///   - [`support_email(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::support_email) / [`set_support_email(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_support_email): <p>The contact email for product support.</p>
-    ///   - [`support_url(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::support_url) / [`set_support_url(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_support_url): <p>The contact URL for product support.</p>  <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-    ///   - [`product_type(ProductType)`](crate::client::fluent_builders::CreateProduct::product_type) / [`set_product_type(Option<ProductType>)`](crate::client::fluent_builders::CreateProduct::set_product_type): <p>The type of product.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProduct::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProduct::set_tags): <p>One or more tags.</p>
-    ///   - [`provisioning_artifact_parameters(ProvisioningArtifactProperties)`](crate::client::fluent_builders::CreateProduct::provisioning_artifact_parameters) / [`set_provisioning_artifact_parameters(Option<ProvisioningArtifactProperties>)`](crate::client::fluent_builders::CreateProduct::set_provisioning_artifact_parameters): <p>The configuration of the provisioning artifact. </p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProduct::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProduct::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    ///   - [`source_connection(SourceConnection)`](crate::client::fluent_builders::CreateProduct::source_connection) / [`set_source_connection(Option<SourceConnection>)`](crate::client::fluent_builders::CreateProduct::set_source_connection): <p>Specifies connection details for the created product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>  <ul>   <li> <p> <code>Type</code> </p> </li>   <li> <p> <code>ConnectionParamters</code> </p> </li>  </ul>
-    /// - On success, responds with [`CreateProductOutput`](crate::output::CreateProductOutput) with field(s):
-    ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::output::CreateProductOutput::product_view_detail): <p>Information about the product view.</p>
-    ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::CreateProductOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact. </p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateProductOutput::tags): <p>Information about the tags associated with the product.</p>
-    /// - On failure, responds with [`SdkError<CreateProductError>`](crate::error::CreateProductError)
-    pub fn create_product(&self) -> crate::client::fluent_builders::CreateProduct {
-        crate::client::fluent_builders::CreateProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProvisionedProductPlan`](crate::client::fluent_builders::CreateProvisionedProductPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`plan_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::plan_name) / [`set_plan_name(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_plan_name): <p>The name of the plan.</p>
-    ///   - [`plan_type(ProvisionedProductPlanType)`](crate::client::fluent_builders::CreateProvisionedProductPlan::plan_type) / [`set_plan_type(Option<ProvisionedProductPlanType>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_plan_type): <p>The plan type.</p>
-    ///   - [`notification_arns(Vec<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::notification_arns) / [`set_notification_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_notification_arns): <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_path_id): <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`provisioning_parameters(Vec<UpdateProvisioningParameter>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::provisioning_parameters) / [`set_provisioning_parameters(Option<Vec<UpdateProvisioningParameter>>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_provisioning_parameters): <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProvisionedProductPlan::set_tags): <p>One or more tags.</p>  <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    /// - On success, responds with [`CreateProvisionedProductPlanOutput`](crate::output::CreateProvisionedProductPlanOutput) with field(s):
-    ///   - [`plan_name(Option<String>)`](crate::output::CreateProvisionedProductPlanOutput::plan_name): <p>The name of the plan.</p>
-    ///   - [`plan_id(Option<String>)`](crate::output::CreateProvisionedProductPlanOutput::plan_id): <p>The plan identifier.</p>
-    ///   - [`provision_product_id(Option<String>)`](crate::output::CreateProvisionedProductPlanOutput::provision_product_id): <p>The product identifier.</p>
-    ///   - [`provisioned_product_name(Option<String>)`](crate::output::CreateProvisionedProductPlanOutput::provisioned_product_name): <p>The user-friendly name of the provisioned product.</p>
-    ///   - [`provisioning_artifact_id(Option<String>)`](crate::output::CreateProvisionedProductPlanOutput::provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    /// - On failure, responds with [`SdkError<CreateProvisionedProductPlanError>`](crate::error::CreateProvisionedProductPlanError)
-    pub fn create_provisioned_product_plan(
-        &self,
-    ) -> crate::client::fluent_builders::CreateProvisionedProductPlan {
-        crate::client::fluent_builders::CreateProvisionedProductPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProvisioningArtifact`](crate::client::fluent_builders::CreateProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_product_id): <p>The product identifier.</p>
-    ///   - [`parameters(ProvisioningArtifactProperties)`](crate::client::fluent_builders::CreateProvisioningArtifact::parameters) / [`set_parameters(Option<ProvisioningArtifactProperties>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_parameters): <p>The configuration for the provisioning artifact.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateProvisioningArtifact::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`CreateProvisioningArtifactOutput`](crate::output::CreateProvisioningArtifactOutput) with field(s):
-    ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::CreateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::CreateProvisioningArtifactOutput::info): <p>Specify the template source with one of the following options, but not both. Keys accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].</p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. </p>  <p> <code>LoadTemplateFromURL</code> </p>  <p>Use the URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>  <p> <code>ImportFromPhysicalId</code> </p>  <p>Use the physical id of the resource that contains the template; currently supports CloudFormation stack ARN.</p>
-    ///   - [`status(Option<Status>)`](crate::output::CreateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<CreateProvisioningArtifactError>`](crate::error::CreateProvisioningArtifactError)
-    pub fn create_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::CreateProvisioningArtifact {
-        crate::client::fluent_builders::CreateProvisioningArtifact::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateServiceAction`](crate::client::fluent_builders::CreateServiceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_name): <p>The self-service action name.</p>
-    ///   - [`definition_type(ServiceActionDefinitionType)`](crate::client::fluent_builders::CreateServiceAction::definition_type) / [`set_definition_type(Option<ServiceActionDefinitionType>)`](crate::client::fluent_builders::CreateServiceAction::set_definition_type): <p>The service action definition type. For example, <code>SSM_AUTOMATION</code>.</p>
-    ///   - [`definition(HashMap<ServiceActionDefinitionKey, String>)`](crate::client::fluent_builders::CreateServiceAction::definition) / [`set_definition(Option<HashMap<ServiceActionDefinitionKey, String>>)`](crate::client::fluent_builders::CreateServiceAction::set_definition): <p>The self-service action definition. Can be one of the following:</p>  <dl>   <dt>   Name  </dt>   <dd>    <p>The name of the Amazon Web Services Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.</p>    <p>If you are using a shared SSM document, you must provide the ARN instead of the name.</p>   </dd>   <dt>   Version  </dt>   <dd>    <p>The Amazon Web Services Systems Manager automation document version. For example, <code>"Version": "1"</code> </p>   </dd>   <dt>   AssumeRole  </dt>   <dd>    <p>The Amazon Resource Name (ARN) of the role that performs the self-service actions on your behalf. For example, <code>"AssumeRole": "arn:aws:iam::12345678910:role/ActionRole"</code>.</p>    <p>To reuse the provisioned product launch role, set to <code>"AssumeRole": "LAUNCH_ROLE"</code>.</p>   </dd>   <dt>   Parameters  </dt>   <dd>    <p>The list of parameters in JSON format.</p>    <p>For example: <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p>   </dd>  </dl>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_description): <p>The self-service action description.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::CreateServiceAction::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::CreateServiceAction::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`CreateServiceActionOutput`](crate::output::CreateServiceActionOutput) with field(s):
-    ///   - [`service_action_detail(Option<ServiceActionDetail>)`](crate::output::CreateServiceActionOutput::service_action_detail): <p>An object containing information about the self-service action.</p>
-    /// - On failure, responds with [`SdkError<CreateServiceActionError>`](crate::error::CreateServiceActionError)
-    pub fn create_service_action(&self) -> crate::client::fluent_builders::CreateServiceAction {
-        crate::client::fluent_builders::CreateServiceAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateTagOption`](crate::client::fluent_builders::CreateTagOption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`key(impl Into<String>)`](crate::client::fluent_builders::CreateTagOption::key) / [`set_key(Option<String>)`](crate::client::fluent_builders::CreateTagOption::set_key): <p>The TagOption key.</p>
-    ///   - [`value(impl Into<String>)`](crate::client::fluent_builders::CreateTagOption::value) / [`set_value(Option<String>)`](crate::client::fluent_builders::CreateTagOption::set_value): <p>The TagOption value.</p>
-    /// - On success, responds with [`CreateTagOptionOutput`](crate::output::CreateTagOptionOutput) with field(s):
-    ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::output::CreateTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>
-    /// - On failure, responds with [`SdkError<CreateTagOptionError>`](crate::error::CreateTagOptionError)
-    pub fn create_tag_option(&self) -> crate::client::fluent_builders::CreateTagOption {
-        crate::client::fluent_builders::CreateTagOption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConstraint`](crate::client::fluent_builders::DeleteConstraint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteConstraint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteConstraint::set_id): <p>The identifier of the constraint.</p>
-    /// - On success, responds with [`DeleteConstraintOutput`](crate::output::DeleteConstraintOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConstraintError>`](crate::error::DeleteConstraintError)
-    pub fn delete_constraint(&self) -> crate::client::fluent_builders::DeleteConstraint {
-        crate::client::fluent_builders::DeleteConstraint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePortfolio`](crate::client::fluent_builders::DeletePortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeletePortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolio::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolio::set_id): <p>The portfolio identifier.</p>
-    /// - On success, responds with [`DeletePortfolioOutput`](crate::output::DeletePortfolioOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePortfolioError>`](crate::error::DeletePortfolioError)
-    pub fn delete_portfolio(&self) -> crate::client::fluent_builders::DeletePortfolio {
-        crate::client::fluent_builders::DeletePortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePortfolioShare`](crate::client::fluent_builders::DeletePortfolioShare) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeletePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeletePortfolioShare::set_account_id): <p>The Amazon Web Services account ID.</p>
-    ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::DeletePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::DeletePortfolioShare::set_organization_node): <p>The organization node to whom you are going to stop sharing.</p>
-    /// - On success, responds with [`DeletePortfolioShareOutput`](crate::output::DeletePortfolioShareOutput) with field(s):
-    ///   - [`portfolio_share_token(Option<String>)`](crate::output::DeletePortfolioShareOutput::portfolio_share_token): <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-    /// - On failure, responds with [`SdkError<DeletePortfolioShareError>`](crate::error::DeletePortfolioShareError)
-    pub fn delete_portfolio_share(&self) -> crate::client::fluent_builders::DeletePortfolioShare {
-        crate::client::fluent_builders::DeletePortfolioShare::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProduct`](crate::client::fluent_builders::DeleteProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteProduct::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteProduct::set_id): <p>The product identifier.</p>
-    /// - On success, responds with [`DeleteProductOutput`](crate::output::DeleteProductOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteProductError>`](crate::error::DeleteProductError)
-    pub fn delete_product(&self) -> crate::client::fluent_builders::DeleteProduct {
-        crate::client::fluent_builders::DeleteProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProvisionedProductPlan`](crate::client::fluent_builders::DeleteProvisionedProductPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`plan_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::plan_id) / [`set_plan_id(Option<String>)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_plan_id): <p>The plan identifier.</p>
-    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::DeleteProvisionedProductPlan::set_ignore_errors): <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    /// - On success, responds with [`DeleteProvisionedProductPlanOutput`](crate::output::DeleteProvisionedProductPlanOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteProvisionedProductPlanError>`](crate::error::DeleteProvisionedProductPlanError)
-    pub fn delete_provisioned_product_plan(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteProvisionedProductPlan {
-        crate::client::fluent_builders::DeleteProvisionedProductPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProvisioningArtifact`](crate::client::fluent_builders::DeleteProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::DeleteProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    /// - On success, responds with [`DeleteProvisioningArtifactOutput`](crate::output::DeleteProvisioningArtifactOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteProvisioningArtifactError>`](crate::error::DeleteProvisioningArtifactError)
-    pub fn delete_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteProvisioningArtifact {
-        crate::client::fluent_builders::DeleteProvisioningArtifact::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteServiceAction`](crate::client::fluent_builders::DeleteServiceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceAction::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteServiceAction::set_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DeleteServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DeleteServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`DeleteServiceActionOutput`](crate::output::DeleteServiceActionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteServiceActionError>`](crate::error::DeleteServiceActionError)
-    pub fn delete_service_action(&self) -> crate::client::fluent_builders::DeleteServiceAction {
-        crate::client::fluent_builders::DeleteServiceAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTagOption`](crate::client::fluent_builders::DeleteTagOption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteTagOption::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteTagOption::set_id): <p>The TagOption identifier.</p>
-    /// - On success, responds with [`DeleteTagOptionOutput`](crate::output::DeleteTagOptionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteTagOptionError>`](crate::error::DeleteTagOptionError)
-    pub fn delete_tag_option(&self) -> crate::client::fluent_builders::DeleteTagOption {
-        crate::client::fluent_builders::DeleteTagOption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeConstraint`](crate::client::fluent_builders::DescribeConstraint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeConstraint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeConstraint::set_id): <p>The identifier of the constraint.</p>
-    /// - On success, responds with [`DescribeConstraintOutput`](crate::output::DescribeConstraintOutput) with field(s):
-    ///   - [`constraint_detail(Option<ConstraintDetail>)`](crate::output::DescribeConstraintOutput::constraint_detail): <p>Information about the constraint.</p>
-    ///   - [`constraint_parameters(Option<String>)`](crate::output::DescribeConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
-    ///   - [`status(Option<Status>)`](crate::output::DescribeConstraintOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<DescribeConstraintError>`](crate::error::DescribeConstraintError)
-    pub fn describe_constraint(&self) -> crate::client::fluent_builders::DescribeConstraint {
-        crate::client::fluent_builders::DescribeConstraint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCopyProductStatus`](crate::client::fluent_builders::DescribeCopyProductStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeCopyProductStatus::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeCopyProductStatus::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`copy_product_token(impl Into<String>)`](crate::client::fluent_builders::DescribeCopyProductStatus::copy_product_token) / [`set_copy_product_token(Option<String>)`](crate::client::fluent_builders::DescribeCopyProductStatus::set_copy_product_token): <p>The token for the copy product operation. This token is returned by <code>CopyProduct</code>.</p>
-    /// - On success, responds with [`DescribeCopyProductStatusOutput`](crate::output::DescribeCopyProductStatusOutput) with field(s):
-    ///   - [`copy_product_status(Option<CopyProductStatus>)`](crate::output::DescribeCopyProductStatusOutput::copy_product_status): <p>The status of the copy product operation.</p>
-    ///   - [`target_product_id(Option<String>)`](crate::output::DescribeCopyProductStatusOutput::target_product_id): <p>The identifier of the copied product.</p>
-    ///   - [`status_detail(Option<String>)`](crate::output::DescribeCopyProductStatusOutput::status_detail): <p>The status message.</p>
-    /// - On failure, responds with [`SdkError<DescribeCopyProductStatusError>`](crate::error::DescribeCopyProductStatusError)
-    pub fn describe_copy_product_status(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeCopyProductStatus {
-        crate::client::fluent_builders::DescribeCopyProductStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePortfolio`](crate::client::fluent_builders::DescribePortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribePortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribePortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribePortfolio::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribePortfolio::set_id): <p>The portfolio identifier.</p>
-    /// - On success, responds with [`DescribePortfolioOutput`](crate::output::DescribePortfolioOutput) with field(s):
-    ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::output::DescribePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribePortfolioOutput::tags): <p>Information about the tags associated with the portfolio.</p>
-    ///   - [`tag_options(Option<Vec<TagOptionDetail>>)`](crate::output::DescribePortfolioOutput::tag_options): <p>Information about the TagOptions associated with the portfolio.</p>
-    ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::output::DescribePortfolioOutput::budgets): <p>Information about the associated budgets.</p>
-    /// - On failure, responds with [`SdkError<DescribePortfolioError>`](crate::error::DescribePortfolioError)
-    pub fn describe_portfolio(&self) -> crate::client::fluent_builders::DescribePortfolio {
-        crate::client::fluent_builders::DescribePortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePortfolioShares`](crate::client::fluent_builders::DescribePortfolioShares) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePortfolioShares::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DescribePortfolioShares::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DescribePortfolioShares::set_portfolio_id): <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
-    ///   - [`r#type(DescribePortfolioShareType)`](crate::client::fluent_builders::DescribePortfolioShares::type) / [`set_type(Option<DescribePortfolioShareType>)`](crate::client::fluent_builders::DescribePortfolioShares::set_type): <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>  <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>  <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>  <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>  <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::DescribePortfolioShares::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::DescribePortfolioShares::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::DescribePortfolioShares::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::DescribePortfolioShares::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`DescribePortfolioSharesOutput`](crate::output::DescribePortfolioSharesOutput) with field(s):
-    ///   - [`next_page_token(Option<String>)`](crate::output::DescribePortfolioSharesOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    ///   - [`portfolio_share_details(Option<Vec<PortfolioShareDetail>>)`](crate::output::DescribePortfolioSharesOutput::portfolio_share_details): <p>Summaries about each of the portfolio shares.</p>
-    /// - On failure, responds with [`SdkError<DescribePortfolioSharesError>`](crate::error::DescribePortfolioSharesError)
-    pub fn describe_portfolio_shares(
-        &self,
-    ) -> crate::client::fluent_builders::DescribePortfolioShares {
-        crate::client::fluent_builders::DescribePortfolioShares::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePortfolioShareStatus`](crate::client::fluent_builders::DescribePortfolioShareStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`portfolio_share_token(impl Into<String>)`](crate::client::fluent_builders::DescribePortfolioShareStatus::portfolio_share_token) / [`set_portfolio_share_token(Option<String>)`](crate::client::fluent_builders::DescribePortfolioShareStatus::set_portfolio_share_token): <p>The token for the portfolio share operation. This token is returned either by CreatePortfolioShare or by DeletePortfolioShare.</p>
-    /// - On success, responds with [`DescribePortfolioShareStatusOutput`](crate::output::DescribePortfolioShareStatusOutput) with field(s):
-    ///   - [`portfolio_share_token(Option<String>)`](crate::output::DescribePortfolioShareStatusOutput::portfolio_share_token): <p>The token for the portfolio share operation. For example, <code>share-6v24abcdefghi</code>.</p>
-    ///   - [`portfolio_id(Option<String>)`](crate::output::DescribePortfolioShareStatusOutput::portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`organization_node_value(Option<String>)`](crate::output::DescribePortfolioShareStatusOutput::organization_node_value): <p>Organization node identifier. It can be either account id, organizational unit id or organization id.</p>
-    ///   - [`status(Option<ShareStatus>)`](crate::output::DescribePortfolioShareStatusOutput::status): <p>Status of the portfolio share operation.</p>
-    ///   - [`share_details(Option<ShareDetails>)`](crate::output::DescribePortfolioShareStatusOutput::share_details): <p>Information about the portfolio share operation.</p>
-    /// - On failure, responds with [`SdkError<DescribePortfolioShareStatusError>`](crate::error::DescribePortfolioShareStatusError)
-    pub fn describe_portfolio_share_status(
-        &self,
-    ) -> crate::client::fluent_builders::DescribePortfolioShareStatus {
-        crate::client::fluent_builders::DescribePortfolioShareStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProduct`](crate::client::fluent_builders::DescribeProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeProduct::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeProduct::set_id): <p>The product identifier.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeProduct::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeProduct::set_name): <p>The product name.</p>
-    /// - On success, responds with [`DescribeProductOutput`](crate::output::DescribeProductOutput) with field(s):
-    ///   - [`product_view_summary(Option<ProductViewSummary>)`](crate::output::DescribeProductOutput::product_view_summary): <p>Summary information about the product view.</p>
-    ///   - [`provisioning_artifacts(Option<Vec<ProvisioningArtifact>>)`](crate::output::DescribeProductOutput::provisioning_artifacts): <p>Information about the provisioning artifacts for the specified product.</p>
-    ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::output::DescribeProductOutput::budgets): <p>Information about the associated budgets.</p>
-    ///   - [`launch_paths(Option<Vec<LaunchPath>>)`](crate::output::DescribeProductOutput::launch_paths): <p>Information about the associated launch paths.</p>
-    /// - On failure, responds with [`SdkError<DescribeProductError>`](crate::error::DescribeProductError)
-    pub fn describe_product(&self) -> crate::client::fluent_builders::DescribeProduct {
-        crate::client::fluent_builders::DescribeProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProductAsAdmin`](crate::client::fluent_builders::DescribeProductAsAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::set_id): <p>The product identifier.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::set_name): <p>The product name.</p>
-    ///   - [`source_portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::source_portfolio_id) / [`set_source_portfolio_id(Option<String>)`](crate::client::fluent_builders::DescribeProductAsAdmin::set_source_portfolio_id): <p>The unique identifier of the shared portfolio that the specified product is associated with.</p>  <p>You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned. </p>
-    /// - On success, responds with [`DescribeProductAsAdminOutput`](crate::output::DescribeProductAsAdminOutput) with field(s):
-    ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::output::DescribeProductAsAdminOutput::product_view_detail): <p>Information about the product view.</p>
-    ///   - [`provisioning_artifact_summaries(Option<Vec<ProvisioningArtifactSummary>>)`](crate::output::DescribeProductAsAdminOutput::provisioning_artifact_summaries): <p>Information about the provisioning artifacts (also known as versions) for the specified product.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::DescribeProductAsAdminOutput::tags): <p>Information about the tags associated with the product.</p>
-    ///   - [`tag_options(Option<Vec<TagOptionDetail>>)`](crate::output::DescribeProductAsAdminOutput::tag_options): <p>Information about the TagOptions associated with the product.</p>
-    ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::output::DescribeProductAsAdminOutput::budgets): <p>Information about the associated budgets.</p>
-    /// - On failure, responds with [`SdkError<DescribeProductAsAdminError>`](crate::error::DescribeProductAsAdminError)
-    pub fn describe_product_as_admin(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeProductAsAdmin {
-        crate::client::fluent_builders::DescribeProductAsAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProductView`](crate::client::fluent_builders::DescribeProductView) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProductView::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProductView::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeProductView::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeProductView::set_id): <p>The product view identifier.</p>
-    /// - On success, responds with [`DescribeProductViewOutput`](crate::output::DescribeProductViewOutput) with field(s):
-    ///   - [`product_view_summary(Option<ProductViewSummary>)`](crate::output::DescribeProductViewOutput::product_view_summary): <p>Summary information about the product.</p>
-    ///   - [`provisioning_artifacts(Option<Vec<ProvisioningArtifact>>)`](crate::output::DescribeProductViewOutput::provisioning_artifacts): <p>Information about the provisioning artifacts for the product.</p>
-    /// - On failure, responds with [`SdkError<DescribeProductViewError>`](crate::error::DescribeProductViewError)
-    pub fn describe_product_view(&self) -> crate::client::fluent_builders::DescribeProductView {
-        crate::client::fluent_builders::DescribeProductView::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProvisionedProduct`](crate::client::fluent_builders::DescribeProvisionedProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::set_id): <p>The provisioned product identifier. You must provide the name or ID, but not both.</p>  <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProduct::set_name): <p>The name of the provisioned product. You must provide the name or ID, but not both.</p>  <p>If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code> will occur.</p>
-    /// - On success, responds with [`DescribeProvisionedProductOutput`](crate::output::DescribeProvisionedProductOutput) with field(s):
-    ///   - [`provisioned_product_detail(Option<ProvisionedProductDetail>)`](crate::output::DescribeProvisionedProductOutput::provisioned_product_detail): <p>Information about the provisioned product.</p>
-    ///   - [`cloud_watch_dashboards(Option<Vec<CloudWatchDashboard>>)`](crate::output::DescribeProvisionedProductOutput::cloud_watch_dashboards): <p>Any CloudWatch dashboards that were created when provisioning the product.</p>
-    /// - On failure, responds with [`SdkError<DescribeProvisionedProductError>`](crate::error::DescribeProvisionedProductError)
-    pub fn describe_provisioned_product(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeProvisionedProduct {
-        crate::client::fluent_builders::DescribeProvisionedProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProvisionedProductPlan`](crate::client::fluent_builders::DescribeProvisionedProductPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`plan_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::plan_id) / [`set_plan_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::set_plan_id): <p>The plan identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::DescribeProvisionedProductPlan::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`DescribeProvisionedProductPlanOutput`](crate::output::DescribeProvisionedProductPlanOutput) with field(s):
-    ///   - [`provisioned_product_plan_details(Option<ProvisionedProductPlanDetails>)`](crate::output::DescribeProvisionedProductPlanOutput::provisioned_product_plan_details): <p>Information about the plan.</p>
-    ///   - [`resource_changes(Option<Vec<ResourceChange>>)`](crate::output::DescribeProvisionedProductPlanOutput::resource_changes): <p>Information about the resource changes that will occur when the plan is executed.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::DescribeProvisionedProductPlanOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<DescribeProvisionedProductPlanError>`](crate::error::DescribeProvisionedProductPlanError)
-    pub fn describe_provisioned_product_plan(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeProvisionedProductPlan {
-        crate::client::fluent_builders::DescribeProvisionedProductPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProvisioningArtifact`](crate::client::fluent_builders::DescribeProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioning_artifact_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::provisioning_artifact_name) / [`set_provisioning_artifact_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_provisioning_artifact_name): <p>The provisioning artifact name.</p>
-    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_product_name): <p>The product name.</p>
-    ///   - [`verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::verbose) / [`set_verbose(bool)`](crate::client::fluent_builders::DescribeProvisioningArtifact::set_verbose): <p>Indicates whether a verbose level of detail is enabled.</p>
-    /// - On success, responds with [`DescribeProvisioningArtifactOutput`](crate::output::DescribeProvisioningArtifactOutput) with field(s):
-    ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::DescribeProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::DescribeProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    ///   - [`status(Option<Status>)`](crate::output::DescribeProvisioningArtifactOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<DescribeProvisioningArtifactError>`](crate::error::DescribeProvisioningArtifactError)
-    pub fn describe_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeProvisioningArtifact {
-        crate::client::fluent_builders::DescribeProvisioningArtifact::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProvisioningParameters`](crate::client::fluent_builders::DescribeProvisioningParameters) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_product_id): <p>The product identifier. You must provide the product name or ID, but not both.</p>
-    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_product_name): <p>The name of the product. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_artifact_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::provisioning_artifact_name) / [`set_provisioning_artifact_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_provisioning_artifact_name): <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_path_id): <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    ///   - [`path_name(impl Into<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::path_name) / [`set_path_name(Option<String>)`](crate::client::fluent_builders::DescribeProvisioningParameters::set_path_name): <p>The name of the path. You must provide the name or ID, but not both.</p>
-    /// - On success, responds with [`DescribeProvisioningParametersOutput`](crate::output::DescribeProvisioningParametersOutput) with field(s):
-    ///   - [`provisioning_artifact_parameters(Option<Vec<ProvisioningArtifactParameter>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_parameters): <p>Information about the parameters used to provision the product.</p>
-    ///   - [`constraint_summaries(Option<Vec<ConstraintSummary>>)`](crate::output::DescribeProvisioningParametersOutput::constraint_summaries): <p>Information about the constraints used to provision the product.</p>
-    ///   - [`usage_instructions(Option<Vec<UsageInstruction>>)`](crate::output::DescribeProvisioningParametersOutput::usage_instructions): <p>Any additional metadata specifically related to the provisioning of the product. For example, see the <code>Version</code> field of the CloudFormation template.</p>
-    ///   - [`tag_options(Option<Vec<TagOptionSummary>>)`](crate::output::DescribeProvisioningParametersOutput::tag_options): <p>Information about the TagOptions associated with the resource.</p>
-    ///   - [`provisioning_artifact_preferences(Option<ProvisioningArtifactPreferences>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_preferences): <p>An object that contains information about preferences, such as Regions and accounts, for the provisioning artifact.</p>
-    ///   - [`provisioning_artifact_outputs(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_outputs): <p>The output of the provisioning artifact.</p>
-    ///   - [`provisioning_artifact_output_keys(Option<Vec<ProvisioningArtifactOutput>>)`](crate::output::DescribeProvisioningParametersOutput::provisioning_artifact_output_keys): <p>A list of the keys and descriptions of the outputs. These outputs can be referenced from a provisioned product launched from this provisioning artifact.</p>
-    /// - On failure, responds with [`SdkError<DescribeProvisioningParametersError>`](crate::error::DescribeProvisioningParametersError)
-    pub fn describe_provisioning_parameters(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeProvisioningParameters {
-        crate::client::fluent_builders::DescribeProvisioningParameters::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRecord`](crate::client::fluent_builders::DescribeRecord) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeRecord::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeRecord::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeRecord::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeRecord::set_id): <p>The record identifier of the provisioned product. This identifier is returned by the request operation.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRecord::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::DescribeRecord::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::DescribeRecord::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::DescribeRecord::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`DescribeRecordOutput`](crate::output::DescribeRecordOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::DescribeRecordOutput::record_detail): <p>Information about the product.</p>
-    ///   - [`record_outputs(Option<Vec<RecordOutput>>)`](crate::output::DescribeRecordOutput::record_outputs): <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::DescribeRecordOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<DescribeRecordError>`](crate::error::DescribeRecordError)
-    pub fn describe_record(&self) -> crate::client::fluent_builders::DescribeRecord {
-        crate::client::fluent_builders::DescribeRecord::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeServiceAction`](crate::client::fluent_builders::DescribeServiceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceAction::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeServiceAction::set_id): <p>The self-service action identifier.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`DescribeServiceActionOutput`](crate::output::DescribeServiceActionOutput) with field(s):
-    ///   - [`service_action_detail(Option<ServiceActionDetail>)`](crate::output::DescribeServiceActionOutput::service_action_detail): <p>Detailed information about the self-service action.</p>
-    /// - On failure, responds with [`SdkError<DescribeServiceActionError>`](crate::error::DescribeServiceActionError)
-    pub fn describe_service_action(&self) -> crate::client::fluent_builders::DescribeServiceAction {
-        crate::client::fluent_builders::DescribeServiceAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeServiceActionExecutionParameters`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::set_provisioned_product_id): <p>The identifier of the provisioned product.</p>
-    ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::set_service_action_id): <p>The self-service action identifier.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DescribeServiceActionExecutionParameters::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`DescribeServiceActionExecutionParametersOutput`](crate::output::DescribeServiceActionExecutionParametersOutput) with field(s):
-    ///   - [`service_action_parameters(Option<Vec<ExecutionParameter>>)`](crate::output::DescribeServiceActionExecutionParametersOutput::service_action_parameters): <p>The parameters of the self-service action.</p>
-    /// - On failure, responds with [`SdkError<DescribeServiceActionExecutionParametersError>`](crate::error::DescribeServiceActionExecutionParametersError)
-    pub fn describe_service_action_execution_parameters(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeServiceActionExecutionParameters {
-        crate::client::fluent_builders::DescribeServiceActionExecutionParameters::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeTagOption`](crate::client::fluent_builders::DescribeTagOption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeTagOption::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeTagOption::set_id): <p>The TagOption identifier.</p>
-    /// - On success, responds with [`DescribeTagOptionOutput`](crate::output::DescribeTagOptionOutput) with field(s):
-    ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::output::DescribeTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>
-    /// - On failure, responds with [`SdkError<DescribeTagOptionError>`](crate::error::DescribeTagOptionError)
-    pub fn describe_tag_option(&self) -> crate::client::fluent_builders::DescribeTagOption {
-        crate::client::fluent_builders::DescribeTagOption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisableAWSOrganizationsAccess`](crate::client::fluent_builders::DisableAWSOrganizationsAccess) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DisableAWSOrganizationsAccess::send) it.
-
-    /// - On success, responds with [`DisableAwsOrganizationsAccessOutput`](crate::output::DisableAwsOrganizationsAccessOutput)
-
-    /// - On failure, responds with [`SdkError<DisableAWSOrganizationsAccessError>`](crate::error::DisableAWSOrganizationsAccessError)
-    pub fn disable_aws_organizations_access(
-        &self,
-    ) -> crate::client::fluent_builders::DisableAWSOrganizationsAccess {
-        crate::client::fluent_builders::DisableAWSOrganizationsAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateBudgetFromResource`](crate::client::fluent_builders::DisassociateBudgetFromResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`budget_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateBudgetFromResource::budget_name) / [`set_budget_name(Option<String>)`](crate::client::fluent_builders::DisassociateBudgetFromResource::set_budget_name): <p>The name of the budget you want to disassociate.</p>
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateBudgetFromResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DisassociateBudgetFromResource::set_resource_id): <p>The resource identifier you want to disassociate from. Either a portfolio-id or a product-id.</p>
-    /// - On success, responds with [`DisassociateBudgetFromResourceOutput`](crate::output::DisassociateBudgetFromResourceOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateBudgetFromResourceError>`](crate::error::DisassociateBudgetFromResourceError)
-    pub fn disassociate_budget_from_resource(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateBudgetFromResource {
-        crate::client::fluent_builders::DisassociateBudgetFromResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociatePrincipalFromPortfolio`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`principal_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::principal_arn) / [`set_principal_arn(Option<String>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_principal_arn): <p>The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.</p>
-    ///   - [`principal_type(PrincipalType)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::principal_type) / [`set_principal_type(Option<PrincipalType>)`](crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::set_principal_type): <p>The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use no <code>accountID</code>. </p>
-    /// - On success, responds with [`DisassociatePrincipalFromPortfolioOutput`](crate::output::DisassociatePrincipalFromPortfolioOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociatePrincipalFromPortfolioError>`](crate::error::DisassociatePrincipalFromPortfolioError)
-    pub fn disassociate_principal_from_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociatePrincipalFromPortfolio {
-        crate::client::fluent_builders::DisassociatePrincipalFromPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateProductFromPortfolio`](crate::client::fluent_builders::DisassociateProductFromPortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::set_product_id): <p>The product identifier.</p>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::DisassociateProductFromPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    /// - On success, responds with [`DisassociateProductFromPortfolioOutput`](crate::output::DisassociateProductFromPortfolioOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateProductFromPortfolioError>`](crate::error::DisassociateProductFromPortfolioError)
-    pub fn disassociate_product_from_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateProductFromPortfolio {
-        crate::client::fluent_builders::DisassociateProductFromPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateServiceActionFromProvisioningArtifact`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::set_product_id): <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::set_service_action_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`DisassociateServiceActionFromProvisioningArtifactOutput`](crate::output::DisassociateServiceActionFromProvisioningArtifactOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateServiceActionFromProvisioningArtifactError>`](crate::error::DisassociateServiceActionFromProvisioningArtifactError)
-    pub fn disassociate_service_action_from_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact {
-        crate::client::fluent_builders::DisassociateServiceActionFromProvisioningArtifact::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DisassociateTagOptionFromResource`](crate::client::fluent_builders::DisassociateTagOptionFromResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateTagOptionFromResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::DisassociateTagOptionFromResource::set_resource_id): <p>The resource identifier.</p>
-    ///   - [`tag_option_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateTagOptionFromResource::tag_option_id) / [`set_tag_option_id(Option<String>)`](crate::client::fluent_builders::DisassociateTagOptionFromResource::set_tag_option_id): <p>The TagOption identifier.</p>
-    /// - On success, responds with [`DisassociateTagOptionFromResourceOutput`](crate::output::DisassociateTagOptionFromResourceOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateTagOptionFromResourceError>`](crate::error::DisassociateTagOptionFromResourceError)
-    pub fn disassociate_tag_option_from_resource(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateTagOptionFromResource {
-        crate::client::fluent_builders::DisassociateTagOptionFromResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableAWSOrganizationsAccess`](crate::client::fluent_builders::EnableAWSOrganizationsAccess) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::EnableAWSOrganizationsAccess::send) it.
-
-    /// - On success, responds with [`EnableAwsOrganizationsAccessOutput`](crate::output::EnableAwsOrganizationsAccessOutput)
-
-    /// - On failure, responds with [`SdkError<EnableAWSOrganizationsAccessError>`](crate::error::EnableAWSOrganizationsAccessError)
-    pub fn enable_aws_organizations_access(
-        &self,
-    ) -> crate::client::fluent_builders::EnableAWSOrganizationsAccess {
-        crate::client::fluent_builders::EnableAWSOrganizationsAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExecuteProvisionedProductPlan`](crate::client::fluent_builders::ExecuteProvisionedProductPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`plan_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::plan_id) / [`set_plan_id(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::set_plan_id): <p>The plan identifier.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductPlan::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`ExecuteProvisionedProductPlanOutput`](crate::output::ExecuteProvisionedProductPlanOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::ExecuteProvisionedProductPlanOutput::record_detail): <p>Information about the result of provisioning the product.</p>
-    /// - On failure, responds with [`SdkError<ExecuteProvisionedProductPlanError>`](crate::error::ExecuteProvisionedProductPlanError)
-    pub fn execute_provisioned_product_plan(
-        &self,
-    ) -> crate::client::fluent_builders::ExecuteProvisionedProductPlan {
-        crate::client::fluent_builders::ExecuteProvisionedProductPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExecuteProvisionedProductServiceAction`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_provisioned_product_id): <p>The identifier of the provisioned product.</p>
-    ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_service_action_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`execute_token(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::execute_token) / [`set_execute_token(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_execute_token): <p>An idempotency token that uniquely identifies the execute request.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`parameters(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::set_parameters): <p>A map of all self-service action parameters and their values. If a provided parameter is of a special type, such as <code>TARGET</code>, the provided value will override the default value generated by Service Catalog. If the parameters field is not provided, no additional parameters are passed and default values will be used for any special parameters such as <code>TARGET</code>.</p>
-    /// - On success, responds with [`ExecuteProvisionedProductServiceActionOutput`](crate::output::ExecuteProvisionedProductServiceActionOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::ExecuteProvisionedProductServiceActionOutput::record_detail): <p>An object containing detailed information about the result of provisioning the product.</p>
-    /// - On failure, responds with [`SdkError<ExecuteProvisionedProductServiceActionError>`](crate::error::ExecuteProvisionedProductServiceActionError)
-    pub fn execute_provisioned_product_service_action(
-        &self,
-    ) -> crate::client::fluent_builders::ExecuteProvisionedProductServiceAction {
-        crate::client::fluent_builders::ExecuteProvisionedProductServiceAction::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetAWSOrganizationsAccessStatus`](crate::client::fluent_builders::GetAWSOrganizationsAccessStatus) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAWSOrganizationsAccessStatus::send) it.
-
-    /// - On success, responds with [`GetAwsOrganizationsAccessStatusOutput`](crate::output::GetAwsOrganizationsAccessStatusOutput) with field(s):
-    ///   - [`access_status(Option<AccessStatus>)`](crate::output::GetAwsOrganizationsAccessStatusOutput::access_status): <p>The status of the portfolio share feature.</p>
-    /// - On failure, responds with [`SdkError<GetAWSOrganizationsAccessStatusError>`](crate::error::GetAWSOrganizationsAccessStatusError)
-    pub fn get_aws_organizations_access_status(
-        &self,
-    ) -> crate::client::fluent_builders::GetAWSOrganizationsAccessStatus {
-        crate::client::fluent_builders::GetAWSOrganizationsAccessStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProvisionedProductOutputs`](crate::client::fluent_builders::GetProvisionedProductOutputs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetProvisionedProductOutputs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_provisioned_product_id): <p>The identifier of the provisioned product that you want the outputs from.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_provisioned_product_name): <p>The name of the provisioned product that you want the outputs from.</p>
-    ///   - [`output_keys(Vec<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::output_keys) / [`set_output_keys(Option<Vec<String>>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_output_keys): <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::GetProvisionedProductOutputs::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::GetProvisionedProductOutputs::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`GetProvisionedProductOutputsOutput`](crate::output::GetProvisionedProductOutputsOutput) with field(s):
-    ///   - [`outputs(Option<Vec<RecordOutput>>)`](crate::output::GetProvisionedProductOutputsOutput::outputs): <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::GetProvisionedProductOutputsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<GetProvisionedProductOutputsError>`](crate::error::GetProvisionedProductOutputsError)
-    pub fn get_provisioned_product_outputs(
-        &self,
-    ) -> crate::client::fluent_builders::GetProvisionedProductOutputs {
-        crate::client::fluent_builders::GetProvisionedProductOutputs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportAsProvisionedProduct`](crate::client::fluent_builders::ImportAsProvisionedProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_provisioned_product_name): <p>The user-friendly name of the provisioned product. The value must be unique for the Amazon Web Services account. The name cannot be updated after the product is provisioned. </p>
-    ///   - [`physical_id(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::physical_id) / [`set_physical_id(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_physical_id): <p>The unique identifier of the resource to be imported. It only currently supports CloudFormation stack IDs.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::ImportAsProvisionedProduct::set_idempotency_token): <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    /// - On success, responds with [`ImportAsProvisionedProductOutput`](crate::output::ImportAsProvisionedProductOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::ImportAsProvisionedProductOutput::record_detail): <p>Information about a request operation.</p>
-    /// - On failure, responds with [`SdkError<ImportAsProvisionedProductError>`](crate::error::ImportAsProvisionedProductError)
-    pub fn import_as_provisioned_product(
-        &self,
-    ) -> crate::client::fluent_builders::ImportAsProvisionedProduct {
-        crate::client::fluent_builders::ImportAsProvisionedProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAcceptedPortfolioShares`](crate::client::fluent_builders::ListAcceptedPortfolioShares) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAcceptedPortfolioShares::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`portfolio_share_type(PortfolioShareType)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::client::fluent_builders::ListAcceptedPortfolioShares::set_portfolio_share_type): <p>The type of shared portfolios to list. The default is to list imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational sharing by the management account or delegated administrator of your organization.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Deprecated type.</p> </li>   <li> <p> <code>IMPORTED</code> - List imported portfolios that have been accepted and shared through account-to-account sharing.</p> </li>  </ul>
-    /// - On success, responds with [`ListAcceptedPortfolioSharesOutput`](crate::output::ListAcceptedPortfolioSharesOutput) with field(s):
-    ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::output::ListAcceptedPortfolioSharesOutput::portfolio_details): <p>Information about the portfolios.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListAcceptedPortfolioSharesOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListAcceptedPortfolioSharesError>`](crate::error::ListAcceptedPortfolioSharesError)
-    pub fn list_accepted_portfolio_shares(
-        &self,
-    ) -> crate::client::fluent_builders::ListAcceptedPortfolioShares {
-        crate::client::fluent_builders::ListAcceptedPortfolioShares::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBudgetsForResource`](crate::client::fluent_builders::ListBudgetsForResource) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBudgetsForResource::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListBudgetsForResource::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListBudgetsForResource::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::ListBudgetsForResource::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::ListBudgetsForResource::set_resource_id): <p>The resource identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListBudgetsForResource::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListBudgetsForResource::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListBudgetsForResource::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListBudgetsForResource::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListBudgetsForResourceOutput`](crate::output::ListBudgetsForResourceOutput) with field(s):
-    ///   - [`budgets(Option<Vec<BudgetDetail>>)`](crate::output::ListBudgetsForResourceOutput::budgets): <p>Information about the associated budgets.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListBudgetsForResourceOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListBudgetsForResourceError>`](crate::error::ListBudgetsForResourceError)
-    pub fn list_budgets_for_resource(
-        &self,
-    ) -> crate::client::fluent_builders::ListBudgetsForResource {
-        crate::client::fluent_builders::ListBudgetsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListConstraintsForPortfolio`](crate::client::fluent_builders::ListConstraintsForPortfolio) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConstraintsForPortfolio::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::set_product_id): <p>The product identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListConstraintsForPortfolio::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListConstraintsForPortfolio::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListConstraintsForPortfolio::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListConstraintsForPortfolioOutput`](crate::output::ListConstraintsForPortfolioOutput) with field(s):
-    ///   - [`constraint_details(Option<Vec<ConstraintDetail>>)`](crate::output::ListConstraintsForPortfolioOutput::constraint_details): <p>Information about the constraints.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListConstraintsForPortfolioOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListConstraintsForPortfolioError>`](crate::error::ListConstraintsForPortfolioError)
-    pub fn list_constraints_for_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::ListConstraintsForPortfolio {
-        crate::client::fluent_builders::ListConstraintsForPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLaunchPaths`](crate::client::fluent_builders::ListLaunchPaths) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunchPaths::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListLaunchPaths::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListLaunchPaths::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchPaths::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ListLaunchPaths::set_product_id): <p>The product identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListLaunchPaths::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListLaunchPaths::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchPaths::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListLaunchPaths::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListLaunchPathsOutput`](crate::output::ListLaunchPathsOutput) with field(s):
-    ///   - [`launch_path_summaries(Option<Vec<LaunchPathSummary>>)`](crate::output::ListLaunchPathsOutput::launch_path_summaries): <p>Information about the launch path.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListLaunchPathsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListLaunchPathsError>`](crate::error::ListLaunchPathsError)
-    pub fn list_launch_paths(&self) -> crate::client::fluent_builders::ListLaunchPaths {
-        crate::client::fluent_builders::ListLaunchPaths::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListOrganizationPortfolioAccess`](crate::client::fluent_builders::ListOrganizationPortfolioAccess) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::set_portfolio_id): <p>The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.</p>
-    ///   - [`organization_node_type(OrganizationNodeType)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::organization_node_type) / [`set_organization_node_type(Option<OrganizationNodeType>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::set_organization_node_type): <p>The organization node type that will be returned in the output.</p>  <ul>   <li> <p> <code>ORGANIZATION</code> - Organization that has access to the portfolio. </p> </li>   <li> <p> <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio within your organization.</p> </li>   <li> <p> <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.</p> </li>  </ul>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListOrganizationPortfolioAccess::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`ListOrganizationPortfolioAccessOutput`](crate::output::ListOrganizationPortfolioAccessOutput) with field(s):
-    ///   - [`organization_nodes(Option<Vec<OrganizationNode>>)`](crate::output::ListOrganizationPortfolioAccessOutput::organization_nodes): <p>Displays information about the organization nodes.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListOrganizationPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListOrganizationPortfolioAccessError>`](crate::error::ListOrganizationPortfolioAccessError)
-    pub fn list_organization_portfolio_access(
-        &self,
-    ) -> crate::client::fluent_builders::ListOrganizationPortfolioAccess {
-        crate::client::fluent_builders::ListOrganizationPortfolioAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPortfolioAccess`](crate::client::fluent_builders::ListPortfolioAccess) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPortfolioAccess::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListPortfolioAccess::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListPortfolioAccess::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::ListPortfolioAccess::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::ListPortfolioAccess::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`organization_parent_id(impl Into<String>)`](crate::client::fluent_builders::ListPortfolioAccess::organization_parent_id) / [`set_organization_parent_id(Option<String>)`](crate::client::fluent_builders::ListPortfolioAccess::set_organization_parent_id): <p>The ID of an organization node the portfolio is shared with. All children of this node with an inherited portfolio share will be returned.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPortfolioAccess::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPortfolioAccess::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPortfolioAccess::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPortfolioAccess::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`ListPortfolioAccessOutput`](crate::output::ListPortfolioAccessOutput) with field(s):
-    ///   - [`account_ids(Option<Vec<String>>)`](crate::output::ListPortfolioAccessOutput::account_ids): <p>Information about the Amazon Web Services accounts with access to the portfolio.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListPortfolioAccessOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListPortfolioAccessError>`](crate::error::ListPortfolioAccessError)
-    pub fn list_portfolio_access(&self) -> crate::client::fluent_builders::ListPortfolioAccess {
-        crate::client::fluent_builders::ListPortfolioAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPortfolios`](crate::client::fluent_builders::ListPortfolios) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPortfolios::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListPortfolios::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListPortfolios::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPortfolios::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPortfolios::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPortfolios::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPortfolios::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`ListPortfoliosOutput`](crate::output::ListPortfoliosOutput) with field(s):
-    ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::output::ListPortfoliosOutput::portfolio_details): <p>Information about the portfolios.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListPortfoliosOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListPortfoliosError>`](crate::error::ListPortfoliosError)
-    pub fn list_portfolios(&self) -> crate::client::fluent_builders::ListPortfolios {
-        crate::client::fluent_builders::ListPortfolios::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPortfoliosForProduct`](crate::client::fluent_builders::ListPortfoliosForProduct) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPortfoliosForProduct::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::set_product_id): <p>The product identifier.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPortfoliosForProduct::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPortfoliosForProduct::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPortfoliosForProduct::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`ListPortfoliosForProductOutput`](crate::output::ListPortfoliosForProductOutput) with field(s):
-    ///   - [`portfolio_details(Option<Vec<PortfolioDetail>>)`](crate::output::ListPortfoliosForProductOutput::portfolio_details): <p>Information about the portfolios.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListPortfoliosForProductOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListPortfoliosForProductError>`](crate::error::ListPortfoliosForProductError)
-    pub fn list_portfolios_for_product(
-        &self,
-    ) -> crate::client::fluent_builders::ListPortfoliosForProduct {
-        crate::client::fluent_builders::ListPortfoliosForProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPrincipalsForPortfolio`](crate::client::fluent_builders::ListPrincipalsForPortfolio) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPrincipalsForPortfolio::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListPrincipalsForPortfolio::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListPrincipalsForPortfolioOutput`](crate::output::ListPrincipalsForPortfolioOutput) with field(s):
-    ///   - [`principals(Option<Vec<Principal>>)`](crate::output::ListPrincipalsForPortfolioOutput::principals): <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the portfolio.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListPrincipalsForPortfolioOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListPrincipalsForPortfolioError>`](crate::error::ListPrincipalsForPortfolioError)
-    pub fn list_principals_for_portfolio(
-        &self,
-    ) -> crate::client::fluent_builders::ListPrincipalsForPortfolio {
-        crate::client::fluent_builders::ListPrincipalsForPortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProvisionedProductPlans`](crate::client::fluent_builders::ListProvisionedProductPlans) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provision_product_id(impl Into<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::provision_product_id) / [`set_provision_product_id(Option<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::set_provision_product_id): <p>The product identifier.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListProvisionedProductPlans::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListProvisionedProductPlans::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListProvisionedProductPlans::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`access_level_filter(AccessLevelFilter)`](crate::client::fluent_builders::ListProvisionedProductPlans::access_level_filter) / [`set_access_level_filter(Option<AccessLevelFilter>)`](crate::client::fluent_builders::ListProvisionedProductPlans::set_access_level_filter): <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    /// - On success, responds with [`ListProvisionedProductPlansOutput`](crate::output::ListProvisionedProductPlansOutput) with field(s):
-    ///   - [`provisioned_product_plans(Option<Vec<ProvisionedProductPlanSummary>>)`](crate::output::ListProvisionedProductPlansOutput::provisioned_product_plans): <p>Information about the plans.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListProvisionedProductPlansOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListProvisionedProductPlansError>`](crate::error::ListProvisionedProductPlansError)
-    pub fn list_provisioned_product_plans(
-        &self,
-    ) -> crate::client::fluent_builders::ListProvisionedProductPlans {
-        crate::client::fluent_builders::ListProvisionedProductPlans::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProvisioningArtifacts`](crate::client::fluent_builders::ListProvisioningArtifacts) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningArtifacts::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListProvisioningArtifacts::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningArtifacts::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ListProvisioningArtifacts::set_product_id): <p>The product identifier.</p>
-    /// - On success, responds with [`ListProvisioningArtifactsOutput`](crate::output::ListProvisioningArtifactsOutput) with field(s):
-    ///   - [`provisioning_artifact_details(Option<Vec<ProvisioningArtifactDetail>>)`](crate::output::ListProvisioningArtifactsOutput::provisioning_artifact_details): <p>Information about the provisioning artifacts.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListProvisioningArtifactsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListProvisioningArtifactsError>`](crate::error::ListProvisioningArtifactsError)
-    pub fn list_provisioning_artifacts(
-        &self,
-    ) -> crate::client::fluent_builders::ListProvisioningArtifacts {
-        crate::client::fluent_builders::ListProvisioningArtifacts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProvisioningArtifactsForServiceAction`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_action_id(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::service_action_id) / [`set_service_action_id(Option<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::set_service_action_id): <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`ListProvisioningArtifactsForServiceActionOutput`](crate::output::ListProvisioningArtifactsForServiceActionOutput) with field(s):
-    ///   - [`provisioning_artifact_views(Option<Vec<ProvisioningArtifactView>>)`](crate::output::ListProvisioningArtifactsForServiceActionOutput::provisioning_artifact_views): <p>An array of objects with information about product views and provisioning artifacts.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListProvisioningArtifactsForServiceActionOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListProvisioningArtifactsForServiceActionError>`](crate::error::ListProvisioningArtifactsForServiceActionError)
-    pub fn list_provisioning_artifacts_for_service_action(
-        &self,
-    ) -> crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction {
-        crate::client::fluent_builders::ListProvisioningArtifactsForServiceAction::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListRecordHistory`](crate::client::fluent_builders::ListRecordHistory) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListRecordHistory::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListRecordHistory::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`access_level_filter(AccessLevelFilter)`](crate::client::fluent_builders::ListRecordHistory::access_level_filter) / [`set_access_level_filter(Option<AccessLevelFilter>)`](crate::client::fluent_builders::ListRecordHistory::set_access_level_filter): <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    ///   - [`search_filter(ListRecordHistorySearchFilter)`](crate::client::fluent_builders::ListRecordHistory::search_filter) / [`set_search_filter(Option<ListRecordHistorySearchFilter>)`](crate::client::fluent_builders::ListRecordHistory::set_search_filter): <p>The search filter to scope the results.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListRecordHistory::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListRecordHistory::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListRecordHistory::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListRecordHistory::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListRecordHistoryOutput`](crate::output::ListRecordHistoryOutput) with field(s):
-    ///   - [`record_details(Option<Vec<RecordDetail>>)`](crate::output::ListRecordHistoryOutput::record_details): <p>The records, in reverse chronological order.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListRecordHistoryOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListRecordHistoryError>`](crate::error::ListRecordHistoryError)
-    pub fn list_record_history(&self) -> crate::client::fluent_builders::ListRecordHistory {
-        crate::client::fluent_builders::ListRecordHistory::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListResourcesForTagOption`](crate::client::fluent_builders::ListResourcesForTagOption) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourcesForTagOption::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tag_option_id(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::tag_option_id) / [`set_tag_option_id(Option<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::set_tag_option_id): <p>The TagOption identifier.</p>
-    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::set_resource_type): <p>The resource type.</p>  <ul>   <li> <p> <code>Portfolio</code> </p> </li>   <li> <p> <code>Product</code> </p> </li>  </ul>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListResourcesForTagOption::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListResourcesForTagOption::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListResourcesForTagOption::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListResourcesForTagOptionOutput`](crate::output::ListResourcesForTagOptionOutput) with field(s):
-    ///   - [`resource_details(Option<Vec<ResourceDetail>>)`](crate::output::ListResourcesForTagOptionOutput::resource_details): <p>Information about the resources.</p>
-    ///   - [`page_token(Option<String>)`](crate::output::ListResourcesForTagOptionOutput::page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On failure, responds with [`SdkError<ListResourcesForTagOptionError>`](crate::error::ListResourcesForTagOptionError)
-    pub fn list_resources_for_tag_option(
-        &self,
-    ) -> crate::client::fluent_builders::ListResourcesForTagOption {
-        crate::client::fluent_builders::ListResourcesForTagOption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListServiceActions`](crate::client::fluent_builders::ListServiceActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListServiceActions::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListServiceActions::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListServiceActions::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListServiceActions::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceActions::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListServiceActions::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListServiceActionsOutput`](crate::output::ListServiceActionsOutput) with field(s):
-    ///   - [`service_action_summaries(Option<Vec<ServiceActionSummary>>)`](crate::output::ListServiceActionsOutput::service_action_summaries): <p>An object containing information about the service actions associated with the provisioning artifact.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListServiceActionsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListServiceActionsError>`](crate::error::ListServiceActionsError)
-    pub fn list_service_actions(&self) -> crate::client::fluent_builders::ListServiceActions {
-        crate::client::fluent_builders::ListServiceActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListServiceActionsForProvisioningArtifact`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::set_product_id): <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`ListServiceActionsForProvisioningArtifactOutput`](crate::output::ListServiceActionsForProvisioningArtifactOutput) with field(s):
-    ///   - [`service_action_summaries(Option<Vec<ServiceActionSummary>>)`](crate::output::ListServiceActionsForProvisioningArtifactOutput::service_action_summaries): <p>An object containing information about the self-service actions associated with the provisioning artifact.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListServiceActionsForProvisioningArtifactOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListServiceActionsForProvisioningArtifactError>`](crate::error::ListServiceActionsForProvisioningArtifactError)
-    pub fn list_service_actions_for_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact {
-        crate::client::fluent_builders::ListServiceActionsForProvisioningArtifact::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListStackInstancesForProvisionedProduct`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::set_provisioned_product_id): <p>The identifier of the provisioned product.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::set_page_size): <p>The maximum number of items to return with this call.</p>
-    /// - On success, responds with [`ListStackInstancesForProvisionedProductOutput`](crate::output::ListStackInstancesForProvisionedProductOutput) with field(s):
-    ///   - [`stack_instances(Option<Vec<StackInstance>>)`](crate::output::ListStackInstancesForProvisionedProductOutput::stack_instances): <p>List of stack instances.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ListStackInstancesForProvisionedProductOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListStackInstancesForProvisionedProductError>`](crate::error::ListStackInstancesForProvisionedProductError)
-    pub fn list_stack_instances_for_provisioned_product(
-        &self,
-    ) -> crate::client::fluent_builders::ListStackInstancesForProvisionedProduct {
-        crate::client::fluent_builders::ListStackInstancesForProvisionedProduct::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListTagOptions`](crate::client::fluent_builders::ListTagOptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagOptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(ListTagOptionsFilters)`](crate::client::fluent_builders::ListTagOptions::filters) / [`set_filters(Option<ListTagOptionsFilters>)`](crate::client::fluent_builders::ListTagOptions::set_filters): <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListTagOptions::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ListTagOptions::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ListTagOptions::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ListTagOptions::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ListTagOptionsOutput`](crate::output::ListTagOptionsOutput) with field(s):
-    ///   - [`tag_option_details(Option<Vec<TagOptionDetail>>)`](crate::output::ListTagOptionsOutput::tag_option_details): <p>Information about the TagOptions.</p>
-    ///   - [`page_token(Option<String>)`](crate::output::ListTagOptionsOutput::page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On failure, responds with [`SdkError<ListTagOptionsError>`](crate::error::ListTagOptionsError)
-    pub fn list_tag_options(&self) -> crate::client::fluent_builders::ListTagOptions {
-        crate::client::fluent_builders::ListTagOptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ProvisionProduct`](crate::client::fluent_builders::ProvisionProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_product_id): <p>The product identifier. You must provide the name or ID, but not both.</p>
-    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_product_name): <p>The name of the product. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_artifact_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioning_artifact_name) / [`set_provisioning_artifact_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_artifact_name): <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_path_id): <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    ///   - [`path_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::path_name) / [`set_path_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_path_name): <p>The name of the path. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioned_product_name): <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    ///   - [`provisioning_parameters(Vec<ProvisioningParameter>)`](crate::client::fluent_builders::ProvisionProduct::provisioning_parameters) / [`set_provisioning_parameters(Option<Vec<ProvisioningParameter>>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_parameters): <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    ///   - [`provisioning_preferences(ProvisioningPreferences)`](crate::client::fluent_builders::ProvisionProduct::provisioning_preferences) / [`set_provisioning_preferences(Option<ProvisioningPreferences>)`](crate::client::fluent_builders::ProvisionProduct::set_provisioning_preferences): <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ProvisionProduct::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ProvisionProduct::set_tags): <p>One or more tags.</p>
-    ///   - [`notification_arns(Vec<String>)`](crate::client::fluent_builders::ProvisionProduct::notification_arns) / [`set_notification_arns(Option<Vec<String>>)`](crate::client::fluent_builders::ProvisionProduct::set_notification_arns): <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    ///   - [`provision_token(impl Into<String>)`](crate::client::fluent_builders::ProvisionProduct::provision_token) / [`set_provision_token(Option<String>)`](crate::client::fluent_builders::ProvisionProduct::set_provision_token): <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    /// - On success, responds with [`ProvisionProductOutput`](crate::output::ProvisionProductOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::ProvisionProductOutput::record_detail): <p>Information about the result of provisioning the product.</p>
-    /// - On failure, responds with [`SdkError<ProvisionProductError>`](crate::error::ProvisionProductError)
-    pub fn provision_product(&self) -> crate::client::fluent_builders::ProvisionProduct {
-        crate::client::fluent_builders::ProvisionProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RejectPortfolioShare`](crate::client::fluent_builders::RejectPortfolioShare) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::RejectPortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::RejectPortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::RejectPortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::RejectPortfolioShare::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`portfolio_share_type(PortfolioShareType)`](crate::client::fluent_builders::RejectPortfolioShare::portfolio_share_type) / [`set_portfolio_share_type(Option<PortfolioShareType>)`](crate::client::fluent_builders::RejectPortfolioShare::set_portfolio_share_type): <p>The type of shared portfolios to reject. The default is to reject imported portfolios.</p>  <ul>   <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios shared by the management account of your organization.</p> </li>   <li> <p> <code>IMPORTED</code> - Reject imported portfolios.</p> </li>   <li> <p> <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)</p> </li>  </ul>  <p>For example, <code>aws servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk" --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
-    /// - On success, responds with [`RejectPortfolioShareOutput`](crate::output::RejectPortfolioShareOutput)
-
-    /// - On failure, responds with [`SdkError<RejectPortfolioShareError>`](crate::error::RejectPortfolioShareError)
-    pub fn reject_portfolio_share(&self) -> crate::client::fluent_builders::RejectPortfolioShare {
-        crate::client::fluent_builders::RejectPortfolioShare::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ScanProvisionedProducts`](crate::client::fluent_builders::ScanProvisionedProducts) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::ScanProvisionedProducts::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::ScanProvisionedProducts::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`access_level_filter(AccessLevelFilter)`](crate::client::fluent_builders::ScanProvisionedProducts::access_level_filter) / [`set_access_level_filter(Option<AccessLevelFilter>)`](crate::client::fluent_builders::ScanProvisionedProducts::set_access_level_filter): <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ScanProvisionedProducts::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::ScanProvisionedProducts::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::ScanProvisionedProducts::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::ScanProvisionedProducts::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`ScanProvisionedProductsOutput`](crate::output::ScanProvisionedProductsOutput) with field(s):
-    ///   - [`provisioned_products(Option<Vec<ProvisionedProductDetail>>)`](crate::output::ScanProvisionedProductsOutput::provisioned_products): <p>Information about the provisioned products.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::ScanProvisionedProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ScanProvisionedProductsError>`](crate::error::ScanProvisionedProductsError)
-    pub fn scan_provisioned_products(
-        &self,
-    ) -> crate::client::fluent_builders::ScanProvisionedProducts {
-        crate::client::fluent_builders::ScanProvisionedProducts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchProducts`](crate::client::fluent_builders::SearchProducts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchProducts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::SearchProducts::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::SearchProducts::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`filters(HashMap<ProductViewFilterBy, Vec<String>>)`](crate::client::fluent_builders::SearchProducts::filters) / [`set_filters(Option<HashMap<ProductViewFilterBy, Vec<String>>>)`](crate::client::fluent_builders::SearchProducts::set_filters): <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::SearchProducts::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::SearchProducts::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`sort_by(ProductViewSortBy)`](crate::client::fluent_builders::SearchProducts::sort_by) / [`set_sort_by(Option<ProductViewSortBy>)`](crate::client::fluent_builders::SearchProducts::set_sort_by): <p>The sort field. If no value is specified, the results are not sorted.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::SearchProducts::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::SearchProducts::set_sort_order): <p>The sort order. If no value is specified, the results are not sorted.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::SearchProducts::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::SearchProducts::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`SearchProductsOutput`](crate::output::SearchProductsOutput) with field(s):
-    ///   - [`product_view_summaries(Option<Vec<ProductViewSummary>>)`](crate::output::SearchProductsOutput::product_view_summaries): <p>Information about the product views.</p>
-    ///   - [`product_view_aggregations(Option<HashMap<String, Vec<ProductViewAggregationValue>>>)`](crate::output::SearchProductsOutput::product_view_aggregations): <p>The product view aggregations.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::SearchProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<SearchProductsError>`](crate::error::SearchProductsError)
-    pub fn search_products(&self) -> crate::client::fluent_builders::SearchProducts {
-        crate::client::fluent_builders::SearchProducts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchProductsAsAdmin`](crate::client::fluent_builders::SearchProductsAsAdmin) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchProductsAsAdmin::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_portfolio_id): <p>The portfolio identifier.</p>
-    ///   - [`filters(HashMap<ProductViewFilterBy, Vec<String>>)`](crate::client::fluent_builders::SearchProductsAsAdmin::filters) / [`set_filters(Option<HashMap<ProductViewFilterBy, Vec<String>>>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_filters): <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    ///   - [`sort_by(ProductViewSortBy)`](crate::client::fluent_builders::SearchProductsAsAdmin::sort_by) / [`set_sort_by(Option<ProductViewSortBy>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_sort_by): <p>The sort field. If no value is specified, the results are not sorted.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::SearchProductsAsAdmin::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_sort_order): <p>The sort order. If no value is specified, the results are not sorted.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::SearchProductsAsAdmin::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`product_source(ProductSource)`](crate::client::fluent_builders::SearchProductsAsAdmin::product_source) / [`set_product_source(Option<ProductSource>)`](crate::client::fluent_builders::SearchProductsAsAdmin::set_product_source): <p>Access level of the source of the product.</p>
-    /// - On success, responds with [`SearchProductsAsAdminOutput`](crate::output::SearchProductsAsAdminOutput) with field(s):
-    ///   - [`product_view_details(Option<Vec<ProductViewDetail>>)`](crate::output::SearchProductsAsAdminOutput::product_view_details): <p>Information about the product views.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::SearchProductsAsAdminOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<SearchProductsAsAdminError>`](crate::error::SearchProductsAsAdminError)
-    pub fn search_products_as_admin(
-        &self,
-    ) -> crate::client::fluent_builders::SearchProductsAsAdmin {
-        crate::client::fluent_builders::SearchProductsAsAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchProvisionedProducts`](crate::client::fluent_builders::SearchProvisionedProducts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchProvisionedProducts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`access_level_filter(AccessLevelFilter)`](crate::client::fluent_builders::SearchProvisionedProducts::access_level_filter) / [`set_access_level_filter(Option<AccessLevelFilter>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_access_level_filter): <p>The access level to use to obtain results. The default is <code>User</code>.</p>
-    ///   - [`filters(HashMap<ProvisionedProductViewFilterBy, Vec<String>>)`](crate::client::fluent_builders::SearchProvisionedProducts::filters) / [`set_filters(Option<HashMap<ProvisionedProductViewFilterBy, Vec<String>>>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_filters): <p>The search filters.</p>  <p>When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>, <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>, <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifact</code>, <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>, <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>, <code>productName</code>, and <code>provisioningArtifactName</code>.</p>  <p>Example: <code>"SearchQuery":["status:AVAILABLE"]</code> </p>
-    ///   - [`sort_by(impl Into<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::sort_by) / [`set_sort_by(Option<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_sort_by): <p>The sort field. If no value is specified, the results are not sorted. The valid values are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::SearchProvisionedProducts::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_sort_order): <p>The sort order. If no value is specified, the results are not sorted.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::SearchProvisionedProducts::page_size) / [`set_page_size(i32)`](crate::client::fluent_builders::SearchProvisionedProducts::set_page_size): <p>The maximum number of items to return with this call.</p>
-    ///   - [`page_token(impl Into<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::page_token) / [`set_page_token(Option<String>)`](crate::client::fluent_builders::SearchProvisionedProducts::set_page_token): <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    /// - On success, responds with [`SearchProvisionedProductsOutput`](crate::output::SearchProvisionedProductsOutput) with field(s):
-    ///   - [`provisioned_products(Option<Vec<ProvisionedProductAttribute>>)`](crate::output::SearchProvisionedProductsOutput::provisioned_products): <p>Information about the provisioned products.</p>
-    ///   - [`total_results_count(i32)`](crate::output::SearchProvisionedProductsOutput::total_results_count): <p>The number of provisioned products found.</p>
-    ///   - [`next_page_token(Option<String>)`](crate::output::SearchProvisionedProductsOutput::next_page_token): <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    /// - On failure, responds with [`SdkError<SearchProvisionedProductsError>`](crate::error::SearchProvisionedProductsError)
-    pub fn search_provisioned_products(
-        &self,
-    ) -> crate::client::fluent_builders::SearchProvisionedProducts {
-        crate::client::fluent_builders::SearchProvisionedProducts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TerminateProvisionedProduct`](crate::client::fluent_builders::TerminateProvisionedProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_provisioned_product_name): <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_provisioned_product_id): <p>The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    ///   - [`terminate_token(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::terminate_token) / [`set_terminate_token(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_terminate_token): <p>An idempotency token that uniquely identifies the termination request. This token is only valid during the termination process. After the provisioned product is terminated, subsequent requests to terminate the same provisioned product always return <b>ResourceNotFound</b>.</p>
-    ///   - [`ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::ignore_errors) / [`set_ignore_errors(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_ignore_errors): <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`retain_physical_resources(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::retain_physical_resources) / [`set_retain_physical_resources(bool)`](crate::client::fluent_builders::TerminateProvisionedProduct::set_retain_physical_resources): <p>When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying resources of the deleted provisioned product. The default value is false.</p>
-    /// - On success, responds with [`TerminateProvisionedProductOutput`](crate::output::TerminateProvisionedProductOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::TerminateProvisionedProductOutput::record_detail): <p>Information about the result of this request.</p>
-    /// - On failure, responds with [`SdkError<TerminateProvisionedProductError>`](crate::error::TerminateProvisionedProductError)
-    pub fn terminate_provisioned_product(
-        &self,
-    ) -> crate::client::fluent_builders::TerminateProvisionedProduct {
-        crate::client::fluent_builders::TerminateProvisionedProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateConstraint`](crate::client::fluent_builders::UpdateConstraint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_id): <p>The identifier of the constraint.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_description): <p>The updated description of the constraint.</p>
-    ///   - [`parameters(impl Into<String>)`](crate::client::fluent_builders::UpdateConstraint::parameters) / [`set_parameters(Option<String>)`](crate::client::fluent_builders::UpdateConstraint::set_parameters): <p>The constraint parameters, in JSON format. The syntax depends on the constraint type as follows:</p>  <dl>   <dt>   LAUNCH  </dt>   <dd>    <p>You are required to specify either the <code>RoleArn</code> or the <code>LocalRoleName</code> but can't use both.</p>    <p>Specify the <code>RoleArn</code> property as follows:</p>    <p> <code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p>    <p>Specify the <code>LocalRoleName</code> property as follows:</p>    <p> <code>{"LocalRoleName": "SCBasicLaunchRole"}</code> </p>    <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>     <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>    </note>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>LAUNCH</code> constraint on a product and portfolio.</p>   </dd>   <dt>   NOTIFICATION  </dt>   <dd>    <p>Specify the <code>NotificationArns</code> property as follows:</p>    <p> <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code> </p>   </dd>   <dt>   RESOURCE_UPDATE  </dt>   <dd>    <p>Specify the <code>TagUpdatesOnProvisionedProduct</code> property as follows:</p>    <p> <code>{"Version":"2.0","Properties":{"TagUpdateOnProvisionedProduct":"String"}}</code> </p>    <p>The <code>TagUpdatesOnProvisionedProduct</code> property accepts a string value of <code>ALLOWED</code> or <code>NOT_ALLOWED</code>.</p>   </dd>   <dt>   STACKSET  </dt>   <dd>    <p>Specify the <code>Parameters</code> property as follows:</p>    <p> <code>{"Version": "String", "Properties": {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String", "ExecutionRole": "String"}}</code> </p>    <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>    <p>You also cannot have more than one <code>STACKSET</code> constraint on a product and portfolio.</p>    <p>Products with a <code>STACKSET</code> constraint will launch an CloudFormation stack set.</p>   </dd>   <dt>   TEMPLATE  </dt>   <dd>    <p>Specify the <code>Rules</code> property. For more information, see <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template Constraint Rules</a>.</p>   </dd>  </dl>
-    /// - On success, responds with [`UpdateConstraintOutput`](crate::output::UpdateConstraintOutput) with field(s):
-    ///   - [`constraint_detail(Option<ConstraintDetail>)`](crate::output::UpdateConstraintOutput::constraint_detail): <p>Information about the constraint.</p>
-    ///   - [`constraint_parameters(Option<String>)`](crate::output::UpdateConstraintOutput::constraint_parameters): <p>The constraint parameters.</p>
-    ///   - [`status(Option<Status>)`](crate::output::UpdateConstraintOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<UpdateConstraintError>`](crate::error::UpdateConstraintError)
-    pub fn update_constraint(&self) -> crate::client::fluent_builders::UpdateConstraint {
-        crate::client::fluent_builders::UpdateConstraint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePortfolio`](crate::client::fluent_builders::UpdatePortfolio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolio::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdatePortfolio::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolio::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolio::set_id): <p>The portfolio identifier.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdatePortfolio::set_display_name): <p>The name to use for display purposes.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolio::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePortfolio::set_description): <p>The updated description of the portfolio.</p>
-    ///   - [`provider_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolio::provider_name) / [`set_provider_name(Option<String>)`](crate::client::fluent_builders::UpdatePortfolio::set_provider_name): <p>The updated name of the portfolio provider.</p>
-    ///   - [`add_tags(Vec<Tag>)`](crate::client::fluent_builders::UpdatePortfolio::add_tags) / [`set_add_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdatePortfolio::set_add_tags): <p>The tags to add.</p>
-    ///   - [`remove_tags(Vec<String>)`](crate::client::fluent_builders::UpdatePortfolio::remove_tags) / [`set_remove_tags(Option<Vec<String>>)`](crate::client::fluent_builders::UpdatePortfolio::set_remove_tags): <p>The tags to remove.</p>
-    /// - On success, responds with [`UpdatePortfolioOutput`](crate::output::UpdatePortfolioOutput) with field(s):
-    ///   - [`portfolio_detail(Option<PortfolioDetail>)`](crate::output::UpdatePortfolioOutput::portfolio_detail): <p>Information about the portfolio.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdatePortfolioOutput::tags): <p>Information about the tags associated with the portfolio.</p>
-    /// - On failure, responds with [`SdkError<UpdatePortfolioError>`](crate::error::UpdatePortfolioError)
-    pub fn update_portfolio(&self) -> crate::client::fluent_builders::UpdatePortfolio {
-        crate::client::fluent_builders::UpdatePortfolio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePortfolioShare`](crate::client::fluent_builders::UpdatePortfolioShare) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`portfolio_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::portfolio_id) / [`set_portfolio_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_portfolio_id): <p>The unique identifier of the portfolio for which the share will be updated.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_account_id): <p>The Amazon Web Services account Id of the recipient account. This field is required when updating an external account to account type share.</p>
-    ///   - [`organization_node(OrganizationNode)`](crate::client::fluent_builders::UpdatePortfolioShare::organization_node) / [`set_organization_node(Option<OrganizationNode>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_organization_node): <p>Information about the organization node.</p>
-    ///   - [`share_tag_options(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_tag_options) / [`set_share_tag_options(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_tag_options): <p>Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this field is not provided, the current state of TagOptions sharing on the portfolio share will not be modified.</p>
-    ///   - [`share_principals(bool)`](crate::client::fluent_builders::UpdatePortfolioShare::share_principals) / [`set_share_principals(Option<bool>)`](crate::client::fluent_builders::UpdatePortfolioShare::set_share_principals): <p>A flag to enables or disables <code>Principals</code> sharing in the portfolio. If this field is not provided, the current state of the <code>Principals</code> sharing on the portfolio share will not be modified. </p>
-    /// - On success, responds with [`UpdatePortfolioShareOutput`](crate::output::UpdatePortfolioShareOutput) with field(s):
-    ///   - [`portfolio_share_token(Option<String>)`](crate::output::UpdatePortfolioShareOutput::portfolio_share_token): <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    ///   - [`status(Option<ShareStatus>)`](crate::output::UpdatePortfolioShareOutput::status): <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
-    /// - On failure, responds with [`SdkError<UpdatePortfolioShareError>`](crate::error::UpdatePortfolioShareError)
-    pub fn update_portfolio_share(&self) -> crate::client::fluent_builders::UpdatePortfolioShare {
-        crate::client::fluent_builders::UpdatePortfolioShare::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProduct`](crate::client::fluent_builders::UpdateProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_id): <p>The product identifier.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_name): <p>The updated product name.</p>
-    ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_owner): <p>The updated owner of the product.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_description): <p>The updated description of the product.</p>
-    ///   - [`distributor(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::distributor) / [`set_distributor(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_distributor): <p>The updated distributor of the product.</p>
-    ///   - [`support_description(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::support_description) / [`set_support_description(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_support_description): <p>The updated support description for the product.</p>
-    ///   - [`support_email(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::support_email) / [`set_support_email(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_support_email): <p>The updated support email for the product.</p>
-    ///   - [`support_url(impl Into<String>)`](crate::client::fluent_builders::UpdateProduct::support_url) / [`set_support_url(Option<String>)`](crate::client::fluent_builders::UpdateProduct::set_support_url): <p>The updated support URL for the product.</p>
-    ///   - [`add_tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProduct::add_tags) / [`set_add_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProduct::set_add_tags): <p>The tags to add to the product.</p>
-    ///   - [`remove_tags(Vec<String>)`](crate::client::fluent_builders::UpdateProduct::remove_tags) / [`set_remove_tags(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateProduct::set_remove_tags): <p>The tags to remove from the product.</p>
-    ///   - [`source_connection(SourceConnection)`](crate::client::fluent_builders::UpdateProduct::source_connection) / [`set_source_connection(Option<SourceConnection>)`](crate::client::fluent_builders::UpdateProduct::set_source_connection): <p>Specifies connection details for the updated product and syncs the product to the connection source artifact. This automatically manages the product's artifacts based on changes to the source. The <code>SourceConnection</code> parameter consists of the following sub-fields.</p>  <ul>   <li> <p> <code>Type</code> </p> </li>   <li> <p> <code>ConnectionParamters</code> </p> </li>  </ul>
-    /// - On success, responds with [`UpdateProductOutput`](crate::output::UpdateProductOutput) with field(s):
-    ///   - [`product_view_detail(Option<ProductViewDetail>)`](crate::output::UpdateProductOutput::product_view_detail): <p>Information about the product view.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::UpdateProductOutput::tags): <p>Information about the tags associated with the product.</p>
-    /// - On failure, responds with [`SdkError<UpdateProductError>`](crate::error::UpdateProductError)
-    pub fn update_product(&self) -> crate::client::fluent_builders::UpdateProduct {
-        crate::client::fluent_builders::UpdateProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProvisionedProduct`](crate::client::fluent_builders::UpdateProvisionedProduct) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provisioned_product_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioned_product_name) / [`set_provisioned_product_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioned_product_name): <p>The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioned_product_id): <p>The identifier of the provisioned product. You must provide the name or ID, but not both.</p>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_product_id): <p>The identifier of the product. You must provide the name or ID, but not both.</p>
-    ///   - [`product_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::product_name) / [`set_product_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_product_name): <p>The name of the product. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`provisioning_artifact_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioning_artifact_name) / [`set_provisioning_artifact_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioning_artifact_name): <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    ///   - [`path_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::path_id) / [`set_path_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_path_id): <p>The path identifier. This value is optional if the product has a default path, and required if the product has more than one path. You must provide the name or ID, but not both.</p>
-    ///   - [`path_name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::path_name) / [`set_path_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_path_name): <p>The name of the path. You must provide the name or ID, but not both.</p>
-    ///   - [`provisioning_parameters(Vec<UpdateProvisioningParameter>)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioning_parameters) / [`set_provisioning_parameters(Option<Vec<UpdateProvisioningParameter>>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioning_parameters): <p>The new parameters.</p>
-    ///   - [`provisioning_preferences(UpdateProvisioningPreferences)`](crate::client::fluent_builders::UpdateProvisionedProduct::provisioning_preferences) / [`set_provisioning_preferences(Option<UpdateProvisioningPreferences>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_provisioning_preferences): <p>An object that contains information about the provisioning preferences for a stack set.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UpdateProvisionedProduct::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_tags): <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    ///   - [`update_token(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::update_token) / [`set_update_token(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProduct::set_update_token): <p>The idempotency token that uniquely identifies the provisioning update request.</p>
-    /// - On success, responds with [`UpdateProvisionedProductOutput`](crate::output::UpdateProvisionedProductOutput) with field(s):
-    ///   - [`record_detail(Option<RecordDetail>)`](crate::output::UpdateProvisionedProductOutput::record_detail): <p>Information about the result of the request.</p>
-    /// - On failure, responds with [`SdkError<UpdateProvisionedProductError>`](crate::error::UpdateProvisionedProductError)
-    pub fn update_provisioned_product(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateProvisionedProduct {
-        crate::client::fluent_builders::UpdateProvisionedProduct::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProvisionedProductProperties`](crate::client::fluent_builders::UpdateProvisionedProductProperties) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`provisioned_product_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::provisioned_product_id) / [`set_provisioned_product_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_provisioned_product_id): <p>The identifier of the provisioned product.</p>
-    ///   - [`provisioned_product_properties(HashMap<PropertyKey, String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::provisioned_product_properties) / [`set_provisioned_product_properties(Option<HashMap<PropertyKey, String>>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_provisioned_product_properties): <p>A map that contains the provisioned product properties to be updated.</p>  <p>The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator to call <code>UpdateProvisionedProductProperties</code> to update the launch role that is associated with a provisioned product. This role is used when an end user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid. A user ARN is invalid. </p>  <p>The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has permission to see, update, terminate, and execute service actions in the provisioned product.</p>  <p>The administrator can change the owner of a provisioned product to another IAM or STS entity within the same account. Both end user owners and administrators can see ownership history of the provisioned product using the <code>ListRecordHistory</code> API. The new owner can describe all past records for the provisioned product using the <code>DescribeRecord</code> API. The previous owner can no longer use <code>DescribeRecord</code>, but can still see the product's history from when he was an owner using <code>ListRecordHistory</code>.</p>  <p>If a provisioned product ownership is assigned to an end user, they can see and perform any action through the API or Service Catalog console such as update, terminate, and execute service actions. If an end user provisions a product and the owner is updated to someone else, they will no longer be able to see or perform any actions through API or the Service Catalog console on that provisioned product.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::UpdateProvisionedProductProperties::set_idempotency_token): <p>The idempotency token that uniquely identifies the provisioning product update request.</p>
-    /// - On success, responds with [`UpdateProvisionedProductPropertiesOutput`](crate::output::UpdateProvisionedProductPropertiesOutput) with field(s):
-    ///   - [`provisioned_product_id(Option<String>)`](crate::output::UpdateProvisionedProductPropertiesOutput::provisioned_product_id): <p>The provisioned product identifier.</p>
-    ///   - [`provisioned_product_properties(Option<HashMap<PropertyKey, String>>)`](crate::output::UpdateProvisionedProductPropertiesOutput::provisioned_product_properties): <p>A map that contains the properties updated.</p>
-    ///   - [`record_id(Option<String>)`](crate::output::UpdateProvisionedProductPropertiesOutput::record_id): <p>The identifier of the record.</p>
-    ///   - [`status(Option<RecordStatus>)`](crate::output::UpdateProvisionedProductPropertiesOutput::status): <p>The status of the request.</p>
-    /// - On failure, responds with [`SdkError<UpdateProvisionedProductPropertiesError>`](crate::error::UpdateProvisionedProductPropertiesError)
-    pub fn update_provisioned_product_properties(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateProvisionedProductProperties {
-        crate::client::fluent_builders::UpdateProvisionedProductProperties::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProvisioningArtifact`](crate::client::fluent_builders::UpdateProvisioningArtifact) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    ///   - [`product_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::product_id) / [`set_product_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_product_id): <p>The product identifier.</p>
-    ///   - [`provisioning_artifact_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::provisioning_artifact_id) / [`set_provisioning_artifact_id(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_provisioning_artifact_id): <p>The identifier of the provisioning artifact.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_name): <p>The updated name of the provisioning artifact.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_description): <p>The updated description of the provisioning artifact.</p>
-    ///   - [`active(bool)`](crate::client::fluent_builders::UpdateProvisioningArtifact::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_active): <p>Indicates whether the product version is active.</p>  <p>Inactive provisioning artifacts are invisible to end users. End users cannot launch or update a provisioned product from an inactive provisioning artifact.</p>
-    ///   - [`guidance(ProvisioningArtifactGuidance)`](crate::client::fluent_builders::UpdateProvisioningArtifact::guidance) / [`set_guidance(Option<ProvisioningArtifactGuidance>)`](crate::client::fluent_builders::UpdateProvisioningArtifact::set_guidance): <p>Information set by the administrator to provide guidance to end users about which provisioning artifacts to use.</p>  <p>The <code>DEFAULT</code> value indicates that the product version is active.</p>  <p>The administrator can set the guidance to <code>DEPRECATED</code> to inform users that the product version is deprecated. Users are able to make updates to a provisioned product of a deprecated version but cannot launch new provisioned products using a deprecated version.</p>
-    /// - On success, responds with [`UpdateProvisioningArtifactOutput`](crate::output::UpdateProvisioningArtifactOutput) with field(s):
-    ///   - [`provisioning_artifact_detail(Option<ProvisioningArtifactDetail>)`](crate::output::UpdateProvisioningArtifactOutput::provisioning_artifact_detail): <p>Information about the provisioning artifact.</p>
-    ///   - [`info(Option<HashMap<String, String>>)`](crate::output::UpdateProvisioningArtifactOutput::info): <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    ///   - [`status(Option<Status>)`](crate::output::UpdateProvisioningArtifactOutput::status): <p>The status of the current request.</p>
-    /// - On failure, responds with [`SdkError<UpdateProvisioningArtifactError>`](crate::error::UpdateProvisioningArtifactError)
-    pub fn update_provisioning_artifact(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateProvisioningArtifact {
-        crate::client::fluent_builders::UpdateProvisioningArtifact::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateServiceAction`](crate::client::fluent_builders::UpdateServiceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAction::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateServiceAction::set_id): <p>The self-service action identifier.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateServiceAction::set_name): <p>The self-service action name.</p>
-    ///   - [`definition(HashMap<ServiceActionDefinitionKey, String>)`](crate::client::fluent_builders::UpdateServiceAction::definition) / [`set_definition(Option<HashMap<ServiceActionDefinitionKey, String>>)`](crate::client::fluent_builders::UpdateServiceAction::set_definition): <p>A map that defines the self-service action.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAction::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateServiceAction::set_description): <p>The self-service action description.</p>
-    ///   - [`accept_language(impl Into<String>)`](crate::client::fluent_builders::UpdateServiceAction::accept_language) / [`set_accept_language(Option<String>)`](crate::client::fluent_builders::UpdateServiceAction::set_accept_language): <p>The language code.</p>  <ul>   <li> <p> <code>en</code> - English (default)</p> </li>   <li> <p> <code>jp</code> - Japanese</p> </li>   <li> <p> <code>zh</code> - Chinese</p> </li>  </ul>
-    /// - On success, responds with [`UpdateServiceActionOutput`](crate::output::UpdateServiceActionOutput) with field(s):
-    ///   - [`service_action_detail(Option<ServiceActionDetail>)`](crate::output::UpdateServiceActionOutput::service_action_detail): <p>Detailed information about the self-service action.</p>
-    /// - On failure, responds with [`SdkError<UpdateServiceActionError>`](crate::error::UpdateServiceActionError)
-    pub fn update_service_action(&self) -> crate::client::fluent_builders::UpdateServiceAction {
-        crate::client::fluent_builders::UpdateServiceAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTagOption`](crate::client::fluent_builders::UpdateTagOption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateTagOption::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateTagOption::set_id): <p>The TagOption identifier.</p>
-    ///   - [`value(impl Into<String>)`](crate::client::fluent_builders::UpdateTagOption::value) / [`set_value(Option<String>)`](crate::client::fluent_builders::UpdateTagOption::set_value): <p>The updated value.</p>
-    ///   - [`active(bool)`](crate::client::fluent_builders::UpdateTagOption::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::UpdateTagOption::set_active): <p>The updated active state.</p>
-    /// - On success, responds with [`UpdateTagOptionOutput`](crate::output::UpdateTagOptionOutput) with field(s):
-    ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::output::UpdateTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>
-    /// - On failure, responds with [`SdkError<UpdateTagOptionError>`](crate::error::UpdateTagOptionError)
-    pub fn update_tag_option(&self) -> crate::client::fluent_builders::UpdateTagOption {
-        crate::client::fluent_builders::UpdateTagOption::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1551,9 +174,183 @@ impl Client {
     }
 }
 
+mod accept_portfolio_share;
+
+mod associate_budget_with_resource;
+
+mod associate_principal_with_portfolio;
+
+mod associate_product_with_portfolio;
+
+mod associate_service_action_with_provisioning_artifact;
+
+mod associate_tag_option_with_resource;
+
+mod batch_associate_service_action_with_provisioning_artifact;
+
+mod batch_disassociate_service_action_from_provisioning_artifact;
+
+mod copy_product;
+
+mod create_constraint;
+
+mod create_portfolio;
+
+mod create_portfolio_share;
+
+mod create_product;
+
+mod create_provisioned_product_plan;
+
+mod create_provisioning_artifact;
+
+mod create_service_action;
+
+mod create_tag_option;
+
+mod delete_constraint;
+
+mod delete_portfolio;
+
+mod delete_portfolio_share;
+
+mod delete_product;
+
+mod delete_provisioned_product_plan;
+
+mod delete_provisioning_artifact;
+
+mod delete_service_action;
+
+mod delete_tag_option;
+
+mod describe_constraint;
+
+mod describe_copy_product_status;
+
+mod describe_portfolio;
+
+mod describe_portfolio_share_status;
+
+mod describe_portfolio_shares;
+
+mod describe_product;
+
+mod describe_product_as_admin;
+
+mod describe_product_view;
+
+mod describe_provisioned_product;
+
+mod describe_provisioned_product_plan;
+
+mod describe_provisioning_artifact;
+
+mod describe_provisioning_parameters;
+
+mod describe_record;
+
+mod describe_service_action;
+
+mod describe_service_action_execution_parameters;
+
+mod describe_tag_option;
+
+mod disable_aws_organizations_access;
+
+mod disassociate_budget_from_resource;
+
+mod disassociate_principal_from_portfolio;
+
+mod disassociate_product_from_portfolio;
+
+mod disassociate_service_action_from_provisioning_artifact;
+
+mod disassociate_tag_option_from_resource;
+
+mod enable_aws_organizations_access;
+
+mod execute_provisioned_product_plan;
+
+mod execute_provisioned_product_service_action;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_aws_organizations_access_status;
+
+mod get_provisioned_product_outputs;
+
+mod import_as_provisioned_product;
+
+mod list_accepted_portfolio_shares;
+
+mod list_budgets_for_resource;
+
+mod list_constraints_for_portfolio;
+
+mod list_launch_paths;
+
+mod list_organization_portfolio_access;
+
+mod list_portfolio_access;
+
+mod list_portfolios;
+
+mod list_portfolios_for_product;
+
+mod list_principals_for_portfolio;
+
+mod list_provisioned_product_plans;
+
+mod list_provisioning_artifacts;
+
+mod list_provisioning_artifacts_for_service_action;
+
+mod list_record_history;
+
+mod list_resources_for_tag_option;
+
+mod list_service_actions;
+
+mod list_service_actions_for_provisioning_artifact;
+
+mod list_stack_instances_for_provisioned_product;
+
+mod list_tag_options;
+
+mod provision_product;
+
+mod reject_portfolio_share;
+
+mod scan_provisioned_products;
+
+mod search_products;
+
+mod search_products_as_admin;
+
+mod search_provisioned_products;
+
+mod terminate_provisioned_product;
+
+mod update_constraint;
+
+mod update_portfolio;
+
+mod update_portfolio_share;
+
+mod update_product;
+
+mod update_provisioned_product;
+
+mod update_provisioned_product_properties;
+
+mod update_provisioning_artifact;
+
+mod update_service_action;
+
+mod update_tag_option;

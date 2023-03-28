@@ -89,283 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateGroup`](crate::client::fluent_builders::CreateGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_display_name): <p>A string containing the name of the group. This value is commonly displayed when the group is referenced.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGroup::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGroup::set_description): <p>A string containing the description of the group.</p>
-    /// - On success, responds with [`CreateGroupOutput`](crate::output::CreateGroupOutput) with field(s):
-    ///   - [`group_id(Option<String>)`](crate::output::CreateGroupOutput::group_id): <p>The identifier of the newly created group in the identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<CreateGroupError>`](crate::error::CreateGroupError)
-    pub fn create_group(&self) -> crate::client::fluent_builders::CreateGroup {
-        crate::client::fluent_builders::CreateGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateGroupMembership`](crate::client::fluent_builders::CreateGroupMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::CreateGroupMembership::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::CreateGroupMembership::set_group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::CreateGroupMembership::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::CreateGroupMembership::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    /// - On success, responds with [`CreateGroupMembershipOutput`](crate::output::CreateGroupMembershipOutput) with field(s):
-    ///   - [`membership_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::membership_id): <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateGroupMembershipOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<CreateGroupMembershipError>`](crate::error::CreateGroupMembershipError)
-    pub fn create_group_membership(&self) -> crate::client::fluent_builders::CreateGroupMembership {
-        crate::client::fluent_builders::CreateGroupMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    ///   - [`name(Name)`](crate::client::fluent_builders::CreateUser::name) / [`set_name(Option<Name>)`](crate::client::fluent_builders::CreateUser::set_name): <p>An object containing the user's name.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_display_name): <p>A string containing the user's name. This value is typically formatted for display when the user is referenced. For example, "John Doe."</p>
-    ///   - [`nick_name(impl Into<String>)`](crate::client::fluent_builders::CreateUser::nick_name) / [`set_nick_name(Option<String>)`](crate::client::fluent_builders::CreateUser::set_nick_name): <p>A string containing an alternate name for the user.</p>
-    ///   - [`profile_url(impl Into<String>)`](crate::client::fluent_builders::CreateUser::profile_url) / [`set_profile_url(Option<String>)`](crate::client::fluent_builders::CreateUser::set_profile_url): <p>A string containing a URL that may be associated with the user.</p>
-    ///   - [`emails(Vec<Email>)`](crate::client::fluent_builders::CreateUser::emails) / [`set_emails(Option<Vec<Email>>)`](crate::client::fluent_builders::CreateUser::set_emails): <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    ///   - [`addresses(Vec<Address>)`](crate::client::fluent_builders::CreateUser::addresses) / [`set_addresses(Option<Vec<Address>>)`](crate::client::fluent_builders::CreateUser::set_addresses): <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    ///   - [`phone_numbers(Vec<PhoneNumber>)`](crate::client::fluent_builders::CreateUser::phone_numbers) / [`set_phone_numbers(Option<Vec<PhoneNumber>>)`](crate::client::fluent_builders::CreateUser::set_phone_numbers): <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    ///   - [`user_type(impl Into<String>)`](crate::client::fluent_builders::CreateUser::user_type) / [`set_user_type(Option<String>)`](crate::client::fluent_builders::CreateUser::set_user_type): <p>A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left unspecified.</p>
-    ///   - [`title(impl Into<String>)`](crate::client::fluent_builders::CreateUser::title) / [`set_title(Option<String>)`](crate::client::fluent_builders::CreateUser::set_title): <p>A string containing the user's title. Possible values are left unspecified given that they depend on each customer's specific needs.</p>
-    ///   - [`preferred_language(impl Into<String>)`](crate::client::fluent_builders::CreateUser::preferred_language) / [`set_preferred_language(Option<String>)`](crate::client::fluent_builders::CreateUser::set_preferred_language): <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    ///   - [`locale(impl Into<String>)`](crate::client::fluent_builders::CreateUser::locale) / [`set_locale(Option<String>)`](crate::client::fluent_builders::CreateUser::set_locale): <p>A string containing the user's geographical region or location.</p>
-    ///   - [`timezone(impl Into<String>)`](crate::client::fluent_builders::CreateUser::timezone) / [`set_timezone(Option<String>)`](crate::client::fluent_builders::CreateUser::set_timezone): <p>A string containing the user's time zone.</p>
-    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
-    ///   - [`user_id(Option<String>)`](crate::output::CreateUserOutput::user_id): <p>The identifier of the newly created user in the identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::CreateUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
-    pub fn create_user(&self) -> crate::client::fluent_builders::CreateUser {
-        crate::client::fluent_builders::CreateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteGroup`](crate::client::fluent_builders::DeleteGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DeleteGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
-    /// - On success, responds with [`DeleteGroupOutput`](crate::output::DeleteGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteGroupError>`](crate::error::DeleteGroupError)
-    pub fn delete_group(&self) -> crate::client::fluent_builders::DeleteGroup {
-        crate::client::fluent_builders::DeleteGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteGroupMembership`](crate::client::fluent_builders::DeleteGroupMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`membership_id(impl Into<String>)`](crate::client::fluent_builders::DeleteGroupMembership::membership_id) / [`set_membership_id(Option<String>)`](crate::client::fluent_builders::DeleteGroupMembership::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::output::DeleteGroupMembershipOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteGroupMembershipError>`](crate::error::DeleteGroupMembershipError)
-    pub fn delete_group_membership(&self) -> crate::client::fluent_builders::DeleteGroupMembership {
-        crate::client::fluent_builders::DeleteGroupMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteUser`](crate::client::fluent_builders::DeleteUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DeleteUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DeleteUser::set_user_id): <p>The identifier for a user in the identity store.</p>
-    /// - On success, responds with [`DeleteUserOutput`](crate::output::DeleteUserOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::error::DeleteUserError)
-    pub fn delete_user(&self) -> crate::client::fluent_builders::DeleteUser {
-        crate::client::fluent_builders::DeleteUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeGroup`](crate::client::fluent_builders::DescribeGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DescribeGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
-    /// - On success, responds with [`DescribeGroupOutput`](crate::output::DescribeGroupOutput) with field(s):
-    ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupOutput::group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeGroupOutput::display_name): <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
-    ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::output::DescribeGroupOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeGroupOutput::description): <p>A string containing a description of the group.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeGroupOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<DescribeGroupError>`](crate::error::DescribeGroupError)
-    pub fn describe_group(&self) -> crate::client::fluent_builders::DescribeGroup {
-        crate::client::fluent_builders::DescribeGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeGroupMembership`](crate::client::fluent_builders::DescribeGroupMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`membership_id(impl Into<String>)`](crate::client::fluent_builders::DescribeGroupMembership::membership_id) / [`set_membership_id(Option<String>)`](crate::client::fluent_builders::DescribeGroupMembership::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    /// - On success, responds with [`DescribeGroupMembershipOutput`](crate::output::DescribeGroupMembershipOutput) with field(s):
-    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`membership_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    ///   - [`group_id(Option<String>)`](crate::output::DescribeGroupMembershipOutput::group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`member_id(Option<MemberId>)`](crate::output::DescribeGroupMembershipOutput::member_id): <p>An object containing the identifier of a group member.</p>
-    /// - On failure, responds with [`SdkError<DescribeGroupMembershipError>`](crate::error::DescribeGroupMembershipError)
-    pub fn describe_group_membership(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeGroupMembership {
-        crate::client::fluent_builders::DescribeGroupMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeUser`](crate::client::fluent_builders::DescribeUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DescribeUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DescribeUser::set_user_id): <p>The identifier for a user in the identity store.</p>
-    /// - On success, responds with [`DescribeUserOutput`](crate::output::DescribeUserOutput) with field(s):
-    ///   - [`user_name(Option<String>)`](crate::output::DescribeUserOutput::user_name): <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
-    ///   - [`user_id(Option<String>)`](crate::output::DescribeUserOutput::user_id): <p>The identifier for a user in the identity store.</p>
-    ///   - [`external_ids(Option<Vec<ExternalId>>)`](crate::output::DescribeUserOutput::external_ids): <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
-    ///   - [`name(Option<Name>)`](crate::output::DescribeUserOutput::name): <p>The name of the user.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeUserOutput::display_name): <p>The user's name value for display.</p>
-    ///   - [`nick_name(Option<String>)`](crate::output::DescribeUserOutput::nick_name): <p>An alternative descriptive name for the user.</p>
-    ///   - [`profile_url(Option<String>)`](crate::output::DescribeUserOutput::profile_url): <p>A URL link for the user's profile.</p>
-    ///   - [`emails(Option<Vec<Email>>)`](crate::output::DescribeUserOutput::emails): <p>The user's email value.</p>
-    ///   - [`addresses(Option<Vec<Address>>)`](crate::output::DescribeUserOutput::addresses): <p>The user's physical address.</p>
-    ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::output::DescribeUserOutput::phone_numbers): <p>A list of <code>PhoneNumber</code> objects associated with a user.</p>
-    ///   - [`user_type(Option<String>)`](crate::output::DescribeUserOutput::user_type): <p>A string indicating the user's type.</p>
-    ///   - [`title(Option<String>)`](crate::output::DescribeUserOutput::title): <p>A string containing the user's title.</p>
-    ///   - [`preferred_language(Option<String>)`](crate::output::DescribeUserOutput::preferred_language): <p>The preferred language of the user.</p>
-    ///   - [`locale(Option<String>)`](crate::output::DescribeUserOutput::locale): <p>A string containing the user's geographical region or location.</p>
-    ///   - [`timezone(Option<String>)`](crate::output::DescribeUserOutput::timezone): <p>The time zone for a user.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::DescribeUserOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::error::DescribeUserError)
-    pub fn describe_user(&self) -> crate::client::fluent_builders::DescribeUser {
-        crate::client::fluent_builders::DescribeUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGroupId`](crate::client::fluent_builders::GetGroupId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetGroupId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`alternate_identifier(AlternateIdentifier)`](crate::client::fluent_builders::GetGroupId::alternate_identifier) / [`set_alternate_identifier(Option<AlternateIdentifier>)`](crate::client::fluent_builders::GetGroupId::set_alternate_identifier): <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>GroupDisplayName</code>.</p>
-    /// - On success, responds with [`GetGroupIdOutput`](crate::output::GetGroupIdOutput) with field(s):
-    ///   - [`group_id(Option<String>)`](crate::output::GetGroupIdOutput::group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::GetGroupIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<GetGroupIdError>`](crate::error::GetGroupIdError)
-    pub fn get_group_id(&self) -> crate::client::fluent_builders::GetGroupId {
-        crate::client::fluent_builders::GetGroupId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGroupMembershipId`](crate::client::fluent_builders::GetGroupMembershipId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupMembershipId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetGroupMembershipId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::GetGroupMembershipId::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::GetGroupMembershipId::set_group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::GetGroupMembershipId::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::GetGroupMembershipId::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    /// - On success, responds with [`GetGroupMembershipIdOutput`](crate::output::GetGroupMembershipIdOutput) with field(s):
-    ///   - [`membership_id(Option<String>)`](crate::output::GetGroupMembershipIdOutput::membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::GetGroupMembershipIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<GetGroupMembershipIdError>`](crate::error::GetGroupMembershipIdError)
-    pub fn get_group_membership_id(&self) -> crate::client::fluent_builders::GetGroupMembershipId {
-        crate::client::fluent_builders::GetGroupMembershipId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetUserId`](crate::client::fluent_builders::GetUserId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::GetUserId::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::GetUserId::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`alternate_identifier(AlternateIdentifier)`](crate::client::fluent_builders::GetUserId::alternate_identifier) / [`set_alternate_identifier(Option<AlternateIdentifier>)`](crate::client::fluent_builders::GetUserId::set_alternate_identifier): <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a unique <code>UserDisplayName</code>.</p>
-    /// - On success, responds with [`GetUserIdOutput`](crate::output::GetUserIdOutput) with field(s):
-    ///   - [`user_id(Option<String>)`](crate::output::GetUserIdOutput::user_id): <p>The identifier for a user in the identity store.</p>
-    ///   - [`identity_store_id(Option<String>)`](crate::output::GetUserIdOutput::identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    /// - On failure, responds with [`SdkError<GetUserIdError>`](crate::error::GetUserIdError)
-    pub fn get_user_id(&self) -> crate::client::fluent_builders::GetUserId {
-        crate::client::fluent_builders::GetUserId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`IsMemberInGroups`](crate::client::fluent_builders::IsMemberInGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::IsMemberInGroups::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::IsMemberInGroups::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::IsMemberInGroups::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::IsMemberInGroups::set_member_id): <p>An object containing the identifier of a group member.</p>
-    ///   - [`group_ids(Vec<String>)`](crate::client::fluent_builders::IsMemberInGroups::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::IsMemberInGroups::set_group_ids): <p>A list of identifiers for groups in the identity store.</p>
-    /// - On success, responds with [`IsMemberInGroupsOutput`](crate::output::IsMemberInGroupsOutput) with field(s):
-    ///   - [`results(Option<Vec<GroupMembershipExistenceResult>>)`](crate::output::IsMemberInGroupsOutput::results): <p>A list containing the results of membership existence checks.</p>
-    /// - On failure, responds with [`SdkError<IsMemberInGroupsError>`](crate::error::IsMemberInGroupsError)
-    pub fn is_member_in_groups(&self) -> crate::client::fluent_builders::IsMemberInGroups {
-        crate::client::fluent_builders::IsMemberInGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGroupMemberships`](crate::client::fluent_builders::ListGroupMemberships) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupMemberships::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMemberships::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in all <code>List</code> requests to specify how many results to return in one page.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMemberships::set_next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code> and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    /// - On success, responds with [`ListGroupMembershipsOutput`](crate::output::ListGroupMembershipsOutput) with field(s):
-    ///   - [`group_memberships(Option<Vec<GroupMembership>>)`](crate::output::ListGroupMembershipsOutput::group_memberships): <p>A list of <code>GroupMembership</code> objects in the group.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsOutput::next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    /// - On failure, responds with [`SdkError<ListGroupMembershipsError>`](crate::error::ListGroupMembershipsError)
-    pub fn list_group_memberships(&self) -> crate::client::fluent_builders::ListGroupMemberships {
-        crate::client::fluent_builders::ListGroupMemberships::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGroupMembershipsForMember`](crate::client::fluent_builders::ListGroupMembershipsForMember) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupMembershipsForMember::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`member_id(MemberId)`](crate::client::fluent_builders::ListGroupMembershipsForMember::member_id) / [`set_member_id(Option<MemberId>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_member_id): <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupMembershipsForMember::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupMembershipsForMember::set_next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    /// - On success, responds with [`ListGroupMembershipsForMemberOutput`](crate::output::ListGroupMembershipsForMemberOutput) with field(s):
-    ///   - [`group_memberships(Option<Vec<GroupMembership>>)`](crate::output::ListGroupMembershipsForMemberOutput::group_memberships): <p>A list of <code>GroupMembership</code> objects in the group for a specified member.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGroupMembershipsForMemberOutput::next_token): <p>The pagination token used for the <code>ListUsers</code>, <code>ListGroups</code>, and <code>ListGroupMemberships</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page. </p>
-    /// - On failure, responds with [`SdkError<ListGroupMembershipsForMemberError>`](crate::error::ListGroupMembershipsForMemberError)
-    pub fn list_group_memberships_for_member(
-        &self,
-    ) -> crate::client::fluent_builders::ListGroupMembershipsForMember {
-        crate::client::fluent_builders::ListGroupMembershipsForMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGroups`](crate::client::fluent_builders::ListGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListGroups::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListGroups::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroups::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroups::set_next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListGroups::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests.</p>
-    /// - On success, responds with [`ListGroupsOutput`](crate::output::ListGroupsOutput) with field(s):
-    ///   - [`groups(Option<Vec<Group>>)`](crate::output::ListGroupsOutput::groups): <p>A list of <code>Group</code> objects in the identity store.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it1 is used in the API request to search for the next page.</p>
-    /// - On failure, responds with [`SdkError<ListGroupsError>`](crate::error::ListGroupsError)
-    pub fn list_groups(&self) -> crate::client::fluent_builders::ListGroups {
-        crate::client::fluent_builders::ListGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_identity_store_id): <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> requests to specify how many results to return in one page. The length limit is 50 characters.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListUsers::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListUsers::set_filters): <p>A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code> and <code>ListGroups</code> requests. </p>
-    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>A list of <code>User</code> objects in the identity store.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
-    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
-    pub fn list_users(&self) -> crate::client::fluent_builders::ListUsers {
-        crate::client::fluent_builders::ListUsers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateGroup`](crate::client::fluent_builders::UpdateGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateGroup::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::UpdateGroup::set_group_id): <p>The identifier for a group in the identity store.</p>
-    ///   - [`operations(Vec<AttributeOperation>)`](crate::client::fluent_builders::UpdateGroup::operations) / [`set_operations(Option<Vec<AttributeOperation>>)`](crate::client::fluent_builders::UpdateGroup::set_operations): <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    /// - On success, responds with [`UpdateGroupOutput`](crate::output::UpdateGroupOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateGroupError>`](crate::error::UpdateGroupError)
-    pub fn update_group(&self) -> crate::client::fluent_builders::UpdateGroup {
-        crate::client::fluent_builders::UpdateGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_id): <p>The identifier for a user in the identity store.</p>
-    ///   - [`operations(Vec<AttributeOperation>)`](crate::client::fluent_builders::UpdateUser::operations) / [`set_operations(Option<Vec<AttributeOperation>>)`](crate::client::fluent_builders::UpdateUser::set_operations): <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute.</p>
-    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
-    pub fn update_user(&self) -> crate::client::fluent_builders::UpdateUser {
-        crate::client::fluent_builders::UpdateUser::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -451,9 +174,47 @@ impl Client {
     }
 }
 
+mod create_group;
+
+mod create_group_membership;
+
+mod create_user;
+
+mod delete_group;
+
+mod delete_group_membership;
+
+mod delete_user;
+
+mod describe_group;
+
+mod describe_group_membership;
+
+mod describe_user;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_group_id;
+
+mod get_group_membership_id;
+
+mod get_user_id;
+
+mod is_member_in_groups;
+
+mod list_group_memberships;
+
+mod list_group_memberships_for_member;
+
+mod list_groups;
+
+mod list_users;
+
+mod update_group;
+
+mod update_user;

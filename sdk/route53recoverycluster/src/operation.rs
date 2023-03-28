@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_routing_control_state_error(response)
+            crate::protocol_serde::shape_get_routing_control_state::de_get_routing_control_state_http_error(response)
         } else {
-            crate::operation_deser::parse_get_routing_control_state_response(response)
+            crate::protocol_serde::shape_get_routing_control_state::de_get_routing_control_state_http_response(response)
         }
     }
 }
@@ -62,9 +62,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_routing_controls_error(response)
+            crate::protocol_serde::shape_list_routing_controls::de_list_routing_controls_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_routing_controls_response(response)
+            crate::protocol_serde::shape_list_routing_controls::de_list_routing_controls_http_response(response)
         }
     }
 }
@@ -97,9 +99,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_routing_control_state_error(response)
+            crate::protocol_serde::shape_update_routing_control_state::de_update_routing_control_state_http_error(response)
         } else {
-            crate::operation_deser::parse_update_routing_control_state_response(response)
+            crate::protocol_serde::shape_update_routing_control_state::de_update_routing_control_state_http_response(response)
         }
     }
 }
@@ -132,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_routing_control_states_error(response)
+            crate::protocol_serde::shape_update_routing_control_states::de_update_routing_control_states_http_error(response)
         } else {
-            crate::operation_deser::parse_update_routing_control_states_response(response)
+            crate::protocol_serde::shape_update_routing_control_states::de_update_routing_control_states_http_response(response)
         }
     }
 }

@@ -92,7 +92,7 @@ impl DescribeAffectedAccountsForOrganizationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_affected_accounts_for_organization_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_affected_accounts_for_organization_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -210,7 +210,10 @@ impl DescribeAffectedEntitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_affected_entities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_affected_entities_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -330,7 +333,7 @@ impl DescribeAffectedEntitiesForOrganizationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_affected_entities_for_organization_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_affected_entities_for_organization_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -448,7 +451,10 @@ impl DescribeEventAggregatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_event_aggregates_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_event_aggregates_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -566,7 +572,8 @@ impl DescribeEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_events_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_events_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -684,7 +691,7 @@ impl DescribeEventsForOrganizationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_events_for_organization_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_events_for_organization_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -802,7 +809,8 @@ impl DescribeEventTypesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_event_types_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_event_types_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -852,7 +860,13 @@ impl DescribeAffectedAccountsForOrganizationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_affected_accounts_for_organization_output_affected_accounts(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_affected_accounts_for_organization_output_affected_accounts(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -876,11 +890,9 @@ impl DescribeAffectedEntitiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_affected_entities_output_entities(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_affected_entities_output_entities(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -908,7 +920,11 @@ impl DescribeAffectedEntitiesForOrganizationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_affected_entities_for_organization_output_entities(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_affected_entities_for_organization_output_entities(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -931,7 +947,11 @@ impl DescribeEventAggregatesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeEventAggregatesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_event_aggregates_output_event_aggregates(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_event_aggregates_output_event_aggregates(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -955,7 +975,7 @@ impl DescribeEventsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_events_output_events(page)
+            crate::lens::lens_describe_events_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -982,11 +1002,9 @@ impl DescribeEventsForOrganizationPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_events_for_organization_output_events(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_events_for_organization_output_events(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1011,7 +1029,7 @@ impl DescribeEventTypesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_event_types_output_event_types(page)
+            crate::lens::lens_describe_event_types_output_event_types(page)
                 .unwrap_or_default()
                 .into_iter()
         })

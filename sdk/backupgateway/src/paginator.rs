@@ -90,7 +90,8 @@ impl ListGatewaysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_gateways_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListHypervisorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_hypervisors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_hypervisors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListVirtualMachinesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_machines_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_machines_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +376,7 @@ impl ListGatewaysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_gateways_output_gateways(page)
+            crate::lens::lens_list_gateways_output_gateways(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -400,7 +403,7 @@ impl ListHypervisorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_hypervisors_output_hypervisors(page)
+            crate::lens::lens_list_hypervisors_output_hypervisors(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -427,11 +430,9 @@ impl ListVirtualMachinesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_virtual_machines_output_virtual_machines(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_virtual_machines_output_virtual_machines(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

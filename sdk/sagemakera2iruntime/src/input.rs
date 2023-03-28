@@ -507,7 +507,7 @@ impl StartHumanLoopInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_human_loop(&self)?,
+            crate::protocol_serde::shape_start_human_loop::ser_start_human_loop_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -630,7 +630,7 @@ impl StopHumanLoopInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_human_loop(&self)?,
+            crate::protocol_serde::shape_stop_human_loop::ser_stop_human_loop_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

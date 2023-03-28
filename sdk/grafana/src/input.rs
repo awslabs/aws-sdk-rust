@@ -221,7 +221,7 @@ impl CreateWorkspaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_workspace(&self)?,
+            crate::protocol_serde::shape_create_workspace::ser_create_workspace_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -368,9 +368,7 @@ impl CreateWorkspaceApiKeyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_workspace_api_key(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_workspace_api_key::ser_create_workspace_api_key_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1779,7 +1777,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2073,7 +2071,7 @@ impl UpdatePermissionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_permissions(&self)?,
+            crate::protocol_serde::shape_update_permissions::ser_update_permissions_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2220,7 +2218,7 @@ impl UpdateWorkspaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace(&self)?,
+            crate::protocol_serde::shape_update_workspace::ser_update_workspace_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2367,7 +2365,7 @@ impl UpdateWorkspaceAuthenticationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_authentication(&self)?
+            crate::protocol_serde::shape_update_workspace_authentication::ser_update_workspace_authentication_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2514,7 +2512,7 @@ impl UpdateWorkspaceConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_workspace_configuration(&self)?
+            crate::protocol_serde::shape_update_workspace_configuration::ser_update_workspace_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

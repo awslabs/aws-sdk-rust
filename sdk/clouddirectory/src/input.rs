@@ -53,7 +53,7 @@ impl AddFacetToObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_add_facet_to_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_add_facet_to_object::ser_add_facet_to_object_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -67,7 +67,7 @@ impl AddFacetToObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_facet_to_object(&self)?,
+            crate::protocol_serde::shape_add_facet_to_object::ser_add_facet_to_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -178,7 +178,9 @@ impl ApplySchemaInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_apply_schema(input, builder)?;
+                let builder = crate::protocol_serde::shape_apply_schema::ser_apply_schema_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -192,7 +194,7 @@ impl ApplySchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_apply_schema(&self)?,
+            crate::protocol_serde::shape_apply_schema::ser_apply_schema_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -303,7 +305,10 @@ impl AttachObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_attach_object(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_attach_object::ser_attach_object_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -317,7 +322,7 @@ impl AttachObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_object(&self)?,
+            crate::protocol_serde::shape_attach_object::ser_attach_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -428,7 +433,10 @@ impl AttachPolicyInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_attach_policy(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_attach_policy::ser_attach_policy_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -442,7 +450,7 @@ impl AttachPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)?,
+            crate::protocol_serde::shape_attach_policy::ser_attach_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -553,7 +561,10 @@ impl AttachToIndexInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_attach_to_index(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_attach_to_index::ser_attach_to_index_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -567,7 +578,7 @@ impl AttachToIndexInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_to_index(&self)?,
+            crate::protocol_serde::shape_attach_to_index::ser_attach_to_index_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -678,7 +689,10 @@ impl AttachTypedLinkInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_attach_typed_link(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_attach_typed_link::ser_attach_typed_link_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -692,7 +706,7 @@ impl AttachTypedLinkInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_typed_link(&self)?,
+            crate::protocol_serde::shape_attach_typed_link::ser_attach_typed_link_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -803,7 +817,9 @@ impl BatchReadInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_batch_read(input, builder)?;
+                let builder = crate::protocol_serde::shape_batch_read::ser_batch_read_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -817,7 +833,7 @@ impl BatchReadInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_read(&self)?,
+            crate::protocol_serde::shape_batch_read::ser_batch_read_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -926,7 +942,9 @@ impl BatchWriteInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_batch_write(input, builder)?;
+                let builder = crate::protocol_serde::shape_batch_write::ser_batch_write_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -940,7 +958,7 @@ impl BatchWriteInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_write(&self)?,
+            crate::protocol_serde::shape_batch_write::ser_batch_write_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1051,7 +1069,10 @@ impl CreateDirectoryInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_directory(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_directory::ser_create_directory_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1065,7 +1086,7 @@ impl CreateDirectoryInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_directory(&self)?,
+            crate::protocol_serde::shape_create_directory::ser_create_directory_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1176,7 +1197,9 @@ impl CreateFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_facet::ser_create_facet_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1190,7 +1213,7 @@ impl CreateFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_facet(&self)?,
+            crate::protocol_serde::shape_create_facet::ser_create_facet_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1301,7 +1324,9 @@ impl CreateIndexInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_index(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_index::ser_create_index_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1315,7 +1340,7 @@ impl CreateIndexInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_index(&self)?,
+            crate::protocol_serde::shape_create_index::ser_create_index_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1426,7 +1451,10 @@ impl CreateObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_object(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_object::ser_create_object_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1440,7 +1468,7 @@ impl CreateObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_object(&self)?,
+            crate::protocol_serde::shape_create_object::ser_create_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1564,7 +1592,7 @@ impl CreateSchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_schema(&self)?,
+            crate::protocol_serde::shape_create_schema::ser_create_schema_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1678,8 +1706,7 @@ impl CreateTypedLinkFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_typed_link_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_typed_link_facet::ser_create_typed_link_facet_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1693,9 +1720,7 @@ impl CreateTypedLinkFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_typed_link_facet(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_typed_link_facet::ser_create_typed_link_facet_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1806,7 +1831,10 @@ impl DeleteDirectoryInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_directory(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_directory::ser_delete_directory_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1917,7 +1945,9 @@ impl DeleteFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_facet::ser_delete_facet_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1931,7 +1961,7 @@ impl DeleteFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_facet(&self)?,
+            crate::protocol_serde::shape_delete_facet::ser_delete_facet_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2042,7 +2072,10 @@ impl DeleteObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_object(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_object::ser_delete_object_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2056,7 +2089,7 @@ impl DeleteObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_object(&self)?,
+            crate::protocol_serde::shape_delete_object::ser_delete_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2167,7 +2200,10 @@ impl DeleteSchemaInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_schema(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_schema::ser_delete_schema_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2281,8 +2317,7 @@ impl DeleteTypedLinkFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_typed_link_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_typed_link_facet::ser_delete_typed_link_facet_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2296,9 +2331,7 @@ impl DeleteTypedLinkFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_typed_link_facet(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_typed_link_facet::ser_delete_typed_link_facet_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2409,7 +2442,10 @@ impl DetachFromIndexInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_detach_from_index(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_detach_from_index::ser_detach_from_index_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2423,7 +2459,7 @@ impl DetachFromIndexInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_from_index(&self)?,
+            crate::protocol_serde::shape_detach_from_index::ser_detach_from_index_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2534,7 +2570,10 @@ impl DetachObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_detach_object(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_detach_object::ser_detach_object_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2548,7 +2587,7 @@ impl DetachObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_object(&self)?,
+            crate::protocol_serde::shape_detach_object::ser_detach_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2659,7 +2698,10 @@ impl DetachPolicyInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_detach_policy(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_detach_policy::ser_detach_policy_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2673,7 +2715,7 @@ impl DetachPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)?,
+            crate::protocol_serde::shape_detach_policy::ser_detach_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2784,7 +2826,10 @@ impl DetachTypedLinkInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_detach_typed_link(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_detach_typed_link::ser_detach_typed_link_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2798,7 +2843,7 @@ impl DetachTypedLinkInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_typed_link(&self)?,
+            crate::protocol_serde::shape_detach_typed_link::ser_detach_typed_link_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2909,7 +2954,10 @@ impl DisableDirectoryInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_disable_directory(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_disable_directory::ser_disable_directory_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3020,7 +3068,10 @@ impl EnableDirectoryInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_enable_directory(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_enable_directory::ser_enable_directory_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3147,9 +3198,7 @@ impl GetAppliedSchemaVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_applied_schema_version(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_applied_schema_version::ser_get_applied_schema_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3260,7 +3309,10 @@ impl GetDirectoryInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_directory(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_directory::ser_get_directory_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3371,7 +3423,8 @@ impl GetFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_facet(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_facet::ser_get_facet_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3385,7 +3438,7 @@ impl GetFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_facet(&self)?,
+            crate::protocol_serde::shape_get_facet::ser_get_facet_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3497,7 +3550,7 @@ impl GetLinkAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_link_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_link_attributes::ser_get_link_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3511,7 +3564,7 @@ impl GetLinkAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_link_attributes(&self)?,
+            crate::protocol_serde::shape_get_link_attributes::ser_get_link_attributes_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3625,7 +3678,7 @@ impl GetObjectAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_attributes::ser_get_object_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3639,7 +3692,9 @@ impl GetObjectAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_object_attributes(&self)?,
+            crate::protocol_serde::shape_get_object_attributes::ser_get_object_attributes_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3753,8 +3808,7 @@ impl GetObjectInformationInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_get_object_information(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object_information::ser_get_object_information_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3768,7 +3822,7 @@ impl GetObjectInformationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_object_information(
+            crate::protocol_serde::shape_get_object_information::ser_get_object_information_input(
                 &self,
             )?,
         );
@@ -3881,7 +3935,7 @@ impl GetSchemaAsJsonInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_schema_as_json(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_schema_as_json::ser_get_schema_as_json_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3995,9 +4049,7 @@ impl GetTypedLinkFacetInformationInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_typed_link_facet_information(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_get_typed_link_facet_information::ser_get_typed_link_facet_information_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4011,7 +4063,7 @@ impl GetTypedLinkFacetInformationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_typed_link_facet_information(&self)?
+            crate::protocol_serde::shape_get_typed_link_facet_information::ser_get_typed_link_facet_information_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4135,9 +4187,7 @@ impl ListAppliedSchemaArnsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_applied_schema_arns(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_applied_schema_arns::ser_list_applied_schema_arns_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4248,7 +4298,7 @@ impl ListAttachedIndicesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_attached_indices(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_attached_indices::ser_list_attached_indices_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4262,7 +4312,9 @@ impl ListAttachedIndicesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_attached_indices(&self)?,
+            crate::protocol_serde::shape_list_attached_indices::ser_list_attached_indices_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4389,9 +4441,7 @@ impl ListDevelopmentSchemaArnsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_development_schema_arns(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_development_schema_arns::ser_list_development_schema_arns_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4515,7 +4565,7 @@ impl ListDirectoriesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_directories(&self)?,
+            crate::protocol_serde::shape_list_directories::ser_list_directories_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4626,7 +4676,7 @@ impl ListFacetAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_facet_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_facet_attributes::ser_list_facet_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4640,7 +4690,9 @@ impl ListFacetAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_facet_attributes(&self)?,
+            crate::protocol_serde::shape_list_facet_attributes::ser_list_facet_attributes_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4751,7 +4803,10 @@ impl ListFacetNamesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_facet_names(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_list_facet_names::ser_list_facet_names_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4765,7 +4820,7 @@ impl ListFacetNamesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_facet_names(&self)?,
+            crate::protocol_serde::shape_list_facet_names::ser_list_facet_names_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4879,8 +4934,7 @@ impl ListIncomingTypedLinksInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_incoming_typed_links(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_incoming_typed_links::ser_list_incoming_typed_links_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4894,9 +4948,7 @@ impl ListIncomingTypedLinksInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_incoming_typed_links(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_incoming_typed_links::ser_list_incoming_typed_links_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5007,7 +5059,9 @@ impl ListIndexInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_index(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_index::ser_list_index_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5021,7 +5075,7 @@ impl ListIndexInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_index(&self)?,
+            crate::protocol_serde::shape_list_index::ser_list_index_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5143,9 +5197,7 @@ impl ListManagedSchemaArnsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_managed_schema_arns(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_managed_schema_arns::ser_list_managed_schema_arns_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5256,8 +5308,7 @@ impl ListObjectAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_object_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_attributes::ser_list_object_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5271,7 +5322,7 @@ impl ListObjectAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_object_attributes(
+            crate::protocol_serde::shape_list_object_attributes::ser_list_object_attributes_input(
                 &self,
             )?,
         );
@@ -5384,7 +5435,7 @@ impl ListObjectChildrenInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_object_children(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_children::ser_list_object_children_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5398,7 +5449,9 @@ impl ListObjectChildrenInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_object_children(&self)?,
+            crate::protocol_serde::shape_list_object_children::ser_list_object_children_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5512,8 +5565,7 @@ impl ListObjectParentPathsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_object_parent_paths(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_parent_paths::ser_list_object_parent_paths_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5527,9 +5579,7 @@ impl ListObjectParentPathsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_object_parent_paths(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_object_parent_paths::ser_list_object_parent_paths_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5640,7 +5690,7 @@ impl ListObjectParentsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_object_parents(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_parents::ser_list_object_parents_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5654,7 +5704,7 @@ impl ListObjectParentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_object_parents(&self)?,
+            crate::protocol_serde::shape_list_object_parents::ser_list_object_parents_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5765,7 +5815,7 @@ impl ListObjectPoliciesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_object_policies(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_object_policies::ser_list_object_policies_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5779,7 +5829,9 @@ impl ListObjectPoliciesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_object_policies(&self)?,
+            crate::protocol_serde::shape_list_object_policies::ser_list_object_policies_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5893,8 +5945,7 @@ impl ListOutgoingTypedLinksInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_outgoing_typed_links(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_outgoing_typed_links::ser_list_outgoing_typed_links_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5908,9 +5959,7 @@ impl ListOutgoingTypedLinksInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_outgoing_typed_links(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_outgoing_typed_links::ser_list_outgoing_typed_links_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6021,8 +6070,7 @@ impl ListPolicyAttachmentsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_policy_attachments(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_policy_attachments::ser_list_policy_attachments_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6036,9 +6084,7 @@ impl ListPolicyAttachmentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_policy_attachments(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_policy_attachments::ser_list_policy_attachments_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6162,9 +6208,7 @@ impl ListPublishedSchemaArnsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_published_schema_arns(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_published_schema_arns::ser_list_published_schema_arns_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6288,7 +6332,7 @@ impl ListTagsForResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+            crate::protocol_serde::shape_list_tags_for_resource::ser_list_tags_for_resource_input(
                 &self,
             )?,
         );
@@ -6404,9 +6448,7 @@ impl ListTypedLinkFacetAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_typed_link_facet_attributes(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_list_typed_link_facet_attributes::ser_list_typed_link_facet_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6420,7 +6462,7 @@ impl ListTypedLinkFacetAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_attributes(&self)?
+            crate::protocol_serde::shape_list_typed_link_facet_attributes::ser_list_typed_link_facet_attributes_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6534,8 +6576,7 @@ impl ListTypedLinkFacetNamesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_typed_link_facet_names(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_typed_link_facet_names::ser_list_typed_link_facet_names_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6549,9 +6590,7 @@ impl ListTypedLinkFacetNamesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_typed_link_facet_names(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_typed_link_facet_names::ser_list_typed_link_facet_names_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6662,7 +6701,10 @@ impl LookupPolicyInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_lookup_policy(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_lookup_policy::ser_lookup_policy_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6676,7 +6718,7 @@ impl LookupPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_lookup_policy(&self)?,
+            crate::protocol_serde::shape_lookup_policy::ser_lookup_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6787,7 +6829,10 @@ impl PublishSchemaInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_publish_schema(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_publish_schema::ser_publish_schema_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6801,7 +6846,7 @@ impl PublishSchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_publish_schema(&self)?,
+            crate::protocol_serde::shape_publish_schema::ser_publish_schema_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6912,7 +6957,7 @@ impl PutSchemaFromJsonInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_schema_from_json(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_schema_from_json::ser_put_schema_from_json_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6926,7 +6971,9 @@ impl PutSchemaFromJsonInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_schema_from_json(&self)?,
+            crate::protocol_serde::shape_put_schema_from_json::ser_put_schema_from_json_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7040,8 +7087,7 @@ impl RemoveFacetFromObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_remove_facet_from_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_remove_facet_from_object::ser_remove_facet_from_object_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7055,9 +7101,7 @@ impl RemoveFacetFromObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_facet_from_object(
-                &self,
-            )?,
+            crate::protocol_serde::shape_remove_facet_from_object::ser_remove_facet_from_object_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7181,7 +7225,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7305,7 +7349,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7416,7 +7460,9 @@ impl UpdateFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_facet::ser_update_facet_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7430,7 +7476,7 @@ impl UpdateFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_facet(&self)?,
+            crate::protocol_serde::shape_update_facet::ser_update_facet_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7544,8 +7590,7 @@ impl UpdateLinkAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_link_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_link_attributes::ser_update_link_attributes_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7559,7 +7604,7 @@ impl UpdateLinkAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_link_attributes(
+            crate::protocol_serde::shape_update_link_attributes::ser_update_link_attributes_input(
                 &self,
             )?,
         );
@@ -7672,8 +7717,7 @@ impl UpdateObjectAttributesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_object_attributes(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_object_attributes::ser_update_object_attributes_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7687,9 +7731,7 @@ impl UpdateObjectAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_object_attributes(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_object_attributes::ser_update_object_attributes_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7800,7 +7842,10 @@ impl UpdateSchemaInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_schema(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_update_schema::ser_update_schema_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7814,7 +7859,7 @@ impl UpdateSchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_schema(&self)?,
+            crate::protocol_serde::shape_update_schema::ser_update_schema_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7925,8 +7970,7 @@ impl UpdateTypedLinkFacetInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_typed_link_facet(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_typed_link_facet::ser_update_typed_link_facet_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7940,9 +7984,7 @@ impl UpdateTypedLinkFacetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_typed_link_facet(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_typed_link_facet::ser_update_typed_link_facet_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -8069,7 +8111,7 @@ impl UpgradeAppliedSchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_upgrade_applied_schema(
+            crate::protocol_serde::shape_upgrade_applied_schema::ser_upgrade_applied_schema_input(
                 &self,
             )?,
         );
@@ -8198,9 +8240,7 @@ impl UpgradePublishedSchemaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_upgrade_published_schema(
-                &self,
-            )?,
+            crate::protocol_serde::shape_upgrade_published_schema::ser_upgrade_published_schema_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

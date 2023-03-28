@@ -70,9 +70,7 @@ impl DescribeReportCreationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_report_creation(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_report_creation::ser_describe_report_creation_input(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -193,7 +191,7 @@ impl GetComplianceSummaryInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_compliance_summary(
+            crate::protocol_serde::shape_get_compliance_summary::ser_get_compliance_summary_input(
                 &self,
             )?,
         );
@@ -323,7 +321,7 @@ impl GetResourcesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_resources(&self)?,
+            crate::protocol_serde::shape_get_resources::ser_get_resources_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -451,7 +449,7 @@ impl GetTagKeysInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_tag_keys(&self)?,
+            crate::protocol_serde::shape_get_tag_keys::ser_get_tag_keys_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -579,7 +577,7 @@ impl GetTagValuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_tag_values(&self)?,
+            crate::protocol_serde::shape_get_tag_values::ser_get_tag_values_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -707,7 +705,9 @@ impl StartReportCreationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_report_creation(&self)?,
+            crate::protocol_serde::shape_start_report_creation::ser_start_report_creation_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -835,7 +835,7 @@ impl TagResourcesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resources(&self)?,
+            crate::protocol_serde::shape_tag_resources::ser_tag_resources_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -963,7 +963,7 @@ impl UntagResourcesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resources(&self)?,
+            crate::protocol_serde::shape_untag_resources::ser_untag_resources_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

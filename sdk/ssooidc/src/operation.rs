@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_token_error(response)
+            crate::protocol_serde::shape_create_token::de_create_token_http_error(response)
         } else {
-            crate::operation_deser::parse_create_token_response(response)
+            crate::protocol_serde::shape_create_token::de_create_token_http_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterClient {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_client_error(response)
+            crate::protocol_serde::shape_register_client::de_register_client_http_error(response)
         } else {
-            crate::operation_deser::parse_register_client_response(response)
+            crate::protocol_serde::shape_register_client::de_register_client_http_response(response)
         }
     }
 }
@@ -93,9 +93,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeviceAuthorization
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_device_authorization_error(response)
+            crate::protocol_serde::shape_start_device_authorization::de_start_device_authorization_http_error(response)
         } else {
-            crate::operation_deser::parse_start_device_authorization_response(response)
+            crate::protocol_serde::shape_start_device_authorization::de_start_device_authorization_http_response(response)
         }
     }
 }

@@ -90,7 +90,8 @@ impl ListDestinationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_destinations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_destinations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,7 @@ impl ListSitesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sites_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_sites_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +327,8 @@ impl ListWorkerFleetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_worker_fleets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_worker_fleets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +446,8 @@ impl ListWorkersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_workers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_workers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -491,7 +494,7 @@ impl ListDestinationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_destinations_output_destinations(page)
+            crate::lens::lens_list_destinations_output_destinations(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -518,7 +521,7 @@ impl ListSitesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_sites_output_sites(page)
+            crate::lens::lens_list_sites_output_sites(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -545,7 +548,7 @@ impl ListWorkerFleetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_worker_fleets_output_worker_fleets(page)
+            crate::lens::lens_list_worker_fleets_output_worker_fleets(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -572,7 +575,7 @@ impl ListWorkersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_workers_output_workers(page)
+            crate::lens::lens_list_workers_output_workers(page)
                 .unwrap_or_default()
                 .into_iter()
         })

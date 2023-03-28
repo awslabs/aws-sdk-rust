@@ -82,7 +82,8 @@ impl DescribeListenersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_listeners_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_listeners_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -192,7 +193,10 @@ impl DescribeLoadBalancersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_load_balancers_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_load_balancers_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -302,7 +306,10 @@ impl DescribeTargetGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_target_groups_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_target_groups_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -349,7 +356,7 @@ impl DescribeListenersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_listeners_output_listeners(page)
+            crate::lens::lens_describe_listeners_output_listeners(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -376,11 +383,9 @@ impl DescribeLoadBalancersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_load_balancers_output_load_balancers(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_load_balancers_output_load_balancers(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -405,11 +410,9 @@ impl DescribeTargetGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_target_groups_output_target_groups(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_target_groups_output_target_groups(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

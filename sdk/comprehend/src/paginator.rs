@@ -82,7 +82,7 @@ impl ListDocumentClassificationJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_document_classification_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_document_classification_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +192,10 @@ impl ListDocumentClassifiersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_document_classifiers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_document_classifiers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +305,7 @@ impl ListDocumentClassifierSummariesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_document_classifier_summaries_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_document_classifier_summaries_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +415,7 @@ impl ListDominantLanguageDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_dominant_language_detection_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_dominant_language_detection_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -530,7 +533,8 @@ impl ListEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_endpoints_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_endpoints_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -640,7 +644,10 @@ impl ListEntitiesDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_entities_detection_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_entities_detection_jobs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -750,7 +757,10 @@ impl ListEntityRecognizersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_entity_recognizers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_entity_recognizers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -860,7 +870,7 @@ impl ListEntityRecognizerSummariesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_entity_recognizer_summaries_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_entity_recognizer_summaries_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -970,7 +980,10 @@ impl ListEventsDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_events_detection_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_events_detection_jobs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1080,7 +1093,7 @@ impl ListKeyPhrasesDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_key_phrases_detection_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_key_phrases_detection_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1198,7 +1211,7 @@ impl ListPiiEntitiesDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pii_entities_detection_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_pii_entities_detection_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1308,7 +1321,7 @@ impl ListSentimentDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sentiment_detection_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_sentiment_detection_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1420,7 +1433,7 @@ impl ListTargetedSentimentDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_targeted_sentiment_detection_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_targeted_sentiment_detection_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1530,7 +1543,10 @@ impl ListTopicsDetectionJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_topics_detection_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_topics_detection_jobs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1577,11 +1593,9 @@ impl ListEndpointsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_endpoints_output_endpoint_properties_list(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_endpoints_output_endpoint_properties_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1605,6 +1619,6 @@ impl ListPiiEntitiesDetectionJobsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListPiiEntitiesDetectionJobsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_pii_entities_detection_jobs_output_pii_entities_detection_job_properties_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_pii_entities_detection_jobs_output_pii_entities_detection_job_properties_list(page).unwrap_or_default().into_iter())
     }
 }

@@ -89,957 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateEntitiesToExperience`](crate::client::fluent_builders::AssociateEntitiesToExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::AssociateEntitiesToExperience::set_entity_list): <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    /// - On success, responds with [`AssociateEntitiesToExperienceOutput`](crate::output::AssociateEntitiesToExperienceOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociateEntitiesToExperienceOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    /// - On failure, responds with [`SdkError<AssociateEntitiesToExperienceError>`](crate::error::AssociateEntitiesToExperienceError)
-    pub fn associate_entities_to_experience(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateEntitiesToExperience {
-        crate::client::fluent_builders::AssociateEntitiesToExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociatePersonasToEntities`](crate::client::fluent_builders::AssociatePersonasToEntities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`personas(Vec<EntityPersonaConfiguration>)`](crate::client::fluent_builders::AssociatePersonasToEntities::personas) / [`set_personas(Option<Vec<EntityPersonaConfiguration>>)`](crate::client::fluent_builders::AssociatePersonasToEntities::set_personas): <p>The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are <code>Owner</code> and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing access to your search page</a>.</p>
-    /// - On success, responds with [`AssociatePersonasToEntitiesOutput`](crate::output::AssociatePersonasToEntitiesOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::AssociatePersonasToEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    /// - On failure, responds with [`SdkError<AssociatePersonasToEntitiesError>`](crate::error::AssociatePersonasToEntitiesError)
-    pub fn associate_personas_to_entities(
-        &self,
-    ) -> crate::client::fluent_builders::AssociatePersonasToEntities {
-        crate::client::fluent_builders::AssociatePersonasToEntities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteDocument`](crate::client::fluent_builders::BatchDeleteDocument) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteDocument::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteDocument::set_index_id): <p>The identifier of the index that contains the documents to delete.</p>
-    ///   - [`document_id_list(Vec<String>)`](crate::client::fluent_builders::BatchDeleteDocument::document_id_list) / [`set_document_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteDocument::set_document_id_list): <p>One or more identifiers for documents to delete from the index.</p>
-    ///   - [`data_source_sync_job_metric_target(DataSourceSyncJobMetricTarget)`](crate::client::fluent_builders::BatchDeleteDocument::data_source_sync_job_metric_target) / [`set_data_source_sync_job_metric_target(Option<DataSourceSyncJobMetricTarget>)`](crate::client::fluent_builders::BatchDeleteDocument::set_data_source_sync_job_metric_target): <p>Maps a particular data source sync job to a particular data source.</p>
-    /// - On success, responds with [`BatchDeleteDocumentOutput`](crate::output::BatchDeleteDocumentOutput) with field(s):
-    ///   - [`failed_documents(Option<Vec<BatchDeleteDocumentResponseFailedDocument>>)`](crate::output::BatchDeleteDocumentOutput::failed_documents): <p>A list of documents that could not be removed from the index. Each entry contains an error message that indicates why the document couldn't be removed from the index.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteDocumentError>`](crate::error::BatchDeleteDocumentError)
-    pub fn batch_delete_document(&self) -> crate::client::fluent_builders::BatchDeleteDocument {
-        crate::client::fluent_builders::BatchDeleteDocument::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchGetDocumentStatus`](crate::client::fluent_builders::BatchGetDocumentStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchGetDocumentStatus::set_index_id): <p>The identifier of the index to add documents to. The index ID is returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html">CreateIndex </a> API.</p>
-    ///   - [`document_info_list(Vec<DocumentInfo>)`](crate::client::fluent_builders::BatchGetDocumentStatus::document_info_list) / [`set_document_info_list(Option<Vec<DocumentInfo>>)`](crate::client::fluent_builders::BatchGetDocumentStatus::set_document_info_list): <p>A list of <code>DocumentInfo</code> objects that identify the documents for which to get the status. You identify the documents by their document ID and optional attributes.</p>
-    /// - On success, responds with [`BatchGetDocumentStatusOutput`](crate::output::BatchGetDocumentStatusOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchGetDocumentStatusResponseError>>)`](crate::output::BatchGetDocumentStatusOutput::errors): <p>A list of documents that Amazon Kendra couldn't get the status for. The list includes the ID of the document and the reason that the status couldn't be found.</p>
-    ///   - [`document_status_list(Option<Vec<Status>>)`](crate::output::BatchGetDocumentStatusOutput::document_status_list): <p>The status of documents. The status indicates if the document is waiting to be indexed, is in the process of indexing, has completed indexing, or failed indexing. If a document failed indexing, the status provides the reason why.</p>
-    /// - On failure, responds with [`SdkError<BatchGetDocumentStatusError>`](crate::error::BatchGetDocumentStatusError)
-    pub fn batch_get_document_status(
-        &self,
-    ) -> crate::client::fluent_builders::BatchGetDocumentStatus {
-        crate::client::fluent_builders::BatchGetDocumentStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchPutDocument`](crate::client::fluent_builders::BatchPutDocument) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_index_id): <p>The identifier of the index to add the documents to. You need to create the index first using the <code>CreateIndex</code> API.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::BatchPutDocument::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::BatchPutDocument::set_role_arn): <p>The Amazon Resource Name (ARN) of a role that is allowed to run the <code>BatchPutDocument</code> API. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
-    ///   - [`documents(Vec<Document>)`](crate::client::fluent_builders::BatchPutDocument::documents) / [`set_documents(Option<Vec<Document>>)`](crate::client::fluent_builders::BatchPutDocument::set_documents): <p>One or more documents to add to the index.</p>  <p>Documents have the following file size limits.</p>  <ul>   <li> <p>5 MB total size for inline documents</p> </li>   <li> <p>50 MB total size for files from an S3 bucket</p> </li>   <li> <p>5 MB extracted text for any file</p> </li>  </ul>  <p>For more information about file size and transaction per second quotas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::BatchPutDocument::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::BatchPutDocument::set_custom_document_enrichment_configuration): <p>Configuration information for altering your document metadata and content during the document ingestion process when you use the <code>BatchPutDocument</code> API.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    /// - On success, responds with [`BatchPutDocumentOutput`](crate::output::BatchPutDocumentOutput) with field(s):
-    ///   - [`failed_documents(Option<Vec<BatchPutDocumentResponseFailedDocument>>)`](crate::output::BatchPutDocumentOutput::failed_documents): <p>A list of documents that were not added to the index because the document failed a validation check. Each document contains an error message that indicates why the document couldn't be added to the index.</p>  <p>If there was an error adding a document to an index the error is reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring Amazon Kendra with Amazon CloudWatch Logs</a> </p>
-    /// - On failure, responds with [`SdkError<BatchPutDocumentError>`](crate::error::BatchPutDocumentError)
-    pub fn batch_put_document(&self) -> crate::client::fluent_builders::BatchPutDocument {
-        crate::client::fluent_builders::BatchPutDocument::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ClearQuerySuggestions`](crate::client::fluent_builders::ClearQuerySuggestions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ClearQuerySuggestions::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ClearQuerySuggestions::set_index_id): <p>The identifier of the index you want to clear query suggestions from.</p>
-    /// - On success, responds with [`ClearQuerySuggestionsOutput`](crate::output::ClearQuerySuggestionsOutput)
-
-    /// - On failure, responds with [`SdkError<ClearQuerySuggestionsError>`](crate::error::ClearQuerySuggestionsError)
-    pub fn clear_query_suggestions(&self) -> crate::client::fluent_builders::ClearQuerySuggestions {
-        crate::client::fluent_builders::ClearQuerySuggestions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAccessControlConfiguration`](crate::client::fluent_builders::CreateAccessControlConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_index_id): <p>The identifier of the index to create an access control configuration for your documents.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_name): <p>A name for the access control configuration.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_description): <p>A description for the access control configuration.</p>
-    ///   - [`access_control_list(Vec<Principal>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::access_control_list) / [`set_access_control_list(Option<Vec<Principal>>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_access_control_list): <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    ///   - [`hierarchical_access_control_list(Vec<HierarchicalPrincipal>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::hierarchical_access_control_list) / [`set_hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_hierarchical_access_control_list): <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessControlConfiguration::set_client_token): <p>A token that you provide to identify the request to create an access control configuration. Multiple calls to the <code>CreateAccessControlConfiguration</code> API with the same client token will create only one access control configuration.</p>
-    /// - On success, responds with [`CreateAccessControlConfigurationOutput`](crate::output::CreateAccessControlConfigurationOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateAccessControlConfigurationOutput::id): <p>The identifier of the access control configuration for your documents in an index.</p>
-    /// - On failure, responds with [`SdkError<CreateAccessControlConfigurationError>`](crate::error::CreateAccessControlConfigurationError)
-    pub fn create_access_control_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::CreateAccessControlConfiguration {
-        crate::client::fluent_builders::CreateAccessControlConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDataSource`](crate::client::fluent_builders::CreateDataSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_name): <p>A name for the data source connector.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_index_id): <p>The identifier of the index you want to use with the data source connector.</p>
-    ///   - [`r#type(DataSourceType)`](crate::client::fluent_builders::CreateDataSource::type) / [`set_type(Option<DataSourceType>)`](crate::client::fluent_builders::CreateDataSource::set_type): <p>The type of data source repository. For example, <code>SHAREPOINT</code>.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_configuration): <p>Configuration information to connect to your data source repository.</p>  <p>You can't specify the <code>Configuration</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>Configuration</code> parameter is required for all other data sources.</p>
-    ///   - [`vpc_configuration(DataSourceVpcConfiguration)`](crate::client::fluent_builders::CreateDataSource::vpc_configuration) / [`set_vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_description): <p>A description for the data source connector.</p>
-    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_schedule): <p>Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the <code>StartDataSourceSyncJob</code> API to update the index.</p>  <p>You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>  <p>You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.</p>  <p>The <code>RoleArn</code> parameter is required for all other data sources.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDataSource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDataSource::set_tags): <p>A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_client_token): <p>A token that you provide to identify the request to create a data source connector. Multiple calls to the <code>CreateDataSource</code> API with the same client token will create only one data source connector.</p>
-    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateDataSource::set_language_code): <p>The code for a language. This allows you to support a language for all documents when creating the data source connector. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::CreateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::CreateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    /// - On success, responds with [`CreateDataSourceOutput`](crate::output::CreateDataSourceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateDataSourceOutput::id): <p>The identifier of the data source connector.</p>
-    /// - On failure, responds with [`SdkError<CreateDataSourceError>`](crate::error::CreateDataSourceError)
-    pub fn create_data_source(&self) -> crate::client::fluent_builders::CreateDataSource {
-        crate::client::fluent_builders::CreateDataSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateExperience`](crate::client::fluent_builders::CreateExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_name): <p>A name for your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::CreateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::CreateExperience::set_configuration): <p>Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_description): <p>A description for your Amazon Kendra experience.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateExperience::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateExperience::set_client_token): <p>A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the <code>CreateExperience</code> API with the same client token creates only one Amazon Kendra experience.</p>
-    /// - On success, responds with [`CreateExperienceOutput`](crate::output::CreateExperienceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateExperienceOutput::id): <p>The identifier for your created Amazon Kendra experience.</p>
-    /// - On failure, responds with [`SdkError<CreateExperienceError>`](crate::error::CreateExperienceError)
-    pub fn create_experience(&self) -> crate::client::fluent_builders::CreateExperience {
-        crate::client::fluent_builders::CreateExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateFaq`](crate::client::fluent_builders::CreateFaq) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_name): <p>A name for the FAQ.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_description): <p>A description for the FAQ.</p>
-    ///   - [`s3_path(S3Path)`](crate::client::fluent_builders::CreateFaq::s3_path) / [`set_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateFaq::set_s3_path): <p>The path to the FAQ file in S3.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateFaq::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateFaq::set_tags): <p>A list of key-value pairs that identify the FAQ. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`file_format(FaqFileFormat)`](crate::client::fluent_builders::CreateFaq::file_format) / [`set_file_format(Option<FaqFileFormat>)`](crate::client::fluent_builders::CreateFaq::set_file_format): <p>The format of the FAQ input file. You can choose between a basic CSV format, a CSV format that includes customs attributes in a header, and a JSON format that includes custom attributes.</p>  <p>The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code> parameter.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_client_token): <p>A token that you provide to identify the request to create a FAQ. Multiple calls to the <code>CreateFaqRequest</code> API with the same client token will create only one FAQ. </p>
-    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::CreateFaq::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::CreateFaq::set_language_code): <p>The code for a language. This allows you to support a language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    /// - On success, responds with [`CreateFaqOutput`](crate::output::CreateFaqOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateFaqOutput::id): <p>The identifier of the FAQ.</p>
-    /// - On failure, responds with [`SdkError<CreateFaqError>`](crate::error::CreateFaqError)
-    pub fn create_faq(&self) -> crate::client::fluent_builders::CreateFaq {
-        crate::client::fluent_builders::CreateFaq::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateIndex`](crate::client::fluent_builders::CreateIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_name): <p>A name for the index.</p>
-    ///   - [`edition(IndexEdition)`](crate::client::fluent_builders::CreateIndex::edition) / [`set_edition(Option<IndexEdition>)`](crate::client::fluent_builders::CreateIndex::set_edition): <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases. Once you set the edition for an index, it can't be changed.</p>  <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>  <p>For more information on quota limits for enterprise and developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_role_arn): <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also the role you use when you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3 bucket.</p>
-    ///   - [`server_side_encryption_configuration(ServerSideEncryptionConfiguration)`](crate::client::fluent_builders::CreateIndex::server_side_encryption_configuration) / [`set_server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_server_side_encryption_configuration): <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_description): <p>A description for the index.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateIndex::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateIndex::set_client_token): <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateIndex::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateIndex::set_tags): <p>A list of key-value pairs that identify the index. You can use the tags to identify and organize your resources and to control access to resources.</p>
-    ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::CreateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::CreateIndex::set_user_token_configurations): <p>The user token configuration.</p>
-    ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::CreateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::CreateIndex::set_user_context_policy): <p>The user context policy.</p>  <dl>   <dt>   ATTRIBUTE_FILTER  </dt>   <dd>    <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>   </dd>   <dt>   USER_TOKEN  </dt>   <dd>    <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>   </dd>  </dl>
-    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::CreateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::CreateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    /// - On success, responds with [`CreateIndexOutput`](crate::output::CreateIndexOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateIndexOutput::id): <p>The identifier of the index. Use this identifier when you query an index, set up a data source, or index a document.</p>
-    /// - On failure, responds with [`SdkError<CreateIndexError>`](crate::error::CreateIndexError)
-    pub fn create_index(&self) -> crate::client::fluent_builders::CreateIndex {
-        crate::client::fluent_builders::CreateIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateQuerySuggestionsBlockList`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index you want to create a query suggestions block list for.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_name): <p>A user friendly name for the block list.</p>  <p>For example, the block list named 'offensive-words' includes all offensive words that could appear in user queries and need to be blocked from suggestions.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_description): <p>A user-friendly description for the block list.</p>  <p>For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."</p>
-    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_source_s3_path): <p>The S3 path to your block list text file in your S3 bucket.</p>  <p>Each block word or phrase should be on a separate line in a text file.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_client_token): <p>A token that you provide to identify the request to create a query suggestions block list.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in your S3 bucket.</p>  <p>You need permissions to the role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateQuerySuggestionsBlockList::set_tags): <p>A tag that you can assign to a block list that categorizes the block list.</p>
-    /// - On success, responds with [`CreateQuerySuggestionsBlockListOutput`](crate::output::CreateQuerySuggestionsBlockListOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateQuerySuggestionsBlockListOutput::id): <p>The identifier of the created block list.</p>
-    /// - On failure, responds with [`SdkError<CreateQuerySuggestionsBlockListError>`](crate::error::CreateQuerySuggestionsBlockListError)
-    pub fn create_query_suggestions_block_list(
-        &self,
-    ) -> crate::client::fluent_builders::CreateQuerySuggestionsBlockList {
-        crate::client::fluent_builders::CreateQuerySuggestionsBlockList::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateThesaurus`](crate::client::fluent_builders::CreateThesaurus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_name): <p>A name for the thesaurus.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_description): <p>A description for the thesaurus.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateThesaurus::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateThesaurus::set_tags): <p>A list of key-value pairs that identify the thesaurus. You can use the tags to identify and organize your resources and to control access to resources. </p>
-    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::CreateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::CreateThesaurus::set_source_s3_path): <p>The path to the thesaurus file in S3.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateThesaurus::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateThesaurus::set_client_token): <p>A token that you provide to identify the request to create a thesaurus. Multiple calls to the <code>CreateThesaurus</code> API with the same client token will create only one thesaurus. </p>
-    /// - On success, responds with [`CreateThesaurusOutput`](crate::output::CreateThesaurusOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateThesaurusOutput::id): <p>The identifier of the thesaurus. </p>
-    /// - On failure, responds with [`SdkError<CreateThesaurusError>`](crate::error::CreateThesaurusError)
-    pub fn create_thesaurus(&self) -> crate::client::fluent_builders::CreateThesaurus {
-        crate::client::fluent_builders::CreateThesaurus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAccessControlConfiguration`](crate::client::fluent_builders::DeleteAccessControlConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to delete.</p>
-    /// - On success, responds with [`DeleteAccessControlConfigurationOutput`](crate::output::DeleteAccessControlConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAccessControlConfigurationError>`](crate::error::DeleteAccessControlConfigurationError)
-    pub fn delete_access_control_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteAccessControlConfiguration {
-        crate::client::fluent_builders::DeleteAccessControlConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDataSource`](crate::client::fluent_builders::DeleteDataSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_id): <p>The identifier of the data source connector you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    /// - On success, responds with [`DeleteDataSourceOutput`](crate::output::DeleteDataSourceOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDataSourceError>`](crate::error::DeleteDataSourceError)
-    pub fn delete_data_source(&self) -> crate::client::fluent_builders::DeleteDataSource {
-        crate::client::fluent_builders::DeleteDataSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteExperience`](crate::client::fluent_builders::DeleteExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    /// - On success, responds with [`DeleteExperienceOutput`](crate::output::DeleteExperienceOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteExperienceError>`](crate::error::DeleteExperienceError)
-    pub fn delete_experience(&self) -> crate::client::fluent_builders::DeleteExperience {
-        crate::client::fluent_builders::DeleteExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFaq`](crate::client::fluent_builders::DeleteFaq) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_id): <p>The identifier of the FAQ you want to remove.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
-    /// - On success, responds with [`DeleteFaqOutput`](crate::output::DeleteFaqOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFaqError>`](crate::error::DeleteFaqError)
-    pub fn delete_faq(&self) -> crate::client::fluent_builders::DeleteFaq {
-        crate::client::fluent_builders::DeleteFaq::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteIndex`](crate::client::fluent_builders::DeleteIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteIndex::set_id): <p>The identifier of the index you want to delete.</p>
-    /// - On success, responds with [`DeleteIndexOutput`](crate::output::DeleteIndexOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteIndexError>`](crate::error::DeleteIndexError)
-    pub fn delete_index(&self) -> crate::client::fluent_builders::DeleteIndex {
-        crate::client::fluent_builders::DeleteIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePrincipalMapping`](crate::client::fluent_builders::DeletePrincipalMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_index_id): <p>The identifier of the index you want to delete a group from.</p>
-    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_data_source_id): <p>The identifier of the data source you want to delete a group from.</p>  <p>A group can be tied to multiple data sources. You can delete a group from accessing documents in a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. You want to delete "Research" and "Engineering" groups from Salesforce, so that these groups cannot access customer-related documents stored in Salesforce. Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_group_id): <p>The identifier of the group you want to delete.</p>
-    ///   - [`ordering_id(i64)`](crate::client::fluent_builders::DeletePrincipalMapping::ordering_id) / [`set_ordering_id(Option<i64>)`](crate::client::fluent_builders::DeletePrincipalMapping::set_ordering_id): <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>DELETE</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>  <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the same group which are yet to be processed.</p>  <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra. </p>
-    /// - On success, responds with [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePrincipalMappingError>`](crate::error::DeletePrincipalMappingError)
-    pub fn delete_principal_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::DeletePrincipalMapping {
-        crate::client::fluent_builders::DeletePrincipalMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteQuerySuggestionsBlockList`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to delete.</p>
-    /// - On success, responds with [`DeleteQuerySuggestionsBlockListOutput`](crate::output::DeleteQuerySuggestionsBlockListOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteQuerySuggestionsBlockListError>`](crate::error::DeleteQuerySuggestionsBlockListError)
-    pub fn delete_query_suggestions_block_list(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteQuerySuggestionsBlockList {
-        crate::client::fluent_builders::DeleteQuerySuggestionsBlockList::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteThesaurus`](crate::client::fluent_builders::DeleteThesaurus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_id): <p>The identifier of the thesaurus you want to delete.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DeleteThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DeleteThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
-    /// - On success, responds with [`DeleteThesaurusOutput`](crate::output::DeleteThesaurusOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteThesaurusError>`](crate::error::DeleteThesaurusError)
-    pub fn delete_thesaurus(&self) -> crate::client::fluent_builders::DeleteThesaurus {
-        crate::client::fluent_builders::DeleteThesaurus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAccessControlConfiguration`](crate::client::fluent_builders::DescribeAccessControlConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to get information on.</p>
-    /// - On success, responds with [`DescribeAccessControlConfigurationOutput`](crate::output::DescribeAccessControlConfigurationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::name): <p>The name for the access control configuration.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::description): <p>The description for the access control configuration.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeAccessControlConfigurationOutput::error_message): <p>The error message containing details if there are issues processing the access control configuration.</p>
-    ///   - [`access_control_list(Option<Vec<Principal>>)`](crate::output::DescribeAccessControlConfigurationOutput::access_control_list): <p>Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    ///   - [`hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::output::DescribeAccessControlConfigurationOutput::hierarchical_access_control_list): <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    /// - On failure, responds with [`SdkError<DescribeAccessControlConfigurationError>`](crate::error::DescribeAccessControlConfigurationError)
-    pub fn describe_access_control_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAccessControlConfiguration {
-        crate::client::fluent_builders::DescribeAccessControlConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDataSource`](crate::client::fluent_builders::DescribeDataSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_id): <p>The identifier of the data source connector.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    /// - On success, responds with [`DescribeDataSourceOutput`](crate::output::DescribeDataSourceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeDataSourceOutput::id): <p>The identifier of the data source connector.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeDataSourceOutput::index_id): <p>The identifier of the index used with the data source connector.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeDataSourceOutput::name): <p>The name for the data source connector.</p>
-    ///   - [`r#type(Option<DataSourceType>)`](crate::output::DescribeDataSourceOutput::type): <p>The type of the data source. For example, <code>SHAREPOINT</code>.</p>
-    ///   - [`configuration(Option<DataSourceConfiguration>)`](crate::output::DescribeDataSourceOutput::configuration): <p>Configuration details for the data source connector. This shows how the data source is configured. The configuration options for a data source depend on the data source provider.</p>
-    ///   - [`vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::output::DescribeDataSourceOutput::vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::created_at): <p>The Unix timestamp of when the data source connector was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeDataSourceOutput::updated_at): <p>The Unix timestamp of when the data source connector was last updated.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeDataSourceOutput::description): <p>The description for the data source connector.</p>
-    ///   - [`status(Option<DataSourceStatus>)`](crate::output::DescribeDataSourceOutput::status): <p>The current status of the data source connector. When the status is <code>ACTIVE</code> the data source is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that the data source failed.</p>
-    ///   - [`schedule(Option<String>)`](crate::output::DescribeDataSourceOutput::schedule): <p>The schedule for Amazon Kendra to update the index.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeDataSourceOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role with permission to access the data source and required resources.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeDataSourceOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description of the error that caused the data source to fail.</p>
-    ///   - [`language_code(Option<String>)`](crate::output::DescribeDataSourceOutput::language_code): <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::output::DescribeDataSourceOutput::custom_document_enrichment_configuration): <p>Configuration information for altering document metadata and content during the document ingestion process when you describe a data source.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    /// - On failure, responds with [`SdkError<DescribeDataSourceError>`](crate::error::DescribeDataSourceError)
-    pub fn describe_data_source(&self) -> crate::client::fluent_builders::DescribeDataSource {
-        crate::client::fluent_builders::DescribeDataSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeExperience`](crate::client::fluent_builders::DescribeExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    /// - On success, responds with [`DescribeExperienceOutput`](crate::output::DescribeExperienceOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeExperienceOutput::id): <p>Shows the identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeExperienceOutput::index_id): <p>Shows the identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeExperienceOutput::name): <p>Shows the name of your Amazon Kendra experience.</p>
-    ///   - [`endpoints(Option<Vec<ExperienceEndpoint>>)`](crate::output::DescribeExperienceOutput::endpoints): <p>Shows the endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    ///   - [`configuration(Option<ExperienceConfiguration>)`](crate::output::DescribeExperienceOutput::configuration): <p>Shows the configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group information to grant access to your Amazon Kendra experience.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeExperienceOutput::created_at): <p>Shows the date-time your Amazon Kendra experience was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeExperienceOutput::updated_at): <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeExperienceOutput::description): <p>Shows the description for your Amazon Kendra experience.</p>
-    ///   - [`status(Option<ExperienceStatus>)`](crate::output::DescribeExperienceOutput::status): <p>The current processing status of your Amazon Kendra experience. When the status is <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that this failed.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeExperienceOutput::role_arn): <p>Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeExperienceOutput::error_message): <p>The reason your Amazon Kendra experience could not properly process.</p>
-    /// - On failure, responds with [`SdkError<DescribeExperienceError>`](crate::error::DescribeExperienceError)
-    pub fn describe_experience(&self) -> crate::client::fluent_builders::DescribeExperience {
-        crate::client::fluent_builders::DescribeExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFaq`](crate::client::fluent_builders::DescribeFaq) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_id): <p>The identifier of the FAQ you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeFaq::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeFaq::set_index_id): <p>The identifier of the index for the FAQ.</p>
-    /// - On success, responds with [`DescribeFaqOutput`](crate::output::DescribeFaqOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeFaqOutput::id): <p>The identifier of the FAQ.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeFaqOutput::index_id): <p>The identifier of the index for the FAQ.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeFaqOutput::name): <p>The name that you gave the FAQ when it was created.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeFaqOutput::description): <p>The description of the FAQ that you provided when it was created.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeFaqOutput::created_at): <p>The date and time that the FAQ was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeFaqOutput::updated_at): <p>The date and time that the FAQ was last updated.</p>
-    ///   - [`s3_path(Option<S3Path>)`](crate::output::DescribeFaqOutput::s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    ///   - [`status(Option<FaqStatus>)`](crate::output::DescribeFaqOutput::status): <p>The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeFaqOutput::role_arn): <p>The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing the input files for the FAQ.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeFaqOutput::error_message): <p>If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason why the FAQ failed.</p>
-    ///   - [`file_format(Option<FaqFileFormat>)`](crate::output::DescribeFaqOutput::file_format): <p>The file format used by the input files for the FAQ.</p>
-    ///   - [`language_code(Option<String>)`](crate::output::DescribeFaqOutput::language_code): <p>The code for a language. This shows a supported language for the FAQ document. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    /// - On failure, responds with [`SdkError<DescribeFaqError>`](crate::error::DescribeFaqError)
-    pub fn describe_faq(&self) -> crate::client::fluent_builders::DescribeFaq {
-        crate::client::fluent_builders::DescribeFaq::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIndex`](crate::client::fluent_builders::DescribeIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeIndex::set_id): <p>The identifier of the index you want to get information on.</p>
-    /// - On success, responds with [`DescribeIndexOutput`](crate::output::DescribeIndexOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::DescribeIndexOutput::name): <p>The name of the index.</p>
-    ///   - [`id(Option<String>)`](crate::output::DescribeIndexOutput::id): <p>The identifier of the index.</p>
-    ///   - [`edition(Option<IndexEdition>)`](crate::output::DescribeIndexOutput::edition): <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeIndexOutput::role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
-    ///   - [`server_side_encryption_configuration(Option<ServerSideEncryptionConfiguration>)`](crate::output::DescribeIndexOutput::server_side_encryption_configuration): <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    ///   - [`status(Option<IndexStatus>)`](crate::output::DescribeIndexOutput::status): <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeIndexOutput::description): <p>The description for the index.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::created_at): <p>The Unix datetime that the index was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeIndexOutput::updated_at): <p>The Unix datetime that the index was last updated.</p>
-    ///   - [`document_metadata_configurations(Option<Vec<DocumentMetadataConfiguration>>)`](crate::output::DescribeIndexOutput::document_metadata_configurations): <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    ///   - [`index_statistics(Option<IndexStatistics>)`](crate::output::DescribeIndexOutput::index_statistics): <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeIndexOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeIndexOutput::capacity_units): <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    ///   - [`user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::output::DescribeIndexOutput::user_token_configurations): <p>The user token configuration for the Amazon Kendra index.</p>
-    ///   - [`user_context_policy(Option<UserContextPolicy>)`](crate::output::DescribeIndexOutput::user_context_policy): <p>The user context policy for the Amazon Kendra index.</p>
-    ///   - [`user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::output::DescribeIndexOutput::user_group_resolution_configuration): <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
-    /// - On failure, responds with [`SdkError<DescribeIndexError>`](crate::error::DescribeIndexError)
-    pub fn describe_index(&self) -> crate::client::fluent_builders::DescribeIndex {
-        crate::client::fluent_builders::DescribeIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePrincipalMapping`](crate::client::fluent_builders::DescribePrincipalMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::set_index_id): <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::set_data_source_id): <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::DescribePrincipalMapping::set_group_id): <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    /// - On success, responds with [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput) with field(s):
-    ///   - [`index_id(Option<String>)`](crate::output::DescribePrincipalMappingOutput::index_id): <p>Shows the identifier of the index to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    ///   - [`data_source_id(Option<String>)`](crate::output::DescribePrincipalMappingOutput::data_source_id): <p>Shows the identifier of the data source to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    ///   - [`group_id(Option<String>)`](crate::output::DescribePrincipalMappingOutput::group_id): <p>Shows the identifier of the group to see information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    ///   - [`group_ordering_id_summaries(Option<Vec<GroupOrderingIdSummary>>)`](crate::output::DescribePrincipalMappingOutput::group_ordering_id_summaries): <p>Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups:</p>  <ul>   <li> <p>Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p> </li>   <li> <p>Last updated – the last date-time an action was updated.</p> </li>   <li> <p>Received – the last date-time an action was received or submitted.</p> </li>   <li> <p>Ordering ID – the latest action that should process and apply after other actions.</p> </li>   <li> <p>Failure reason – the reason an action could not be processed.</p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<DescribePrincipalMappingError>`](crate::error::DescribePrincipalMappingError)
-    pub fn describe_principal_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::DescribePrincipalMapping {
-        crate::client::fluent_builders::DescribePrincipalMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeQuerySuggestionsBlockList`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to get information on.</p>
-    /// - On success, responds with [`DescribeQuerySuggestionsBlockListOutput`](crate::output::DescribeQuerySuggestionsBlockListOutput) with field(s):
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::index_id): <p>The identifier of the index for the block list.</p>
-    ///   - [`id(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::id): <p>The identifier of the block list.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::name): <p>The name of the block list.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::description): <p>The description for the block list.</p>
-    ///   - [`status(Option<QuerySuggestionsBlockListStatus>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::status): <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::error_message): <p>The error message containing details if there are issues processing the block list.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::created_at): <p>The date-time a block list for query suggestions was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::updated_at): <p>The date-time a block list for query suggestions was last updated.</p>
-    ///   - [`source_s3_path(Option<S3Path>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::source_s3_path): <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>  <p>Each block word or phrase should be on a separate line in a text file.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    ///   - [`item_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::item_count): <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
-    ///   - [`file_size_bytes(Option<i64>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::file_size_bytes): <p>The current size of the block list text file in S3.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeQuerySuggestionsBlockListOutput::role_arn): <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>  <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
-    /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsBlockListError>`](crate::error::DescribeQuerySuggestionsBlockListError)
-    pub fn describe_query_suggestions_block_list(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeQuerySuggestionsBlockList {
-        crate::client::fluent_builders::DescribeQuerySuggestionsBlockList::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeQuerySuggestionsConfig`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeQuerySuggestionsConfig::set_index_id): <p>The identifier of the index with query suggestions that you want to get information on.</p>
-    /// - On success, responds with [`DescribeQuerySuggestionsConfigOutput`](crate::output::DescribeQuerySuggestionsConfigOutput) with field(s):
-    ///   - [`mode(Option<Mode>)`](crate::output::DescribeQuerySuggestionsConfigOutput::mode): <p>Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code> mode.</p>  <p>By default, Amazon Kendra enables query suggestions.<code>LEARN_ONLY</code> turns off query suggestions for your users. You can change the mode using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> API.</p>
-    ///   - [`status(Option<QuerySuggestionsStatus>)`](crate::output::DescribeQuerySuggestionsConfigOutput::status): <p>Whether the status of query suggestions settings is currently <code>ACTIVE</code> or <code>UPDATING</code>.</p>  <p>Active means the current settings apply and Updating means your changed settings are in the process of applying.</p>
-    ///   - [`query_log_look_back_window_in_days(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::query_log_look_back_window_in_days): <p>How recent your queries are in your query log time window (in days).</p>
-    ///   - [`include_queries_without_user_information(Option<bool>)`](crate::output::DescribeQuerySuggestionsConfigOutput::include_queries_without_user_information): <p> <code>TRUE</code> to use all queries, otherwise use only queries that include user information to generate the query suggestions.</p>
-    ///   - [`minimum_number_of_querying_users(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_number_of_querying_users): <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
-    ///   - [`minimum_query_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::minimum_query_count): <p>The minimum number of times a query must be searched in order for the query to be eligible to suggest to your users.</p>
-    ///   - [`last_suggestions_build_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_suggestions_build_time): <p>The date-time query suggestions for an index was last updated.</p>
-    ///   - [`last_clear_time(Option<DateTime>)`](crate::output::DescribeQuerySuggestionsConfigOutput::last_clear_time): <p>The date-time query suggestions for an index was last cleared.</p>  <p>After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the time you cleared suggestions. </p>
-    ///   - [`total_suggestions_count(Option<i32>)`](crate::output::DescribeQuerySuggestionsConfigOutput::total_suggestions_count): <p>The current total count of query suggestions for an index.</p>  <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
-    /// - On failure, responds with [`SdkError<DescribeQuerySuggestionsConfigError>`](crate::error::DescribeQuerySuggestionsConfigError)
-    pub fn describe_query_suggestions_config(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeQuerySuggestionsConfig {
-        crate::client::fluent_builders::DescribeQuerySuggestionsConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeThesaurus`](crate::client::fluent_builders::DescribeThesaurus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_id): <p>The identifier of the thesaurus you want to get information on.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DescribeThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DescribeThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
-    /// - On success, responds with [`DescribeThesaurusOutput`](crate::output::DescribeThesaurusOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeThesaurusOutput::id): <p>The identifier of the thesaurus.</p>
-    ///   - [`index_id(Option<String>)`](crate::output::DescribeThesaurusOutput::index_id): <p>The identifier of the index for the thesaurus.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeThesaurusOutput::name): <p>The thesaurus name.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeThesaurusOutput::description): <p>The thesaurus description.</p>
-    ///   - [`status(Option<ThesaurusStatus>)`](crate::output::DescribeThesaurusOutput::status): <p>The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>  <p>If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra could not ingest the new thesaurus file. The old thesaurus file is still active. </p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeThesaurusOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field provides more information. </p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeThesaurusOutput::created_at): <p>The Unix datetime that the thesaurus was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeThesaurusOutput::updated_at): <p>The Unix datetime that the thesaurus was last updated.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::DescribeThesaurusOutput::role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>. </p>
-    ///   - [`source_s3_path(Option<S3Path>)`](crate::output::DescribeThesaurusOutput::source_s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    ///   - [`file_size_bytes(Option<i64>)`](crate::output::DescribeThesaurusOutput::file_size_bytes): <p>The size of the thesaurus file in bytes.</p>
-    ///   - [`term_count(Option<i64>)`](crate::output::DescribeThesaurusOutput::term_count): <p>The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code> and <code>a=&gt;d</code>, the term count would be 4. </p>
-    ///   - [`synonym_rule_count(Option<i64>)`](crate::output::DescribeThesaurusOutput::synonym_rule_count): <p>The number of synonym rules in the thesaurus file.</p>
-    /// - On failure, responds with [`SdkError<DescribeThesaurusError>`](crate::error::DescribeThesaurusError)
-    pub fn describe_thesaurus(&self) -> crate::client::fluent_builders::DescribeThesaurus {
-        crate::client::fluent_builders::DescribeThesaurus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateEntitiesFromExperience`](crate::client::fluent_builders::DisassociateEntitiesFromExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_list(Vec<EntityConfiguration>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::entity_list) / [`set_entity_list(Option<Vec<EntityConfiguration>>)`](crate::client::fluent_builders::DisassociateEntitiesFromExperience::set_entity_list): <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    /// - On success, responds with [`DisassociateEntitiesFromExperienceOutput`](crate::output::DisassociateEntitiesFromExperienceOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociateEntitiesFromExperienceOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
-    /// - On failure, responds with [`SdkError<DisassociateEntitiesFromExperienceError>`](crate::error::DisassociateEntitiesFromExperienceError)
-    pub fn disassociate_entities_from_experience(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateEntitiesFromExperience {
-        crate::client::fluent_builders::DisassociateEntitiesFromExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociatePersonasFromEntities`](crate::client::fluent_builders::DisassociatePersonasFromEntities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`entity_ids(Vec<String>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::entity_ids) / [`set_entity_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociatePersonasFromEntities::set_entity_ids): <p>The identifiers of users or groups in your IAM Identity Center identity source. For example, user IDs could be user emails.</p>
-    /// - On success, responds with [`DisassociatePersonasFromEntitiesOutput`](crate::output::DisassociatePersonasFromEntitiesOutput) with field(s):
-    ///   - [`failed_entity_list(Option<Vec<FailedEntity>>)`](crate::output::DisassociatePersonasFromEntitiesOutput::failed_entity_list): <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly remove access to your Amazon Kendra experience.</p>
-    /// - On failure, responds with [`SdkError<DisassociatePersonasFromEntitiesError>`](crate::error::DisassociatePersonasFromEntitiesError)
-    pub fn disassociate_personas_from_entities(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociatePersonasFromEntities {
-        crate::client::fluent_builders::DisassociatePersonasFromEntities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetQuerySuggestions`](crate::client::fluent_builders::GetQuerySuggestions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::GetQuerySuggestions::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::GetQuerySuggestions::set_index_id): <p>The identifier of the index you want to get query suggestions from.</p>
-    ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::GetQuerySuggestions::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::GetQuerySuggestions::set_query_text): <p>The text of a user's query to generate query suggestions.</p>  <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>  <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    ///   - [`max_suggestions_count(i32)`](crate::client::fluent_builders::GetQuerySuggestions::max_suggestions_count) / [`set_max_suggestions_count(Option<i32>)`](crate::client::fluent_builders::GetQuerySuggestions::set_max_suggestions_count): <p>The maximum number of query suggestions you want to show to your users.</p>
-    /// - On success, responds with [`GetQuerySuggestionsOutput`](crate::output::GetQuerySuggestionsOutput) with field(s):
-    ///   - [`query_suggestions_id(Option<String>)`](crate::output::GetQuerySuggestionsOutput::query_suggestions_id): <p>The identifier for a list of query suggestions for an index.</p>
-    ///   - [`suggestions(Option<Vec<Suggestion>>)`](crate::output::GetQuerySuggestionsOutput::suggestions): <p>A list of query suggestions for an index.</p>
-    /// - On failure, responds with [`SdkError<GetQuerySuggestionsError>`](crate::error::GetQuerySuggestionsError)
-    pub fn get_query_suggestions(&self) -> crate::client::fluent_builders::GetQuerySuggestions {
-        crate::client::fluent_builders::GetQuerySuggestions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSnapshots`](crate::client::fluent_builders::GetSnapshots) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetSnapshots::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshots::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::GetSnapshots::set_index_id): <p>The identifier of the index to get search metrics data.</p>
-    ///   - [`interval(Interval)`](crate::client::fluent_builders::GetSnapshots::interval) / [`set_interval(Option<Interval>)`](crate::client::fluent_builders::GetSnapshots::set_interval): <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>  <ul>   <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>   <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>   <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>   <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>   <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>   <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>  </ul>
-    ///   - [`metric_type(MetricType)`](crate::client::fluent_builders::GetSnapshots::metric_type) / [`set_metric_type(Option<MetricType>)`](crate::client::fluent_builders::GetSnapshots::set_metric_type): <p>The metric you want to retrieve. You can specify only one metric per call.</p>  <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetSnapshots::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetSnapshots::set_max_results): <p>The maximum number of returned data for the metric.</p>
-    /// - On success, responds with [`GetSnapshotsOutput`](crate::output::GetSnapshotsOutput) with field(s):
-    ///   - [`snap_shot_time_filter(Option<TimeRange>)`](crate::output::GetSnapshotsOutput::snap_shot_time_filter): <p>The date-time for the beginning and end of the time window for the search metrics data.</p>
-    ///   - [`snapshots_data_header(Option<Vec<String>>)`](crate::output::GetSnapshotsOutput::snapshots_data_header): <p>The column headers for the search metrics data.</p>
-    ///   - [`snapshots_data(Option<Vec<Vec<String>>>)`](crate::output::GetSnapshotsOutput::snapshots_data): <p>The search metrics data. The data returned depends on the metric type you requested.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetSnapshotsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of search metrics data.</p>
-    /// - On failure, responds with [`SdkError<GetSnapshotsError>`](crate::error::GetSnapshotsError)
-    pub fn get_snapshots(&self) -> crate::client::fluent_builders::GetSnapshots {
-        crate::client::fluent_builders::GetSnapshots::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAccessControlConfigurations`](crate::client::fluent_builders::ListAccessControlConfigurations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessControlConfigurations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_index_id): <p>The identifier of the index for the access control configuration.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_next_token): <p>If the previous response was incomplete (because there's more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of access control configurations.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessControlConfigurations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessControlConfigurations::set_max_results): <p>The maximum number of access control configurations to return.</p>
-    /// - On success, responds with [`ListAccessControlConfigurationsOutput`](crate::output::ListAccessControlConfigurationsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccessControlConfigurationsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in the subsequent request to retrieve the next set of access control configurations.</p>
-    ///   - [`access_control_configurations(Option<Vec<AccessControlConfigurationSummary>>)`](crate::output::ListAccessControlConfigurationsOutput::access_control_configurations): <p>The details of your access control configurations.</p>
-    /// - On failure, responds with [`SdkError<ListAccessControlConfigurationsError>`](crate::error::ListAccessControlConfigurationsError)
-    pub fn list_access_control_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::ListAccessControlConfigurations {
-        crate::client::fluent_builders::ListAccessControlConfigurations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDataSources`](crate::client::fluent_builders::ListDataSources) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSources::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_index_id): <p>The identifier of the index used with one or more data source connectors.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSources::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of data source connectors. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSources::set_max_results): <p>The maximum number of data source connectors to return.</p>
-    /// - On success, responds with [`ListDataSourcesOutput`](crate::output::ListDataSourcesOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<DataSourceSummary>>)`](crate::output::ListDataSourcesOutput::summary_items): <p>An array of summary information for one or more data source connector.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDataSourcesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of data source connectors.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourcesError>`](crate::error::ListDataSourcesError)
-    pub fn list_data_sources(&self) -> crate::client::fluent_builders::ListDataSources {
-        crate::client::fluent_builders::ListDataSources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDataSourceSyncJobs`](crate::client::fluent_builders::ListDataSourceSyncJobs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSourceSyncJobs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_id): <p>The identifier of the data source connector.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSourceSyncJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_max_results): <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
-    ///   - [`start_time_filter(TimeRange)`](crate::client::fluent_builders::ListDataSourceSyncJobs::start_time_filter) / [`set_start_time_filter(Option<TimeRange>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_start_time_filter): <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    ///   - [`status_filter(DataSourceSyncJobStatus)`](crate::client::fluent_builders::ListDataSourceSyncJobs::status_filter) / [`set_status_filter(Option<DataSourceSyncJobStatus>)`](crate::client::fluent_builders::ListDataSourceSyncJobs::set_status_filter): <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    /// - On success, responds with [`ListDataSourceSyncJobsOutput`](crate::output::ListDataSourceSyncJobsOutput) with field(s):
-    ///   - [`history(Option<Vec<DataSourceSyncJob>>)`](crate::output::ListDataSourceSyncJobsOutput::history): <p>A history of synchronization jobs for the data source connector.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDataSourceSyncJobsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of jobs.</p>
-    /// - On failure, responds with [`SdkError<ListDataSourceSyncJobsError>`](crate::error::ListDataSourceSyncJobsError)
-    pub fn list_data_source_sync_jobs(
-        &self,
-    ) -> crate::client::fluent_builders::ListDataSourceSyncJobs {
-        crate::client::fluent_builders::ListDataSourceSyncJobs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEntityPersonas`](crate::client::fluent_builders::ListEntityPersonas) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEntityPersonas::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListEntityPersonas::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListEntityPersonas::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListEntityPersonas::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListEntityPersonas::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEntityPersonas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEntityPersonas::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEntityPersonas::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEntityPersonas::set_max_results): <p>The maximum number of returned users or groups.</p>
-    /// - On success, responds with [`ListEntityPersonasOutput`](crate::output::ListEntityPersonasOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<PersonasSummary>>)`](crate::output::ListEntityPersonasOutput::summary_items): <p>An array of summary information for one or more users or groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEntityPersonasOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
-    /// - On failure, responds with [`SdkError<ListEntityPersonasError>`](crate::error::ListEntityPersonasError)
-    pub fn list_entity_personas(&self) -> crate::client::fluent_builders::ListEntityPersonas {
-        crate::client::fluent_builders::ListEntityPersonas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListExperienceEntities`](crate::client::fluent_builders::ListExperienceEntities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperienceEntities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ListExperienceEntities::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ListExperienceEntities::set_id): <p>The identifier of your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListExperienceEntities::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListExperienceEntities::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperienceEntities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperienceEntities::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.</p>
-    /// - On success, responds with [`ListExperienceEntitiesOutput`](crate::output::ListExperienceEntitiesOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<ExperienceEntitiesSummary>>)`](crate::output::ListExperienceEntitiesOutput::summary_items): <p>An array of summary information for one or more users or groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListExperienceEntitiesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of users or groups.</p>
-    /// - On failure, responds with [`SdkError<ListExperienceEntitiesError>`](crate::error::ListExperienceEntitiesError)
-    pub fn list_experience_entities(
-        &self,
-    ) -> crate::client::fluent_builders::ListExperienceEntities {
-        crate::client::fluent_builders::ListExperienceEntities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListExperiences`](crate::client::fluent_builders::ListExperiences) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExperiences::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListExperiences::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListExperiences::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExperiences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExperiences::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExperiences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExperiences::set_max_results): <p>The maximum number of returned Amazon Kendra experiences.</p>
-    /// - On success, responds with [`ListExperiencesOutput`](crate::output::ListExperiencesOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<ExperiencesSummary>>)`](crate::output::ListExperiencesOutput::summary_items): <p>An array of summary information for one or more Amazon Kendra experiences.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListExperiencesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token, which you can use in a later request to retrieve the next set of Amazon Kendra experiences.</p>
-    /// - On failure, responds with [`SdkError<ListExperiencesError>`](crate::error::ListExperiencesError)
-    pub fn list_experiences(&self) -> crate::client::fluent_builders::ListExperiences {
-        crate::client::fluent_builders::ListExperiences::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListFaqs`](crate::client::fluent_builders::ListFaqs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFaqs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListFaqs::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListFaqs::set_index_id): <p>The index that contains the FAQ lists.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFaqs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFaqs::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of FAQs.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFaqs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFaqs::set_max_results): <p>The maximum number of FAQs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
-    /// - On success, responds with [`ListFaqsOutput`](crate::output::ListFaqsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListFaqsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
-    ///   - [`faq_summary_items(Option<Vec<FaqSummary>>)`](crate::output::ListFaqsOutput::faq_summary_items): <p>information about the FAQs associated with the specified index.</p>
-    /// - On failure, responds with [`SdkError<ListFaqsError>`](crate::error::ListFaqsError)
-    pub fn list_faqs(&self) -> crate::client::fluent_builders::ListFaqs {
-        crate::client::fluent_builders::ListFaqs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGroupsOlderThanOrderingId`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_index_id): <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
-    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_data_source_id): <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
-    ///   - [`ordering_id(i64)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::ordering_id) / [`set_ordering_id(Option<i64>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_ordering_id): <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_next_token): <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGroupsOlderThanOrderingId::set_max_results): <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    /// - On success, responds with [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput) with field(s):
-    ///   - [`groups_summaries(Option<Vec<GroupSummary>>)`](crate::output::ListGroupsOlderThanOrderingIdOutput::groups_summaries): <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGroupsOlderThanOrderingIdOutput::next_token): <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    /// - On failure, responds with [`SdkError<ListGroupsOlderThanOrderingIdError>`](crate::error::ListGroupsOlderThanOrderingIdError)
-    pub fn list_groups_older_than_ordering_id(
-        &self,
-    ) -> crate::client::fluent_builders::ListGroupsOlderThanOrderingId {
-        crate::client::fluent_builders::ListGroupsOlderThanOrderingId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListIndices`](crate::client::fluent_builders::ListIndices) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIndices::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIndices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIndices::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIndices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIndices::set_max_results): <p>The maximum number of indices to return.</p>
-    /// - On success, responds with [`ListIndicesOutput`](crate::output::ListIndicesOutput) with field(s):
-    ///   - [`index_configuration_summary_items(Option<Vec<IndexConfigurationSummary>>)`](crate::output::ListIndicesOutput::index_configuration_summary_items): <p>An array of summary information on the configuration of one or more indexes.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListIndicesOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of indexes.</p>
-    /// - On failure, responds with [`SdkError<ListIndicesError>`](crate::error::ListIndicesError)
-    pub fn list_indices(&self) -> crate::client::fluent_builders::ListIndices {
-        crate::client::fluent_builders::ListIndices::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListQuerySuggestionsBlockLists`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::set_index_id): <p>The identifier of the index for a list of all block lists that exist for that index.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListQuerySuggestionsBlockLists::set_max_results): <p>The maximum number of block lists to return.</p>
-    /// - On success, responds with [`ListQuerySuggestionsBlockListsOutput`](crate::output::ListQuerySuggestionsBlockListsOutput) with field(s):
-    ///   - [`block_list_summary_items(Option<Vec<QuerySuggestionsBlockListSummary>>)`](crate::output::ListQuerySuggestionsBlockListsOutput::block_list_summary_items): <p>Summary items for a block list.</p>  <p>This includes summary items on the block list ID, block list name, when the block list was created, when the block list was last updated, and the count of block words/phrases in the block list.</p>  <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListQuerySuggestionsBlockListsOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of block lists.</p>
-    /// - On failure, responds with [`SdkError<ListQuerySuggestionsBlockListsError>`](crate::error::ListQuerySuggestionsBlockListsError)
-    pub fn list_query_suggestions_block_lists(
-        &self,
-    ) -> crate::client::fluent_builders::ListQuerySuggestionsBlockLists {
-        crate::client::fluent_builders::ListQuerySuggestionsBlockLists::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of tags for.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags associated with the index, FAQ, or data source.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListThesauri`](crate::client::fluent_builders::ListThesauri) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListThesauri::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_index_id): <p>The identifier of the index with one or more thesauri.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListThesauri::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListThesauri::set_next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>). </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListThesauri::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListThesauri::set_max_results): <p>The maximum number of thesauri to return.</p>
-    /// - On success, responds with [`ListThesauriOutput`](crate::output::ListThesauriOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListThesauriOutput::next_token): <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of thesauri. </p>
-    ///   - [`thesaurus_summary_items(Option<Vec<ThesaurusSummary>>)`](crate::output::ListThesauriOutput::thesaurus_summary_items): <p>An array of summary information for a thesaurus or multiple thesauri.</p>
-    /// - On failure, responds with [`SdkError<ListThesauriError>`](crate::error::ListThesauriError)
-    pub fn list_thesauri(&self) -> crate::client::fluent_builders::ListThesauri {
-        crate::client::fluent_builders::ListThesauri::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutPrincipalMapping`](crate::client::fluent_builders::PutPrincipalMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::PutPrincipalMapping::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::PutPrincipalMapping::set_index_id): <p>The identifier of the index you want to map users to their groups.</p>
-    ///   - [`data_source_id(impl Into<String>)`](crate::client::fluent_builders::PutPrincipalMapping::data_source_id) / [`set_data_source_id(Option<String>)`](crate::client::fluent_builders::PutPrincipalMapping::set_data_source_id): <p>The identifier of the data source you want to map users to their groups.</p>  <p>This is useful if a group is tied to multiple data sources, but you only want the group to access documents of a certain data source. For example, the groups "Research", "Engineering", and "Sales and Marketing" are all tied to the company's documents stored in the data sources Confluence and Salesforce. However, "Sales and Marketing" team only needs access to customer-related documents stored in Salesforce.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::PutPrincipalMapping::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::PutPrincipalMapping::set_group_id): <p>The identifier of the group you want to map its users to.</p>
-    ///   - [`group_members(GroupMembers)`](crate::client::fluent_builders::PutPrincipalMapping::group_members) / [`set_group_members(Option<GroupMembers>)`](crate::client::fluent_builders::PutPrincipalMapping::set_group_members): <p>The list that contains your users or sub groups that belong the same group.</p>  <p>For example, the group "Company" includes the user "CEO" and the sub groups "Research", "Engineering", and "Sales and Marketing".</p>  <p>If you have more than 1000 users and/or sub groups for a single group, you need to provide the path to the S3 file that lists your users and sub groups for a group. Your sub groups can contain more than 1000 users, but the list of sub groups that belong to a group (and/or users) must be no more than 1000.</p>
-    ///   - [`ordering_id(i64)`](crate::client::fluent_builders::PutPrincipalMapping::ordering_id) / [`set_ordering_id(Option<i64>)`](crate::client::fluent_builders::PutPrincipalMapping::set_ordering_id): <p>The timestamp identifier you specify to ensure Amazon Kendra does not override the latest <code>PUT</code> action with previous actions. The highest number ID, which is the ordering ID, is the latest action you want to process and apply on top of other actions with lower number IDs. This prevents previous actions with lower number IDs from possibly overriding the latest action.</p>  <p>The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for that updated group with the latest members list doesn't get overwritten by earlier <code>PUT</code> actions for the same group which are yet to be processed.</p>  <p>The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutPrincipalMapping::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutPrincipalMapping::set_role_arn): <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file that contains your list of users or sub groups that belong to a group.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
-    /// - On success, responds with [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput)
-
-    /// - On failure, responds with [`SdkError<PutPrincipalMappingError>`](crate::error::PutPrincipalMappingError)
-    pub fn put_principal_mapping(&self) -> crate::client::fluent_builders::PutPrincipalMapping {
-        crate::client::fluent_builders::PutPrincipalMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`Query`](crate::client::fluent_builders::Query) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::Query::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::Query::set_index_id): <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
-    ///   - [`query_text(impl Into<String>)`](crate::client::fluent_builders::Query::query_text) / [`set_query_text(Option<String>)`](crate::client::fluent_builders::Query::set_query_text): <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
-    ///   - [`attribute_filter(AttributeFilter)`](crate::client::fluent_builders::Query::attribute_filter) / [`set_attribute_filter(Option<AttributeFilter>)`](crate::client::fluent_builders::Query::set_attribute_filter): <p>Enables filtered searches based on document attributes. You can only provide one attribute filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code> parameters contain a list of other filters.</p>  <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
-    ///   - [`facets(Vec<Facet>)`](crate::client::fluent_builders::Query::facets) / [`set_facets(Option<Vec<Facet>>)`](crate::client::fluent_builders::Query::set_facets): <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
-    ///   - [`requested_document_attributes(Vec<String>)`](crate::client::fluent_builders::Query::requested_document_attributes) / [`set_requested_document_attributes(Option<Vec<String>>)`](crate::client::fluent_builders::Query::set_requested_document_attributes): <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
-    ///   - [`query_result_type_filter(QueryResultType)`](crate::client::fluent_builders::Query::query_result_type_filter) / [`set_query_result_type_filter(Option<QueryResultType>)`](crate::client::fluent_builders::Query::set_query_result_type_filter): <p>Sets the type of query. Only results for the specified query type are returned.</p>
-    ///   - [`document_relevance_override_configurations(Vec<DocumentRelevanceConfiguration>)`](crate::client::fluent_builders::Query::document_relevance_override_configurations) / [`set_document_relevance_override_configurations(Option<Vec<DocumentRelevanceConfiguration>>)`](crate::client::fluent_builders::Query::set_document_relevance_override_configurations): <p>Overrides relevance tuning configurations of fields or attributes set at the index level.</p>  <p>If you use this API to override the relevance tuning configured at the index level, but there is no relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.</p>  <p>If there is relevance tuning configured at the index level, but you do not use this API to override any relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.</p>  <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
-    ///   - [`page_number(i32)`](crate::client::fluent_builders::Query::page_number) / [`set_page_number(Option<i32>)`](crate::client::fluent_builders::Query::set_page_number): <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::Query::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::Query::set_page_size): <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
-    ///   - [`sorting_configuration(SortingConfiguration)`](crate::client::fluent_builders::Query::sorting_configuration) / [`set_sorting_configuration(Option<SortingConfiguration>)`](crate::client::fluent_builders::Query::set_sorting_configuration): <p>Provides information that determines how the results of the query are sorted. You can set the field that Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>  <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
-    ///   - [`user_context(UserContext)`](crate::client::fluent_builders::Query::user_context) / [`set_user_context(Option<UserContext>)`](crate::client::fluent_builders::Query::set_user_context): <p>The user context token or user and group information.</p>
-    ///   - [`visitor_id(impl Into<String>)`](crate::client::fluent_builders::Query::visitor_id) / [`set_visitor_id(Option<String>)`](crate::client::fluent_builders::Query::set_visitor_id): <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
-    ///   - [`spell_correction_configuration(SpellCorrectionConfiguration)`](crate::client::fluent_builders::Query::spell_correction_configuration) / [`set_spell_correction_configuration(Option<SpellCorrectionConfiguration>)`](crate::client::fluent_builders::Query::set_spell_correction_configuration): <p>Enables suggested spell corrections for queries.</p>
-    /// - On success, responds with [`QueryOutput`](crate::output::QueryOutput) with field(s):
-    ///   - [`query_id(Option<String>)`](crate::output::QueryOutput::query_id): <p>The identifier for the search. You use <code>QueryId</code> to identify the search when using the feedback API.</p>
-    ///   - [`result_items(Option<Vec<QueryResultItem>>)`](crate::output::QueryOutput::result_items): <p>The results of the search.</p>
-    ///   - [`facet_results(Option<Vec<FacetResult>>)`](crate::output::QueryOutput::facet_results): <p>Contains the facet results. A <code>FacetResult</code> contains the counts for each attribute key that was specified in the <code>Facets</code> input parameter.</p>
-    ///   - [`total_number_of_results(Option<i32>)`](crate::output::QueryOutput::total_number_of_results): <p>The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if the search found 192 items, you can only retrieve the first 100 of the items.</p>
-    ///   - [`warnings(Option<Vec<Warning>>)`](crate::output::QueryOutput::warnings): <p>A list of warning codes and their messages on problems with your query.</p>  <p>Amazon Kendra currently only supports one type of warning, which is a warning on invalid syntax used in the query. For examples of invalid query syntax, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching with advanced query syntax</a>.</p>
-    ///   - [`spell_corrected_queries(Option<Vec<SpellCorrectedQuery>>)`](crate::output::QueryOutput::spell_corrected_queries): <p>A list of information related to suggested spell corrections for a query.</p>
-    /// - On failure, responds with [`SdkError<QueryError>`](crate::error::QueryError)
-    pub fn query(&self) -> crate::client::fluent_builders::Query {
-        crate::client::fluent_builders::Query::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartDataSourceSyncJob`](crate::client::fluent_builders::StartDataSourceSyncJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_id): <p>The identifier of the data source connector to synchronize.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StartDataSourceSyncJob::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    /// - On success, responds with [`StartDataSourceSyncJobOutput`](crate::output::StartDataSourceSyncJobOutput) with field(s):
-    ///   - [`execution_id(Option<String>)`](crate::output::StartDataSourceSyncJobOutput::execution_id): <p>Identifies a particular synchronization job.</p>
-    /// - On failure, responds with [`SdkError<StartDataSourceSyncJobError>`](crate::error::StartDataSourceSyncJobError)
-    pub fn start_data_source_sync_job(
-        &self,
-    ) -> crate::client::fluent_builders::StartDataSourceSyncJob {
-        crate::client::fluent_builders::StartDataSourceSyncJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopDataSourceSyncJob`](crate::client::fluent_builders::StopDataSourceSyncJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_id): <p>The identifier of the data source connector for which to stop the synchronization jobs.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::StopDataSourceSyncJob::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    /// - On success, responds with [`StopDataSourceSyncJobOutput`](crate::output::StopDataSourceSyncJobOutput)
-
-    /// - On failure, responds with [`SdkError<StopDataSourceSyncJobError>`](crate::error::StopDataSourceSyncJobError)
-    pub fn stop_data_source_sync_job(
-        &self,
-    ) -> crate::client::fluent_builders::StopDataSourceSyncJob {
-        crate::client::fluent_builders::StopDataSourceSyncJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SubmitFeedback`](crate::client::fluent_builders::SubmitFeedback) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_index_id): <p>The identifier of the index that was queried.</p>
-    ///   - [`query_id(impl Into<String>)`](crate::client::fluent_builders::SubmitFeedback::query_id) / [`set_query_id(Option<String>)`](crate::client::fluent_builders::SubmitFeedback::set_query_id): <p>The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the <code>Query</code> API.</p>
-    ///   - [`click_feedback_items(Vec<ClickFeedback>)`](crate::client::fluent_builders::SubmitFeedback::click_feedback_items) / [`set_click_feedback_items(Option<Vec<ClickFeedback>>)`](crate::client::fluent_builders::SubmitFeedback::set_click_feedback_items): <p>Tells Amazon Kendra that a particular search result link was chosen by the user. </p>
-    ///   - [`relevance_feedback_items(Vec<RelevanceFeedback>)`](crate::client::fluent_builders::SubmitFeedback::relevance_feedback_items) / [`set_relevance_feedback_items(Option<Vec<RelevanceFeedback>>)`](crate::client::fluent_builders::SubmitFeedback::set_relevance_feedback_items): <p>Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.</p>
-    /// - On success, responds with [`SubmitFeedbackOutput`](crate::output::SubmitFeedbackOutput)
-
-    /// - On failure, responds with [`SdkError<SubmitFeedbackError>`](crate::error::SubmitFeedbackError)
-    pub fn submit_feedback(&self) -> crate::client::fluent_builders::SubmitFeedback {
-        crate::client::fluent_builders::SubmitFeedback::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to tag.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tag keys to add to the index, FAQ, or data source. If a tag already exists, the existing value is replaced with the new value.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to remove the tag from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys to remove from the index, FAQ, or data source. If a tag key does not exist on the resource, it is ignored.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAccessControlConfiguration`](crate::client::fluent_builders::UpdateAccessControlConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_index_id): <p>The identifier of the index for an access control configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_id): <p>The identifier of the access control configuration you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_name): <p>A new name for the access control configuration.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_description): <p>A new description for the access control configuration.</p>
-    ///   - [`access_control_list(Vec<Principal>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::access_control_list) / [`set_access_control_list(Option<Vec<Principal>>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_access_control_list): <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    ///   - [`hierarchical_access_control_list(Vec<HierarchicalPrincipal>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::hierarchical_access_control_list) / [`set_hierarchical_access_control_list(Option<Vec<HierarchicalPrincipal>>)`](crate::client::fluent_builders::UpdateAccessControlConfiguration::set_hierarchical_access_control_list): <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    /// - On success, responds with [`UpdateAccessControlConfigurationOutput`](crate::output::UpdateAccessControlConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateAccessControlConfigurationError>`](crate::error::UpdateAccessControlConfigurationError)
-    pub fn update_access_control_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateAccessControlConfiguration {
-        crate::client::fluent_builders::UpdateAccessControlConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDataSource`](crate::client::fluent_builders::UpdateDataSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_id): <p>The identifier of the data source connector you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_name): <p>A new name for the data source connector.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_index_id): <p>The identifier of the index used with the data source connector.</p>
-    ///   - [`configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdateDataSource::configuration) / [`set_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_configuration): <p>Configuration information you want to update for the data source connector.</p>
-    ///   - [`vpc_configuration(DataSourceVpcConfiguration)`](crate::client::fluent_builders::UpdateDataSource::vpc_configuration) / [`set_vpc_configuration(Option<DataSourceVpcConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_vpc_configuration): <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_description): <p>A new description for the data source connector.</p>
-    ///   - [`schedule(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::schedule) / [`set_schedule(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_schedule): <p>The sync schedule you want to update for the data source connector.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`language_code(impl Into<String>)`](crate::client::fluent_builders::UpdateDataSource::language_code) / [`set_language_code(Option<String>)`](crate::client::fluent_builders::UpdateDataSource::set_language_code): <p>The code for a language you want to update for the data source connector. This allows you to support a language for all documents when updating the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    ///   - [`custom_document_enrichment_configuration(CustomDocumentEnrichmentConfiguration)`](crate::client::fluent_builders::UpdateDataSource::custom_document_enrichment_configuration) / [`set_custom_document_enrichment_configuration(Option<CustomDocumentEnrichmentConfiguration>)`](crate::client::fluent_builders::UpdateDataSource::set_custom_document_enrichment_configuration): <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>  <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    /// - On success, responds with [`UpdateDataSourceOutput`](crate::output::UpdateDataSourceOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDataSourceError>`](crate::error::UpdateDataSourceError)
-    pub fn update_data_source(&self) -> crate::client::fluent_builders::UpdateDataSource {
-        crate::client::fluent_builders::UpdateDataSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateExperience`](crate::client::fluent_builders::UpdateExperience) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_id): <p>The identifier of your Amazon Kendra experience you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_name): <p>A new name for your Amazon Kendra experience.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_index_id): <p>The identifier of the index for your Amazon Kendra experience.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_role_arn): <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code> API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user and group information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    ///   - [`configuration(ExperienceConfiguration)`](crate::client::fluent_builders::UpdateExperience::configuration) / [`set_configuration(Option<ExperienceConfiguration>)`](crate::client::fluent_builders::UpdateExperience::set_configuration): <p>Configuration information you want to update for your Amazon Kendra experience.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateExperience::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateExperience::set_description): <p>A new description for your Amazon Kendra experience.</p>
-    /// - On success, responds with [`UpdateExperienceOutput`](crate::output::UpdateExperienceOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateExperienceError>`](crate::error::UpdateExperienceError)
-    pub fn update_experience(&self) -> crate::client::fluent_builders::UpdateExperience {
-        crate::client::fluent_builders::UpdateExperience::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateIndex`](crate::client::fluent_builders::UpdateIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_id): <p>The identifier of the index you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_name): <p>The name of the index you want to update.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_role_arn): <p>An Identity and Access Management (IAM) role that gives Amazon Kendra permission to access Amazon CloudWatch logs and metrics.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateIndex::set_description): <p>A new description for the index.</p>
-    ///   - [`document_metadata_configuration_updates(Vec<DocumentMetadataConfiguration>)`](crate::client::fluent_builders::UpdateIndex::document_metadata_configuration_updates) / [`set_document_metadata_configuration_updates(Option<Vec<DocumentMetadataConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_document_metadata_configuration_updates): <p>The document metadata configuration you want to update for the index. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateIndex::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_capacity_units): <p>Sets the number of additional document storage and query capacity units that should be used by the index. You can change the capacity of the index up to 5 times per day, or make 5 API calls.</p>  <p>If you are using extra storage units, you can't reduce the storage capacity below what is required to meet the storage needs for your index.</p>
-    ///   - [`user_token_configurations(Vec<UserTokenConfiguration>)`](crate::client::fluent_builders::UpdateIndex::user_token_configurations) / [`set_user_token_configurations(Option<Vec<UserTokenConfiguration>>)`](crate::client::fluent_builders::UpdateIndex::set_user_token_configurations): <p>The user token configuration.</p>
-    ///   - [`user_context_policy(UserContextPolicy)`](crate::client::fluent_builders::UpdateIndex::user_context_policy) / [`set_user_context_policy(Option<UserContextPolicy>)`](crate::client::fluent_builders::UpdateIndex::set_user_context_policy): <p>The user context policy.</p>
-    ///   - [`user_group_resolution_configuration(UserGroupResolutionConfiguration)`](crate::client::fluent_builders::UpdateIndex::user_group_resolution_configuration) / [`set_user_group_resolution_configuration(Option<UserGroupResolutionConfiguration>)`](crate::client::fluent_builders::UpdateIndex::set_user_group_resolution_configuration): <p>Enables fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    /// - On success, responds with [`UpdateIndexOutput`](crate::output::UpdateIndexOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateIndexError>`](crate::error::UpdateIndexError)
-    pub fn update_index(&self) -> crate::client::fluent_builders::UpdateIndex {
-        crate::client::fluent_builders::UpdateIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateQuerySuggestionsBlockList`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_index_id): <p>The identifier of the index for the block list.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_id): <p>The identifier of the block list you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_name): <p>A new name for the block list.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_description): <p>A new description for the block list.</p>
-    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_source_s3_path): <p>The S3 path where your block list text file sits in S3.</p>  <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>  <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::set_role_arn): <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
-    /// - On success, responds with [`UpdateQuerySuggestionsBlockListOutput`](crate::output::UpdateQuerySuggestionsBlockListOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateQuerySuggestionsBlockListError>`](crate::error::UpdateQuerySuggestionsBlockListError)
-    pub fn update_query_suggestions_block_list(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateQuerySuggestionsBlockList {
-        crate::client::fluent_builders::UpdateQuerySuggestionsBlockList::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateQuerySuggestionsConfig`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_index_id): <p> The identifier of the index with query suggestions you want to update.</p>
-    ///   - [`mode(Mode)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::mode) / [`set_mode(Option<Mode>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_mode): <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>  <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>  <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
-    ///   - [`query_log_look_back_window_in_days(i32)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::query_log_look_back_window_in_days) / [`set_query_log_look_back_window_in_days(Option<i32>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_query_log_look_back_window_in_days): <p>How recent your queries are in your query log time window.</p>  <p>The time window is the number of days from current day to past days.</p>  <p>By default, Amazon Kendra sets this to 180.</p>
-    ///   - [`include_queries_without_user_information(bool)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::include_queries_without_user_information) / [`set_include_queries_without_user_information(Option<bool>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_include_queries_without_user_information): <p> <code>TRUE</code> to include queries without user information (i.e. all queries, irrespective of the user), otherwise <code>FALSE</code> to only include queries with user information.</p>  <p>If you pass user information to Amazon Kendra along with the queries, you can set this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries with user information.</p>  <p>If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code> unique users for suggestions.</p>  <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
-    ///   - [`minimum_number_of_querying_users(i32)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::minimum_number_of_querying_users) / [`set_minimum_number_of_querying_users(Option<i32>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_minimum_number_of_querying_users): <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>  <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>  <p>How you tune this setting depends on your specific needs.</p>
-    ///   - [`minimum_query_count(i32)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::minimum_query_count) / [`set_minimum_query_count(Option<i32>)`](crate::client::fluent_builders::UpdateQuerySuggestionsConfig::set_minimum_query_count): <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>  <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>  <p>How you tune this setting depends on your specific needs.</p>
-    /// - On success, responds with [`UpdateQuerySuggestionsConfigOutput`](crate::output::UpdateQuerySuggestionsConfigOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateQuerySuggestionsConfigError>`](crate::error::UpdateQuerySuggestionsConfigError)
-    pub fn update_query_suggestions_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateQuerySuggestionsConfig {
-        crate::client::fluent_builders::UpdateQuerySuggestionsConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateThesaurus`](crate::client::fluent_builders::UpdateThesaurus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_id): <p>The identifier of the thesaurus you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_name): <p>A new name for the thesaurus.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::index_id) / [`set_index_id(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_index_id): <p>The identifier of the index for the thesaurus.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_description): <p>A new description for the thesaurus.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateThesaurus::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateThesaurus::set_role_arn): <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in <code>SourceS3Path</code>.</p>
-    ///   - [`source_s3_path(S3Path)`](crate::client::fluent_builders::UpdateThesaurus::source_s3_path) / [`set_source_s3_path(Option<S3Path>)`](crate::client::fluent_builders::UpdateThesaurus::set_source_s3_path): <p>Information required to find a specific file in an Amazon S3 bucket.</p>
-    /// - On success, responds with [`UpdateThesaurusOutput`](crate::output::UpdateThesaurusOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateThesaurusError>`](crate::error::UpdateThesaurusError)
-    pub fn update_thesaurus(&self) -> crate::client::fluent_builders::UpdateThesaurus {
-        crate::client::fluent_builders::UpdateThesaurus::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1125,9 +174,129 @@ impl Client {
     }
 }
 
+mod associate_entities_to_experience;
+
+mod associate_personas_to_entities;
+
+mod batch_delete_document;
+
+mod batch_get_document_status;
+
+mod batch_put_document;
+
+mod clear_query_suggestions;
+
+mod create_access_control_configuration;
+
+mod create_data_source;
+
+mod create_experience;
+
+mod create_faq;
+
+mod create_index;
+
+mod create_query_suggestions_block_list;
+
+mod create_thesaurus;
+
+mod delete_access_control_configuration;
+
+mod delete_data_source;
+
+mod delete_experience;
+
+mod delete_faq;
+
+mod delete_index;
+
+mod delete_principal_mapping;
+
+mod delete_query_suggestions_block_list;
+
+mod delete_thesaurus;
+
+mod describe_access_control_configuration;
+
+mod describe_data_source;
+
+mod describe_experience;
+
+mod describe_faq;
+
+mod describe_index;
+
+mod describe_principal_mapping;
+
+mod describe_query_suggestions_block_list;
+
+mod describe_query_suggestions_config;
+
+mod describe_thesaurus;
+
+mod disassociate_entities_from_experience;
+
+mod disassociate_personas_from_entities;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_query_suggestions;
+
+mod get_snapshots;
+
+mod list_access_control_configurations;
+
+mod list_data_source_sync_jobs;
+
+mod list_data_sources;
+
+mod list_entity_personas;
+
+mod list_experience_entities;
+
+mod list_experiences;
+
+mod list_faqs;
+
+mod list_groups_older_than_ordering_id;
+
+mod list_indices;
+
+mod list_query_suggestions_block_lists;
+
+mod list_tags_for_resource;
+
+mod list_thesauri;
+
+mod put_principal_mapping;
+
+mod query;
+
+mod start_data_source_sync_job;
+
+mod stop_data_source_sync_job;
+
+mod submit_feedback;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_access_control_configuration;
+
+mod update_data_source;
+
+mod update_experience;
+
+mod update_index;
+
+mod update_query_suggestions_block_list;
+
+mod update_query_suggestions_config;
+
+mod update_thesaurus;

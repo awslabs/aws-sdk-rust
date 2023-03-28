@@ -90,7 +90,8 @@ impl ListGroupResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_group_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_group_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl SearchResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -372,7 +375,11 @@ impl ListGroupResourcesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListGroupResourcesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_group_resources_output_resource_identifiers(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_group_resources_output_resource_identifiers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -396,7 +403,7 @@ impl ListGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_groups_output_group_identifiers(page)
+            crate::lens::lens_list_groups_output_group_identifiers(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -423,11 +430,9 @@ impl SearchResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_resources_output_resource_identifiers(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_search_resources_output_resource_identifiers(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

@@ -90,7 +90,8 @@ impl GetConnectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_connectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_connectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl GetReplicationJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_replication_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_replication_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl GetReplicationRunsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_replication_runs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_replication_runs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl GetServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_servers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_servers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -491,7 +495,7 @@ impl GetConnectorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_connectors_output_connector_list(page)
+            crate::lens::lens_get_connectors_output_connector_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -517,7 +521,11 @@ impl GetReplicationJobsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetReplicationJobsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_replication_jobs_output_replication_job_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_replication_jobs_output_replication_job_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -540,7 +548,11 @@ impl GetReplicationRunsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetReplicationRunsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_replication_runs_output_replication_run_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_replication_runs_output_replication_run_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -564,7 +576,7 @@ impl GetServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_servers_output_server_list(page)
+            crate::lens::lens_get_servers_output_server_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })

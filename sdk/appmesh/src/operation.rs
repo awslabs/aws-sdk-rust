@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_gateway_route_error(response)
+            crate::protocol_serde::shape_create_gateway_route::de_create_gateway_route_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_gateway_route_response(response)
+            crate::protocol_serde::shape_create_gateway_route::de_create_gateway_route_http_response(
+                response,
+            )
         }
     }
 }
@@ -60,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMesh {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_mesh_error(response)
+            crate::protocol_serde::shape_create_mesh::de_create_mesh_http_error(response)
         } else {
-            crate::operation_deser::parse_create_mesh_response(response)
+            crate::protocol_serde::shape_create_mesh::de_create_mesh_http_response(response)
         }
     }
 }
@@ -93,9 +97,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_route_error(response)
+            crate::protocol_serde::shape_create_route::de_create_route_http_error(response)
         } else {
-            crate::operation_deser::parse_create_route_response(response)
+            crate::protocol_serde::shape_create_route::de_create_route_http_response(response)
         }
     }
 }
@@ -128,9 +132,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_gateway_error(response)
+            crate::protocol_serde::shape_create_virtual_gateway::de_create_virtual_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_gateway_response(response)
+            crate::protocol_serde::shape_create_virtual_gateway::de_create_virtual_gateway_http_response(response)
         }
     }
 }
@@ -163,9 +167,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualNode {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_node_error(response)
+            crate::protocol_serde::shape_create_virtual_node::de_create_virtual_node_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_virtual_node_response(response)
+            crate::protocol_serde::shape_create_virtual_node::de_create_virtual_node_http_response(
+                response,
+            )
         }
     }
 }
@@ -198,9 +206,11 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualRouter {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_router_error(response)
+            crate::protocol_serde::shape_create_virtual_router::de_create_virtual_router_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_virtual_router_response(response)
+            crate::protocol_serde::shape_create_virtual_router::de_create_virtual_router_http_response(response)
         }
     }
 }
@@ -233,9 +243,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualService {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_virtual_service_error(response)
+            crate::protocol_serde::shape_create_virtual_service::de_create_virtual_service_http_error(response)
         } else {
-            crate::operation_deser::parse_create_virtual_service_response(response)
+            crate::protocol_serde::shape_create_virtual_service::de_create_virtual_service_http_response(response)
         }
     }
 }
@@ -268,9 +278,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGatewayRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_gateway_route_error(response)
+            crate::protocol_serde::shape_delete_gateway_route::de_delete_gateway_route_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_gateway_route_response(response)
+            crate::protocol_serde::shape_delete_gateway_route::de_delete_gateway_route_http_response(
+                response,
+            )
         }
     }
 }
@@ -301,9 +315,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMesh {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_mesh_error(response)
+            crate::protocol_serde::shape_delete_mesh::de_delete_mesh_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_mesh_response(response)
+            crate::protocol_serde::shape_delete_mesh::de_delete_mesh_http_response(response)
         }
     }
 }
@@ -334,9 +348,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_route_error(response)
+            crate::protocol_serde::shape_delete_route::de_delete_route_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_route_response(response)
+            crate::protocol_serde::shape_delete_route::de_delete_route_http_response(response)
         }
     }
 }
@@ -369,9 +383,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_gateway_error(response)
+            crate::protocol_serde::shape_delete_virtual_gateway::de_delete_virtual_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_gateway_response(response)
+            crate::protocol_serde::shape_delete_virtual_gateway::de_delete_virtual_gateway_http_response(response)
         }
     }
 }
@@ -404,9 +418,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_node_error(response)
+            crate::protocol_serde::shape_delete_virtual_node::de_delete_virtual_node_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_virtual_node_response(response)
+            crate::protocol_serde::shape_delete_virtual_node::de_delete_virtual_node_http_response(
+                response,
+            )
         }
     }
 }
@@ -439,9 +457,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_router_error(response)
+            crate::protocol_serde::shape_delete_virtual_router::de_delete_virtual_router_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_virtual_router_response(response)
+            crate::protocol_serde::shape_delete_virtual_router::de_delete_virtual_router_http_response(response)
         }
     }
 }
@@ -474,9 +494,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualService {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_virtual_service_error(response)
+            crate::protocol_serde::shape_delete_virtual_service::de_delete_virtual_service_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_virtual_service_response(response)
+            crate::protocol_serde::shape_delete_virtual_service::de_delete_virtual_service_http_response(response)
         }
     }
 }
@@ -509,9 +529,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGatewayRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_gateway_route_error(response)
+            crate::protocol_serde::shape_describe_gateway_route::de_describe_gateway_route_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_gateway_route_response(response)
+            crate::protocol_serde::shape_describe_gateway_route::de_describe_gateway_route_http_response(response)
         }
     }
 }
@@ -542,9 +562,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMesh {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_mesh_error(response)
+            crate::protocol_serde::shape_describe_mesh::de_describe_mesh_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_mesh_response(response)
+            crate::protocol_serde::shape_describe_mesh::de_describe_mesh_http_response(response)
         }
     }
 }
@@ -575,9 +595,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_route_error(response)
+            crate::protocol_serde::shape_describe_route::de_describe_route_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_route_response(response)
+            crate::protocol_serde::shape_describe_route::de_describe_route_http_response(response)
         }
     }
 }
@@ -610,9 +630,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_gateway_error(response)
+            crate::protocol_serde::shape_describe_virtual_gateway::de_describe_virtual_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_gateway_response(response)
+            crate::protocol_serde::shape_describe_virtual_gateway::de_describe_virtual_gateway_http_response(response)
         }
     }
 }
@@ -645,9 +665,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualNode {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_node_error(response)
+            crate::protocol_serde::shape_describe_virtual_node::de_describe_virtual_node_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_virtual_node_response(response)
+            crate::protocol_serde::shape_describe_virtual_node::de_describe_virtual_node_http_response(response)
         }
     }
 }
@@ -680,9 +702,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualRouter {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_router_error(response)
+            crate::protocol_serde::shape_describe_virtual_router::de_describe_virtual_router_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_router_response(response)
+            crate::protocol_serde::shape_describe_virtual_router::de_describe_virtual_router_http_response(response)
         }
     }
 }
@@ -715,9 +737,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualService {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_virtual_service_error(response)
+            crate::protocol_serde::shape_describe_virtual_service::de_describe_virtual_service_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_virtual_service_response(response)
+            crate::protocol_serde::shape_describe_virtual_service::de_describe_virtual_service_http_response(response)
         }
     }
 }
@@ -750,9 +772,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGatewayRoutes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_gateway_routes_error(response)
+            crate::protocol_serde::shape_list_gateway_routes::de_list_gateway_routes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_gateway_routes_response(response)
+            crate::protocol_serde::shape_list_gateway_routes::de_list_gateway_routes_http_response(
+                response,
+            )
         }
     }
 }
@@ -783,9 +809,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeshes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_meshes_error(response)
+            crate::protocol_serde::shape_list_meshes::de_list_meshes_http_error(response)
         } else {
-            crate::operation_deser::parse_list_meshes_response(response)
+            crate::protocol_serde::shape_list_meshes::de_list_meshes_http_response(response)
         }
     }
 }
@@ -816,9 +842,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_routes_error(response)
+            crate::protocol_serde::shape_list_routes::de_list_routes_http_error(response)
         } else {
-            crate::operation_deser::parse_list_routes_response(response)
+            crate::protocol_serde::shape_list_routes::de_list_routes_http_response(response)
         }
     }
 }
@@ -851,9 +877,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -886,9 +912,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualGateways {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_gateways_error(response)
+            crate::protocol_serde::shape_list_virtual_gateways::de_list_virtual_gateways_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_virtual_gateways_response(response)
+            crate::protocol_serde::shape_list_virtual_gateways::de_list_virtual_gateways_http_response(response)
         }
     }
 }
@@ -921,9 +949,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualNodes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_nodes_error(response)
+            crate::protocol_serde::shape_list_virtual_nodes::de_list_virtual_nodes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_virtual_nodes_response(response)
+            crate::protocol_serde::shape_list_virtual_nodes::de_list_virtual_nodes_http_response(
+                response,
+            )
         }
     }
 }
@@ -956,9 +988,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualRouters {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_routers_error(response)
+            crate::protocol_serde::shape_list_virtual_routers::de_list_virtual_routers_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_virtual_routers_response(response)
+            crate::protocol_serde::shape_list_virtual_routers::de_list_virtual_routers_http_response(
+                response,
+            )
         }
     }
 }
@@ -991,9 +1027,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualServices {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_services_error(response)
+            crate::protocol_serde::shape_list_virtual_services::de_list_virtual_services_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_virtual_services_response(response)
+            crate::protocol_serde::shape_list_virtual_services::de_list_virtual_services_http_response(response)
         }
     }
 }
@@ -1024,9 +1062,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -1057,9 +1095,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -1092,9 +1130,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_gateway_route_error(response)
+            crate::protocol_serde::shape_update_gateway_route::de_update_gateway_route_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_gateway_route_response(response)
+            crate::protocol_serde::shape_update_gateway_route::de_update_gateway_route_http_response(
+                response,
+            )
         }
     }
 }
@@ -1125,9 +1167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMesh {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_mesh_error(response)
+            crate::protocol_serde::shape_update_mesh::de_update_mesh_http_error(response)
         } else {
-            crate::operation_deser::parse_update_mesh_response(response)
+            crate::protocol_serde::shape_update_mesh::de_update_mesh_http_response(response)
         }
     }
 }
@@ -1158,9 +1200,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoute {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_route_error(response)
+            crate::protocol_serde::shape_update_route::de_update_route_http_error(response)
         } else {
-            crate::operation_deser::parse_update_route_response(response)
+            crate::protocol_serde::shape_update_route::de_update_route_http_response(response)
         }
     }
 }
@@ -1193,9 +1235,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_gateway_error(response)
+            crate::protocol_serde::shape_update_virtual_gateway::de_update_virtual_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_gateway_response(response)
+            crate::protocol_serde::shape_update_virtual_gateway::de_update_virtual_gateway_http_response(response)
         }
     }
 }
@@ -1228,9 +1270,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualNode {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_node_error(response)
+            crate::protocol_serde::shape_update_virtual_node::de_update_virtual_node_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_virtual_node_response(response)
+            crate::protocol_serde::shape_update_virtual_node::de_update_virtual_node_http_response(
+                response,
+            )
         }
     }
 }
@@ -1263,9 +1309,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_router_error(response)
+            crate::protocol_serde::shape_update_virtual_router::de_update_virtual_router_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_virtual_router_response(response)
+            crate::protocol_serde::shape_update_virtual_router::de_update_virtual_router_http_response(response)
         }
     }
 }
@@ -1298,9 +1346,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualService {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_virtual_service_error(response)
+            crate::protocol_serde::shape_update_virtual_service::de_update_virtual_service_http_error(response)
         } else {
-            crate::operation_deser::parse_update_virtual_service_response(response)
+            crate::protocol_serde::shape_update_virtual_service::de_update_virtual_service_http_response(response)
         }
     }
 }

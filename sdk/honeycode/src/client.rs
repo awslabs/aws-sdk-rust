@@ -89,235 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchCreateTableRows`](crate::client::fluent_builders::BatchCreateTableRows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::BatchCreateTableRows::set_workbook_id): <p>The ID of the workbook where the new rows are being added.</p>  <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::BatchCreateTableRows::set_table_id): <p>The ID of the table where the new rows are being added.</p>  <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`rows_to_create(Vec<CreateRowData>)`](crate::client::fluent_builders::BatchCreateTableRows::rows_to_create) / [`set_rows_to_create(Option<Vec<CreateRowData>>)`](crate::client::fluent_builders::BatchCreateTableRows::set_rows_to_create): <p> The list of rows to create at the end of the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request and the cells to create for that row. You need to specify at least one item in this list. </p>  <p> Note that if one of the column ids in any of the rows in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::BatchCreateTableRows::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::BatchCreateTableRows::set_client_request_token): <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput) with field(s):
-    ///   - [`workbook_cursor(i64)`](crate::output::BatchCreateTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
-    ///   - [`created_rows(Option<HashMap<String, String>>)`](crate::output::BatchCreateTableRowsOutput::created_rows): <p>The map of batch item id to the row id that was created for that item.</p>
-    ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::output::BatchCreateTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
-    /// - On failure, responds with [`SdkError<BatchCreateTableRowsError>`](crate::error::BatchCreateTableRowsError)
-    pub fn batch_create_table_rows(&self) -> crate::client::fluent_builders::BatchCreateTableRows {
-        crate::client::fluent_builders::BatchCreateTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteTableRows`](crate::client::fluent_builders::BatchDeleteTableRows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::set_workbook_id): <p>The ID of the workbook where the rows are being deleted.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::set_table_id): <p>The ID of the table where the rows are being deleted.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`row_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::row_ids) / [`set_row_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteTableRows::set_row_ids): <p> The list of row ids to delete from the table. You need to specify at least one row id in this list. </p>  <p> Note that if one of the row ids provided in the request does not exist in the table, then the request fails and no rows are deleted from the table. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::BatchDeleteTableRows::set_client_request_token): <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput) with field(s):
-    ///   - [`workbook_cursor(i64)`](crate::output::BatchDeleteTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after deleting the rows from the table.</p>
-    ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::output::BatchDeleteTableRowsOutput::failed_batch_items): <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
-    /// - On failure, responds with [`SdkError<BatchDeleteTableRowsError>`](crate::error::BatchDeleteTableRowsError)
-    pub fn batch_delete_table_rows(&self) -> crate::client::fluent_builders::BatchDeleteTableRows {
-        crate::client::fluent_builders::BatchDeleteTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateTableRows`](crate::client::fluent_builders::BatchUpdateTableRows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::set_workbook_id): <p>The ID of the workbook where the rows are being updated.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::set_table_id): <p>The ID of the table where the rows are being updated.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`rows_to_update(Vec<UpdateRowData>)`](crate::client::fluent_builders::BatchUpdateTableRows::rows_to_update) / [`set_rows_to_update(Option<Vec<UpdateRowData>>)`](crate::client::fluent_builders::BatchUpdateTableRows::set_rows_to_update): <p> The list of rows to update in the table. Each item in this list needs to contain the row id to update along with the map of column id to cell values for each column in that row that needs to be updated. You need to specify at least one row in this list, and for each row, you need to specify at least one column to update. </p>  <p> Note that if one of the row or column ids in the request does not exist in the table, then the request fails and no updates are made to the table. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::BatchUpdateTableRows::set_client_request_token): <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput) with field(s):
-    ///   - [`workbook_cursor(i64)`](crate::output::BatchUpdateTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
-    ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::output::BatchUpdateTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    /// - On failure, responds with [`SdkError<BatchUpdateTableRowsError>`](crate::error::BatchUpdateTableRowsError)
-    pub fn batch_update_table_rows(&self) -> crate::client::fluent_builders::BatchUpdateTableRows {
-        crate::client::fluent_builders::BatchUpdateTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpsertTableRows`](crate::client::fluent_builders::BatchUpsertTableRows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::set_workbook_id): <p>The ID of the workbook where the rows are being upserted.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::set_table_id): <p>The ID of the table where the rows are being upserted.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`rows_to_upsert(Vec<UpsertRowData>)`](crate::client::fluent_builders::BatchUpsertTableRows::rows_to_upsert) / [`set_rows_to_upsert(Option<Vec<UpsertRowData>>)`](crate::client::fluent_builders::BatchUpsertTableRows::set_rows_to_upsert): <p> The list of rows to upsert in the table. Each item in this list needs to have a batch item id to uniquely identify the element in the request, a filter expression to find the rows to update for that element and the cell values to set for each column in the upserted rows. You need to specify at least one item in this list. </p>  <p> Note that if one of the filter formulas in the request fails to evaluate because of an error or one of the column ids in any of the rows does not exist in the table, then the request fails and no updates are made to the table. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::BatchUpsertTableRows::set_client_request_token): <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput) with field(s):
-    ///   - [`rows(Option<HashMap<String, UpsertRowsResult>>)`](crate::output::BatchUpsertTableRowsOutput::rows): <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
-    ///   - [`workbook_cursor(i64)`](crate::output::BatchUpsertTableRowsOutput::workbook_cursor): <p>The updated workbook cursor after updating or appending rows in the table.</p>
-    ///   - [`failed_batch_items(Option<Vec<FailedBatchItem>>)`](crate::output::BatchUpsertTableRowsOutput::failed_batch_items): <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
-    /// - On failure, responds with [`SdkError<BatchUpsertTableRowsError>`](crate::error::BatchUpsertTableRowsError)
-    pub fn batch_upsert_table_rows(&self) -> crate::client::fluent_builders::BatchUpsertTableRows {
-        crate::client::fluent_builders::BatchUpsertTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTableDataImportJob`](crate::client::fluent_builders::DescribeTableDataImportJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::set_workbook_id): <p>The ID of the workbook into which data was imported.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::set_table_id): <p>The ID of the table into which data was imported.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeTableDataImportJob::set_job_id): <p>The ID of the job that was returned by the StartTableDataImportJob request.</p>  <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    /// - On success, responds with [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput) with field(s):
-    ///   - [`job_status(Option<TableDataImportJobStatus>)`](crate::output::DescribeTableDataImportJobOutput::job_status): <p> The current status of the import job. </p>
-    ///   - [`message(Option<String>)`](crate::output::DescribeTableDataImportJobOutput::message): <p> A message providing more details about the current status of the import job. </p>
-    ///   - [`job_metadata(Option<TableDataImportJobMetadata>)`](crate::output::DescribeTableDataImportJobOutput::job_metadata): <p> The metadata about the job that was submitted for import. </p>
-    ///   - [`error_code(Option<ErrorCode>)`](crate::output::DescribeTableDataImportJobOutput::error_code): <p> If job status is failed, error code to understand reason for the failure. </p>
-    /// - On failure, responds with [`SdkError<DescribeTableDataImportJobError>`](crate::error::DescribeTableDataImportJobError)
-    pub fn describe_table_data_import_job(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeTableDataImportJob {
-        crate::client::fluent_builders::DescribeTableDataImportJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetScreenData`](crate::client::fluent_builders::GetScreenData) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_workbook_id): <p>The ID of the workbook that contains the screen.</p>
-    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_app_id): <p>The ID of the app that contains the screen.</p>
-    ///   - [`screen_id(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::screen_id) / [`set_screen_id(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_screen_id): <p>The ID of the screen.</p>
-    ///   - [`variables(HashMap<String, VariableValue>)`](crate::client::fluent_builders::GetScreenData::variables) / [`set_variables(Option<HashMap<String, VariableValue>>)`](crate::client::fluent_builders::GetScreenData::set_variables): <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetScreenData::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetScreenData::set_max_results): <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>  <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetScreenData::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetScreenData::set_next_token): <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>  <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    /// - On success, responds with [`GetScreenDataOutput`](crate::output::GetScreenDataOutput) with field(s):
-    ///   - [`results(Option<HashMap<String, ResultSet>>)`](crate::output::GetScreenDataOutput::results): <p>A map of all the rows on the screen keyed by block name.</p>
-    ///   - [`workbook_cursor(i64)`](crate::output::GetScreenDataOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this workbook is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetScreenDataOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
-    /// - On failure, responds with [`SdkError<GetScreenDataError>`](crate::error::GetScreenDataError)
-    pub fn get_screen_data(&self) -> crate::client::fluent_builders::GetScreenData {
-        crate::client::fluent_builders::GetScreenData::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InvokeScreenAutomation`](crate::client::fluent_builders::InvokeScreenAutomation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_workbook_id): <p>The ID of the workbook that contains the screen automation.</p>
-    ///   - [`app_id(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::app_id) / [`set_app_id(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_app_id): <p>The ID of the app that contains the screen automation.</p>
-    ///   - [`screen_id(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::screen_id) / [`set_screen_id(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_screen_id): <p>The ID of the screen that contains the screen automation.</p>
-    ///   - [`screen_automation_id(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::screen_automation_id) / [`set_screen_automation_id(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_screen_automation_id): <p>The ID of the automation action to be performed.</p>
-    ///   - [`variables(HashMap<String, VariableValue>)`](crate::client::fluent_builders::InvokeScreenAutomation::variables) / [`set_variables(Option<HashMap<String, VariableValue>>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_variables): <p> Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. Any variables defined in a screen are required to be passed in the call. </p>
-    ///   - [`row_id(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::row_id) / [`set_row_id(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_row_id): <p> The row ID for the automation if the automation is defined inside a block with source or list. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::InvokeScreenAutomation::set_client_request_token): <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput) with field(s):
-    ///   - [`workbook_cursor(i64)`](crate::output::InvokeScreenAutomationOutput::workbook_cursor): <p>The updated workbook cursor after performing the automation action.</p>
-    /// - On failure, responds with [`SdkError<InvokeScreenAutomationError>`](crate::error::InvokeScreenAutomationError)
-    pub fn invoke_screen_automation(
-        &self,
-    ) -> crate::client::fluent_builders::InvokeScreenAutomation {
-        crate::client::fluent_builders::InvokeScreenAutomation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTableColumns`](crate::client::fluent_builders::ListTableColumns) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTableColumns::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::ListTableColumns::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::ListTableColumns::set_workbook_id): <p>The ID of the workbook that contains the table whose columns are being retrieved.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::ListTableColumns::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::ListTableColumns::set_table_id): <p>The ID of the table whose columns are being retrieved.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTableColumns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTableColumns::set_next_token): <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>  <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    /// - On success, responds with [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput) with field(s):
-    ///   - [`table_columns(Option<Vec<TableColumn>>)`](crate::output::ListTableColumnsOutput::table_columns): <p> The list of columns in the table. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTableColumnsOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    ///   - [`workbook_cursor(i64)`](crate::output::ListTableColumnsOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    /// - On failure, responds with [`SdkError<ListTableColumnsError>`](crate::error::ListTableColumnsError)
-    pub fn list_table_columns(&self) -> crate::client::fluent_builders::ListTableColumns {
-        crate::client::fluent_builders::ListTableColumns::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTableRows`](crate::client::fluent_builders::ListTableRows) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTableRows::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::ListTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::ListTableRows::set_workbook_id): <p>The ID of the workbook that contains the table whose rows are being retrieved.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::ListTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::ListTableRows::set_table_id): <p>The ID of the table whose rows are being retrieved.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`row_ids(Vec<String>)`](crate::client::fluent_builders::ListTableRows::row_ids) / [`set_row_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListTableRows::set_row_ids): <p> This parameter is optional. If one or more row ids are specified in this list, then only the specified row ids are returned in the result. If no row ids are specified here, then all the rows in the table are returned. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTableRows::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTableRows::set_max_results): <p>The maximum number of rows to return in each page of the results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTableRows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTableRows::set_next_token): <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>  <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    /// - On success, responds with [`ListTableRowsOutput`](crate::output::ListTableRowsOutput) with field(s):
-    ///   - [`column_ids(Option<Vec<String>>)`](crate::output::ListTableRowsOutput::column_ids): <p> The list of columns in the table whose row data is returned in the result. </p>
-    ///   - [`rows(Option<Vec<TableRow>>)`](crate::output::ListTableRowsOutput::rows): <p> The list of rows in the table. Note that this result is paginated, so this list contains a maximum of 100 rows. </p>
-    ///   - [`row_ids_not_found(Option<Vec<String>>)`](crate::output::ListTableRowsOutput::row_ids_not_found): <p> The list of row ids included in the request that were not found in the table. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTableRowsOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    ///   - [`workbook_cursor(i64)`](crate::output::ListTableRowsOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    /// - On failure, responds with [`SdkError<ListTableRowsError>`](crate::error::ListTableRowsError)
-    pub fn list_table_rows(&self) -> crate::client::fluent_builders::ListTableRows {
-        crate::client::fluent_builders::ListTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTables`](crate::client::fluent_builders::ListTables) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::ListTables::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::ListTables::set_workbook_id): <p>The ID of the workbook whose tables are being retrieved.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTables::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTables::set_max_results): <p>The maximum number of tables to return in each page of the results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTables::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTables::set_next_token): <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>  <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    /// - On success, responds with [`ListTablesOutput`](crate::output::ListTablesOutput) with field(s):
-    ///   - [`tables(Option<Vec<Table>>)`](crate::output::ListTablesOutput::tables): <p> The list of tables in the workbook. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTablesOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    ///   - [`workbook_cursor(i64)`](crate::output::ListTablesOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    /// - On failure, responds with [`SdkError<ListTablesError>`](crate::error::ListTablesError)
-    pub fn list_tables(&self) -> crate::client::fluent_builders::ListTables {
-        crate::client::fluent_builders::ListTables::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The resource's tags.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`QueryTableRows`](crate::client::fluent_builders::QueryTableRows) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::QueryTableRows::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::QueryTableRows::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::QueryTableRows::set_workbook_id): <p>The ID of the workbook whose table rows are being queried.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`table_id(impl Into<String>)`](crate::client::fluent_builders::QueryTableRows::table_id) / [`set_table_id(Option<String>)`](crate::client::fluent_builders::QueryTableRows::set_table_id): <p>The ID of the table whose rows are being queried.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`filter_formula(Filter)`](crate::client::fluent_builders::QueryTableRows::filter_formula) / [`set_filter_formula(Option<Filter>)`](crate::client::fluent_builders::QueryTableRows::set_filter_formula): <p>An object that represents a filter formula along with the id of the context row under which the filter function needs to evaluate.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::QueryTableRows::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::QueryTableRows::set_max_results): <p>The maximum number of rows to return in each page of the results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::QueryTableRows::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::QueryTableRows::set_next_token): <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>  <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    /// - On success, responds with [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput) with field(s):
-    ///   - [`column_ids(Option<Vec<String>>)`](crate::output::QueryTableRowsOutput::column_ids): <p> The list of columns in the table whose row data is returned in the result. </p>
-    ///   - [`rows(Option<Vec<TableRow>>)`](crate::output::QueryTableRowsOutput::rows): <p> The list of rows in the table that match the query filter. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::QueryTableRowsOutput::next_token): <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the request has been loaded. </p>
-    ///   - [`workbook_cursor(i64)`](crate::output::QueryTableRowsOutput::workbook_cursor): <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
-    /// - On failure, responds with [`SdkError<QueryTableRowsError>`](crate::error::QueryTableRowsError)
-    pub fn query_table_rows(&self) -> crate::client::fluent_builders::QueryTableRows {
-        crate::client::fluent_builders::QueryTableRows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartTableDataImportJob`](crate::client::fluent_builders::StartTableDataImportJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workbook_id(impl Into<String>)`](crate::client::fluent_builders::StartTableDataImportJob::workbook_id) / [`set_workbook_id(Option<String>)`](crate::client::fluent_builders::StartTableDataImportJob::set_workbook_id): <p>The ID of the workbook where the rows are being imported.</p>  <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`data_source(ImportDataSource)`](crate::client::fluent_builders::StartTableDataImportJob::data_source) / [`set_data_source(Option<ImportDataSource>)`](crate::client::fluent_builders::StartTableDataImportJob::set_data_source): <p> The source of the data that is being imported. The size of source must be no larger than 100 MB. Source must have no more than 100,000 cells and no more than 1,000 rows. </p>
-    ///   - [`data_format(ImportSourceDataFormat)`](crate::client::fluent_builders::StartTableDataImportJob::data_format) / [`set_data_format(Option<ImportSourceDataFormat>)`](crate::client::fluent_builders::StartTableDataImportJob::set_data_format): <p> The format of the data that is being imported. Currently the only option supported is "DELIMITED_TEXT". </p>
-    ///   - [`destination_table_id(impl Into<String>)`](crate::client::fluent_builders::StartTableDataImportJob::destination_table_id) / [`set_destination_table_id(Option<String>)`](crate::client::fluent_builders::StartTableDataImportJob::set_destination_table_id): <p>The ID of the table where the rows are being imported.</p>  <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-    ///   - [`import_options(ImportOptions)`](crate::client::fluent_builders::StartTableDataImportJob::import_options) / [`set_import_options(Option<ImportOptions>)`](crate::client::fluent_builders::StartTableDataImportJob::set_import_options): <p> The options for customizing this import request. </p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::StartTableDataImportJob::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::StartTableDataImportJob::set_client_request_token): <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p>  <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-    /// - On success, responds with [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput) with field(s):
-    ///   - [`job_id(Option<String>)`](crate::output::StartTableDataImportJobOutput::job_id): <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
-    ///   - [`job_status(Option<TableDataImportJobStatus>)`](crate::output::StartTableDataImportJobOutput::job_status): <p> The status of the import job immediately after submitting the request. </p>
-    /// - On failure, responds with [`SdkError<StartTableDataImportJobError>`](crate::error::StartTableDataImportJobError)
-    pub fn start_table_data_import_job(
-        &self,
-    ) -> crate::client::fluent_builders::StartTableDataImportJob {
-        crate::client::fluent_builders::StartTableDataImportJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to apply to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource's Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys to remove from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -403,9 +174,39 @@ impl Client {
     }
 }
 
+mod batch_create_table_rows;
+
+mod batch_delete_table_rows;
+
+mod batch_update_table_rows;
+
+mod batch_upsert_table_rows;
+
+mod describe_table_data_import_job;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_screen_data;
+
+mod invoke_screen_automation;
+
+mod list_table_columns;
+
+mod list_table_rows;
+
+mod list_tables;
+
+mod list_tags_for_resource;
+
+mod query_table_rows;
+
+mod start_table_data_import_job;
+
+mod tag_resource;
+
+mod untag_resource;

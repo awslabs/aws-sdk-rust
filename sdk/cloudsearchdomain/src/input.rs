@@ -417,7 +417,10 @@ impl UploadDocumentsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_upload_documents(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_upload_documents::ser_upload_documents_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -431,8 +434,10 @@ impl UploadDocumentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_upload_documents_input(self.documents)?
-                .into_inner(),
+            crate::protocol_serde::shape_upload_documents_input::ser_documents_http_payload(
+                self.documents,
+            )?
+            .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

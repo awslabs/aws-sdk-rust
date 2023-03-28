@@ -90,7 +90,8 @@ impl ListCidrBlocksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_cidr_blocks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_cidr_blocks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListCidrCollectionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_cidr_collections_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_cidr_collections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListCidrLocationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_cidr_locations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_cidr_locations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl ListHealthChecksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_health_checks_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_health_checks_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -562,7 +566,8 @@ impl ListHostedZonesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_hosted_zones_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_hosted_zones_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -680,7 +685,10 @@ impl ListQueryLoggingConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_query_logging_configs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_query_logging_configs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -727,7 +735,7 @@ impl ListCidrBlocksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_cidr_blocks_output_cidr_blocks(page)
+            crate::lens::lens_list_cidr_blocks_output_cidr_blocks(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -754,11 +762,9 @@ impl ListCidrCollectionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_cidr_collections_output_cidr_collections(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_cidr_collections_output_cidr_collections(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -783,7 +789,7 @@ impl ListCidrLocationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_cidr_locations_output_cidr_locations(page)
+            crate::lens::lens_list_cidr_locations_output_cidr_locations(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -810,7 +816,7 @@ impl ListHealthChecksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_health_checks_output_health_checks(page)
+            crate::lens::lens_list_health_checks_output_health_checks(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -837,7 +843,7 @@ impl ListHostedZonesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_hosted_zones_output_hosted_zones(page)
+            crate::lens::lens_list_hosted_zones_output_hosted_zones(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -863,6 +869,10 @@ impl ListQueryLoggingConfigsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListQueryLoggingConfigsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_query_logging_configs_output_query_logging_configs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_query_logging_configs_output_query_logging_configs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

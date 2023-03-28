@@ -90,7 +90,10 @@ impl GetFlowTemplateRevisionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_flow_template_revisions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_flow_template_revisions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,7 @@ impl GetSystemTemplateRevisionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_system_template_revisions_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_system_template_revisions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +329,10 @@ impl ListFlowExecutionMessagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_flow_execution_messages_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_flow_execution_messages_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +450,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +569,8 @@ impl SearchEntitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_entities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_entities_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +688,8 @@ impl SearchFlowExecutionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_flow_executions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_flow_executions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +807,8 @@ impl SearchFlowTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_flow_templates_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_flow_templates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +926,10 @@ impl SearchSystemInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_system_instances_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_system_instances_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1047,10 @@ impl SearchSystemTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_system_templates_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_system_templates_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1168,8 @@ impl SearchThingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_things_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_things_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1199,11 +1216,9 @@ impl GetFlowTemplateRevisionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_flow_template_revisions_output_summaries(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_flow_template_revisions_output_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1228,11 +1243,9 @@ impl GetSystemTemplateRevisionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_system_template_revisions_output_summaries(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_system_template_revisions_output_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1257,11 +1270,9 @@ impl ListFlowExecutionMessagesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_flow_execution_messages_output_messages(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_flow_execution_messages_output_messages(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1286,7 +1297,7 @@ impl ListTagsForResourcePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+            crate::lens::lens_list_tags_for_resource_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1313,7 +1324,7 @@ impl SearchEntitiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_entities_output_descriptions(page)
+            crate::lens::lens_search_entities_output_descriptions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1340,7 +1351,7 @@ impl SearchFlowExecutionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_flow_executions_output_summaries(page)
+            crate::lens::lens_search_flow_executions_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1367,7 +1378,7 @@ impl SearchFlowTemplatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_flow_templates_output_summaries(page)
+            crate::lens::lens_search_flow_templates_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1394,7 +1405,7 @@ impl SearchSystemInstancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_system_instances_output_summaries(page)
+            crate::lens::lens_search_system_instances_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1421,7 +1432,7 @@ impl SearchSystemTemplatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_system_templates_output_summaries(page)
+            crate::lens::lens_search_system_templates_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1448,7 +1459,7 @@ impl SearchThingsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_things_output_things(page)
+            crate::lens::lens_search_things_output_things(page)
                 .unwrap_or_default()
                 .into_iter()
         })

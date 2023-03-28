@@ -89,305 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateProfile`](crate::client::fluent_builders::CreateProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_name): <p>The name of the profile.</p>
-    ///   - [`require_instance_properties(bool)`](crate::client::fluent_builders::CreateProfile::require_instance_properties) / [`set_require_instance_properties(Option<bool>)`](crate::client::fluent_builders::CreateProfile::set_require_instance_properties): <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
-    ///   - [`session_policy(impl Into<String>)`](crate::client::fluent_builders::CreateProfile::session_policy) / [`set_session_policy(Option<String>)`](crate::client::fluent_builders::CreateProfile::set_session_policy): <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    ///   - [`role_arns(Vec<String>)`](crate::client::fluent_builders::CreateProfile::role_arns) / [`set_role_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProfile::set_role_arns): <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    ///   - [`managed_policy_arns(Vec<String>)`](crate::client::fluent_builders::CreateProfile::managed_policy_arns) / [`set_managed_policy_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProfile::set_managed_policy_arns): <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::CreateProfile::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::CreateProfile::set_duration_seconds): <p> The number of seconds the vended session credentials are valid for. </p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateProfile::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateProfile::set_enabled): <p>Specifies whether the profile is enabled.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateProfile::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateProfile::set_tags): <p>The tags to attach to the profile.</p>
-    /// - On success, responds with [`CreateProfileOutput`](crate::output::CreateProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::CreateProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<CreateProfileError>`](crate::error::CreateProfileError)
-    pub fn create_profile(&self) -> crate::client::fluent_builders::CreateProfile {
-        crate::client::fluent_builders::CreateProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateTrustAnchor`](crate::client::fluent_builders::CreateTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTrustAnchor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTrustAnchor::set_name): <p>The name of the trust anchor.</p>
-    ///   - [`source(Source)`](crate::client::fluent_builders::CreateTrustAnchor::source) / [`set_source(Option<Source>)`](crate::client::fluent_builders::CreateTrustAnchor::set_source): <p>The trust anchor type and its related certificate data.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateTrustAnchor::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateTrustAnchor::set_enabled): <p>Specifies whether the trust anchor is enabled.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTrustAnchor::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTrustAnchor::set_tags): <p>The tags to attach to the trust anchor.</p>
-    /// - On success, responds with [`CreateTrustAnchorOutput`](crate::output::CreateTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::CreateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<CreateTrustAnchorError>`](crate::error::CreateTrustAnchorError)
-    pub fn create_trust_anchor(&self) -> crate::client::fluent_builders::CreateTrustAnchor {
-        crate::client::fluent_builders::CreateTrustAnchor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCrl`](crate::client::fluent_builders::DeleteCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::client::fluent_builders::DeleteCrl::crl_id) / [`set_crl_id(Option<String>)`](crate::client::fluent_builders::DeleteCrl::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
-    /// - On success, responds with [`DeleteCrlOutput`](crate::output::DeleteCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::DeleteCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<DeleteCrlError>`](crate::error::DeleteCrlError)
-    pub fn delete_crl(&self) -> crate::client::fluent_builders::DeleteCrl {
-        crate::client::fluent_builders::DeleteCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProfile`](crate::client::fluent_builders::DeleteProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteProfile::set_profile_id): <p>The unique identifier of the profile.</p>
-    /// - On success, responds with [`DeleteProfileOutput`](crate::output::DeleteProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::DeleteProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<DeleteProfileError>`](crate::error::DeleteProfileError)
-    pub fn delete_profile(&self) -> crate::client::fluent_builders::DeleteProfile {
-        crate::client::fluent_builders::DeleteProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTrustAnchor`](crate::client::fluent_builders::DeleteTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::client::fluent_builders::DeleteTrustAnchor::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::client::fluent_builders::DeleteTrustAnchor::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
-    /// - On success, responds with [`DeleteTrustAnchorOutput`](crate::output::DeleteTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::DeleteTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<DeleteTrustAnchorError>`](crate::error::DeleteTrustAnchorError)
-    pub fn delete_trust_anchor(&self) -> crate::client::fluent_builders::DeleteTrustAnchor {
-        crate::client::fluent_builders::DeleteTrustAnchor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisableCrl`](crate::client::fluent_builders::DisableCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::client::fluent_builders::DisableCrl::crl_id) / [`set_crl_id(Option<String>)`](crate::client::fluent_builders::DisableCrl::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
-    /// - On success, responds with [`DisableCrlOutput`](crate::output::DisableCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::DisableCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<DisableCrlError>`](crate::error::DisableCrlError)
-    pub fn disable_crl(&self) -> crate::client::fluent_builders::DisableCrl {
-        crate::client::fluent_builders::DisableCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisableProfile`](crate::client::fluent_builders::DisableProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::DisableProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::DisableProfile::set_profile_id): <p>The unique identifier of the profile.</p>
-    /// - On success, responds with [`DisableProfileOutput`](crate::output::DisableProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::DisableProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<DisableProfileError>`](crate::error::DisableProfileError)
-    pub fn disable_profile(&self) -> crate::client::fluent_builders::DisableProfile {
-        crate::client::fluent_builders::DisableProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisableTrustAnchor`](crate::client::fluent_builders::DisableTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::client::fluent_builders::DisableTrustAnchor::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::client::fluent_builders::DisableTrustAnchor::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
-    /// - On success, responds with [`DisableTrustAnchorOutput`](crate::output::DisableTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::DisableTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<DisableTrustAnchorError>`](crate::error::DisableTrustAnchorError)
-    pub fn disable_trust_anchor(&self) -> crate::client::fluent_builders::DisableTrustAnchor {
-        crate::client::fluent_builders::DisableTrustAnchor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableCrl`](crate::client::fluent_builders::EnableCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::client::fluent_builders::EnableCrl::crl_id) / [`set_crl_id(Option<String>)`](crate::client::fluent_builders::EnableCrl::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
-    /// - On success, responds with [`EnableCrlOutput`](crate::output::EnableCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::EnableCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<EnableCrlError>`](crate::error::EnableCrlError)
-    pub fn enable_crl(&self) -> crate::client::fluent_builders::EnableCrl {
-        crate::client::fluent_builders::EnableCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableProfile`](crate::client::fluent_builders::EnableProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::EnableProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::EnableProfile::set_profile_id): <p>The unique identifier of the profile.</p>
-    /// - On success, responds with [`EnableProfileOutput`](crate::output::EnableProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::EnableProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<EnableProfileError>`](crate::error::EnableProfileError)
-    pub fn enable_profile(&self) -> crate::client::fluent_builders::EnableProfile {
-        crate::client::fluent_builders::EnableProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableTrustAnchor`](crate::client::fluent_builders::EnableTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::client::fluent_builders::EnableTrustAnchor::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::client::fluent_builders::EnableTrustAnchor::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
-    /// - On success, responds with [`EnableTrustAnchorOutput`](crate::output::EnableTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::EnableTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<EnableTrustAnchorError>`](crate::error::EnableTrustAnchorError)
-    pub fn enable_trust_anchor(&self) -> crate::client::fluent_builders::EnableTrustAnchor {
-        crate::client::fluent_builders::EnableTrustAnchor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCrl`](crate::client::fluent_builders::GetCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::client::fluent_builders::GetCrl::crl_id) / [`set_crl_id(Option<String>)`](crate::client::fluent_builders::GetCrl::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
-    /// - On success, responds with [`GetCrlOutput`](crate::output::GetCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::GetCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<GetCrlError>`](crate::error::GetCrlError)
-    pub fn get_crl(&self) -> crate::client::fluent_builders::GetCrl {
-        crate::client::fluent_builders::GetCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProfile`](crate::client::fluent_builders::GetProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::GetProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::GetProfile::set_profile_id): <p>The unique identifier of the profile.</p>
-    /// - On success, responds with [`GetProfileOutput`](crate::output::GetProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::GetProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<GetProfileError>`](crate::error::GetProfileError)
-    pub fn get_profile(&self) -> crate::client::fluent_builders::GetProfile {
-        crate::client::fluent_builders::GetProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSubject`](crate::client::fluent_builders::GetSubject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subject_id(impl Into<String>)`](crate::client::fluent_builders::GetSubject::subject_id) / [`set_subject_id(Option<String>)`](crate::client::fluent_builders::GetSubject::set_subject_id): <p>The unique identifier of the subject. </p>
-    /// - On success, responds with [`GetSubjectOutput`](crate::output::GetSubjectOutput) with field(s):
-    ///   - [`subject(Option<SubjectDetail>)`](crate::output::GetSubjectOutput::subject): <p>The state of the subject after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<GetSubjectError>`](crate::error::GetSubjectError)
-    pub fn get_subject(&self) -> crate::client::fluent_builders::GetSubject {
-        crate::client::fluent_builders::GetSubject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetTrustAnchor`](crate::client::fluent_builders::GetTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::client::fluent_builders::GetTrustAnchor::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::client::fluent_builders::GetTrustAnchor::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
-    /// - On success, responds with [`GetTrustAnchorOutput`](crate::output::GetTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::GetTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<GetTrustAnchorError>`](crate::error::GetTrustAnchorError)
-    pub fn get_trust_anchor(&self) -> crate::client::fluent_builders::GetTrustAnchor {
-        crate::client::fluent_builders::GetTrustAnchor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportCrl`](crate::client::fluent_builders::ImportCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ImportCrl::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ImportCrl::set_name): <p>The name of the certificate revocation list (CRL).</p>
-    ///   - [`crl_data(Blob)`](crate::client::fluent_builders::ImportCrl::crl_data) / [`set_crl_data(Option<Blob>)`](crate::client::fluent_builders::ImportCrl::set_crl_data): <p>The x509 v3 specified certificate revocation list</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::ImportCrl::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::ImportCrl::set_enabled): <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportCrl::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportCrl::set_tags): <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    ///   - [`trust_anchor_arn(impl Into<String>)`](crate::client::fluent_builders::ImportCrl::trust_anchor_arn) / [`set_trust_anchor_arn(Option<String>)`](crate::client::fluent_builders::ImportCrl::set_trust_anchor_arn): <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    /// - On success, responds with [`ImportCrlOutput`](crate::output::ImportCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::ImportCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<ImportCrlError>`](crate::error::ImportCrlError)
-    pub fn import_crl(&self) -> crate::client::fluent_builders::ImportCrl {
-        crate::client::fluent_builders::ImportCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCrls`](crate::client::fluent_builders::ListCrls) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCrls::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrls::set_next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListCrls::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListCrls::set_page_size): <p>The number of resources in the paginated list. </p>
-    /// - On success, responds with [`ListCrlsOutput`](crate::output::ListCrlsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListCrlsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`crls(Option<Vec<CrlDetail>>)`](crate::output::ListCrlsOutput::crls): <p>A list of certificate revocation lists (CRL). </p>
-    /// - On failure, responds with [`SdkError<ListCrlsError>`](crate::error::ListCrlsError)
-    pub fn list_crls(&self) -> crate::client::fluent_builders::ListCrls {
-        crate::client::fluent_builders::ListCrls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProfiles`](crate::client::fluent_builders::ListProfiles) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProfiles::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProfiles::set_next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListProfiles::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListProfiles::set_page_size): <p>The number of resources in the paginated list. </p>
-    /// - On success, responds with [`ListProfilesOutput`](crate::output::ListProfilesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListProfilesOutput::next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`profiles(Option<Vec<ProfileDetail>>)`](crate::output::ListProfilesOutput::profiles): <p>A list of profiles.</p>
-    /// - On failure, responds with [`SdkError<ListProfilesError>`](crate::error::ListProfilesError)
-    pub fn list_profiles(&self) -> crate::client::fluent_builders::ListProfiles {
-        crate::client::fluent_builders::ListProfiles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSubjects`](crate::client::fluent_builders::ListSubjects) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubjects::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSubjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSubjects::set_next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListSubjects::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListSubjects::set_page_size): <p>The number of resources in the paginated list. </p>
-    /// - On success, responds with [`ListSubjectsOutput`](crate::output::ListSubjectsOutput) with field(s):
-    ///   - [`subjects(Option<Vec<SubjectSummary>>)`](crate::output::ListSubjectsOutput::subjects): <p>A list of subjects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSubjectsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    /// - On failure, responds with [`SdkError<ListSubjectsError>`](crate::error::ListSubjectsError)
-    pub fn list_subjects(&self) -> crate::client::fluent_builders::ListSubjects {
-        crate::client::fluent_builders::ListSubjects::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags attached to the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTrustAnchors`](crate::client::fluent_builders::ListTrustAnchors) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrustAnchors::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrustAnchors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrustAnchors::set_next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListTrustAnchors::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListTrustAnchors::set_page_size): <p>The number of resources in the paginated list. </p>
-    /// - On success, responds with [`ListTrustAnchorsOutput`](crate::output::ListTrustAnchorsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListTrustAnchorsOutput::next_token): <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
-    ///   - [`trust_anchors(Option<Vec<TrustAnchorDetail>>)`](crate::output::ListTrustAnchorsOutput::trust_anchors): <p>A list of trust anchors.</p>
-    /// - On failure, responds with [`SdkError<ListTrustAnchorsError>`](crate::error::ListTrustAnchorsError)
-    pub fn list_trust_anchors(&self) -> crate::client::fluent_builders::ListTrustAnchors {
-        crate::client::fluent_builders::ListTrustAnchors::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to attach to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of keys. Tag keys are the unique identifiers of tags. </p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCrl`](crate::client::fluent_builders::UpdateCrl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCrl::crl_id) / [`set_crl_id(Option<String>)`](crate::client::fluent_builders::UpdateCrl::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCrl::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCrl::set_name): <p>The name of the Crl.</p>
-    ///   - [`crl_data(Blob)`](crate::client::fluent_builders::UpdateCrl::crl_data) / [`set_crl_data(Option<Blob>)`](crate::client::fluent_builders::UpdateCrl::set_crl_data): <p>The x509 v3 specified certificate revocation list</p>
-    /// - On success, responds with [`UpdateCrlOutput`](crate::output::UpdateCrlOutput) with field(s):
-    ///   - [`crl(Option<CrlDetail>)`](crate::output::UpdateCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<UpdateCrlError>`](crate::error::UpdateCrlError)
-    pub fn update_crl(&self) -> crate::client::fluent_builders::UpdateCrl {
-        crate::client::fluent_builders::UpdateCrl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProfile`](crate::client::fluent_builders::UpdateProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::profile_id) / [`set_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_profile_id): <p>The unique identifier of the profile.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_name): <p>The name of the profile.</p>
-    ///   - [`session_policy(impl Into<String>)`](crate::client::fluent_builders::UpdateProfile::session_policy) / [`set_session_policy(Option<String>)`](crate::client::fluent_builders::UpdateProfile::set_session_policy): <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
-    ///   - [`role_arns(Vec<String>)`](crate::client::fluent_builders::UpdateProfile::role_arns) / [`set_role_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateProfile::set_role_arns): <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    ///   - [`managed_policy_arns(Vec<String>)`](crate::client::fluent_builders::UpdateProfile::managed_policy_arns) / [`set_managed_policy_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateProfile::set_managed_policy_arns): <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
-    ///   - [`duration_seconds(i32)`](crate::client::fluent_builders::UpdateProfile::duration_seconds) / [`set_duration_seconds(Option<i32>)`](crate::client::fluent_builders::UpdateProfile::set_duration_seconds): <p> The number of seconds the vended session credentials are valid for. </p>
-    /// - On success, responds with [`UpdateProfileOutput`](crate::output::UpdateProfileOutput) with field(s):
-    ///   - [`profile(Option<ProfileDetail>)`](crate::output::UpdateProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
-    /// - On failure, responds with [`SdkError<UpdateProfileError>`](crate::error::UpdateProfileError)
-    pub fn update_profile(&self) -> crate::client::fluent_builders::UpdateProfile {
-        crate::client::fluent_builders::UpdateProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTrustAnchor`](crate::client::fluent_builders::UpdateTrustAnchor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::client::fluent_builders::UpdateTrustAnchor::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::client::fluent_builders::UpdateTrustAnchor::set_trust_anchor_id): <p>The unique identifier of the trust anchor.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTrustAnchor::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTrustAnchor::set_name): <p>The name of the trust anchor.</p>
-    ///   - [`source(Source)`](crate::client::fluent_builders::UpdateTrustAnchor::source) / [`set_source(Option<Source>)`](crate::client::fluent_builders::UpdateTrustAnchor::set_source): <p>The trust anchor type and its related certificate data.</p>
-    /// - On success, responds with [`UpdateTrustAnchorOutput`](crate::output::UpdateTrustAnchorOutput) with field(s):
-    ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::output::UpdateTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation. </p>
-    /// - On failure, responds with [`SdkError<UpdateTrustAnchorError>`](crate::error::UpdateTrustAnchorError)
-    pub fn update_trust_anchor(&self) -> crate::client::fluent_builders::UpdateTrustAnchor {
-        crate::client::fluent_builders::UpdateTrustAnchor::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -473,9 +174,61 @@ impl Client {
     }
 }
 
+mod create_profile;
+
+mod create_trust_anchor;
+
+mod delete_crl;
+
+mod delete_profile;
+
+mod delete_trust_anchor;
+
+mod disable_crl;
+
+mod disable_profile;
+
+mod disable_trust_anchor;
+
+mod enable_crl;
+
+mod enable_profile;
+
+mod enable_trust_anchor;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_crl;
+
+mod get_profile;
+
+mod get_subject;
+
+mod get_trust_anchor;
+
+mod import_crl;
+
+mod list_crls;
+
+mod list_profiles;
+
+mod list_subjects;
+
+mod list_tags_for_resource;
+
+mod list_trust_anchors;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_crl;
+
+mod update_profile;
+
+mod update_trust_anchor;

@@ -89,690 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AcceptEulas`](crate::client::fluent_builders::AcceptEulas) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::AcceptEulas::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AcceptEulas::set_eula_ids): <p>The EULA ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::AcceptEulas::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::AcceptEulas::set_studio_id): <p>The studio ID.</p>
-    /// - On success, responds with [`AcceptEulasOutput`](crate::output::AcceptEulasOutput) with field(s):
-    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::AcceptEulasOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
-    /// - On failure, responds with [`SdkError<AcceptEulasError>`](crate::error::AcceptEulasError)
-    pub fn accept_eulas(&self) -> crate::client::fluent_builders::AcceptEulas {
-        crate::client::fluent_builders::AcceptEulas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLaunchProfile`](crate::client::fluent_builders::CreateLaunchProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_description): <p>The description.</p>
-    ///   - [`ec2_subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::ec2_subnet_ids) / [`set_ec2_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_ec2_subnet_ids): <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
-    ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_name): <p>The name for the launch profile.</p>
-    ///   - [`stream_configuration(StreamConfigurationCreate)`](crate::client::fluent_builders::CreateLaunchProfile::stream_configuration) / [`set_stream_configuration(Option<StreamConfigurationCreate>)`](crate::client::fluent_builders::CreateLaunchProfile::set_stream_configuration): <p>A configuration for a streaming session.</p>
-    ///   - [`studio_component_ids(Vec<String>)`](crate::client::fluent_builders::CreateLaunchProfile::studio_component_ids) / [`set_studio_component_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_studio_component_ids): <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchProfile::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchProfile::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchProfile::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    /// - On success, responds with [`CreateLaunchProfileOutput`](crate::output::CreateLaunchProfileOutput) with field(s):
-    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::CreateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
-    /// - On failure, responds with [`SdkError<CreateLaunchProfileError>`](crate::error::CreateLaunchProfileError)
-    pub fn create_launch_profile(&self) -> crate::client::fluent_builders::CreateLaunchProfile {
-        crate::client::fluent_builders::CreateLaunchProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStreamingImage`](crate::client::fluent_builders::CreateStreamingImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_description): <p>A human-readable description of the streaming image.</p>
-    ///   - [`ec2_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::ec2_image_id) / [`set_ec2_image_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_ec2_image_id): <p>The ID of an EC2 machine image with which to create this streaming image.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_name): <p>A friendly name for a streaming image resource.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingImage::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingImage::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingImage::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    /// - On success, responds with [`CreateStreamingImageOutput`](crate::output::CreateStreamingImageOutput) with field(s):
-    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::CreateStreamingImageOutput::streaming_image): <p>The streaming image.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamingImageError>`](crate::error::CreateStreamingImageError)
-    pub fn create_streaming_image(&self) -> crate::client::fluent_builders::CreateStreamingImage {
-        crate::client::fluent_builders::CreateStreamingImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStreamingSession`](crate::client::fluent_builders::CreateStreamingSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`ec2_instance_type(StreamingInstanceType)`](crate::client::fluent_builders::CreateStreamingSession::ec2_instance_type) / [`set_ec2_instance_type(Option<StreamingInstanceType>)`](crate::client::fluent_builders::CreateStreamingSession::set_ec2_instance_type): <p>The EC2 Instance type used for the streaming session.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_owned_by): <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
-    ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_streaming_image_id): <p>The ID of the streaming image.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSession::set_studio_id): <p>The studio ID. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStreamingSession::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStreamingSession::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    /// - On success, responds with [`CreateStreamingSessionOutput`](crate::output::CreateStreamingSessionOutput) with field(s):
-    ///   - [`session(Option<StreamingSession>)`](crate::output::CreateStreamingSessionOutput::session): <p>The session.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamingSessionError>`](crate::error::CreateStreamingSessionError)
-    pub fn create_streaming_session(
-        &self,
-    ) -> crate::client::fluent_builders::CreateStreamingSession {
-        crate::client::fluent_builders::CreateStreamingSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStreamingSessionStream`](crate::client::fluent_builders::CreateStreamingSessionStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`expiration_in_seconds(i32)`](crate::client::fluent_builders::CreateStreamingSessionStream::expiration_in_seconds) / [`set_expiration_in_seconds(Option<i32>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_expiration_in_seconds): <p>The expiration time in seconds.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_session_id): <p>The streaming session ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStreamingSessionStream::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`CreateStreamingSessionStreamOutput`](crate::output::CreateStreamingSessionStreamOutput) with field(s):
-    ///   - [`stream(Option<StreamingSessionStream>)`](crate::output::CreateStreamingSessionStreamOutput::stream): <p>The stream.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamingSessionStreamError>`](crate::error::CreateStreamingSessionStreamError)
-    pub fn create_streaming_session_stream(
-        &self,
-    ) -> crate::client::fluent_builders::CreateStreamingSessionStream {
-        crate::client::fluent_builders::CreateStreamingSessionStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStudio`](crate::client::fluent_builders::CreateStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`admin_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::admin_role_arn) / [`set_admin_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_admin_role_arn): <p>The IAM role that studio admins will assume when logging in to the Nimble Studio portal.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_display_name): <p>A friendly name for the studio.</p>
-    ///   - [`studio_encryption_configuration(StudioEncryptionConfiguration)`](crate::client::fluent_builders::CreateStudio::studio_encryption_configuration) / [`set_studio_encryption_configuration(Option<StudioEncryptionConfiguration>)`](crate::client::fluent_builders::CreateStudio::set_studio_encryption_configuration): <p>The studio encryption configuration.</p>
-    ///   - [`studio_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::studio_name) / [`set_studio_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_studio_name): <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudio::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudio::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    ///   - [`user_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role_arn) / [`set_user_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role_arn): <p>The IAM role that studio users will assume when logging in to the Nimble Studio portal.</p>
-    /// - On success, responds with [`CreateStudioOutput`](crate::output::CreateStudioOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::CreateStudioOutput::studio): <p>Information about a studio.</p>
-    /// - On failure, responds with [`SdkError<CreateStudioError>`](crate::error::CreateStudioError)
-    pub fn create_studio(&self) -> crate::client::fluent_builders::CreateStudio {
-        crate::client::fluent_builders::CreateStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStudioComponent`](crate::client::fluent_builders::CreateStudioComponent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`configuration(StudioComponentConfiguration)`](crate::client::fluent_builders::CreateStudioComponent::configuration) / [`set_configuration(Option<StudioComponentConfiguration>)`](crate::client::fluent_builders::CreateStudioComponent::set_configuration): <p>The configuration of the studio component, based on component type.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_description): <p>The description.</p>
-    ///   - [`ec2_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateStudioComponent::ec2_security_group_ids) / [`set_ec2_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
-    ///   - [`initialization_scripts(Vec<StudioComponentInitializationScript>)`](crate::client::fluent_builders::CreateStudioComponent::initialization_scripts) / [`set_initialization_scripts(Option<Vec<StudioComponentInitializationScript>>)`](crate::client::fluent_builders::CreateStudioComponent::set_initialization_scripts): <p>Initialization scripts for studio components.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_name): <p>The name for the studio component.</p>
-    ///   - [`script_parameters(Vec<ScriptParameterKeyValue>)`](crate::client::fluent_builders::CreateStudioComponent::script_parameters) / [`set_script_parameters(Option<Vec<ScriptParameterKeyValue>>)`](crate::client::fluent_builders::CreateStudioComponent::set_script_parameters): <p>Parameters for the studio component scripts.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_studio_id): <p>The studio ID. </p>
-    ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::CreateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::CreateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStudioComponent::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStudioComponent::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::CreateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::CreateStudioComponent::set_type): <p>The type of the studio component.</p>
-    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    /// - On success, responds with [`CreateStudioComponentOutput`](crate::output::CreateStudioComponentOutput) with field(s):
-    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::CreateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
-    /// - On failure, responds with [`SdkError<CreateStudioComponentError>`](crate::error::CreateStudioComponentError)
-    pub fn create_studio_component(&self) -> crate::client::fluent_builders::CreateStudioComponent {
-        crate::client::fluent_builders::CreateStudioComponent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLaunchProfile`](crate::client::fluent_builders::DeleteLaunchProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfile::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteLaunchProfileOutput`](crate::output::DeleteLaunchProfileOutput) with field(s):
-    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::DeleteLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
-    /// - On failure, responds with [`SdkError<DeleteLaunchProfileError>`](crate::error::DeleteLaunchProfileError)
-    pub fn delete_launch_profile(&self) -> crate::client::fluent_builders::DeleteLaunchProfile {
-        crate::client::fluent_builders::DeleteLaunchProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLaunchProfileMember`](crate::client::fluent_builders::DeleteLaunchProfileMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteLaunchProfileMemberOutput`](crate::output::DeleteLaunchProfileMemberOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLaunchProfileMemberError>`](crate::error::DeleteLaunchProfileMemberError)
-    pub fn delete_launch_profile_member(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteLaunchProfileMember {
-        crate::client::fluent_builders::DeleteLaunchProfileMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStreamingImage`](crate::client::fluent_builders::DeleteStreamingImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_streaming_image_id): <p>The streaming image ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingImage::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteStreamingImageOutput`](crate::output::DeleteStreamingImageOutput) with field(s):
-    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::DeleteStreamingImageOutput::streaming_image): <p>The streaming image.</p>
-    /// - On failure, responds with [`SdkError<DeleteStreamingImageError>`](crate::error::DeleteStreamingImageError)
-    pub fn delete_streaming_image(&self) -> crate::client::fluent_builders::DeleteStreamingImage {
-        crate::client::fluent_builders::DeleteStreamingImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStreamingSession`](crate::client::fluent_builders::DeleteStreamingSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_session_id): <p>The streaming session ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingSession::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteStreamingSessionOutput`](crate::output::DeleteStreamingSessionOutput) with field(s):
-    ///   - [`session(Option<StreamingSession>)`](crate::output::DeleteStreamingSessionOutput::session): <p>The session.</p>
-    /// - On failure, responds with [`SdkError<DeleteStreamingSessionError>`](crate::error::DeleteStreamingSessionError)
-    pub fn delete_streaming_session(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteStreamingSession {
-        crate::client::fluent_builders::DeleteStreamingSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStudio`](crate::client::fluent_builders::DeleteStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteStudioOutput`](crate::output::DeleteStudioOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::DeleteStudioOutput::studio): <p>Information about a studio.</p>
-    /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::error::DeleteStudioError)
-    pub fn delete_studio(&self) -> crate::client::fluent_builders::DeleteStudio {
-        crate::client::fluent_builders::DeleteStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStudioComponent`](crate::client::fluent_builders::DeleteStudioComponent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`studio_component_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::studio_component_id) / [`set_studio_component_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_studio_component_id): <p>The studio component ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioComponent::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteStudioComponentOutput`](crate::output::DeleteStudioComponentOutput) with field(s):
-    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::DeleteStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
-    /// - On failure, responds with [`SdkError<DeleteStudioComponentError>`](crate::error::DeleteStudioComponentError)
-    pub fn delete_studio_component(&self) -> crate::client::fluent_builders::DeleteStudioComponent {
-        crate::client::fluent_builders::DeleteStudioComponent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStudioMember`](crate::client::fluent_builders::DeleteStudioMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioMember::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`DeleteStudioMemberOutput`](crate::output::DeleteStudioMemberOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStudioMemberError>`](crate::error::DeleteStudioMemberError)
-    pub fn delete_studio_member(&self) -> crate::client::fluent_builders::DeleteStudioMember {
-        crate::client::fluent_builders::DeleteStudioMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetEula`](crate::client::fluent_builders::GetEula) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`eula_id(impl Into<String>)`](crate::client::fluent_builders::GetEula::eula_id) / [`set_eula_id(Option<String>)`](crate::client::fluent_builders::GetEula::set_eula_id): <p>The EULA ID.</p>
-    /// - On success, responds with [`GetEulaOutput`](crate::output::GetEulaOutput) with field(s):
-    ///   - [`eula(Option<Eula>)`](crate::output::GetEulaOutput::eula): <p>The EULA.</p>
-    /// - On failure, responds with [`SdkError<GetEulaError>`](crate::error::GetEulaError)
-    pub fn get_eula(&self) -> crate::client::fluent_builders::GetEula {
-        crate::client::fluent_builders::GetEula::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLaunchProfile`](crate::client::fluent_builders::GetLaunchProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfile::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetLaunchProfileOutput`](crate::output::GetLaunchProfileOutput) with field(s):
-    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
-    /// - On failure, responds with [`SdkError<GetLaunchProfileError>`](crate::error::GetLaunchProfileError)
-    pub fn get_launch_profile(&self) -> crate::client::fluent_builders::GetLaunchProfile {
-        crate::client::fluent_builders::GetLaunchProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLaunchProfileDetails`](crate::client::fluent_builders::GetLaunchProfileDetails) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileDetails::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetLaunchProfileDetailsOutput`](crate::output::GetLaunchProfileDetailsOutput) with field(s):
-    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::GetLaunchProfileDetailsOutput::launch_profile): <p>The launch profile.</p>
-    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::output::GetLaunchProfileDetailsOutput::streaming_images): <p>A collection of streaming images.</p>
-    ///   - [`studio_component_summaries(Option<Vec<StudioComponentSummary>>)`](crate::output::GetLaunchProfileDetailsOutput::studio_component_summaries): <p>A collection of studio component summaries.</p>
-    /// - On failure, responds with [`SdkError<GetLaunchProfileDetailsError>`](crate::error::GetLaunchProfileDetailsError)
-    pub fn get_launch_profile_details(
-        &self,
-    ) -> crate::client::fluent_builders::GetLaunchProfileDetails {
-        crate::client::fluent_builders::GetLaunchProfileDetails::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLaunchProfileInitialization`](crate::client::fluent_builders::GetLaunchProfileInitialization) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_profile_protocol_versions): <p>The launch profile protocol versions supported by the client.</p>
-    ///   - [`launch_purpose(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::launch_purpose) / [`set_launch_purpose(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_launch_purpose): <p>The launch purpose.</p>
-    ///   - [`platform(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::platform) / [`set_platform(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_platform): <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileInitialization::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetLaunchProfileInitializationOutput`](crate::output::GetLaunchProfileInitializationOutput) with field(s):
-    ///   - [`launch_profile_initialization(Option<LaunchProfileInitialization>)`](crate::output::GetLaunchProfileInitializationOutput::launch_profile_initialization): <p>The launch profile initialization.</p>
-    /// - On failure, responds with [`SdkError<GetLaunchProfileInitializationError>`](crate::error::GetLaunchProfileInitializationError)
-    pub fn get_launch_profile_initialization(
-        &self,
-    ) -> crate::client::fluent_builders::GetLaunchProfileInitialization {
-        crate::client::fluent_builders::GetLaunchProfileInitialization::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLaunchProfileMember`](crate::client::fluent_builders::GetLaunchProfileMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetLaunchProfileMemberOutput`](crate::output::GetLaunchProfileMemberOutput) with field(s):
-    ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::GetLaunchProfileMemberOutput::member): <p>The member.</p>
-    /// - On failure, responds with [`SdkError<GetLaunchProfileMemberError>`](crate::error::GetLaunchProfileMemberError)
-    pub fn get_launch_profile_member(
-        &self,
-    ) -> crate::client::fluent_builders::GetLaunchProfileMember {
-        crate::client::fluent_builders::GetLaunchProfileMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingImage`](crate::client::fluent_builders::GetStreamingImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingImage::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::GetStreamingImage::set_streaming_image_id): <p>The streaming image ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStreamingImage::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStreamingImageOutput`](crate::output::GetStreamingImageOutput) with field(s):
-    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::GetStreamingImageOutput::streaming_image): <p>The streaming image.</p>
-    /// - On failure, responds with [`SdkError<GetStreamingImageError>`](crate::error::GetStreamingImageError)
-    pub fn get_streaming_image(&self) -> crate::client::fluent_builders::GetStreamingImage {
-        crate::client::fluent_builders::GetStreamingImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingSession`](crate::client::fluent_builders::GetStreamingSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSession::set_session_id): <p>The streaming session ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSession::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStreamingSessionOutput`](crate::output::GetStreamingSessionOutput) with field(s):
-    ///   - [`session(Option<StreamingSession>)`](crate::output::GetStreamingSessionOutput::session): <p>The session.</p>
-    /// - On failure, responds with [`SdkError<GetStreamingSessionError>`](crate::error::GetStreamingSessionError)
-    pub fn get_streaming_session(&self) -> crate::client::fluent_builders::GetStreamingSession {
-        crate::client::fluent_builders::GetStreamingSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingSessionBackup`](crate::client::fluent_builders::GetStreamingSessionBackup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::set_backup_id): <p>The ID of the backup.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionBackup::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStreamingSessionBackupOutput`](crate::output::GetStreamingSessionBackupOutput) with field(s):
-    ///   - [`streaming_session_backup(Option<StreamingSessionBackup>)`](crate::output::GetStreamingSessionBackupOutput::streaming_session_backup): <p>Information about the streaming session backup.</p>
-    /// - On failure, responds with [`SdkError<GetStreamingSessionBackupError>`](crate::error::GetStreamingSessionBackupError)
-    pub fn get_streaming_session_backup(
-        &self,
-    ) -> crate::client::fluent_builders::GetStreamingSessionBackup {
-        crate::client::fluent_builders::GetStreamingSessionBackup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingSessionStream`](crate::client::fluent_builders::GetStreamingSessionStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::set_session_id): <p>The streaming session ID.</p>
-    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::set_stream_id): <p>The streaming session stream ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStreamingSessionStream::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStreamingSessionStreamOutput`](crate::output::GetStreamingSessionStreamOutput) with field(s):
-    ///   - [`stream(Option<StreamingSessionStream>)`](crate::output::GetStreamingSessionStreamOutput::stream): <p>The stream.</p>
-    /// - On failure, responds with [`SdkError<GetStreamingSessionStreamError>`](crate::error::GetStreamingSessionStreamError)
-    pub fn get_streaming_session_stream(
-        &self,
-    ) -> crate::client::fluent_builders::GetStreamingSessionStream {
-        crate::client::fluent_builders::GetStreamingSessionStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStudio`](crate::client::fluent_builders::GetStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudio::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStudioOutput`](crate::output::GetStudioOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::GetStudioOutput::studio): <p>Information about a studio.</p>
-    /// - On failure, responds with [`SdkError<GetStudioError>`](crate::error::GetStudioError)
-    pub fn get_studio(&self) -> crate::client::fluent_builders::GetStudio {
-        crate::client::fluent_builders::GetStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStudioComponent`](crate::client::fluent_builders::GetStudioComponent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_component_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioComponent::studio_component_id) / [`set_studio_component_id(Option<String>)`](crate::client::fluent_builders::GetStudioComponent::set_studio_component_id): <p>The studio component ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudioComponent::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStudioComponentOutput`](crate::output::GetStudioComponentOutput) with field(s):
-    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::GetStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
-    /// - On failure, responds with [`SdkError<GetStudioComponentError>`](crate::error::GetStudioComponentError)
-    pub fn get_studio_component(&self) -> crate::client::fluent_builders::GetStudioComponent {
-        crate::client::fluent_builders::GetStudioComponent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStudioMember`](crate::client::fluent_builders::GetStudioMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::GetStudioMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudioMember::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`GetStudioMemberOutput`](crate::output::GetStudioMemberOutput) with field(s):
-    ///   - [`member(Option<StudioMembership>)`](crate::output::GetStudioMemberOutput::member): <p>The member.</p>
-    /// - On failure, responds with [`SdkError<GetStudioMemberError>`](crate::error::GetStudioMemberError)
-    pub fn get_studio_member(&self) -> crate::client::fluent_builders::GetStudioMember {
-        crate::client::fluent_builders::GetStudioMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEulaAcceptances`](crate::client::fluent_builders::ListEulaAcceptances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEulaAcceptances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::ListEulaAcceptances::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListEulaAcceptances::set_eula_ids): <p>The list of EULA IDs that have been previously accepted.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulaAcceptances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulaAcceptances::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListEulaAcceptances::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListEulaAcceptances::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListEulaAcceptancesOutput`](crate::output::ListEulaAcceptancesOutput) with field(s):
-    ///   - [`eula_acceptances(Option<Vec<EulaAcceptance>>)`](crate::output::ListEulaAcceptancesOutput::eula_acceptances): <p>A collection of EULA acceptances.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEulaAcceptancesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListEulaAcceptancesError>`](crate::error::ListEulaAcceptancesError)
-    pub fn list_eula_acceptances(&self) -> crate::client::fluent_builders::ListEulaAcceptances {
-        crate::client::fluent_builders::ListEulaAcceptances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEulas`](crate::client::fluent_builders::ListEulas) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEulas::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`eula_ids(Vec<String>)`](crate::client::fluent_builders::ListEulas::eula_ids) / [`set_eula_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListEulas::set_eula_ids): <p>The list of EULA IDs that should be returned</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEulas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEulas::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On success, responds with [`ListEulasOutput`](crate::output::ListEulasOutput) with field(s):
-    ///   - [`eulas(Option<Vec<Eula>>)`](crate::output::ListEulasOutput::eulas): <p>A collection of EULA resources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEulasOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListEulasError>`](crate::error::ListEulasError)
-    pub fn list_eulas(&self) -> crate::client::fluent_builders::ListEulas {
-        crate::client::fluent_builders::ListEulas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLaunchProfileMembers`](crate::client::fluent_builders::ListLaunchProfileMembers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfileMembers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfileMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfileMembers::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListLaunchProfileMembersOutput`](crate::output::ListLaunchProfileMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<LaunchProfileMembership>>)`](crate::output::ListLaunchProfileMembersOutput::members): <p>A list of members.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLaunchProfileMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListLaunchProfileMembersError>`](crate::error::ListLaunchProfileMembersError)
-    pub fn list_launch_profile_members(
-        &self,
-    ) -> crate::client::fluent_builders::ListLaunchProfileMembers {
-        crate::client::fluent_builders::ListLaunchProfileMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLaunchProfiles`](crate::client::fluent_builders::ListLaunchProfiles) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLaunchProfiles::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLaunchProfiles::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLaunchProfiles::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`states(Vec<LaunchProfileState>)`](crate::client::fluent_builders::ListLaunchProfiles::states) / [`set_states(Option<Vec<LaunchProfileState>>)`](crate::client::fluent_builders::ListLaunchProfiles::set_states): <p>Filter this request to launch profiles in any of the given states.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListLaunchProfiles::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListLaunchProfiles::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListLaunchProfilesOutput`](crate::output::ListLaunchProfilesOutput) with field(s):
-    ///   - [`launch_profiles(Option<Vec<LaunchProfile>>)`](crate::output::ListLaunchProfilesOutput::launch_profiles): <p>A collection of launch profiles.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLaunchProfilesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListLaunchProfilesError>`](crate::error::ListLaunchProfilesError)
-    pub fn list_launch_profiles(&self) -> crate::client::fluent_builders::ListLaunchProfiles {
-        crate::client::fluent_builders::ListLaunchProfiles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStreamingImages`](crate::client::fluent_builders::ListStreamingImages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingImages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`owner(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::owner) / [`set_owner(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_owner): <p>Filter this request to streaming images with the given owner</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingImages::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingImages::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListStreamingImagesOutput`](crate::output::ListStreamingImagesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingImagesOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`streaming_images(Option<Vec<StreamingImage>>)`](crate::output::ListStreamingImagesOutput::streaming_images): <p>A collection of streaming images.</p>
-    /// - On failure, responds with [`SdkError<ListStreamingImagesError>`](crate::error::ListStreamingImagesError)
-    pub fn list_streaming_images(&self) -> crate::client::fluent_builders::ListStreamingImages {
-        crate::client::fluent_builders::ListStreamingImages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStreamingSessionBackups`](crate::client::fluent_builders::ListStreamingSessionBackups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingSessionBackups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_owned_by): <p>The user ID of the user that owns the streaming session.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingSessionBackups::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListStreamingSessionBackupsOutput`](crate::output::ListStreamingSessionBackupsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingSessionBackupsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`streaming_session_backups(Option<Vec<StreamingSessionBackup>>)`](crate::output::ListStreamingSessionBackupsOutput::streaming_session_backups): <p>Information about the streaming session backups.</p>
-    /// - On failure, responds with [`SdkError<ListStreamingSessionBackupsError>`](crate::error::ListStreamingSessionBackupsError)
-    pub fn list_streaming_session_backups(
-        &self,
-    ) -> crate::client::fluent_builders::ListStreamingSessionBackups {
-        crate::client::fluent_builders::ListStreamingSessionBackups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStreamingSessions`](crate::client::fluent_builders::ListStreamingSessions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingSessions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`created_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::created_by) / [`set_created_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_created_by): <p>Filters the request to streaming sessions created by the given user.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`owned_by(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::owned_by) / [`set_owned_by(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_owned_by): <p>Filters the request to streaming session owned by the given user</p>
-    ///   - [`session_ids(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::session_ids) / [`set_session_ids(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_session_ids): <p>Filters the request to only the provided session IDs.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStreamingSessions::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStreamingSessions::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListStreamingSessionsOutput`](crate::output::ListStreamingSessionsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListStreamingSessionsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`sessions(Option<Vec<StreamingSession>>)`](crate::output::ListStreamingSessionsOutput::sessions): <p>A collection of streaming sessions.</p>
-    /// - On failure, responds with [`SdkError<ListStreamingSessionsError>`](crate::error::ListStreamingSessionsError)
-    pub fn list_streaming_sessions(&self) -> crate::client::fluent_builders::ListStreamingSessions {
-        crate::client::fluent_builders::ListStreamingSessions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStudioComponents`](crate::client::fluent_builders::ListStudioComponents) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioComponents::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioComponents::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`states(Vec<StudioComponentState>)`](crate::client::fluent_builders::ListStudioComponents::states) / [`set_states(Option<Vec<StudioComponentState>>)`](crate::client::fluent_builders::ListStudioComponents::set_states): <p>Filters the request to studio components that are in one of the given states. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioComponents::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioComponents::set_studio_id): <p>The studio ID. </p>
-    ///   - [`types(Vec<StudioComponentType>)`](crate::client::fluent_builders::ListStudioComponents::types) / [`set_types(Option<Vec<StudioComponentType>>)`](crate::client::fluent_builders::ListStudioComponents::set_types): <p>Filters the request to studio components that are of one of the given types.</p>
-    /// - On success, responds with [`ListStudioComponentsOutput`](crate::output::ListStudioComponentsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListStudioComponentsOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`studio_components(Option<Vec<StudioComponent>>)`](crate::output::ListStudioComponentsOutput::studio_components): <p>A collection of studio components.</p>
-    /// - On failure, responds with [`SdkError<ListStudioComponentsError>`](crate::error::ListStudioComponentsError)
-    pub fn list_studio_components(&self) -> crate::client::fluent_builders::ListStudioComponents {
-        crate::client::fluent_builders::ListStudioComponents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStudioMembers`](crate::client::fluent_builders::ListStudioMembers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioMembers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStudioMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStudioMembers::set_max_results): <p>The max number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioMembers::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`ListStudioMembersOutput`](crate::output::ListStudioMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<StudioMembership>>)`](crate::output::ListStudioMembersOutput::members): <p>A list of admin members.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListStudioMembersOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListStudioMembersError>`](crate::error::ListStudioMembersError)
-    pub fn list_studio_members(&self) -> crate::client::fluent_builders::ListStudioMembers {
-        crate::client::fluent_builders::ListStudioMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStudios`](crate::client::fluent_builders::ListStudios) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudios::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStudios::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStudios::set_next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    /// - On success, responds with [`ListStudiosOutput`](crate::output::ListStudiosOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListStudiosOutput::next_token): <p>The token for the next set of results, or null if there are no more results.</p>
-    ///   - [`studios(Option<Vec<Studio>>)`](crate::output::ListStudiosOutput::studios): <p>A collection of studios.</p>
-    /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::error::ListStudiosError)
-    pub fn list_studios(&self) -> crate::client::fluent_builders::ListStudios {
-        crate::client::fluent_builders::ListStudios::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to list tags.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutLaunchProfileMembers`](crate::client::fluent_builders::PutLaunchProfileMembers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_identity_store_id): <p>The ID of the identity store.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`members(Vec<NewLaunchProfileMember>)`](crate::client::fluent_builders::PutLaunchProfileMembers::members) / [`set_members(Option<Vec<NewLaunchProfileMember>>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_members): <p>A list of members.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::PutLaunchProfileMembers::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`PutLaunchProfileMembersOutput`](crate::output::PutLaunchProfileMembersOutput)
-
-    /// - On failure, responds with [`SdkError<PutLaunchProfileMembersError>`](crate::error::PutLaunchProfileMembersError)
-    pub fn put_launch_profile_members(
-        &self,
-    ) -> crate::client::fluent_builders::PutLaunchProfileMembers {
-        crate::client::fluent_builders::PutLaunchProfileMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutStudioMembers`](crate::client::fluent_builders::PutStudioMembers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`identity_store_id(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_identity_store_id): <p>The ID of the identity store.</p>
-    ///   - [`members(Vec<NewStudioMember>)`](crate::client::fluent_builders::PutStudioMembers::members) / [`set_members(Option<Vec<NewStudioMember>>)`](crate::client::fluent_builders::PutStudioMembers::set_members): <p>A list of members.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::PutStudioMembers::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::PutStudioMembers::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`PutStudioMembersOutput`](crate::output::PutStudioMembersOutput)
-
-    /// - On failure, responds with [`SdkError<PutStudioMembersError>`](crate::error::PutStudioMembersError)
-    pub fn put_studio_members(&self) -> crate::client::fluent_builders::PutStudioMembers {
-        crate::client::fluent_builders::PutStudioMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartStreamingSession`](crate::client::fluent_builders::StartStreamingSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_session_id): <p>The streaming session ID for the <code>StartStreamingSessionRequest</code>.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_studio_id): <p>The studio ID for the StartStreamingSessionRequest.</p>
-    ///   - [`backup_id(impl Into<String>)`](crate::client::fluent_builders::StartStreamingSession::backup_id) / [`set_backup_id(Option<String>)`](crate::client::fluent_builders::StartStreamingSession::set_backup_id): <p>The ID of the backup.</p>
-    /// - On success, responds with [`StartStreamingSessionOutput`](crate::output::StartStreamingSessionOutput) with field(s):
-    ///   - [`session(Option<StreamingSession>)`](crate::output::StartStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
-    /// - On failure, responds with [`SdkError<StartStreamingSessionError>`](crate::error::StartStreamingSessionError)
-    pub fn start_streaming_session(&self) -> crate::client::fluent_builders::StartStreamingSession {
-        crate::client::fluent_builders::StartStreamingSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartStudioSSOConfigurationRepair`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StartStudioSSOConfigurationRepair::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`StartStudioSsoConfigurationRepairOutput`](crate::output::StartStudioSsoConfigurationRepairOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::StartStudioSsoConfigurationRepairOutput::studio): <p>Information about a studio.</p>
-    /// - On failure, responds with [`SdkError<StartStudioSSOConfigurationRepairError>`](crate::error::StartStudioSSOConfigurationRepairError)
-    pub fn start_studio_sso_configuration_repair(
-        &self,
-    ) -> crate::client::fluent_builders::StartStudioSSOConfigurationRepair {
-        crate::client::fluent_builders::StartStudioSSOConfigurationRepair::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopStreamingSession`](crate::client::fluent_builders::StopStreamingSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::session_id) / [`set_session_id(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_session_id): <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::StopStreamingSession::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::StopStreamingSession::set_studio_id): <p>The studioId for the StopStreamingSessionRequest.</p>
-    ///   - [`volume_retention_mode(VolumeRetentionMode)`](crate::client::fluent_builders::StopStreamingSession::volume_retention_mode) / [`set_volume_retention_mode(Option<VolumeRetentionMode>)`](crate::client::fluent_builders::StopStreamingSession::set_volume_retention_mode): <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    /// - On success, responds with [`StopStreamingSessionOutput`](crate::output::StopStreamingSessionOutput) with field(s):
-    ///   - [`session(Option<StreamingSession>)`](crate::output::StopStreamingSessionOutput::session): <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
-    /// - On failure, responds with [`SdkError<StopStreamingSessionError>`](crate::error::StopStreamingSessionError)
-    pub fn stop_streaming_session(&self) -> crate::client::fluent_builders::StopStreamingSession {
-        crate::client::fluent_builders::StopStreamingSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Identifies the Amazon Resource Name(ARN) key from which you are removing tags. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLaunchProfile`](crate::client::fluent_builders::UpdateLaunchProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_description): <p>The description.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`launch_profile_protocol_versions(Vec<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::launch_profile_protocol_versions) / [`set_launch_profile_protocol_versions(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_launch_profile_protocol_versions): <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_name): <p>The name for the launch profile.</p>
-    ///   - [`stream_configuration(StreamConfigurationCreate)`](crate::client::fluent_builders::UpdateLaunchProfile::stream_configuration) / [`set_stream_configuration(Option<StreamConfigurationCreate>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_stream_configuration): <p>A configuration for a streaming session.</p>
-    ///   - [`studio_component_ids(Vec<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::studio_component_ids) / [`set_studio_component_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_studio_component_ids): <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfile::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`UpdateLaunchProfileOutput`](crate::output::UpdateLaunchProfileOutput) with field(s):
-    ///   - [`launch_profile(Option<LaunchProfile>)`](crate::output::UpdateLaunchProfileOutput::launch_profile): <p>The launch profile.</p>
-    /// - On failure, responds with [`SdkError<UpdateLaunchProfileError>`](crate::error::UpdateLaunchProfileError)
-    pub fn update_launch_profile(&self) -> crate::client::fluent_builders::UpdateLaunchProfile {
-        crate::client::fluent_builders::UpdateLaunchProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLaunchProfileMember`](crate::client::fluent_builders::UpdateLaunchProfileMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`launch_profile_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::launch_profile_id) / [`set_launch_profile_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_launch_profile_id): <p>The ID of the launch profile used to control access from the streaming session.</p>
-    ///   - [`persona(LaunchProfilePersona)`](crate::client::fluent_builders::UpdateLaunchProfileMember::persona) / [`set_persona(Option<LaunchProfilePersona>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_persona): <p>The persona.</p>
-    ///   - [`principal_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::principal_id) / [`set_principal_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_principal_id): <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchProfileMember::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`UpdateLaunchProfileMemberOutput`](crate::output::UpdateLaunchProfileMemberOutput) with field(s):
-    ///   - [`member(Option<LaunchProfileMembership>)`](crate::output::UpdateLaunchProfileMemberOutput::member): <p>The updated member. </p>
-    /// - On failure, responds with [`SdkError<UpdateLaunchProfileMemberError>`](crate::error::UpdateLaunchProfileMemberError)
-    pub fn update_launch_profile_member(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLaunchProfileMember {
-        crate::client::fluent_builders::UpdateLaunchProfileMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStreamingImage`](crate::client::fluent_builders::UpdateStreamingImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_description): <p>The description.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_name): <p>The name for the streaming image.</p>
-    ///   - [`streaming_image_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::streaming_image_id) / [`set_streaming_image_id(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_streaming_image_id): <p>The streaming image ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingImage::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStreamingImage::set_studio_id): <p>The studio ID. </p>
-    /// - On success, responds with [`UpdateStreamingImageOutput`](crate::output::UpdateStreamingImageOutput) with field(s):
-    ///   - [`streaming_image(Option<StreamingImage>)`](crate::output::UpdateStreamingImageOutput::streaming_image): <p>Represents a streaming image resource.</p>  <p>Streaming images are used by studio users to select which operating system and software they want to use in a Nimble Studio streaming session.</p>  <p>Amazon provides a number of streaming images that include popular 3rd-party software.</p>  <p>You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can also include software that your users require.</p>
-    /// - On failure, responds with [`SdkError<UpdateStreamingImageError>`](crate::error::UpdateStreamingImageError)
-    pub fn update_streaming_image(&self) -> crate::client::fluent_builders::UpdateStreamingImage {
-        crate::client::fluent_builders::UpdateStreamingImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStudio`](crate::client::fluent_builders::UpdateStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`admin_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::admin_role_arn) / [`set_admin_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_admin_role_arn): <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_display_name): <p>A friendly name for the studio.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_studio_id): <p>The studio ID. </p>
-    ///   - [`user_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::user_role_arn) / [`set_user_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_user_role_arn): <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    /// - On success, responds with [`UpdateStudioOutput`](crate::output::UpdateStudioOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::UpdateStudioOutput::studio): <p>Information about a studio.</p>
-    /// - On failure, responds with [`SdkError<UpdateStudioError>`](crate::error::UpdateStudioError)
-    pub fn update_studio(&self) -> crate::client::fluent_builders::UpdateStudio {
-        crate::client::fluent_builders::UpdateStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStudioComponent`](crate::client::fluent_builders::UpdateStudioComponent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_client_token): <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    ///   - [`configuration(StudioComponentConfiguration)`](crate::client::fluent_builders::UpdateStudioComponent::configuration) / [`set_configuration(Option<StudioComponentConfiguration>)`](crate::client::fluent_builders::UpdateStudioComponent::set_configuration): <p>The configuration of the studio component, based on component type.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_description): <p>The description.</p>
-    ///   - [`ec2_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateStudioComponent::ec2_security_group_ids) / [`set_ec2_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateStudioComponent::set_ec2_security_group_ids): <p>The EC2 security groups that control access to the studio component.</p>
-    ///   - [`initialization_scripts(Vec<StudioComponentInitializationScript>)`](crate::client::fluent_builders::UpdateStudioComponent::initialization_scripts) / [`set_initialization_scripts(Option<Vec<StudioComponentInitializationScript>>)`](crate::client::fluent_builders::UpdateStudioComponent::set_initialization_scripts): <p>Initialization scripts for studio components.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_name): <p>The name for the studio component.</p>
-    ///   - [`script_parameters(Vec<ScriptParameterKeyValue>)`](crate::client::fluent_builders::UpdateStudioComponent::script_parameters) / [`set_script_parameters(Option<Vec<ScriptParameterKeyValue>>)`](crate::client::fluent_builders::UpdateStudioComponent::set_script_parameters): <p>Parameters for the studio component scripts.</p>
-    ///   - [`studio_component_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_component_id) / [`set_studio_component_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_component_id): <p>The studio component ID.</p>
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_studio_id): <p>The studio ID. </p>
-    ///   - [`subtype(StudioComponentSubtype)`](crate::client::fluent_builders::UpdateStudioComponent::subtype) / [`set_subtype(Option<StudioComponentSubtype>)`](crate::client::fluent_builders::UpdateStudioComponent::set_subtype): <p>The specific subtype of a studio component.</p>
-    ///   - [`r#type(StudioComponentType)`](crate::client::fluent_builders::UpdateStudioComponent::type) / [`set_type(Option<StudioComponentType>)`](crate::client::fluent_builders::UpdateStudioComponent::set_type): <p>The type of the studio component.</p>
-    ///   - [`secure_initialization_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::secure_initialization_role_arn) / [`set_secure_initialization_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_secure_initialization_role_arn): <p>An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.</p>
-    ///   - [`runtime_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioComponent::runtime_role_arn) / [`set_runtime_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioComponent::set_runtime_role_arn): <p>An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. </p>
-    /// - On success, responds with [`UpdateStudioComponentOutput`](crate::output::UpdateStudioComponentOutput) with field(s):
-    ///   - [`studio_component(Option<StudioComponent>)`](crate::output::UpdateStudioComponentOutput::studio_component): <p>Information about the studio component.</p>
-    /// - On failure, responds with [`SdkError<UpdateStudioComponentError>`](crate::error::UpdateStudioComponentError)
-    pub fn update_studio_component(&self) -> crate::client::fluent_builders::UpdateStudioComponent {
-        crate::client::fluent_builders::UpdateStudioComponent::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -858,9 +174,107 @@ impl Client {
     }
 }
 
+mod accept_eulas;
+
+mod create_launch_profile;
+
+mod create_streaming_image;
+
+mod create_streaming_session;
+
+mod create_streaming_session_stream;
+
+mod create_studio;
+
+mod create_studio_component;
+
+mod delete_launch_profile;
+
+mod delete_launch_profile_member;
+
+mod delete_streaming_image;
+
+mod delete_streaming_session;
+
+mod delete_studio;
+
+mod delete_studio_component;
+
+mod delete_studio_member;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_eula;
+
+mod get_launch_profile;
+
+mod get_launch_profile_details;
+
+mod get_launch_profile_initialization;
+
+mod get_launch_profile_member;
+
+mod get_streaming_image;
+
+mod get_streaming_session;
+
+mod get_streaming_session_backup;
+
+mod get_streaming_session_stream;
+
+mod get_studio;
+
+mod get_studio_component;
+
+mod get_studio_member;
+
+mod list_eula_acceptances;
+
+mod list_eulas;
+
+mod list_launch_profile_members;
+
+mod list_launch_profiles;
+
+mod list_streaming_images;
+
+mod list_streaming_session_backups;
+
+mod list_streaming_sessions;
+
+mod list_studio_components;
+
+mod list_studio_members;
+
+mod list_studios;
+
+mod list_tags_for_resource;
+
+mod put_launch_profile_members;
+
+mod put_studio_members;
+
+mod start_streaming_session;
+
+mod start_studio_sso_configuration_repair;
+
+mod stop_streaming_session;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_launch_profile;
+
+mod update_launch_profile_member;
+
+mod update_streaming_image;
+
+mod update_studio;
+
+mod update_studio_component;

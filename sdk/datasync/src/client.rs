@@ -89,694 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CancelTaskExecution`](crate::client::fluent_builders::CancelTaskExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::CancelTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::CancelTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution to stop.</p>
-    /// - On success, responds with [`CancelTaskExecutionOutput`](crate::output::CancelTaskExecutionOutput)
-
-    /// - On failure, responds with [`SdkError<CancelTaskExecutionError>`](crate::error::CancelTaskExecutionError)
-    pub fn cancel_task_execution(&self) -> crate::client::fluent_builders::CancelTaskExecution {
-        crate::client::fluent_builders::CancelTaskExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAgent`](crate::client::fluent_builders::CreateAgent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`activation_key(impl Into<String>)`](crate::client::fluent_builders::CreateAgent::activation_key) / [`set_activation_key(Option<String>)`](crate::client::fluent_builders::CreateAgent::set_activation_key): <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>  <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>  <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
-    ///   - [`agent_name(impl Into<String>)`](crate::client::fluent_builders::CreateAgent::agent_name) / [`set_agent_name(Option<String>)`](crate::client::fluent_builders::CreateAgent::set_agent_name): <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateAgent::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateAgent::set_tags): <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>   <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>  </note>
-    ///   - [`vpc_endpoint_id(impl Into<String>)`](crate::client::fluent_builders::CreateAgent::vpc_endpoint_id) / [`set_vpc_endpoint_id(Option<String>)`](crate::client::fluent_builders::CreateAgent::set_vpc_endpoint_id): <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>  <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
-    ///   - [`subnet_arns(Vec<String>)`](crate::client::fluent_builders::CreateAgent::subnet_arns) / [`set_subnet_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAgent::set_subnet_arns): <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateAgent::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAgent::set_security_group_arns): <p>The ARNs of the security groups used to protect your data transfer task subnets. See <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
-    /// - On success, responds with [`CreateAgentOutput`](crate::output::CreateAgentOutput) with field(s):
-    ///   - [`agent_arn(Option<String>)`](crate::output::CreateAgentOutput::agent_arn): <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    /// - On failure, responds with [`SdkError<CreateAgentError>`](crate::error::CreateAgentError)
-    pub fn create_agent(&self) -> crate::client::fluent_builders::CreateAgent {
-        crate::client::fluent_builders::CreateAgent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationEfs`](crate::client::fluent_builders::CreateLocationEfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationEfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationEfs::set_subdirectory): <p>Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location). By default, DataSync uses the root directory, but you can also include subdirectories.</p> <note>   <p>You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).</p>  </note>
-    ///   - [`efs_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationEfs::efs_filesystem_arn) / [`set_efs_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationEfs::set_efs_filesystem_arn): <p>Specifies the ARN for the Amazon EFS file system.</p>
-    ///   - [`ec2_config(Ec2Config)`](crate::client::fluent_builders::CreateLocationEfs::ec2_config) / [`set_ec2_config(Option<Ec2Config>)`](crate::client::fluent_builders::CreateLocationEfs::set_ec2_config): <p>Specifies the subnet and security groups DataSync uses to access your Amazon EFS file system.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationEfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationEfs::set_tags): <p>Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    ///   - [`access_point_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationEfs::access_point_arn) / [`set_access_point_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationEfs::set_access_point_arn): <p>Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    ///   - [`file_system_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationEfs::file_system_access_role_arn) / [`set_file_system_access_role_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationEfs::set_file_system_access_role_arn): <p>Specifies an Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    ///   - [`in_transit_encryption(EfsInTransitEncryption)`](crate::client::fluent_builders::CreateLocationEfs::in_transit_encryption) / [`set_in_transit_encryption(Option<EfsInTransitEncryption>)`](crate::client::fluent_builders::CreateLocationEfs::set_in_transit_encryption): <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it copies data to or from the Amazon EFS file system.</p>  <p>If you specify an access point using <code>AccessPointArn</code> or an IAM role using <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.</p>
-    /// - On success, responds with [`CreateLocationEfsOutput`](crate::output::CreateLocationEfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationEfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you create.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationEfsError>`](crate::error::CreateLocationEfsError)
-    pub fn create_location_efs(&self) -> crate::client::fluent_builders::CreateLocationEfs {
-        crate::client::fluent_builders::CreateLocationEfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationFsxLustre`](crate::client::fluent_builders::CreateLocationFsxLustre) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxLustre::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxLustre::set_fsx_filesystem_arn): <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxLustre::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxLustre::set_security_group_arns): <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxLustre::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxLustre::set_subdirectory): <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxLustre::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxLustre::set_tags): <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    /// - On success, responds with [`CreateLocationFsxLustreOutput`](crate::output::CreateLocationFsxLustreOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxLustreOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre file system location that's created. </p>
-    /// - On failure, responds with [`SdkError<CreateLocationFsxLustreError>`](crate::error::CreateLocationFsxLustreError)
-    pub fn create_location_fsx_lustre(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLocationFsxLustre {
-        crate::client::fluent_builders::CreateLocationFsxLustre::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationFsxOntap`](crate::client::fluent_builders::CreateLocationFsxOntap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`protocol(FsxProtocol)`](crate::client::fluent_builders::CreateLocationFsxOntap::protocol) / [`set_protocol(Option<FsxProtocol>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_protocol): <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_security_group_arns): <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>  <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>  <ul>   <li> <p> <b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p> </li>   <li> <p> <b>Server Message Block (SMB)</b>: TCP port 445</p> </li>  </ul>  <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
-    ///   - [`storage_virtual_machine_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::storage_virtual_machine_arn) / [`set_storage_virtual_machine_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_storage_virtual_machine_arn): <p>Specifies the ARN of the storage virtual machine (SVM) on your file system where you're copying data to or from.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_subdirectory): <p>Specifies the junction path (also known as a mount point) in the SVM volume where you're copying data to or from (for example, <code>/vol1</code>).</p> <note>   <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>  </note>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxOntap::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxOntap::set_tags): <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    /// - On success, responds with [`CreateLocationFsxOntapOutput`](crate::output::CreateLocationFsxOntapOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxOntapOutput::location_arn): <p>Specifies the ARN of the FSx for ONTAP file system location that you create.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationFsxOntapError>`](crate::error::CreateLocationFsxOntapError)
-    pub fn create_location_fsx_ontap(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLocationFsxOntap {
-        crate::client::fluent_builders::CreateLocationFsxOntap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationFsxOpenZfs`](crate::client::fluent_builders::CreateLocationFsxOpenZfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_fsx_filesystem_arn): <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    ///   - [`protocol(FsxProtocol)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::protocol) / [`set_protocol(Option<FsxProtocol>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_protocol): <p>The type of protocol that DataSync uses to access your file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_security_group_arns): <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_subdirectory): <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxOpenZfs::set_tags): <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    /// - On success, responds with [`CreateLocationFsxOpenZfsOutput`](crate::output::CreateLocationFsxOpenZfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxOpenZfsOutput::location_arn): <p>The ARN of the FSx for OpenZFS file system location that you created.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationFsxOpenZfsError>`](crate::error::CreateLocationFsxOpenZfsError)
-    pub fn create_location_fsx_open_zfs(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLocationFsxOpenZfs {
-        crate::client::fluent_builders::CreateLocationFsxOpenZfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationFsxWindows`](crate::client::fluent_builders::CreateLocationFsxWindows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_subdirectory): <p>Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location).</p>
-    ///   - [`fsx_filesystem_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::fsx_filesystem_arn) / [`set_fsx_filesystem_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_fsx_filesystem_arn): <p>Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-    ///   - [`security_group_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::security_group_arns) / [`set_security_group_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_security_group_arns): <p>Specifies the ARNs of the security groups that provide access to your file system's preferred subnet.</p> <note>   <p>If you choose a security group that doesn't allow connections from within itself, do one of the following:</p>   <ul>    <li> <p>Configure the security group to allow it to communicate within itself.</p> </li>    <li> <p>Choose a different security group that can communicate with the mount target's security group.</p> </li>   </ul>  </note>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationFsxWindows::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_tags): <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location.</p>
-    ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_user): <p>Specifies the user who has the permissions to access files and folders in the file system.</p>  <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_domain): <p>Specifies the name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLocationFsxWindows::set_password): <p>Specifies the password of the user who has the permissions to access files and folders in the file system.</p>
-    /// - On success, responds with [`CreateLocationFsxWindowsOutput`](crate::output::CreateLocationFsxWindowsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationFsxWindowsOutput::location_arn): <p>The ARN of the FSx for Windows File Server file system location you created.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationFsxWindowsError>`](crate::error::CreateLocationFsxWindowsError)
-    pub fn create_location_fsx_windows(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLocationFsxWindows {
-        crate::client::fluent_builders::CreateLocationFsxWindows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationHdfs`](crate::client::fluent_builders::CreateLocationHdfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationHdfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationHdfs::set_subdirectory): <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
-    ///   - [`name_nodes(Vec<HdfsNameNode>)`](crate::client::fluent_builders::CreateLocationHdfs::name_nodes) / [`set_name_nodes(Option<Vec<HdfsNameNode>>)`](crate::client::fluent_builders::CreateLocationHdfs::set_name_nodes): <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    ///   - [`block_size(i32)`](crate::client::fluent_builders::CreateLocationHdfs::block_size) / [`set_block_size(Option<i32>)`](crate::client::fluent_builders::CreateLocationHdfs::set_block_size): <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
-    ///   - [`replication_factor(i32)`](crate::client::fluent_builders::CreateLocationHdfs::replication_factor) / [`set_replication_factor(Option<i32>)`](crate::client::fluent_builders::CreateLocationHdfs::set_replication_factor): <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
-    ///   - [`kms_key_provider_uri(impl Into<String>)`](crate::client::fluent_builders::CreateLocationHdfs::kms_key_provider_uri) / [`set_kms_key_provider_uri(Option<String>)`](crate::client::fluent_builders::CreateLocationHdfs::set_kms_key_provider_uri): <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    ///   - [`qop_configuration(QopConfiguration)`](crate::client::fluent_builders::CreateLocationHdfs::qop_configuration) / [`set_qop_configuration(Option<QopConfiguration>)`](crate::client::fluent_builders::CreateLocationHdfs::set_qop_configuration): <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
-    ///   - [`authentication_type(HdfsAuthenticationType)`](crate::client::fluent_builders::CreateLocationHdfs::authentication_type) / [`set_authentication_type(Option<HdfsAuthenticationType>)`](crate::client::fluent_builders::CreateLocationHdfs::set_authentication_type): <p>The type of authentication used to determine the identity of the user. </p>
-    ///   - [`simple_user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationHdfs::simple_user) / [`set_simple_user(Option<String>)`](crate::client::fluent_builders::CreateLocationHdfs::set_simple_user): <p>The user name used to identify the client on the host operating system. </p> <note>   <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>  </note>
-    ///   - [`kerberos_principal(impl Into<String>)`](crate::client::fluent_builders::CreateLocationHdfs::kerberos_principal) / [`set_kerberos_principal(Option<String>)`](crate::client::fluent_builders::CreateLocationHdfs::set_kerberos_principal): <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>   <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>  </note>
-    ///   - [`kerberos_keytab(Blob)`](crate::client::fluent_builders::CreateLocationHdfs::kerberos_keytab) / [`set_kerberos_keytab(Option<Blob>)`](crate::client::fluent_builders::CreateLocationHdfs::set_kerberos_keytab): <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>   <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>  </note>
-    ///   - [`kerberos_krb5_conf(Blob)`](crate::client::fluent_builders::CreateLocationHdfs::kerberos_krb5_conf) / [`set_kerberos_krb5_conf(Option<Blob>)`](crate::client::fluent_builders::CreateLocationHdfs::set_kerberos_krb5_conf): <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>   <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>  </note>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationHdfs::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationHdfs::set_agent_arns): <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationHdfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationHdfs::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
-    /// - On success, responds with [`CreateLocationHdfsOutput`](crate::output::CreateLocationHdfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationHdfsOutput::location_arn): <p>The ARN of the source HDFS cluster location that's created. </p>
-    /// - On failure, responds with [`SdkError<CreateLocationHdfsError>`](crate::error::CreateLocationHdfsError)
-    pub fn create_location_hdfs(&self) -> crate::client::fluent_builders::CreateLocationHdfs {
-        crate::client::fluent_builders::CreateLocationHdfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationNfs`](crate::client::fluent_builders::CreateLocationNfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationNfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationNfs::set_subdirectory): <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>  <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>  <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>  <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationNfs::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationNfs::set_server_hostname): <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this hostname to mount the NFS server in a network. </p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>   <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>  </note>
-    ///   - [`on_prem_config(OnPremConfig)`](crate::client::fluent_builders::CreateLocationNfs::on_prem_config) / [`set_on_prem_config(Option<OnPremConfig>)`](crate::client::fluent_builders::CreateLocationNfs::set_on_prem_config): <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-    ///   - [`mount_options(NfsMountOptions)`](crate::client::fluent_builders::CreateLocationNfs::mount_options) / [`set_mount_options(Option<NfsMountOptions>)`](crate::client::fluent_builders::CreateLocationNfs::set_mount_options): <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationNfs::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationNfs::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    /// - On success, responds with [`CreateLocationNfsOutput`](crate::output::CreateLocationNfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationNfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the source NFS file system location that is created.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationNfsError>`](crate::error::CreateLocationNfsError)
-    pub fn create_location_nfs(&self) -> crate::client::fluent_builders::CreateLocationNfs {
-        crate::client::fluent_builders::CreateLocationNfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationObjectStorage`](crate::client::fluent_builders::CreateLocationObjectStorage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_hostname): <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
-    ///   - [`server_port(i32)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_port) / [`set_server_port(Option<i32>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_port): <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    ///   - [`server_protocol(ObjectStorageServerProtocol)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_protocol) / [`set_server_protocol(Option<ObjectStorageServerProtocol>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_protocol): <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_subdirectory): <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix. </p>
-    ///   - [`bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::bucket_name) / [`set_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_bucket_name): <p>Specifies the name of the object storage bucket involved in the transfer.</p>
-    ///   - [`access_key(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::access_key) / [`set_access_key(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_access_key): <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    ///   - [`secret_key(impl Into<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::secret_key) / [`set_secret_key(Option<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_secret_key): <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationObjectStorage::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_agent_arns): <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationObjectStorage::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_tags): <p>Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location.</p>
-    ///   - [`server_certificate(Blob)`](crate::client::fluent_builders::CreateLocationObjectStorage::server_certificate) / [`set_server_certificate(Option<Blob>)`](crate::client::fluent_builders::CreateLocationObjectStorage::set_server_certificate): <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>  <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
-    /// - On success, responds with [`CreateLocationObjectStorageOutput`](crate::output::CreateLocationObjectStorageOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationObjectStorageOutput::location_arn): <p>Specifies the ARN of the object storage system location that you create.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationObjectStorageError>`](crate::error::CreateLocationObjectStorageError)
-    pub fn create_location_object_storage(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLocationObjectStorage {
-        crate::client::fluent_builders::CreateLocationObjectStorage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationS3`](crate::client::fluent_builders::CreateLocationS3) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationS3::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationS3::set_subdirectory): <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
-    ///   - [`s3_bucket_arn(impl Into<String>)`](crate::client::fluent_builders::CreateLocationS3::s3_bucket_arn) / [`set_s3_bucket_arn(Option<String>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_bucket_arn): <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
-    ///   - [`s3_storage_class(S3StorageClass)`](crate::client::fluent_builders::CreateLocationS3::s3_storage_class) / [`set_s3_storage_class(Option<S3StorageClass>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_storage_class): <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>  <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    ///   - [`s3_config(S3Config)`](crate::client::fluent_builders::CreateLocationS3::s3_config) / [`set_s3_config(Option<S3Config>)`](crate::client::fluent_builders::CreateLocationS3::set_s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationS3::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationS3::set_agent_arns): <p>If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationS3::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationS3::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    /// - On success, responds with [`CreateLocationS3Output`](crate::output::CreateLocationS3Output) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the source Amazon S3 bucket location that is created.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationS3Error>`](crate::error::CreateLocationS3Error)
-    pub fn create_location_s3(&self) -> crate::client::fluent_builders::CreateLocationS3 {
-        crate::client::fluent_builders::CreateLocationS3::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLocationSmb`](crate::client::fluent_builders::CreateLocationSmb) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::CreateLocationSmb::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::CreateLocationSmb::set_subdirectory): <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>   <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>  </note>  <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
-    ///   - [`server_hostname(impl Into<String>)`](crate::client::fluent_builders::CreateLocationSmb::server_hostname) / [`set_server_hostname(Option<String>)`](crate::client::fluent_builders::CreateLocationSmb::set_server_hostname): <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>   <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>  </note>
-    ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::CreateLocationSmb::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::CreateLocationSmb::set_user): <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>  <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateLocationSmb::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateLocationSmb::set_domain): <p>The name of the Windows domain that the SMB server belongs to.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateLocationSmb::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateLocationSmb::set_password): <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::CreateLocationSmb::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLocationSmb::set_agent_arns): <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
-    ///   - [`mount_options(SmbMountOptions)`](crate::client::fluent_builders::CreateLocationSmb::mount_options) / [`set_mount_options(Option<SmbMountOptions>)`](crate::client::fluent_builders::CreateLocationSmb::set_mount_options): <p>The mount options used by DataSync to access the SMB server.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateLocationSmb::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateLocationSmb::set_tags): <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
-    /// - On success, responds with [`CreateLocationSmbOutput`](crate::output::CreateLocationSmbOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::CreateLocationSmbOutput::location_arn): <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    /// - On failure, responds with [`SdkError<CreateLocationSmbError>`](crate::error::CreateLocationSmbError)
-    pub fn create_location_smb(&self) -> crate::client::fluent_builders::CreateLocationSmb {
-        crate::client::fluent_builders::CreateLocationSmb::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateTask`](crate::client::fluent_builders::CreateTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_location_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTask::source_location_arn) / [`set_source_location_arn(Option<String>)`](crate::client::fluent_builders::CreateTask::set_source_location_arn): <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-    ///   - [`destination_location_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTask::destination_location_arn) / [`set_destination_location_arn(Option<String>)`](crate::client::fluent_builders::CreateTask::set_destination_location_arn): <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-    ///   - [`cloud_watch_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::CreateTask::cloud_watch_log_group_arn) / [`set_cloud_watch_log_group_arn(Option<String>)`](crate::client::fluent_builders::CreateTask::set_cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateTask::set_name): <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::CreateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::CreateTask::set_options): <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>  <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_excludes): <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///   - [`schedule(TaskSchedule)`](crate::client::fluent_builders::CreateTask::schedule) / [`set_schedule(Option<TaskSchedule>)`](crate::client::fluent_builders::CreateTask::set_schedule): <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::CreateTask::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::CreateTask::set_tags): <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>  <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::CreateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::CreateTask::set_includes): <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    /// - On success, responds with [`CreateTaskOutput`](crate::output::CreateTaskOutput) with field(s):
-    ///   - [`task_arn(Option<String>)`](crate::output::CreateTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>
-    /// - On failure, responds with [`SdkError<CreateTaskError>`](crate::error::CreateTaskError)
-    pub fn create_task(&self) -> crate::client::fluent_builders::CreateTask {
-        crate::client::fluent_builders::CreateTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAgent`](crate::client::fluent_builders::DeleteAgent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAgent::agent_arn) / [`set_agent_arn(Option<String>)`](crate::client::fluent_builders::DeleteAgent::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    /// - On success, responds with [`DeleteAgentOutput`](crate::output::DeleteAgentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAgentError>`](crate::error::DeleteAgentError)
-    pub fn delete_agent(&self) -> crate::client::fluent_builders::DeleteAgent {
-        crate::client::fluent_builders::DeleteAgent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLocation`](crate::client::fluent_builders::DeleteLocation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteLocation::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DeleteLocation::set_location_arn): <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-    /// - On success, responds with [`DeleteLocationOutput`](crate::output::DeleteLocationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLocationError>`](crate::error::DeleteLocationError)
-    pub fn delete_location(&self) -> crate::client::fluent_builders::DeleteLocation {
-        crate::client::fluent_builders::DeleteLocation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTask`](crate::client::fluent_builders::DeleteTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::DeleteTask::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the task that you want to delete.</p>
-    /// - On success, responds with [`DeleteTaskOutput`](crate::output::DeleteTaskOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteTaskError>`](crate::error::DeleteTaskError)
-    pub fn delete_task(&self) -> crate::client::fluent_builders::DeleteTask {
-        crate::client::fluent_builders::DeleteTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAgent`](crate::client::fluent_builders::DescribeAgent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAgent::agent_arn) / [`set_agent_arn(Option<String>)`](crate::client::fluent_builders::DescribeAgent::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
-    /// - On success, responds with [`DescribeAgentOutput`](crate::output::DescribeAgentOutput) with field(s):
-    ///   - [`agent_arn(Option<String>)`](crate::output::DescribeAgentOutput::agent_arn): <p>The Amazon Resource Name (ARN) of the agent.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeAgentOutput::name): <p>The name of the agent.</p>
-    ///   - [`status(Option<AgentStatus>)`](crate::output::DescribeAgentOutput::status): <p>The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent returns to ONLINE status.</p>
-    ///   - [`last_connection_time(Option<DateTime>)`](crate::output::DescribeAgentOutput::last_connection_time): <p>The time that the agent last connected to DataSync.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeAgentOutput::creation_time): <p>The time that the agent was activated (that is, created in your account).</p>
-    ///   - [`endpoint_type(Option<EndpointType>)`](crate::output::DescribeAgentOutput::endpoint_type): <p>The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not accessible over the public internet. </p>
-    ///   - [`private_link_config(Option<PrivateLinkConfig>)`](crate::output::DescribeAgentOutput::private_link_config): <p>The subnet and the security group that DataSync used to access a VPC endpoint.</p>
-    /// - On failure, responds with [`SdkError<DescribeAgentError>`](crate::error::DescribeAgentError)
-    pub fn describe_agent(&self) -> crate::client::fluent_builders::DescribeAgent {
-        crate::client::fluent_builders::DescribeAgent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationEfs`](crate::client::fluent_builders::DescribeLocationEfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationEfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationEfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    /// - On success, responds with [`DescribeLocationEfsOutput`](crate::output::DescribeLocationEfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationEfsOutput::location_arn): <p>The ARN of the Amazon EFS file system location.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationEfsOutput::location_uri): <p>The URL of the Amazon EFS file system location.</p>
-    ///   - [`ec2_config(Option<Ec2Config>)`](crate::output::DescribeLocationEfsOutput::ec2_config): <p>The subnet and security groups that DataSync uses to access your Amazon EFS file system.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationEfsOutput::creation_time): <p>The time that the location was created.</p>
-    ///   - [`access_point_arn(Option<String>)`](crate::output::DescribeLocationEfsOutput::access_point_arn): <p>The ARN of the access point that DataSync uses to access the Amazon EFS file system.</p>
-    ///   - [`file_system_access_role_arn(Option<String>)`](crate::output::DescribeLocationEfsOutput::file_system_access_role_arn): <p>The Identity and Access Management (IAM) role that DataSync assumes when mounting the Amazon EFS file system.</p>
-    ///   - [`in_transit_encryption(Option<EfsInTransitEncryption>)`](crate::output::DescribeLocationEfsOutput::in_transit_encryption): <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying data to or from the Amazon EFS file system.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationEfsError>`](crate::error::DescribeLocationEfsError)
-    pub fn describe_location_efs(&self) -> crate::client::fluent_builders::DescribeLocationEfs {
-        crate::client::fluent_builders::DescribeLocationEfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationFsxLustre`](crate::client::fluent_builders::DescribeLocationFsxLustre) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationFsxLustre::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationFsxLustre::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre location to describe. </p>
-    /// - On success, responds with [`DescribeLocationFsxLustreOutput`](crate::output::DescribeLocationFsxLustreOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationFsxLustreOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Lustre location that was described.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationFsxLustreOutput::location_uri): <p>The URI of the FSx for Lustre location that was described.</p>
-    ///   - [`security_group_arns(Option<Vec<String>>)`](crate::output::DescribeLocationFsxLustreOutput::security_group_arns): <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Lustre file system.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationFsxLustreOutput::creation_time): <p>The time that the FSx for Lustre location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationFsxLustreError>`](crate::error::DescribeLocationFsxLustreError)
-    pub fn describe_location_fsx_lustre(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLocationFsxLustre {
-        crate::client::fluent_builders::DescribeLocationFsxLustre::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationFsxOntap`](crate::client::fluent_builders::DescribeLocationFsxOntap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationFsxOntap::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationFsxOntap::set_location_arn): <p>Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location that you want information about.</p>
-    /// - On success, responds with [`DescribeLocationFsxOntapOutput`](crate::output::DescribeLocationFsxOntapOutput) with field(s):
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationFsxOntapOutput::creation_time): <p>The time that the location was created.</p>
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationFsxOntapOutput::location_arn): <p>The ARN of the FSx for ONTAP file system location.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationFsxOntapOutput::location_uri): <p>The uniform resource identifier (URI) of the FSx for ONTAP file system location.</p>
-    ///   - [`protocol(Option<FsxProtocol>)`](crate::output::DescribeLocationFsxOntapOutput::protocol): <p>Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system.</p>
-    ///   - [`security_group_arns(Option<Vec<String>>)`](crate::output::DescribeLocationFsxOntapOutput::security_group_arns): <p>The security groups that DataSync uses to access your FSx for ONTAP file system.</p>
-    ///   - [`storage_virtual_machine_arn(Option<String>)`](crate::output::DescribeLocationFsxOntapOutput::storage_virtual_machine_arn): <p>The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where you're copying data to or from.</p>
-    ///   - [`fsx_filesystem_arn(Option<String>)`](crate::output::DescribeLocationFsxOntapOutput::fsx_filesystem_arn): <p>The ARN of the FSx for ONTAP file system.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationFsxOntapError>`](crate::error::DescribeLocationFsxOntapError)
-    pub fn describe_location_fsx_ontap(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLocationFsxOntap {
-        crate::client::fluent_builders::DescribeLocationFsxOntap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationFsxOpenZfs`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationFsxOpenZfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS location to describe.</p>
-    /// - On success, responds with [`DescribeLocationFsxOpenZfsOutput`](crate::output::DescribeLocationFsxOpenZfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationFsxOpenZfsOutput::location_arn): <p>The ARN of the FSx for OpenZFS location that was described.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationFsxOpenZfsOutput::location_uri): <p>The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.</p>  <p>Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> </p>
-    ///   - [`security_group_arns(Option<Vec<String>>)`](crate::output::DescribeLocationFsxOpenZfsOutput::security_group_arns): <p>The ARNs of the security groups that are configured for the FSx for OpenZFS file system.</p>
-    ///   - [`protocol(Option<FsxProtocol>)`](crate::output::DescribeLocationFsxOpenZfsOutput::protocol): <p>The type of protocol that DataSync uses to access your file system.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationFsxOpenZfsOutput::creation_time): <p>The time that the FSx for OpenZFS location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationFsxOpenZfsError>`](crate::error::DescribeLocationFsxOpenZfsError)
-    pub fn describe_location_fsx_open_zfs(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLocationFsxOpenZfs {
-        crate::client::fluent_builders::DescribeLocationFsxOpenZfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationFsxWindows`](crate::client::fluent_builders::DescribeLocationFsxWindows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationFsxWindows::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationFsxWindows::set_location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
-    /// - On success, responds with [`DescribeLocationFsxWindowsOutput`](crate::output::DescribeLocationFsxWindowsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationFsxWindowsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationFsxWindowsOutput::location_uri): <p>The URL of the FSx for Windows File Server location that was described.</p>
-    ///   - [`security_group_arns(Option<Vec<String>>)`](crate::output::DescribeLocationFsxWindowsOutput::security_group_arns): <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationFsxWindowsOutput::creation_time): <p>The time that the FSx for Windows File Server location was created.</p>
-    ///   - [`user(Option<String>)`](crate::output::DescribeLocationFsxWindowsOutput::user): <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
-    ///   - [`domain(Option<String>)`](crate::output::DescribeLocationFsxWindowsOutput::domain): <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationFsxWindowsError>`](crate::error::DescribeLocationFsxWindowsError)
-    pub fn describe_location_fsx_windows(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLocationFsxWindows {
-        crate::client::fluent_builders::DescribeLocationFsxWindows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationHdfs`](crate::client::fluent_builders::DescribeLocationHdfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationHdfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationHdfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
-    /// - On success, responds with [`DescribeLocationHdfsOutput`](crate::output::DescribeLocationHdfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationHdfsOutput::location_arn): <p>The ARN of the HDFS cluster location.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationHdfsOutput::location_uri): <p>The URI of the HDFS cluster location.</p>
-    ///   - [`name_nodes(Option<Vec<HdfsNameNode>>)`](crate::output::DescribeLocationHdfsOutput::name_nodes): <p>The NameNode that manage the HDFS namespace. </p>
-    ///   - [`block_size(Option<i32>)`](crate::output::DescribeLocationHdfsOutput::block_size): <p>The size of the data blocks to write into the HDFS cluster. </p>
-    ///   - [`replication_factor(Option<i32>)`](crate::output::DescribeLocationHdfsOutput::replication_factor): <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
-    ///   - [`kms_key_provider_uri(Option<String>)`](crate::output::DescribeLocationHdfsOutput::kms_key_provider_uri): <p> The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    ///   - [`qop_configuration(Option<QopConfiguration>)`](crate::output::DescribeLocationHdfsOutput::qop_configuration): <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    ///   - [`authentication_type(Option<HdfsAuthenticationType>)`](crate::output::DescribeLocationHdfsOutput::authentication_type): <p>The type of authentication used to determine the identity of the user. </p>
-    ///   - [`simple_user(Option<String>)`](crate::output::DescribeLocationHdfsOutput::simple_user): <p>The user name used to identify the client on the host operating system. This parameter is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.</p>
-    ///   - [`kerberos_principal(Option<String>)`](crate::output::DescribeLocationHdfsOutput::kerberos_principal): <p>The Kerberos principal with access to the files and folders on the HDFS cluster. This parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.</p>
-    ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationHdfsOutput::agent_arns): <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationHdfsOutput::creation_time): <p>The time that the HDFS location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationHdfsError>`](crate::error::DescribeLocationHdfsError)
-    pub fn describe_location_hdfs(&self) -> crate::client::fluent_builders::DescribeLocationHdfs {
-        crate::client::fluent_builders::DescribeLocationHdfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationNfs`](crate::client::fluent_builders::DescribeLocationNfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationNfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationNfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
-    /// - On success, responds with [`DescribeLocationNfsOutput`](crate::output::DescribeLocationNfsOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationNfsOutput::location_arn): <p>The Amazon Resource Name (ARN) of the NFS location that was described.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationNfsOutput::location_uri): <p>The URL of the source NFS location that was described.</p>
-    ///   - [`on_prem_config(Option<OnPremConfig>)`](crate::output::DescribeLocationNfsOutput::on_prem_config): <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    ///   - [`mount_options(Option<NfsMountOptions>)`](crate::output::DescribeLocationNfsOutput::mount_options): <p>The NFS mount options that DataSync used to mount your NFS share.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationNfsOutput::creation_time): <p>The time that the NFS location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationNfsError>`](crate::error::DescribeLocationNfsError)
-    pub fn describe_location_nfs(&self) -> crate::client::fluent_builders::DescribeLocationNfs {
-        crate::client::fluent_builders::DescribeLocationNfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationObjectStorage`](crate::client::fluent_builders::DescribeLocationObjectStorage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationObjectStorage::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationObjectStorage::set_location_arn): <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
-    /// - On success, responds with [`DescribeLocationObjectStorageOutput`](crate::output::DescribeLocationObjectStorageOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::location_arn): <p>The ARN of the object storage system location.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::location_uri): <p>The URL of the object storage system location.</p>
-    ///   - [`access_key(Option<String>)`](crate::output::DescribeLocationObjectStorageOutput::access_key): <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
-    ///   - [`server_port(Option<i32>)`](crate::output::DescribeLocationObjectStorageOutput::server_port): <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    ///   - [`server_protocol(Option<ObjectStorageServerProtocol>)`](crate::output::DescribeLocationObjectStorageOutput::server_protocol): <p>The protocol that your object storage system uses to communicate.</p>
-    ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationObjectStorageOutput::agent_arns): <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationObjectStorageOutput::creation_time): <p>The time that the location was created.</p>
-    ///   - [`server_certificate(Option<Blob>)`](crate::output::DescribeLocationObjectStorageOutput::server_certificate): <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationObjectStorageError>`](crate::error::DescribeLocationObjectStorageError)
-    pub fn describe_location_object_storage(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLocationObjectStorage {
-        crate::client::fluent_builders::DescribeLocationObjectStorage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationS3`](crate::client::fluent_builders::DescribeLocationS3) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationS3::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationS3::set_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
-    /// - On success, responds with [`DescribeLocationS3Output`](crate::output::DescribeLocationS3Output) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationS3Output::location_arn): <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationS3Output::location_uri): <p>The URL of the Amazon S3 location that was described.</p>
-    ///   - [`s3_storage_class(Option<S3StorageClass>)`](crate::output::DescribeLocationS3Output::s3_storage_class): <p>The Amazon S3 storage class that you chose to store your files in when this location is used as a task destination. For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-    ///   - [`s3_config(Option<S3Config>)`](crate::output::DescribeLocationS3Output::s3_config): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to access an Amazon S3 bucket.</p>  <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
-    ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationS3Output::agent_arns): <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationS3Output::creation_time): <p>The time that the Amazon S3 bucket location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationS3Error>`](crate::error::DescribeLocationS3Error)
-    pub fn describe_location_s3(&self) -> crate::client::fluent_builders::DescribeLocationS3 {
-        crate::client::fluent_builders::DescribeLocationS3::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLocationSmb`](crate::client::fluent_builders::DescribeLocationSmb) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeLocationSmb::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::DescribeLocationSmb::set_location_arn): <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-    /// - On success, responds with [`DescribeLocationSmbOutput`](crate::output::DescribeLocationSmbOutput) with field(s):
-    ///   - [`location_arn(Option<String>)`](crate::output::DescribeLocationSmbOutput::location_arn): <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    ///   - [`location_uri(Option<String>)`](crate::output::DescribeLocationSmbOutput::location_uri): <p>The URL of the source SMB location that was described.</p>
-    ///   - [`agent_arns(Option<Vec<String>>)`](crate::output::DescribeLocationSmbOutput::agent_arns): <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    ///   - [`user(Option<String>)`](crate::output::DescribeLocationSmbOutput::user): <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    ///   - [`domain(Option<String>)`](crate::output::DescribeLocationSmbOutput::domain): <p>The name of the Windows domain that the SMB server belongs to.</p>
-    ///   - [`mount_options(Option<SmbMountOptions>)`](crate::output::DescribeLocationSmbOutput::mount_options): <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeLocationSmbOutput::creation_time): <p>The time that the SMB location was created.</p>
-    /// - On failure, responds with [`SdkError<DescribeLocationSmbError>`](crate::error::DescribeLocationSmbError)
-    pub fn describe_location_smb(&self) -> crate::client::fluent_builders::DescribeLocationSmb {
-        crate::client::fluent_builders::DescribeLocationSmb::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTask`](crate::client::fluent_builders::DescribeTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::DescribeTask::set_task_arn): <p>The Amazon Resource Name (ARN) of the task to describe.</p>
-    /// - On success, responds with [`DescribeTaskOutput`](crate::output::DescribeTaskOutput) with field(s):
-    ///   - [`task_arn(Option<String>)`](crate::output::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task that was described.</p>
-    ///   - [`status(Option<TaskStatus>)`](crate::output::DescribeTaskOutput::status): <p>The status of the task that was described.</p>  <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide</i>.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeTaskOutput::name): <p>The name of the task that was described.</p>
-    ///   - [`current_task_execution_arn(Option<String>)`](crate::output::DescribeTaskOutput::current_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution that is transferring files.</p>
-    ///   - [`source_location_arn(Option<String>)`](crate::output::DescribeTaskOutput::source_location_arn): <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
-    ///   - [`destination_location_arn(Option<String>)`](crate::output::DescribeTaskOutput::destination_location_arn): <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
-    ///   - [`cloud_watch_log_group_arn(Option<String>)`](crate::output::DescribeTaskOutput::cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the task.</p>  <p>For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch User Guide</i>.</p>
-    ///   - [`source_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::source_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the network interfaces created for your source location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    ///   - [`destination_network_interface_arns(Option<Vec<String>>)`](crate::output::DescribeTaskOutput::destination_network_interface_arns): <p>The Amazon Resource Names (ARNs) of the network interfaces created for your destination location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network interface requirements</a>.</p>
-    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskOutput::options): <p>The configuration options that control the behavior of the <code>StartTaskExecution</code> operation. Some options include preserving file or object metadata and verifying data integrity.</p>  <p>You can override these options for each task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::excludes): <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///   - [`schedule(Option<TaskSchedule>)`](crate::output::DescribeTaskOutput::schedule): <p>The schedule used to periodically transfer files from a source to a destination location.</p>
-    ///   - [`error_code(Option<String>)`](crate::output::DescribeTaskOutput::error_code): <p>Errors that DataSync encountered during execution of the task. You can use this error code to help troubleshoot issues.</p>
-    ///   - [`error_detail(Option<String>)`](crate::output::DescribeTaskOutput::error_detail): <p>Detailed description of an error that was encountered during the task execution. You can use this information to help troubleshoot issues. </p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeTaskOutput::creation_time): <p>The time that the task was created.</p>
-    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    /// - On failure, responds with [`SdkError<DescribeTaskError>`](crate::error::DescribeTaskError)
-    pub fn describe_task(&self) -> crate::client::fluent_builders::DescribeTask {
-        crate::client::fluent_builders::DescribeTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTaskExecution`](crate::client::fluent_builders::DescribeTaskExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::DescribeTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-    /// - On success, responds with [`DescribeTaskExecutionOutput`](crate::output::DescribeTaskExecutionOutput) with field(s):
-    ///   - [`task_execution_arn(Option<String>)`](crate::output::DescribeTaskExecutionOutput::task_execution_arn): <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>  <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    ///   - [`status(Option<TaskExecutionStatus>)`](crate::output::DescribeTaskExecutionOutput::status): <p>The status of the task execution. </p>  <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-    ///   - [`options(Option<Options>)`](crate::output::DescribeTaskExecutionOutput::options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    ///   - [`excludes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::excludes): <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///   - [`includes(Option<Vec<FilterRule>>)`](crate::output::DescribeTaskExecutionOutput::includes): <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::output::DescribeTaskExecutionOutput::start_time): <p>The time that the task execution was started.</p>
-    ///   - [`estimated_files_to_transfer(i64)`](crate::output::DescribeTaskExecutionOutput::estimated_files_to_transfer): <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
-    ///   - [`estimated_bytes_to_transfer(i64)`](crate::output::DescribeTaskExecutionOutput::estimated_bytes_to_transfer): <p>The estimated physical number of bytes that is to be transferred over the network.</p>
-    ///   - [`files_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::files_transferred): <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>  <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
-    ///   - [`bytes_written(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_written): <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
-    ///   - [`bytes_transferred(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_transferred): <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
-    ///   - [`result(Option<TaskExecutionResultDetail>)`](crate::output::DescribeTaskExecutionOutput::result): <p>The result of the task execution.</p>
-    ///   - [`bytes_compressed(i64)`](crate::output::DescribeTaskExecutionOutput::bytes_compressed): <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
-    /// - On failure, responds with [`SdkError<DescribeTaskExecutionError>`](crate::error::DescribeTaskExecutionError)
-    pub fn describe_task_execution(&self) -> crate::client::fluent_builders::DescribeTaskExecution {
-        crate::client::fluent_builders::DescribeTaskExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAgents`](crate::client::fluent_builders::ListAgents) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAgents::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAgents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAgents::set_max_results): <p>The maximum number of agents to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAgents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAgents::set_next_token): <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
-    /// - On success, responds with [`ListAgentsOutput`](crate::output::ListAgentsOutput) with field(s):
-    ///   - [`agents(Option<Vec<AgentListEntry>>)`](crate::output::ListAgentsOutput::agents): <p>A list of agents in your account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAgentsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of agents.</p>
-    /// - On failure, responds with [`SdkError<ListAgentsError>`](crate::error::ListAgentsError)
-    pub fn list_agents(&self) -> crate::client::fluent_builders::ListAgents {
-        crate::client::fluent_builders::ListAgents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLocations`](crate::client::fluent_builders::ListLocations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLocations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLocations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLocations::set_max_results): <p>The maximum number of locations to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLocations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLocations::set_next_token): <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
-    ///   - [`filters(Vec<LocationFilter>)`](crate::client::fluent_builders::ListLocations::filters) / [`set_filters(Option<Vec<LocationFilter>>)`](crate::client::fluent_builders::ListLocations::set_filters): <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
-    /// - On success, responds with [`ListLocationsOutput`](crate::output::ListLocationsOutput) with field(s):
-    ///   - [`locations(Option<Vec<LocationListEntry>>)`](crate::output::ListLocationsOutput::locations): <p>An array that contains a list of locations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLocationsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of locations.</p>
-    /// - On failure, responds with [`SdkError<ListLocationsError>`](crate::error::ListLocationsError)
-    pub fn list_locations(&self) -> crate::client::fluent_builders::ListLocations {
-        crate::client::fluent_builders::ListLocations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>Specifies how many results that you want in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<TagListEntry>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array of tags applied to the specified resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTaskExecutions`](crate::client::fluent_builders::ListTaskExecutions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTaskExecutions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::ListTaskExecutions::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::ListTaskExecutions::set_task_arn): <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTaskExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTaskExecutions::set_max_results): <p>The maximum number of executed tasks to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTaskExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTaskExecutions::set_next_token): <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
-    /// - On success, responds with [`ListTaskExecutionsOutput`](crate::output::ListTaskExecutionsOutput) with field(s):
-    ///   - [`task_executions(Option<Vec<TaskExecutionListEntry>>)`](crate::output::ListTaskExecutionsOutput::task_executions): <p>A list of executed tasks.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTaskExecutionsOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of executed tasks.</p>
-    /// - On failure, responds with [`SdkError<ListTaskExecutionsError>`](crate::error::ListTaskExecutionsError)
-    pub fn list_task_executions(&self) -> crate::client::fluent_builders::ListTaskExecutions {
-        crate::client::fluent_builders::ListTaskExecutions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTasks`](crate::client::fluent_builders::ListTasks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTasks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTasks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTasks::set_max_results): <p>The maximum number of tasks to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTasks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTasks::set_next_token): <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
-    ///   - [`filters(Vec<TaskFilter>)`](crate::client::fluent_builders::ListTasks::filters) / [`set_filters(Option<Vec<TaskFilter>>)`](crate::client::fluent_builders::ListTasks::set_filters): <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
-    /// - On success, responds with [`ListTasksOutput`](crate::output::ListTasksOutput) with field(s):
-    ///   - [`tasks(Option<Vec<TaskListEntry>>)`](crate::output::ListTasksOutput::tasks): <p>A list of all the tasks that are returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTasksOutput::next_token): <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
-    /// - On failure, responds with [`SdkError<ListTasksError>`](crate::error::ListTasksError)
-    pub fn list_tasks(&self) -> crate::client::fluent_builders::ListTasks {
-        crate::client::fluent_builders::ListTasks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartTaskExecution`](crate::client::fluent_builders::StartTaskExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::StartTaskExecution::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::StartTaskExecution::set_task_arn): <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
-    ///   - [`override_options(Options)`](crate::client::fluent_builders::StartTaskExecution::override_options) / [`set_override_options(Option<Options>)`](crate::client::fluent_builders::StartTaskExecution::set_override_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_includes): <p>Specifies a list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::StartTaskExecution::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::StartTaskExecution::set_excludes): <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::StartTaskExecution::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::StartTaskExecution::set_tags): <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>  <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
-    /// - On success, responds with [`StartTaskExecutionOutput`](crate::output::StartTaskExecutionOutput) with field(s):
-    ///   - [`task_execution_arn(Option<String>)`](crate::output::StartTaskExecutionOutput::task_execution_arn): <p>The ARN of the running task execution.</p>
-    /// - On failure, responds with [`SdkError<StartTaskExecutionError>`](crate::error::StartTaskExecutionError)
-    pub fn start_task_execution(&self) -> crate::client::fluent_builders::StartTaskExecution {
-        crate::client::fluent_builders::StartTaskExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
-    ///   - [`tags(Vec<TagListEntry>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<TagListEntry>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Specifies the tags that you want to apply to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
-    ///   - [`keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::keys) / [`set_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_keys): <p>Specifies the keys in the tags that you want to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAgent`](crate::client::fluent_builders::UpdateAgent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAgent::agent_arn) / [`set_agent_arn(Option<String>)`](crate::client::fluent_builders::UpdateAgent::set_agent_arn): <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAgent::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAgent::set_name): <p>The name that you want to use to configure the agent.</p>
-    /// - On success, responds with [`UpdateAgentOutput`](crate::output::UpdateAgentOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateAgentError>`](crate::error::UpdateAgentError)
-    pub fn update_agent(&self) -> crate::client::fluent_builders::UpdateAgent {
-        crate::client::fluent_builders::UpdateAgent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLocationHdfs`](crate::client::fluent_builders::UpdateLocationHdfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_subdirectory): <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
-    ///   - [`name_nodes(Vec<HdfsNameNode>)`](crate::client::fluent_builders::UpdateLocationHdfs::name_nodes) / [`set_name_nodes(Option<Vec<HdfsNameNode>>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_name_nodes): <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
-    ///   - [`block_size(i32)`](crate::client::fluent_builders::UpdateLocationHdfs::block_size) / [`set_block_size(Option<i32>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_block_size): <p>The size of the data blocks to write into the HDFS cluster. </p>
-    ///   - [`replication_factor(i32)`](crate::client::fluent_builders::UpdateLocationHdfs::replication_factor) / [`set_replication_factor(Option<i32>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_replication_factor): <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
-    ///   - [`kms_key_provider_uri(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::kms_key_provider_uri) / [`set_kms_key_provider_uri(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kms_key_provider_uri): <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-    ///   - [`qop_configuration(QopConfiguration)`](crate::client::fluent_builders::UpdateLocationHdfs::qop_configuration) / [`set_qop_configuration(Option<QopConfiguration>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_qop_configuration): <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
-    ///   - [`authentication_type(HdfsAuthenticationType)`](crate::client::fluent_builders::UpdateLocationHdfs::authentication_type) / [`set_authentication_type(Option<HdfsAuthenticationType>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_authentication_type): <p>The type of authentication used to determine the identity of the user. </p>
-    ///   - [`simple_user(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::simple_user) / [`set_simple_user(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_simple_user): <p>The user name used to identify the client on the host operating system.</p>
-    ///   - [`kerberos_principal(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_principal) / [`set_kerberos_principal(Option<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_principal): <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-    ///   - [`kerberos_keytab(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_keytab) / [`set_kerberos_keytab(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_keytab): <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    ///   - [`kerberos_krb5_conf(Blob)`](crate::client::fluent_builders::UpdateLocationHdfs::kerberos_krb5_conf) / [`set_kerberos_krb5_conf(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_kerberos_krb5_conf): <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationHdfs::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationHdfs::set_agent_arns): <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
-    /// - On success, responds with [`UpdateLocationHdfsOutput`](crate::output::UpdateLocationHdfsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateLocationHdfsError>`](crate::error::UpdateLocationHdfsError)
-    pub fn update_location_hdfs(&self) -> crate::client::fluent_builders::UpdateLocationHdfs {
-        crate::client::fluent_builders::UpdateLocationHdfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLocationNfs`](crate::client::fluent_builders::UpdateLocationNfs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationNfs::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationNfs::set_location_arn): <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationNfs::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationNfs::set_subdirectory): <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>  <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>  <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>  <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>  <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
-    ///   - [`on_prem_config(OnPremConfig)`](crate::client::fluent_builders::UpdateLocationNfs::on_prem_config) / [`set_on_prem_config(Option<OnPremConfig>)`](crate::client::fluent_builders::UpdateLocationNfs::set_on_prem_config): <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
-    ///   - [`mount_options(NfsMountOptions)`](crate::client::fluent_builders::UpdateLocationNfs::mount_options) / [`set_mount_options(Option<NfsMountOptions>)`](crate::client::fluent_builders::UpdateLocationNfs::set_mount_options): <p>Specifies how DataSync can access a location using the NFS protocol.</p>
-    /// - On success, responds with [`UpdateLocationNfsOutput`](crate::output::UpdateLocationNfsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateLocationNfsError>`](crate::error::UpdateLocationNfsError)
-    pub fn update_location_nfs(&self) -> crate::client::fluent_builders::UpdateLocationNfs {
-        crate::client::fluent_builders::UpdateLocationNfs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLocationObjectStorage`](crate::client::fluent_builders::UpdateLocationObjectStorage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_location_arn): <p>Specifies the ARN of the object storage system location that you're updating.</p>
-    ///   - [`server_port(i32)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_port) / [`set_server_port(Option<i32>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_port): <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
-    ///   - [`server_protocol(ObjectStorageServerProtocol)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_protocol) / [`set_server_protocol(Option<ObjectStorageServerProtocol>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_protocol): <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_subdirectory): <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
-    ///   - [`access_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::access_key) / [`set_access_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_access_key): <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
-    ///   - [`secret_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::secret_key) / [`set_secret_key(Option<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_secret_key): <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_agent_arns): <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    ///   - [`server_certificate(Blob)`](crate::client::fluent_builders::UpdateLocationObjectStorage::server_certificate) / [`set_server_certificate(Option<Blob>)`](crate::client::fluent_builders::UpdateLocationObjectStorage::set_server_certificate): <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>  <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>  <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
-    /// - On success, responds with [`UpdateLocationObjectStorageOutput`](crate::output::UpdateLocationObjectStorageOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateLocationObjectStorageError>`](crate::error::UpdateLocationObjectStorageError)
-    pub fn update_location_object_storage(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLocationObjectStorage {
-        crate::client::fluent_builders::UpdateLocationObjectStorage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLocationSmb`](crate::client::fluent_builders::UpdateLocationSmb) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationSmb::location_arn) / [`set_location_arn(Option<String>)`](crate::client::fluent_builders::UpdateLocationSmb::set_location_arn): <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
-    ///   - [`subdirectory(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationSmb::subdirectory) / [`set_subdirectory(Option<String>)`](crate::client::fluent_builders::UpdateLocationSmb::set_subdirectory): <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>   <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>  </note>  <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>  <ul>   <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>   <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>  </ul>  <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
-    ///   - [`user(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationSmb::user) / [`set_user(Option<String>)`](crate::client::fluent_builders::UpdateLocationSmb::set_user): <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationSmb::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::UpdateLocationSmb::set_domain): <p>The name of the Windows domain that the SMB server belongs to.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::UpdateLocationSmb::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::UpdateLocationSmb::set_password): <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
-    ///   - [`agent_arns(Vec<String>)`](crate::client::fluent_builders::UpdateLocationSmb::agent_arns) / [`set_agent_arns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateLocationSmb::set_agent_arns): <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
-    ///   - [`mount_options(SmbMountOptions)`](crate::client::fluent_builders::UpdateLocationSmb::mount_options) / [`set_mount_options(Option<SmbMountOptions>)`](crate::client::fluent_builders::UpdateLocationSmb::set_mount_options): <p>Specifies how DataSync can access a location using the SMB protocol.</p>
-    /// - On success, responds with [`UpdateLocationSmbOutput`](crate::output::UpdateLocationSmbOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateLocationSmbError>`](crate::error::UpdateLocationSmbError)
-    pub fn update_location_smb(&self) -> crate::client::fluent_builders::UpdateLocationSmb {
-        crate::client::fluent_builders::UpdateLocationSmb::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTask`](crate::client::fluent_builders::UpdateTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::task_arn) / [`set_task_arn(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_task_arn): <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTask::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTask::set_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    ///   - [`excludes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::excludes) / [`set_excludes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_excludes): <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    ///   - [`schedule(TaskSchedule)`](crate::client::fluent_builders::UpdateTask::schedule) / [`set_schedule(Option<TaskSchedule>)`](crate::client::fluent_builders::UpdateTask::set_schedule): <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_name): <p>The name of the task to update.</p>
-    ///   - [`cloud_watch_log_group_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTask::cloud_watch_log_group_arn) / [`set_cloud_watch_log_group_arn(Option<String>)`](crate::client::fluent_builders::UpdateTask::set_cloud_watch_log_group_arn): <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
-    ///   - [`includes(Vec<FilterRule>)`](crate::client::fluent_builders::UpdateTask::includes) / [`set_includes(Option<Vec<FilterRule>>)`](crate::client::fluent_builders::UpdateTask::set_includes): <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    /// - On success, responds with [`UpdateTaskOutput`](crate::output::UpdateTaskOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateTaskError>`](crate::error::UpdateTaskError)
-    pub fn update_task(&self) -> crate::client::fluent_builders::UpdateTask {
-        crate::client::fluent_builders::UpdateTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTaskExecution`](crate::client::fluent_builders::UpdateTaskExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`task_execution_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateTaskExecution::task_execution_arn) / [`set_task_execution_arn(Option<String>)`](crate::client::fluent_builders::UpdateTaskExecution::set_task_execution_arn): <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-    ///   - [`options(Options)`](crate::client::fluent_builders::UpdateTaskExecution::options) / [`set_options(Option<Options>)`](crate::client::fluent_builders::UpdateTaskExecution::set_options): <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>  <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    /// - On success, responds with [`UpdateTaskExecutionOutput`](crate::output::UpdateTaskExecutionOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateTaskExecutionError>`](crate::error::UpdateTaskExecutionError)
-    pub fn update_task_execution(&self) -> crate::client::fluent_builders::UpdateTaskExecution {
-        crate::client::fluent_builders::UpdateTaskExecution::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -862,9 +174,97 @@ impl Client {
     }
 }
 
+mod cancel_task_execution;
+
+mod create_agent;
+
+mod create_location_efs;
+
+mod create_location_fsx_lustre;
+
+mod create_location_fsx_ontap;
+
+mod create_location_fsx_open_zfs;
+
+mod create_location_fsx_windows;
+
+mod create_location_hdfs;
+
+mod create_location_nfs;
+
+mod create_location_object_storage;
+
+mod create_location_s3;
+
+mod create_location_smb;
+
+mod create_task;
+
+mod delete_agent;
+
+mod delete_location;
+
+mod delete_task;
+
+mod describe_agent;
+
+mod describe_location_efs;
+
+mod describe_location_fsx_lustre;
+
+mod describe_location_fsx_ontap;
+
+mod describe_location_fsx_open_zfs;
+
+mod describe_location_fsx_windows;
+
+mod describe_location_hdfs;
+
+mod describe_location_nfs;
+
+mod describe_location_object_storage;
+
+mod describe_location_s3;
+
+mod describe_location_smb;
+
+mod describe_task;
+
+mod describe_task_execution;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_agents;
+
+mod list_locations;
+
+mod list_tags_for_resource;
+
+mod list_task_executions;
+
+mod list_tasks;
+
+mod start_task_execution;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_agent;
+
+mod update_location_hdfs;
+
+mod update_location_nfs;
+
+mod update_location_object_storage;
+
+mod update_location_smb;
+
+mod update_task;
+
+mod update_task_execution;

@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableControl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_control_error(response)
+            crate::protocol_serde::shape_disable_control::de_disable_control_http_error(response)
         } else {
-            crate::operation_deser::parse_disable_control_response(response)
+            crate::protocol_serde::shape_disable_control::de_disable_control_http_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableControl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_control_error(response)
+            crate::protocol_serde::shape_enable_control::de_enable_control_http_error(response)
         } else {
-            crate::operation_deser::parse_enable_control_response(response)
+            crate::protocol_serde::shape_enable_control::de_enable_control_http_response(response)
         }
     }
 }
@@ -93,9 +93,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControlOperation {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_control_operation_error(response)
+            crate::protocol_serde::shape_get_control_operation::de_get_control_operation_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_control_operation_response(response)
+            crate::protocol_serde::shape_get_control_operation::de_get_control_operation_http_response(response)
         }
     }
 }
@@ -128,9 +130,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnabledControls {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_enabled_controls_error(response)
+            crate::protocol_serde::shape_list_enabled_controls::de_list_enabled_controls_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_enabled_controls_response(response)
+            crate::protocol_serde::shape_list_enabled_controls::de_list_enabled_controls_http_response(response)
         }
     }
 }

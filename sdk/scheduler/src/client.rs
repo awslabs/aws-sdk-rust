@@ -89,185 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateSchedule`](crate::client::fluent_builders::CreateSchedule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_name): <p>The name of the schedule that you are creating.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_group_name): <p>The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.</p>
-    ///   - [`schedule_expression(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::schedule_expression) / [`set_schedule_expression(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_schedule_expression): <p> The expression that defines when the schedule runs. The following formats are supported. </p>  <ul>   <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>   <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>   <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>  </ul>  <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>  <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>  <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>  <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::CreateSchedule::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::CreateSchedule::set_start_date): <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::CreateSchedule::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::CreateSchedule::set_end_date): <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_description): <p>The description you specify for the schedule.</p>
-    ///   - [`schedule_expression_timezone(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::schedule_expression_timezone) / [`set_schedule_expression_timezone(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_schedule_expression_timezone): <p>The timezone in which the scheduling expression is evaluated.</p>
-    ///   - [`state(ScheduleState)`](crate::client::fluent_builders::CreateSchedule::state) / [`set_state(Option<ScheduleState>)`](crate::client::fluent_builders::CreateSchedule::set_state): <p>Specifies whether the schedule is enabled or disabled.</p>
-    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_kms_key_arn): <p>The Amazon Resource Name (ARN) for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.</p>
-    ///   - [`target(Target)`](crate::client::fluent_builders::CreateSchedule::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::CreateSchedule::set_target): <p>The schedule's target.</p>
-    ///   - [`flexible_time_window(FlexibleTimeWindow)`](crate::client::fluent_builders::CreateSchedule::flexible_time_window) / [`set_flexible_time_window(Option<FlexibleTimeWindow>)`](crate::client::fluent_builders::CreateSchedule::set_flexible_time_window): <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateSchedule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateSchedule::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    /// - On success, responds with [`CreateScheduleOutput`](crate::output::CreateScheduleOutput) with field(s):
-    ///   - [`schedule_arn(Option<String>)`](crate::output::CreateScheduleOutput::schedule_arn): <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    /// - On failure, responds with [`SdkError<CreateScheduleError>`](crate::error::CreateScheduleError)
-    pub fn create_schedule(&self) -> crate::client::fluent_builders::CreateSchedule {
-        crate::client::fluent_builders::CreateSchedule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateScheduleGroup`](crate::client::fluent_builders::CreateScheduleGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateScheduleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateScheduleGroup::set_name): <p>The name of the schedule group that you are creating.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateScheduleGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateScheduleGroup::set_tags): <p>The list of tags to associate with the schedule group.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateScheduleGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateScheduleGroup::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    /// - On success, responds with [`CreateScheduleGroupOutput`](crate::output::CreateScheduleGroupOutput) with field(s):
-    ///   - [`schedule_group_arn(Option<String>)`](crate::output::CreateScheduleGroupOutput::schedule_group_arn): <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    /// - On failure, responds with [`SdkError<CreateScheduleGroupError>`](crate::error::CreateScheduleGroupError)
-    pub fn create_schedule_group(&self) -> crate::client::fluent_builders::CreateScheduleGroup {
-        crate::client::fluent_builders::CreateScheduleGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSchedule`](crate::client::fluent_builders::DeleteSchedule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteSchedule::set_name): <p>The name of the schedule to delete.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteSchedule::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::DeleteSchedule::set_group_name): <p>The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSchedule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteSchedule::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    /// - On success, responds with [`DeleteScheduleOutput`](crate::output::DeleteScheduleOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteScheduleError>`](crate::error::DeleteScheduleError)
-    pub fn delete_schedule(&self) -> crate::client::fluent_builders::DeleteSchedule {
-        crate::client::fluent_builders::DeleteSchedule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteScheduleGroup`](crate::client::fluent_builders::DeleteScheduleGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteScheduleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteScheduleGroup::set_name): <p>The name of the schedule group to delete.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteScheduleGroup::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteScheduleGroup::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    /// - On success, responds with [`DeleteScheduleGroupOutput`](crate::output::DeleteScheduleGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteScheduleGroupError>`](crate::error::DeleteScheduleGroupError)
-    pub fn delete_schedule_group(&self) -> crate::client::fluent_builders::DeleteScheduleGroup {
-        crate::client::fluent_builders::DeleteScheduleGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSchedule`](crate::client::fluent_builders::GetSchedule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSchedule::set_name): <p>The name of the schedule to retrieve.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::GetSchedule::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::GetSchedule::set_group_name): <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
-    /// - On success, responds with [`GetScheduleOutput`](crate::output::GetScheduleOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetScheduleOutput::arn): <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    ///   - [`group_name(Option<String>)`](crate::output::GetScheduleOutput::group_name): <p>The name of the schedule group associated with this schedule.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetScheduleOutput::name): <p>The name of the schedule.</p>
-    ///   - [`schedule_expression(Option<String>)`](crate::output::GetScheduleOutput::schedule_expression): <p> The expression that defines when the schedule runs. The following formats are supported. </p>  <ul>   <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>   <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>   <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>  </ul>  <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>  <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>  <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>  <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    ///   - [`start_date(Option<DateTime>)`](crate::output::GetScheduleOutput::start_date): <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    ///   - [`end_date(Option<DateTime>)`](crate::output::GetScheduleOutput::end_date): <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetScheduleOutput::description): <p>The description of the schedule.</p>
-    ///   - [`schedule_expression_timezone(Option<String>)`](crate::output::GetScheduleOutput::schedule_expression_timezone): <p>The timezone in which the scheduling expression is evaluated.</p>
-    ///   - [`state(Option<ScheduleState>)`](crate::output::GetScheduleOutput::state): <p>Specifies whether the schedule is enabled or disabled.</p>
-    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetScheduleOutput::creation_date): <p>The time at which the schedule was created.</p>
-    ///   - [`last_modification_date(Option<DateTime>)`](crate::output::GetScheduleOutput::last_modification_date): <p>The time at which the schedule was last modified.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::output::GetScheduleOutput::kms_key_arn): <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt your data.</p>
-    ///   - [`target(Option<Target>)`](crate::output::GetScheduleOutput::target): <p>The schedule target.</p>
-    ///   - [`flexible_time_window(Option<FlexibleTimeWindow>)`](crate::output::GetScheduleOutput::flexible_time_window): <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    /// - On failure, responds with [`SdkError<GetScheduleError>`](crate::error::GetScheduleError)
-    pub fn get_schedule(&self) -> crate::client::fluent_builders::GetSchedule {
-        crate::client::fluent_builders::GetSchedule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetScheduleGroup`](crate::client::fluent_builders::GetScheduleGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetScheduleGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetScheduleGroup::set_name): <p>The name of the schedule group to retrieve.</p>
-    /// - On success, responds with [`GetScheduleGroupOutput`](crate::output::GetScheduleGroupOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetScheduleGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetScheduleGroupOutput::name): <p>The name of the schedule group.</p>
-    ///   - [`state(Option<ScheduleGroupState>)`](crate::output::GetScheduleGroupOutput::state): <p>Specifies the state of the schedule group.</p>
-    ///   - [`creation_date(Option<DateTime>)`](crate::output::GetScheduleGroupOutput::creation_date): <p>The time at which the schedule group was created.</p>
-    ///   - [`last_modification_date(Option<DateTime>)`](crate::output::GetScheduleGroupOutput::last_modification_date): <p>The time at which the schedule group was last modified.</p>
-    /// - On failure, responds with [`SdkError<GetScheduleGroupError>`](crate::error::GetScheduleGroupError)
-    pub fn get_schedule_group(&self) -> crate::client::fluent_builders::GetScheduleGroup {
-        crate::client::fluent_builders::GetScheduleGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListScheduleGroups`](crate::client::fluent_builders::ListScheduleGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListScheduleGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListScheduleGroups::name_prefix) / [`set_name_prefix(Option<String>)`](crate::client::fluent_builders::ListScheduleGroups::set_name_prefix): <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListScheduleGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListScheduleGroups::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListScheduleGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListScheduleGroups::set_max_results): <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
-    /// - On success, responds with [`ListScheduleGroupsOutput`](crate::output::ListScheduleGroupsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListScheduleGroupsOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    ///   - [`schedule_groups(Option<Vec<ScheduleGroupSummary>>)`](crate::output::ListScheduleGroupsOutput::schedule_groups): <p>The schedule groups that match the specified criteria.</p>
-    /// - On failure, responds with [`SdkError<ListScheduleGroupsError>`](crate::error::ListScheduleGroupsError)
-    pub fn list_schedule_groups(&self) -> crate::client::fluent_builders::ListScheduleGroups {
-        crate::client::fluent_builders::ListScheduleGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSchedules`](crate::client::fluent_builders::ListSchedules) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchedules::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::ListSchedules::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::ListSchedules::set_group_name): <p>If specified, only lists the schedules whose associated schedule group matches the given filter.</p>
-    ///   - [`name_prefix(impl Into<String>)`](crate::client::fluent_builders::ListSchedules::name_prefix) / [`set_name_prefix(Option<String>)`](crate::client::fluent_builders::ListSchedules::set_name_prefix): <p>Schedule name prefix to return the filtered list of resources.</p>
-    ///   - [`state(ScheduleState)`](crate::client::fluent_builders::ListSchedules::state) / [`set_state(Option<ScheduleState>)`](crate::client::fluent_builders::ListSchedules::set_state): <p>If specified, only lists the schedules whose current state matches the given filter.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchedules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchedules::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchedules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchedules::set_max_results): <p>If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.</p>
-    /// - On success, responds with [`ListSchedulesOutput`](crate::output::ListSchedulesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListSchedulesOutput::next_token): <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    ///   - [`schedules(Option<Vec<ScheduleSummary>>)`](crate::output::ListSchedulesOutput::schedules): <p>The schedules that match the specified criteria.</p>
-    /// - On failure, responds with [`SdkError<ListSchedulesError>`](crate::error::ListSchedulesError)
-    pub fn list_schedules(&self) -> crate::client::fluent_builders::ListSchedules {
-        crate::client::fluent_builders::ListSchedules::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the EventBridge Scheduler resource for which you want to view tags.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the specified resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the schedule group that you are adding tags to.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to associate with the schedule group.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the schedule group from which you are removing tags.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSchedule`](crate::client::fluent_builders::UpdateSchedule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_name): <p>The name of the schedule that you are updating.</p>
-    ///   - [`group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::group_name) / [`set_group_name(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_group_name): <p>The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.</p>
-    ///   - [`schedule_expression(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::schedule_expression) / [`set_schedule_expression(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_schedule_expression): <p> The expression that defines when the schedule runs. The following formats are supported. </p>  <ul>   <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li>   <li> <p> <code>rate</code> expression - <code>rate(unit value)</code> </p> </li>   <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li>  </ul>  <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p>  <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p>  <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p>  <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::UpdateSchedule::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::UpdateSchedule::set_start_date): <p>The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code> for one-time schedules.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::UpdateSchedule::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::UpdateSchedule::set_end_date): <p>The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code> you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_description): <p>The description you specify for the schedule.</p>
-    ///   - [`schedule_expression_timezone(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::schedule_expression_timezone) / [`set_schedule_expression_timezone(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_schedule_expression_timezone): <p>The timezone in which the scheduling expression is evaluated.</p>
-    ///   - [`state(ScheduleState)`](crate::client::fluent_builders::UpdateSchedule::state) / [`set_state(Option<ScheduleState>)`](crate::client::fluent_builders::UpdateSchedule::set_state): <p>Specifies whether the schedule is enabled or disabled.</p>
-    ///   - [`kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::kms_key_arn) / [`set_kms_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_kms_key_arn): <p>The ARN for the customer managed KMS key that that you want EventBridge Scheduler to use to encrypt and decrypt your data.</p>
-    ///   - [`target(Target)`](crate::client::fluent_builders::UpdateSchedule::target) / [`set_target(Option<Target>)`](crate::client::fluent_builders::UpdateSchedule::set_target): <p>The schedule target. You can use this operation to change the target that your schedule invokes.</p>
-    ///   - [`flexible_time_window(FlexibleTimeWindow)`](crate::client::fluent_builders::UpdateSchedule::flexible_time_window) / [`set_flexible_time_window(Option<FlexibleTimeWindow>)`](crate::client::fluent_builders::UpdateSchedule::set_flexible_time_window): <p>Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedule::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateSchedule::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
-    /// - On success, responds with [`UpdateScheduleOutput`](crate::output::UpdateScheduleOutput) with field(s):
-    ///   - [`schedule_arn(Option<String>)`](crate::output::UpdateScheduleOutput::schedule_arn): <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-    /// - On failure, responds with [`SdkError<UpdateScheduleError>`](crate::error::UpdateScheduleError)
-    pub fn update_schedule(&self) -> crate::client::fluent_builders::UpdateSchedule {
-        crate::client::fluent_builders::UpdateSchedule::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -353,9 +174,33 @@ impl Client {
     }
 }
 
+mod create_schedule;
+
+mod create_schedule_group;
+
+mod delete_schedule;
+
+mod delete_schedule_group;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_schedule;
+
+mod get_schedule_group;
+
+mod list_schedule_groups;
+
+mod list_schedules;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_schedule;

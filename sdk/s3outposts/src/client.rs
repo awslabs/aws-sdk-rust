@@ -89,60 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_outpost_id): <p>The ID of the Outposts. </p>
-    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_subnet_id): <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.</p>
-    ///   - [`security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::security_group_id) / [`set_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_security_group_id): <p>The ID of the security group to use with the endpoint.</p>
-    ///   - [`access_type(EndpointAccessType)`](crate::client::fluent_builders::CreateEndpoint::access_type) / [`set_access_type(Option<EndpointAccessType>)`](crate::client::fluent_builders::CreateEndpoint::set_access_type): <p>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>, you must also provide the customer-owned IP address pool (CoIP pool).</p> <note>   <p> <code>Private</code> is the default access type value.</p>  </note>
-    ///   - [`customer_owned_ipv4_pool(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::customer_owned_ipv4_pool) / [`set_customer_owned_ipv4_pool(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_customer_owned_ipv4_pool): <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.</p>
-    /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
-    ///   - [`endpoint_arn(Option<String>)`](crate::output::CreateEndpointOutput::endpoint_arn): <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
-    pub fn create_endpoint(&self) -> crate::client::fluent_builders::CreateEndpoint {
-        crate::client::fluent_builders::CreateEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_id) / [`set_endpoint_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_id): <p>The ID of the endpoint.</p>
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_outpost_id): <p>The ID of the Outposts. </p>
-    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
-    pub fn delete_endpoint(&self) -> crate::client::fluent_builders::DeleteEndpoint {
-        crate::client::fluent_builders::DeleteEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEndpoints`](crate::client::fluent_builders::ListEndpoints) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEndpoints::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEndpoints::set_next_token): <p>If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListEndpoints::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
-    /// - On success, responds with [`ListEndpointsOutput`](crate::output::ListEndpointsOutput) with field(s):
-    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    /// - On failure, responds with [`SdkError<ListEndpointsError>`](crate::error::ListEndpointsError)
-    pub fn list_endpoints(&self) -> crate::client::fluent_builders::ListEndpoints {
-        crate::client::fluent_builders::ListEndpoints::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSharedEndpoints`](crate::client::fluent_builders::ListSharedEndpoints) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSharedEndpoints::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSharedEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSharedEndpoints::set_next_token): <p>If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSharedEndpoints::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSharedEndpoints::set_max_results): <p>The maximum number of endpoints that will be returned in the response.</p>
-    ///   - [`outpost_id(impl Into<String>)`](crate::client::fluent_builders::ListSharedEndpoints::outpost_id) / [`set_outpost_id(Option<String>)`](crate::client::fluent_builders::ListSharedEndpoints::set_outpost_id): <p>The ID of the Amazon Web Services Outpost.</p>
-    /// - On success, responds with [`ListSharedEndpointsOutput`](crate::output::ListSharedEndpointsOutput) with field(s):
-    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::ListSharedEndpointsOutput::endpoints): <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSharedEndpointsOutput::next_token): <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    /// - On failure, responds with [`SdkError<ListSharedEndpointsError>`](crate::error::ListSharedEndpointsError)
-    pub fn list_shared_endpoints(&self) -> crate::client::fluent_builders::ListSharedEndpoints {
-        crate::client::fluent_builders::ListSharedEndpoints::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -228,9 +174,17 @@ impl Client {
     }
 }
 
+mod create_endpoint;
+
+mod delete_endpoint;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_endpoints;
+
+mod list_shared_endpoints;

@@ -90,7 +90,8 @@ impl SearchDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_devices_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_devices_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl SearchJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl SearchQuantumTasksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_quantum_tasks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_quantum_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +376,7 @@ impl SearchDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_devices_output_devices(page)
+            crate::lens::lens_search_devices_output_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -400,7 +403,7 @@ impl SearchJobsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_jobs_output_jobs(page)
+            crate::lens::lens_search_jobs_output_jobs(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -427,7 +430,7 @@ impl SearchQuantumTasksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_quantum_tasks_output_quantum_tasks(page)
+            crate::lens::lens_search_quantum_tasks_output_quantum_tasks(page)
                 .unwrap_or_default()
                 .into_iter()
         })

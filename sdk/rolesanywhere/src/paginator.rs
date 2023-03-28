@@ -82,7 +82,7 @@ impl ListCrlsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_crls_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_crls_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +192,8 @@ impl ListProfilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_profiles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_profiles_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +303,8 @@ impl ListSubjectsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_subjects_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_subjects_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +414,8 @@ impl ListTrustAnchorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_trust_anchors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_trust_anchors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -459,7 +462,7 @@ impl ListCrlsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_crls_output_crls(page)
+            crate::lens::lens_list_crls_output_crls(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -486,7 +489,7 @@ impl ListProfilesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_profiles_output_profiles(page)
+            crate::lens::lens_list_profiles_output_profiles(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -513,7 +516,7 @@ impl ListSubjectsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_subjects_output_subjects(page)
+            crate::lens::lens_list_subjects_output_subjects(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -540,7 +543,7 @@ impl ListTrustAnchorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_trust_anchors_output_trust_anchors(page)
+            crate::lens::lens_list_trust_anchors_output_trust_anchors(page)
                 .unwrap_or_default()
                 .into_iter()
         })

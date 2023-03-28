@@ -90,7 +90,7 @@ impl DescribeRecommendationExportJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_recommendation_export_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_recommendation_export_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -210,7 +210,7 @@ impl GetEnrollmentStatusesForOrganizationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_enrollment_statuses_for_organization_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_enrollment_statuses_for_organization_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -328,7 +328,7 @@ impl GetLambdaFunctionRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_lambda_function_recommendations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_lambda_function_recommendations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -446,7 +446,7 @@ impl GetRecommendationPreferencesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_recommendation_preferences_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_recommendation_preferences_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -564,7 +564,10 @@ impl GetRecommendationSummariesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_recommendation_summaries_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_recommendation_summaries_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -612,7 +615,13 @@ impl DescribeRecommendationExportJobsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_recommendation_export_jobs_output_recommendation_export_jobs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_recommendation_export_jobs_output_recommendation_export_jobs(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -639,7 +648,7 @@ impl GetEnrollmentStatusesForOrganizationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_enrollment_statuses_for_organization_output_account_enrollment_statuses(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_enrollment_statuses_for_organization_output_account_enrollment_statuses(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -664,7 +673,7 @@ impl GetLambdaFunctionRecommendationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_lambda_function_recommendations_output_lambda_function_recommendations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_lambda_function_recommendations_output_lambda_function_recommendations(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -687,7 +696,7 @@ impl GetRecommendationPreferencesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetRecommendationPreferencesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_recommendation_preferences_output_recommendation_preferences_details(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_recommendation_preferences_output_recommendation_preferences_details(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -710,6 +719,10 @@ impl GetRecommendationSummariesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_recommendation_summaries_output_recommendation_summaries(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_recommendation_summaries_output_recommendation_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

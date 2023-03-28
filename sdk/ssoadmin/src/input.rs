@@ -70,7 +70,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_customer_managed_policy_reference_to_permission_set(&self)?
+            crate::protocol_serde::shape_attach_customer_managed_policy_reference_to_permission_set::ser_attach_customer_managed_policy_reference_to_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -198,7 +198,7 @@ impl AttachManagedPolicyToPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_managed_policy_to_permission_set(&self)?
+            crate::protocol_serde::shape_attach_managed_policy_to_permission_set::ser_attach_managed_policy_to_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -326,9 +326,7 @@ impl CreateAccountAssignmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_account_assignment(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_account_assignment::ser_create_account_assignment_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -456,7 +454,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_instance_access_control_attribute_configuration(&self)?
+            crate::protocol_serde::shape_create_instance_access_control_attribute_configuration::ser_create_instance_access_control_attribute_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -584,7 +582,9 @@ impl CreatePermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_permission_set(&self)?,
+            crate::protocol_serde::shape_create_permission_set::ser_create_permission_set_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -712,9 +712,7 @@ impl DeleteAccountAssignmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_account_assignment(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_account_assignment::ser_delete_account_assignment_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -842,7 +840,7 @@ impl DeleteInlinePolicyFromPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_inline_policy_from_permission_set(&self)?
+            crate::protocol_serde::shape_delete_inline_policy_from_permission_set::ser_delete_inline_policy_from_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -970,7 +968,7 @@ impl DeleteInstanceAccessControlAttributeConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_instance_access_control_attribute_configuration(&self)?
+            crate::protocol_serde::shape_delete_instance_access_control_attribute_configuration::ser_delete_instance_access_control_attribute_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1098,7 +1096,7 @@ impl DeletePermissionsBoundaryFromPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_permissions_boundary_from_permission_set(&self)?
+            crate::protocol_serde::shape_delete_permissions_boundary_from_permission_set::ser_delete_permissions_boundary_from_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1226,7 +1224,9 @@ impl DeletePermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_permission_set(&self)?,
+            crate::protocol_serde::shape_delete_permission_set::ser_delete_permission_set_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1354,7 +1354,7 @@ impl DescribeAccountAssignmentCreationStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_creation_status(&self)?
+            crate::protocol_serde::shape_describe_account_assignment_creation_status::ser_describe_account_assignment_creation_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1482,7 +1482,7 @@ impl DescribeAccountAssignmentDeletionStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_account_assignment_deletion_status(&self)?
+            crate::protocol_serde::shape_describe_account_assignment_deletion_status::ser_describe_account_assignment_deletion_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1610,7 +1610,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_instance_access_control_attribute_configuration(&self)?
+            crate::protocol_serde::shape_describe_instance_access_control_attribute_configuration::ser_describe_instance_access_control_attribute_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1738,9 +1738,7 @@ impl DescribePermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_permission_set::ser_describe_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1868,7 +1866,7 @@ impl DescribePermissionSetProvisioningStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_permission_set_provisioning_status(&self)?
+            crate::protocol_serde::shape_describe_permission_set_provisioning_status::ser_describe_permission_set_provisioning_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1996,7 +1994,7 @@ impl DetachCustomerManagedPolicyReferenceFromPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_customer_managed_policy_reference_from_permission_set(&self)?
+            crate::protocol_serde::shape_detach_customer_managed_policy_reference_from_permission_set::ser_detach_customer_managed_policy_reference_from_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2124,7 +2122,7 @@ impl DetachManagedPolicyFromPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_managed_policy_from_permission_set(&self)?
+            crate::protocol_serde::shape_detach_managed_policy_from_permission_set::ser_detach_managed_policy_from_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2252,7 +2250,7 @@ impl GetInlinePolicyForPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_inline_policy_for_permission_set(&self)?
+            crate::protocol_serde::shape_get_inline_policy_for_permission_set::ser_get_inline_policy_for_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2380,7 +2378,7 @@ impl GetPermissionsBoundaryForPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_permissions_boundary_for_permission_set(&self)?
+            crate::protocol_serde::shape_get_permissions_boundary_for_permission_set::ser_get_permissions_boundary_for_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2508,7 +2506,7 @@ impl ListAccountAssignmentCreationStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_creation_status(&self)?
+            crate::protocol_serde::shape_list_account_assignment_creation_status::ser_list_account_assignment_creation_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2636,7 +2634,7 @@ impl ListAccountAssignmentDeletionStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignment_deletion_status(&self)?
+            crate::protocol_serde::shape_list_account_assignment_deletion_status::ser_list_account_assignment_deletion_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2764,9 +2762,7 @@ impl ListAccountAssignmentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_assignments(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_account_assignments::ser_list_account_assignments_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2894,7 +2890,7 @@ impl ListAccountsForProvisionedPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_accounts_for_provisioned_permission_set(&self)?
+            crate::protocol_serde::shape_list_accounts_for_provisioned_permission_set::ser_list_accounts_for_provisioned_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3022,7 +3018,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_customer_managed_policy_references_in_permission_set(&self)?
+            crate::protocol_serde::shape_list_customer_managed_policy_references_in_permission_set::ser_list_customer_managed_policy_references_in_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3150,7 +3146,7 @@ impl ListInstancesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)?,
+            crate::protocol_serde::shape_list_instances::ser_list_instances_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3278,7 +3274,7 @@ impl ListManagedPoliciesInPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_managed_policies_in_permission_set(&self)?
+            crate::protocol_serde::shape_list_managed_policies_in_permission_set::ser_list_managed_policies_in_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3406,7 +3402,7 @@ impl ListPermissionSetProvisioningStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_set_provisioning_status(&self)?
+            crate::protocol_serde::shape_list_permission_set_provisioning_status::ser_list_permission_set_provisioning_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3534,7 +3530,9 @@ impl ListPermissionSetsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets(&self)?,
+            crate::protocol_serde::shape_list_permission_sets::ser_list_permission_sets_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3662,7 +3660,7 @@ impl ListPermissionSetsProvisionedToAccountInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_permission_sets_provisioned_to_account(&self)?
+            crate::protocol_serde::shape_list_permission_sets_provisioned_to_account::ser_list_permission_sets_provisioned_to_account_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3790,7 +3788,7 @@ impl ListTagsForResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+            crate::protocol_serde::shape_list_tags_for_resource::ser_list_tags_for_resource_input(
                 &self,
             )?,
         );
@@ -3920,9 +3918,7 @@ impl ProvisionPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_provision_permission_set(
-                &self,
-            )?,
+            crate::protocol_serde::shape_provision_permission_set::ser_provision_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4050,7 +4046,7 @@ impl PutInlinePolicyToPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_inline_policy_to_permission_set(&self)?
+            crate::protocol_serde::shape_put_inline_policy_to_permission_set::ser_put_inline_policy_to_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4178,7 +4174,7 @@ impl PutPermissionsBoundaryToPermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_permissions_boundary_to_permission_set(&self)?
+            crate::protocol_serde::shape_put_permissions_boundary_to_permission_set::ser_put_permissions_boundary_to_permission_set_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4306,7 +4302,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4434,7 +4430,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4562,7 +4558,7 @@ impl UpdateInstanceAccessControlAttributeConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_instance_access_control_attribute_configuration(&self)?
+            crate::protocol_serde::shape_update_instance_access_control_attribute_configuration::ser_update_instance_access_control_attribute_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4690,7 +4686,9 @@ impl UpdatePermissionSetInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_permission_set(&self)?,
+            crate::protocol_serde::shape_update_permission_set::ser_update_permission_set_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

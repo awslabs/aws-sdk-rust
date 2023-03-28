@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitiesDetectio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_entities_detection_v2_job_error(response)
+            crate::protocol_serde::shape_describe_entities_detection_v2_job::de_describe_entities_detection_v2_job_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_entities_detection_v2_job_response(response)
+            crate::protocol_serde::shape_describe_entities_detection_v2_job::de_describe_entities_detection_v2_job_http_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeICD10CMInference
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_icd10_cm_inference_job_error(response)
+            crate::protocol_serde::shape_describe_icd10_cm_inference_job::de_describe_icd10_cm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_icd10_cm_inference_job_response(response)
+            crate::protocol_serde::shape_describe_icd10_cm_inference_job::de_describe_icd10_cm_inference_job_http_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePHIDetectionJob 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_phi_detection_job_error(response)
+            crate::protocol_serde::shape_describe_phi_detection_job::de_describe_phi_detection_job_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_phi_detection_job_response(response)
+            crate::protocol_serde::shape_describe_phi_detection_job::de_describe_phi_detection_job_http_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRxNormInferenceJ
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_rx_norm_inference_job_error(response)
+            crate::protocol_serde::shape_describe_rx_norm_inference_job::de_describe_rx_norm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_rx_norm_inference_job_response(response)
+            crate::protocol_serde::shape_describe_rx_norm_inference_job::de_describe_rx_norm_inference_job_http_response(response)
         }
     }
 }
@@ -167,9 +167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSNOMEDCTInferenc
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_snomedct_inference_job_error(response)
+            crate::protocol_serde::shape_describe_snomedct_inference_job::de_describe_snomedct_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_snomedct_inference_job_response(response)
+            crate::protocol_serde::shape_describe_snomedct_inference_job::de_describe_snomedct_inference_job_http_response(response)
         }
     }
 }
@@ -200,9 +200,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntities {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_entities_error(response)
+            crate::protocol_serde::shape_detect_entities::de_detect_entities_http_error(response)
         } else {
-            crate::operation_deser::parse_detect_entities_response(response)
+            crate::protocol_serde::shape_detect_entities::de_detect_entities_http_response(response)
         }
     }
 }
@@ -235,9 +235,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntitiesV2 {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_entities_v2_error(response)
+            crate::protocol_serde::shape_detect_entities_v2::de_detect_entities_v2_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_detect_entities_v2_response(response)
+            crate::protocol_serde::shape_detect_entities_v2::de_detect_entities_v2_http_response(
+                response,
+            )
         }
     }
 }
@@ -267,9 +271,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectPHI {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_detect_phi_error(response)
+            crate::protocol_serde::shape_detect_phi::de_detect_phi_http_error(response)
         } else {
-            crate::operation_deser::parse_detect_phi_response(response)
+            crate::protocol_serde::shape_detect_phi::de_detect_phi_http_response(response)
         }
     }
 }
@@ -300,9 +304,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InferICD10CM {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_infer_icd10_cm_error(response)
+            crate::protocol_serde::shape_infer_icd10_cm::de_infer_icd10_cm_http_error(response)
         } else {
-            crate::operation_deser::parse_infer_icd10_cm_response(response)
+            crate::protocol_serde::shape_infer_icd10_cm::de_infer_icd10_cm_http_response(response)
         }
     }
 }
@@ -333,9 +337,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InferRxNorm {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_infer_rx_norm_error(response)
+            crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm_http_error(response)
         } else {
-            crate::operation_deser::parse_infer_rx_norm_response(response)
+            crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm_http_response(response)
         }
     }
 }
@@ -366,9 +370,9 @@ impl aws_smithy_http::response::ParseStrictResponse for InferSNOMEDCT {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_infer_snomedct_error(response)
+            crate::protocol_serde::shape_infer_snomedct::de_infer_snomedct_http_error(response)
         } else {
-            crate::operation_deser::parse_infer_snomedct_response(response)
+            crate::protocol_serde::shape_infer_snomedct::de_infer_snomedct_http_response(response)
         }
     }
 }
@@ -401,9 +405,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesDetectionV2J
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_entities_detection_v2_jobs_error(response)
+            crate::protocol_serde::shape_list_entities_detection_v2_jobs::de_list_entities_detection_v2_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_entities_detection_v2_jobs_response(response)
+            crate::protocol_serde::shape_list_entities_detection_v2_jobs::de_list_entities_detection_v2_jobs_http_response(response)
         }
     }
 }
@@ -436,9 +440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListICD10CMInferenceJobs
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_icd10_cm_inference_jobs_error(response)
+            crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_icd10_cm_inference_jobs_response(response)
+            crate::protocol_serde::shape_list_icd10_cm_inference_jobs::de_list_icd10_cm_inference_jobs_http_response(response)
         }
     }
 }
@@ -471,9 +475,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPHIDetectionJobs {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_phi_detection_jobs_error(response)
+            crate::protocol_serde::shape_list_phi_detection_jobs::de_list_phi_detection_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_phi_detection_jobs_response(response)
+            crate::protocol_serde::shape_list_phi_detection_jobs::de_list_phi_detection_jobs_http_response(response)
         }
     }
 }
@@ -506,9 +510,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_rx_norm_inference_jobs_error(response)
+            crate::protocol_serde::shape_list_rx_norm_inference_jobs::de_list_rx_norm_inference_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_rx_norm_inference_jobs_response(response)
+            crate::protocol_serde::shape_list_rx_norm_inference_jobs::de_list_rx_norm_inference_jobs_http_response(response)
         }
     }
 }
@@ -541,9 +545,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSNOMEDCTInferenceJob
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_snomedct_inference_jobs_error(response)
+            crate::protocol_serde::shape_list_snomedct_inference_jobs::de_list_snomedct_inference_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_snomedct_inference_jobs_response(response)
+            crate::protocol_serde::shape_list_snomedct_inference_jobs::de_list_snomedct_inference_jobs_http_response(response)
         }
     }
 }
@@ -576,9 +580,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEntitiesDetectionV2
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_entities_detection_v2_job_error(response)
+            crate::protocol_serde::shape_start_entities_detection_v2_job::de_start_entities_detection_v2_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_entities_detection_v2_job_response(response)
+            crate::protocol_serde::shape_start_entities_detection_v2_job::de_start_entities_detection_v2_job_http_response(response)
         }
     }
 }
@@ -611,9 +615,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartICD10CMInferenceJob
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_icd10_cm_inference_job_error(response)
+            crate::protocol_serde::shape_start_icd10_cm_inference_job::de_start_icd10_cm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_icd10_cm_inference_job_response(response)
+            crate::protocol_serde::shape_start_icd10_cm_inference_job::de_start_icd10_cm_inference_job_http_response(response)
         }
     }
 }
@@ -646,9 +650,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartPHIDetectionJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_phi_detection_job_error(response)
+            crate::protocol_serde::shape_start_phi_detection_job::de_start_phi_detection_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_phi_detection_job_response(response)
+            crate::protocol_serde::shape_start_phi_detection_job::de_start_phi_detection_job_http_response(response)
         }
     }
 }
@@ -681,9 +685,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRxNormInferenceJob 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_rx_norm_inference_job_error(response)
+            crate::protocol_serde::shape_start_rx_norm_inference_job::de_start_rx_norm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_rx_norm_inference_job_response(response)
+            crate::protocol_serde::shape_start_rx_norm_inference_job::de_start_rx_norm_inference_job_http_response(response)
         }
     }
 }
@@ -716,9 +720,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSNOMEDCTInferenceJo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_snomedct_inference_job_error(response)
+            crate::protocol_serde::shape_start_snomedct_inference_job::de_start_snomedct_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_snomedct_inference_job_response(response)
+            crate::protocol_serde::shape_start_snomedct_inference_job::de_start_snomedct_inference_job_http_response(response)
         }
     }
 }
@@ -751,9 +755,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEntitiesDetectionV2J
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_entities_detection_v2_job_error(response)
+            crate::protocol_serde::shape_stop_entities_detection_v2_job::de_stop_entities_detection_v2_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_entities_detection_v2_job_response(response)
+            crate::protocol_serde::shape_stop_entities_detection_v2_job::de_stop_entities_detection_v2_job_http_response(response)
         }
     }
 }
@@ -786,9 +790,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopICD10CMInferenceJob 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_icd10_cm_inference_job_error(response)
+            crate::protocol_serde::shape_stop_icd10_cm_inference_job::de_stop_icd10_cm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_icd10_cm_inference_job_response(response)
+            crate::protocol_serde::shape_stop_icd10_cm_inference_job::de_stop_icd10_cm_inference_job_http_response(response)
         }
     }
 }
@@ -821,9 +825,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPHIDetectionJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_phi_detection_job_error(response)
+            crate::protocol_serde::shape_stop_phi_detection_job::de_stop_phi_detection_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_phi_detection_job_response(response)
+            crate::protocol_serde::shape_stop_phi_detection_job::de_stop_phi_detection_job_http_response(response)
         }
     }
 }
@@ -856,9 +860,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopRxNormInferenceJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_rx_norm_inference_job_error(response)
+            crate::protocol_serde::shape_stop_rx_norm_inference_job::de_stop_rx_norm_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_rx_norm_inference_job_response(response)
+            crate::protocol_serde::shape_stop_rx_norm_inference_job::de_stop_rx_norm_inference_job_http_response(response)
         }
     }
 }
@@ -891,9 +895,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSNOMEDCTInferenceJob
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_snomedct_inference_job_error(response)
+            crate::protocol_serde::shape_stop_snomedct_inference_job::de_stop_snomedct_inference_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_snomedct_inference_job_response(response)
+            crate::protocol_serde::shape_stop_snomedct_inference_job::de_stop_snomedct_inference_job_http_response(response)
         }
     }
 }

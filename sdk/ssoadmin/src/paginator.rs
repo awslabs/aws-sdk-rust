@@ -92,7 +92,7 @@ impl ListAccountAssignmentCreationStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_account_assignment_creation_status_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_account_assignment_creation_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -212,7 +212,7 @@ impl ListAccountAssignmentDeletionStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_account_assignment_deletion_status_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_account_assignment_deletion_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -330,7 +330,10 @@ impl ListAccountAssignmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_account_assignments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_account_assignments_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -450,7 +453,7 @@ impl ListAccountsForProvisionedPermissionSetPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_accounts_for_provisioned_permission_set_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_accounts_for_provisioned_permission_set_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -572,7 +575,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_customer_managed_policy_references_in_permission_set_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_customer_managed_policy_references_in_permission_set_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -690,7 +693,8 @@ impl ListInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_instances_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -810,7 +814,7 @@ impl ListManagedPoliciesInPermissionSetPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_managed_policies_in_permission_set_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_managed_policies_in_permission_set_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -930,7 +934,7 @@ impl ListPermissionSetProvisioningStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_permission_set_provisioning_status_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_permission_set_provisioning_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1048,7 +1052,8 @@ impl ListPermissionSetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_permission_sets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_permission_sets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1168,7 +1173,7 @@ impl ListPermissionSetsProvisionedToAccountPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_permission_sets_provisioned_to_account_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_permission_sets_provisioned_to_account_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1278,7 +1283,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1328,7 +1334,7 @@ impl ListAccountAssignmentCreationStatusPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_account_assignment_creation_status_output_account_assignments_creation_status(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_account_assignment_creation_status_output_account_assignments_creation_status(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1355,7 +1361,7 @@ impl ListAccountAssignmentDeletionStatusPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_account_assignment_deletion_status_output_account_assignments_deletion_status(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_account_assignment_deletion_status_output_account_assignments_deletion_status(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1378,7 +1384,11 @@ impl ListAccountAssignmentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAccountAssignmentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_account_assignments_output_account_assignments(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_account_assignments_output_account_assignments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1405,7 +1415,11 @@ impl ListAccountsForProvisionedPermissionSetPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_accounts_for_provisioned_permission_set_output_account_ids(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_accounts_for_provisioned_permission_set_output_account_ids(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1432,7 +1446,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_customer_managed_policy_references_in_permission_set_output_customer_managed_policy_references(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_customer_managed_policy_references_in_permission_set_output_customer_managed_policy_references(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1456,7 +1470,7 @@ impl ListInstancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_instances_output_instances(page)
+            crate::lens::lens_list_instances_output_instances(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1486,7 +1500,7 @@ impl ListManagedPoliciesInPermissionSetPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_managed_policies_in_permission_set_output_attached_managed_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_managed_policies_in_permission_set_output_attached_managed_policies(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1513,7 +1527,7 @@ impl ListPermissionSetProvisioningStatusPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_permission_set_provisioning_status_output_permission_sets_provisioning_status(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_permission_set_provisioning_status_output_permission_sets_provisioning_status(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1537,11 +1551,9 @@ impl ListPermissionSetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_permission_sets_output_permission_sets(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_permission_sets_output_permission_sets(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1569,7 +1581,13 @@ impl ListPermissionSetsProvisionedToAccountPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_permission_sets_provisioned_to_account_output_permission_sets(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_permission_sets_provisioned_to_account_output_permission_sets(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -1593,7 +1611,7 @@ impl ListTagsForResourcePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+            crate::lens::lens_list_tags_for_resource_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })

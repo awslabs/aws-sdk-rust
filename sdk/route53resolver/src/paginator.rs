@@ -82,7 +82,8 @@ impl ListFirewallConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_configs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_firewall_configs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,10 @@ impl ListFirewallDomainListsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_domain_lists_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_firewall_domain_lists_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +306,8 @@ impl ListFirewallDomainsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_domains_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_firewall_domains_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +417,7 @@ impl ListFirewallRuleGroupAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_rule_group_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_firewall_rule_group_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -522,7 +527,10 @@ impl ListFirewallRuleGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_rule_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_firewall_rule_groups_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -632,7 +640,8 @@ impl ListFirewallRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_firewall_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_firewall_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -742,7 +751,8 @@ impl ListResolverConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_configs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resolver_configs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -852,7 +862,10 @@ impl ListResolverDnssecConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_dnssec_configs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resolver_dnssec_configs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -962,7 +975,7 @@ impl ListResolverEndpointIpAddressesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_endpoint_ip_addresses_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resolver_endpoint_ip_addresses_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1072,7 +1085,10 @@ impl ListResolverEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_endpoints_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resolver_endpoints_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1184,7 +1200,7 @@ impl ListResolverQueryLogConfigAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_query_log_config_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resolver_query_log_config_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1294,7 +1310,7 @@ impl ListResolverQueryLogConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_query_log_configs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resolver_query_log_configs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1404,7 +1420,7 @@ impl ListResolverRuleAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_rule_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resolver_rule_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1514,7 +1530,8 @@ impl ListResolverRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resolver_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resolver_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1624,7 +1641,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

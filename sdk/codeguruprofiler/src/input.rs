@@ -89,9 +89,7 @@ impl AddNotificationChannelsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_notification_channels(
-                &self,
-            )?,
+            crate::protocol_serde::shape_add_notification_channels::ser_add_notification_channels_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -281,9 +279,7 @@ impl BatchGetFrameMetricDataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_get_frame_metric_data(
-                &self,
-            )?,
+            crate::protocol_serde::shape_batch_get_frame_metric_data::ser_batch_get_frame_metric_data_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -430,7 +426,7 @@ impl ConfigureAgentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_configure_agent(&self)?,
+            crate::protocol_serde::shape_configure_agent::ser_configure_agent_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -580,7 +576,7 @@ impl CreateProfilingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_profiling_group(
+            crate::protocol_serde::shape_create_profiling_group::ser_create_profiling_group_input(
                 &self,
             )?,
         );
@@ -1427,7 +1423,9 @@ impl GetProfileInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_profile(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_profile::ser_get_profile_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2406,7 +2404,7 @@ impl PostAgentProfileInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_post_agent_profile(input, builder)?;
+                let builder = crate::protocol_serde::shape_post_agent_profile::ser_post_agent_profile_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2420,7 +2418,9 @@ impl PostAgentProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_post_agent_profile_input(self.agent_profile)?,
+            crate::protocol_serde::shape_post_agent_profile_input::ser_agent_profile_http_payload(
+                self.agent_profile,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2587,7 +2587,7 @@ impl PutPermissionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)?,
+            crate::protocol_serde::shape_put_permission::ser_put_permission_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3078,7 +3078,7 @@ impl SubmitFeedbackInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)?,
+            crate::protocol_serde::shape_submit_feedback::ser_submit_feedback_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3221,7 +3221,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3515,7 +3515,7 @@ impl UpdateProfilingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_profiling_group(
+            crate::protocol_serde::shape_update_profiling_group::ser_update_profiling_group_input(
                 &self,
             )?,
         );

@@ -27,9 +27,11 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLenses {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_lenses_error(response)
+            crate::protocol_serde::shape_associate_lenses::de_associate_lenses_http_error(response)
         } else {
-            crate::operation_deser::parse_associate_lenses_response(response)
+            crate::protocol_serde::shape_associate_lenses::de_associate_lenses_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +64,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLensShare {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_lens_share_error(response)
+            crate::protocol_serde::shape_create_lens_share::de_create_lens_share_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_lens_share_response(response)
+            crate::protocol_serde::shape_create_lens_share::de_create_lens_share_http_response(
+                response,
+            )
         }
     }
 }
@@ -97,9 +103,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLensVersion {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_lens_version_error(response)
+            crate::protocol_serde::shape_create_lens_version::de_create_lens_version_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_lens_version_response(response)
+            crate::protocol_serde::shape_create_lens_version::de_create_lens_version_http_response(
+                response,
+            )
         }
     }
 }
@@ -132,9 +142,11 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMilestone {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_milestone_error(response)
+            crate::protocol_serde::shape_create_milestone::de_create_milestone_http_error(response)
         } else {
-            crate::operation_deser::parse_create_milestone_response(response)
+            crate::protocol_serde::shape_create_milestone::de_create_milestone_http_response(
+                response,
+            )
         }
     }
 }
@@ -165,9 +177,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkload {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_workload_error(response)
+            crate::protocol_serde::shape_create_workload::de_create_workload_http_error(response)
         } else {
-            crate::operation_deser::parse_create_workload_response(response)
+            crate::protocol_serde::shape_create_workload::de_create_workload_http_response(response)
         }
     }
 }
@@ -200,9 +212,11 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_workload_share_error(response)
+            crate::protocol_serde::shape_create_workload_share::de_create_workload_share_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_workload_share_response(response)
+            crate::protocol_serde::shape_create_workload_share::de_create_workload_share_http_response(response)
         }
     }
 }
@@ -233,9 +247,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLens {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_lens_error(response)
+            crate::protocol_serde::shape_delete_lens::de_delete_lens_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_lens_response(response)
+            crate::protocol_serde::shape_delete_lens::de_delete_lens_http_response(response)
         }
     }
 }
@@ -268,9 +282,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLensShare {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_lens_share_error(response)
+            crate::protocol_serde::shape_delete_lens_share::de_delete_lens_share_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_lens_share_response(response)
+            crate::protocol_serde::shape_delete_lens_share::de_delete_lens_share_http_response(
+                response,
+            )
         }
     }
 }
@@ -301,9 +319,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkload {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_workload_error(response)
+            crate::protocol_serde::shape_delete_workload::de_delete_workload_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_workload_response(response)
+            crate::protocol_serde::shape_delete_workload::de_delete_workload_http_response(response)
         }
     }
 }
@@ -336,9 +354,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkloadShare {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_workload_share_error(response)
+            crate::protocol_serde::shape_delete_workload_share::de_delete_workload_share_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_workload_share_response(response)
+            crate::protocol_serde::shape_delete_workload_share::de_delete_workload_share_http_response(response)
         }
     }
 }
@@ -371,9 +391,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLenses {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_lenses_error(response)
+            crate::protocol_serde::shape_disassociate_lenses::de_disassociate_lenses_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_disassociate_lenses_response(response)
+            crate::protocol_serde::shape_disassociate_lenses::de_disassociate_lenses_http_response(
+                response,
+            )
         }
     }
 }
@@ -404,9 +428,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportLens {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_export_lens_error(response)
+            crate::protocol_serde::shape_export_lens::de_export_lens_http_error(response)
         } else {
-            crate::operation_deser::parse_export_lens_response(response)
+            crate::protocol_serde::shape_export_lens::de_export_lens_http_response(response)
         }
     }
 }
@@ -436,9 +460,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnswer {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_answer_error(response)
+            crate::protocol_serde::shape_get_answer::de_get_answer_http_error(response)
         } else {
-            crate::operation_deser::parse_get_answer_response(response)
+            crate::protocol_serde::shape_get_answer::de_get_answer_http_response(response)
         }
     }
 }
@@ -468,9 +492,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLens {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lens_error(response)
+            crate::protocol_serde::shape_get_lens::de_get_lens_http_error(response)
         } else {
-            crate::operation_deser::parse_get_lens_response(response)
+            crate::protocol_serde::shape_get_lens::de_get_lens_http_response(response)
         }
     }
 }
@@ -501,9 +525,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensReview {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lens_review_error(response)
+            crate::protocol_serde::shape_get_lens_review::de_get_lens_review_http_error(response)
         } else {
-            crate::operation_deser::parse_get_lens_review_response(response)
+            crate::protocol_serde::shape_get_lens_review::de_get_lens_review_http_response(response)
         }
     }
 }
@@ -536,9 +560,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensReviewReport {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lens_review_report_error(response)
+            crate::protocol_serde::shape_get_lens_review_report::de_get_lens_review_report_http_error(response)
         } else {
-            crate::operation_deser::parse_get_lens_review_report_response(response)
+            crate::protocol_serde::shape_get_lens_review_report::de_get_lens_review_report_http_response(response)
         }
     }
 }
@@ -571,9 +595,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLensVersionDifference
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_lens_version_difference_error(response)
+            crate::protocol_serde::shape_get_lens_version_difference::de_get_lens_version_difference_http_error(response)
         } else {
-            crate::operation_deser::parse_get_lens_version_difference_response(response)
+            crate::protocol_serde::shape_get_lens_version_difference::de_get_lens_version_difference_http_response(response)
         }
     }
 }
@@ -604,9 +628,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMilestone {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_milestone_error(response)
+            crate::protocol_serde::shape_get_milestone::de_get_milestone_http_error(response)
         } else {
-            crate::operation_deser::parse_get_milestone_response(response)
+            crate::protocol_serde::shape_get_milestone::de_get_milestone_http_response(response)
         }
     }
 }
@@ -637,9 +661,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkload {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_workload_error(response)
+            crate::protocol_serde::shape_get_workload::de_get_workload_http_error(response)
         } else {
-            crate::operation_deser::parse_get_workload_response(response)
+            crate::protocol_serde::shape_get_workload::de_get_workload_http_response(response)
         }
     }
 }
@@ -670,9 +694,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportLens {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_lens_error(response)
+            crate::protocol_serde::shape_import_lens::de_import_lens_http_error(response)
         } else {
-            crate::operation_deser::parse_import_lens_response(response)
+            crate::protocol_serde::shape_import_lens::de_import_lens_http_response(response)
         }
     }
 }
@@ -703,9 +727,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnswers {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_answers_error(response)
+            crate::protocol_serde::shape_list_answers::de_list_answers_http_error(response)
         } else {
-            crate::operation_deser::parse_list_answers_response(response)
+            crate::protocol_serde::shape_list_answers::de_list_answers_http_response(response)
         }
     }
 }
@@ -738,9 +762,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCheckDetails {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_check_details_error(response)
+            crate::protocol_serde::shape_list_check_details::de_list_check_details_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_check_details_response(response)
+            crate::protocol_serde::shape_list_check_details::de_list_check_details_http_response(
+                response,
+            )
         }
     }
 }
@@ -773,9 +801,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCheckSummaries {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_check_summaries_error(response)
+            crate::protocol_serde::shape_list_check_summaries::de_list_check_summaries_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_check_summaries_response(response)
+            crate::protocol_serde::shape_list_check_summaries::de_list_check_summaries_http_response(
+                response,
+            )
         }
     }
 }
@@ -806,9 +838,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLenses {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lenses_error(response)
+            crate::protocol_serde::shape_list_lenses::de_list_lenses_http_error(response)
         } else {
-            crate::operation_deser::parse_list_lenses_response(response)
+            crate::protocol_serde::shape_list_lenses::de_list_lenses_http_response(response)
         }
     }
 }
@@ -841,9 +873,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensReviewImprovemen
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lens_review_improvements_error(response)
+            crate::protocol_serde::shape_list_lens_review_improvements::de_list_lens_review_improvements_http_error(response)
         } else {
-            crate::operation_deser::parse_list_lens_review_improvements_response(response)
+            crate::protocol_serde::shape_list_lens_review_improvements::de_list_lens_review_improvements_http_response(response)
         }
     }
 }
@@ -876,9 +908,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensReviews {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lens_reviews_error(response)
+            crate::protocol_serde::shape_list_lens_reviews::de_list_lens_reviews_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_lens_reviews_response(response)
+            crate::protocol_serde::shape_list_lens_reviews::de_list_lens_reviews_http_response(
+                response,
+            )
         }
     }
 }
@@ -909,9 +945,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLensShares {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_lens_shares_error(response)
+            crate::protocol_serde::shape_list_lens_shares::de_list_lens_shares_http_error(response)
         } else {
-            crate::operation_deser::parse_list_lens_shares_response(response)
+            crate::protocol_serde::shape_list_lens_shares::de_list_lens_shares_http_response(
+                response,
+            )
         }
     }
 }
@@ -942,9 +980,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMilestones {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_milestones_error(response)
+            crate::protocol_serde::shape_list_milestones::de_list_milestones_http_error(response)
         } else {
-            crate::operation_deser::parse_list_milestones_response(response)
+            crate::protocol_serde::shape_list_milestones::de_list_milestones_http_response(response)
         }
     }
 }
@@ -977,9 +1015,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNotifications {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_notifications_error(response)
+            crate::protocol_serde::shape_list_notifications::de_list_notifications_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_notifications_response(response)
+            crate::protocol_serde::shape_list_notifications::de_list_notifications_http_response(
+                response,
+            )
         }
     }
 }
@@ -1012,9 +1054,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListShareInvitations {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_share_invitations_error(response)
+            crate::protocol_serde::shape_list_share_invitations::de_list_share_invitations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_share_invitations_response(response)
+            crate::protocol_serde::shape_list_share_invitations::de_list_share_invitations_http_response(response)
         }
     }
 }
@@ -1047,9 +1089,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -1080,9 +1122,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloads {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_workloads_error(response)
+            crate::protocol_serde::shape_list_workloads::de_list_workloads_http_error(response)
         } else {
-            crate::operation_deser::parse_list_workloads_response(response)
+            crate::protocol_serde::shape_list_workloads::de_list_workloads_http_response(response)
         }
     }
 }
@@ -1115,9 +1157,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloadShares {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_workload_shares_error(response)
+            crate::protocol_serde::shape_list_workload_shares::de_list_workload_shares_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_workload_shares_response(response)
+            crate::protocol_serde::shape_list_workload_shares::de_list_workload_shares_http_response(
+                response,
+            )
         }
     }
 }
@@ -1148,9 +1194,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -1181,9 +1227,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -1214,9 +1260,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAnswer {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_answer_error(response)
+            crate::protocol_serde::shape_update_answer::de_update_answer_http_error(response)
         } else {
-            crate::operation_deser::parse_update_answer_response(response)
+            crate::protocol_serde::shape_update_answer::de_update_answer_http_response(response)
         }
     }
 }
@@ -1249,9 +1295,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalSettings {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_global_settings_error(response)
+            crate::protocol_serde::shape_update_global_settings::de_update_global_settings_http_error(response)
         } else {
-            crate::operation_deser::parse_update_global_settings_response(response)
+            crate::protocol_serde::shape_update_global_settings::de_update_global_settings_http_response(response)
         }
     }
 }
@@ -1284,9 +1330,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLensReview {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_lens_review_error(response)
+            crate::protocol_serde::shape_update_lens_review::de_update_lens_review_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_lens_review_response(response)
+            crate::protocol_serde::shape_update_lens_review::de_update_lens_review_http_response(
+                response,
+            )
         }
     }
 }
@@ -1319,9 +1369,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShareInvitation {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_share_invitation_error(response)
+            crate::protocol_serde::shape_update_share_invitation::de_update_share_invitation_http_error(response)
         } else {
-            crate::operation_deser::parse_update_share_invitation_response(response)
+            crate::protocol_serde::shape_update_share_invitation::de_update_share_invitation_http_response(response)
         }
     }
 }
@@ -1352,9 +1402,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkload {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_workload_error(response)
+            crate::protocol_serde::shape_update_workload::de_update_workload_http_error(response)
         } else {
-            crate::operation_deser::parse_update_workload_response(response)
+            crate::protocol_serde::shape_update_workload::de_update_workload_http_response(response)
         }
     }
 }
@@ -1387,9 +1437,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkloadShare {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_workload_share_error(response)
+            crate::protocol_serde::shape_update_workload_share::de_update_workload_share_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_workload_share_response(response)
+            crate::protocol_serde::shape_update_workload_share::de_update_workload_share_http_response(response)
         }
     }
 }
@@ -1422,9 +1474,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeLensReview {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upgrade_lens_review_error(response)
+            crate::protocol_serde::shape_upgrade_lens_review::de_upgrade_lens_review_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_upgrade_lens_review_response(response)
+            crate::protocol_serde::shape_upgrade_lens_review::de_upgrade_lens_review_http_response(
+                response,
+            )
         }
     }
 }

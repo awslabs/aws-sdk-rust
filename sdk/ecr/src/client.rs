@@ -89,601 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchCheckLayerAvailability`](crate::client::fluent_builders::BatchCheckLayerAvailability) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::set_repository_name): <p>The name of the repository that is associated with the image layers to check.</p>
-    ///   - [`layer_digests(Vec<String>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::layer_digests) / [`set_layer_digests(Option<Vec<String>>)`](crate::client::fluent_builders::BatchCheckLayerAvailability::set_layer_digests): <p>The digests of the image layers to check.</p>
-    /// - On success, responds with [`BatchCheckLayerAvailabilityOutput`](crate::output::BatchCheckLayerAvailabilityOutput) with field(s):
-    ///   - [`layers(Option<Vec<Layer>>)`](crate::output::BatchCheckLayerAvailabilityOutput::layers): <p>A list of image layer objects corresponding to the image layer references in the request.</p>
-    ///   - [`failures(Option<Vec<LayerFailure>>)`](crate::output::BatchCheckLayerAvailabilityOutput::failures): <p>Any failures associated with the call.</p>
-    /// - On failure, responds with [`SdkError<BatchCheckLayerAvailabilityError>`](crate::error::BatchCheckLayerAvailabilityError)
-    pub fn batch_check_layer_availability(
-        &self,
-    ) -> crate::client::fluent_builders::BatchCheckLayerAvailability {
-        crate::client::fluent_builders::BatchCheckLayerAvailability::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteImage`](crate::client::fluent_builders::BatchDeleteImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteImage::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::BatchDeleteImage::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteImage::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteImage::set_repository_name): <p>The repository that contains the image to delete.</p>
-    ///   - [`image_ids(Vec<ImageIdentifier>)`](crate::client::fluent_builders::BatchDeleteImage::image_ids) / [`set_image_ids(Option<Vec<ImageIdentifier>>)`](crate::client::fluent_builders::BatchDeleteImage::set_image_ids): <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    /// - On success, responds with [`BatchDeleteImageOutput`](crate::output::BatchDeleteImageOutput) with field(s):
-    ///   - [`image_ids(Option<Vec<ImageIdentifier>>)`](crate::output::BatchDeleteImageOutput::image_ids): <p>The image IDs of the deleted images.</p>
-    ///   - [`failures(Option<Vec<ImageFailure>>)`](crate::output::BatchDeleteImageOutput::failures): <p>Any failures associated with the call.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteImageError>`](crate::error::BatchDeleteImageError)
-    pub fn batch_delete_image(&self) -> crate::client::fluent_builders::BatchDeleteImage {
-        crate::client::fluent_builders::BatchDeleteImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchGetImage`](crate::client::fluent_builders::BatchGetImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::BatchGetImage::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::BatchGetImage::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetImage::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::BatchGetImage::set_repository_name): <p>The repository that contains the images to describe.</p>
-    ///   - [`image_ids(Vec<ImageIdentifier>)`](crate::client::fluent_builders::BatchGetImage::image_ids) / [`set_image_ids(Option<Vec<ImageIdentifier>>)`](crate::client::fluent_builders::BatchGetImage::set_image_ids): <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
-    ///   - [`accepted_media_types(Vec<String>)`](crate::client::fluent_builders::BatchGetImage::accepted_media_types) / [`set_accepted_media_types(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetImage::set_accepted_media_types): <p>The accepted media types for the request.</p>  <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
-    /// - On success, responds with [`BatchGetImageOutput`](crate::output::BatchGetImageOutput) with field(s):
-    ///   - [`images(Option<Vec<Image>>)`](crate::output::BatchGetImageOutput::images): <p>A list of image objects corresponding to the image references in the request.</p>
-    ///   - [`failures(Option<Vec<ImageFailure>>)`](crate::output::BatchGetImageOutput::failures): <p>Any failures associated with the call.</p>
-    /// - On failure, responds with [`SdkError<BatchGetImageError>`](crate::error::BatchGetImageError)
-    pub fn batch_get_image(&self) -> crate::client::fluent_builders::BatchGetImage {
-        crate::client::fluent_builders::BatchGetImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchGetRepositoryScanningConfiguration`](crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`repository_names(Vec<String>)`](crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration::repository_names) / [`set_repository_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration::set_repository_names): <p>One or more repository names to get the scanning configuration for.</p>
-    /// - On success, responds with [`BatchGetRepositoryScanningConfigurationOutput`](crate::output::BatchGetRepositoryScanningConfigurationOutput) with field(s):
-    ///   - [`scanning_configurations(Option<Vec<RepositoryScanningConfiguration>>)`](crate::output::BatchGetRepositoryScanningConfigurationOutput::scanning_configurations): <p>The scanning configuration for the requested repositories.</p>
-    ///   - [`failures(Option<Vec<RepositoryScanningConfigurationFailure>>)`](crate::output::BatchGetRepositoryScanningConfigurationOutput::failures): <p>Any failures associated with the call.</p>
-    /// - On failure, responds with [`SdkError<BatchGetRepositoryScanningConfigurationError>`](crate::error::BatchGetRepositoryScanningConfigurationError)
-    pub fn batch_get_repository_scanning_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration {
-        crate::client::fluent_builders::BatchGetRepositoryScanningConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CompleteLayerUpload`](crate::client::fluent_builders::CompleteLayerUpload) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::CompleteLayerUpload::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::CompleteLayerUpload::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::CompleteLayerUpload::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::CompleteLayerUpload::set_repository_name): <p>The name of the repository to associate with the image layer.</p>
-    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::CompleteLayerUpload::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::CompleteLayerUpload::set_upload_id): <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
-    ///   - [`layer_digests(Vec<String>)`](crate::client::fluent_builders::CompleteLayerUpload::layer_digests) / [`set_layer_digests(Option<Vec<String>>)`](crate::client::fluent_builders::CompleteLayerUpload::set_layer_digests): <p>The <code>sha256</code> digest of the image layer.</p>
-    /// - On success, responds with [`CompleteLayerUploadOutput`](crate::output::CompleteLayerUploadOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::CompleteLayerUploadOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::CompleteLayerUploadOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`upload_id(Option<String>)`](crate::output::CompleteLayerUploadOutput::upload_id): <p>The upload ID associated with the layer.</p>
-    ///   - [`layer_digest(Option<String>)`](crate::output::CompleteLayerUploadOutput::layer_digest): <p>The <code>sha256</code> digest of the image layer.</p>
-    /// - On failure, responds with [`SdkError<CompleteLayerUploadError>`](crate::error::CompleteLayerUploadError)
-    pub fn complete_layer_upload(&self) -> crate::client::fluent_builders::CompleteLayerUpload {
-        crate::client::fluent_builders::CompleteLayerUpload::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePullThroughCacheRule`](crate::client::fluent_builders::CreatePullThroughCacheRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ecr_repository_prefix(impl Into<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::ecr_repository_prefix) / [`set_ecr_repository_prefix(Option<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::set_ecr_repository_prefix): <p>The repository name prefix to use when caching images from the source registry.</p>
-    ///   - [`upstream_registry_url(impl Into<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::upstream_registry_url) / [`set_upstream_registry_url(Option<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::set_upstream_registry_url): <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::CreatePullThroughCacheRule::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
-    /// - On success, responds with [`CreatePullThroughCacheRuleOutput`](crate::output::CreatePullThroughCacheRuleOutput) with field(s):
-    ///   - [`ecr_repository_prefix(Option<String>)`](crate::output::CreatePullThroughCacheRuleOutput::ecr_repository_prefix): <p>The Amazon ECR repository prefix associated with the pull through cache rule.</p>
-    ///   - [`upstream_registry_url(Option<String>)`](crate::output::CreatePullThroughCacheRuleOutput::upstream_registry_url): <p>The upstream registry URL associated with the pull through cache rule.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreatePullThroughCacheRuleOutput::created_at): <p>The date and time, in JavaScript date format, when the pull through cache rule was created.</p>
-    ///   - [`registry_id(Option<String>)`](crate::output::CreatePullThroughCacheRuleOutput::registry_id): <p>The registry ID associated with the request.</p>
-    /// - On failure, responds with [`SdkError<CreatePullThroughCacheRuleError>`](crate::error::CreatePullThroughCacheRuleError)
-    pub fn create_pull_through_cache_rule(
-        &self,
-    ) -> crate::client::fluent_builders::CreatePullThroughCacheRule {
-        crate::client::fluent_builders::CreatePullThroughCacheRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRepository`](crate::client::fluent_builders::CreateRepository) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::CreateRepository::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::CreateRepository::set_repository_name): <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRepository::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRepository::set_tags): <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    ///   - [`image_tag_mutability(ImageTagMutability)`](crate::client::fluent_builders::CreateRepository::image_tag_mutability) / [`set_image_tag_mutability(Option<ImageTagMutability>)`](crate::client::fluent_builders::CreateRepository::set_image_tag_mutability): <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    ///   - [`image_scanning_configuration(ImageScanningConfiguration)`](crate::client::fluent_builders::CreateRepository::image_scanning_configuration) / [`set_image_scanning_configuration(Option<ImageScanningConfiguration>)`](crate::client::fluent_builders::CreateRepository::set_image_scanning_configuration): <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    ///   - [`encryption_configuration(EncryptionConfiguration)`](crate::client::fluent_builders::CreateRepository::encryption_configuration) / [`set_encryption_configuration(Option<EncryptionConfiguration>)`](crate::client::fluent_builders::CreateRepository::set_encryption_configuration): <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    /// - On success, responds with [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput) with field(s):
-    ///   - [`repository(Option<Repository>)`](crate::output::CreateRepositoryOutput::repository): <p>The repository that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateRepositoryError>`](crate::error::CreateRepositoryError)
-    pub fn create_repository(&self) -> crate::client::fluent_builders::CreateRepository {
-        crate::client::fluent_builders::CreateRepository::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLifecyclePolicy`](crate::client::fluent_builders::DeleteLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DeleteLifecyclePolicy::set_repository_name): <p>The name of the repository.</p>
-    /// - On success, responds with [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::DeleteLifecyclePolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::DeleteLifecyclePolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`lifecycle_policy_text(Option<String>)`](crate::output::DeleteLifecyclePolicyOutput::lifecycle_policy_text): <p>The JSON lifecycle policy text.</p>
-    ///   - [`last_evaluated_at(Option<DateTime>)`](crate::output::DeleteLifecyclePolicyOutput::last_evaluated_at): <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    /// - On failure, responds with [`SdkError<DeleteLifecyclePolicyError>`](crate::error::DeleteLifecyclePolicyError)
-    pub fn delete_lifecycle_policy(&self) -> crate::client::fluent_builders::DeleteLifecyclePolicy {
-        crate::client::fluent_builders::DeleteLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePullThroughCacheRule`](crate::client::fluent_builders::DeletePullThroughCacheRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ecr_repository_prefix(impl Into<String>)`](crate::client::fluent_builders::DeletePullThroughCacheRule::ecr_repository_prefix) / [`set_ecr_repository_prefix(Option<String>)`](crate::client::fluent_builders::DeletePullThroughCacheRule::set_ecr_repository_prefix): <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DeletePullThroughCacheRule::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DeletePullThroughCacheRule::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
-    /// - On success, responds with [`DeletePullThroughCacheRuleOutput`](crate::output::DeletePullThroughCacheRuleOutput) with field(s):
-    ///   - [`ecr_repository_prefix(Option<String>)`](crate::output::DeletePullThroughCacheRuleOutput::ecr_repository_prefix): <p>The Amazon ECR repository prefix associated with the request.</p>
-    ///   - [`upstream_registry_url(Option<String>)`](crate::output::DeletePullThroughCacheRuleOutput::upstream_registry_url): <p>The upstream registry URL associated with the pull through cache rule.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DeletePullThroughCacheRuleOutput::created_at): <p>The timestamp associated with the pull through cache rule.</p>
-    ///   - [`registry_id(Option<String>)`](crate::output::DeletePullThroughCacheRuleOutput::registry_id): <p>The registry ID associated with the request.</p>
-    /// - On failure, responds with [`SdkError<DeletePullThroughCacheRuleError>`](crate::error::DeletePullThroughCacheRuleError)
-    pub fn delete_pull_through_cache_rule(
-        &self,
-    ) -> crate::client::fluent_builders::DeletePullThroughCacheRule {
-        crate::client::fluent_builders::DeletePullThroughCacheRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRegistryPolicy`](crate::client::fluent_builders::DeleteRegistryPolicy) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteRegistryPolicy::send) it.
-
-    /// - On success, responds with [`DeleteRegistryPolicyOutput`](crate::output::DeleteRegistryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::DeleteRegistryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::DeleteRegistryPolicyOutput::policy_text): <p>The contents of the registry permissions policy that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteRegistryPolicyError>`](crate::error::DeleteRegistryPolicyError)
-    pub fn delete_registry_policy(&self) -> crate::client::fluent_builders::DeleteRegistryPolicy {
-        crate::client::fluent_builders::DeleteRegistryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRepository`](crate::client::fluent_builders::DeleteRepository) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRepository::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DeleteRepository::set_repository_name): <p>The name of the repository to delete.</p>
-    ///   - [`force(bool)`](crate::client::fluent_builders::DeleteRepository::force) / [`set_force(bool)`](crate::client::fluent_builders::DeleteRepository::set_force): <p> If a repository contains images, forces the deletion.</p>
-    /// - On success, responds with [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput) with field(s):
-    ///   - [`repository(Option<Repository>)`](crate::output::DeleteRepositoryOutput::repository): <p>The repository that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteRepositoryError>`](crate::error::DeleteRepositoryError)
-    pub fn delete_repository(&self) -> crate::client::fluent_builders::DeleteRepository {
-        crate::client::fluent_builders::DeleteRepository::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRepositoryPolicy`](crate::client::fluent_builders::DeleteRepositoryPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRepositoryPolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DeleteRepositoryPolicy::set_repository_name): <p>The name of the repository that is associated with the repository policy to delete.</p>
-    /// - On success, responds with [`DeleteRepositoryPolicyOutput`](crate::output::DeleteRepositoryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::DeleteRepositoryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::DeleteRepositoryPolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::DeleteRepositoryPolicyOutput::policy_text): <p>The JSON repository policy that was deleted from the repository.</p>
-    /// - On failure, responds with [`SdkError<DeleteRepositoryPolicyError>`](crate::error::DeleteRepositoryPolicyError)
-    pub fn delete_repository_policy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteRepositoryPolicy {
-        crate::client::fluent_builders::DeleteRepositoryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeImageReplicationStatus`](crate::client::fluent_builders::DescribeImageReplicationStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageReplicationStatus::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DescribeImageReplicationStatus::set_repository_name): <p>The name of the repository that the image is in.</p>
-    ///   - [`image_id(ImageIdentifier)`](crate::client::fluent_builders::DescribeImageReplicationStatus::image_id) / [`set_image_id(Option<ImageIdentifier>)`](crate::client::fluent_builders::DescribeImageReplicationStatus::set_image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DescribeImageReplicationStatus::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DescribeImageReplicationStatus::set_registry_id): <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
-    /// - On success, responds with [`DescribeImageReplicationStatusOutput`](crate::output::DescribeImageReplicationStatusOutput) with field(s):
-    ///   - [`repository_name(Option<String>)`](crate::output::DescribeImageReplicationStatusOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`image_id(Option<ImageIdentifier>)`](crate::output::DescribeImageReplicationStatusOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`replication_statuses(Option<Vec<ImageReplicationStatus>>)`](crate::output::DescribeImageReplicationStatusOutput::replication_statuses): <p>The replication status details for the images in the specified repository.</p>
-    /// - On failure, responds with [`SdkError<DescribeImageReplicationStatusError>`](crate::error::DescribeImageReplicationStatusError)
-    pub fn describe_image_replication_status(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeImageReplicationStatus {
-        crate::client::fluent_builders::DescribeImageReplicationStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeImages`](crate::client::fluent_builders::DescribeImages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DescribeImages::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DescribeImages::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImages::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DescribeImages::set_repository_name): <p>The repository that contains the images to describe.</p>
-    ///   - [`image_ids(Vec<ImageIdentifier>)`](crate::client::fluent_builders::DescribeImages::image_ids) / [`set_image_ids(Option<Vec<ImageIdentifier>>)`](crate::client::fluent_builders::DescribeImages::set_image_ids): <p>The list of image IDs for the requested repository.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeImages::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeImages::set_max_results): <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    ///   - [`filter(DescribeImagesFilter)`](crate::client::fluent_builders::DescribeImages::filter) / [`set_filter(Option<DescribeImagesFilter>)`](crate::client::fluent_builders::DescribeImages::set_filter): <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
-    /// - On success, responds with [`DescribeImagesOutput`](crate::output::DescribeImagesOutput) with field(s):
-    ///   - [`image_details(Option<Vec<ImageDetail>>)`](crate::output::DescribeImagesOutput::image_details): <p>A list of <code>ImageDetail</code> objects that contain data about the image.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeImagesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImages</code> request. When the results of a <code>DescribeImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeImagesError>`](crate::error::DescribeImagesError)
-    pub fn describe_images(&self) -> crate::client::fluent_builders::DescribeImages {
-        crate::client::fluent_builders::DescribeImages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeImageScanFindings`](crate::client::fluent_builders::DescribeImageScanFindings) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeImageScanFindings::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::set_repository_name): <p>The repository for the image for which to describe the scan findings.</p>
-    ///   - [`image_id(ImageIdentifier)`](crate::client::fluent_builders::DescribeImageScanFindings::image_id) / [`set_image_id(Option<ImageIdentifier>)`](crate::client::fluent_builders::DescribeImageScanFindings::set_image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeImageScanFindings::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeImageScanFindings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeImageScanFindings::set_max_results): <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-    /// - On success, responds with [`DescribeImageScanFindingsOutput`](crate::output::DescribeImageScanFindingsOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::DescribeImageScanFindingsOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::DescribeImageScanFindingsOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`image_id(Option<ImageIdentifier>)`](crate::output::DescribeImageScanFindingsOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`image_scan_status(Option<ImageScanStatus>)`](crate::output::DescribeImageScanFindingsOutput::image_scan_status): <p>The current state of the scan.</p>
-    ///   - [`image_scan_findings(Option<ImageScanFindings>)`](crate::output::DescribeImageScanFindingsOutput::image_scan_findings): <p>The information contained in the image scan findings.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeImageScanFindingsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeImageScanFindings</code> request. When the results of a <code>DescribeImageScanFindings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeImageScanFindingsError>`](crate::error::DescribeImageScanFindingsError)
-    pub fn describe_image_scan_findings(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeImageScanFindings {
-        crate::client::fluent_builders::DescribeImageScanFindings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePullThroughCacheRules`](crate::client::fluent_builders::DescribePullThroughCacheRules) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePullThroughCacheRules::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`ecr_repository_prefixes(Vec<String>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::ecr_repository_prefixes) / [`set_ecr_repository_prefixes(Option<Vec<String>>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::set_ecr_repository_prefixes): <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribePullThroughCacheRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribePullThroughCacheRules::set_max_results): <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-    /// - On success, responds with [`DescribePullThroughCacheRulesOutput`](crate::output::DescribePullThroughCacheRulesOutput) with field(s):
-    ///   - [`pull_through_cache_rules(Option<Vec<PullThroughCacheRule>>)`](crate::output::DescribePullThroughCacheRulesOutput::pull_through_cache_rules): <p>The details of the pull through cache rules.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribePullThroughCacheRulesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code> request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribePullThroughCacheRulesError>`](crate::error::DescribePullThroughCacheRulesError)
-    pub fn describe_pull_through_cache_rules(
-        &self,
-    ) -> crate::client::fluent_builders::DescribePullThroughCacheRules {
-        crate::client::fluent_builders::DescribePullThroughCacheRules::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRegistry`](crate::client::fluent_builders::DescribeRegistry) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeRegistry::send) it.
-
-    /// - On success, responds with [`DescribeRegistryOutput`](crate::output::DescribeRegistryOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::DescribeRegistryOutput::registry_id): <p>The ID of the registry.</p>
-    ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::output::DescribeRegistryOutput::replication_configuration): <p>The replication configuration for the registry.</p>
-    /// - On failure, responds with [`SdkError<DescribeRegistryError>`](crate::error::DescribeRegistryError)
-    pub fn describe_registry(&self) -> crate::client::fluent_builders::DescribeRegistry {
-        crate::client::fluent_builders::DescribeRegistry::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRepositories`](crate::client::fluent_builders::DescribeRepositories) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeRepositories::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::DescribeRepositories::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::DescribeRepositories::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_names(Vec<String>)`](crate::client::fluent_builders::DescribeRepositories::repository_names) / [`set_repository_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeRepositories::set_repository_names): <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeRepositories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeRepositories::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeRepositories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeRepositories::set_max_results): <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
-    /// - On success, responds with [`DescribeRepositoriesOutput`](crate::output::DescribeRepositoriesOutput) with field(s):
-    ///   - [`repositories(Option<Vec<Repository>>)`](crate::output::DescribeRepositoriesOutput::repositories): <p>A list of repository objects corresponding to valid repositories.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeRepositoriesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code> request. When the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeRepositoriesError>`](crate::error::DescribeRepositoriesError)
-    pub fn describe_repositories(&self) -> crate::client::fluent_builders::DescribeRepositories {
-        crate::client::fluent_builders::DescribeRepositories::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAuthorizationToken`](crate::client::fluent_builders::GetAuthorizationToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_ids(Vec<String>)`](crate::client::fluent_builders::GetAuthorizationToken::registry_ids) / [`set_registry_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetAuthorizationToken::set_registry_ids): <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
-    /// - On success, responds with [`GetAuthorizationTokenOutput`](crate::output::GetAuthorizationTokenOutput) with field(s):
-    ///   - [`authorization_data(Option<Vec<AuthorizationData>>)`](crate::output::GetAuthorizationTokenOutput::authorization_data): <p>A list of authorization token data objects that correspond to the <code>registryIds</code> values in the request.</p>
-    /// - On failure, responds with [`SdkError<GetAuthorizationTokenError>`](crate::error::GetAuthorizationTokenError)
-    pub fn get_authorization_token(&self) -> crate::client::fluent_builders::GetAuthorizationToken {
-        crate::client::fluent_builders::GetAuthorizationToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDownloadUrlForLayer`](crate::client::fluent_builders::GetDownloadUrlForLayer) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::set_repository_name): <p>The name of the repository that is associated with the image layer to download.</p>
-    ///   - [`layer_digest(impl Into<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::layer_digest) / [`set_layer_digest(Option<String>)`](crate::client::fluent_builders::GetDownloadUrlForLayer::set_layer_digest): <p>The digest of the image layer to download.</p>
-    /// - On success, responds with [`GetDownloadUrlForLayerOutput`](crate::output::GetDownloadUrlForLayerOutput) with field(s):
-    ///   - [`download_url(Option<String>)`](crate::output::GetDownloadUrlForLayerOutput::download_url): <p>The pre-signed Amazon S3 download URL for the requested layer.</p>
-    ///   - [`layer_digest(Option<String>)`](crate::output::GetDownloadUrlForLayerOutput::layer_digest): <p>The digest of the image layer to download.</p>
-    /// - On failure, responds with [`SdkError<GetDownloadUrlForLayerError>`](crate::error::GetDownloadUrlForLayerError)
-    pub fn get_download_url_for_layer(
-        &self,
-    ) -> crate::client::fluent_builders::GetDownloadUrlForLayer {
-        crate::client::fluent_builders::GetDownloadUrlForLayer::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLifecyclePolicy`](crate::client::fluent_builders::GetLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicy::set_repository_name): <p>The name of the repository.</p>
-    /// - On success, responds with [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::GetLifecyclePolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::GetLifecyclePolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`lifecycle_policy_text(Option<String>)`](crate::output::GetLifecyclePolicyOutput::lifecycle_policy_text): <p>The JSON lifecycle policy text.</p>
-    ///   - [`last_evaluated_at(Option<DateTime>)`](crate::output::GetLifecyclePolicyOutput::last_evaluated_at): <p>The time stamp of the last time that the lifecycle policy was run.</p>
-    /// - On failure, responds with [`SdkError<GetLifecyclePolicyError>`](crate::error::GetLifecyclePolicyError)
-    pub fn get_lifecycle_policy(&self) -> crate::client::fluent_builders::GetLifecyclePolicy {
-        crate::client::fluent_builders::GetLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLifecyclePolicyPreview`](crate::client::fluent_builders::GetLifecyclePolicyPreview) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetLifecyclePolicyPreview::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_repository_name): <p>The name of the repository.</p>
-    ///   - [`image_ids(Vec<ImageIdentifier>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::image_ids) / [`set_image_ids(Option<Vec<ImageIdentifier>>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_image_ids): <p>The list of imageIDs to be included.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_max_results): <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    ///   - [`filter(LifecyclePolicyPreviewFilter)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::filter) / [`set_filter(Option<LifecyclePolicyPreviewFilter>)`](crate::client::fluent_builders::GetLifecyclePolicyPreview::set_filter): <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    /// - On success, responds with [`GetLifecyclePolicyPreviewOutput`](crate::output::GetLifecyclePolicyPreviewOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::GetLifecyclePolicyPreviewOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::GetLifecyclePolicyPreviewOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`lifecycle_policy_text(Option<String>)`](crate::output::GetLifecyclePolicyPreviewOutput::lifecycle_policy_text): <p>The JSON lifecycle policy text.</p>
-    ///   - [`status(Option<LifecyclePolicyPreviewStatus>)`](crate::output::GetLifecyclePolicyPreviewOutput::status): <p>The status of the lifecycle policy preview request.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetLifecyclePolicyPreviewOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>GetLifecyclePolicyPreview</code> request. When the results of a <code>GetLifecyclePolicyPreview</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    ///   - [`preview_results(Option<Vec<LifecyclePolicyPreviewResult>>)`](crate::output::GetLifecyclePolicyPreviewOutput::preview_results): <p>The results of the lifecycle policy preview request.</p>
-    ///   - [`summary(Option<LifecyclePolicyPreviewSummary>)`](crate::output::GetLifecyclePolicyPreviewOutput::summary): <p>The list of images that is returned as a result of the action.</p>
-    /// - On failure, responds with [`SdkError<GetLifecyclePolicyPreviewError>`](crate::error::GetLifecyclePolicyPreviewError)
-    pub fn get_lifecycle_policy_preview(
-        &self,
-    ) -> crate::client::fluent_builders::GetLifecyclePolicyPreview {
-        crate::client::fluent_builders::GetLifecyclePolicyPreview::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRegistryPolicy`](crate::client::fluent_builders::GetRegistryPolicy) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetRegistryPolicy::send) it.
-
-    /// - On success, responds with [`GetRegistryPolicyOutput`](crate::output::GetRegistryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::GetRegistryPolicyOutput::registry_id): <p>The ID of the registry.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::GetRegistryPolicyOutput::policy_text): <p>The JSON text of the permissions policy for a registry.</p>
-    /// - On failure, responds with [`SdkError<GetRegistryPolicyError>`](crate::error::GetRegistryPolicyError)
-    pub fn get_registry_policy(&self) -> crate::client::fluent_builders::GetRegistryPolicy {
-        crate::client::fluent_builders::GetRegistryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRegistryScanningConfiguration`](crate::client::fluent_builders::GetRegistryScanningConfiguration) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetRegistryScanningConfiguration::send) it.
-
-    /// - On success, responds with [`GetRegistryScanningConfigurationOutput`](crate::output::GetRegistryScanningConfigurationOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::GetRegistryScanningConfigurationOutput::registry_id): <p>The ID of the registry.</p>
-    ///   - [`scanning_configuration(Option<RegistryScanningConfiguration>)`](crate::output::GetRegistryScanningConfigurationOutput::scanning_configuration): <p>The scanning configuration for the registry.</p>
-    /// - On failure, responds with [`SdkError<GetRegistryScanningConfigurationError>`](crate::error::GetRegistryScanningConfigurationError)
-    pub fn get_registry_scanning_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetRegistryScanningConfiguration {
-        crate::client::fluent_builders::GetRegistryScanningConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRepositoryPolicy`](crate::client::fluent_builders::GetRepositoryPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::GetRepositoryPolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::GetRepositoryPolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::GetRepositoryPolicy::set_repository_name): <p>The name of the repository with the policy to retrieve.</p>
-    /// - On success, responds with [`GetRepositoryPolicyOutput`](crate::output::GetRepositoryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::GetRepositoryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::GetRepositoryPolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::GetRepositoryPolicyOutput::policy_text): <p>The JSON repository policy text associated with the repository.</p>
-    /// - On failure, responds with [`SdkError<GetRepositoryPolicyError>`](crate::error::GetRepositoryPolicyError)
-    pub fn get_repository_policy(&self) -> crate::client::fluent_builders::GetRepositoryPolicy {
-        crate::client::fluent_builders::GetRepositoryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InitiateLayerUpload`](crate::client::fluent_builders::InitiateLayerUpload) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::InitiateLayerUpload::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::InitiateLayerUpload::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::InitiateLayerUpload::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::InitiateLayerUpload::set_repository_name): <p>The name of the repository to which you intend to upload layers.</p>
-    /// - On success, responds with [`InitiateLayerUploadOutput`](crate::output::InitiateLayerUploadOutput) with field(s):
-    ///   - [`upload_id(Option<String>)`](crate::output::InitiateLayerUploadOutput::upload_id): <p>The upload ID for the layer upload. This parameter is passed to further <code>UploadLayerPart</code> and <code>CompleteLayerUpload</code> operations.</p>
-    ///   - [`part_size(Option<i64>)`](crate::output::InitiateLayerUploadOutput::part_size): <p>The size, in bytes, that Amazon ECR expects future layer part uploads to be.</p>
-    /// - On failure, responds with [`SdkError<InitiateLayerUploadError>`](crate::error::InitiateLayerUploadError)
-    pub fn initiate_layer_upload(&self) -> crate::client::fluent_builders::InitiateLayerUpload {
-        crate::client::fluent_builders::InitiateLayerUpload::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListImages`](crate::client::fluent_builders::ListImages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListImages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::ListImages::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::ListImages::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::ListImages::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::ListImages::set_repository_name): <p>The repository with image IDs to be listed.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListImages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListImages::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListImages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListImages::set_max_results): <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
-    ///   - [`filter(ListImagesFilter)`](crate::client::fluent_builders::ListImages::filter) / [`set_filter(Option<ListImagesFilter>)`](crate::client::fluent_builders::ListImages::set_filter): <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
-    /// - On success, responds with [`ListImagesOutput`](crate::output::ListImagesOutput) with field(s):
-    ///   - [`image_ids(Option<Vec<ImageIdentifier>>)`](crate::output::ListImagesOutput::image_ids): <p>The list of image IDs for the requested repository.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListImagesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListImages</code> request. When the results of a <code>ListImages</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListImagesError>`](crate::error::ListImagesError)
-    pub fn list_images(&self) -> crate::client::fluent_builders::ListImages {
-        crate::client::fluent_builders::ListImages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutImage`](crate::client::fluent_builders::PutImage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::PutImage::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::PutImage::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::PutImage::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::PutImage::set_repository_name): <p>The name of the repository in which to put the image.</p>
-    ///   - [`image_manifest(impl Into<String>)`](crate::client::fluent_builders::PutImage::image_manifest) / [`set_image_manifest(Option<String>)`](crate::client::fluent_builders::PutImage::set_image_manifest): <p>The image manifest corresponding to the image to be uploaded.</p>
-    ///   - [`image_manifest_media_type(impl Into<String>)`](crate::client::fluent_builders::PutImage::image_manifest_media_type) / [`set_image_manifest_media_type(Option<String>)`](crate::client::fluent_builders::PutImage::set_image_manifest_media_type): <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    ///   - [`image_tag(impl Into<String>)`](crate::client::fluent_builders::PutImage::image_tag) / [`set_image_tag(Option<String>)`](crate::client::fluent_builders::PutImage::set_image_tag): <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-    ///   - [`image_digest(impl Into<String>)`](crate::client::fluent_builders::PutImage::image_digest) / [`set_image_digest(Option<String>)`](crate::client::fluent_builders::PutImage::set_image_digest): <p>The image digest of the image manifest corresponding to the image.</p>
-    /// - On success, responds with [`PutImageOutput`](crate::output::PutImageOutput) with field(s):
-    ///   - [`image(Option<Image>)`](crate::output::PutImageOutput::image): <p>Details of the image uploaded.</p>
-    /// - On failure, responds with [`SdkError<PutImageError>`](crate::error::PutImageError)
-    pub fn put_image(&self) -> crate::client::fluent_builders::PutImage {
-        crate::client::fluent_builders::PutImage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutImageScanningConfiguration`](crate::client::fluent_builders::PutImageScanningConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::PutImageScanningConfiguration::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::PutImageScanningConfiguration::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::PutImageScanningConfiguration::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::PutImageScanningConfiguration::set_repository_name): <p>The name of the repository in which to update the image scanning configuration setting.</p>
-    ///   - [`image_scanning_configuration(ImageScanningConfiguration)`](crate::client::fluent_builders::PutImageScanningConfiguration::image_scanning_configuration) / [`set_image_scanning_configuration(Option<ImageScanningConfiguration>)`](crate::client::fluent_builders::PutImageScanningConfiguration::set_image_scanning_configuration): <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    /// - On success, responds with [`PutImageScanningConfigurationOutput`](crate::output::PutImageScanningConfigurationOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::PutImageScanningConfigurationOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::PutImageScanningConfigurationOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`image_scanning_configuration(Option<ImageScanningConfiguration>)`](crate::output::PutImageScanningConfigurationOutput::image_scanning_configuration): <p>The image scanning configuration setting for the repository.</p>
-    /// - On failure, responds with [`SdkError<PutImageScanningConfigurationError>`](crate::error::PutImageScanningConfigurationError)
-    pub fn put_image_scanning_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutImageScanningConfiguration {
-        crate::client::fluent_builders::PutImageScanningConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutImageTagMutability`](crate::client::fluent_builders::PutImageTagMutability) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::PutImageTagMutability::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::PutImageTagMutability::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::PutImageTagMutability::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::PutImageTagMutability::set_repository_name): <p>The name of the repository in which to update the image tag mutability settings.</p>
-    ///   - [`image_tag_mutability(ImageTagMutability)`](crate::client::fluent_builders::PutImageTagMutability::image_tag_mutability) / [`set_image_tag_mutability(Option<ImageTagMutability>)`](crate::client::fluent_builders::PutImageTagMutability::set_image_tag_mutability): <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    /// - On success, responds with [`PutImageTagMutabilityOutput`](crate::output::PutImageTagMutabilityOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::PutImageTagMutabilityOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::PutImageTagMutabilityOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`image_tag_mutability(Option<ImageTagMutability>)`](crate::output::PutImageTagMutabilityOutput::image_tag_mutability): <p>The image tag mutability setting for the repository.</p>
-    /// - On failure, responds with [`SdkError<PutImageTagMutabilityError>`](crate::error::PutImageTagMutabilityError)
-    pub fn put_image_tag_mutability(
-        &self,
-    ) -> crate::client::fluent_builders::PutImageTagMutability {
-        crate::client::fluent_builders::PutImageTagMutability::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutLifecyclePolicy`](crate::client::fluent_builders::PutLifecyclePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::set_repository_name): <p>The name of the repository to receive the policy.</p>
-    ///   - [`lifecycle_policy_text(impl Into<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::lifecycle_policy_text) / [`set_lifecycle_policy_text(Option<String>)`](crate::client::fluent_builders::PutLifecyclePolicy::set_lifecycle_policy_text): <p>The JSON repository policy text to apply to the repository.</p>
-    /// - On success, responds with [`PutLifecyclePolicyOutput`](crate::output::PutLifecyclePolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::PutLifecyclePolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::PutLifecyclePolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`lifecycle_policy_text(Option<String>)`](crate::output::PutLifecyclePolicyOutput::lifecycle_policy_text): <p>The JSON repository policy text.</p>
-    /// - On failure, responds with [`SdkError<PutLifecyclePolicyError>`](crate::error::PutLifecyclePolicyError)
-    pub fn put_lifecycle_policy(&self) -> crate::client::fluent_builders::PutLifecyclePolicy {
-        crate::client::fluent_builders::PutLifecyclePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutRegistryPolicy`](crate::client::fluent_builders::PutRegistryPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`policy_text(impl Into<String>)`](crate::client::fluent_builders::PutRegistryPolicy::policy_text) / [`set_policy_text(Option<String>)`](crate::client::fluent_builders::PutRegistryPolicy::set_policy_text): <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    /// - On success, responds with [`PutRegistryPolicyOutput`](crate::output::PutRegistryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::PutRegistryPolicyOutput::registry_id): <p>The registry ID.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::PutRegistryPolicyOutput::policy_text): <p>The JSON policy text for your registry.</p>
-    /// - On failure, responds with [`SdkError<PutRegistryPolicyError>`](crate::error::PutRegistryPolicyError)
-    pub fn put_registry_policy(&self) -> crate::client::fluent_builders::PutRegistryPolicy {
-        crate::client::fluent_builders::PutRegistryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutRegistryScanningConfiguration`](crate::client::fluent_builders::PutRegistryScanningConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`scan_type(ScanType)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::scan_type) / [`set_scan_type(Option<ScanType>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::set_scan_type): <p>The scanning type to set for the registry.</p>  <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>  <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.</p>
-    ///   - [`rules(Vec<RegistryScanningRule>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::rules) / [`set_rules(Option<Vec<RegistryScanningRule>>)`](crate::client::fluent_builders::PutRegistryScanningConfiguration::set_rules): <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
-    /// - On success, responds with [`PutRegistryScanningConfigurationOutput`](crate::output::PutRegistryScanningConfigurationOutput) with field(s):
-    ///   - [`registry_scanning_configuration(Option<RegistryScanningConfiguration>)`](crate::output::PutRegistryScanningConfigurationOutput::registry_scanning_configuration): <p>The scanning configuration for your registry.</p>
-    /// - On failure, responds with [`SdkError<PutRegistryScanningConfigurationError>`](crate::error::PutRegistryScanningConfigurationError)
-    pub fn put_registry_scanning_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutRegistryScanningConfiguration {
-        crate::client::fluent_builders::PutRegistryScanningConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutReplicationConfiguration`](crate::client::fluent_builders::PutReplicationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_configuration(ReplicationConfiguration)`](crate::client::fluent_builders::PutReplicationConfiguration::replication_configuration) / [`set_replication_configuration(Option<ReplicationConfiguration>)`](crate::client::fluent_builders::PutReplicationConfiguration::set_replication_configuration): <p>An object representing the replication configuration for a registry.</p>
-    /// - On success, responds with [`PutReplicationConfigurationOutput`](crate::output::PutReplicationConfigurationOutput) with field(s):
-    ///   - [`replication_configuration(Option<ReplicationConfiguration>)`](crate::output::PutReplicationConfigurationOutput::replication_configuration): <p>The contents of the replication configuration for the registry.</p>
-    /// - On failure, responds with [`SdkError<PutReplicationConfigurationError>`](crate::error::PutReplicationConfigurationError)
-    pub fn put_replication_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutReplicationConfiguration {
-        crate::client::fluent_builders::PutReplicationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetRepositoryPolicy`](crate::client::fluent_builders::SetRepositoryPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::set_repository_name): <p>The name of the repository to receive the policy.</p>
-    ///   - [`policy_text(impl Into<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::policy_text) / [`set_policy_text(Option<String>)`](crate::client::fluent_builders::SetRepositoryPolicy::set_policy_text): <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    ///   - [`force(bool)`](crate::client::fluent_builders::SetRepositoryPolicy::force) / [`set_force(bool)`](crate::client::fluent_builders::SetRepositoryPolicy::set_force): <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
-    /// - On success, responds with [`SetRepositoryPolicyOutput`](crate::output::SetRepositoryPolicyOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::SetRepositoryPolicyOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::SetRepositoryPolicyOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`policy_text(Option<String>)`](crate::output::SetRepositoryPolicyOutput::policy_text): <p>The JSON repository policy text applied to the repository.</p>
-    /// - On failure, responds with [`SdkError<SetRepositoryPolicyError>`](crate::error::SetRepositoryPolicyError)
-    pub fn set_repository_policy(&self) -> crate::client::fluent_builders::SetRepositoryPolicy {
-        crate::client::fluent_builders::SetRepositoryPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartImageScan`](crate::client::fluent_builders::StartImageScan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::StartImageScan::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::StartImageScan::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::StartImageScan::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::StartImageScan::set_repository_name): <p>The name of the repository that contains the images to scan.</p>
-    ///   - [`image_id(ImageIdentifier)`](crate::client::fluent_builders::StartImageScan::image_id) / [`set_image_id(Option<ImageIdentifier>)`](crate::client::fluent_builders::StartImageScan::set_image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    /// - On success, responds with [`StartImageScanOutput`](crate::output::StartImageScanOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::StartImageScanOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::StartImageScanOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`image_id(Option<ImageIdentifier>)`](crate::output::StartImageScanOutput::image_id): <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    ///   - [`image_scan_status(Option<ImageScanStatus>)`](crate::output::StartImageScanOutput::image_scan_status): <p>The current state of the scan.</p>
-    /// - On failure, responds with [`SdkError<StartImageScanError>`](crate::error::StartImageScanError)
-    pub fn start_image_scan(&self) -> crate::client::fluent_builders::StartImageScan {
-        crate::client::fluent_builders::StartImageScan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartLifecyclePolicyPreview`](crate::client::fluent_builders::StartLifecyclePolicyPreview) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::set_registry_id): <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::set_repository_name): <p>The name of the repository to be evaluated.</p>
-    ///   - [`lifecycle_policy_text(impl Into<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::lifecycle_policy_text) / [`set_lifecycle_policy_text(Option<String>)`](crate::client::fluent_builders::StartLifecyclePolicyPreview::set_lifecycle_policy_text): <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
-    /// - On success, responds with [`StartLifecyclePolicyPreviewOutput`](crate::output::StartLifecyclePolicyPreviewOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::StartLifecyclePolicyPreviewOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::StartLifecyclePolicyPreviewOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`lifecycle_policy_text(Option<String>)`](crate::output::StartLifecyclePolicyPreviewOutput::lifecycle_policy_text): <p>The JSON repository policy text.</p>
-    ///   - [`status(Option<LifecyclePolicyPreviewStatus>)`](crate::output::StartLifecyclePolicyPreviewOutput::status): <p>The status of the lifecycle policy preview request.</p>
-    /// - On failure, responds with [`SdkError<StartLifecyclePolicyPreviewError>`](crate::error::StartLifecyclePolicyPreviewError)
-    pub fn start_lifecycle_policy_preview(
-        &self,
-    ) -> crate::client::fluent_builders::StartLifecyclePolicyPreview {
-        crate::client::fluent_builders::StartLifecyclePolicyPreview::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to be removed.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UploadLayerPart`](crate::client::fluent_builders::UploadLayerPart) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`registry_id(impl Into<String>)`](crate::client::fluent_builders::UploadLayerPart::registry_id) / [`set_registry_id(Option<String>)`](crate::client::fluent_builders::UploadLayerPart::set_registry_id): <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
-    ///   - [`repository_name(impl Into<String>)`](crate::client::fluent_builders::UploadLayerPart::repository_name) / [`set_repository_name(Option<String>)`](crate::client::fluent_builders::UploadLayerPart::set_repository_name): <p>The name of the repository to which you are uploading layer parts.</p>
-    ///   - [`upload_id(impl Into<String>)`](crate::client::fluent_builders::UploadLayerPart::upload_id) / [`set_upload_id(Option<String>)`](crate::client::fluent_builders::UploadLayerPart::set_upload_id): <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
-    ///   - [`part_first_byte(i64)`](crate::client::fluent_builders::UploadLayerPart::part_first_byte) / [`set_part_first_byte(Option<i64>)`](crate::client::fluent_builders::UploadLayerPart::set_part_first_byte): <p>The position of the first byte of the layer part witin the overall image layer.</p>
-    ///   - [`part_last_byte(i64)`](crate::client::fluent_builders::UploadLayerPart::part_last_byte) / [`set_part_last_byte(Option<i64>)`](crate::client::fluent_builders::UploadLayerPart::set_part_last_byte): <p>The position of the last byte of the layer part within the overall image layer.</p>
-    ///   - [`layer_part_blob(Blob)`](crate::client::fluent_builders::UploadLayerPart::layer_part_blob) / [`set_layer_part_blob(Option<Blob>)`](crate::client::fluent_builders::UploadLayerPart::set_layer_part_blob): <p>The base64-encoded layer part payload.</p>
-    /// - On success, responds with [`UploadLayerPartOutput`](crate::output::UploadLayerPartOutput) with field(s):
-    ///   - [`registry_id(Option<String>)`](crate::output::UploadLayerPartOutput::registry_id): <p>The registry ID associated with the request.</p>
-    ///   - [`repository_name(Option<String>)`](crate::output::UploadLayerPartOutput::repository_name): <p>The repository name associated with the request.</p>
-    ///   - [`upload_id(Option<String>)`](crate::output::UploadLayerPartOutput::upload_id): <p>The upload ID associated with the request.</p>
-    ///   - [`last_byte_received(Option<i64>)`](crate::output::UploadLayerPartOutput::last_byte_received): <p>The integer value of the last byte received in the request.</p>
-    /// - On failure, responds with [`SdkError<UploadLayerPartError>`](crate::error::UploadLayerPartError)
-    pub fn upload_layer_part(&self) -> crate::client::fluent_builders::UploadLayerPart {
-        crate::client::fluent_builders::UploadLayerPart::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -769,9 +174,91 @@ impl Client {
     }
 }
 
+mod batch_check_layer_availability;
+
+mod batch_delete_image;
+
+mod batch_get_image;
+
+mod batch_get_repository_scanning_configuration;
+
+mod complete_layer_upload;
+
+mod create_pull_through_cache_rule;
+
+mod create_repository;
+
+mod delete_lifecycle_policy;
+
+mod delete_pull_through_cache_rule;
+
+mod delete_registry_policy;
+
+mod delete_repository;
+
+mod delete_repository_policy;
+
+mod describe_image_replication_status;
+
+mod describe_image_scan_findings;
+
+mod describe_images;
+
+mod describe_pull_through_cache_rules;
+
+mod describe_registry;
+
+mod describe_repositories;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_authorization_token;
+
+mod get_download_url_for_layer;
+
+mod get_lifecycle_policy;
+
+mod get_lifecycle_policy_preview;
+
+mod get_registry_policy;
+
+mod get_registry_scanning_configuration;
+
+mod get_repository_policy;
+
+mod initiate_layer_upload;
+
+mod list_images;
+
+mod list_tags_for_resource;
+
+mod put_image;
+
+mod put_image_scanning_configuration;
+
+mod put_image_tag_mutability;
+
+mod put_lifecycle_policy;
+
+mod put_registry_policy;
+
+mod put_registry_scanning_configuration;
+
+mod put_replication_configuration;
+
+mod set_repository_policy;
+
+mod start_image_scan;
+
+mod start_lifecycle_policy_preview;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod upload_layer_part;

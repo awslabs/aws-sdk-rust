@@ -92,7 +92,7 @@ impl DescribeMappedResourceConfigurationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_mapped_resource_configuration_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_mapped_resource_configuration_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -210,7 +210,10 @@ impl ListSignalingChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_signaling_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_signaling_channels_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -328,7 +331,8 @@ impl ListStreamsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_streams_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_streams_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -378,7 +382,7 @@ impl DescribeMappedResourceConfigurationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_mapped_resource_configuration_output_mapped_resource_configuration_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_mapped_resource_configuration_output_mapped_resource_configuration_list(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -401,7 +405,11 @@ impl ListSignalingChannelsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListSignalingChannelsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_signaling_channels_output_channel_info_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_signaling_channels_output_channel_info_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -425,7 +433,7 @@ impl ListStreamsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_streams_output_stream_info_list(page)
+            crate::lens::lens_list_streams_output_stream_info_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })

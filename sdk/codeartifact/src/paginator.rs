@@ -90,7 +90,8 @@ impl ListDomainsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_domains_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_domains_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListPackagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_packages_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_packages_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,10 @@ impl ListPackageVersionAssetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_package_version_assets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_package_version_assets_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +449,8 @@ impl ListPackageVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_package_versions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_package_versions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +568,8 @@ impl ListRepositoriesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_repositories_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_repositories_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +687,10 @@ impl ListRepositoriesInDomainPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_repositories_in_domain_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_repositories_in_domain_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -727,7 +737,7 @@ impl ListDomainsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_domains_output_domains(page)
+            crate::lens::lens_list_domains_output_domains(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -754,7 +764,7 @@ impl ListPackagesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_packages_output_packages(page)
+            crate::lens::lens_list_packages_output_packages(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -781,7 +791,7 @@ impl ListPackageVersionAssetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_package_version_assets_output_assets(page)
+            crate::lens::lens_list_package_version_assets_output_assets(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -808,7 +818,7 @@ impl ListPackageVersionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_package_versions_output_versions(page)
+            crate::lens::lens_list_package_versions_output_versions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -835,7 +845,7 @@ impl ListRepositoriesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_repositories_output_repositories(page)
+            crate::lens::lens_list_repositories_output_repositories(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -861,6 +871,10 @@ impl ListRepositoriesInDomainPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListRepositoriesInDomainError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_repositories_in_domain_output_repositories(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_repositories_in_domain_output_repositories(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

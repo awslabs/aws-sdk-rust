@@ -89,273 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateChatToken`](crate::client::fluent_builders::CreateChatToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`room_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateChatToken::room_identifier) / [`set_room_identifier(Option<String>)`](crate::client::fluent_builders::CreateChatToken::set_room_identifier): <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::CreateChatToken::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::CreateChatToken::set_user_id): <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
-    ///   - [`capabilities(Vec<ChatTokenCapability>)`](crate::client::fluent_builders::CreateChatToken::capabilities) / [`set_capabilities(Option<Vec<ChatTokenCapability>>)`](crate::client::fluent_builders::CreateChatToken::set_capabilities): <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    ///   - [`session_duration_in_minutes(i32)`](crate::client::fluent_builders::CreateChatToken::session_duration_in_minutes) / [`set_session_duration_in_minutes(i32)`](crate::client::fluent_builders::CreateChatToken::set_session_duration_in_minutes): <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::CreateChatToken::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateChatToken::set_attributes): <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    /// - On success, responds with [`CreateChatTokenOutput`](crate::output::CreateChatTokenOutput) with field(s):
-    ///   - [`token(Option<String>)`](crate::output::CreateChatTokenOutput::token): <p>The issued client token, encrypted.</p>
-    ///   - [`token_expiration_time(Option<DateTime>)`](crate::output::CreateChatTokenOutput::token_expiration_time): <p>Time after which the token is no longer valid and cannot be used to connect to a room. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`session_expiration_time(Option<DateTime>)`](crate::output::CreateChatTokenOutput::session_expiration_time): <p>Time after which an end user's session is no longer valid. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    /// - On failure, responds with [`SdkError<CreateChatTokenError>`](crate::error::CreateChatTokenError)
-    pub fn create_chat_token(&self) -> crate::client::fluent_builders::CreateChatToken {
-        crate::client::fluent_builders::CreateChatToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLoggingConfiguration`](crate::client::fluent_builders::CreateLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_name): <p>Logging-configuration name. The value does not need to be unique.</p>
-    ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::CreateLoggingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLoggingConfiguration::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLoggingConfiguration::set_tags): <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.</p>
-    /// - On success, responds with [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateLoggingConfigurationOutput::arn): <p>Logging-configuration ARN, assigned by the system.</p>
-    ///   - [`id(Option<String>)`](crate::output::CreateLoggingConfigurationOutput::id): <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the logging configuration.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateLoggingConfigurationOutput::create_time): <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::CreateLoggingConfigurationOutput::update_time): <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateLoggingConfigurationOutput::name): <p>Logging-configuration name, from the request (if specified).</p>
-    ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::output::CreateLoggingConfigurationOutput::destination_configuration): <p>A complex type that contains a destination configuration for where chat content will be logged, from the request. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    ///   - [`state(Option<CreateLoggingConfigurationState>)`](crate::output::CreateLoggingConfigurationOutput::state): <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLoggingConfigurationOutput::tags): <p>Tags attached to the resource, from the request (if specified). Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateLoggingConfigurationError>`](crate::error::CreateLoggingConfigurationError)
-    pub fn create_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLoggingConfiguration {
-        crate::client::fluent_builders::CreateLoggingConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRoom`](crate::client::fluent_builders::CreateRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_name): <p>Room name. The value does not need to be unique.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::CreateRoom::set_maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10. </p>
-    ///   - [`maximum_message_length(i32)`](crate::client::fluent_builders::CreateRoom::maximum_message_length) / [`set_maximum_message_length(i32)`](crate::client::fluent_builders::CreateRoom::set_maximum_message_length): <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    ///   - [`message_review_handler(MessageReviewHandler)`](crate::client::fluent_builders::CreateRoom::message_review_handler) / [`set_message_review_handler(Option<MessageReviewHandler>)`](crate::client::fluent_builders::CreateRoom::set_message_review_handler): <p>Configuration information for optional review of messages.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRoom::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRoom::set_tags): <p>Tags to attach to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    ///   - [`logging_configuration_identifiers(Vec<String>)`](crate::client::fluent_builders::CreateRoom::logging_configuration_identifiers) / [`set_logging_configuration_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRoom::set_logging_configuration_identifiers): <p>Array of logging-configuration identifiers attached to the room.</p>
-    /// - On success, responds with [`CreateRoomOutput`](crate::output::CreateRoomOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateRoomOutput::arn): <p>Room ARN, assigned by the system.</p>
-    ///   - [`id(Option<String>)`](crate::output::CreateRoomOutput::id): <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateRoomOutput::name): <p>Room name, from the request (if specified).</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::CreateRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::CreateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request (if specified).</p>
-    ///   - [`maximum_message_length(i32)`](crate::output::CreateRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message, from the request (if specified).</p>
-    ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::CreateRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRoomOutput::tags): <p>Tags attached to the resource, from the request (if specified).</p>
-    ///   - [`logging_configuration_identifiers(Option<Vec<String>>)`](crate::output::CreateRoomOutput::logging_configuration_identifiers): <p>Array of logging configurations attached to the room, from the request (if specified).</p>
-    /// - On failure, responds with [`SdkError<CreateRoomError>`](crate::error::CreateRoomError)
-    pub fn create_room(&self) -> crate::client::fluent_builders::CreateRoom {
-        crate::client::fluent_builders::CreateRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::client::fluent_builders::DeleteLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteLoggingConfiguration::set_identifier): <p>Identifier of the logging configuration to be deleted.</p>
-    /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::error::DeleteLoggingConfigurationError)
-    pub fn delete_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteLoggingConfiguration {
-        crate::client::fluent_builders::DeleteLoggingConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMessage`](crate::client::fluent_builders::DeleteMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`room_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteMessage::room_identifier) / [`set_room_identifier(Option<String>)`](crate::client::fluent_builders::DeleteMessage::set_room_identifier): <p>Identifier of the room where the message should be deleted. Currently this must be an ARN. </p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteMessage::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteMessage::set_id): <p>ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).</p>
-    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::DeleteMessage::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::DeleteMessage::set_reason): <p>Reason for deleting the message.</p>
-    /// - On success, responds with [`DeleteMessageOutput`](crate::output::DeleteMessageOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DeleteMessageOutput::id): <p>Operation identifier, generated by Amazon IVS Chat.</p>
-    /// - On failure, responds with [`SdkError<DeleteMessageError>`](crate::error::DeleteMessageError)
-    pub fn delete_message(&self) -> crate::client::fluent_builders::DeleteMessage {
-        crate::client::fluent_builders::DeleteMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRoom`](crate::client::fluent_builders::DeleteRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteRoom::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteRoom::set_identifier): <p>Identifier of the room to be deleted. Currently this must be an ARN.</p>
-    /// - On success, responds with [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRoomError>`](crate::error::DeleteRoomError)
-    pub fn delete_room(&self) -> crate::client::fluent_builders::DeleteRoom {
-        crate::client::fluent_builders::DeleteRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisconnectUser`](crate::client::fluent_builders::DisconnectUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`room_identifier(impl Into<String>)`](crate::client::fluent_builders::DisconnectUser::room_identifier) / [`set_room_identifier(Option<String>)`](crate::client::fluent_builders::DisconnectUser::set_room_identifier): <p>Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DisconnectUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DisconnectUser::set_user_id): <p>ID of the user (connection) to disconnect from the room.</p>
-    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::DisconnectUser::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::DisconnectUser::set_reason): <p>Reason for disconnecting the user.</p>
-    /// - On success, responds with [`DisconnectUserOutput`](crate::output::DisconnectUserOutput)
-
-    /// - On failure, responds with [`SdkError<DisconnectUserError>`](crate::error::DisconnectUserError)
-    pub fn disconnect_user(&self) -> crate::client::fluent_builders::DisconnectUser {
-        crate::client::fluent_builders::DisconnectUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLoggingConfiguration`](crate::client::fluent_builders::GetLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetLoggingConfiguration::set_identifier): <p>Identifier of the logging configuration to be retrieved.</p>
-    /// - On success, responds with [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetLoggingConfigurationOutput::arn): <p>Logging-configuration ARN, from the request (if <code>identifier</code> was an ARN).</p>
-    ///   - [`id(Option<String>)`](crate::output::GetLoggingConfigurationOutput::id): <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the logging configuration.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::GetLoggingConfigurationOutput::create_time): <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::GetLoggingConfigurationOutput::update_time): <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetLoggingConfigurationOutput::name): <p>Logging-configuration name. This value does not need to be unique.</p>
-    ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::output::GetLoggingConfigurationOutput::destination_configuration): <p>A complex type that contains a destination configuration for where chat content will be logged. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    ///   - [`state(Option<LoggingConfigurationState>)`](crate::output::GetLoggingConfigurationOutput::state): <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetLoggingConfigurationOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    /// - On failure, responds with [`SdkError<GetLoggingConfigurationError>`](crate::error::GetLoggingConfigurationError)
-    pub fn get_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetLoggingConfiguration {
-        crate::client::fluent_builders::GetLoggingConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRoom`](crate::client::fluent_builders::GetRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetRoom::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetRoom::set_identifier): <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
-    /// - On success, responds with [`GetRoomOutput`](crate::output::GetRoomOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetRoomOutput::arn): <p>Room ARN, from the request (if <code>identifier</code> was an ARN).</p>
-    ///   - [`id(Option<String>)`](crate::output::GetRoomOutput::id): <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetRoomOutput::name): <p>Room name. The value does not need to be unique.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::GetRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::GetRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::GetRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    ///   - [`maximum_message_length(i32)`](crate::output::GetRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::GetRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRoomOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    ///   - [`logging_configuration_identifiers(Option<Vec<String>>)`](crate::output::GetRoomOutput::logging_configuration_identifiers): <p>Array of logging configurations attached to the room.</p>
-    /// - On failure, responds with [`SdkError<GetRoomError>`](crate::error::GetRoomError)
-    pub fn get_room(&self) -> crate::client::fluent_builders::GetRoom {
-        crate::client::fluent_builders::GetRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLoggingConfigurations`](crate::client::fluent_builders::ListLoggingConfigurations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLoggingConfigurations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLoggingConfigurations::set_next_token): <p>The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListLoggingConfigurations::set_max_results): <p>Maximum number of logging configurations to return. Default: 50.</p>
-    /// - On success, responds with [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput) with field(s):
-    ///   - [`logging_configurations(Option<Vec<LoggingConfigurationSummary>>)`](crate::output::ListLoggingConfigurationsOutput::logging_configurations): <p>List of the matching logging configurations (summary information only). There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLoggingConfigurationsOutput::next_token): <p>If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListLoggingConfigurationsError>`](crate::error::ListLoggingConfigurationsError)
-    pub fn list_logging_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::ListLoggingConfigurations {
-        crate::client::fluent_builders::ListLoggingConfigurations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRooms`](crate::client::fluent_builders::ListRooms) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRooms::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListRooms::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListRooms::set_name): <p>Filters the list to match the specified room name.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRooms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRooms::set_next_token): <p>The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRooms::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRooms::set_max_results): <p>Maximum number of rooms to return. Default: 50.</p>
-    ///   - [`message_review_handler_uri(impl Into<String>)`](crate::client::fluent_builders::ListRooms::message_review_handler_uri) / [`set_message_review_handler_uri(Option<String>)`](crate::client::fluent_builders::ListRooms::set_message_review_handler_uri): <p>Filters the list to match the specified message review handler URI.</p>
-    ///   - [`logging_configuration_identifier(impl Into<String>)`](crate::client::fluent_builders::ListRooms::logging_configuration_identifier) / [`set_logging_configuration_identifier(Option<String>)`](crate::client::fluent_builders::ListRooms::set_logging_configuration_identifier): <p>Logging-configuration identifier.</p>
-    /// - On success, responds with [`ListRoomsOutput`](crate::output::ListRoomsOutput) with field(s):
-    ///   - [`rooms(Option<Vec<RoomSummary>>)`](crate::output::ListRoomsOutput::rooms): <p>List of the matching rooms (summary information only).</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRoomsOutput::next_token): <p>If there are more rooms than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    /// - On failure, responds with [`SdkError<ListRoomsError>`](crate::error::ListRoomsError)
-    pub fn list_rooms(&self) -> crate::client::fluent_builders::ListRooms {
-        crate::client::fluent_builders::ListRooms::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendEvent`](crate::client::fluent_builders::SendEvent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`room_identifier(impl Into<String>)`](crate::client::fluent_builders::SendEvent::room_identifier) / [`set_room_identifier(Option<String>)`](crate::client::fluent_builders::SendEvent::set_room_identifier): <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
-    ///   - [`event_name(impl Into<String>)`](crate::client::fluent_builders::SendEvent::event_name) / [`set_event_name(Option<String>)`](crate::client::fluent_builders::SendEvent::set_event_name): <p>Application-defined name of the event to send to clients.</p>
-    ///   - [`attributes(HashMap<String, String>)`](crate::client::fluent_builders::SendEvent::attributes) / [`set_attributes(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SendEvent::set_attributes): <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
-    /// - On success, responds with [`SendEventOutput`](crate::output::SendEventOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::SendEventOutput::id): <p>An identifier generated by Amazon IVS Chat. This identifier must be used in subsequent operations for this message, such as DeleteMessage.</p>
-    /// - On failure, responds with [`SdkError<SendEventError>`](crate::error::SendEventError)
-    pub fn send_event(&self) -> crate::client::fluent_builders::SendEvent {
-        crate::client::fluent_builders::SendEvent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource to be tagged. The ARN must be URL-encoded.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Array of tags to be added or updated. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource to be untagged. The ARN must be URL-encoded.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Array of tags to be removed. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLoggingConfiguration`](crate::client::fluent_builders::UpdateLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_identifier): <p>Identifier of the logging configuration to be updated.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_name): <p>Logging-configuration name. The value does not need to be unique.</p>
-    ///   - [`destination_configuration(DestinationConfiguration)`](crate::client::fluent_builders::UpdateLoggingConfiguration::destination_configuration) / [`set_destination_configuration(Option<DestinationConfiguration>)`](crate::client::fluent_builders::UpdateLoggingConfiguration::set_destination_configuration): <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    /// - On success, responds with [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLoggingConfigurationOutput::arn): <p>Logging-configuration ARN, from the request (if <code>identifier</code> was an ARN).</p>
-    ///   - [`id(Option<String>)`](crate::output::UpdateLoggingConfigurationOutput::id): <p>Logging-configuration ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::UpdateLoggingConfigurationOutput::create_time): <p>Time when the logging configuration was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateLoggingConfigurationOutput::update_time): <p>Time of the logging configuration’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateLoggingConfigurationOutput::name): <p>Logging-configuration name, from the request (if specified).</p>
-    ///   - [`destination_configuration(Option<DestinationConfiguration>)`](crate::output::UpdateLoggingConfigurationOutput::destination_configuration): <p>A complex type that contains a destination configuration for where chat content will be logged, from the request. There is only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    ///   - [`state(Option<UpdateLoggingConfigurationState>)`](crate::output::UpdateLoggingConfigurationOutput::state): <p>The state of the logging configuration. When the state is <code>ACTIVE</code>, the configuration is ready to log chat content.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLoggingConfigurationOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdateLoggingConfigurationError>`](crate::error::UpdateLoggingConfigurationError)
-    pub fn update_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLoggingConfiguration {
-        crate::client::fluent_builders::UpdateLoggingConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoom`](crate::client::fluent_builders::UpdateRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_identifier): <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_name): <p>Room name. The value does not need to be unique.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::maximum_message_rate_per_second) / [`set_maximum_message_rate_per_second(i32)`](crate::client::fluent_builders::UpdateRoom::set_maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    ///   - [`maximum_message_length(i32)`](crate::client::fluent_builders::UpdateRoom::maximum_message_length) / [`set_maximum_message_length(i32)`](crate::client::fluent_builders::UpdateRoom::set_maximum_message_length): <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    ///   - [`message_review_handler(MessageReviewHandler)`](crate::client::fluent_builders::UpdateRoom::message_review_handler) / [`set_message_review_handler(Option<MessageReviewHandler>)`](crate::client::fluent_builders::UpdateRoom::set_message_review_handler): <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
-    ///   - [`logging_configuration_identifiers(Vec<String>)`](crate::client::fluent_builders::UpdateRoom::logging_configuration_identifiers) / [`set_logging_configuration_identifiers(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoom::set_logging_configuration_identifiers): <p>Array of logging-configuration identifiers attached to the room.</p>
-    /// - On success, responds with [`UpdateRoomOutput`](crate::output::UpdateRoomOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateRoomOutput::arn): <p>Room ARN, from the request (if <code>identifier</code> was an ARN).</p>
-    ///   - [`id(Option<String>)`](crate::output::UpdateRoomOutput::id): <p>Room ID, generated by the system. This is a relative identifier, the part of the ARN that uniquely identifies the room.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateRoomOutput::name): <p>Room name, from the request (if specified).</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::UpdateRoomOutput::create_time): <p>Time when the room was created. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateRoomOutput::update_time): <p>Time of the room’s last update. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    ///   - [`maximum_message_rate_per_second(i32)`](crate::output::UpdateRoomOutput::maximum_message_rate_per_second): <p>Maximum number of messages per second that can be sent to the room (by all clients), from the request (if specified).</p>
-    ///   - [`maximum_message_length(i32)`](crate::output::UpdateRoomOutput::maximum_message_length): <p>Maximum number of characters in a single message, from the request (if specified).</p>
-    ///   - [`message_review_handler(Option<MessageReviewHandler>)`](crate::output::UpdateRoomOutput::message_review_handler): <p>Configuration information for optional review of messages.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRoomOutput::tags): <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    ///   - [`logging_configuration_identifiers(Option<Vec<String>>)`](crate::output::UpdateRoomOutput::logging_configuration_identifiers): <p>Array of logging configurations attached to the room, from the request (if specified).</p>
-    /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::error::UpdateRoomError)
-    pub fn update_room(&self) -> crate::client::fluent_builders::UpdateRoom {
-        crate::client::fluent_builders::UpdateRoom::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -441,9 +174,43 @@ impl Client {
     }
 }
 
+mod create_chat_token;
+
+mod create_logging_configuration;
+
+mod create_room;
+
+mod delete_logging_configuration;
+
+mod delete_message;
+
+mod delete_room;
+
+mod disconnect_user;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_logging_configuration;
+
+mod get_room;
+
+mod list_logging_configurations;
+
+mod list_rooms;
+
+mod list_tags_for_resource;
+
+mod send_event;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_logging_configuration;
+
+mod update_room;

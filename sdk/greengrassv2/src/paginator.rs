@@ -94,7 +94,7 @@ impl ListClientDevicesAssociatedWithCoreDevicePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_client_devices_associated_with_core_device_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_client_devices_associated_with_core_device_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -212,7 +212,8 @@ impl ListComponentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_components_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_components_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -330,7 +331,10 @@ impl ListComponentVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_component_versions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_component_versions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -448,7 +452,8 @@ impl ListCoreDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_core_devices_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_core_devices_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -566,7 +571,8 @@ impl ListDeploymentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_deployments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_deployments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -684,7 +690,10 @@ impl ListEffectiveDeploymentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_effective_deployments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_effective_deployments_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -802,7 +811,10 @@ impl ListInstalledComponentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_installed_components_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_installed_components_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -852,7 +864,7 @@ impl ListClientDevicesAssociatedWithCoreDevicePaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_client_devices_associated_with_core_device_output_associated_client_devices(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_client_devices_associated_with_core_device_output_associated_client_devices(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -876,7 +888,7 @@ impl ListComponentsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_components_output_components(page)
+            crate::lens::lens_list_components_output_components(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -902,7 +914,11 @@ impl ListComponentVersionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListComponentVersionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_component_versions_output_component_versions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_component_versions_output_component_versions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -926,7 +942,7 @@ impl ListCoreDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_core_devices_output_core_devices(page)
+            crate::lens::lens_list_core_devices_output_core_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -953,7 +969,7 @@ impl ListDeploymentsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_deployments_output_deployments(page)
+            crate::lens::lens_list_deployments_output_deployments(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -979,7 +995,11 @@ impl ListEffectiveDeploymentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListEffectiveDeploymentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_effective_deployments_output_effective_deployments(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_effective_deployments_output_effective_deployments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1002,6 +1022,10 @@ impl ListInstalledComponentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListInstalledComponentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_installed_components_output_installed_components(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_installed_components_output_installed_components(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for JoinStorageSession {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_join_storage_session_error(response)
+            crate::protocol_serde::shape_join_storage_session::de_join_storage_session_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_join_storage_session_response(response)
+            crate::protocol_serde::shape_join_storage_session::de_join_storage_session_http_response(
+                response,
+            )
         }
     }
 }

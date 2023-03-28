@@ -89,178 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateEnvironmentEC2`](crate::client::fluent_builders::CreateEnvironmentEC2) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_name): <p>The name of the environment to create.</p>  <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_description): <p>The description of the environment to create.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_client_request_token): <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_instance_type): <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    ///   - [`subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::subnet_id) / [`set_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_subnet_id): <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
-    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_image_id): <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>  <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>  <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>  <p> <b>AMI aliases </b> </p>  <ul>   <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>   <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>   <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>  </ul>  <p> <b>SSM paths</b> </p>  <ul>   <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>   <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>   <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>  </ul>
-    ///   - [`automatic_stop_time_minutes(i32)`](crate::client::fluent_builders::CreateEnvironmentEC2::automatic_stop_time_minutes) / [`set_automatic_stop_time_minutes(Option<i32>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_automatic_stop_time_minutes): <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
-    ///   - [`owner_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::owner_arn) / [`set_owner_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_owner_arn): <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEnvironmentEC2::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_tags): <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    ///   - [`connection_type(ConnectionType)`](crate::client::fluent_builders::CreateEnvironmentEC2::connection_type) / [`set_connection_type(Option<ConnectionType>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_connection_type): <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    ///   - [`dry_run(bool)`](crate::client::fluent_builders::CreateEnvironmentEC2::dry_run) / [`set_dry_run(Option<bool>)`](crate::client::fluent_builders::CreateEnvironmentEC2::set_dry_run): <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    /// - On success, responds with [`CreateEnvironmentEc2Output`](crate::output::CreateEnvironmentEc2Output) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentEc2Output::environment_id): <p>The ID of the environment that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateEnvironmentEC2Error>`](crate::error::CreateEnvironmentEC2Error)
-    pub fn create_environment_ec2(&self) -> crate::client::fluent_builders::CreateEnvironmentEC2 {
-        crate::client::fluent_builders::CreateEnvironmentEC2::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateEnvironmentMembership`](crate::client::fluent_builders::CreateEnvironmentMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentMembership::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentMembership::set_environment_id): <p>The ID of the environment that contains the environment member you want to add.</p>
-    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironmentMembership::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::CreateEnvironmentMembership::set_user_arn): <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
-    ///   - [`permissions(MemberPermissions)`](crate::client::fluent_builders::CreateEnvironmentMembership::permissions) / [`set_permissions(Option<MemberPermissions>)`](crate::client::fluent_builders::CreateEnvironmentMembership::set_permissions): <p>The type of environment member permissions you want to associate with this environment member. Available values include:</p>  <ul>   <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>   <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>  </ul>
-    /// - On success, responds with [`CreateEnvironmentMembershipOutput`](crate::output::CreateEnvironmentMembershipOutput) with field(s):
-    ///   - [`membership(Option<EnvironmentMember>)`](crate::output::CreateEnvironmentMembershipOutput::membership): <p>Information about the environment member that was added.</p>
-    /// - On failure, responds with [`SdkError<CreateEnvironmentMembershipError>`](crate::error::CreateEnvironmentMembershipError)
-    pub fn create_environment_membership(
-        &self,
-    ) -> crate::client::fluent_builders::CreateEnvironmentMembership {
-        crate::client::fluent_builders::CreateEnvironmentMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_id): <p>The ID of the environment to delete.</p>
-    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
-    pub fn delete_environment(&self) -> crate::client::fluent_builders::DeleteEnvironment {
-        crate::client::fluent_builders::DeleteEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEnvironmentMembership`](crate::client::fluent_builders::DeleteEnvironmentMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentMembership::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentMembership::set_environment_id): <p>The ID of the environment to delete the environment member from.</p>
-    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironmentMembership::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::DeleteEnvironmentMembership::set_user_arn): <p>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</p>
-    /// - On success, responds with [`DeleteEnvironmentMembershipOutput`](crate::output::DeleteEnvironmentMembershipOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEnvironmentMembershipError>`](crate::error::DeleteEnvironmentMembershipError)
-    pub fn delete_environment_membership(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteEnvironmentMembership {
-        crate::client::fluent_builders::DeleteEnvironmentMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEnvironmentMemberships`](crate::client::fluent_builders::DescribeEnvironmentMemberships) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEnvironmentMemberships::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::set_user_arn): <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::set_environment_id): <p>The ID of the environment to get environment member information about.</p>
-    ///   - [`permissions(Vec<Permissions>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::permissions) / [`set_permissions(Option<Vec<Permissions>>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::set_permissions): <p>The type of environment member permissions to get information about. Available values include:</p>  <ul>   <li> <p> <code>owner</code>: Owns the environment.</p> </li>   <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>   <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>  </ul>  <p>If no value is specified, information about all environment members are returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::set_next_token): <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeEnvironmentMemberships::set_max_results): <p>The maximum number of environment members to get information about.</p>
-    /// - On success, responds with [`DescribeEnvironmentMembershipsOutput`](crate::output::DescribeEnvironmentMembershipsOutput) with field(s):
-    ///   - [`memberships(Option<Vec<EnvironmentMember>>)`](crate::output::DescribeEnvironmentMembershipsOutput::memberships): <p>Information about the environment members for the environment.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeEnvironmentMembershipsOutput::next_token): <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    /// - On failure, responds with [`SdkError<DescribeEnvironmentMembershipsError>`](crate::error::DescribeEnvironmentMembershipsError)
-    pub fn describe_environment_memberships(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEnvironmentMemberships {
-        crate::client::fluent_builders::DescribeEnvironmentMemberships::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEnvironments`](crate::client::fluent_builders::DescribeEnvironments) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_ids(Vec<String>)`](crate::client::fluent_builders::DescribeEnvironments::environment_ids) / [`set_environment_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeEnvironments::set_environment_ids): <p>The IDs of individual environments to get information about.</p>
-    /// - On success, responds with [`DescribeEnvironmentsOutput`](crate::output::DescribeEnvironmentsOutput) with field(s):
-    ///   - [`environments(Option<Vec<Environment>>)`](crate::output::DescribeEnvironmentsOutput::environments): <p>Information about the environments that are returned.</p>
-    /// - On failure, responds with [`SdkError<DescribeEnvironmentsError>`](crate::error::DescribeEnvironmentsError)
-    pub fn describe_environments(&self) -> crate::client::fluent_builders::DescribeEnvironments {
-        crate::client::fluent_builders::DescribeEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEnvironmentStatus`](crate::client::fluent_builders::DescribeEnvironmentStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DescribeEnvironmentStatus::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DescribeEnvironmentStatus::set_environment_id): <p>The ID of the environment to get status information about.</p>
-    /// - On success, responds with [`DescribeEnvironmentStatusOutput`](crate::output::DescribeEnvironmentStatusOutput) with field(s):
-    ///   - [`status(Option<EnvironmentStatus>)`](crate::output::DescribeEnvironmentStatusOutput::status): <p>The status of the environment. Available values include:</p>  <ul>   <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>   <li> <p> <code>creating</code>: The environment is being created.</p> </li>   <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>   <li> <p> <code>error</code>: The environment is in an error state.</p> </li>   <li> <p> <code>ready</code>: The environment is ready.</p> </li>   <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>   <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>  </ul>
-    ///   - [`message(Option<String>)`](crate::output::DescribeEnvironmentStatusOutput::message): <p>Any informational message about the status of the environment.</p>
-    /// - On failure, responds with [`SdkError<DescribeEnvironmentStatusError>`](crate::error::DescribeEnvironmentStatusError)
-    pub fn describe_environment_status(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEnvironmentStatus {
-        crate::client::fluent_builders::DescribeEnvironmentStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of environments to get identifiers for.</p>
-    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    ///   - [`environment_ids(Option<Vec<String>>)`](crate::output::ListEnvironmentsOutput::environment_ids): <p>The list of environment identifiers.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
-    pub fn list_environments(&self) -> crate::client::fluent_builders::ListEnvironments {
-        crate::client::fluent_builders::ListEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the Cloud9 development environment.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tags to add to the given Cloud9 development environment.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag names of the tags to remove from the given Cloud9 development environment.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The ID of the environment to change settings.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_name): <p>A replacement name for the environment.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_description): <p>Any new or replacement description for the environment.</p>
-    ///   - [`managed_credentials_action(ManagedCredentialsAction)`](crate::client::fluent_builders::UpdateEnvironment::managed_credentials_action) / [`set_managed_credentials_action(Option<ManagedCredentialsAction>)`](crate::client::fluent_builders::UpdateEnvironment::set_managed_credentials_action): <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:</p>  <ul>   <li> <p> <code>ENABLE</code> </p> </li>   <li> <p> <code>DISABLE</code> </p> </li>  </ul> <note>   <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.</p>  </note>
-    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
-    pub fn update_environment(&self) -> crate::client::fluent_builders::UpdateEnvironment {
-        crate::client::fluent_builders::UpdateEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateEnvironmentMembership`](crate::client::fluent_builders::UpdateEnvironmentMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentMembership::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentMembership::set_environment_id): <p>The ID of the environment for the environment member whose settings you want to change.</p>
-    ///   - [`user_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironmentMembership::user_arn) / [`set_user_arn(Option<String>)`](crate::client::fluent_builders::UpdateEnvironmentMembership::set_user_arn): <p>The Amazon Resource Name (ARN) of the environment member whose settings you want to change.</p>
-    ///   - [`permissions(MemberPermissions)`](crate::client::fluent_builders::UpdateEnvironmentMembership::permissions) / [`set_permissions(Option<MemberPermissions>)`](crate::client::fluent_builders::UpdateEnvironmentMembership::set_permissions): <p>The replacement type of environment member permissions you want to associate with this environment member. Available values include:</p>  <ul>   <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>   <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>  </ul>
-    /// - On success, responds with [`UpdateEnvironmentMembershipOutput`](crate::output::UpdateEnvironmentMembershipOutput) with field(s):
-    ///   - [`membership(Option<EnvironmentMember>)`](crate::output::UpdateEnvironmentMembershipOutput::membership): <p>Information about the environment member whose settings were changed.</p>
-    /// - On failure, responds with [`SdkError<UpdateEnvironmentMembershipError>`](crate::error::UpdateEnvironmentMembershipError)
-    pub fn update_environment_membership(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateEnvironmentMembership {
-        crate::client::fluent_builders::UpdateEnvironmentMembership::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -346,9 +174,35 @@ impl Client {
     }
 }
 
+mod create_environment_ec2;
+
+mod create_environment_membership;
+
+mod delete_environment;
+
+mod delete_environment_membership;
+
+mod describe_environment_memberships;
+
+mod describe_environment_status;
+
+mod describe_environments;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_environments;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_environment;
+
+mod update_environment_membership;

@@ -90,7 +90,8 @@ impl DescribeJobLogItemsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_job_log_items_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_job_log_items_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl DescribeJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,10 @@ impl DescribeRecoveryInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_recovery_instances_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_recovery_instances_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +449,10 @@ impl DescribeRecoverySnapshotsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_recovery_snapshots_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_recovery_snapshots_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -566,7 +574,7 @@ impl DescribeReplicationConfigurationTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_configuration_templates_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_replication_configuration_templates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -684,7 +692,10 @@ impl DescribeSourceServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_source_servers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_source_servers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -802,7 +813,7 @@ impl ListExtensibleSourceServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_extensible_source_servers_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_extensible_source_servers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -920,7 +931,8 @@ impl ListStagingAccountsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_staging_accounts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_staging_accounts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -967,7 +979,7 @@ impl DescribeJobLogItemsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_job_log_items_output_items(page)
+            crate::lens::lens_describe_job_log_items_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -994,7 +1006,7 @@ impl DescribeJobsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_jobs_output_items(page)
+            crate::lens::lens_describe_jobs_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1021,7 +1033,7 @@ impl DescribeRecoveryInstancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_recovery_instances_output_items(page)
+            crate::lens::lens_describe_recovery_instances_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1048,7 +1060,7 @@ impl DescribeRecoverySnapshotsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_recovery_snapshots_output_items(page)
+            crate::lens::lens_describe_recovery_snapshots_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1078,7 +1090,11 @@ impl DescribeReplicationConfigurationTemplatesPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_replication_configuration_templates_output_items(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_replication_configuration_templates_output_items(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1102,7 +1118,7 @@ impl DescribeSourceServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_source_servers_output_items(page)
+            crate::lens::lens_describe_source_servers_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1129,11 +1145,9 @@ impl ListExtensibleSourceServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_extensible_source_servers_output_items(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_extensible_source_servers_output_items(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1158,7 +1172,7 @@ impl ListStagingAccountsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_staging_accounts_output_accounts(page)
+            crate::lens::lens_list_staging_accounts_output_accounts(page)
                 .unwrap_or_default()
                 .into_iter()
         })

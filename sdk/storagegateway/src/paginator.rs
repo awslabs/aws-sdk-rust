@@ -90,7 +90,8 @@ impl DescribeTapeArchivesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_tape_archives_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_tape_archives_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -208,7 +209,10 @@ impl DescribeTapeRecoveryPointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_tape_recovery_points_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_tape_recovery_points_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -326,7 +330,7 @@ impl DescribeTapesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_tapes_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_tapes_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -444,7 +448,8 @@ impl DescribeVtlDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_vtl_devices_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_vtl_devices_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -562,7 +567,8 @@ impl ListFileSharesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_file_shares_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_file_shares_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -680,7 +686,7 @@ impl ListFileSystemAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_file_system_associations_output_next_marker(resp);
+                            let new_token = crate::lens::reflens_list_file_system_associations_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -798,7 +804,7 @@ impl ListGatewaysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_gateways_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_gateways_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -916,7 +922,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1034,7 +1041,8 @@ impl ListTapePoolsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tape_pools_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tape_pools_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1152,7 +1160,7 @@ impl ListTapesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tapes_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_tapes_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1270,7 +1278,7 @@ impl ListVolumesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_volumes_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_volumes_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1317,11 +1325,9 @@ impl DescribeTapeArchivesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_tape_archives_output_tape_archives(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_tape_archives_output_tape_archives(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1345,7 +1351,11 @@ impl DescribeTapeRecoveryPointsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeTapeRecoveryPointsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_tape_recovery_points_output_tape_recovery_point_infos(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_tape_recovery_points_output_tape_recovery_point_infos(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1369,7 +1379,7 @@ impl DescribeTapesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_tapes_output_tapes(page)
+            crate::lens::lens_describe_tapes_output_tapes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1396,7 +1406,7 @@ impl DescribeVtlDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_vtl_devices_output_vtl_devices(page)
+            crate::lens::lens_describe_vtl_devices_output_vtl_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1423,11 +1433,9 @@ impl ListFileSharesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_file_shares_output_file_share_info_list(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_file_shares_output_file_share_info_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1451,7 +1459,7 @@ impl ListFileSystemAssociationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListFileSystemAssociationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_file_system_associations_output_file_system_association_summary_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_file_system_associations_output_file_system_association_summary_list(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1475,7 +1483,7 @@ impl ListGatewaysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_gateways_output_gateways(page)
+            crate::lens::lens_list_gateways_output_gateways(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1502,7 +1510,7 @@ impl ListTagsForResourcePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+            crate::lens::lens_list_tags_for_resource_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1529,7 +1537,7 @@ impl ListTapePoolsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tape_pools_output_pool_infos(page)
+            crate::lens::lens_list_tape_pools_output_pool_infos(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1556,7 +1564,7 @@ impl ListTapesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tapes_output_tape_infos(page)
+            crate::lens::lens_list_tapes_output_tape_infos(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1583,7 +1591,7 @@ impl ListVolumesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_volumes_output_volume_infos(page)
+            crate::lens::lens_list_volumes_output_volume_infos(page)
                 .unwrap_or_default()
                 .into_iter()
         })

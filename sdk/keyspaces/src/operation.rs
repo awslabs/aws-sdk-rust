@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeyspace {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_keyspace_error(response)
+            crate::protocol_serde::shape_create_keyspace::de_create_keyspace_http_error(response)
         } else {
-            crate::operation_deser::parse_create_keyspace_response(response)
+            crate::protocol_serde::shape_create_keyspace::de_create_keyspace_http_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTable {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_table_error(response)
+            crate::protocol_serde::shape_create_table::de_create_table_http_error(response)
         } else {
-            crate::operation_deser::parse_create_table_response(response)
+            crate::protocol_serde::shape_create_table::de_create_table_http_response(response)
         }
     }
 }
@@ -91,9 +91,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_keyspace_error(response)
+            crate::protocol_serde::shape_delete_keyspace::de_delete_keyspace_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_keyspace_response(response)
+            crate::protocol_serde::shape_delete_keyspace::de_delete_keyspace_http_response(response)
         }
     }
 }
@@ -124,9 +124,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTable {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_table_error(response)
+            crate::protocol_serde::shape_delete_table::de_delete_table_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_table_response(response)
+            crate::protocol_serde::shape_delete_table::de_delete_table_http_response(response)
         }
     }
 }
@@ -157,9 +157,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyspace {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_keyspace_error(response)
+            crate::protocol_serde::shape_get_keyspace::de_get_keyspace_http_error(response)
         } else {
-            crate::operation_deser::parse_get_keyspace_response(response)
+            crate::protocol_serde::shape_get_keyspace::de_get_keyspace_http_response(response)
         }
     }
 }
@@ -189,9 +189,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTable {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_table_error(response)
+            crate::protocol_serde::shape_get_table::de_get_table_http_error(response)
         } else {
-            crate::operation_deser::parse_get_table_response(response)
+            crate::protocol_serde::shape_get_table::de_get_table_http_response(response)
         }
     }
 }
@@ -222,9 +222,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyspaces {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_keyspaces_error(response)
+            crate::protocol_serde::shape_list_keyspaces::de_list_keyspaces_http_error(response)
         } else {
-            crate::operation_deser::parse_list_keyspaces_response(response)
+            crate::protocol_serde::shape_list_keyspaces::de_list_keyspaces_http_response(response)
         }
     }
 }
@@ -255,9 +255,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tables_error(response)
+            crate::protocol_serde::shape_list_tables::de_list_tables_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tables_response(response)
+            crate::protocol_serde::shape_list_tables::de_list_tables_http_response(response)
         }
     }
 }
@@ -290,9 +290,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -323,9 +323,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreTable {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_table_error(response)
+            crate::protocol_serde::shape_restore_table::de_restore_table_http_error(response)
         } else {
-            crate::operation_deser::parse_restore_table_response(response)
+            crate::protocol_serde::shape_restore_table::de_restore_table_http_response(response)
         }
     }
 }
@@ -356,9 +356,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -389,9 +389,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -422,9 +422,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTable {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_table_error(response)
+            crate::protocol_serde::shape_update_table::de_update_table_http_error(response)
         } else {
-            crate::operation_deser::parse_update_table_response(response)
+            crate::protocol_serde::shape_update_table::de_update_table_http_response(response)
         }
     }
 }

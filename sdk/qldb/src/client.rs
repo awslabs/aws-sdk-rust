@@ -89,286 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CancelJournalKinesisStream`](crate::client::fluent_builders::CancelJournalKinesisStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ledger_name(impl Into<String>)`](crate::client::fluent_builders::CancelJournalKinesisStream::ledger_name) / [`set_ledger_name(Option<String>)`](crate::client::fluent_builders::CancelJournalKinesisStream::set_ledger_name): <p>The name of the ledger.</p>
-    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::CancelJournalKinesisStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::CancelJournalKinesisStream::set_stream_id): <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
-    /// - On success, responds with [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::output::CancelJournalKinesisStreamOutput::stream_id): <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
-    /// - On failure, responds with [`SdkError<CancelJournalKinesisStreamError>`](crate::error::CancelJournalKinesisStreamError)
-    pub fn cancel_journal_kinesis_stream(
-        &self,
-    ) -> crate::client::fluent_builders::CancelJournalKinesisStream {
-        crate::client::fluent_builders::CancelJournalKinesisStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLedger`](crate::client::fluent_builders::CreateLedger) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateLedger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateLedger::set_name): <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p>  <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
-    ///   - [`tags(HashMap<String, Option<String>>)`](crate::client::fluent_builders::CreateLedger::tags) / [`set_tags(Option<HashMap<String, Option<String>>>)`](crate::client::fluent_builders::CreateLedger::set_tags): <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    ///   - [`permissions_mode(PermissionsMode)`](crate::client::fluent_builders::CreateLedger::permissions_mode) / [`set_permissions_mode(Option<PermissionsMode>)`](crate::client::fluent_builders::CreateLedger::set_permissions_mode): <p>The permissions mode to assign to the ledger that you want to create. This parameter can have one of the following values:</p>  <ul>   <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>   <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>  </ul> <note>   <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>  </note>
-    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::CreateLedger::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::CreateLedger::set_deletion_protection): <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::CreateLedger::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::CreateLedger::set_kms_key): <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>  <p>Use one of the following options to specify this parameter:</p>  <ul>   <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>   <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>   <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>  </ul>  <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>  <p>For example:</p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateLedgerOutput`](crate::output::CreateLedgerOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::CreateLedgerOutput::name): <p>The name of the ledger.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateLedgerOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    ///   - [`state(Option<LedgerState>)`](crate::output::CreateLedgerOutput::state): <p>The current status of the ledger.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateLedgerOutput::creation_date_time): <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    ///   - [`permissions_mode(Option<PermissionsMode>)`](crate::output::CreateLedgerOutput::permissions_mode): <p>The permissions mode of the ledger that you created.</p>
-    ///   - [`deletion_protection(Option<bool>)`](crate::output::CreateLedgerOutput::deletion_protection): <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    ///   - [`kms_key_arn(Option<String>)`](crate::output::CreateLedgerOutput::kms_key_arn): <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    /// - On failure, responds with [`SdkError<CreateLedgerError>`](crate::error::CreateLedgerError)
-    pub fn create_ledger(&self) -> crate::client::fluent_builders::CreateLedger {
-        crate::client::fluent_builders::CreateLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLedger`](crate::client::fluent_builders::DeleteLedger) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteLedger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteLedger::set_name): <p>The name of the ledger that you want to delete.</p>
-    /// - On success, responds with [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLedgerError>`](crate::error::DeleteLedgerError)
-    pub fn delete_ledger(&self) -> crate::client::fluent_builders::DeleteLedger {
-        crate::client::fluent_builders::DeleteLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJournalKinesisStream`](crate::client::fluent_builders::DescribeJournalKinesisStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ledger_name(impl Into<String>)`](crate::client::fluent_builders::DescribeJournalKinesisStream::ledger_name) / [`set_ledger_name(Option<String>)`](crate::client::fluent_builders::DescribeJournalKinesisStream::set_ledger_name): <p>The name of the ledger.</p>
-    ///   - [`stream_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJournalKinesisStream::stream_id) / [`set_stream_id(Option<String>)`](crate::client::fluent_builders::DescribeJournalKinesisStream::set_stream_id): <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.</p>
-    /// - On success, responds with [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput) with field(s):
-    ///   - [`stream(Option<JournalKinesisStreamDescription>)`](crate::output::DescribeJournalKinesisStreamOutput::stream): <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
-    /// - On failure, responds with [`SdkError<DescribeJournalKinesisStreamError>`](crate::error::DescribeJournalKinesisStreamError)
-    pub fn describe_journal_kinesis_stream(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeJournalKinesisStream {
-        crate::client::fluent_builders::DescribeJournalKinesisStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJournalS3Export`](crate::client::fluent_builders::DescribeJournalS3Export) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeJournalS3Export::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeJournalS3Export::set_name): <p>The name of the ledger.</p>
-    ///   - [`export_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJournalS3Export::export_id) / [`set_export_id(Option<String>)`](crate::client::fluent_builders::DescribeJournalS3Export::set_export_id): <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
-    /// - On success, responds with [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput) with field(s):
-    ///   - [`export_description(Option<JournalS3ExportDescription>)`](crate::output::DescribeJournalS3ExportOutput::export_description): <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
-    /// - On failure, responds with [`SdkError<DescribeJournalS3ExportError>`](crate::error::DescribeJournalS3ExportError)
-    pub fn describe_journal_s3_export(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeJournalS3Export {
-        crate::client::fluent_builders::DescribeJournalS3Export::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLedger`](crate::client::fluent_builders::DescribeLedger) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeLedger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeLedger::set_name): <p>The name of the ledger that you want to describe.</p>
-    /// - On success, responds with [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::DescribeLedgerOutput::name): <p>The name of the ledger.</p>
-    ///   - [`arn(Option<String>)`](crate::output::DescribeLedgerOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    ///   - [`state(Option<LedgerState>)`](crate::output::DescribeLedgerOutput::state): <p>The current status of the ledger.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeLedgerOutput::creation_date_time): <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    ///   - [`permissions_mode(Option<PermissionsMode>)`](crate::output::DescribeLedgerOutput::permissions_mode): <p>The permissions mode of the ledger.</p>
-    ///   - [`deletion_protection(Option<bool>)`](crate::output::DescribeLedgerOutput::deletion_protection): <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    ///   - [`encryption_description(Option<LedgerEncryptionDescription>)`](crate::output::DescribeLedgerOutput::encryption_description): <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    /// - On failure, responds with [`SdkError<DescribeLedgerError>`](crate::error::DescribeLedgerError)
-    pub fn describe_ledger(&self) -> crate::client::fluent_builders::DescribeLedger {
-        crate::client::fluent_builders::DescribeLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExportJournalToS3`](crate::client::fluent_builders::ExportJournalToS3) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ExportJournalToS3::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ExportJournalToS3::set_name): <p>The name of the ledger.</p>
-    ///   - [`inclusive_start_time(DateTime)`](crate::client::fluent_builders::ExportJournalToS3::inclusive_start_time) / [`set_inclusive_start_time(Option<DateTime>)`](crate::client::fluent_builders::ExportJournalToS3::set_inclusive_start_time): <p>The inclusive start date and time for the range of journal contents to export.</p>  <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>  <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>  <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
-    ///   - [`exclusive_end_time(DateTime)`](crate::client::fluent_builders::ExportJournalToS3::exclusive_end_time) / [`set_exclusive_end_time(Option<DateTime>)`](crate::client::fluent_builders::ExportJournalToS3::set_exclusive_end_time): <p>The exclusive end date and time for the range of journal contents to export.</p>  <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>  <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
-    ///   - [`s3_export_configuration(S3ExportConfiguration)`](crate::client::fluent_builders::ExportJournalToS3::s3_export_configuration) / [`set_s3_export_configuration(Option<S3ExportConfiguration>)`](crate::client::fluent_builders::ExportJournalToS3::set_s3_export_configuration): <p>The configuration settings of the Amazon S3 bucket destination for your export request.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::ExportJournalToS3::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::ExportJournalToS3::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>  <ul>   <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>   <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>  </ul>  <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
-    ///   - [`output_format(OutputFormat)`](crate::client::fluent_builders::ExportJournalToS3::output_format) / [`set_output_format(Option<OutputFormat>)`](crate::client::fluent_builders::ExportJournalToS3::set_output_format): <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
-    /// - On success, responds with [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output) with field(s):
-    ///   - [`export_id(Option<String>)`](crate::output::ExportJournalToS3Output::export_id): <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>  <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
-    /// - On failure, responds with [`SdkError<ExportJournalToS3Error>`](crate::error::ExportJournalToS3Error)
-    pub fn export_journal_to_s3(&self) -> crate::client::fluent_builders::ExportJournalToS3 {
-        crate::client::fluent_builders::ExportJournalToS3::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBlock`](crate::client::fluent_builders::GetBlock) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetBlock::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetBlock::set_name): <p>The name of the ledger.</p>
-    ///   - [`block_address(ValueHolder)`](crate::client::fluent_builders::GetBlock::block_address) / [`set_block_address(Option<ValueHolder>)`](crate::client::fluent_builders::GetBlock::set_block_address): <p>The location of the block that you want to request. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>  <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    ///   - [`digest_tip_address(ValueHolder)`](crate::client::fluent_builders::GetBlock::digest_tip_address) / [`set_digest_tip_address(Option<ValueHolder>)`](crate::client::fluent_builders::GetBlock::set_digest_tip_address): <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>  <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    /// - On success, responds with [`GetBlockOutput`](crate::output::GetBlockOutput) with field(s):
-    ///   - [`block(Option<ValueHolder>)`](crate::output::GetBlockOutput::block): <p>The block data object in Amazon Ion format.</p>
-    ///   - [`proof(Option<ValueHolder>)`](crate::output::GetBlockOutput::proof): <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
-    /// - On failure, responds with [`SdkError<GetBlockError>`](crate::error::GetBlockError)
-    pub fn get_block(&self) -> crate::client::fluent_builders::GetBlock {
-        crate::client::fluent_builders::GetBlock::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDigest`](crate::client::fluent_builders::GetDigest) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetDigest::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetDigest::set_name): <p>The name of the ledger.</p>
-    /// - On success, responds with [`GetDigestOutput`](crate::output::GetDigestOutput) with field(s):
-    ///   - [`digest(Option<Blob>)`](crate::output::GetDigestOutput::digest): <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
-    ///   - [`digest_tip_address(Option<ValueHolder>)`](crate::output::GetDigestOutput::digest_tip_address): <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
-    /// - On failure, responds with [`SdkError<GetDigestError>`](crate::error::GetDigestError)
-    pub fn get_digest(&self) -> crate::client::fluent_builders::GetDigest {
-        crate::client::fluent_builders::GetDigest::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRevision`](crate::client::fluent_builders::GetRevision) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRevision::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRevision::set_name): <p>The name of the ledger.</p>
-    ///   - [`block_address(ValueHolder)`](crate::client::fluent_builders::GetRevision::block_address) / [`set_block_address(Option<ValueHolder>)`](crate::client::fluent_builders::GetRevision::set_block_address): <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>  <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    ///   - [`document_id(impl Into<String>)`](crate::client::fluent_builders::GetRevision::document_id) / [`set_document_id(Option<String>)`](crate::client::fluent_builders::GetRevision::set_document_id): <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
-    ///   - [`digest_tip_address(ValueHolder)`](crate::client::fluent_builders::GetRevision::digest_tip_address) / [`set_digest_tip_address(Option<ValueHolder>)`](crate::client::fluent_builders::GetRevision::set_digest_tip_address): <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>  <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    /// - On success, responds with [`GetRevisionOutput`](crate::output::GetRevisionOutput) with field(s):
-    ///   - [`proof(Option<ValueHolder>)`](crate::output::GetRevisionOutput::proof): <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
-    ///   - [`revision(Option<ValueHolder>)`](crate::output::GetRevisionOutput::revision): <p>The document revision data object in Amazon Ion format.</p>
-    /// - On failure, responds with [`SdkError<GetRevisionError>`](crate::error::GetRevisionError)
-    pub fn get_revision(&self) -> crate::client::fluent_builders::GetRevision {
-        crate::client::fluent_builders::GetRevision::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListJournalKinesisStreamsForLedger`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ledger_name(impl Into<String>)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::ledger_name) / [`set_ledger_name(Option<String>)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::set_ledger_name): <p>The name of the ledger.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::set_max_results): <p>The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::set_next_token): <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.</p>
-    /// - On success, responds with [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput) with field(s):
-    ///   - [`streams(Option<Vec<JournalKinesisStreamDescription>>)`](crate::output::ListJournalKinesisStreamsForLedgerOutput::streams): <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListJournalKinesisStreamsForLedgerOutput::next_token): <ul>   <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<ListJournalKinesisStreamsForLedgerError>`](crate::error::ListJournalKinesisStreamsForLedgerError)
-    pub fn list_journal_kinesis_streams_for_ledger(
-        &self,
-    ) -> crate::client::fluent_builders::ListJournalKinesisStreamsForLedger {
-        crate::client::fluent_builders::ListJournalKinesisStreamsForLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListJournalS3Exports`](crate::client::fluent_builders::ListJournalS3Exports) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJournalS3Exports::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJournalS3Exports::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJournalS3Exports::set_max_results): <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJournalS3Exports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJournalS3Exports::set_next_token): <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
-    /// - On success, responds with [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput) with field(s):
-    ///   - [`journal_s3_exports(Option<Vec<JournalS3ExportDescription>>)`](crate::output::ListJournalS3ExportsOutput::journal_s3_exports): <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListJournalS3ExportsOutput::next_token): <ul>   <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<ListJournalS3ExportsError>`](crate::error::ListJournalS3ExportsError)
-    pub fn list_journal_s3_exports(&self) -> crate::client::fluent_builders::ListJournalS3Exports {
-        crate::client::fluent_builders::ListJournalS3Exports::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListJournalS3ExportsForLedger`](crate::client::fluent_builders::ListJournalS3ExportsForLedger) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::set_name): <p>The name of the ledger.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::set_max_results): <p>The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJournalS3ExportsForLedger::set_next_token): <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.</p>
-    /// - On success, responds with [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput) with field(s):
-    ///   - [`journal_s3_exports(Option<Vec<JournalS3ExportDescription>>)`](crate::output::ListJournalS3ExportsForLedgerOutput::journal_s3_exports): <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListJournalS3ExportsForLedgerOutput::next_token): <ul>   <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<ListJournalS3ExportsForLedgerError>`](crate::error::ListJournalS3ExportsForLedgerError)
-    pub fn list_journal_s3_exports_for_ledger(
-        &self,
-    ) -> crate::client::fluent_builders::ListJournalS3ExportsForLedger {
-        crate::client::fluent_builders::ListJournalS3ExportsForLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLedgers`](crate::client::fluent_builders::ListLedgers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLedgers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLedgers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLedgers::set_max_results): <p>The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLedgers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLedgers::set_next_token): <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.</p>
-    /// - On success, responds with [`ListLedgersOutput`](crate::output::ListLedgersOutput) with field(s):
-    ///   - [`ledgers(Option<Vec<LedgerSummary>>)`](crate::output::ListLedgersOutput::ledgers): <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLedgersOutput::next_token): <p>A pagination token, indicating whether there are more results available:</p>  <ul>   <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>   <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<ListLedgersError>`](crate::error::ListLedgersError)
-    pub fn list_ledgers(&self) -> crate::client::fluent_builders::ListLedgers {
-        crate::client::fluent_builders::ListLedgers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>  <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, Option<String>>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are currently associated with the specified Amazon QLDB resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StreamJournalToKinesis`](crate::client::fluent_builders::StreamJournalToKinesis) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ledger_name(impl Into<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::ledger_name) / [`set_ledger_name(Option<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_ledger_name): <p>The name of the ledger.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>  <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
-    ///   - [`tags(HashMap<String, Option<String>>)`](crate::client::fluent_builders::StreamJournalToKinesis::tags) / [`set_tags(Option<HashMap<String, Option<String>>>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_tags): <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null.</p>
-    ///   - [`inclusive_start_time(DateTime)`](crate::client::fluent_builders::StreamJournalToKinesis::inclusive_start_time) / [`set_inclusive_start_time(Option<DateTime>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_inclusive_start_time): <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>  <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p>  <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
-    ///   - [`exclusive_end_time(DateTime)`](crate::client::fluent_builders::StreamJournalToKinesis::exclusive_end_time) / [`set_exclusive_end_time(Option<DateTime>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_exclusive_end_time): <p>The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream runs indefinitely until you cancel it.</p>  <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
-    ///   - [`kinesis_configuration(KinesisConfiguration)`](crate::client::fluent_builders::StreamJournalToKinesis::kinesis_configuration) / [`set_kinesis_configuration(Option<KinesisConfiguration>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_kinesis_configuration): <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::StreamJournalToKinesis::set_stream_name): <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p>  <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
-    /// - On success, responds with [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput) with field(s):
-    ///   - [`stream_id(Option<String>)`](crate::output::StreamJournalToKinesisOutput::stream_id): <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
-    /// - On failure, responds with [`SdkError<StreamJournalToKinesisError>`](crate::error::StreamJournalToKinesisError)
-    pub fn stream_journal_to_kinesis(
-        &self,
-    ) -> crate::client::fluent_builders::StreamJournalToKinesis {
-        crate::client::fluent_builders::StreamJournalToKinesis::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>  <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    ///   - [`tags(HashMap<String, Option<String>>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, Option<String>>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>  <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLedger`](crate::client::fluent_builders::UpdateLedger) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLedger::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLedger::set_name): <p>The name of the ledger.</p>
-    ///   - [`deletion_protection(bool)`](crate::client::fluent_builders::UpdateLedger::deletion_protection) / [`set_deletion_protection(Option<bool>)`](crate::client::fluent_builders::UpdateLedger::set_deletion_protection): <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    ///   - [`kms_key(impl Into<String>)`](crate::client::fluent_builders::UpdateLedger::kms_key) / [`set_kms_key(Option<String>)`](crate::client::fluent_builders::UpdateLedger::set_kms_key): <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>  <p>Use one of the following options to specify this parameter:</p>  <ul>   <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>   <li> <p> <b>Undefined</b>: Make no changes to the KMS key of the ledger.</p> </li>   <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>  </ul>  <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>  <p>For example:</p>  <ul>   <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>   <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>   <li> <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> </p> </li>  </ul>  <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// - On success, responds with [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::UpdateLedgerOutput::name): <p>The name of the ledger.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLedgerOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    ///   - [`state(Option<LedgerState>)`](crate::output::UpdateLedgerOutput::state): <p>The current status of the ledger.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::UpdateLedgerOutput::creation_date_time): <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    ///   - [`deletion_protection(Option<bool>)`](crate::output::UpdateLedgerOutput::deletion_protection): <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>  <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-    ///   - [`encryption_description(Option<LedgerEncryptionDescription>)`](crate::output::UpdateLedgerOutput::encryption_description): <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
-    /// - On failure, responds with [`SdkError<UpdateLedgerError>`](crate::error::UpdateLedgerError)
-    pub fn update_ledger(&self) -> crate::client::fluent_builders::UpdateLedger {
-        crate::client::fluent_builders::UpdateLedger::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLedgerPermissionsMode`](crate::client::fluent_builders::UpdateLedgerPermissionsMode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLedgerPermissionsMode::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLedgerPermissionsMode::set_name): <p>The name of the ledger.</p>
-    ///   - [`permissions_mode(PermissionsMode)`](crate::client::fluent_builders::UpdateLedgerPermissionsMode::permissions_mode) / [`set_permissions_mode(Option<PermissionsMode>)`](crate::client::fluent_builders::UpdateLedgerPermissionsMode::set_permissions_mode): <p>The permissions mode to assign to the ledger. This parameter can have one of the following values:</p>  <ul>   <li> <p> <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with API-level granularity for ledgers.</p> <p>This mode allows users who have the <code>SendCommand</code> API permission for this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode disregards any table-level or command-level IAM permissions policies that you create for the ledger.</p> </li>   <li> <p> <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that enables access control with finer granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this mode denies all user requests to run any PartiQL commands on any tables in this ledger. To allow PartiQL commands to run, you must create IAM permissions policies for specific table resources and PartiQL actions, in addition to the <code>SendCommand</code> API permission for the ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting started with the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </li>  </ul> <note>   <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize the security of your ledger data.</p>  </note>
-    /// - On success, responds with [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::UpdateLedgerPermissionsModeOutput::name): <p>The name of the ledger.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLedgerPermissionsModeOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    ///   - [`permissions_mode(Option<PermissionsMode>)`](crate::output::UpdateLedgerPermissionsModeOutput::permissions_mode): <p>The current permissions mode of the ledger.</p>
-    /// - On failure, responds with [`SdkError<UpdateLedgerPermissionsModeError>`](crate::error::UpdateLedgerPermissionsModeError)
-    pub fn update_ledger_permissions_mode(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLedgerPermissionsMode {
-        crate::client::fluent_builders::UpdateLedgerPermissionsMode::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -454,9 +174,49 @@ impl Client {
     }
 }
 
+mod cancel_journal_kinesis_stream;
+
+mod create_ledger;
+
+mod delete_ledger;
+
+mod describe_journal_kinesis_stream;
+
+mod describe_journal_s3_export;
+
+mod describe_ledger;
+
+mod export_journal_to_s3;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_block;
+
+mod get_digest;
+
+mod get_revision;
+
+mod list_journal_kinesis_streams_for_ledger;
+
+mod list_journal_s3_exports;
+
+mod list_journal_s3_exports_for_ledger;
+
+mod list_ledgers;
+
+mod list_tags_for_resource;
+
+mod stream_journal_to_kinesis;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_ledger;
+
+mod update_ledger_permissions_mode;

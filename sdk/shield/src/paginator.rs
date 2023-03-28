@@ -90,7 +90,8 @@ impl ListAttacksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attacks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attacks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -200,7 +201,8 @@ impl ListProtectionGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_protection_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_protection_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -318,7 +320,8 @@ impl ListProtectionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_protections_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_protections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -428,7 +431,7 @@ impl ListResourcesInProtectionGroupPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resources_in_protection_group_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resources_in_protection_group_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -475,7 +478,7 @@ impl ListAttacksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_attacks_output_attack_summaries(page)
+            crate::lens::lens_list_attacks_output_attack_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -502,7 +505,7 @@ impl ListProtectionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_protections_output_protections(page)
+            crate::lens::lens_list_protections_output_protections(page)
                 .unwrap_or_default()
                 .into_iter()
         })

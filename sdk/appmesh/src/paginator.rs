@@ -90,7 +90,8 @@ impl ListGatewayRoutesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_gateway_routes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_gateway_routes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListMeshesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_meshes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_meshes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListRoutesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_routes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_routes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,8 @@ impl ListVirtualGatewaysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_gateways_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +685,8 @@ impl ListVirtualNodesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_nodes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_nodes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +804,8 @@ impl ListVirtualRoutersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_routers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_routers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +923,8 @@ impl ListVirtualServicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_services_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_services_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -963,7 +971,7 @@ impl ListGatewayRoutesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_gateway_routes_output_gateway_routes(page)
+            crate::lens::lens_list_gateway_routes_output_gateway_routes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -990,7 +998,7 @@ impl ListMeshesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_meshes_output_meshes(page)
+            crate::lens::lens_list_meshes_output_meshes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1017,7 +1025,7 @@ impl ListRoutesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_routes_output_routes(page)
+            crate::lens::lens_list_routes_output_routes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1044,7 +1052,7 @@ impl ListTagsForResourcePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+            crate::lens::lens_list_tags_for_resource_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1071,11 +1079,9 @@ impl ListVirtualGatewaysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_virtual_gateways_output_virtual_gateways(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_virtual_gateways_output_virtual_gateways(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1100,7 +1106,7 @@ impl ListVirtualNodesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_virtual_nodes_output_virtual_nodes(page)
+            crate::lens::lens_list_virtual_nodes_output_virtual_nodes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1127,11 +1133,9 @@ impl ListVirtualRoutersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_virtual_routers_output_virtual_routers(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_virtual_routers_output_virtual_routers(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1156,11 +1160,9 @@ impl ListVirtualServicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_virtual_services_output_virtual_services(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_virtual_services_output_virtual_services(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

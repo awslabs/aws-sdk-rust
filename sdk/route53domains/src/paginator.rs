@@ -90,7 +90,8 @@ impl ListDomainsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_domains_output_next_page_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_domains_output_next_page_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -208,7 +209,8 @@ impl ListOperationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_operations_output_next_page_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_operations_output_next_page_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -326,7 +328,8 @@ impl ListPricesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_prices_output_next_page_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_prices_output_next_page_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -444,7 +447,8 @@ impl ViewBillingPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_view_billing_output_next_page_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_view_billing_output_next_page_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -491,7 +495,7 @@ impl ListDomainsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_domains_output_domains(page)
+            crate::lens::lens_list_domains_output_domains(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -518,7 +522,7 @@ impl ListOperationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_operations_output_operations(page)
+            crate::lens::lens_list_operations_output_operations(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -545,7 +549,7 @@ impl ListPricesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_prices_output_prices(page)
+            crate::lens::lens_list_prices_output_prices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -572,7 +576,7 @@ impl ViewBillingPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_view_billing_output_billing_records(page)
+            crate::lens::lens_view_billing_output_billing_records(page)
                 .unwrap_or_default()
                 .into_iter()
         })

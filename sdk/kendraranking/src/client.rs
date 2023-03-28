@@ -89,132 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateRescoreExecutionPlan`](crate::client::fluent_builders::CreateRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_name): <p>A name for the rescore execution plan.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_description): <p>A description for the rescore execution plan.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_capacity_units): <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_tags): <p>A list of key-value pairs that identify or categorize your rescore execution plan. You can also use tags to help control access to the rescore execution plan. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateRescoreExecutionPlan::set_client_token): <p>A token that you provide to identify the request to create a rescore execution plan. Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the same client token will create only one rescore execution plan.</p>
-    /// - On success, responds with [`CreateRescoreExecutionPlanOutput`](crate::output::CreateRescoreExecutionPlanOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    /// - On failure, responds with [`SdkError<CreateRescoreExecutionPlanError>`](crate::error::CreateRescoreExecutionPlanError)
-    pub fn create_rescore_execution_plan(
-        &self,
-    ) -> crate::client::fluent_builders::CreateRescoreExecutionPlan {
-        crate::client::fluent_builders::CreateRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRescoreExecutionPlan`](crate::client::fluent_builders::DeleteRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to delete.</p>
-    /// - On success, responds with [`DeleteRescoreExecutionPlanOutput`](crate::output::DeleteRescoreExecutionPlanOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRescoreExecutionPlanError>`](crate::error::DeleteRescoreExecutionPlanError)
-    pub fn delete_rescore_execution_plan(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteRescoreExecutionPlan {
-        crate::client::fluent_builders::DeleteRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRescoreExecutionPlan`](crate::client::fluent_builders::DescribeRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to get information on.</p>
-    /// - On success, responds with [`DescribeRescoreExecutionPlanOutput`](crate::output::DescribeRescoreExecutionPlanOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::id): <p>The identifier of the rescore execution plan.</p>
-    ///   - [`arn(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    ///   - [`name(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::name): <p>The name for the rescore execution plan.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::description): <p>The description for the rescore execution plan.</p>
-    ///   - [`capacity_units(Option<CapacityUnitsConfiguration>)`](crate::output::DescribeRescoreExecutionPlanOutput::capacity_units): <p>The capacity units set for the rescore execution plan. A capacity of zero indicates that the rescore execution plan is using the default capacity. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::output::DescribeRescoreExecutionPlanOutput::created_at): <p>The Unix timestamp of when the rescore execution plan was created.</p>
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::DescribeRescoreExecutionPlanOutput::updated_at): <p>The Unix timestamp of when the rescore execution plan was last updated.</p>
-    ///   - [`status(Option<RescoreExecutionPlanStatus>)`](crate::output::DescribeRescoreExecutionPlanOutput::status): <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    ///   - [`error_message(Option<String>)`](crate::output::DescribeRescoreExecutionPlanOutput::error_message): <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    /// - On failure, responds with [`SdkError<DescribeRescoreExecutionPlanError>`](crate::error::DescribeRescoreExecutionPlanError)
-    pub fn describe_rescore_execution_plan(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeRescoreExecutionPlan {
-        crate::client::fluent_builders::DescribeRescoreExecutionPlan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRescoreExecutionPlans`](crate::client::fluent_builders::ListRescoreExecutionPlans) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRescoreExecutionPlans::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::set_next_token): <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRescoreExecutionPlans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRescoreExecutionPlans::set_max_results): <p>The maximum number of rescore execution plans to return.</p>
-    /// - On success, responds with [`ListRescoreExecutionPlansOutput`](crate::output::ListRescoreExecutionPlansOutput) with field(s):
-    ///   - [`summary_items(Option<Vec<RescoreExecutionPlanSummary>>)`](crate::output::ListRescoreExecutionPlansOutput::summary_items): <p>An array of summary information for one or more rescore execution plans.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRescoreExecutionPlansOutput::next_token): <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
-    /// - On failure, responds with [`SdkError<ListRescoreExecutionPlansError>`](crate::error::ListRescoreExecutionPlansError)
-    pub fn list_rescore_execution_plans(
-        &self,
-    ) -> crate::client::fluent_builders::ListRescoreExecutionPlans {
-        crate::client::fluent_builders::ListRescoreExecutionPlans::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags associated with the rescore execution plan.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`Rescore`](crate::client::fluent_builders::Rescore) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`rescore_execution_plan_id(impl Into<String>)`](crate::client::fluent_builders::Rescore::rescore_execution_plan_id) / [`set_rescore_execution_plan_id(Option<String>)`](crate::client::fluent_builders::Rescore::set_rescore_execution_plan_id): <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    ///   - [`search_query(impl Into<String>)`](crate::client::fluent_builders::Rescore::search_query) / [`set_search_query(Option<String>)`](crate::client::fluent_builders::Rescore::set_search_query): <p>The input query from the search service.</p>
-    ///   - [`documents(Vec<Document>)`](crate::client::fluent_builders::Rescore::documents) / [`set_documents(Option<Vec<Document>>)`](crate::client::fluent_builders::Rescore::set_documents): <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
-    /// - On success, responds with [`RescoreOutput`](crate::output::RescoreOutput) with field(s):
-    ///   - [`rescore_id(Option<String>)`](crate::output::RescoreOutput::rescore_id): <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
-    ///   - [`result_items(Option<Vec<RescoreResultItem>>)`](crate::output::RescoreOutput::result_items): <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    /// - On failure, responds with [`SdkError<RescoreError>`](crate::error::RescoreError)
-    pub fn rescore(&self) -> crate::client::fluent_builders::Rescore {
-        crate::client::fluent_builders::Rescore::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to tag.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRescoreExecutionPlan`](crate::client::fluent_builders::UpdateRescoreExecutionPlan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_id): <p>The identifier of the rescore execution plan that you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_name): <p>A new name for the rescore execution plan.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_description): <p>A new description for the rescore execution plan.</p>
-    ///   - [`capacity_units(CapacityUnitsConfiguration)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::capacity_units) / [`set_capacity_units(Option<CapacityUnitsConfiguration>)`](crate::client::fluent_builders::UpdateRescoreExecutionPlan::set_capacity_units): <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    /// - On success, responds with [`UpdateRescoreExecutionPlanOutput`](crate::output::UpdateRescoreExecutionPlanOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRescoreExecutionPlanError>`](crate::error::UpdateRescoreExecutionPlanError)
-    pub fn update_rescore_execution_plan(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateRescoreExecutionPlan {
-        crate::client::fluent_builders::UpdateRescoreExecutionPlan::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -300,9 +174,27 @@ impl Client {
     }
 }
 
+mod create_rescore_execution_plan;
+
+mod delete_rescore_execution_plan;
+
+mod describe_rescore_execution_plan;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_rescore_execution_plans;
+
+mod list_tags_for_resource;
+
+mod rescore;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_rescore_execution_plan;

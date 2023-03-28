@@ -90,7 +90,8 @@ impl GetVehicleStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_vehicle_status_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_vehicle_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListCampaignsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_campaigns_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_campaigns_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -328,7 +330,7 @@ impl ListDecoderManifestNetworkInterfacesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_decoder_manifest_network_interfaces_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_decoder_manifest_network_interfaces_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -446,7 +448,8 @@ impl ListDecoderManifestsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_decoder_manifests_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_decoder_manifests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -564,7 +567,7 @@ impl ListDecoderManifestSignalsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_decoder_manifest_signals_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_decoder_manifest_signals_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -682,7 +685,8 @@ impl ListFleetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_fleets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_fleets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -800,7 +804,10 @@ impl ListFleetsForVehiclePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_fleets_for_vehicle_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_fleets_for_vehicle_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -918,7 +925,10 @@ impl ListModelManifestNodesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_model_manifest_nodes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_model_manifest_nodes_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1036,7 +1046,8 @@ impl ListModelManifestsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_model_manifests_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_model_manifests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1154,7 +1165,10 @@ impl ListSignalCatalogNodesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_signal_catalog_nodes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_signal_catalog_nodes_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1272,7 +1286,8 @@ impl ListSignalCatalogsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_signal_catalogs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_signal_catalogs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1390,7 +1405,8 @@ impl ListVehiclesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_vehicles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_vehicles_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1508,7 +1524,8 @@ impl ListVehiclesInFleetPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_vehicles_in_fleet_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_vehicles_in_fleet_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1555,7 +1572,7 @@ impl GetVehicleStatusPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_vehicle_status_output_campaigns(page)
+            crate::lens::lens_get_vehicle_status_output_campaigns(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1582,7 +1599,7 @@ impl ListCampaignsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_campaigns_output_campaign_summaries(page)
+            crate::lens::lens_list_campaigns_output_campaign_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1612,7 +1629,13 @@ impl ListDecoderManifestNetworkInterfacesPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_decoder_manifest_network_interfaces_output_network_interfaces(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_decoder_manifest_network_interfaces_output_network_interfaces(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -1636,7 +1659,7 @@ impl ListDecoderManifestsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_decoder_manifests_output_summaries(page)
+            crate::lens::lens_list_decoder_manifests_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1662,7 +1685,11 @@ impl ListDecoderManifestSignalsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListDecoderManifestSignalsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_decoder_manifest_signals_output_signal_decoders(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_decoder_manifest_signals_output_signal_decoders(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1686,7 +1713,7 @@ impl ListFleetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_fleets_output_fleet_summaries(page)
+            crate::lens::lens_list_fleets_output_fleet_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1713,7 +1740,7 @@ impl ListFleetsForVehiclePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_fleets_for_vehicle_output_fleets(page)
+            crate::lens::lens_list_fleets_for_vehicle_output_fleets(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1740,7 +1767,7 @@ impl ListModelManifestNodesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_model_manifest_nodes_output_nodes(page)
+            crate::lens::lens_list_model_manifest_nodes_output_nodes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1767,7 +1794,7 @@ impl ListModelManifestsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_model_manifests_output_summaries(page)
+            crate::lens::lens_list_model_manifests_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1794,7 +1821,7 @@ impl ListSignalCatalogNodesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_signal_catalog_nodes_output_nodes(page)
+            crate::lens::lens_list_signal_catalog_nodes_output_nodes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1821,7 +1848,7 @@ impl ListSignalCatalogsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_signal_catalogs_output_summaries(page)
+            crate::lens::lens_list_signal_catalogs_output_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1848,7 +1875,7 @@ impl ListVehiclesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_vehicles_output_vehicle_summaries(page)
+            crate::lens::lens_list_vehicles_output_vehicle_summaries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1875,7 +1902,7 @@ impl ListVehiclesInFleetPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_vehicles_in_fleet_output_vehicles(page)
+            crate::lens::lens_list_vehicles_in_fleet_output_vehicles(page)
                 .unwrap_or_default()
                 .into_iter()
         })

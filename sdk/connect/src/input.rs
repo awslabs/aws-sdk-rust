@@ -89,9 +89,7 @@ impl AssociateApprovedOriginInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_approved_origin(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_approved_origin::ser_associate_approved_origin_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -238,7 +236,7 @@ impl AssociateBotInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_bot(&self)?,
+            crate::protocol_serde::shape_associate_bot::ser_associate_bot_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -405,9 +403,7 @@ impl AssociateDefaultVocabularyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_default_vocabulary(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_default_vocabulary::ser_associate_default_vocabulary_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -554,7 +550,7 @@ impl AssociateInstanceStorageConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_instance_storage_config(&self)?
+            crate::protocol_serde::shape_associate_instance_storage_config::ser_associate_instance_storage_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -701,9 +697,7 @@ impl AssociateLambdaFunctionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_lambda_function(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_lambda_function::ser_associate_lambda_function_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -850,7 +844,7 @@ impl AssociateLexBotInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_lex_bot(&self)?,
+            crate::protocol_serde::shape_associate_lex_bot::ser_associate_lex_bot_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -997,7 +991,7 @@ impl AssociatePhoneNumberContactFlowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_phone_number_contact_flow(&self)?
+            crate::protocol_serde::shape_associate_phone_number_contact_flow::ser_associate_phone_number_contact_flow_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1164,7 +1158,7 @@ impl AssociateQueueQuickConnectsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_queue_quick_connects(&self)?
+            crate::protocol_serde::shape_associate_queue_quick_connects::ser_associate_queue_quick_connects_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1331,7 +1325,7 @@ impl AssociateRoutingProfileQueuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_routing_profile_queues(&self)?
+            crate::protocol_serde::shape_associate_routing_profile_queues::ser_associate_routing_profile_queues_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1478,7 +1472,7 @@ impl AssociateSecurityKeyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_security_key(
+            crate::protocol_serde::shape_associate_security_key::ser_associate_security_key_input(
                 &self,
             )?,
         );
@@ -1606,7 +1600,7 @@ impl ClaimPhoneNumberInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_claim_phone_number(&self)?,
+            crate::protocol_serde::shape_claim_phone_number::ser_claim_phone_number_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1753,7 +1747,7 @@ impl CreateAgentStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_agent_status(&self)?,
+            crate::protocol_serde::shape_create_agent_status::ser_create_agent_status_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1900,7 +1894,7 @@ impl CreateContactFlowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_contact_flow(&self)?,
+            crate::protocol_serde::shape_create_contact_flow::ser_create_contact_flow_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2050,9 +2044,7 @@ impl CreateContactFlowModuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_contact_flow_module(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_contact_flow_module::ser_create_contact_flow_module_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2199,9 +2191,7 @@ impl CreateHoursOfOperationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_hours_of_operation(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_hours_of_operation::ser_create_hours_of_operation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2324,7 +2314,7 @@ impl CreateInstanceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_instance(&self)?,
+            crate::protocol_serde::shape_create_instance::ser_create_instance_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2471,7 +2461,7 @@ impl CreateIntegrationAssociationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_integration_association(&self)?
+            crate::protocol_serde::shape_create_integration_association::ser_create_integration_association_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2614,7 +2604,7 @@ impl CreateQueueInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_queue(&self)?,
+            crate::protocol_serde::shape_create_queue::ser_create_queue_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2761,7 +2751,9 @@ impl CreateQuickConnectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_quick_connect(&self)?,
+            crate::protocol_serde::shape_create_quick_connect::ser_create_quick_connect_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2908,7 +2900,7 @@ impl CreateRoutingProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_routing_profile(
+            crate::protocol_serde::shape_create_routing_profile::ser_create_routing_profile_input(
                 &self,
             )?,
         );
@@ -3056,7 +3048,7 @@ impl CreateRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_rule(&self)?,
+            crate::protocol_serde::shape_create_rule::ser_create_rule_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3203,9 +3195,7 @@ impl CreateSecurityProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_security_profile(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_security_profile::ser_create_security_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3355,7 +3345,9 @@ impl CreateTaskTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_task_template(&self)?,
+            crate::protocol_serde::shape_create_task_template::ser_create_task_template_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3481,7 +3473,7 @@ impl CreateTrafficDistributionGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_traffic_distribution_group(&self)?
+            crate::protocol_serde::shape_create_traffic_distribution_group::ser_create_traffic_distribution_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3642,7 +3634,7 @@ impl CreateUseCaseInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_use_case(&self)?,
+            crate::protocol_serde::shape_create_use_case::ser_create_use_case_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3785,7 +3777,7 @@ impl CreateUserInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?,
+            crate::protocol_serde::shape_create_user::ser_create_user_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3932,9 +3924,7 @@ impl CreateUserHierarchyGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_user_hierarchy_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_user_hierarchy_group::ser_create_user_hierarchy_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4080,7 +4070,7 @@ impl CreateVocabularyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_vocabulary(&self)?,
+            crate::protocol_serde::shape_create_vocabulary::ser_create_vocabulary_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -9337,7 +9327,7 @@ impl DisassociateBotInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_bot(&self)?,
+            crate::protocol_serde::shape_disassociate_bot::ser_disassociate_bot_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10169,7 +10159,7 @@ impl DisassociateQueueQuickConnectsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_queue_quick_connects(&self)?
+            crate::protocol_serde::shape_disassociate_queue_quick_connects::ser_disassociate_queue_quick_connects_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10336,7 +10326,7 @@ impl DisassociateRoutingProfileQueuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_routing_profile_queues(&self)?
+            crate::protocol_serde::shape_disassociate_routing_profile_queues::ser_disassociate_routing_profile_queues_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10656,7 +10646,9 @@ impl DismissUserContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_dismiss_user_contact(&self)?,
+            crate::protocol_serde::shape_dismiss_user_contact::ser_dismiss_user_contact_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10956,9 +10948,7 @@ impl GetCurrentMetricDataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_current_metric_data(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_current_metric_data::ser_get_current_metric_data_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11105,7 +11095,9 @@ impl GetCurrentUserDataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_current_user_data(&self)?,
+            crate::protocol_serde::shape_get_current_user_data::ser_get_current_user_data_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11385,7 +11377,7 @@ impl GetMetricDataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_data(&self)?,
+            crate::protocol_serde::shape_get_metric_data::ser_get_metric_data_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12810,9 +12802,7 @@ impl ListDefaultVocabulariesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_default_vocabularies(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_default_vocabularies::ser_list_default_vocabularies_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -14178,7 +14168,9 @@ impl ListPhoneNumbersV2Input {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_phone_numbers_v2(&self)?,
+            crate::protocol_serde::shape_list_phone_numbers_v2::ser_list_phone_numbers_v2_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -16835,7 +16827,7 @@ impl MonitorContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_monitor_contact(&self)?,
+            crate::protocol_serde::shape_monitor_contact::ser_monitor_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17002,7 +16994,7 @@ impl PutUserStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_user_status(&self)?,
+            crate::protocol_serde::shape_put_user_status::ser_put_user_status_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17304,7 +17296,7 @@ impl ReplicateInstanceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_replicate_instance(&self)?,
+            crate::protocol_serde::shape_replicate_instance::ser_replicate_instance_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17427,9 +17419,7 @@ impl ResumeContactRecordingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_resume_contact_recording(
-                &self,
-            )?,
+            crate::protocol_serde::shape_resume_contact_recording::ser_resume_contact_recording_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17553,7 +17543,7 @@ impl SearchAvailablePhoneNumbersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_available_phone_numbers(&self)?
+            crate::protocol_serde::shape_search_available_phone_numbers::ser_search_available_phone_numbers_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17676,7 +17666,7 @@ impl SearchQueuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_queues(&self)?,
+            crate::protocol_serde::shape_search_queues::ser_search_queues_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17799,9 +17789,7 @@ impl SearchRoutingProfilesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_routing_profiles(
-                &self,
-            )?,
+            crate::protocol_serde::shape_search_routing_profiles::ser_search_routing_profiles_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17924,9 +17912,7 @@ impl SearchSecurityProfilesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_security_profiles(
-                &self,
-            )?,
+            crate::protocol_serde::shape_search_security_profiles::ser_search_security_profiles_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18049,7 +18035,7 @@ impl SearchUsersInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_users(&self)?,
+            crate::protocol_serde::shape_search_users::ser_search_users_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18196,7 +18182,7 @@ impl SearchVocabulariesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_vocabularies(&self)?,
+            crate::protocol_serde::shape_search_vocabularies::ser_search_vocabularies_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18322,7 +18308,7 @@ impl StartChatContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_chat_contact(&self)?,
+            crate::protocol_serde::shape_start_chat_contact::ser_start_chat_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18445,9 +18431,7 @@ impl StartContactRecordingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_contact_recording(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_contact_recording::ser_start_contact_recording_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18573,9 +18557,7 @@ impl StartContactStreamingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_contact_streaming(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_contact_streaming::ser_start_contact_streaming_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18701,9 +18683,7 @@ impl StartOutboundVoiceContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_outbound_voice_contact(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_outbound_voice_contact::ser_start_outbound_voice_contact_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18829,7 +18809,7 @@ impl StartTaskContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_task_contact(&self)?,
+            crate::protocol_serde::shape_start_task_contact::ser_start_task_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18952,7 +18932,7 @@ impl StopContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_contact(&self)?,
+            crate::protocol_serde::shape_stop_contact::ser_stop_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -19075,7 +19055,7 @@ impl StopContactRecordingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_contact_recording(
+            crate::protocol_serde::shape_stop_contact_recording::ser_stop_contact_recording_input(
                 &self,
             )?,
         );
@@ -19200,7 +19180,7 @@ impl StopContactStreamingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_contact_streaming(
+            crate::protocol_serde::shape_stop_contact_streaming::ser_stop_contact_streaming_input(
                 &self,
             )?,
         );
@@ -19325,9 +19305,7 @@ impl SuspendContactRecordingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_suspend_contact_recording(
-                &self,
-            )?,
+            crate::protocol_serde::shape_suspend_contact_recording::ser_suspend_contact_recording_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -19470,7 +19448,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -19596,7 +19574,7 @@ impl TransferContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_transfer_contact(&self)?,
+            crate::protocol_serde::shape_transfer_contact::ser_transfer_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -19910,7 +19888,7 @@ impl UpdateAgentStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_agent_status(&self)?,
+            crate::protocol_serde::shape_update_agent_status::ser_update_agent_status_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20077,7 +20055,7 @@ impl UpdateContactInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact(&self)?,
+            crate::protocol_serde::shape_update_contact::ser_update_contact_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20200,9 +20178,7 @@ impl UpdateContactAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_attributes(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_contact_attributes::ser_update_contact_attributes_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20369,9 +20345,7 @@ impl UpdateContactFlowContentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_content(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_contact_flow_content::ser_update_contact_flow_content_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20538,9 +20512,7 @@ impl UpdateContactFlowMetadataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_metadata(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_contact_flow_metadata::ser_update_contact_flow_metadata_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20707,7 +20679,7 @@ impl UpdateContactFlowModuleContentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_module_content(&self)?
+            crate::protocol_serde::shape_update_contact_flow_module_content::ser_update_contact_flow_module_content_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -20874,7 +20846,7 @@ impl UpdateContactFlowModuleMetadataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_module_metadata(&self)?
+            crate::protocol_serde::shape_update_contact_flow_module_metadata::ser_update_contact_flow_module_metadata_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21041,9 +21013,7 @@ impl UpdateContactFlowNameInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_flow_name(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_contact_flow_name::ser_update_contact_flow_name_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21166,9 +21136,7 @@ impl UpdateContactScheduleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_contact_schedule(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_contact_schedule::ser_update_contact_schedule_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21335,9 +21303,7 @@ impl UpdateHoursOfOperationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_hours_of_operation(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_hours_of_operation::ser_update_hours_of_operation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21504,9 +21470,7 @@ impl UpdateInstanceAttributeInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_instance_attribute(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_instance_attribute::ser_update_instance_attribute_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21692,7 +21656,7 @@ impl UpdateInstanceStorageConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_instance_storage_config(&self)?
+            crate::protocol_serde::shape_update_instance_storage_config::ser_update_instance_storage_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -21859,7 +21823,7 @@ impl UpdateParticipantRoleConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_participant_role_config(&self)?
+            crate::protocol_serde::shape_update_participant_role_config::ser_update_participant_role_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22009,7 +21973,7 @@ impl UpdatePhoneNumberInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_phone_number(&self)?,
+            crate::protocol_serde::shape_update_phone_number::ser_update_phone_number_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22176,7 +22140,7 @@ impl UpdateQueueHoursOfOperationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_hours_of_operation(&self)?
+            crate::protocol_serde::shape_update_queue_hours_of_operation::ser_update_queue_hours_of_operation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22343,9 +22307,7 @@ impl UpdateQueueMaxContactsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_max_contacts(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_queue_max_contacts::ser_update_queue_max_contacts_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22512,7 +22474,7 @@ impl UpdateQueueNameInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_name(&self)?,
+            crate::protocol_serde::shape_update_queue_name::ser_update_queue_name_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22679,7 +22641,7 @@ impl UpdateQueueOutboundCallerConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_outbound_caller_config(&self)?
+            crate::protocol_serde::shape_update_queue_outbound_caller_config::ser_update_queue_outbound_caller_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22846,7 +22808,7 @@ impl UpdateQueueStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_queue_status(&self)?,
+            crate::protocol_serde::shape_update_queue_status::ser_update_queue_status_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23013,9 +22975,7 @@ impl UpdateQuickConnectConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_quick_connect_config(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_quick_connect_config::ser_update_quick_connect_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23182,9 +23142,7 @@ impl UpdateQuickConnectNameInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_quick_connect_name(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_quick_connect_name::ser_update_quick_connect_name_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23351,7 +23309,7 @@ impl UpdateRoutingProfileConcurrencyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_concurrency(&self)?
+            crate::protocol_serde::shape_update_routing_profile_concurrency::ser_update_routing_profile_concurrency_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23518,7 +23476,7 @@ impl UpdateRoutingProfileDefaultOutboundQueueInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_default_outbound_queue(&self)?
+            crate::protocol_serde::shape_update_routing_profile_default_outbound_queue::ser_update_routing_profile_default_outbound_queue_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23685,9 +23643,7 @@ impl UpdateRoutingProfileNameInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_name(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_routing_profile_name::ser_update_routing_profile_name_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -23854,7 +23810,7 @@ impl UpdateRoutingProfileQueuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_routing_profile_queues(&self)?
+            crate::protocol_serde::shape_update_routing_profile_queues::ser_update_routing_profile_queues_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24021,7 +23977,7 @@ impl UpdateRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_rule(&self)?,
+            crate::protocol_serde::shape_update_rule::ser_update_rule_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24188,9 +24144,7 @@ impl UpdateSecurityProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_security_profile(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_security_profile::ser_update_security_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24357,7 +24311,9 @@ impl UpdateTaskTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_task_template(&self)?,
+            crate::protocol_serde::shape_update_task_template::ser_update_task_template_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24500,9 +24456,7 @@ impl UpdateTrafficDistributionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_traffic_distribution(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_traffic_distribution::ser_update_traffic_distribution_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24669,7 +24623,9 @@ impl UpdateUserHierarchyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy(&self)?,
+            crate::protocol_serde::shape_update_user_hierarchy::ser_update_user_hierarchy_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24836,7 +24792,7 @@ impl UpdateUserHierarchyGroupNameInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_group_name(&self)?
+            crate::protocol_serde::shape_update_user_hierarchy_group_name::ser_update_user_hierarchy_group_name_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -24983,7 +24939,7 @@ impl UpdateUserHierarchyStructureInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_hierarchy_structure(&self)?
+            crate::protocol_serde::shape_update_user_hierarchy_structure::ser_update_user_hierarchy_structure_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -25150,9 +25106,7 @@ impl UpdateUserIdentityInfoInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_identity_info(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_user_identity_info::ser_update_user_identity_info_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -25319,9 +25273,7 @@ impl UpdateUserPhoneConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_phone_config(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_user_phone_config::ser_update_user_phone_config_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -25488,9 +25440,7 @@ impl UpdateUserRoutingProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_routing_profile(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_user_routing_profile::ser_update_user_routing_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -25657,7 +25607,7 @@ impl UpdateUserSecurityProfilesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user_security_profiles(&self)?
+            crate::protocol_serde::shape_update_user_security_profiles::ser_update_user_security_profiles_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

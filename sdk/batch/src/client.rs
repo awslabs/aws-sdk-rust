@@ -89,357 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CancelJob`](crate::client::fluent_builders::CancelJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::CancelJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::CancelJob::set_job_id): <p>The Batch job ID of the job to cancel.</p>
-    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::CancelJob::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::CancelJob::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
-    /// - On success, responds with [`CancelJobOutput`](crate::output::CancelJobOutput)
-
-    /// - On failure, responds with [`SdkError<CancelJobError>`](crate::error::CancelJobError)
-    pub fn cancel_job(&self) -> crate::client::fluent_builders::CancelJob {
-        crate::client::fluent_builders::CancelJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateComputeEnvironment`](crate::client::fluent_builders::CreateComputeEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`compute_environment_name(impl Into<String>)`](crate::client::fluent_builders::CreateComputeEnvironment::compute_environment_name) / [`set_compute_environment_name(Option<String>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_compute_environment_name): <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`r#type(CeType)`](crate::client::fluent_builders::CreateComputeEnvironment::type) / [`set_type(Option<CeType>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_type): <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    ///   - [`state(CeState)`](crate::client::fluent_builders::CreateComputeEnvironment::state) / [`set_state(Option<CeState>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_state): <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>  <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>  <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
-    ///   - [`unmanagedv_cpus(i32)`](crate::client::fluent_builders::CreateComputeEnvironment::unmanagedv_cpus) / [`set_unmanagedv_cpus(Option<i32>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_unmanagedv_cpus): <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p> <note>   <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>  </note>
-    ///   - [`compute_resources(ComputeResource)`](crate::client::fluent_builders::CreateComputeEnvironment::compute_resources) / [`set_compute_resources(Option<ComputeResource>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_compute_resources): <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::CreateComputeEnvironment::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_service_role): <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>   <p>If your account already created the Batch service-linked role, that role is used by default for your compute environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your account, and no role is specified here, the service attempts to create the Batch service-linked role in your account.</p>  </important>  <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>, specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p> <note>   <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>  </note>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateComputeEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_tags): <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>  <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
-    ///   - [`eks_configuration(EksConfiguration)`](crate::client::fluent_builders::CreateComputeEnvironment::eks_configuration) / [`set_eks_configuration(Option<EksConfiguration>)`](crate::client::fluent_builders::CreateComputeEnvironment::set_eks_configuration): <p>The details for the Amazon EKS cluster that supports the compute environment.</p>
-    /// - On success, responds with [`CreateComputeEnvironmentOutput`](crate::output::CreateComputeEnvironmentOutput) with field(s):
-    ///   - [`compute_environment_name(Option<String>)`](crate::output::CreateComputeEnvironmentOutput::compute_environment_name): <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`compute_environment_arn(Option<String>)`](crate::output::CreateComputeEnvironmentOutput::compute_environment_arn): <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    /// - On failure, responds with [`SdkError<CreateComputeEnvironmentError>`](crate::error::CreateComputeEnvironmentError)
-    pub fn create_compute_environment(
-        &self,
-    ) -> crate::client::fluent_builders::CreateComputeEnvironment {
-        crate::client::fluent_builders::CreateComputeEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateJobQueue`](crate::client::fluent_builders::CreateJobQueue) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_queue_name(impl Into<String>)`](crate::client::fluent_builders::CreateJobQueue::job_queue_name) / [`set_job_queue_name(Option<String>)`](crate::client::fluent_builders::CreateJobQueue::set_job_queue_name): <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`state(JqState)`](crate::client::fluent_builders::CreateJobQueue::state) / [`set_state(Option<JqState>)`](crate::client::fluent_builders::CreateJobQueue::set_state): <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    ///   - [`scheduling_policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateJobQueue::scheduling_policy_arn) / [`set_scheduling_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateJobQueue::set_scheduling_policy_arn): <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    ///   - [`priority(i32)`](crate::client::fluent_builders::CreateJobQueue::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::CreateJobQueue::set_priority): <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
-    ///   - [`compute_environment_order(Vec<ComputeEnvironmentOrder>)`](crate::client::fluent_builders::CreateJobQueue::compute_environment_order) / [`set_compute_environment_order(Option<Vec<ComputeEnvironmentOrder>>)`](crate::client::fluent_builders::CreateJobQueue::set_compute_environment_order): <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment runs a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>   <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>  </note>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateJobQueue::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateJobQueue::set_tags): <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
-    /// - On success, responds with [`CreateJobQueueOutput`](crate::output::CreateJobQueueOutput) with field(s):
-    ///   - [`job_queue_name(Option<String>)`](crate::output::CreateJobQueueOutput::job_queue_name): <p>The name of the job queue.</p>
-    ///   - [`job_queue_arn(Option<String>)`](crate::output::CreateJobQueueOutput::job_queue_arn): <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    /// - On failure, responds with [`SdkError<CreateJobQueueError>`](crate::error::CreateJobQueueError)
-    pub fn create_job_queue(&self) -> crate::client::fluent_builders::CreateJobQueue {
-        crate::client::fluent_builders::CreateJobQueue::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSchedulingPolicy`](crate::client::fluent_builders::CreateSchedulingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSchedulingPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSchedulingPolicy::set_name): <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`fairshare_policy(FairsharePolicy)`](crate::client::fluent_builders::CreateSchedulingPolicy::fairshare_policy) / [`set_fairshare_policy(Option<FairsharePolicy>)`](crate::client::fluent_builders::CreateSchedulingPolicy::set_fairshare_policy): <p>The fair share policy of the scheduling policy.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSchedulingPolicy::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSchedulingPolicy::set_tags): <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>  <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
-    /// - On success, responds with [`CreateSchedulingPolicyOutput`](crate::output::CreateSchedulingPolicyOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::CreateSchedulingPolicyOutput::name): <p>The name of the scheduling policy.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateSchedulingPolicyOutput::arn): <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateSchedulingPolicyError>`](crate::error::CreateSchedulingPolicyError)
-    pub fn create_scheduling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSchedulingPolicy {
-        crate::client::fluent_builders::CreateSchedulingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteComputeEnvironment`](crate::client::fluent_builders::DeleteComputeEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`compute_environment(impl Into<String>)`](crate::client::fluent_builders::DeleteComputeEnvironment::compute_environment) / [`set_compute_environment(Option<String>)`](crate::client::fluent_builders::DeleteComputeEnvironment::set_compute_environment): <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-    /// - On success, responds with [`DeleteComputeEnvironmentOutput`](crate::output::DeleteComputeEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteComputeEnvironmentError>`](crate::error::DeleteComputeEnvironmentError)
-    pub fn delete_compute_environment(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteComputeEnvironment {
-        crate::client::fluent_builders::DeleteComputeEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteJobQueue`](crate::client::fluent_builders::DeleteJobQueue) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_queue(impl Into<String>)`](crate::client::fluent_builders::DeleteJobQueue::job_queue) / [`set_job_queue(Option<String>)`](crate::client::fluent_builders::DeleteJobQueue::set_job_queue): <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
-    /// - On success, responds with [`DeleteJobQueueOutput`](crate::output::DeleteJobQueueOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteJobQueueError>`](crate::error::DeleteJobQueueError)
-    pub fn delete_job_queue(&self) -> crate::client::fluent_builders::DeleteJobQueue {
-        crate::client::fluent_builders::DeleteJobQueue::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSchedulingPolicy`](crate::client::fluent_builders::DeleteSchedulingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSchedulingPolicy::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteSchedulingPolicy::set_arn): <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
-    /// - On success, responds with [`DeleteSchedulingPolicyOutput`](crate::output::DeleteSchedulingPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSchedulingPolicyError>`](crate::error::DeleteSchedulingPolicyError)
-    pub fn delete_scheduling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteSchedulingPolicy {
-        crate::client::fluent_builders::DeleteSchedulingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeregisterJobDefinition`](crate::client::fluent_builders::DeregisterJobDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_definition(impl Into<String>)`](crate::client::fluent_builders::DeregisterJobDefinition::job_definition) / [`set_job_definition(Option<String>)`](crate::client::fluent_builders::DeregisterJobDefinition::set_job_definition): <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-    /// - On success, responds with [`DeregisterJobDefinitionOutput`](crate::output::DeregisterJobDefinitionOutput)
-
-    /// - On failure, responds with [`SdkError<DeregisterJobDefinitionError>`](crate::error::DeregisterJobDefinitionError)
-    pub fn deregister_job_definition(
-        &self,
-    ) -> crate::client::fluent_builders::DeregisterJobDefinition {
-        crate::client::fluent_builders::DeregisterJobDefinition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeComputeEnvironments`](crate::client::fluent_builders::DescribeComputeEnvironments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeComputeEnvironments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`compute_environments(Vec<String>)`](crate::client::fluent_builders::DescribeComputeEnvironments::compute_environments) / [`set_compute_environments(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeComputeEnvironments::set_compute_environments): <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeComputeEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeComputeEnvironments::set_max_results): <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeComputeEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeComputeEnvironments::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    /// - On success, responds with [`DescribeComputeEnvironmentsOutput`](crate::output::DescribeComputeEnvironmentsOutput) with field(s):
-    ///   - [`compute_environments(Option<Vec<ComputeEnvironmentDetail>>)`](crate::output::DescribeComputeEnvironmentsOutput::compute_environments): <p>The list of compute environments.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeComputeEnvironmentsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeComputeEnvironments</code> request. When the results of a <code>DescribeComputeEnvironments</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeComputeEnvironmentsError>`](crate::error::DescribeComputeEnvironmentsError)
-    pub fn describe_compute_environments(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeComputeEnvironments {
-        crate::client::fluent_builders::DescribeComputeEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobDefinitions`](crate::client::fluent_builders::DescribeJobDefinitions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobDefinitions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_definitions(Vec<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::job_definitions) / [`set_job_definitions(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeJobDefinitions::set_job_definitions): <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeJobDefinitions::set_max_results): <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::set_job_definition_name): <p>The name of the job definition to describe.</p>
-    ///   - [`status(impl Into<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::status) / [`set_status(Option<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::set_status): <p>The status used to filter job definitions.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobDefinitions::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    /// - On success, responds with [`DescribeJobDefinitionsOutput`](crate::output::DescribeJobDefinitionsOutput) with field(s):
-    ///   - [`job_definitions(Option<Vec<JobDefinition>>)`](crate::output::DescribeJobDefinitionsOutput::job_definitions): <p>The list of job definitions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobDefinitionsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeJobDefinitions</code> request. When the results of a <code>DescribeJobDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobDefinitionsError>`](crate::error::DescribeJobDefinitionsError)
-    pub fn describe_job_definitions(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeJobDefinitions {
-        crate::client::fluent_builders::DescribeJobDefinitions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobQueues`](crate::client::fluent_builders::DescribeJobQueues) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobQueues::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_queues(Vec<String>)`](crate::client::fluent_builders::DescribeJobQueues::job_queues) / [`set_job_queues(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeJobQueues::set_job_queues): <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobQueues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeJobQueues::set_max_results): <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobQueues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobQueues::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    /// - On success, responds with [`DescribeJobQueuesOutput`](crate::output::DescribeJobQueuesOutput) with field(s):
-    ///   - [`job_queues(Option<Vec<JobQueueDetail>>)`](crate::output::DescribeJobQueuesOutput::job_queues): <p>The list of job queues.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobQueuesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code> request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobQueuesError>`](crate::error::DescribeJobQueuesError)
-    pub fn describe_job_queues(&self) -> crate::client::fluent_builders::DescribeJobQueues {
-        crate::client::fluent_builders::DescribeJobQueues::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`jobs(Vec<String>)`](crate::client::fluent_builders::DescribeJobs::jobs) / [`set_jobs(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeJobs::set_jobs): <p>A list of up to 100 job IDs.</p>
-    /// - On success, responds with [`DescribeJobsOutput`](crate::output::DescribeJobsOutput) with field(s):
-    ///   - [`jobs(Option<Vec<JobDetail>>)`](crate::output::DescribeJobsOutput::jobs): <p>The list of jobs.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::error::DescribeJobsError)
-    pub fn describe_jobs(&self) -> crate::client::fluent_builders::DescribeJobs {
-        crate::client::fluent_builders::DescribeJobs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeSchedulingPolicies`](crate::client::fluent_builders::DescribeSchedulingPolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arns(Vec<String>)`](crate::client::fluent_builders::DescribeSchedulingPolicies::arns) / [`set_arns(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeSchedulingPolicies::set_arns): <p>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</p>
-    /// - On success, responds with [`DescribeSchedulingPoliciesOutput`](crate::output::DescribeSchedulingPoliciesOutput) with field(s):
-    ///   - [`scheduling_policies(Option<Vec<SchedulingPolicyDetail>>)`](crate::output::DescribeSchedulingPoliciesOutput::scheduling_policies): <p>The list of scheduling policies.</p>
-    /// - On failure, responds with [`SdkError<DescribeSchedulingPoliciesError>`](crate::error::DescribeSchedulingPoliciesError)
-    pub fn describe_scheduling_policies(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeSchedulingPolicies {
-        crate::client::fluent_builders::DescribeSchedulingPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListJobs`](crate::client::fluent_builders::ListJobs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListJobs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_queue(impl Into<String>)`](crate::client::fluent_builders::ListJobs::job_queue) / [`set_job_queue(Option<String>)`](crate::client::fluent_builders::ListJobs::set_job_queue): <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
-    ///   - [`array_job_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::array_job_id) / [`set_array_job_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_array_job_id): <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
-    ///   - [`multi_node_job_id(impl Into<String>)`](crate::client::fluent_builders::ListJobs::multi_node_job_id) / [`set_multi_node_job_id(Option<String>)`](crate::client::fluent_builders::ListJobs::set_multi_node_job_id): <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
-    ///   - [`job_status(JobStatus)`](crate::client::fluent_builders::ListJobs::job_status) / [`set_job_status(Option<JobStatus>)`](crate::client::fluent_builders::ListJobs::set_job_status): <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListJobs::set_max_results): <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListJobs::set_next_token): <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    ///   - [`filters(Vec<KeyValuesPair>)`](crate::client::fluent_builders::ListJobs::filters) / [`set_filters(Option<Vec<KeyValuesPair>>)`](crate::client::fluent_builders::ListJobs::set_filters): <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>  <dl>   <dt>   JOB_NAME  </dt>   <dd>    <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter matches any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>   </dd>   <dt>   JOB_DEFINITION  </dt>   <dd>    <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job definition name, the results include all the jobs that used any revision of that job definition name. If the value ends with an asterisk (*), the filter matches any job definition name that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the results include jobs that used the specified revision of the job definition. Asterisk (*) isn't supported when the ARN is used.</p>   </dd>   <dt>   BEFORE_CREATED_AT  </dt>   <dd>    <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>   </dd>   <dt>   AFTER_CREATED_AT  </dt>   <dd>    <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>   </dd>  </dl>
-    /// - On success, responds with [`ListJobsOutput`](crate::output::ListJobsOutput) with field(s):
-    ///   - [`job_summary_list(Option<Vec<JobSummary>>)`](crate::output::ListJobsOutput::job_summary_list): <p>A list of job summaries that match the request.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListJobsOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListJobs</code> request. When the results of a <code>ListJobs</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListJobsError>`](crate::error::ListJobsError)
-    pub fn list_jobs(&self) -> crate::client::fluent_builders::ListJobs {
-        crate::client::fluent_builders::ListJobs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSchedulingPolicies`](crate::client::fluent_builders::ListSchedulingPolicies) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchedulingPolicies::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchedulingPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchedulingPolicies::set_max_results): <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchedulingPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchedulingPolicies::set_next_token): <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>   <p>Treat this token as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>  </note>
-    /// - On success, responds with [`ListSchedulingPoliciesOutput`](crate::output::ListSchedulingPoliciesOutput) with field(s):
-    ///   - [`scheduling_policies(Option<Vec<SchedulingPolicyListingDetail>>)`](crate::output::ListSchedulingPoliciesOutput::scheduling_policies): <p>A list of scheduling policies that match the request.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSchedulingPoliciesOutput::next_token): <p>The <code>nextToken</code> value to include in a future <code>ListSchedulingPolicies</code> request. When the results of a <code>ListSchedulingPolicies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListSchedulingPoliciesError>`](crate::error::ListSchedulingPoliciesError)
-    pub fn list_scheduling_policies(
-        &self,
-    ) -> crate::client::fluent_builders::ListSchedulingPolicies {
-        crate::client::fluent_builders::ListSchedulingPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs aren't supported.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RegisterJobDefinition`](crate::client::fluent_builders::RegisterJobDefinition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_definition_name(impl Into<String>)`](crate::client::fluent_builders::RegisterJobDefinition::job_definition_name) / [`set_job_definition_name(Option<String>)`](crate::client::fluent_builders::RegisterJobDefinition::set_job_definition_name): <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`r#type(JobDefinitionType)`](crate::client::fluent_builders::RegisterJobDefinition::type) / [`set_type(Option<JobDefinitionType>)`](crate::client::fluent_builders::RegisterJobDefinition::set_type): <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>   <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>  </note>
-    ///   - [`parameters(HashMap<String, String>)`](crate::client::fluent_builders::RegisterJobDefinition::parameters) / [`set_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterJobDefinition::set_parameters): <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    ///   - [`scheduling_priority(i32)`](crate::client::fluent_builders::RegisterJobDefinition::scheduling_priority) / [`set_scheduling_priority(Option<i32>)`](crate::client::fluent_builders::RegisterJobDefinition::set_scheduling_priority): <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>  <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
-    ///   - [`container_properties(ContainerProperties)`](crate::client::fluent_builders::RegisterJobDefinition::container_properties) / [`set_container_properties(Option<ContainerProperties>)`](crate::client::fluent_builders::RegisterJobDefinition::set_container_properties): <p>An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based job definitions.</p> <note>   <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>  </note>
-    ///   - [`node_properties(NodeProperties)`](crate::client::fluent_builders::RegisterJobDefinition::node_properties) / [`set_node_properties(Option<NodeProperties>)`](crate::client::fluent_builders::RegisterJobDefinition::set_node_properties): <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>   <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>  </note> <note>   <p>If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.</p>  </note>
-    ///   - [`retry_strategy(RetryStrategy)`](crate::client::fluent_builders::RegisterJobDefinition::retry_strategy) / [`set_retry_strategy(Option<RetryStrategy>)`](crate::client::fluent_builders::RegisterJobDefinition::set_retry_strategy): <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
-    ///   - [`propagate_tags(bool)`](crate::client::fluent_builders::RegisterJobDefinition::propagate_tags) / [`set_propagate_tags(Option<bool>)`](crate::client::fluent_builders::RegisterJobDefinition::set_propagate_tags): <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p> <note>   <p>If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.</p>  </note>
-    ///   - [`timeout(JobTimeout)`](crate::client::fluent_builders::RegisterJobDefinition::timeout) / [`set_timeout(Option<JobTimeout>)`](crate::client::fluent_builders::RegisterJobDefinition::set_timeout): <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::RegisterJobDefinition::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterJobDefinition::set_tags): <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
-    ///   - [`platform_capabilities(Vec<PlatformCapability>)`](crate::client::fluent_builders::RegisterJobDefinition::platform_capabilities) / [`set_platform_capabilities(Option<Vec<PlatformCapability>>)`](crate::client::fluent_builders::RegisterJobDefinition::set_platform_capabilities): <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p> <note>   <p>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</p>  </note>
-    ///   - [`eks_properties(EksProperties)`](crate::client::fluent_builders::RegisterJobDefinition::eks_properties) / [`set_eks_properties(Option<EksProperties>)`](crate::client::fluent_builders::RegisterJobDefinition::set_eks_properties): <p>An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for Amazon ECS based job definitions.</p>
-    /// - On success, responds with [`RegisterJobDefinitionOutput`](crate::output::RegisterJobDefinitionOutput) with field(s):
-    ///   - [`job_definition_name(Option<String>)`](crate::output::RegisterJobDefinitionOutput::job_definition_name): <p>The name of the job definition.</p>
-    ///   - [`job_definition_arn(Option<String>)`](crate::output::RegisterJobDefinitionOutput::job_definition_arn): <p>The Amazon Resource Name (ARN) of the job definition.</p>
-    ///   - [`revision(Option<i32>)`](crate::output::RegisterJobDefinitionOutput::revision): <p>The revision of the job definition.</p>
-    /// - On failure, responds with [`SdkError<RegisterJobDefinitionError>`](crate::error::RegisterJobDefinitionError)
-    pub fn register_job_definition(&self) -> crate::client::fluent_builders::RegisterJobDefinition {
-        crate::client::fluent_builders::RegisterJobDefinition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SubmitJob`](crate::client::fluent_builders::SubmitJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::SubmitJob::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::SubmitJob::set_job_name): <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`job_queue(impl Into<String>)`](crate::client::fluent_builders::SubmitJob::job_queue) / [`set_job_queue(Option<String>)`](crate::client::fluent_builders::SubmitJob::set_job_queue): <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
-    ///   - [`share_identifier(impl Into<String>)`](crate::client::fluent_builders::SubmitJob::share_identifier) / [`set_share_identifier(Option<String>)`](crate::client::fluent_builders::SubmitJob::set_share_identifier): <p>The share identifier for the job. If the job queue doesn't have a scheduling policy, then this parameter must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.</p>
-    ///   - [`scheduling_priority_override(i32)`](crate::client::fluent_builders::SubmitJob::scheduling_priority_override) / [`set_scheduling_priority_override(Option<i32>)`](crate::client::fluent_builders::SubmitJob::set_scheduling_priority_override): <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>  <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
-    ///   - [`array_properties(ArrayProperties)`](crate::client::fluent_builders::SubmitJob::array_properties) / [`set_array_properties(Option<ArrayProperties>)`](crate::client::fluent_builders::SubmitJob::set_array_properties): <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
-    ///   - [`depends_on(Vec<JobDependency>)`](crate::client::fluent_builders::SubmitJob::depends_on) / [`set_depends_on(Option<Vec<JobDependency>>)`](crate::client::fluent_builders::SubmitJob::set_depends_on): <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
-    ///   - [`job_definition(impl Into<String>)`](crate::client::fluent_builders::SubmitJob::job_definition) / [`set_job_definition(Option<String>)`](crate::client::fluent_builders::SubmitJob::set_job_definition): <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
-    ///   - [`parameters(HashMap<String, String>)`](crate::client::fluent_builders::SubmitJob::parameters) / [`set_parameters(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SubmitJob::set_parameters): <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
-    ///   - [`container_overrides(ContainerOverrides)`](crate::client::fluent_builders::SubmitJob::container_overrides) / [`set_container_overrides(Option<ContainerOverrides>)`](crate::client::fluent_builders::SubmitJob::set_container_overrides): <p>An object with various properties that override the defaults for the job definition that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
-    ///   - [`node_overrides(NodeOverrides)`](crate::client::fluent_builders::SubmitJob::node_overrides) / [`set_node_overrides(Option<NodeOverrides>)`](crate::client::fluent_builders::SubmitJob::set_node_overrides): <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>   <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>  </note>
-    ///   - [`retry_strategy(RetryStrategy)`](crate::client::fluent_builders::SubmitJob::retry_strategy) / [`set_retry_strategy(Option<RetryStrategy>)`](crate::client::fluent_builders::SubmitJob::set_retry_strategy): <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
-    ///   - [`propagate_tags(bool)`](crate::client::fluent_builders::SubmitJob::propagate_tags) / [`set_propagate_tags(Option<bool>)`](crate::client::fluent_builders::SubmitJob::set_propagate_tags): <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
-    ///   - [`timeout(JobTimeout)`](crate::client::fluent_builders::SubmitJob::timeout) / [`set_timeout(Option<JobTimeout>)`](crate::client::fluent_builders::SubmitJob::set_timeout): <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::SubmitJob::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SubmitJob::set_tags): <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`eks_properties_override(EksPropertiesOverride)`](crate::client::fluent_builders::SubmitJob::eks_properties_override) / [`set_eks_properties_override(Option<EksPropertiesOverride>)`](crate::client::fluent_builders::SubmitJob::set_eks_properties_override): <p>An object that can only be specified for jobs that are run on Amazon EKS resources with various properties that override defaults for the job definition.</p>
-    /// - On success, responds with [`SubmitJobOutput`](crate::output::SubmitJobOutput) with field(s):
-    ///   - [`job_arn(Option<String>)`](crate::output::SubmitJobOutput::job_arn): <p>The Amazon Resource Name (ARN) for the job.</p>
-    ///   - [`job_name(Option<String>)`](crate::output::SubmitJobOutput::job_name): <p>The name of the job.</p>
-    ///   - [`job_id(Option<String>)`](crate::output::SubmitJobOutput::job_id): <p>The unique identifier for the job.</p>
-    /// - On failure, responds with [`SdkError<SubmitJobError>`](crate::error::SubmitJobError)
-    pub fn submit_job(&self) -> crate::client::fluent_builders::SubmitJob {
-        crate::client::fluent_builders::SubmitJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs aren't supported.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TerminateJob`](crate::client::fluent_builders::TerminateJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::TerminateJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::TerminateJob::set_job_id): <p>The Batch job ID of the job to terminate.</p>
-    ///   - [`reason(impl Into<String>)`](crate::client::fluent_builders::TerminateJob::reason) / [`set_reason(Option<String>)`](crate::client::fluent_builders::TerminateJob::set_reason): <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
-    /// - On success, responds with [`TerminateJobOutput`](crate::output::TerminateJobOutput)
-
-    /// - On failure, responds with [`SdkError<TerminateJobError>`](crate::error::TerminateJobError)
-    pub fn terminate_job(&self) -> crate::client::fluent_builders::TerminateJob {
-        crate::client::fluent_builders::TerminateJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs aren't supported.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to be removed.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateComputeEnvironment`](crate::client::fluent_builders::UpdateComputeEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`compute_environment(impl Into<String>)`](crate::client::fluent_builders::UpdateComputeEnvironment::compute_environment) / [`set_compute_environment(Option<String>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_compute_environment): <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-    ///   - [`state(CeState)`](crate::client::fluent_builders::UpdateComputeEnvironment::state) / [`set_state(Option<CeState>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_state): <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>  <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>  <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
-    ///   - [`unmanagedv_cpus(i32)`](crate::client::fluent_builders::UpdateComputeEnvironment::unmanagedv_cpus) / [`set_unmanagedv_cpus(Option<i32>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_unmanagedv_cpus): <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. Don't specify this parameter for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p>
-    ///   - [`compute_resources(ComputeResourceUpdate)`](crate::client::fluent_builders::UpdateComputeEnvironment::compute_resources) / [`set_compute_resources(Option<ComputeResourceUpdate>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_compute_resources): <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::UpdateComputeEnvironment::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_service_role): <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>   <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked role. To update the parameters for the compute environment that require an infrastructure update to change, the <b>AWSServiceRoleForBatch</b> service-linked role must be used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>  </important>  <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (recommended) or prefix the role name with the path.</p> <note>   <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>  </note>
-    ///   - [`update_policy(UpdatePolicy)`](crate::client::fluent_builders::UpdateComputeEnvironment::update_policy) / [`set_update_policy(Option<UpdatePolicy>)`](crate::client::fluent_builders::UpdateComputeEnvironment::set_update_policy): <p>Specifies the updated infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// - On success, responds with [`UpdateComputeEnvironmentOutput`](crate::output::UpdateComputeEnvironmentOutput) with field(s):
-    ///   - [`compute_environment_name(Option<String>)`](crate::output::UpdateComputeEnvironmentOutput::compute_environment_name): <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    ///   - [`compute_environment_arn(Option<String>)`](crate::output::UpdateComputeEnvironmentOutput::compute_environment_arn): <p>The Amazon Resource Name (ARN) of the compute environment.</p>
-    /// - On failure, responds with [`SdkError<UpdateComputeEnvironmentError>`](crate::error::UpdateComputeEnvironmentError)
-    pub fn update_compute_environment(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateComputeEnvironment {
-        crate::client::fluent_builders::UpdateComputeEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateJobQueue`](crate::client::fluent_builders::UpdateJobQueue) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_queue(impl Into<String>)`](crate::client::fluent_builders::UpdateJobQueue::job_queue) / [`set_job_queue(Option<String>)`](crate::client::fluent_builders::UpdateJobQueue::set_job_queue): <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-    ///   - [`state(JqState)`](crate::client::fluent_builders::UpdateJobQueue::state) / [`set_state(Option<JqState>)`](crate::client::fluent_builders::UpdateJobQueue::set_state): <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    ///   - [`scheduling_policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateJobQueue::scheduling_policy_arn) / [`set_scheduling_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateJobQueue::set_scheduling_policy_arn): <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    ///   - [`priority(i32)`](crate::client::fluent_builders::UpdateJobQueue::priority) / [`set_priority(Option<i32>)`](crate::client::fluent_builders::UpdateJobQueue::set_priority): <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    ///   - [`compute_environment_order(Vec<ComputeEnvironmentOrder>)`](crate::client::fluent_builders::UpdateJobQueue::compute_environment_order) / [`set_compute_environment_order(Option<Vec<ComputeEnvironmentOrder>>)`](crate::client::fluent_builders::UpdateJobQueue::set_compute_environment_order): <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>   <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>  </note>
-    /// - On success, responds with [`UpdateJobQueueOutput`](crate::output::UpdateJobQueueOutput) with field(s):
-    ///   - [`job_queue_name(Option<String>)`](crate::output::UpdateJobQueueOutput::job_queue_name): <p>The name of the job queue.</p>
-    ///   - [`job_queue_arn(Option<String>)`](crate::output::UpdateJobQueueOutput::job_queue_arn): <p>The Amazon Resource Name (ARN) of the job queue.</p>
-    /// - On failure, responds with [`SdkError<UpdateJobQueueError>`](crate::error::UpdateJobQueueError)
-    pub fn update_job_queue(&self) -> crate::client::fluent_builders::UpdateJobQueue {
-        crate::client::fluent_builders::UpdateJobQueue::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSchedulingPolicy`](crate::client::fluent_builders::UpdateSchedulingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSchedulingPolicy::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateSchedulingPolicy::set_arn): <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-    ///   - [`fairshare_policy(FairsharePolicy)`](crate::client::fluent_builders::UpdateSchedulingPolicy::fairshare_policy) / [`set_fairshare_policy(Option<FairsharePolicy>)`](crate::client::fluent_builders::UpdateSchedulingPolicy::set_fairshare_policy): <p>The fair share policy.</p>
-    /// - On success, responds with [`UpdateSchedulingPolicyOutput`](crate::output::UpdateSchedulingPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateSchedulingPolicyError>`](crate::error::UpdateSchedulingPolicyError)
-    pub fn update_scheduling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSchedulingPolicy {
-        crate::client::fluent_builders::UpdateSchedulingPolicy::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -525,9 +174,57 @@ impl Client {
     }
 }
 
+mod cancel_job;
+
+mod create_compute_environment;
+
+mod create_job_queue;
+
+mod create_scheduling_policy;
+
+mod delete_compute_environment;
+
+mod delete_job_queue;
+
+mod delete_scheduling_policy;
+
+mod deregister_job_definition;
+
+mod describe_compute_environments;
+
+mod describe_job_definitions;
+
+mod describe_job_queues;
+
+mod describe_jobs;
+
+mod describe_scheduling_policies;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_jobs;
+
+mod list_scheduling_policies;
+
+mod list_tags_for_resource;
+
+mod register_job_definition;
+
+mod submit_job;
+
+mod tag_resource;
+
+mod terminate_job;
+
+mod untag_resource;
+
+mod update_compute_environment;
+
+mod update_job_queue;
+
+mod update_scheduling_policy;

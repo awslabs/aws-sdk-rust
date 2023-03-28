@@ -65,7 +65,7 @@ impl AssociateAccountsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_accounts(&self)?,
+            crate::protocol_serde::shape_associate_accounts::ser_associate_accounts_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -188,9 +188,7 @@ impl AssociatePricingRulesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_pricing_rules(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_pricing_rules::ser_associate_pricing_rules_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -314,7 +312,7 @@ impl BatchAssociateResourcesToCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_associate_resources_to_custom_line_item(&self)?
+            crate::protocol_serde::shape_batch_associate_resources_to_custom_line_item::ser_batch_associate_resources_to_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -441,7 +439,7 @@ impl BatchDisassociateResourcesFromCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_disassociate_resources_from_custom_line_item(&self)?
+            crate::protocol_serde::shape_batch_disassociate_resources_from_custom_line_item::ser_batch_disassociate_resources_from_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -554,7 +552,7 @@ impl CreateBillingGroupInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_billing_group(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_billing_group::ser_create_billing_group_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -568,7 +566,9 @@ impl CreateBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)?,
+            crate::protocol_serde::shape_create_billing_group::ser_create_billing_group_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -681,8 +681,7 @@ impl CreateCustomLineItemInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_custom_line_item(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_custom_line_item::ser_create_custom_line_item_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -696,9 +695,7 @@ impl CreateCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_line_item(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_custom_line_item::ser_create_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -811,7 +808,7 @@ impl CreatePricingPlanInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_pricing_plan(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_pricing_plan::ser_create_pricing_plan_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -825,7 +822,7 @@ impl CreatePricingPlanInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pricing_plan(&self)?,
+            crate::protocol_serde::shape_create_pricing_plan::ser_create_pricing_plan_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -938,7 +935,7 @@ impl CreatePricingRuleInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_pricing_rule(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_pricing_rule::ser_create_pricing_rule_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -952,7 +949,7 @@ impl CreatePricingRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_pricing_rule(&self)?,
+            crate::protocol_serde::shape_create_pricing_rule::ser_create_pricing_rule_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1075,7 +1072,9 @@ impl DeleteBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_billing_group(&self)?,
+            crate::protocol_serde::shape_delete_billing_group::ser_delete_billing_group_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1198,9 +1197,7 @@ impl DeleteCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_line_item(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_custom_line_item::ser_delete_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1323,7 +1320,7 @@ impl DeletePricingPlanInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_plan(&self)?,
+            crate::protocol_serde::shape_delete_pricing_plan::ser_delete_pricing_plan_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1446,7 +1443,7 @@ impl DeletePricingRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_pricing_rule(&self)?,
+            crate::protocol_serde::shape_delete_pricing_rule::ser_delete_pricing_rule_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1569,7 +1566,9 @@ impl DisassociateAccountsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_accounts(&self)?,
+            crate::protocol_serde::shape_disassociate_accounts::ser_disassociate_accounts_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1692,9 +1691,7 @@ impl DisassociatePricingRulesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_pricing_rules(
-                &self,
-            )?,
+            crate::protocol_serde::shape_disassociate_pricing_rules::ser_disassociate_pricing_rules_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1817,9 +1814,7 @@ impl ListAccountAssociationsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_account_associations(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_account_associations::ser_list_account_associations_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1943,7 +1938,7 @@ impl ListBillingGroupCostReportsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_billing_group_cost_reports(&self)?
+            crate::protocol_serde::shape_list_billing_group_cost_reports::ser_list_billing_group_cost_reports_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2066,7 +2061,7 @@ impl ListBillingGroupsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_billing_groups(&self)?,
+            crate::protocol_serde::shape_list_billing_groups::ser_list_billing_groups_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2189,7 +2184,7 @@ impl ListCustomLineItemsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_line_items(
+            crate::protocol_serde::shape_list_custom_line_items::ser_list_custom_line_items_input(
                 &self,
             )?,
         );
@@ -2315,7 +2310,7 @@ impl ListCustomLineItemVersionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_line_item_versions(&self)?
+            crate::protocol_serde::shape_list_custom_line_item_versions::ser_list_custom_line_item_versions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2438,7 +2433,7 @@ impl ListPricingPlansInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans(&self)?,
+            crate::protocol_serde::shape_list_pricing_plans::ser_list_pricing_plans_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2562,7 +2557,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_plans_associated_with_pricing_rule(&self)?
+            crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::ser_list_pricing_plans_associated_with_pricing_rule_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2685,7 +2680,7 @@ impl ListPricingRulesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules(&self)?,
+            crate::protocol_serde::shape_list_pricing_rules::ser_list_pricing_rules_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2809,7 +2804,7 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_pricing_rules_associated_to_pricing_plan(&self)?
+            crate::protocol_serde::shape_list_pricing_rules_associated_to_pricing_plan::ser_list_pricing_rules_associated_to_pricing_plan_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2933,7 +2928,7 @@ impl ListResourcesAssociatedToCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_resources_associated_to_custom_line_item(&self)?
+            crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::ser_list_resources_associated_to_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3205,7 +3200,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3475,7 +3470,9 @@ impl UpdateBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)?,
+            crate::protocol_serde::shape_update_billing_group::ser_update_billing_group_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3598,9 +3595,7 @@ impl UpdateCustomLineItemInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_line_item(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_custom_line_item::ser_update_custom_line_item_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3723,7 +3718,7 @@ impl UpdatePricingPlanInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_pricing_plan(&self)?,
+            crate::protocol_serde::shape_update_pricing_plan::ser_update_pricing_plan_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3846,7 +3841,7 @@ impl UpdatePricingRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_pricing_rule(&self)?,
+            crate::protocol_serde::shape_update_pricing_rule::ser_update_pricing_rule_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

@@ -89,440 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchGetSchema`](crate::client::fluent_builders::BatchGetSchema) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::BatchGetSchema::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::BatchGetSchema::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::BatchGetSchema::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetSchema::set_names): <p>The names for the schema objects to retrieve.&gt;</p>
-    /// - On success, responds with [`BatchGetSchemaOutput`](crate::output::BatchGetSchemaOutput) with field(s):
-    ///   - [`schemas(Option<Vec<Schema>>)`](crate::output::BatchGetSchemaOutput::schemas): <p>The retrieved list of schemas.</p>
-    ///   - [`errors(Option<Vec<BatchGetSchemaError>>)`](crate::output::BatchGetSchemaOutput::errors): <p>Error reasons for schemas that could not be retrieved. One error is returned for every schema that could not be retrieved.</p>
-    /// - On failure, responds with [`SdkError<BatchGetSchemaError>`](crate::error::BatchGetSchemaError)
-    pub fn batch_get_schema(&self) -> crate::client::fluent_builders::BatchGetSchema {
-        crate::client::fluent_builders::BatchGetSchema::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCollaboration`](crate::client::fluent_builders::CreateCollaboration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`members(Vec<MemberSpecification>)`](crate::client::fluent_builders::CreateCollaboration::members) / [`set_members(Option<Vec<MemberSpecification>>)`](crate::client::fluent_builders::CreateCollaboration::set_members): <p>A list of initial members, not including the creator. This list is immutable.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCollaboration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCollaboration::set_name): <p>The display name for a collaboration.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCollaboration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCollaboration::set_description): <p>A description of the collaboration provided by the collaboration owner.</p>
-    ///   - [`creator_member_abilities(Vec<MemberAbility>)`](crate::client::fluent_builders::CreateCollaboration::creator_member_abilities) / [`set_creator_member_abilities(Option<Vec<MemberAbility>>)`](crate::client::fluent_builders::CreateCollaboration::set_creator_member_abilities): <p>The abilities granted to the collaboration creator.</p>
-    ///   - [`creator_display_name(impl Into<String>)`](crate::client::fluent_builders::CreateCollaboration::creator_display_name) / [`set_creator_display_name(Option<String>)`](crate::client::fluent_builders::CreateCollaboration::set_creator_display_name): <p>The display name of the collaboration creator.</p>
-    ///   - [`data_encryption_metadata(DataEncryptionMetadata)`](crate::client::fluent_builders::CreateCollaboration::data_encryption_metadata) / [`set_data_encryption_metadata(Option<DataEncryptionMetadata>)`](crate::client::fluent_builders::CreateCollaboration::set_data_encryption_metadata): <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
-    ///   - [`query_log_status(CollaborationQueryLogStatus)`](crate::client::fluent_builders::CreateCollaboration::query_log_status) / [`set_query_log_status(Option<CollaborationQueryLogStatus>)`](crate::client::fluent_builders::CreateCollaboration::set_query_log_status): <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    /// - On success, responds with [`CreateCollaborationOutput`](crate::output::CreateCollaborationOutput) with field(s):
-    ///   - [`collaboration(Option<Collaboration>)`](crate::output::CreateCollaborationOutput::collaboration): <p>The entire created collaboration object.</p>
-    /// - On failure, responds with [`SdkError<CreateCollaborationError>`](crate::error::CreateCollaborationError)
-    pub fn create_collaboration(&self) -> crate::client::fluent_builders::CreateCollaboration {
-        crate::client::fluent_builders::CreateCollaboration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateConfiguredTable`](crate::client::fluent_builders::CreateConfiguredTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTable::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTable::set_name): <p>The name of the configured table.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTable::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTable::set_description): <p>A description for the configured table.</p>
-    ///   - [`table_reference(TableReference)`](crate::client::fluent_builders::CreateConfiguredTable::table_reference) / [`set_table_reference(Option<TableReference>)`](crate::client::fluent_builders::CreateConfiguredTable::set_table_reference): <p>A reference to the AWS Glue table being configured.</p>
-    ///   - [`allowed_columns(Vec<String>)`](crate::client::fluent_builders::CreateConfiguredTable::allowed_columns) / [`set_allowed_columns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateConfiguredTable::set_allowed_columns): <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    ///   - [`analysis_method(AnalysisMethod)`](crate::client::fluent_builders::CreateConfiguredTable::analysis_method) / [`set_analysis_method(Option<AnalysisMethod>)`](crate::client::fluent_builders::CreateConfiguredTable::set_analysis_method): <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    /// - On success, responds with [`CreateConfiguredTableOutput`](crate::output::CreateConfiguredTableOutput) with field(s):
-    ///   - [`configured_table(Option<ConfiguredTable>)`](crate::output::CreateConfiguredTableOutput::configured_table): <p>The created configured table.</p>
-    /// - On failure, responds with [`SdkError<CreateConfiguredTableError>`](crate::error::CreateConfiguredTableError)
-    pub fn create_configured_table(&self) -> crate::client::fluent_builders::CreateConfiguredTable {
-        crate::client::fluent_builders::CreateConfiguredTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateConfiguredTableAnalysisRule`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::set_configured_table_identifier): <p>The identifier for the configured table to create the analysis rule for. Currently accepts the configured table ID. </p>
-    ///   - [`analysis_rule_type(ConfiguredTableAnalysisRuleType)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::analysis_rule_type) / [`set_analysis_rule_type(Option<ConfiguredTableAnalysisRuleType>)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::set_analysis_rule_type): <p>The type of analysis rule. Valid values are AGGREGATION and LIST.</p>
-    ///   - [`analysis_rule_policy(ConfiguredTableAnalysisRulePolicy)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::analysis_rule_policy) / [`set_analysis_rule_policy(Option<ConfiguredTableAnalysisRulePolicy>)`](crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::set_analysis_rule_policy): <p>The entire created configured table analysis rule object.</p>
-    /// - On success, responds with [`CreateConfiguredTableAnalysisRuleOutput`](crate::output::CreateConfiguredTableAnalysisRuleOutput) with field(s):
-    ///   - [`analysis_rule(Option<ConfiguredTableAnalysisRule>)`](crate::output::CreateConfiguredTableAnalysisRuleOutput::analysis_rule): <p>The entire created analysis rule.</p>
-    /// - On failure, responds with [`SdkError<CreateConfiguredTableAnalysisRuleError>`](crate::error::CreateConfiguredTableAnalysisRuleError)
-    pub fn create_configured_table_analysis_rule(
-        &self,
-    ) -> crate::client::fluent_builders::CreateConfiguredTableAnalysisRule {
-        crate::client::fluent_builders::CreateConfiguredTableAnalysisRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateConfiguredTableAssociation`](crate::client::fluent_builders::CreateConfiguredTableAssociation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::set_name): <p>The name of the configured table association. This name is used to query the underlying configured table.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::set_description): <p>A description for the configured table association.</p>
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::set_membership_identifier): <p>A unique identifier for one of your memberships for a collaboration. The configured table is associated to the collaboration that this membership belongs to. Currently accepts a membership ID.</p>
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::set_configured_table_identifier): <p>A unique identifier for the configured table to be associated to. Currently accepts a configured table ID.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateConfiguredTableAssociation::set_role_arn): <p>The service will assume this role to access catalog metadata and query the table.</p>
-    /// - On success, responds with [`CreateConfiguredTableAssociationOutput`](crate::output::CreateConfiguredTableAssociationOutput) with field(s):
-    ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::output::CreateConfiguredTableAssociationOutput::configured_table_association): <p>The entire configured table association object.</p>
-    /// - On failure, responds with [`SdkError<CreateConfiguredTableAssociationError>`](crate::error::CreateConfiguredTableAssociationError)
-    pub fn create_configured_table_association(
-        &self,
-    ) -> crate::client::fluent_builders::CreateConfiguredTableAssociation {
-        crate::client::fluent_builders::CreateConfiguredTableAssociation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMembership`](crate::client::fluent_builders::CreateMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateMembership::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::CreateMembership::set_collaboration_identifier): <p>The unique ID for the associated collaboration.</p>
-    ///   - [`query_log_status(MembershipQueryLogStatus)`](crate::client::fluent_builders::CreateMembership::query_log_status) / [`set_query_log_status(Option<MembershipQueryLogStatus>)`](crate::client::fluent_builders::CreateMembership::set_query_log_status): <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    /// - On success, responds with [`CreateMembershipOutput`](crate::output::CreateMembershipOutput) with field(s):
-    ///   - [`membership(Option<Membership>)`](crate::output::CreateMembershipOutput::membership): <p>The membership that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateMembershipError>`](crate::error::CreateMembershipError)
-    pub fn create_membership(&self) -> crate::client::fluent_builders::CreateMembership {
-        crate::client::fluent_builders::CreateMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCollaboration`](crate::client::fluent_builders::DeleteCollaboration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteCollaboration::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::DeleteCollaboration::set_collaboration_identifier): <p>The identifier for the collaboration.</p>
-    /// - On success, responds with [`DeleteCollaborationOutput`](crate::output::DeleteCollaborationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCollaborationError>`](crate::error::DeleteCollaborationError)
-    pub fn delete_collaboration(&self) -> crate::client::fluent_builders::DeleteCollaboration {
-        crate::client::fluent_builders::DeleteCollaboration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConfiguredTable`](crate::client::fluent_builders::DeleteConfiguredTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteConfiguredTable::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::DeleteConfiguredTable::set_configured_table_identifier): <p>The unique ID for the configured table to delete.</p>
-    /// - On success, responds with [`DeleteConfiguredTableOutput`](crate::output::DeleteConfiguredTableOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConfiguredTableError>`](crate::error::DeleteConfiguredTableError)
-    pub fn delete_configured_table(&self) -> crate::client::fluent_builders::DeleteConfiguredTable {
-        crate::client::fluent_builders::DeleteConfiguredTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConfiguredTableAnalysisRule`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule::set_configured_table_identifier): <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    ///   - [`analysis_rule_type(ConfiguredTableAnalysisRuleType)`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule::analysis_rule_type) / [`set_analysis_rule_type(Option<ConfiguredTableAnalysisRuleType>)`](crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule::set_analysis_rule_type): <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    /// - On success, responds with [`DeleteConfiguredTableAnalysisRuleOutput`](crate::output::DeleteConfiguredTableAnalysisRuleOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConfiguredTableAnalysisRuleError>`](crate::error::DeleteConfiguredTableAnalysisRuleError)
-    pub fn delete_configured_table_analysis_rule(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule {
-        crate::client::fluent_builders::DeleteConfiguredTableAnalysisRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConfiguredTableAssociation`](crate::client::fluent_builders::DeleteConfiguredTableAssociation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_association_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAssociation::configured_table_association_identifier) / [`set_configured_table_association_identifier(Option<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAssociation::set_configured_table_association_identifier): <p>The unique ID for the configured table association to be deleted. Currently accepts the configured table ID.</p>
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAssociation::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::DeleteConfiguredTableAssociation::set_membership_identifier): <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    /// - On success, responds with [`DeleteConfiguredTableAssociationOutput`](crate::output::DeleteConfiguredTableAssociationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConfiguredTableAssociationError>`](crate::error::DeleteConfiguredTableAssociationError)
-    pub fn delete_configured_table_association(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteConfiguredTableAssociation {
-        crate::client::fluent_builders::DeleteConfiguredTableAssociation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_collaboration_identifier): <p>The unique identifier for the associated collaboration.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_account_id): <p>The account ID of the member to remove.</p>
-    /// - On success, responds with [`DeleteMemberOutput`](crate::output::DeleteMemberOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::error::DeleteMemberError)
-    pub fn delete_member(&self) -> crate::client::fluent_builders::DeleteMember {
-        crate::client::fluent_builders::DeleteMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMembership`](crate::client::fluent_builders::DeleteMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteMembership::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::DeleteMembership::set_membership_identifier): <p>The identifier for a membership resource.</p>
-    /// - On success, responds with [`DeleteMembershipOutput`](crate::output::DeleteMembershipOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMembershipError>`](crate::error::DeleteMembershipError)
-    pub fn delete_membership(&self) -> crate::client::fluent_builders::DeleteMembership {
-        crate::client::fluent_builders::DeleteMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCollaboration`](crate::client::fluent_builders::GetCollaboration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::GetCollaboration::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::GetCollaboration::set_collaboration_identifier): <p>The identifier for the collaboration.</p>
-    /// - On success, responds with [`GetCollaborationOutput`](crate::output::GetCollaborationOutput) with field(s):
-    ///   - [`collaboration(Option<Collaboration>)`](crate::output::GetCollaborationOutput::collaboration): <p>The entire collaboration for this identifier.</p>
-    /// - On failure, responds with [`SdkError<GetCollaborationError>`](crate::error::GetCollaborationError)
-    pub fn get_collaboration(&self) -> crate::client::fluent_builders::GetCollaboration {
-        crate::client::fluent_builders::GetCollaboration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConfiguredTable`](crate::client::fluent_builders::GetConfiguredTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::GetConfiguredTable::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::GetConfiguredTable::set_configured_table_identifier): <p>The unique ID for the configured table to retrieve.</p>
-    /// - On success, responds with [`GetConfiguredTableOutput`](crate::output::GetConfiguredTableOutput) with field(s):
-    ///   - [`configured_table(Option<ConfiguredTable>)`](crate::output::GetConfiguredTableOutput::configured_table): <p>The retrieved configured table.</p>
-    /// - On failure, responds with [`SdkError<GetConfiguredTableError>`](crate::error::GetConfiguredTableError)
-    pub fn get_configured_table(&self) -> crate::client::fluent_builders::GetConfiguredTable {
-        crate::client::fluent_builders::GetConfiguredTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConfiguredTableAnalysisRule`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule::set_configured_table_identifier): <p>The unique identifier for the configured table to retrieve. Currently accepts the configured table ID.</p>
-    ///   - [`analysis_rule_type(ConfiguredTableAnalysisRuleType)`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule::analysis_rule_type) / [`set_analysis_rule_type(Option<ConfiguredTableAnalysisRuleType>)`](crate::client::fluent_builders::GetConfiguredTableAnalysisRule::set_analysis_rule_type): <p>The analysis rule to be retrieved. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    /// - On success, responds with [`GetConfiguredTableAnalysisRuleOutput`](crate::output::GetConfiguredTableAnalysisRuleOutput) with field(s):
-    ///   - [`analysis_rule(Option<ConfiguredTableAnalysisRule>)`](crate::output::GetConfiguredTableAnalysisRuleOutput::analysis_rule): <p>The entire analysis rule output.</p>
-    /// - On failure, responds with [`SdkError<GetConfiguredTableAnalysisRuleError>`](crate::error::GetConfiguredTableAnalysisRuleError)
-    pub fn get_configured_table_analysis_rule(
-        &self,
-    ) -> crate::client::fluent_builders::GetConfiguredTableAnalysisRule {
-        crate::client::fluent_builders::GetConfiguredTableAnalysisRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConfiguredTableAssociation`](crate::client::fluent_builders::GetConfiguredTableAssociation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_association_identifier(impl Into<String>)`](crate::client::fluent_builders::GetConfiguredTableAssociation::configured_table_association_identifier) / [`set_configured_table_association_identifier(Option<String>)`](crate::client::fluent_builders::GetConfiguredTableAssociation::set_configured_table_association_identifier): <p>The unique ID for the configured table association to retrieve. Currently accepts the configured table ID.</p>
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::GetConfiguredTableAssociation::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::GetConfiguredTableAssociation::set_membership_identifier): <p>A unique identifier for the membership that the configured table association belongs to. Currently accepts the membership ID.</p>
-    /// - On success, responds with [`GetConfiguredTableAssociationOutput`](crate::output::GetConfiguredTableAssociationOutput) with field(s):
-    ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::output::GetConfiguredTableAssociationOutput::configured_table_association): <p>The entire configured table association object.</p>
-    /// - On failure, responds with [`SdkError<GetConfiguredTableAssociationError>`](crate::error::GetConfiguredTableAssociationError)
-    pub fn get_configured_table_association(
-        &self,
-    ) -> crate::client::fluent_builders::GetConfiguredTableAssociation {
-        crate::client::fluent_builders::GetConfiguredTableAssociation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMembership`](crate::client::fluent_builders::GetMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::GetMembership::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::GetMembership::set_membership_identifier): <p>The identifier for a membership resource.</p>
-    /// - On success, responds with [`GetMembershipOutput`](crate::output::GetMembershipOutput) with field(s):
-    ///   - [`membership(Option<Membership>)`](crate::output::GetMembershipOutput::membership): <p>The membership retrieved for the provided identifier.</p>
-    /// - On failure, responds with [`SdkError<GetMembershipError>`](crate::error::GetMembershipError)
-    pub fn get_membership(&self) -> crate::client::fluent_builders::GetMembership {
-        crate::client::fluent_builders::GetMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProtectedQuery`](crate::client::fluent_builders::GetProtectedQuery) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::GetProtectedQuery::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::GetProtectedQuery::set_membership_identifier): <p>The identifier for a membership in a protected query instance.</p>
-    ///   - [`protected_query_identifier(impl Into<String>)`](crate::client::fluent_builders::GetProtectedQuery::protected_query_identifier) / [`set_protected_query_identifier(Option<String>)`](crate::client::fluent_builders::GetProtectedQuery::set_protected_query_identifier): <p>The identifier for a protected query instance.</p>
-    /// - On success, responds with [`GetProtectedQueryOutput`](crate::output::GetProtectedQueryOutput) with field(s):
-    ///   - [`protected_query(Option<ProtectedQuery>)`](crate::output::GetProtectedQueryOutput::protected_query): <p>The query processing metadata.</p>
-    /// - On failure, responds with [`SdkError<GetProtectedQueryError>`](crate::error::GetProtectedQueryError)
-    pub fn get_protected_query(&self) -> crate::client::fluent_builders::GetProtectedQuery {
-        crate::client::fluent_builders::GetProtectedQuery::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSchema`](crate::client::fluent_builders::GetSchema) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::GetSchema::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::GetSchema::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSchema::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSchema::set_name): <p>The name of the relation to retrieve the schema for.</p>
-    /// - On success, responds with [`GetSchemaOutput`](crate::output::GetSchemaOutput) with field(s):
-    ///   - [`schema(Option<Schema>)`](crate::output::GetSchemaOutput::schema): <p>The entire schema object.</p>
-    /// - On failure, responds with [`SdkError<GetSchemaError>`](crate::error::GetSchemaError)
-    pub fn get_schema(&self) -> crate::client::fluent_builders::GetSchema {
-        crate::client::fluent_builders::GetSchema::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSchemaAnalysisRule`](crate::client::fluent_builders::GetSchemaAnalysisRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::GetSchemaAnalysisRule::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::GetSchemaAnalysisRule::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSchemaAnalysisRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSchemaAnalysisRule::set_name): <p>The name of the schema to retrieve the analysis rule for.</p>
-    ///   - [`r#type(AnalysisRuleType)`](crate::client::fluent_builders::GetSchemaAnalysisRule::type) / [`set_type(Option<AnalysisRuleType>)`](crate::client::fluent_builders::GetSchemaAnalysisRule::set_type): <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    /// - On success, responds with [`GetSchemaAnalysisRuleOutput`](crate::output::GetSchemaAnalysisRuleOutput) with field(s):
-    ///   - [`analysis_rule(Option<AnalysisRule>)`](crate::output::GetSchemaAnalysisRuleOutput::analysis_rule): <p>A specification about how data from the configured table can be used.</p>
-    /// - On failure, responds with [`SdkError<GetSchemaAnalysisRuleError>`](crate::error::GetSchemaAnalysisRuleError)
-    pub fn get_schema_analysis_rule(
-        &self,
-    ) -> crate::client::fluent_builders::GetSchemaAnalysisRule {
-        crate::client::fluent_builders::GetSchemaAnalysisRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCollaborations`](crate::client::fluent_builders::ListCollaborations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCollaborations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCollaborations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCollaborations::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCollaborations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCollaborations::set_max_results): <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
-    ///   - [`member_status(FilterableMemberStatus)`](crate::client::fluent_builders::ListCollaborations::member_status) / [`set_member_status(Option<FilterableMemberStatus>)`](crate::client::fluent_builders::ListCollaborations::set_member_status): <p>The caller's status in a collaboration.</p>
-    /// - On success, responds with [`ListCollaborationsOutput`](crate::output::ListCollaborationsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListCollaborationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`collaboration_list(Option<Vec<CollaborationSummary>>)`](crate::output::ListCollaborationsOutput::collaboration_list): <p>The list of collaborations.</p>
-    /// - On failure, responds with [`SdkError<ListCollaborationsError>`](crate::error::ListCollaborationsError)
-    pub fn list_collaborations(&self) -> crate::client::fluent_builders::ListCollaborations {
-        crate::client::fluent_builders::ListCollaborations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListConfiguredTableAssociations`](crate::client::fluent_builders::ListConfiguredTableAssociations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfiguredTableAssociations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::ListConfiguredTableAssociations::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::ListConfiguredTableAssociations::set_membership_identifier): <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfiguredTableAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfiguredTableAssociations::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfiguredTableAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConfiguredTableAssociations::set_max_results): <p>The maximum size of the results that is returned per call.</p>
-    /// - On success, responds with [`ListConfiguredTableAssociationsOutput`](crate::output::ListConfiguredTableAssociationsOutput) with field(s):
-    ///   - [`configured_table_association_summaries(Option<Vec<ConfiguredTableAssociationSummary>>)`](crate::output::ListConfiguredTableAssociationsOutput::configured_table_association_summaries): <p>The retrieved list of configured table associations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListConfiguredTableAssociationsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListConfiguredTableAssociationsError>`](crate::error::ListConfiguredTableAssociationsError)
-    pub fn list_configured_table_associations(
-        &self,
-    ) -> crate::client::fluent_builders::ListConfiguredTableAssociations {
-        crate::client::fluent_builders::ListConfiguredTableAssociations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListConfiguredTables`](crate::client::fluent_builders::ListConfiguredTables) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfiguredTables::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfiguredTables::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfiguredTables::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConfiguredTables::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListConfiguredTables::set_max_results): <p>The maximum size of the results that is returned per call.</p>
-    /// - On success, responds with [`ListConfiguredTablesOutput`](crate::output::ListConfiguredTablesOutput) with field(s):
-    ///   - [`configured_table_summaries(Option<Vec<ConfiguredTableSummary>>)`](crate::output::ListConfiguredTablesOutput::configured_table_summaries): <p>The configured tables listed by the request.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListConfiguredTablesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListConfiguredTablesError>`](crate::error::ListConfiguredTablesError)
-    pub fn list_configured_tables(&self) -> crate::client::fluent_builders::ListConfiguredTables {
-        crate::client::fluent_builders::ListConfiguredTables::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::ListMembers::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::ListMembers::set_collaboration_identifier): <p>The identifier of the collaboration in which the members are listed.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum size of the results that is returned per call.</p>
-    /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`member_summaries(Option<Vec<MemberSummary>>)`](crate::output::ListMembersOutput::member_summaries): <p>The list of members returned by the ListMembers operation.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
-    pub fn list_members(&self) -> crate::client::fluent_builders::ListMembers {
-        crate::client::fluent_builders::ListMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMemberships`](crate::client::fluent_builders::ListMemberships) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMemberships::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMemberships::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMemberships::set_max_results): <p>The maximum size of the results that is returned per call.</p>
-    ///   - [`status(MembershipStatus)`](crate::client::fluent_builders::ListMemberships::status) / [`set_status(Option<MembershipStatus>)`](crate::client::fluent_builders::ListMemberships::set_status): <p>A filter which will return only memberships in the specified status.</p>
-    /// - On success, responds with [`ListMembershipsOutput`](crate::output::ListMembershipsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListMembershipsOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`membership_summaries(Option<Vec<MembershipSummary>>)`](crate::output::ListMembershipsOutput::membership_summaries): <p>The list of memberships returned from the ListMemberships operation.</p>
-    /// - On failure, responds with [`SdkError<ListMembershipsError>`](crate::error::ListMembershipsError)
-    pub fn list_memberships(&self) -> crate::client::fluent_builders::ListMemberships {
-        crate::client::fluent_builders::ListMemberships::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProtectedQueries`](crate::client::fluent_builders::ListProtectedQueries) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProtectedQueries::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::ListProtectedQueries::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::ListProtectedQueries::set_membership_identifier): <p>The identifier for the membership in the collaboration.</p>
-    ///   - [`status(ProtectedQueryStatus)`](crate::client::fluent_builders::ListProtectedQueries::status) / [`set_status(Option<ProtectedQueryStatus>)`](crate::client::fluent_builders::ListProtectedQueries::set_status): <p>A filter on the status of the protected query.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProtectedQueries::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProtectedQueries::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProtectedQueries::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProtectedQueries::set_max_results): <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service can return a nextToken even if the maximum results has not been met. </p>
-    /// - On success, responds with [`ListProtectedQueriesOutput`](crate::output::ListProtectedQueriesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListProtectedQueriesOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`protected_queries(Option<Vec<ProtectedQuerySummary>>)`](crate::output::ListProtectedQueriesOutput::protected_queries): <p>A list of protected queries.</p>
-    /// - On failure, responds with [`SdkError<ListProtectedQueriesError>`](crate::error::ListProtectedQueriesError)
-    pub fn list_protected_queries(&self) -> crate::client::fluent_builders::ListProtectedQueries {
-        crate::client::fluent_builders::ListProtectedQueries::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSchemas`](crate::client::fluent_builders::ListSchemas) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSchemas::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    ///   - [`schema_type(SchemaType)`](crate::client::fluent_builders::ListSchemas::schema_type) / [`set_schema_type(Option<SchemaType>)`](crate::client::fluent_builders::ListSchemas::set_schema_type): <p>If present, filter schemas by schema type. The only valid schema type is currently `TABLE`.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSchemas::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSchemas::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSchemas::set_max_results): <p>The maximum size of the results that is returned per call.</p>
-    /// - On success, responds with [`ListSchemasOutput`](crate::output::ListSchemasOutput) with field(s):
-    ///   - [`schema_summaries(Option<Vec<SchemaSummary>>)`](crate::output::ListSchemasOutput::schema_summaries): <p>The retrieved list of schemas.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSchemasOutput::next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSchemasError>`](crate::error::ListSchemasError)
-    pub fn list_schemas(&self) -> crate::client::fluent_builders::ListSchemas {
-        crate::client::fluent_builders::ListSchemas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartProtectedQuery`](crate::client::fluent_builders::StartProtectedQuery) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(ProtectedQueryType)`](crate::client::fluent_builders::StartProtectedQuery::type) / [`set_type(Option<ProtectedQueryType>)`](crate::client::fluent_builders::StartProtectedQuery::set_type): <p>The type of the protected query to be started.</p>
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::StartProtectedQuery::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::StartProtectedQuery::set_membership_identifier): <p>A unique identifier for the membership to run this query against. Currently accepts a membership ID.</p>
-    ///   - [`sql_parameters(ProtectedQuerySqlParameters)`](crate::client::fluent_builders::StartProtectedQuery::sql_parameters) / [`set_sql_parameters(Option<ProtectedQuerySqlParameters>)`](crate::client::fluent_builders::StartProtectedQuery::set_sql_parameters): <p>The protected SQL query parameters.</p>
-    ///   - [`result_configuration(ProtectedQueryResultConfiguration)`](crate::client::fluent_builders::StartProtectedQuery::result_configuration) / [`set_result_configuration(Option<ProtectedQueryResultConfiguration>)`](crate::client::fluent_builders::StartProtectedQuery::set_result_configuration): <p>The details needed to write the query results.</p>
-    /// - On success, responds with [`StartProtectedQueryOutput`](crate::output::StartProtectedQueryOutput) with field(s):
-    ///   - [`protected_query(Option<ProtectedQuery>)`](crate::output::StartProtectedQueryOutput::protected_query): <p>The protected query.</p>
-    /// - On failure, responds with [`SdkError<StartProtectedQueryError>`](crate::error::StartProtectedQueryError)
-    pub fn start_protected_query(&self) -> crate::client::fluent_builders::StartProtectedQuery {
-        crate::client::fluent_builders::StartProtectedQuery::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCollaboration`](crate::client::fluent_builders::UpdateCollaboration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateCollaboration::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::client::fluent_builders::UpdateCollaboration::set_collaboration_identifier): <p>The identifier for the collaboration.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCollaboration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCollaboration::set_name): <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateCollaboration::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateCollaboration::set_description): <p>A description of the collaboration.</p>
-    /// - On success, responds with [`UpdateCollaborationOutput`](crate::output::UpdateCollaborationOutput) with field(s):
-    ///   - [`collaboration(Option<Collaboration>)`](crate::output::UpdateCollaborationOutput::collaboration): <p>The entire collaboration that has been updated.</p>
-    /// - On failure, responds with [`SdkError<UpdateCollaborationError>`](crate::error::UpdateCollaborationError)
-    pub fn update_collaboration(&self) -> crate::client::fluent_builders::UpdateCollaboration {
-        crate::client::fluent_builders::UpdateCollaboration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateConfiguredTable`](crate::client::fluent_builders::UpdateConfiguredTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::set_configured_table_identifier): <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::set_name): <p>A new name for the configured table.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTable::set_description): <p>A new description for the configured table.</p>
-    /// - On success, responds with [`UpdateConfiguredTableOutput`](crate::output::UpdateConfiguredTableOutput) with field(s):
-    ///   - [`configured_table(Option<ConfiguredTable>)`](crate::output::UpdateConfiguredTableOutput::configured_table): <p>The updated configured table.</p>
-    /// - On failure, responds with [`SdkError<UpdateConfiguredTableError>`](crate::error::UpdateConfiguredTableError)
-    pub fn update_configured_table(&self) -> crate::client::fluent_builders::UpdateConfiguredTable {
-        crate::client::fluent_builders::UpdateConfiguredTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateConfiguredTableAnalysisRule`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::set_configured_table_identifier): <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    ///   - [`analysis_rule_type(ConfiguredTableAnalysisRuleType)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::analysis_rule_type) / [`set_analysis_rule_type(Option<ConfiguredTableAnalysisRuleType>)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::set_analysis_rule_type): <p>The analysis rule type to be updated. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    ///   - [`analysis_rule_policy(ConfiguredTableAnalysisRulePolicy)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::analysis_rule_policy) / [`set_analysis_rule_policy(Option<ConfiguredTableAnalysisRulePolicy>)`](crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::set_analysis_rule_policy): <p>The new analysis rule policy for the configured table analysis rule.</p>
-    /// - On success, responds with [`UpdateConfiguredTableAnalysisRuleOutput`](crate::output::UpdateConfiguredTableAnalysisRuleOutput) with field(s):
-    ///   - [`analysis_rule(Option<ConfiguredTableAnalysisRule>)`](crate::output::UpdateConfiguredTableAnalysisRuleOutput::analysis_rule): <p>The entire updated analysis rule.</p>
-    /// - On failure, responds with [`SdkError<UpdateConfiguredTableAnalysisRuleError>`](crate::error::UpdateConfiguredTableAnalysisRuleError)
-    pub fn update_configured_table_analysis_rule(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule {
-        crate::client::fluent_builders::UpdateConfiguredTableAnalysisRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateConfiguredTableAssociation`](crate::client::fluent_builders::UpdateConfiguredTableAssociation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configured_table_association_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::configured_table_association_identifier) / [`set_configured_table_association_identifier(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::set_configured_table_association_identifier): <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::set_membership_identifier): <p>The unique ID for the membership that the configured table association belongs to.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::set_description): <p>A new description for the configured table association.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateConfiguredTableAssociation::set_role_arn): <p>The service will assume this role to access catalog metadata and query the table.</p>
-    /// - On success, responds with [`UpdateConfiguredTableAssociationOutput`](crate::output::UpdateConfiguredTableAssociationOutput) with field(s):
-    ///   - [`configured_table_association(Option<ConfiguredTableAssociation>)`](crate::output::UpdateConfiguredTableAssociationOutput::configured_table_association): <p>The entire updated configured table association.</p>
-    /// - On failure, responds with [`SdkError<UpdateConfiguredTableAssociationError>`](crate::error::UpdateConfiguredTableAssociationError)
-    pub fn update_configured_table_association(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateConfiguredTableAssociation {
-        crate::client::fluent_builders::UpdateConfiguredTableAssociation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateMembership`](crate::client::fluent_builders::UpdateMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateMembership::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::UpdateMembership::set_membership_identifier): <p>The unique identifier of the membership.</p>
-    ///   - [`query_log_status(MembershipQueryLogStatus)`](crate::client::fluent_builders::UpdateMembership::query_log_status) / [`set_query_log_status(Option<MembershipQueryLogStatus>)`](crate::client::fluent_builders::UpdateMembership::set_query_log_status): <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    /// - On success, responds with [`UpdateMembershipOutput`](crate::output::UpdateMembershipOutput) with field(s):
-    ///   - [`membership(Option<Membership>)`](crate::output::UpdateMembershipOutput::membership): <p>The membership object.</p>
-    /// - On failure, responds with [`SdkError<UpdateMembershipError>`](crate::error::UpdateMembershipError)
-    pub fn update_membership(&self) -> crate::client::fluent_builders::UpdateMembership {
-        crate::client::fluent_builders::UpdateMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProtectedQuery`](crate::client::fluent_builders::UpdateProtectedQuery) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`membership_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateProtectedQuery::membership_identifier) / [`set_membership_identifier(Option<String>)`](crate::client::fluent_builders::UpdateProtectedQuery::set_membership_identifier): <p>The identifier for a member of a protected query instance.</p>
-    ///   - [`protected_query_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateProtectedQuery::protected_query_identifier) / [`set_protected_query_identifier(Option<String>)`](crate::client::fluent_builders::UpdateProtectedQuery::set_protected_query_identifier): <p>The identifier for a protected query instance.</p>
-    ///   - [`target_status(TargetProtectedQueryStatus)`](crate::client::fluent_builders::UpdateProtectedQuery::target_status) / [`set_target_status(Option<TargetProtectedQueryStatus>)`](crate::client::fluent_builders::UpdateProtectedQuery::set_target_status): <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    /// - On success, responds with [`UpdateProtectedQueryOutput`](crate::output::UpdateProtectedQueryOutput) with field(s):
-    ///   - [`protected_query(Option<ProtectedQuery>)`](crate::output::UpdateProtectedQueryOutput::protected_query): <p>The protected query output.</p>
-    /// - On failure, responds with [`SdkError<UpdateProtectedQueryError>`](crate::error::UpdateProtectedQueryError)
-    pub fn update_protected_query(&self) -> crate::client::fluent_builders::UpdateProtectedQuery {
-        crate::client::fluent_builders::UpdateProtectedQuery::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -608,9 +174,77 @@ impl Client {
     }
 }
 
+mod batch_get_schema;
+
+mod create_collaboration;
+
+mod create_configured_table;
+
+mod create_configured_table_analysis_rule;
+
+mod create_configured_table_association;
+
+mod create_membership;
+
+mod delete_collaboration;
+
+mod delete_configured_table;
+
+mod delete_configured_table_analysis_rule;
+
+mod delete_configured_table_association;
+
+mod delete_member;
+
+mod delete_membership;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_collaboration;
+
+mod get_configured_table;
+
+mod get_configured_table_analysis_rule;
+
+mod get_configured_table_association;
+
+mod get_membership;
+
+mod get_protected_query;
+
+mod get_schema;
+
+mod get_schema_analysis_rule;
+
+mod list_collaborations;
+
+mod list_configured_table_associations;
+
+mod list_configured_tables;
+
+mod list_members;
+
+mod list_memberships;
+
+mod list_protected_queries;
+
+mod list_schemas;
+
+mod start_protected_query;
+
+mod update_collaboration;
+
+mod update_configured_table;
+
+mod update_configured_table_analysis_rule;
+
+mod update_configured_table_association;
+
+mod update_membership;
+
+mod update_protected_query;

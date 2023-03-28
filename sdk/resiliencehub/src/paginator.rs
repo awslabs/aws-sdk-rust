@@ -82,7 +82,10 @@ impl ListAlarmRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_alarm_recommendations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_alarm_recommendations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +195,8 @@ impl ListAppAssessmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_assessments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_app_assessments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +306,7 @@ impl ListAppComponentCompliancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_component_compliances_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_app_component_compliances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +416,7 @@ impl ListAppComponentRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_component_recommendations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_app_component_recommendations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -522,7 +526,7 @@ impl ListAppsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_apps_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_apps_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -632,7 +636,7 @@ impl ListAppVersionResourceMappingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_version_resource_mappings_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_app_version_resource_mappings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -742,7 +746,10 @@ impl ListAppVersionResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_version_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_app_version_resources_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -852,7 +859,8 @@ impl ListAppVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_versions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_app_versions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -962,7 +970,7 @@ impl ListRecommendationTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_recommendation_templates_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_recommendation_templates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1072,7 +1080,10 @@ impl ListResiliencyPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resiliency_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resiliency_policies_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1182,7 +1193,10 @@ impl ListSopRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sop_recommendations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_sop_recommendations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1292,7 +1306,7 @@ impl ListSuggestedResiliencyPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_suggested_resiliency_policies_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_suggested_resiliency_policies_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1402,7 +1416,10 @@ impl ListTestRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_test_recommendations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_test_recommendations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1514,7 +1531,7 @@ impl ListUnsupportedAppVersionResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_unsupported_app_version_resources_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_unsupported_app_version_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

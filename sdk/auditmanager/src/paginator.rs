@@ -82,7 +82,8 @@ impl GetChangeLogsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_change_logs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_change_logs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,8 @@ impl GetDelegationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_delegations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_delegations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +304,7 @@ impl GetEvidenceByEvidenceFolderPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_evidence_by_evidence_folder_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_evidence_by_evidence_folder_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +414,7 @@ impl GetEvidenceFoldersByAssessmentPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_evidence_folders_by_assessment_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_evidence_folders_by_assessment_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -524,7 +526,7 @@ impl GetEvidenceFoldersByAssessmentControlPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_evidence_folders_by_assessment_control_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_evidence_folders_by_assessment_control_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -636,7 +638,7 @@ impl ListAssessmentControlInsightsByControlDomainPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_assessment_control_insights_by_control_domain_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_assessment_control_insights_by_control_domain_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -746,7 +748,10 @@ impl ListAssessmentFrameworksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_assessment_frameworks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_assessment_frameworks_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -858,7 +863,7 @@ impl ListAssessmentFrameworkShareRequestsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_assessment_framework_share_requests_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_assessment_framework_share_requests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -968,7 +973,10 @@ impl ListAssessmentReportsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_assessment_reports_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_assessment_reports_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1078,7 +1086,8 @@ impl ListAssessmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_assessments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_assessments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1188,7 +1197,10 @@ impl ListControlDomainInsightsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_control_domain_insights_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_control_domain_insights_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1300,7 +1312,7 @@ impl ListControlDomainInsightsByAssessmentPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_control_domain_insights_by_assessment_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_control_domain_insights_by_assessment_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1412,7 +1424,7 @@ impl ListControlInsightsByControlDomainPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_control_insights_by_control_domain_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_control_insights_by_control_domain_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1522,7 +1534,8 @@ impl ListControlsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_controls_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_controls_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1632,7 +1645,7 @@ impl ListKeywordsForDataSourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_keywords_for_data_source_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_keywords_for_data_source_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1742,7 +1755,8 @@ impl ListNotificationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_notifications_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_notifications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

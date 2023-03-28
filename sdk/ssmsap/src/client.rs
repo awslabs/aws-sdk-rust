@@ -89,224 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteResourcePermission`](crate::client::fluent_builders::DeleteResourcePermission) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`action_type(PermissionActionType)`](crate::client::fluent_builders::DeleteResourcePermission::action_type) / [`set_action_type(Option<PermissionActionType>)`](crate::client::fluent_builders::DeleteResourcePermission::set_action_type): <p>Delete or restore the permissions on the target database.</p>
-    ///   - [`source_resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePermission::source_resource_arn) / [`set_source_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePermission::set_source_resource_arn): <p>The Amazon Resource Name (ARN) of the source resource.</p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteResourcePermission::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::DeleteResourcePermission::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    /// - On success, responds with [`DeleteResourcePermissionOutput`](crate::output::DeleteResourcePermissionOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::output::DeleteResourcePermissionOutput::policy): <p>The policy that removes permissions on the target database.</p>
-    /// - On failure, responds with [`SdkError<DeleteResourcePermissionError>`](crate::error::DeleteResourcePermissionError)
-    pub fn delete_resource_permission(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteResourcePermission {
-        crate::client::fluent_builders::DeleteResourcePermission::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeregisterApplication`](crate::client::fluent_builders::DeregisterApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeregisterApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeregisterApplication::set_application_id): <p>The ID of the application.</p>
-    /// - On success, responds with [`DeregisterApplicationOutput`](crate::output::DeregisterApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<DeregisterApplicationError>`](crate::error::DeregisterApplicationError)
-    pub fn deregister_application(&self) -> crate::client::fluent_builders::DeregisterApplication {
-        crate::client::fluent_builders::DeregisterApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_id): <p>The ID of the application.</p>
-    ///   - [`application_arn(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_arn) / [`set_application_arn(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_arn): <p>The Amazon Resource Name (ARN) of the application. </p>
-    ///   - [`app_registry_arn(impl Into<String>)`](crate::client::fluent_builders::GetApplication::app_registry_arn) / [`set_app_registry_arn(Option<String>)`](crate::client::fluent_builders::GetApplication::set_app_registry_arn): <p>The Amazon Resource Name (ARN) of the application registry.</p>
-    /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
-    ///   - [`application(Option<Application>)`](crate::output::GetApplicationOutput::application): <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetApplicationOutput::tags): <p>The tags of a registered application.</p>
-    /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
-    pub fn get_application(&self) -> crate::client::fluent_builders::GetApplication {
-        crate::client::fluent_builders::GetApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetComponent`](crate::client::fluent_builders::GetComponent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetComponent::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetComponent::set_application_id): <p>The ID of the application.</p>
-    ///   - [`component_id(impl Into<String>)`](crate::client::fluent_builders::GetComponent::component_id) / [`set_component_id(Option<String>)`](crate::client::fluent_builders::GetComponent::set_component_id): <p>The ID of the component.</p>
-    /// - On success, responds with [`GetComponentOutput`](crate::output::GetComponentOutput) with field(s):
-    ///   - [`component(Option<Component>)`](crate::output::GetComponentOutput::component): <p>The component of an application registered with AWS Systems Manager for SAP.</p>
-    /// - On failure, responds with [`SdkError<GetComponentError>`](crate::error::GetComponentError)
-    pub fn get_component(&self) -> crate::client::fluent_builders::GetComponent {
-        crate::client::fluent_builders::GetComponent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDatabase`](crate::client::fluent_builders::GetDatabase) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_application_id): <p>The ID of the application.</p>
-    ///   - [`component_id(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::component_id) / [`set_component_id(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_component_id): <p>The ID of the component.</p>
-    ///   - [`database_id(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::database_id) / [`set_database_id(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_database_id): <p>The ID of the database.</p>
-    ///   - [`database_arn(impl Into<String>)`](crate::client::fluent_builders::GetDatabase::database_arn) / [`set_database_arn(Option<String>)`](crate::client::fluent_builders::GetDatabase::set_database_arn): <p>The Amazon Resource Name (ARN) of the database.</p>
-    /// - On success, responds with [`GetDatabaseOutput`](crate::output::GetDatabaseOutput) with field(s):
-    ///   - [`database(Option<Database>)`](crate::output::GetDatabaseOutput::database): <p>The SAP HANA database of an application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetDatabaseOutput::tags): <p>The tags of a database.</p>
-    /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::error::GetDatabaseError)
-    pub fn get_database(&self) -> crate::client::fluent_builders::GetDatabase {
-        crate::client::fluent_builders::GetDatabase::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOperation`](crate::client::fluent_builders::GetOperation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`operation_id(impl Into<String>)`](crate::client::fluent_builders::GetOperation::operation_id) / [`set_operation_id(Option<String>)`](crate::client::fluent_builders::GetOperation::set_operation_id): <p>The ID of the operation.</p>
-    /// - On success, responds with [`GetOperationOutput`](crate::output::GetOperationOutput) with field(s):
-    ///   - [`operation(Option<Operation>)`](crate::output::GetOperationOutput::operation): <p>Returns the details of an operation.</p>
-    /// - On failure, responds with [`SdkError<GetOperationError>`](crate::error::GetOperationError)
-    pub fn get_operation(&self) -> crate::client::fluent_builders::GetOperation {
-        crate::client::fluent_builders::GetOperation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResourcePermission`](crate::client::fluent_builders::GetResourcePermission) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`action_type(PermissionActionType)`](crate::client::fluent_builders::GetResourcePermission::action_type) / [`set_action_type(Option<PermissionActionType>)`](crate::client::fluent_builders::GetResourcePermission::set_action_type): <p></p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::GetResourcePermission::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::GetResourcePermission::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    /// - On success, responds with [`GetResourcePermissionOutput`](crate::output::GetResourcePermissionOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::output::GetResourcePermissionOutput::policy): <p></p>
-    /// - On failure, responds with [`SdkError<GetResourcePermissionError>`](crate::error::GetResourcePermissionError)
-    pub fn get_resource_permission(&self) -> crate::client::fluent_builders::GetResourcePermission {
-        crate::client::fluent_builders::GetResourcePermission::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>The applications registered with AWS Systems Manager for SAP.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
-    pub fn list_applications(&self) -> crate::client::fluent_builders::ListApplications {
-        crate::client::fluent_builders::ListApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListComponents`](crate::client::fluent_builders::ListComponents) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListComponents::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListComponents::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListComponents::set_application_id): <p>The ID of the application.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListComponents::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListComponents::set_next_token): <p>The token for the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListComponents::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListComponents::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.</p>  <p>If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
-    /// - On success, responds with [`ListComponentsOutput`](crate::output::ListComponentsOutput) with field(s):
-    ///   - [`components(Option<Vec<ComponentSummary>>)`](crate::output::ListComponentsOutput::components): <p>List of components registered with AWS System Manager for SAP.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListComponentsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListComponentsError>`](crate::error::ListComponentsError)
-    pub fn list_components(&self) -> crate::client::fluent_builders::ListComponents {
-        crate::client::fluent_builders::ListComponents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDatabases`](crate::client::fluent_builders::ListDatabases) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatabases::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDatabases::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDatabases::set_application_id): <p>The ID of the application.</p>
-    ///   - [`component_id(impl Into<String>)`](crate::client::fluent_builders::ListDatabases::component_id) / [`set_component_id(Option<String>)`](crate::client::fluent_builders::ListDatabases::set_component_id): <p>The ID of the component.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatabases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatabases::set_next_token): <p>The token for the next page of results. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatabases::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDatabases::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
-    /// - On success, responds with [`ListDatabasesOutput`](crate::output::ListDatabasesOutput) with field(s):
-    ///   - [`databases(Option<Vec<DatabaseSummary>>)`](crate::output::ListDatabasesOutput::databases): <p>The SAP HANA databases of an application.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDatabasesOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListDatabasesError>`](crate::error::ListDatabasesError)
-    pub fn list_databases(&self) -> crate::client::fluent_builders::ListDatabases {
-        crate::client::fluent_builders::ListDatabases::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListOperations`](crate::client::fluent_builders::ListOperations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListOperations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListOperations::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListOperations::set_application_id): <p>The ID of the application.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListOperations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListOperations::set_max_results): <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListOperations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListOperations::set_next_token): <p>The token for the next page of results. </p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListOperations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListOperations::set_filters): <p>The filters of an operation.</p>
-    /// - On success, responds with [`ListOperationsOutput`](crate::output::ListOperationsOutput) with field(s):
-    ///   - [`operations(Option<Vec<Operation>>)`](crate::output::ListOperationsOutput::operations): <p>List of operations performed by AWS Systems Manager for SAP.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListOperationsOutput::next_token): <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    /// - On failure, responds with [`SdkError<ListOperationsError>`](crate::error::ListOperationsError)
-    pub fn list_operations(&self) -> crate::client::fluent_builders::ListOperations {
-        crate::client::fluent_builders::ListOperations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p></p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutResourcePermission`](crate::client::fluent_builders::PutResourcePermission) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`action_type(PermissionActionType)`](crate::client::fluent_builders::PutResourcePermission::action_type) / [`set_action_type(Option<PermissionActionType>)`](crate::client::fluent_builders::PutResourcePermission::set_action_type): <p></p>
-    ///   - [`source_resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePermission::source_resource_arn) / [`set_source_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePermission::set_source_resource_arn): <p></p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::PutResourcePermission::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::PutResourcePermission::set_resource_arn): <p></p>
-    /// - On success, responds with [`PutResourcePermissionOutput`](crate::output::PutResourcePermissionOutput) with field(s):
-    ///   - [`policy(Option<String>)`](crate::output::PutResourcePermissionOutput::policy): <p></p>
-    /// - On failure, responds with [`SdkError<PutResourcePermissionError>`](crate::error::PutResourcePermissionError)
-    pub fn put_resource_permission(&self) -> crate::client::fluent_builders::PutResourcePermission {
-        crate::client::fluent_builders::PutResourcePermission::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RegisterApplication`](crate::client::fluent_builders::RegisterApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::RegisterApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::RegisterApplication::set_application_id): <p>The ID of the application.</p>
-    ///   - [`application_type(ApplicationType)`](crate::client::fluent_builders::RegisterApplication::application_type) / [`set_application_type(Option<ApplicationType>)`](crate::client::fluent_builders::RegisterApplication::set_application_type): <p>The type of the application.</p>
-    ///   - [`instances(Vec<String>)`](crate::client::fluent_builders::RegisterApplication::instances) / [`set_instances(Option<Vec<String>>)`](crate::client::fluent_builders::RegisterApplication::set_instances): <p>The Amazon EC2 instances on which your SAP application is running.</p>
-    ///   - [`sap_instance_number(impl Into<String>)`](crate::client::fluent_builders::RegisterApplication::sap_instance_number) / [`set_sap_instance_number(Option<String>)`](crate::client::fluent_builders::RegisterApplication::set_sap_instance_number): <p>The SAP instance number of the application.</p>
-    ///   - [`sid(impl Into<String>)`](crate::client::fluent_builders::RegisterApplication::sid) / [`set_sid(Option<String>)`](crate::client::fluent_builders::RegisterApplication::set_sid): <p>The System ID of the application.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::RegisterApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RegisterApplication::set_tags): <p>The tags to be attached to the SAP application.</p>
-    ///   - [`credentials(Vec<ApplicationCredential>)`](crate::client::fluent_builders::RegisterApplication::credentials) / [`set_credentials(Option<Vec<ApplicationCredential>>)`](crate::client::fluent_builders::RegisterApplication::set_credentials): <p>The credentials of the SAP application.</p>
-    /// - On success, responds with [`RegisterApplicationOutput`](crate::output::RegisterApplicationOutput) with field(s):
-    ///   - [`application(Option<Application>)`](crate::output::RegisterApplicationOutput::application): <p>The application registered with AWS Systems Manager for SAP.</p>
-    ///   - [`operation_id(Option<String>)`](crate::output::RegisterApplicationOutput::operation_id): <p>The ID of the operation.</p>
-    /// - On failure, responds with [`SdkError<RegisterApplicationError>`](crate::error::RegisterApplicationError)
-    pub fn register_application(&self) -> crate::client::fluent_builders::RegisterApplication {
-        crate::client::fluent_builders::RegisterApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags on a resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Adds/updates or removes credentials for applications registered with AWS Systems Manager for SAP.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateApplicationSettings`](crate::client::fluent_builders::UpdateApplicationSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplicationSettings::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplicationSettings::set_application_id): <p>The ID of the application.</p>
-    ///   - [`credentials_to_add_or_update(Vec<ApplicationCredential>)`](crate::client::fluent_builders::UpdateApplicationSettings::credentials_to_add_or_update) / [`set_credentials_to_add_or_update(Option<Vec<ApplicationCredential>>)`](crate::client::fluent_builders::UpdateApplicationSettings::set_credentials_to_add_or_update): <p>The credentials to be added or updated.</p>
-    ///   - [`credentials_to_remove(Vec<ApplicationCredential>)`](crate::client::fluent_builders::UpdateApplicationSettings::credentials_to_remove) / [`set_credentials_to_remove(Option<Vec<ApplicationCredential>>)`](crate::client::fluent_builders::UpdateApplicationSettings::set_credentials_to_remove): <p>The credentials to be removed.</p>
-    /// - On success, responds with [`UpdateApplicationSettingsOutput`](crate::output::UpdateApplicationSettingsOutput) with field(s):
-    ///   - [`message(Option<String>)`](crate::output::UpdateApplicationSettingsOutput::message): <p>The update message.</p>
-    ///   - [`operation_ids(Option<Vec<String>>)`](crate::output::UpdateApplicationSettingsOutput::operation_ids): <p>The IDs of the operations.</p>
-    /// - On failure, responds with [`SdkError<UpdateApplicationSettingsError>`](crate::error::UpdateApplicationSettingsError)
-    pub fn update_application_settings(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateApplicationSettings {
-        crate::client::fluent_builders::UpdateApplicationSettings::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -392,9 +174,43 @@ impl Client {
     }
 }
 
+mod delete_resource_permission;
+
+mod deregister_application;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_application;
+
+mod get_component;
+
+mod get_database;
+
+mod get_operation;
+
+mod get_resource_permission;
+
+mod list_applications;
+
+mod list_components;
+
+mod list_databases;
+
+mod list_operations;
+
+mod list_tags_for_resource;
+
+mod put_resource_permission;
+
+mod register_application;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_application_settings;

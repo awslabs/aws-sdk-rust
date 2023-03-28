@@ -89,114 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_name): <p> Name of the project. </p>
-    ///   - [`region(impl Into<String>)`](crate::client::fluent_builders::CreateProject::region) / [`set_region(Option<String>)`](crate::client::fluent_builders::CreateProject::set_region): <p> Default region where project resources should be created. </p>
-    ///   - [`contents(Blob)`](crate::client::fluent_builders::CreateProject::contents) / [`set_contents(Option<Blob>)`](crate::client::fluent_builders::CreateProject::set_contents): <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::CreateProject::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::CreateProject::set_snapshot_id): <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
-    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
-    ///   - [`details(Option<ProjectDetails>)`](crate::output::CreateProjectOutput::details): <p> Detailed information about the created AWS Mobile Hub project. </p>
-    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
-    pub fn create_project(&self) -> crate::client::fluent_builders::CreateProject {
-        crate::client::fluent_builders::CreateProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProject`](crate::client::fluent_builders::DeleteProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::DeleteProject::set_project_id): <p> Unique project identifier. </p>
-    /// - On success, responds with [`DeleteProjectOutput`](crate::output::DeleteProjectOutput) with field(s):
-    ///   - [`deleted_resources(Option<Vec<Resource>>)`](crate::output::DeleteProjectOutput::deleted_resources): <p> Resources which were deleted. </p>
-    ///   - [`orphaned_resources(Option<Vec<Resource>>)`](crate::output::DeleteProjectOutput::orphaned_resources): <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    /// - On failure, responds with [`SdkError<DeleteProjectError>`](crate::error::DeleteProjectError)
-    pub fn delete_project(&self) -> crate::client::fluent_builders::DeleteProject {
-        crate::client::fluent_builders::DeleteProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeBundle`](crate::client::fluent_builders::DescribeBundle) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::DescribeBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::DescribeBundle::set_bundle_id): <p> Unique bundle identifier. </p>
-    /// - On success, responds with [`DescribeBundleOutput`](crate::output::DescribeBundleOutput) with field(s):
-    ///   - [`details(Option<BundleDetails>)`](crate::output::DescribeBundleOutput::details): <p> The details of the bundle. </p>
-    /// - On failure, responds with [`SdkError<DescribeBundleError>`](crate::error::DescribeBundleError)
-    pub fn describe_bundle(&self) -> crate::client::fluent_builders::DescribeBundle {
-        crate::client::fluent_builders::DescribeBundle::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeProject`](crate::client::fluent_builders::DescribeProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::DescribeProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::DescribeProject::set_project_id): <p> Unique project identifier. </p>
-    ///   - [`sync_from_resources(bool)`](crate::client::fluent_builders::DescribeProject::sync_from_resources) / [`set_sync_from_resources(bool)`](crate::client::fluent_builders::DescribeProject::set_sync_from_resources): <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
-    /// - On success, responds with [`DescribeProjectOutput`](crate::output::DescribeProjectOutput) with field(s):
-    ///   - [`details(Option<ProjectDetails>)`](crate::output::DescribeProjectOutput::details): <p> Detailed information about an AWS Mobile Hub project. </p>
-    /// - On failure, responds with [`SdkError<DescribeProjectError>`](crate::error::DescribeProjectError)
-    pub fn describe_project(&self) -> crate::client::fluent_builders::DescribeProject {
-        crate::client::fluent_builders::DescribeProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExportBundle`](crate::client::fluent_builders::ExportBundle) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`bundle_id(impl Into<String>)`](crate::client::fluent_builders::ExportBundle::bundle_id) / [`set_bundle_id(Option<String>)`](crate::client::fluent_builders::ExportBundle::set_bundle_id): <p> Unique bundle identifier. </p>
-    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::ExportBundle::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::ExportBundle::set_project_id): <p> Unique project identifier. </p>
-    ///   - [`platform(Platform)`](crate::client::fluent_builders::ExportBundle::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::ExportBundle::set_platform): <p> Developer desktop or target application platform. </p>
-    /// - On success, responds with [`ExportBundleOutput`](crate::output::ExportBundleOutput) with field(s):
-    ///   - [`download_url(Option<String>)`](crate::output::ExportBundleOutput::download_url): <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
-    /// - On failure, responds with [`SdkError<ExportBundleError>`](crate::error::ExportBundleError)
-    pub fn export_bundle(&self) -> crate::client::fluent_builders::ExportBundle {
-        crate::client::fluent_builders::ExportBundle::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExportProject`](crate::client::fluent_builders::ExportProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::ExportProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::ExportProject::set_project_id): <p> Unique project identifier. </p>
-    /// - On success, responds with [`ExportProjectOutput`](crate::output::ExportProjectOutput) with field(s):
-    ///   - [`download_url(Option<String>)`](crate::output::ExportProjectOutput::download_url): <p> URL which can be used to download the exported project configuation file(s). </p>
-    ///   - [`share_url(Option<String>)`](crate::output::ExportProjectOutput::share_url): <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>
-    ///   - [`snapshot_id(Option<String>)`](crate::output::ExportProjectOutput::snapshot_id): <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
-    /// - On failure, responds with [`SdkError<ExportProjectError>`](crate::error::ExportProjectError)
-    pub fn export_project(&self) -> crate::client::fluent_builders::ExportProject {
-        crate::client::fluent_builders::ExportProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBundles`](crate::client::fluent_builders::ListBundles) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBundles::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBundles::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListBundles::set_max_results): <p> Maximum number of records to list in a single response. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBundles::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBundles::set_next_token): <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
-    /// - On success, responds with [`ListBundlesOutput`](crate::output::ListBundlesOutput) with field(s):
-    ///   - [`bundle_list(Option<Vec<BundleDetails>>)`](crate::output::ListBundlesOutput::bundle_list): <p> A list of bundles. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBundlesOutput::next_token): <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
-    /// - On failure, responds with [`SdkError<ListBundlesError>`](crate::error::ListBundlesError)
-    pub fn list_bundles(&self) -> crate::client::fluent_builders::ListBundles {
-        crate::client::fluent_builders::ListBundles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListProjects::set_max_results): <p> Maximum number of records to list in a single response. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
-    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
-    ///   - [`projects(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::projects): <p> List of projects. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
-    pub fn list_projects(&self) -> crate::client::fluent_builders::ListProjects {
-        crate::client::fluent_builders::ListProjects::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProject`](crate::client::fluent_builders::UpdateProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`contents(Blob)`](crate::client::fluent_builders::UpdateProject::contents) / [`set_contents(Option<Blob>)`](crate::client::fluent_builders::UpdateProject::set_contents): <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
-    ///   - [`project_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProject::project_id) / [`set_project_id(Option<String>)`](crate::client::fluent_builders::UpdateProject::set_project_id): <p> Unique project identifier. </p>
-    /// - On success, responds with [`UpdateProjectOutput`](crate::output::UpdateProjectOutput) with field(s):
-    ///   - [`details(Option<ProjectDetails>)`](crate::output::UpdateProjectOutput::details): <p> Detailed information about the updated AWS Mobile Hub project. </p>
-    /// - On failure, responds with [`SdkError<UpdateProjectError>`](crate::error::UpdateProjectError)
-    pub fn update_project(&self) -> crate::client::fluent_builders::UpdateProject {
-        crate::client::fluent_builders::UpdateProject::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -282,9 +174,27 @@ impl Client {
     }
 }
 
+mod create_project;
+
+mod delete_project;
+
+mod describe_bundle;
+
+mod describe_project;
+
+mod export_bundle;
+
+mod export_project;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_bundles;
+
+mod list_projects;
+
+mod update_project;

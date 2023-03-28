@@ -90,7 +90,8 @@ impl GetServerDetailsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_server_details_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_server_details_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,10 @@ impl ListApplicationComponentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_application_components_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_application_components_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,8 @@ impl ListCollectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_collectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_collectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +449,8 @@ impl ListImportFileTaskPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_import_file_task_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_import_file_task_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +568,8 @@ impl ListServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_servers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_servers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -608,7 +615,11 @@ impl GetServerDetailsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetServerDetailsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_server_details_output_associated_applications(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_server_details_output_associated_applications(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -631,7 +642,11 @@ impl ListApplicationComponentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListApplicationComponentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_application_components_output_application_component_infos(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_application_components_output_application_component_infos(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -655,7 +670,7 @@ impl ListCollectorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_collectors_output_collectors(page)
+            crate::lens::lens_list_collectors_output_collectors(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -682,7 +697,7 @@ impl ListImportFileTaskPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_import_file_task_output_task_infos(page)
+            crate::lens::lens_list_import_file_task_output_task_infos(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -709,7 +724,7 @@ impl ListServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_servers_output_server_infos(page)
+            crate::lens::lens_list_servers_output_server_infos(page)
                 .unwrap_or_default()
                 .into_iter()
         })

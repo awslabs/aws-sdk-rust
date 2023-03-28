@@ -89,29 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`GetRawMessageContent`](crate::client::fluent_builders::GetRawMessageContent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::GetRawMessageContent::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::GetRawMessageContent::set_message_id): <p>The identifier of the email message to retrieve.</p>
-    /// - On success, responds with [`GetRawMessageContentOutput`](crate::output::GetRawMessageContentOutput) with field(s):
-    ///   - [`message_content(ByteStream)`](crate::output::GetRawMessageContentOutput::message_content): <p>The raw content of the email message, in MIME format.</p>
-    /// - On failure, responds with [`SdkError<GetRawMessageContentError>`](crate::error::GetRawMessageContentError)
-    pub fn get_raw_message_content(&self) -> crate::client::fluent_builders::GetRawMessageContent {
-        crate::client::fluent_builders::GetRawMessageContent::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutRawMessageContent`](crate::client::fluent_builders::PutRawMessageContent) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::PutRawMessageContent::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::PutRawMessageContent::set_message_id): <p>The identifier of the email message being updated.</p>
-    ///   - [`content(RawMessageContent)`](crate::client::fluent_builders::PutRawMessageContent::content) / [`set_content(Option<RawMessageContent>)`](crate::client::fluent_builders::PutRawMessageContent::set_content): <p>Describes the raw message content of the updated email message.</p>
-    /// - On success, responds with [`PutRawMessageContentOutput`](crate::output::PutRawMessageContentOutput)
-
-    /// - On failure, responds with [`SdkError<PutRawMessageContentError>`](crate::error::PutRawMessageContentError)
-    pub fn put_raw_message_content(&self) -> crate::client::fluent_builders::PutRawMessageContent {
-        crate::client::fluent_builders::PutRawMessageContent::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -203,3 +180,7 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_raw_message_content;
+
+mod put_raw_message_content;

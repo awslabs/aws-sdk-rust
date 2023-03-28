@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAccounts {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_accounts_error(response)
+            crate::protocol_serde::shape_associate_accounts::de_associate_accounts_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_associate_accounts_response(response)
+            crate::protocol_serde::shape_associate_accounts::de_associate_accounts_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +66,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePricingRules {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_pricing_rules_error(response)
+            crate::protocol_serde::shape_associate_pricing_rules::de_associate_pricing_rules_http_error(response)
         } else {
-            crate::operation_deser::parse_associate_pricing_rules_response(response)
+            crate::protocol_serde::shape_associate_pricing_rules::de_associate_pricing_rules_http_response(response)
         }
     }
 }
@@ -97,13 +101,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateResourcesT
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_associate_resources_to_custom_line_item_error(
-                response,
-            )
+            crate::protocol_serde::shape_batch_associate_resources_to_custom_line_item::de_batch_associate_resources_to_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_associate_resources_to_custom_line_item_response(
-                response,
-            )
+            crate::protocol_serde::shape_batch_associate_resources_to_custom_line_item::de_batch_associate_resources_to_custom_line_item_http_response(response)
         }
     }
 }
@@ -139,11 +139,9 @@ impl aws_smithy_http::response::ParseStrictResponse
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_disassociate_resources_from_custom_line_item_error(
-                response,
-            )
+            crate::protocol_serde::shape_batch_disassociate_resources_from_custom_line_item::de_batch_disassociate_resources_from_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_disassociate_resources_from_custom_line_item_response(response)
+            crate::protocol_serde::shape_batch_disassociate_resources_from_custom_line_item::de_batch_disassociate_resources_from_custom_line_item_http_response(response)
         }
     }
 }
@@ -176,9 +174,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBillingGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_billing_group_error(response)
+            crate::protocol_serde::shape_create_billing_group::de_create_billing_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_billing_group_response(response)
+            crate::protocol_serde::shape_create_billing_group::de_create_billing_group_http_response(
+                response,
+            )
         }
     }
 }
@@ -211,9 +213,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLineItem {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_line_item_error(response)
+            crate::protocol_serde::shape_create_custom_line_item::de_create_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_create_custom_line_item_response(response)
+            crate::protocol_serde::shape_create_custom_line_item::de_create_custom_line_item_http_response(response)
         }
     }
 }
@@ -246,9 +248,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_pricing_plan_error(response)
+            crate::protocol_serde::shape_create_pricing_plan::de_create_pricing_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_pricing_plan_response(response)
+            crate::protocol_serde::shape_create_pricing_plan::de_create_pricing_plan_http_response(
+                response,
+            )
         }
     }
 }
@@ -281,9 +287,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingRule {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_pricing_rule_error(response)
+            crate::protocol_serde::shape_create_pricing_rule::de_create_pricing_rule_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_pricing_rule_response(response)
+            crate::protocol_serde::shape_create_pricing_rule::de_create_pricing_rule_http_response(
+                response,
+            )
         }
     }
 }
@@ -316,9 +326,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBillingGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_billing_group_error(response)
+            crate::protocol_serde::shape_delete_billing_group::de_delete_billing_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_billing_group_response(response)
+            crate::protocol_serde::shape_delete_billing_group::de_delete_billing_group_http_response(
+                response,
+            )
         }
     }
 }
@@ -351,9 +365,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLineItem {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_line_item_error(response)
+            crate::protocol_serde::shape_delete_custom_line_item::de_delete_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_custom_line_item_response(response)
+            crate::protocol_serde::shape_delete_custom_line_item::de_delete_custom_line_item_http_response(response)
         }
     }
 }
@@ -386,9 +400,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_pricing_plan_error(response)
+            crate::protocol_serde::shape_delete_pricing_plan::de_delete_pricing_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_pricing_plan_response(response)
+            crate::protocol_serde::shape_delete_pricing_plan::de_delete_pricing_plan_http_response(
+                response,
+            )
         }
     }
 }
@@ -421,9 +439,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingRule {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_pricing_rule_error(response)
+            crate::protocol_serde::shape_delete_pricing_rule::de_delete_pricing_rule_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_pricing_rule_response(response)
+            crate::protocol_serde::shape_delete_pricing_rule::de_delete_pricing_rule_http_response(
+                response,
+            )
         }
     }
 }
@@ -456,9 +478,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAccounts {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_accounts_error(response)
+            crate::protocol_serde::shape_disassociate_accounts::de_disassociate_accounts_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_disassociate_accounts_response(response)
+            crate::protocol_serde::shape_disassociate_accounts::de_disassociate_accounts_http_response(response)
         }
     }
 }
@@ -491,9 +515,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePricingRules
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_pricing_rules_error(response)
+            crate::protocol_serde::shape_disassociate_pricing_rules::de_disassociate_pricing_rules_http_error(response)
         } else {
-            crate::operation_deser::parse_disassociate_pricing_rules_response(response)
+            crate::protocol_serde::shape_disassociate_pricing_rules::de_disassociate_pricing_rules_http_response(response)
         }
     }
 }
@@ -526,9 +550,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssociations 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_account_associations_error(response)
+            crate::protocol_serde::shape_list_account_associations::de_list_account_associations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_account_associations_response(response)
+            crate::protocol_serde::shape_list_account_associations::de_list_account_associations_http_response(response)
         }
     }
 }
@@ -561,9 +585,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroupCostRepo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_billing_group_cost_reports_error(response)
+            crate::protocol_serde::shape_list_billing_group_cost_reports::de_list_billing_group_cost_reports_http_error(response)
         } else {
-            crate::operation_deser::parse_list_billing_group_cost_reports_response(response)
+            crate::protocol_serde::shape_list_billing_group_cost_reports::de_list_billing_group_cost_reports_http_response(response)
         }
     }
 }
@@ -596,9 +620,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroups {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_billing_groups_error(response)
+            crate::protocol_serde::shape_list_billing_groups::de_list_billing_groups_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_billing_groups_response(response)
+            crate::protocol_serde::shape_list_billing_groups::de_list_billing_groups_http_response(
+                response,
+            )
         }
     }
 }
@@ -631,9 +659,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItems {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_line_items_error(response)
+            crate::protocol_serde::shape_list_custom_line_items::de_list_custom_line_items_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_line_items_response(response)
+            crate::protocol_serde::shape_list_custom_line_items::de_list_custom_line_items_http_response(response)
         }
     }
 }
@@ -666,9 +694,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItemVersio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_line_item_versions_error(response)
+            crate::protocol_serde::shape_list_custom_line_item_versions::de_list_custom_line_item_versions_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_line_item_versions_response(response)
+            crate::protocol_serde::shape_list_custom_line_item_versions::de_list_custom_line_item_versions_http_response(response)
         }
     }
 }
@@ -701,9 +729,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlans {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pricing_plans_error(response)
+            crate::protocol_serde::shape_list_pricing_plans::de_list_pricing_plans_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_pricing_plans_response(response)
+            crate::protocol_serde::shape_list_pricing_plans::de_list_pricing_plans_http_response(
+                response,
+            )
         }
     }
 }
@@ -737,13 +769,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlansAssociat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pricing_plans_associated_with_pricing_rule_error(
-                response,
-            )
+            crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::de_list_pricing_plans_associated_with_pricing_rule_http_error(response)
         } else {
-            crate::operation_deser::parse_list_pricing_plans_associated_with_pricing_rule_response(
-                response,
-            )
+            crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::de_list_pricing_plans_associated_with_pricing_rule_http_response(response)
         }
     }
 }
@@ -776,9 +804,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRules {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pricing_rules_error(response)
+            crate::protocol_serde::shape_list_pricing_rules::de_list_pricing_rules_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_pricing_rules_response(response)
+            crate::protocol_serde::shape_list_pricing_rules::de_list_pricing_rules_http_response(
+                response,
+            )
         }
     }
 }
@@ -811,13 +843,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRulesAssociat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_pricing_rules_associated_to_pricing_plan_error(
-                response,
-            )
+            crate::protocol_serde::shape_list_pricing_rules_associated_to_pricing_plan::de_list_pricing_rules_associated_to_pricing_plan_http_error(response)
         } else {
-            crate::operation_deser::parse_list_pricing_rules_associated_to_pricing_plan_response(
-                response,
-            )
+            crate::protocol_serde::shape_list_pricing_rules_associated_to_pricing_plan::de_list_pricing_rules_associated_to_pricing_plan_http_response(response)
         }
     }
 }
@@ -850,13 +878,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesAssociatedT
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_resources_associated_to_custom_line_item_error(
-                response,
-            )
+            crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_list_resources_associated_to_custom_line_item_response(
-                response,
-            )
+            crate::protocol_serde::shape_list_resources_associated_to_custom_line_item::de_list_resources_associated_to_custom_line_item_http_response(response)
         }
     }
 }
@@ -889,9 +913,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -922,9 +946,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -955,9 +979,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -990,9 +1014,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBillingGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_billing_group_error(response)
+            crate::protocol_serde::shape_update_billing_group::de_update_billing_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_billing_group_response(response)
+            crate::protocol_serde::shape_update_billing_group::de_update_billing_group_http_response(
+                response,
+            )
         }
     }
 }
@@ -1025,9 +1053,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomLineItem {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_custom_line_item_error(response)
+            crate::protocol_serde::shape_update_custom_line_item::de_update_custom_line_item_http_error(response)
         } else {
-            crate::operation_deser::parse_update_custom_line_item_response(response)
+            crate::protocol_serde::shape_update_custom_line_item::de_update_custom_line_item_http_response(response)
         }
     }
 }
@@ -1060,9 +1088,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_pricing_plan_error(response)
+            crate::protocol_serde::shape_update_pricing_plan::de_update_pricing_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_pricing_plan_response(response)
+            crate::protocol_serde::shape_update_pricing_plan::de_update_pricing_plan_http_response(
+                response,
+            )
         }
     }
 }
@@ -1095,9 +1127,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingRule {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_pricing_rule_error(response)
+            crate::protocol_serde::shape_update_pricing_rule::de_update_pricing_rule_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_pricing_rule_response(response)
+            crate::protocol_serde::shape_update_pricing_rule::de_update_pricing_rule_http_response(
+                response,
+            )
         }
     }
 }

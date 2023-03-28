@@ -89,1033 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`ArchiveApplication`](crate::client::fluent_builders::ArchiveApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ArchiveApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ArchiveApplication::set_application_id): <p>Application ID.</p>
-    /// - On success, responds with [`ArchiveApplicationOutput`](crate::output::ArchiveApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::ArchiveApplicationOutput::application_id): <p>Application ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::ArchiveApplicationOutput::arn): <p>Application ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::ArchiveApplicationOutput::name): <p>Application name.</p>
-    ///   - [`description(Option<String>)`](crate::output::ArchiveApplicationOutput::description): <p>Application description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::ArchiveApplicationOutput::is_archived): <p>Application archival status.</p>
-    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::ArchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::ArchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::ArchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ArchiveApplicationOutput::tags): <p>Application tags.</p>
-    ///   - [`wave_id(Option<String>)`](crate::output::ArchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
-    /// - On failure, responds with [`SdkError<ArchiveApplicationError>`](crate::error::ArchiveApplicationError)
-    pub fn archive_application(&self) -> crate::client::fluent_builders::ArchiveApplication {
-        crate::client::fluent_builders::ArchiveApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ArchiveWave`](crate::client::fluent_builders::ArchiveWave) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::ArchiveWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::ArchiveWave::set_wave_id): <p>Wave ID.</p>
-    /// - On success, responds with [`ArchiveWaveOutput`](crate::output::ArchiveWaveOutput) with field(s):
-    ///   - [`wave_id(Option<String>)`](crate::output::ArchiveWaveOutput::wave_id): <p>Wave ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::ArchiveWaveOutput::arn): <p>Wave ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::ArchiveWaveOutput::name): <p>Wave name.</p>
-    ///   - [`description(Option<String>)`](crate::output::ArchiveWaveOutput::description): <p>Wave description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::ArchiveWaveOutput::is_archived): <p>Wave archival status.</p>
-    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::ArchiveWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::ArchiveWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::ArchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ArchiveWaveOutput::tags): <p>Wave tags.</p>
-    /// - On failure, responds with [`SdkError<ArchiveWaveError>`](crate::error::ArchiveWaveError)
-    pub fn archive_wave(&self) -> crate::client::fluent_builders::ArchiveWave {
-        crate::client::fluent_builders::ArchiveWave::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateApplications`](crate::client::fluent_builders::AssociateApplications) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::AssociateApplications::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::AssociateApplications::set_wave_id): <p>Wave ID.</p>
-    ///   - [`application_i_ds(Vec<String>)`](crate::client::fluent_builders::AssociateApplications::application_i_ds) / [`set_application_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateApplications::set_application_i_ds): <p>Application IDs list.</p>
-    /// - On success, responds with [`AssociateApplicationsOutput`](crate::output::AssociateApplicationsOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateApplicationsError>`](crate::error::AssociateApplicationsError)
-    pub fn associate_applications(&self) -> crate::client::fluent_builders::AssociateApplications {
-        crate::client::fluent_builders::AssociateApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateSourceServers`](crate::client::fluent_builders::AssociateSourceServers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSourceServers::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::AssociateSourceServers::set_application_id): <p>Application ID.</p>
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::AssociateSourceServers::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::AssociateSourceServers::set_source_server_i_ds): <p>Source server IDs list.</p>
-    /// - On success, responds with [`AssociateSourceServersOutput`](crate::output::AssociateSourceServersOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateSourceServersError>`](crate::error::AssociateSourceServersError)
-    pub fn associate_source_servers(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateSourceServers {
-        crate::client::fluent_builders::AssociateSourceServers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ChangeServerLifeCycleState`](crate::client::fluent_builders::ChangeServerLifeCycleState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::set_source_server_id): <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    ///   - [`life_cycle(ChangeServerLifeCycleStateSourceServerLifecycle)`](crate::client::fluent_builders::ChangeServerLifeCycleState::life_cycle) / [`set_life_cycle(Option<ChangeServerLifeCycleStateSourceServerLifecycle>)`](crate::client::fluent_builders::ChangeServerLifeCycleState::set_life_cycle): <p>The request to change the source server migration lifecycle state.</p>
-    /// - On success, responds with [`ChangeServerLifeCycleStateOutput`](crate::output::ChangeServerLifeCycleStateOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::ChangeServerLifeCycleStateOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ChangeServerLifeCycleStateOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::ChangeServerLifeCycleStateOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::ChangeServerLifeCycleStateOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::ChangeServerLifeCycleStateOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::ChangeServerLifeCycleStateOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::ChangeServerLifeCycleStateOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::ChangeServerLifeCycleStateOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<ChangeServerLifeCycleStateError>`](crate::error::ChangeServerLifeCycleStateError)
-    pub fn change_server_life_cycle_state(
-        &self,
-    ) -> crate::client::fluent_builders::ChangeServerLifeCycleState {
-        crate::client::fluent_builders::ChangeServerLifeCycleState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>Application name.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>Application description.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>Application tags.</p>
-    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>Application ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateApplicationOutput::arn): <p>Application ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>Application name.</p>
-    ///   - [`description(Option<String>)`](crate::output::CreateApplicationOutput::description): <p>Application description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::CreateApplicationOutput::is_archived): <p>Application archival status.</p>
-    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::CreateApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::CreateApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::CreateApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateApplicationOutput::tags): <p>Application tags.</p>
-    ///   - [`wave_id(Option<String>)`](crate::output::CreateApplicationOutput::wave_id): <p>Application wave ID.</p>
-    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
-    pub fn create_application(&self) -> crate::client::fluent_builders::CreateApplication {
-        crate::client::fluent_builders::CreateApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLaunchConfigurationTemplate`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_post_launch_actions): <p>Launch configuration template post launch actions.</p>
-    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_tags): <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_launch_disposition): <p>Launch disposition.</p>
-    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
-    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_copy_private_ip): <p>Copy private Ip.</p>
-    ///   - [`associate_public_ip_address(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::associate_public_ip_address) / [`set_associate_public_ip_address(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_associate_public_ip_address): <p>Associate public Ip address.</p>
-    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_copy_tags): <p>Copy tags.</p>
-    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_licensing): <p>Configure Licensing.</p>
-    ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_boot_mode): <p>Launch configuration template boot mode.</p>
-    ///   - [`small_volume_max_size(i64)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::small_volume_max_size) / [`set_small_volume_max_size(i64)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_small_volume_max_size): <p>Small volume maximum size.</p>
-    ///   - [`small_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::small_volume_conf) / [`set_small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_small_volume_conf): <p>Small volume config.</p>
-    ///   - [`large_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::large_volume_conf) / [`set_large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::CreateLaunchConfigurationTemplate::set_large_volume_conf): <p>Large volume config.</p>
-    /// - On success, responds with [`CreateLaunchConfigurationTemplateOutput`](crate::output::CreateLaunchConfigurationTemplateOutput) with field(s):
-    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>ID of the Launch Configuration Template.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::arn): <p>ARN of the Launch Configuration Template.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::CreateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Post Launch Actions of the Launch Configuration Template.</p>
-    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLaunchConfigurationTemplateOutput::tags): <p>Tags of the Launch Configuration Template.</p>
-    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::CreateLaunchConfigurationTemplateOutput::ec2_launch_template_id): <p>EC2 launch template ID.</p>
-    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::CreateLaunchConfigurationTemplateOutput::launch_disposition): <p>Launch disposition.</p>
-    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::CreateLaunchConfigurationTemplateOutput::target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
-    ///   - [`copy_private_ip(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::copy_private_ip): <p>Copy private Ip.</p>
-    ///   - [`associate_public_ip_address(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::associate_public_ip_address): <p>Associate public Ip address.</p>
-    ///   - [`copy_tags(Option<bool>)`](crate::output::CreateLaunchConfigurationTemplateOutput::copy_tags): <p>Copy tags.</p>
-    ///   - [`licensing(Option<Licensing>)`](crate::output::CreateLaunchConfigurationTemplateOutput::licensing): <p>Configure Licensing.</p>
-    ///   - [`boot_mode(Option<BootMode>)`](crate::output::CreateLaunchConfigurationTemplateOutput::boot_mode): <p>Launch configuration template boot mode.</p>
-    ///   - [`small_volume_max_size(i64)`](crate::output::CreateLaunchConfigurationTemplateOutput::small_volume_max_size): <p>Small volume maximum size.</p>
-    ///   - [`small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::CreateLaunchConfigurationTemplateOutput::small_volume_conf): <p>Small volume config.</p>
-    ///   - [`large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::CreateLaunchConfigurationTemplateOutput::large_volume_conf): <p>Large volume config.</p>
-    /// - On failure, responds with [`SdkError<CreateLaunchConfigurationTemplateError>`](crate::error::CreateLaunchConfigurationTemplateError)
-    pub fn create_launch_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLaunchConfigurationTemplate {
-        crate::client::fluent_builders::CreateLaunchConfigurationTemplate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateReplicationConfigurationTemplate`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_staging_area_subnet_id): <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_associate_default_security_group): <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_replication_servers_security_groups_i_ds): <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
-    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_replication_server_instance_type): <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
-    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_use_dedicated_replication_server): <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_default_large_staging_disk_type): <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
-    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_ebs_encryption): <p>Request to configure EBS encryption during Replication Settings template creation.</p>
-    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_ebs_encryption_key_arn): <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_bandwidth_throttling): <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_data_plane_routing): <p>Request to configure data plane routing during Replication Settings template creation.</p>
-    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_create_public_ip): <p>Request to create Public IP during Replication Settings template creation.</p>
-    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_staging_area_tags): <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReplicationConfigurationTemplate::set_tags): <p>Request to configure tags during Replication Settings template creation.</p>
-    /// - On success, responds with [`CreateReplicationConfigurationTemplateOutput`](crate::output::CreateReplicationConfigurationTemplateOutput) with field(s):
-    ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>Replication Configuration template ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::arn): <p>Replication Configuration template ARN.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::staging_area_subnet_id): <p>Replication Configuration template Staging Area subnet ID.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::associate_default_security_group): <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_servers_security_groups_i_ds): <p>Replication Configuration template server Security Groups IDs.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::replication_server_instance_type): <p>Replication Configuration template server instance type.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::use_dedicated_replication_server): <p>Replication Configuration template use Dedicated Replication Server.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::CreateReplicationConfigurationTemplateOutput::default_large_staging_disk_type): <p>Replication Configuration template use default large Staging Disk type.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::CreateReplicationConfigurationTemplateOutput::ebs_encryption): <p>Replication Configuration template EBS encryption.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::CreateReplicationConfigurationTemplateOutput::ebs_encryption_key_arn): <p>Replication Configuration template EBS encryption key ARN.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::output::CreateReplicationConfigurationTemplateOutput::bandwidth_throttling): <p>Replication Configuration template bandwidth throttling.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::CreateReplicationConfigurationTemplateOutput::data_plane_routing): <p>Replication Configuration template data plane routing.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::output::CreateReplicationConfigurationTemplateOutput::create_public_ip): <p>Replication Configuration template create Public IP.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::staging_area_tags): <p>Replication Configuration template Staging Area Tags.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReplicationConfigurationTemplateOutput::tags): <p>Replication Configuration template Tags.</p>
-    /// - On failure, responds with [`SdkError<CreateReplicationConfigurationTemplateError>`](crate::error::CreateReplicationConfigurationTemplateError)
-    pub fn create_replication_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::CreateReplicationConfigurationTemplate {
-        crate::client::fluent_builders::CreateReplicationConfigurationTemplate::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateWave`](crate::client::fluent_builders::CreateWave) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWave::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWave::set_name): <p>Wave name.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateWave::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateWave::set_description): <p>Wave description.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWave::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWave::set_tags): <p>Wave tags.</p>
-    /// - On success, responds with [`CreateWaveOutput`](crate::output::CreateWaveOutput) with field(s):
-    ///   - [`wave_id(Option<String>)`](crate::output::CreateWaveOutput::wave_id): <p>Wave ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::CreateWaveOutput::arn): <p>Wave ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateWaveOutput::name): <p>Wave name.</p>
-    ///   - [`description(Option<String>)`](crate::output::CreateWaveOutput::description): <p>Wave description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::CreateWaveOutput::is_archived): <p>Wave archival status.</p>
-    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::CreateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::CreateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::CreateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateWaveOutput::tags): <p>Wave tags.</p>
-    /// - On failure, responds with [`SdkError<CreateWaveError>`](crate::error::CreateWaveError)
-    pub fn create_wave(&self) -> crate::client::fluent_builders::CreateWave {
-        crate::client::fluent_builders::CreateWave::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>Application ID.</p>
-    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
-    pub fn delete_application(&self) -> crate::client::fluent_builders::DeleteApplication {
-        crate::client::fluent_builders::DeleteApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteJob`](crate::client::fluent_builders::DeleteJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DeleteJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DeleteJob::set_job_id): <p>Request to delete Job from service by Job ID.</p>
-    /// - On success, responds with [`DeleteJobOutput`](crate::output::DeleteJobOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteJobError>`](crate::error::DeleteJobError)
-    pub fn delete_job(&self) -> crate::client::fluent_builders::DeleteJob {
-        crate::client::fluent_builders::DeleteJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLaunchConfigurationTemplate`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::DeleteLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>ID of resource to be deleted.</p>
-    /// - On success, responds with [`DeleteLaunchConfigurationTemplateOutput`](crate::output::DeleteLaunchConfigurationTemplateOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLaunchConfigurationTemplateError>`](crate::error::DeleteLaunchConfigurationTemplateError)
-    pub fn delete_launch_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteLaunchConfigurationTemplate {
-        crate::client::fluent_builders::DeleteLaunchConfigurationTemplate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReplicationConfigurationTemplate`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::replication_configuration_template_id) / [`set_replication_configuration_template_id(Option<String>)`](crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::set_replication_configuration_template_id): <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
-    /// - On success, responds with [`DeleteReplicationConfigurationTemplateOutput`](crate::output::DeleteReplicationConfigurationTemplateOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteReplicationConfigurationTemplateError>`](crate::error::DeleteReplicationConfigurationTemplateError)
-    pub fn delete_replication_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteReplicationConfigurationTemplate {
-        crate::client::fluent_builders::DeleteReplicationConfigurationTemplate::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteSourceServer`](crate::client::fluent_builders::DeleteSourceServer) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSourceServer::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::DeleteSourceServer::set_source_server_id): <p>Request to delete Source Server from service by Server ID.</p>
-    /// - On success, responds with [`DeleteSourceServerOutput`](crate::output::DeleteSourceServerOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSourceServerError>`](crate::error::DeleteSourceServerError)
-    pub fn delete_source_server(&self) -> crate::client::fluent_builders::DeleteSourceServer {
-        crate::client::fluent_builders::DeleteSourceServer::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVcenterClient`](crate::client::fluent_builders::DeleteVcenterClient) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`vcenter_client_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVcenterClient::vcenter_client_id) / [`set_vcenter_client_id(Option<String>)`](crate::client::fluent_builders::DeleteVcenterClient::set_vcenter_client_id): <p>ID of resource to be deleted.</p>
-    /// - On success, responds with [`DeleteVcenterClientOutput`](crate::output::DeleteVcenterClientOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVcenterClientError>`](crate::error::DeleteVcenterClientError)
-    pub fn delete_vcenter_client(&self) -> crate::client::fluent_builders::DeleteVcenterClient {
-        crate::client::fluent_builders::DeleteVcenterClient::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWave`](crate::client::fluent_builders::DeleteWave) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::DeleteWave::set_wave_id): <p>Wave ID.</p>
-    /// - On success, responds with [`DeleteWaveOutput`](crate::output::DeleteWaveOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteWaveError>`](crate::error::DeleteWaveError)
-    pub fn delete_wave(&self) -> crate::client::fluent_builders::DeleteWave {
-        crate::client::fluent_builders::DeleteWave::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobLogItems`](crate::client::fluent_builders::DescribeJobLogItems) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobLogItems::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::DescribeJobLogItems::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::DescribeJobLogItems::set_job_id): <p>Request to describe Job log job ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobLogItems::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeJobLogItems::set_max_results): <p>Request to describe Job log item maximum results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobLogItems::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobLogItems::set_next_token): <p>Request to describe Job log next token.</p>
-    /// - On success, responds with [`DescribeJobLogItemsOutput`](crate::output::DescribeJobLogItemsOutput) with field(s):
-    ///   - [`items(Option<Vec<JobLog>>)`](crate::output::DescribeJobLogItemsOutput::items): <p>Request to describe Job log response items.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobLogItemsOutput::next_token): <p>Request to describe Job log response next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobLogItemsError>`](crate::error::DescribeJobLogItemsError)
-    pub fn describe_job_log_items(&self) -> crate::client::fluent_builders::DescribeJobLogItems {
-        crate::client::fluent_builders::DescribeJobLogItems::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobs`](crate::client::fluent_builders::DescribeJobs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeJobs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(DescribeJobsRequestFilters)`](crate::client::fluent_builders::DescribeJobs::filters) / [`set_filters(Option<DescribeJobsRequestFilters>)`](crate::client::fluent_builders::DescribeJobs::set_filters): <p>Request to describe Job log filters.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeJobs::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeJobs::set_max_results): <p>Request to describe job log items by max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeJobs::set_next_token): <p>Request to describe job log items by next token.</p>
-    /// - On success, responds with [`DescribeJobsOutput`](crate::output::DescribeJobsOutput) with field(s):
-    ///   - [`items(Option<Vec<Job>>)`](crate::output::DescribeJobsOutput::items): <p>Request to describe Job log items.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeJobsOutput::next_token): <p>Request to describe Job response by next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobsError>`](crate::error::DescribeJobsError)
-    pub fn describe_jobs(&self) -> crate::client::fluent_builders::DescribeJobs {
-        crate::client::fluent_builders::DescribeJobs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLaunchConfigurationTemplates`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::launch_configuration_template_i_ds) / [`set_launch_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_launch_configuration_template_i_ds): <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_max_results): <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::set_next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
-    /// - On success, responds with [`DescribeLaunchConfigurationTemplatesOutput`](crate::output::DescribeLaunchConfigurationTemplatesOutput) with field(s):
-    ///   - [`items(Option<Vec<LaunchConfigurationTemplate>>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::items): <p>List of items returned by DescribeLaunchConfigurationTemplates.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeLaunchConfigurationTemplatesOutput::next_token): <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
-    /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationTemplatesError>`](crate::error::DescribeLaunchConfigurationTemplatesError)
-    pub fn describe_launch_configuration_templates(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLaunchConfigurationTemplates {
-        crate::client::fluent_builders::DescribeLaunchConfigurationTemplates::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationConfigurationTemplates`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_configuration_template_i_ds(Vec<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::replication_configuration_template_i_ds) / [`set_replication_configuration_template_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_replication_configuration_template_i_ds): <p>Request to describe Replication Configuration template by template IDs.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_max_results): <p>Request to describe Replication Configuration template by max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::set_next_token): <p>Request to describe Replication Configuration template by next token.</p>
-    /// - On success, responds with [`DescribeReplicationConfigurationTemplatesOutput`](crate::output::DescribeReplicationConfigurationTemplatesOutput) with field(s):
-    ///   - [`items(Option<Vec<ReplicationConfigurationTemplate>>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::items): <p>Request to describe Replication Configuration template by items.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeReplicationConfigurationTemplatesOutput::next_token): <p>Request to describe Replication Configuration template by next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationConfigurationTemplatesError>`](crate::error::DescribeReplicationConfigurationTemplatesError)
-    pub fn describe_replication_configuration_templates(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationConfigurationTemplates {
-        crate::client::fluent_builders::DescribeReplicationConfigurationTemplates::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeSourceServers`](crate::client::fluent_builders::DescribeSourceServers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSourceServers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(DescribeSourceServersRequestFilters)`](crate::client::fluent_builders::DescribeSourceServers::filters) / [`set_filters(Option<DescribeSourceServersRequestFilters>)`](crate::client::fluent_builders::DescribeSourceServers::set_filters): <p>Request to filter Source Servers list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeSourceServers::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeSourceServers::set_max_results): <p>Request to filter Source Servers list by maximum results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeSourceServers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeSourceServers::set_next_token): <p>Request to filter Source Servers list by next token.</p>
-    /// - On success, responds with [`DescribeSourceServersOutput`](crate::output::DescribeSourceServersOutput) with field(s):
-    ///   - [`items(Option<Vec<SourceServer>>)`](crate::output::DescribeSourceServersOutput::items): <p>Request to filter Source Servers list by item.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeSourceServersOutput::next_token): <p>Request to filter Source Servers next token.</p>
-    /// - On failure, responds with [`SdkError<DescribeSourceServersError>`](crate::error::DescribeSourceServersError)
-    pub fn describe_source_servers(&self) -> crate::client::fluent_builders::DescribeSourceServers {
-        crate::client::fluent_builders::DescribeSourceServers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeVcenterClients`](crate::client::fluent_builders::DescribeVcenterClients) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeVcenterClients::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeVcenterClients::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::DescribeVcenterClients::set_max_results): <p>Maximum results to be returned in DescribeVcenterClients.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeVcenterClients::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeVcenterClients::set_next_token): <p>Next pagination token to be provided for DescribeVcenterClients.</p>
-    /// - On success, responds with [`DescribeVcenterClientsOutput`](crate::output::DescribeVcenterClientsOutput) with field(s):
-    ///   - [`items(Option<Vec<VcenterClient>>)`](crate::output::DescribeVcenterClientsOutput::items): <p>List of items returned by DescribeVcenterClients.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeVcenterClientsOutput::next_token): <p>Next pagination token returned from DescribeVcenterClients.</p>
-    /// - On failure, responds with [`SdkError<DescribeVcenterClientsError>`](crate::error::DescribeVcenterClientsError)
-    pub fn describe_vcenter_clients(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeVcenterClients {
-        crate::client::fluent_builders::DescribeVcenterClients::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateApplications`](crate::client::fluent_builders::DisassociateApplications) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateApplications::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::DisassociateApplications::set_wave_id): <p>Wave ID.</p>
-    ///   - [`application_i_ds(Vec<String>)`](crate::client::fluent_builders::DisassociateApplications::application_i_ds) / [`set_application_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateApplications::set_application_i_ds): <p>Application IDs list.</p>
-    /// - On success, responds with [`DisassociateApplicationsOutput`](crate::output::DisassociateApplicationsOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateApplicationsError>`](crate::error::DisassociateApplicationsError)
-    pub fn disassociate_applications(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateApplications {
-        crate::client::fluent_builders::DisassociateApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateSourceServers`](crate::client::fluent_builders::DisassociateSourceServers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSourceServers::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DisassociateSourceServers::set_application_id): <p>Application ID.</p>
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::DisassociateSourceServers::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateSourceServers::set_source_server_i_ds): <p>Source server IDs list.</p>
-    /// - On success, responds with [`DisassociateSourceServersOutput`](crate::output::DisassociateSourceServersOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateSourceServersError>`](crate::error::DisassociateSourceServersError)
-    pub fn disassociate_source_servers(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateSourceServers {
-        crate::client::fluent_builders::DisassociateSourceServers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisconnectFromService`](crate::client::fluent_builders::DisconnectFromService) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::DisconnectFromService::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::DisconnectFromService::set_source_server_id): <p>Request to disconnect Source Server from service by Server ID.</p>
-    /// - On success, responds with [`DisconnectFromServiceOutput`](crate::output::DisconnectFromServiceOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::DisconnectFromServiceOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::DisconnectFromServiceOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DisconnectFromServiceOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::DisconnectFromServiceOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::DisconnectFromServiceOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::DisconnectFromServiceOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::DisconnectFromServiceOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::DisconnectFromServiceOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::DisconnectFromServiceOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<DisconnectFromServiceError>`](crate::error::DisconnectFromServiceError)
-    pub fn disconnect_from_service(&self) -> crate::client::fluent_builders::DisconnectFromService {
-        crate::client::fluent_builders::DisconnectFromService::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`FinalizeCutover`](crate::client::fluent_builders::FinalizeCutover) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::FinalizeCutover::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::FinalizeCutover::set_source_server_id): <p>Request to finalize Cutover by Source Server ID.</p>
-    /// - On success, responds with [`FinalizeCutoverOutput`](crate::output::FinalizeCutoverOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::FinalizeCutoverOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::FinalizeCutoverOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::FinalizeCutoverOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::FinalizeCutoverOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::FinalizeCutoverOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::FinalizeCutoverOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::FinalizeCutoverOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::FinalizeCutoverOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::FinalizeCutoverOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::FinalizeCutoverOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::FinalizeCutoverOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<FinalizeCutoverError>`](crate::error::FinalizeCutoverError)
-    pub fn finalize_cutover(&self) -> crate::client::fluent_builders::FinalizeCutover {
-        crate::client::fluent_builders::FinalizeCutover::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLaunchConfiguration`](crate::client::fluent_builders::GetLaunchConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::GetLaunchConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::GetLaunchConfiguration::set_source_server_id): <p>Request to get Launch Configuration information by Source Server ID.</p>
-    /// - On success, responds with [`GetLaunchConfigurationOutput`](crate::output::GetLaunchConfigurationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::source_server_id): <p>Launch configuration Source Server ID.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetLaunchConfigurationOutput::name): <p>Launch configuration name.</p>
-    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::ec2_launch_template_id): <p>Launch configuration EC2 Launch template ID.</p>
-    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::GetLaunchConfigurationOutput::launch_disposition): <p>Launch disposition for launch configuration.</p>
-    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::GetLaunchConfigurationOutput::target_instance_type_right_sizing_method): <p>Launch configuration Target instance type right sizing method.</p>
-    ///   - [`copy_private_ip(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_private_ip): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`copy_tags(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
-    ///   - [`licensing(Option<Licensing>)`](crate::output::GetLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
-    ///   - [`boot_mode(Option<BootMode>)`](crate::output::GetLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::GetLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::GetLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::GetLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
-    /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::error::GetLaunchConfigurationError)
-    pub fn get_launch_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetLaunchConfiguration {
-        crate::client::fluent_builders::GetLaunchConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetReplicationConfiguration`](crate::client::fluent_builders::GetReplicationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::GetReplicationConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::GetReplicationConfiguration::set_source_server_id): <p>Request to get Replication Configuration by Source Server ID.</p>
-    /// - On success, responds with [`GetReplicationConfigurationOutput`](crate::output::GetReplicationConfigurationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::GetReplicationConfigurationOutput::source_server_id): <p>Replication Configuration Source Server ID.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetReplicationConfigurationOutput::name): <p>Replication Configuration name.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::GetReplicationConfigurationOutput::staging_area_subnet_id): <p>Replication Configuration Staging Area subnet ID.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::associate_default_security_group): <p>Replication Configuration associate default Application Migration Service Security Group.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::GetReplicationConfigurationOutput::replication_servers_security_groups_i_ds): <p>Replication Configuration Replication Server Security Group IDs.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::GetReplicationConfigurationOutput::replication_server_instance_type): <p>Replication Configuration Replication Server instance type.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::use_dedicated_replication_server): <p>Replication Configuration use Dedicated Replication Server.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::GetReplicationConfigurationOutput::default_large_staging_disk_type): <p>Replication Configuration use default large Staging Disks.</p>
-    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::output::GetReplicationConfigurationOutput::replicated_disks): <p>Replication Configuration replicated disks.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::GetReplicationConfigurationOutput::ebs_encryption): <p>Replication Configuration EBS encryption.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::GetReplicationConfigurationOutput::ebs_encryption_key_arn): <p>Replication Configuration EBS encryption key ARN.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::output::GetReplicationConfigurationOutput::bandwidth_throttling): <p>Replication Configuration set bandwidth throttling.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::GetReplicationConfigurationOutput::data_plane_routing): <p>Replication Configuration data plane routing.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::output::GetReplicationConfigurationOutput::create_public_ip): <p>Replication Configuration create Public IP.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::GetReplicationConfigurationOutput::staging_area_tags): <p>Replication Configuration Staging Area tags.</p>
-    /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::error::GetReplicationConfigurationError)
-    pub fn get_replication_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetReplicationConfiguration {
-        crate::client::fluent_builders::GetReplicationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InitializeService`](crate::client::fluent_builders::InitializeService) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::InitializeService::send) it.
-
-    /// - On success, responds with [`InitializeServiceOutput`](crate::output::InitializeServiceOutput)
-
-    /// - On failure, responds with [`SdkError<InitializeServiceError>`](crate::error::InitializeServiceError)
-    pub fn initialize_service(&self) -> crate::client::fluent_builders::InitializeService {
-        crate::client::fluent_builders::InitializeService::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(ListApplicationsRequestFilters)`](crate::client::fluent_builders::ListApplications::filters) / [`set_filters(Option<ListApplicationsRequestFilters>)`](crate::client::fluent_builders::ListApplications::set_filters): <p>Applications list filters.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>Maximum results to return when listing applications.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>Request next token.</p>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
-    ///   - [`items(Option<Vec<Application>>)`](crate::output::ListApplicationsOutput::items): <p>Applications list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>Response next token.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
-    pub fn list_applications(&self) -> crate::client::fluent_builders::ListApplications {
-        crate::client::fluent_builders::ListApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSourceServerActions`](crate::client::fluent_builders::ListSourceServerActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSourceServerActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::ListSourceServerActions::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::ListSourceServerActions::set_source_server_id): <p>Source server ID.</p>
-    ///   - [`filters(SourceServerActionsRequestFilters)`](crate::client::fluent_builders::ListSourceServerActions::filters) / [`set_filters(Option<SourceServerActionsRequestFilters>)`](crate::client::fluent_builders::ListSourceServerActions::set_filters): <p>Filters to apply when listing source server post migration custom actions.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceServerActions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListSourceServerActions::set_max_results): <p>Maximum amount of items to return when listing source server post migration custom actions.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceServerActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceServerActions::set_next_token): <p>Next token to use when listing source server post migration custom actions.</p>
-    /// - On success, responds with [`ListSourceServerActionsOutput`](crate::output::ListSourceServerActionsOutput) with field(s):
-    ///   - [`items(Option<Vec<SourceServerActionDocument>>)`](crate::output::ListSourceServerActionsOutput::items): <p>List of source server post migration custom actions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSourceServerActionsOutput::next_token): <p>Next token returned when listing source server post migration custom actions.</p>
-    /// - On failure, responds with [`SdkError<ListSourceServerActionsError>`](crate::error::ListSourceServerActionsError)
-    pub fn list_source_server_actions(
-        &self,
-    ) -> crate::client::fluent_builders::ListSourceServerActions {
-        crate::client::fluent_builders::ListSourceServerActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>List tags for resource request by ARN.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>List tags for resource response.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTemplateActions`](crate::client::fluent_builders::ListTemplateActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTemplateActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::ListTemplateActions::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::ListTemplateActions::set_launch_configuration_template_id): <p>Launch configuration template ID.</p>
-    ///   - [`filters(TemplateActionsRequestFilters)`](crate::client::fluent_builders::ListTemplateActions::filters) / [`set_filters(Option<TemplateActionsRequestFilters>)`](crate::client::fluent_builders::ListTemplateActions::set_filters): <p>Filters to apply when listing template post migration custom actions.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTemplateActions::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListTemplateActions::set_max_results): <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTemplateActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTemplateActions::set_next_token): <p>Next token to use when listing template post migration custom actions.</p>
-    /// - On success, responds with [`ListTemplateActionsOutput`](crate::output::ListTemplateActionsOutput) with field(s):
-    ///   - [`items(Option<Vec<TemplateActionDocument>>)`](crate::output::ListTemplateActionsOutput::items): <p>List of template post migration custom actions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTemplateActionsOutput::next_token): <p>Next token returned when listing template post migration custom actions.</p>
-    /// - On failure, responds with [`SdkError<ListTemplateActionsError>`](crate::error::ListTemplateActionsError)
-    pub fn list_template_actions(&self) -> crate::client::fluent_builders::ListTemplateActions {
-        crate::client::fluent_builders::ListTemplateActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWaves`](crate::client::fluent_builders::ListWaves) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWaves::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(ListWavesRequestFilters)`](crate::client::fluent_builders::ListWaves::filters) / [`set_filters(Option<ListWavesRequestFilters>)`](crate::client::fluent_builders::ListWaves::set_filters): <p>Waves list filters.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWaves::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListWaves::set_max_results): <p>Maximum results to return when listing waves.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWaves::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWaves::set_next_token): <p>Request next token.</p>
-    /// - On success, responds with [`ListWavesOutput`](crate::output::ListWavesOutput) with field(s):
-    ///   - [`items(Option<Vec<Wave>>)`](crate::output::ListWavesOutput::items): <p>Waves list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListWavesOutput::next_token): <p>Response next token.</p>
-    /// - On failure, responds with [`SdkError<ListWavesError>`](crate::error::ListWavesError)
-    pub fn list_waves(&self) -> crate::client::fluent_builders::ListWaves {
-        crate::client::fluent_builders::ListWaves::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`MarkAsArchived`](crate::client::fluent_builders::MarkAsArchived) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::MarkAsArchived::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::MarkAsArchived::set_source_server_id): <p>Mark as archived by Source Server ID.</p>
-    /// - On success, responds with [`MarkAsArchivedOutput`](crate::output::MarkAsArchivedOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::MarkAsArchivedOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::MarkAsArchivedOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::MarkAsArchivedOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::MarkAsArchivedOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::MarkAsArchivedOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::MarkAsArchivedOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::MarkAsArchivedOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::MarkAsArchivedOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::MarkAsArchivedOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::MarkAsArchivedOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::MarkAsArchivedOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<MarkAsArchivedError>`](crate::error::MarkAsArchivedError)
-    pub fn mark_as_archived(&self) -> crate::client::fluent_builders::MarkAsArchived {
-        crate::client::fluent_builders::MarkAsArchived::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutSourceServerAction`](crate::client::fluent_builders::PutSourceServerAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_source_server_id): <p>Source server ID.</p>
-    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_action_name): <p>Source server post migration custom action name.</p>
-    ///   - [`document_identifier(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::document_identifier) / [`set_document_identifier(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_document_identifier): <p>Source server post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::client::fluent_builders::PutSourceServerAction::order) / [`set_order(i32)`](crate::client::fluent_builders::PutSourceServerAction::set_order): <p>Source server post migration custom action order.</p>
-    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_action_id): <p>Source server post migration custom action ID.</p>
-    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::PutSourceServerAction::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::PutSourceServerAction::set_document_version): <p>Source server post migration custom action document version.</p>
-    ///   - [`active(bool)`](crate::client::fluent_builders::PutSourceServerAction::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::PutSourceServerAction::set_active): <p>Source server post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::client::fluent_builders::PutSourceServerAction::timeout_seconds) / [`set_timeout_seconds(i32)`](crate::client::fluent_builders::PutSourceServerAction::set_timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
-    ///   - [`must_succeed_for_cutover(bool)`](crate::client::fluent_builders::PutSourceServerAction::must_succeed_for_cutover) / [`set_must_succeed_for_cutover(Option<bool>)`](crate::client::fluent_builders::PutSourceServerAction::set_must_succeed_for_cutover): <p>Source server post migration custom action must succeed for cutover.</p>
-    ///   - [`parameters(HashMap<String, Vec<SsmParameterStoreParameter>>)`](crate::client::fluent_builders::PutSourceServerAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::client::fluent_builders::PutSourceServerAction::set_parameters): <p>Source server post migration custom action parameters.</p>
-    /// - On success, responds with [`PutSourceServerActionOutput`](crate::output::PutSourceServerActionOutput) with field(s):
-    ///   - [`action_id(Option<String>)`](crate::output::PutSourceServerActionOutput::action_id): <p>Source server post migration custom action ID.</p>
-    ///   - [`action_name(Option<String>)`](crate::output::PutSourceServerActionOutput::action_name): <p>Source server post migration custom action name.</p>
-    ///   - [`document_identifier(Option<String>)`](crate::output::PutSourceServerActionOutput::document_identifier): <p>Source server post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::output::PutSourceServerActionOutput::order): <p>Source server post migration custom action order.</p>
-    ///   - [`document_version(Option<String>)`](crate::output::PutSourceServerActionOutput::document_version): <p>Source server post migration custom action document version.</p>
-    ///   - [`active(Option<bool>)`](crate::output::PutSourceServerActionOutput::active): <p>Source server post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::output::PutSourceServerActionOutput::timeout_seconds): <p>Source server post migration custom action timeout in seconds.</p>
-    ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::output::PutSourceServerActionOutput::must_succeed_for_cutover): <p>Source server post migration custom action must succeed for cutover.</p>
-    ///   - [`parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::output::PutSourceServerActionOutput::parameters): <p>Source server post migration custom action parameters.</p>
-    /// - On failure, responds with [`SdkError<PutSourceServerActionError>`](crate::error::PutSourceServerActionError)
-    pub fn put_source_server_action(
-        &self,
-    ) -> crate::client::fluent_builders::PutSourceServerAction {
-        crate::client::fluent_builders::PutSourceServerAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutTemplateAction`](crate::client::fluent_builders::PutTemplateAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_launch_configuration_template_id): <p>Launch configuration template ID.</p>
-    ///   - [`action_name(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::action_name) / [`set_action_name(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_action_name): <p>Template post migration custom action name.</p>
-    ///   - [`document_identifier(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::document_identifier) / [`set_document_identifier(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_document_identifier): <p>Template post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::client::fluent_builders::PutTemplateAction::order) / [`set_order(i32)`](crate::client::fluent_builders::PutTemplateAction::set_order): <p>Template post migration custom action order.</p>
-    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_action_id): <p>Template post migration custom action ID.</p>
-    ///   - [`document_version(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::document_version) / [`set_document_version(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_document_version): <p>Template post migration custom action document version.</p>
-    ///   - [`active(bool)`](crate::client::fluent_builders::PutTemplateAction::active) / [`set_active(Option<bool>)`](crate::client::fluent_builders::PutTemplateAction::set_active): <p>Template post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::client::fluent_builders::PutTemplateAction::timeout_seconds) / [`set_timeout_seconds(i32)`](crate::client::fluent_builders::PutTemplateAction::set_timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
-    ///   - [`must_succeed_for_cutover(bool)`](crate::client::fluent_builders::PutTemplateAction::must_succeed_for_cutover) / [`set_must_succeed_for_cutover(Option<bool>)`](crate::client::fluent_builders::PutTemplateAction::set_must_succeed_for_cutover): <p>Template post migration custom action must succeed for cutover.</p>
-    ///   - [`parameters(HashMap<String, Vec<SsmParameterStoreParameter>>)`](crate::client::fluent_builders::PutTemplateAction::parameters) / [`set_parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::client::fluent_builders::PutTemplateAction::set_parameters): <p>Template post migration custom action parameters.</p>
-    ///   - [`operating_system(impl Into<String>)`](crate::client::fluent_builders::PutTemplateAction::operating_system) / [`set_operating_system(Option<String>)`](crate::client::fluent_builders::PutTemplateAction::set_operating_system): <p>Operating system eligible for this template post migration custom action.</p>
-    /// - On success, responds with [`PutTemplateActionOutput`](crate::output::PutTemplateActionOutput) with field(s):
-    ///   - [`action_id(Option<String>)`](crate::output::PutTemplateActionOutput::action_id): <p>Template post migration custom action ID.</p>
-    ///   - [`action_name(Option<String>)`](crate::output::PutTemplateActionOutput::action_name): <p>Template post migration custom action name.</p>
-    ///   - [`document_identifier(Option<String>)`](crate::output::PutTemplateActionOutput::document_identifier): <p>Template post migration custom action document identifier.</p>
-    ///   - [`order(i32)`](crate::output::PutTemplateActionOutput::order): <p>Template post migration custom action order.</p>
-    ///   - [`document_version(Option<String>)`](crate::output::PutTemplateActionOutput::document_version): <p>Template post migration custom action document version.</p>
-    ///   - [`active(Option<bool>)`](crate::output::PutTemplateActionOutput::active): <p>Template post migration custom action active status.</p>
-    ///   - [`timeout_seconds(i32)`](crate::output::PutTemplateActionOutput::timeout_seconds): <p>Template post migration custom action timeout in seconds.</p>
-    ///   - [`must_succeed_for_cutover(Option<bool>)`](crate::output::PutTemplateActionOutput::must_succeed_for_cutover): <p>Template post migration custom action must succeed for cutover.</p>
-    ///   - [`parameters(Option<HashMap<String, Vec<SsmParameterStoreParameter>>>)`](crate::output::PutTemplateActionOutput::parameters): <p>Template post migration custom action parameters.</p>
-    ///   - [`operating_system(Option<String>)`](crate::output::PutTemplateActionOutput::operating_system): <p>Operating system eligible for this template post migration custom action.</p>
-    /// - On failure, responds with [`SdkError<PutTemplateActionError>`](crate::error::PutTemplateActionError)
-    pub fn put_template_action(&self) -> crate::client::fluent_builders::PutTemplateAction {
-        crate::client::fluent_builders::PutTemplateAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveSourceServerAction`](crate::client::fluent_builders::RemoveSourceServerAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::set_source_server_id): <p>Source server ID of the post migration custom action to remove.</p>
-    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::RemoveSourceServerAction::set_action_id): <p>Source server post migration custom action ID to remove.</p>
-    /// - On success, responds with [`RemoveSourceServerActionOutput`](crate::output::RemoveSourceServerActionOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveSourceServerActionError>`](crate::error::RemoveSourceServerActionError)
-    pub fn remove_source_server_action(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveSourceServerAction {
-        crate::client::fluent_builders::RemoveSourceServerAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveTemplateAction`](crate::client::fluent_builders::RemoveTemplateAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTemplateAction::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::RemoveTemplateAction::set_launch_configuration_template_id): <p>Launch configuration template ID of the post migration custom action to remove.</p>
-    ///   - [`action_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTemplateAction::action_id) / [`set_action_id(Option<String>)`](crate::client::fluent_builders::RemoveTemplateAction::set_action_id): <p>Template post migration custom action ID to remove.</p>
-    /// - On success, responds with [`RemoveTemplateActionOutput`](crate::output::RemoveTemplateActionOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveTemplateActionError>`](crate::error::RemoveTemplateActionError)
-    pub fn remove_template_action(&self) -> crate::client::fluent_builders::RemoveTemplateAction {
-        crate::client::fluent_builders::RemoveTemplateAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RetryDataReplication`](crate::client::fluent_builders::RetryDataReplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::RetryDataReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::RetryDataReplication::set_source_server_id): <p>Retry data replication for Source Server ID.</p>
-    /// - On success, responds with [`RetryDataReplicationOutput`](crate::output::RetryDataReplicationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::RetryDataReplicationOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::RetryDataReplicationOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::RetryDataReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::RetryDataReplicationOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::RetryDataReplicationOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::RetryDataReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::RetryDataReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::RetryDataReplicationOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::RetryDataReplicationOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::RetryDataReplicationOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::RetryDataReplicationOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<RetryDataReplicationError>`](crate::error::RetryDataReplicationError)
-    pub fn retry_data_replication(&self) -> crate::client::fluent_builders::RetryDataReplication {
-        crate::client::fluent_builders::RetryDataReplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartCutover`](crate::client::fluent_builders::StartCutover) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::StartCutover::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::StartCutover::set_source_server_i_ds): <p>Start Cutover by Source Server IDs.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartCutover::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartCutover::set_tags): <p>Start Cutover by Tags.</p>
-    /// - On success, responds with [`StartCutoverOutput`](crate::output::StartCutoverOutput) with field(s):
-    ///   - [`job(Option<Job>)`](crate::output::StartCutoverOutput::job): <p>Start Cutover Job response.</p>
-    /// - On failure, responds with [`SdkError<StartCutoverError>`](crate::error::StartCutoverError)
-    pub fn start_cutover(&self) -> crate::client::fluent_builders::StartCutover {
-        crate::client::fluent_builders::StartCutover::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartReplication`](crate::client::fluent_builders::StartReplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::StartReplication::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::StartReplication::set_source_server_id): <p>ID of source server on which to start replication.</p>
-    /// - On success, responds with [`StartReplicationOutput`](crate::output::StartReplicationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::StartReplicationOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::StartReplicationOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::StartReplicationOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::StartReplicationOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::StartReplicationOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::StartReplicationOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::StartReplicationOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::StartReplicationOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::StartReplicationOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::StartReplicationOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::StartReplicationOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<StartReplicationError>`](crate::error::StartReplicationError)
-    pub fn start_replication(&self) -> crate::client::fluent_builders::StartReplication {
-        crate::client::fluent_builders::StartReplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartTest`](crate::client::fluent_builders::StartTest) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::StartTest::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::StartTest::set_source_server_i_ds): <p>Start Test for Source Server IDs.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::StartTest::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartTest::set_tags): <p>Start Test by Tags.</p>
-    /// - On success, responds with [`StartTestOutput`](crate::output::StartTestOutput) with field(s):
-    ///   - [`job(Option<Job>)`](crate::output::StartTestOutput::job): <p>Start Test Job response.</p>
-    /// - On failure, responds with [`SdkError<StartTestError>`](crate::error::StartTestError)
-    pub fn start_test(&self) -> crate::client::fluent_builders::StartTest {
-        crate::client::fluent_builders::StartTest::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>Tag resource by ARN.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Tag resource by Tags.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TerminateTargetInstances`](crate::client::fluent_builders::TerminateTargetInstances) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_i_ds(Vec<String>)`](crate::client::fluent_builders::TerminateTargetInstances::source_server_i_ds) / [`set_source_server_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::TerminateTargetInstances::set_source_server_i_ds): <p>Terminate Target instance by Source Server IDs.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TerminateTargetInstances::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TerminateTargetInstances::set_tags): <p>Terminate Target instance by Tags.</p>
-    /// - On success, responds with [`TerminateTargetInstancesOutput`](crate::output::TerminateTargetInstancesOutput) with field(s):
-    ///   - [`job(Option<Job>)`](crate::output::TerminateTargetInstancesOutput::job): <p>Terminate Target instance Job response.</p>
-    /// - On failure, responds with [`SdkError<TerminateTargetInstancesError>`](crate::error::TerminateTargetInstancesError)
-    pub fn terminate_target_instances(
-        &self,
-    ) -> crate::client::fluent_builders::TerminateTargetInstances {
-        crate::client::fluent_builders::TerminateTargetInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnarchiveApplication`](crate::client::fluent_builders::UnarchiveApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UnarchiveApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UnarchiveApplication::set_application_id): <p>Application ID.</p>
-    /// - On success, responds with [`UnarchiveApplicationOutput`](crate::output::UnarchiveApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::UnarchiveApplicationOutput::application_id): <p>Application ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UnarchiveApplicationOutput::arn): <p>Application ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::UnarchiveApplicationOutput::name): <p>Application name.</p>
-    ///   - [`description(Option<String>)`](crate::output::UnarchiveApplicationOutput::description): <p>Application description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::UnarchiveApplicationOutput::is_archived): <p>Application archival status.</p>
-    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::UnarchiveApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::UnarchiveApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UnarchiveApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UnarchiveApplicationOutput::tags): <p>Application tags.</p>
-    ///   - [`wave_id(Option<String>)`](crate::output::UnarchiveApplicationOutput::wave_id): <p>Application wave ID.</p>
-    /// - On failure, responds with [`SdkError<UnarchiveApplicationError>`](crate::error::UnarchiveApplicationError)
-    pub fn unarchive_application(&self) -> crate::client::fluent_builders::UnarchiveApplication {
-        crate::client::fluent_builders::UnarchiveApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnarchiveWave`](crate::client::fluent_builders::UnarchiveWave) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::UnarchiveWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::UnarchiveWave::set_wave_id): <p>Wave ID.</p>
-    /// - On success, responds with [`UnarchiveWaveOutput`](crate::output::UnarchiveWaveOutput) with field(s):
-    ///   - [`wave_id(Option<String>)`](crate::output::UnarchiveWaveOutput::wave_id): <p>Wave ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UnarchiveWaveOutput::arn): <p>Wave ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::UnarchiveWaveOutput::name): <p>Wave name.</p>
-    ///   - [`description(Option<String>)`](crate::output::UnarchiveWaveOutput::description): <p>Wave description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::UnarchiveWaveOutput::is_archived): <p>Wave archival status.</p>
-    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::UnarchiveWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::UnarchiveWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UnarchiveWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UnarchiveWaveOutput::tags): <p>Wave tags.</p>
-    /// - On failure, responds with [`SdkError<UnarchiveWaveError>`](crate::error::UnarchiveWaveError)
-    pub fn unarchive_wave(&self) -> crate::client::fluent_builders::UnarchiveWave {
-        crate::client::fluent_builders::UnarchiveWave::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>Untag resource by ARN.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>Untag resource by Keys.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>Application ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_name): <p>Application name.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>Application description.</p>
-    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::UpdateApplicationOutput::application_id): <p>Application ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateApplicationOutput::arn): <p>Application ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateApplicationOutput::name): <p>Application name.</p>
-    ///   - [`description(Option<String>)`](crate::output::UpdateApplicationOutput::description): <p>Application description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::UpdateApplicationOutput::is_archived): <p>Application archival status.</p>
-    ///   - [`application_aggregated_status(Option<ApplicationAggregatedStatus>)`](crate::output::UpdateApplicationOutput::application_aggregated_status): <p>Application aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::UpdateApplicationOutput::creation_date_time): <p>Application creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UpdateApplicationOutput::last_modified_date_time): <p>Application last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateApplicationOutput::tags): <p>Application tags.</p>
-    ///   - [`wave_id(Option<String>)`](crate::output::UpdateApplicationOutput::wave_id): <p>Application wave ID.</p>
-    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
-    pub fn update_application(&self) -> crate::client::fluent_builders::UpdateApplication {
-        crate::client::fluent_builders::UpdateApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLaunchConfiguration`](crate::client::fluent_builders::UpdateLaunchConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_source_server_id): <p>Update Launch configuration by Source Server ID request.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_name): <p>Update Launch configuration name request.</p>
-    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::UpdateLaunchConfiguration::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_launch_disposition): <p>Update Launch configuration launch disposition request.</p>
-    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::UpdateLaunchConfiguration::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_target_instance_type_right_sizing_method): <p>Update Launch configuration Target instance right sizing request.</p>
-    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_private_ip): <p>Update Launch configuration copy Private IP request.</p>
-    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_copy_tags): <p>Update Launch configuration copy Tags request.</p>
-    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfiguration::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_licensing): <p>Update Launch configuration licensing request.</p>
-    ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::UpdateLaunchConfiguration::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_boot_mode): <p>Update Launch configuration boot mode request.</p>
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfiguration::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::UpdateLaunchConfiguration::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfiguration::set_map_auto_tagging_mpe_id): <p>Launch configuration map auto tagging MPE ID.</p>
-    /// - On success, responds with [`UpdateLaunchConfigurationOutput`](crate::output::UpdateLaunchConfigurationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::source_server_id): <p>Launch configuration Source Server ID.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::name): <p>Launch configuration name.</p>
-    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::ec2_launch_template_id): <p>Launch configuration EC2 Launch template ID.</p>
-    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::UpdateLaunchConfigurationOutput::launch_disposition): <p>Launch disposition for launch configuration.</p>
-    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::UpdateLaunchConfigurationOutput::target_instance_type_right_sizing_method): <p>Launch configuration Target instance type right sizing method.</p>
-    ///   - [`copy_private_ip(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_private_ip): <p>Copy Private IP during Launch Configuration.</p>
-    ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
-    ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
-    ///   - [`boot_mode(Option<BootMode>)`](crate::output::UpdateLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
-    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::UpdateLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::UpdateLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
-    /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationError>`](crate::error::UpdateLaunchConfigurationError)
-    pub fn update_launch_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLaunchConfiguration {
-        crate::client::fluent_builders::UpdateLaunchConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLaunchConfigurationTemplate`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_configuration_template_id) / [`set_launch_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_configuration_template_id): <p>Launch Configuration Template ID.</p>
-    ///   - [`post_launch_actions(PostLaunchActions)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::post_launch_actions) / [`set_post_launch_actions(Option<PostLaunchActions>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_post_launch_actions): <p>Post Launch Action to execute on the Test or Cutover instance.</p>
-    ///   - [`enable_map_auto_tagging(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::enable_map_auto_tagging) / [`set_enable_map_auto_tagging(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(impl Into<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::map_auto_tagging_mpe_id) / [`set_map_auto_tagging_mpe_id(Option<String>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
-    ///   - [`launch_disposition(LaunchDisposition)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::launch_disposition) / [`set_launch_disposition(Option<LaunchDisposition>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_launch_disposition): <p>Launch disposition.</p>
-    ///   - [`target_instance_type_right_sizing_method(TargetInstanceTypeRightSizingMethod)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::target_instance_type_right_sizing_method) / [`set_target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
-    ///   - [`copy_private_ip(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::copy_private_ip) / [`set_copy_private_ip(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_copy_private_ip): <p>Copy private Ip.</p>
-    ///   - [`associate_public_ip_address(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::associate_public_ip_address) / [`set_associate_public_ip_address(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_associate_public_ip_address): <p>Associate public Ip address.</p>
-    ///   - [`copy_tags(bool)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::copy_tags) / [`set_copy_tags(Option<bool>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_copy_tags): <p>Copy tags.</p>
-    ///   - [`licensing(Licensing)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::licensing) / [`set_licensing(Option<Licensing>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_licensing): <p>Configure Licensing.</p>
-    ///   - [`boot_mode(BootMode)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::boot_mode) / [`set_boot_mode(Option<BootMode>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_boot_mode): <p>Launch configuration template boot mode.</p>
-    ///   - [`small_volume_max_size(i64)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::small_volume_max_size) / [`set_small_volume_max_size(i64)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_small_volume_max_size): <p>Small volume maximum size.</p>
-    ///   - [`small_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::small_volume_conf) / [`set_small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_small_volume_conf): <p>Small volume config.</p>
-    ///   - [`large_volume_conf(LaunchTemplateDiskConf)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::large_volume_conf) / [`set_large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::set_large_volume_conf): <p>Large volume config.</p>
-    /// - On success, responds with [`UpdateLaunchConfigurationTemplateOutput`](crate::output::UpdateLaunchConfigurationTemplateOutput) with field(s):
-    ///   - [`launch_configuration_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_configuration_template_id): <p>ID of the Launch Configuration Template.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::arn): <p>ARN of the Launch Configuration Template.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::post_launch_actions): <p>Post Launch Actions of the Launch Configuration Template.</p>
-    ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
-    ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::map_auto_tagging_mpe_id): <p>Launch configuration template map auto tagging MPE ID.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::tags): <p>Tags of the Launch Configuration Template.</p>
-    ///   - [`ec2_launch_template_id(Option<String>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::ec2_launch_template_id): <p>EC2 launch template ID.</p>
-    ///   - [`launch_disposition(Option<LaunchDisposition>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::launch_disposition): <p>Launch disposition.</p>
-    ///   - [`target_instance_type_right_sizing_method(Option<TargetInstanceTypeRightSizingMethod>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::target_instance_type_right_sizing_method): <p>Target instance type right-sizing method.</p>
-    ///   - [`copy_private_ip(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::copy_private_ip): <p>Copy private Ip.</p>
-    ///   - [`associate_public_ip_address(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::associate_public_ip_address): <p>Associate public Ip address.</p>
-    ///   - [`copy_tags(Option<bool>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::copy_tags): <p>Copy tags.</p>
-    ///   - [`licensing(Option<Licensing>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::licensing): <p>Configure Licensing.</p>
-    ///   - [`boot_mode(Option<BootMode>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::boot_mode): <p>Launch configuration template boot mode.</p>
-    ///   - [`small_volume_max_size(i64)`](crate::output::UpdateLaunchConfigurationTemplateOutput::small_volume_max_size): <p>Small volume maximum size.</p>
-    ///   - [`small_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::small_volume_conf): <p>Small volume config.</p>
-    ///   - [`large_volume_conf(Option<LaunchTemplateDiskConf>)`](crate::output::UpdateLaunchConfigurationTemplateOutput::large_volume_conf): <p>Large volume config.</p>
-    /// - On failure, responds with [`SdkError<UpdateLaunchConfigurationTemplateError>`](crate::error::UpdateLaunchConfigurationTemplateError)
-    pub fn update_launch_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateLaunchConfigurationTemplate {
-        crate::client::fluent_builders::UpdateLaunchConfigurationTemplate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateReplicationConfiguration`](crate::client::fluent_builders::UpdateReplicationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_source_server_id): <p>Update replication configuration Source Server ID request.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_name): <p>Update replication configuration name request.</p>
-    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_staging_area_subnet_id): <p>Update replication configuration Staging Area subnet request.</p>
-    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_associate_default_security_group): <p>Update replication configuration associate default Application Migration Service Security group request.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replication_servers_security_groups_i_ds): <p>Update replication configuration Replication Server Security Groups IDs request.</p>
-    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replication_server_instance_type): <p>Update replication configuration Replication Server instance type request.</p>
-    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_use_dedicated_replication_server): <p>Update replication configuration use dedicated Replication Server request.</p>
-    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::UpdateReplicationConfiguration::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_default_large_staging_disk_type): <p>Update replication configuration use default large Staging Disk type request.</p>
-    ///   - [`replicated_disks(Vec<ReplicationConfigurationReplicatedDisk>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::replicated_disks) / [`set_replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_replicated_disks): <p>Update replication configuration replicated disks request.</p>
-    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::UpdateReplicationConfiguration::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_ebs_encryption): <p>Update replication configuration EBS encryption request.</p>
-    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_ebs_encryption_key_arn): <p>Update replication configuration EBS encryption key ARN request.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfiguration::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_bandwidth_throttling): <p>Update replication configuration bandwidth throttling request.</p>
-    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::UpdateReplicationConfiguration::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_data_plane_routing): <p>Update replication configuration data plane routing request.</p>
-    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::UpdateReplicationConfiguration::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_create_public_ip): <p>Update replication configuration create Public IP request.</p>
-    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateReplicationConfiguration::set_staging_area_tags): <p>Update replication configuration Staging Area Tags request.</p>
-    /// - On success, responds with [`UpdateReplicationConfigurationOutput`](crate::output::UpdateReplicationConfigurationOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::source_server_id): <p>Replication Configuration Source Server ID.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::name): <p>Replication Configuration name.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::staging_area_subnet_id): <p>Replication Configuration Staging Area subnet ID.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::associate_default_security_group): <p>Replication Configuration associate default Application Migration Service Security Group.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::UpdateReplicationConfigurationOutput::replication_servers_security_groups_i_ds): <p>Replication Configuration Replication Server Security Group IDs.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::replication_server_instance_type): <p>Replication Configuration Replication Server instance type.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::use_dedicated_replication_server): <p>Replication Configuration use Dedicated Replication Server.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::UpdateReplicationConfigurationOutput::default_large_staging_disk_type): <p>Replication Configuration use default large Staging Disks.</p>
-    ///   - [`replicated_disks(Option<Vec<ReplicationConfigurationReplicatedDisk>>)`](crate::output::UpdateReplicationConfigurationOutput::replicated_disks): <p>Replication Configuration replicated disks.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::UpdateReplicationConfigurationOutput::ebs_encryption): <p>Replication Configuration EBS encryption.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::UpdateReplicationConfigurationOutput::ebs_encryption_key_arn): <p>Replication Configuration EBS encryption key ARN.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::output::UpdateReplicationConfigurationOutput::bandwidth_throttling): <p>Replication Configuration set bandwidth throttling.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::UpdateReplicationConfigurationOutput::data_plane_routing): <p>Replication Configuration data plane routing.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::output::UpdateReplicationConfigurationOutput::create_public_ip): <p>Replication Configuration create Public IP.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationOutput::staging_area_tags): <p>Replication Configuration Staging Area tags.</p>
-    /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationError>`](crate::error::UpdateReplicationConfigurationError)
-    pub fn update_replication_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateReplicationConfiguration {
-        crate::client::fluent_builders::UpdateReplicationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateReplicationConfigurationTemplate`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_configuration_template_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_configuration_template_id) / [`set_replication_configuration_template_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_configuration_template_id): <p>Update replication configuration template template ID request.</p>
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_arn): <p>Update replication configuration template ARN request.</p>
-    ///   - [`staging_area_subnet_id(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::staging_area_subnet_id) / [`set_staging_area_subnet_id(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_staging_area_subnet_id): <p>Update replication configuration template Staging Area subnet ID request.</p>
-    ///   - [`associate_default_security_group(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::associate_default_security_group) / [`set_associate_default_security_group(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_associate_default_security_group): <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Vec<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_servers_security_groups_i_ds) / [`set_replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_servers_security_groups_i_ds): <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    ///   - [`replication_server_instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::replication_server_instance_type) / [`set_replication_server_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_replication_server_instance_type): <p>Update replication configuration template Replication Server instance type request.</p>
-    ///   - [`use_dedicated_replication_server(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::use_dedicated_replication_server) / [`set_use_dedicated_replication_server(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_use_dedicated_replication_server): <p>Update replication configuration template use dedicated Replication Server request.</p>
-    ///   - [`default_large_staging_disk_type(ReplicationConfigurationDefaultLargeStagingDiskType)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::default_large_staging_disk_type) / [`set_default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_default_large_staging_disk_type): <p>Update replication configuration template use default large Staging Disk type request.</p>
-    ///   - [`ebs_encryption(ReplicationConfigurationEbsEncryption)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::ebs_encryption) / [`set_ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_ebs_encryption): <p>Update replication configuration template EBS encryption request.</p>
-    ///   - [`ebs_encryption_key_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::ebs_encryption_key_arn) / [`set_ebs_encryption_key_arn(Option<String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_ebs_encryption_key_arn): <p>Update replication configuration template EBS encryption key ARN request.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::bandwidth_throttling) / [`set_bandwidth_throttling(i64)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_bandwidth_throttling): <p>Update replication configuration template bandwidth throttling request.</p>
-    ///   - [`data_plane_routing(ReplicationConfigurationDataPlaneRouting)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::data_plane_routing) / [`set_data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_data_plane_routing): <p>Update replication configuration template data plane routing request.</p>
-    ///   - [`create_public_ip(bool)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::create_public_ip) / [`set_create_public_ip(Option<bool>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_create_public_ip): <p>Update replication configuration template create Public IP request.</p>
-    ///   - [`staging_area_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::staging_area_tags) / [`set_staging_area_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::set_staging_area_tags): <p>Update replication configuration template Staging Area Tags request.</p>
-    /// - On success, responds with [`UpdateReplicationConfigurationTemplateOutput`](crate::output::UpdateReplicationConfigurationTemplateOutput) with field(s):
-    ///   - [`replication_configuration_template_id(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_configuration_template_id): <p>Replication Configuration template ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::arn): <p>Replication Configuration template ARN.</p>
-    ///   - [`staging_area_subnet_id(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::staging_area_subnet_id): <p>Replication Configuration template Staging Area subnet ID.</p>
-    ///   - [`associate_default_security_group(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::associate_default_security_group): <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-    ///   - [`replication_servers_security_groups_i_ds(Option<Vec<String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_servers_security_groups_i_ds): <p>Replication Configuration template server Security Groups IDs.</p>
-    ///   - [`replication_server_instance_type(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::replication_server_instance_type): <p>Replication Configuration template server instance type.</p>
-    ///   - [`use_dedicated_replication_server(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::use_dedicated_replication_server): <p>Replication Configuration template use Dedicated Replication Server.</p>
-    ///   - [`default_large_staging_disk_type(Option<ReplicationConfigurationDefaultLargeStagingDiskType>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::default_large_staging_disk_type): <p>Replication Configuration template use default large Staging Disk type.</p>
-    ///   - [`ebs_encryption(Option<ReplicationConfigurationEbsEncryption>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::ebs_encryption): <p>Replication Configuration template EBS encryption.</p>
-    ///   - [`ebs_encryption_key_arn(Option<String>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::ebs_encryption_key_arn): <p>Replication Configuration template EBS encryption key ARN.</p>
-    ///   - [`bandwidth_throttling(i64)`](crate::output::UpdateReplicationConfigurationTemplateOutput::bandwidth_throttling): <p>Replication Configuration template bandwidth throttling.</p>
-    ///   - [`data_plane_routing(Option<ReplicationConfigurationDataPlaneRouting>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::data_plane_routing): <p>Replication Configuration template data plane routing.</p>
-    ///   - [`create_public_ip(Option<bool>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::create_public_ip): <p>Replication Configuration template create Public IP.</p>
-    ///   - [`staging_area_tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::staging_area_tags): <p>Replication Configuration template Staging Area Tags.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReplicationConfigurationTemplateOutput::tags): <p>Replication Configuration template Tags.</p>
-    /// - On failure, responds with [`SdkError<UpdateReplicationConfigurationTemplateError>`](crate::error::UpdateReplicationConfigurationTemplateError)
-    pub fn update_replication_configuration_template(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateReplicationConfigurationTemplate {
-        crate::client::fluent_builders::UpdateReplicationConfigurationTemplate::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`UpdateSourceServerReplicationType`](crate::client::fluent_builders::UpdateSourceServerReplicationType) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::source_server_id) / [`set_source_server_id(Option<String>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::set_source_server_id): <p>ID of source server on which to update replication type.</p>
-    ///   - [`replication_type(ReplicationType)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::replication_type) / [`set_replication_type(Option<ReplicationType>)`](crate::client::fluent_builders::UpdateSourceServerReplicationType::set_replication_type): <p>Replication type to which to update source server.</p>
-    /// - On success, responds with [`UpdateSourceServerReplicationTypeOutput`](crate::output::UpdateSourceServerReplicationTypeOutput) with field(s):
-    ///   - [`source_server_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::source_server_id): <p>Source server ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::arn): <p>Source server ARN.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::UpdateSourceServerReplicationTypeOutput::is_archived): <p>Source server archived status.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateSourceServerReplicationTypeOutput::tags): <p>Source server Tags.</p>
-    ///   - [`launched_instance(Option<LaunchedInstance>)`](crate::output::UpdateSourceServerReplicationTypeOutput::launched_instance): <p>Source server launched instance.</p>
-    ///   - [`data_replication_info(Option<DataReplicationInfo>)`](crate::output::UpdateSourceServerReplicationTypeOutput::data_replication_info): <p>Source server data replication info.</p>
-    ///   - [`life_cycle(Option<LifeCycle>)`](crate::output::UpdateSourceServerReplicationTypeOutput::life_cycle): <p>Source server lifecycle state.</p>
-    ///   - [`source_properties(Option<SourceProperties>)`](crate::output::UpdateSourceServerReplicationTypeOutput::source_properties): <p>Source server properties.</p>
-    ///   - [`replication_type(Option<ReplicationType>)`](crate::output::UpdateSourceServerReplicationTypeOutput::replication_type): <p>Source server replication type.</p>
-    ///   - [`vcenter_client_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::vcenter_client_id): <p>Source server vCenter client id.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::UpdateSourceServerReplicationTypeOutput::application_id): <p>Source server application ID.</p>
-    /// - On failure, responds with [`SdkError<UpdateSourceServerReplicationTypeError>`](crate::error::UpdateSourceServerReplicationTypeError)
-    pub fn update_source_server_replication_type(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSourceServerReplicationType {
-        crate::client::fluent_builders::UpdateSourceServerReplicationType::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWave`](crate::client::fluent_builders::UpdateWave) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::wave_id) / [`set_wave_id(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_wave_id): <p>Wave ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_name): <p>Wave name.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateWave::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateWave::set_description): <p>Wave description.</p>
-    /// - On success, responds with [`UpdateWaveOutput`](crate::output::UpdateWaveOutput) with field(s):
-    ///   - [`wave_id(Option<String>)`](crate::output::UpdateWaveOutput::wave_id): <p>Wave ID.</p>
-    ///   - [`arn(Option<String>)`](crate::output::UpdateWaveOutput::arn): <p>Wave ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateWaveOutput::name): <p>Wave name.</p>
-    ///   - [`description(Option<String>)`](crate::output::UpdateWaveOutput::description): <p>Wave description.</p>
-    ///   - [`is_archived(Option<bool>)`](crate::output::UpdateWaveOutput::is_archived): <p>Wave archival status.</p>
-    ///   - [`wave_aggregated_status(Option<WaveAggregatedStatus>)`](crate::output::UpdateWaveOutput::wave_aggregated_status): <p>Wave aggregated status.</p>
-    ///   - [`creation_date_time(Option<String>)`](crate::output::UpdateWaveOutput::creation_date_time): <p>Wave creation dateTime.</p>
-    ///   - [`last_modified_date_time(Option<String>)`](crate::output::UpdateWaveOutput::last_modified_date_time): <p>Wave last modified dateTime.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateWaveOutput::tags): <p>Wave tags.</p>
-    /// - On failure, responds with [`SdkError<UpdateWaveError>`](crate::error::UpdateWaveError)
-    pub fn update_wave(&self) -> crate::client::fluent_builders::UpdateWave {
-        crate::client::fluent_builders::UpdateWave::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1201,9 +174,119 @@ impl Client {
     }
 }
 
+mod archive_application;
+
+mod archive_wave;
+
+mod associate_applications;
+
+mod associate_source_servers;
+
+mod change_server_life_cycle_state;
+
+mod create_application;
+
+mod create_launch_configuration_template;
+
+mod create_replication_configuration_template;
+
+mod create_wave;
+
+mod delete_application;
+
+mod delete_job;
+
+mod delete_launch_configuration_template;
+
+mod delete_replication_configuration_template;
+
+mod delete_source_server;
+
+mod delete_vcenter_client;
+
+mod delete_wave;
+
+mod describe_job_log_items;
+
+mod describe_jobs;
+
+mod describe_launch_configuration_templates;
+
+mod describe_replication_configuration_templates;
+
+mod describe_source_servers;
+
+mod describe_vcenter_clients;
+
+mod disassociate_applications;
+
+mod disassociate_source_servers;
+
+mod disconnect_from_service;
+
+mod finalize_cutover;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_launch_configuration;
+
+mod get_replication_configuration;
+
+mod initialize_service;
+
+mod list_applications;
+
+mod list_source_server_actions;
+
+mod list_tags_for_resource;
+
+mod list_template_actions;
+
+mod list_waves;
+
+mod mark_as_archived;
+
+mod put_source_server_action;
+
+mod put_template_action;
+
+mod remove_source_server_action;
+
+mod remove_template_action;
+
+mod retry_data_replication;
+
+mod start_cutover;
+
+mod start_replication;
+
+mod start_test;
+
+mod tag_resource;
+
+mod terminate_target_instances;
+
+mod unarchive_application;
+
+mod unarchive_wave;
+
+mod untag_resource;
+
+mod update_application;
+
+mod update_launch_configuration;
+
+mod update_launch_configuration_template;
+
+mod update_replication_configuration;
+
+mod update_replication_configuration_template;
+
+mod update_source_server_replication_type;
+
+mod update_wave;

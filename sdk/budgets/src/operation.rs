@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBudget {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_budget_error(response)
+            crate::protocol_serde::shape_create_budget::de_create_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_create_budget_response(response)
+            crate::protocol_serde::shape_create_budget::de_create_budget_http_response(response)
         }
     }
 }
@@ -60,9 +60,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBudgetAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_budget_action_error(response)
+            crate::protocol_serde::shape_create_budget_action::de_create_budget_action_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_budget_action_response(response)
+            crate::protocol_serde::shape_create_budget_action::de_create_budget_action_http_response(
+                response,
+            )
         }
     }
 }
@@ -95,9 +99,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotification {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_notification_error(response)
+            crate::protocol_serde::shape_create_notification::de_create_notification_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_notification_response(response)
+            crate::protocol_serde::shape_create_notification::de_create_notification_http_response(
+                response,
+            )
         }
     }
 }
@@ -130,9 +138,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSubscriber {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_subscriber_error(response)
+            crate::protocol_serde::shape_create_subscriber::de_create_subscriber_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_subscriber_response(response)
+            crate::protocol_serde::shape_create_subscriber::de_create_subscriber_http_response(
+                response,
+            )
         }
     }
 }
@@ -163,9 +175,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBudget {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_budget_error(response)
+            crate::protocol_serde::shape_delete_budget::de_delete_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_budget_response(response)
+            crate::protocol_serde::shape_delete_budget::de_delete_budget_http_response(response)
         }
     }
 }
@@ -198,9 +210,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBudgetAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_budget_action_error(response)
+            crate::protocol_serde::shape_delete_budget_action::de_delete_budget_action_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_budget_action_response(response)
+            crate::protocol_serde::shape_delete_budget_action::de_delete_budget_action_http_response(
+                response,
+            )
         }
     }
 }
@@ -233,9 +249,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotification {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_notification_error(response)
+            crate::protocol_serde::shape_delete_notification::de_delete_notification_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_notification_response(response)
+            crate::protocol_serde::shape_delete_notification::de_delete_notification_http_response(
+                response,
+            )
         }
     }
 }
@@ -268,9 +288,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_subscriber_error(response)
+            crate::protocol_serde::shape_delete_subscriber::de_delete_subscriber_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_subscriber_response(response)
+            crate::protocol_serde::shape_delete_subscriber::de_delete_subscriber_http_response(
+                response,
+            )
         }
     }
 }
@@ -301,9 +325,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudget {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_error(response)
+            crate::protocol_serde::shape_describe_budget::de_describe_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_response(response)
+            crate::protocol_serde::shape_describe_budget::de_describe_budget_http_response(response)
         }
     }
 }
@@ -336,9 +360,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_action_error(response)
+            crate::protocol_serde::shape_describe_budget_action::de_describe_budget_action_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_action_response(response)
+            crate::protocol_serde::shape_describe_budget_action::de_describe_budget_action_http_response(response)
         }
     }
 }
@@ -371,9 +395,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionHist
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_action_histories_error(response)
+            crate::protocol_serde::shape_describe_budget_action_histories::de_describe_budget_action_histories_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_action_histories_response(response)
+            crate::protocol_serde::shape_describe_budget_action_histories::de_describe_budget_action_histories_http_response(response)
         }
     }
 }
@@ -406,9 +430,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsFor
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_actions_for_account_error(response)
+            crate::protocol_serde::shape_describe_budget_actions_for_account::de_describe_budget_actions_for_account_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_actions_for_account_response(response)
+            crate::protocol_serde::shape_describe_budget_actions_for_account::de_describe_budget_actions_for_account_http_response(response)
         }
     }
 }
@@ -441,9 +465,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionsFor
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_actions_for_budget_error(response)
+            crate::protocol_serde::shape_describe_budget_actions_for_budget::de_describe_budget_actions_for_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_actions_for_budget_response(response)
+            crate::protocol_serde::shape_describe_budget_actions_for_budget::de_describe_budget_actions_for_budget_http_response(response)
         }
     }
 }
@@ -476,11 +500,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetNotificati
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_notifications_for_account_error(response)
+            crate::protocol_serde::shape_describe_budget_notifications_for_account::de_describe_budget_notifications_for_account_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_notifications_for_account_response(
-                response,
-            )
+            crate::protocol_serde::shape_describe_budget_notifications_for_account::de_describe_budget_notifications_for_account_http_response(response)
         }
     }
 }
@@ -513,9 +535,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetPerformanc
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budget_performance_history_error(response)
+            crate::protocol_serde::shape_describe_budget_performance_history::de_describe_budget_performance_history_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budget_performance_history_response(response)
+            crate::protocol_serde::shape_describe_budget_performance_history::de_describe_budget_performance_history_http_response(response)
         }
     }
 }
@@ -548,9 +570,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgets {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_budgets_error(response)
+            crate::protocol_serde::shape_describe_budgets::de_describe_budgets_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_budgets_response(response)
+            crate::protocol_serde::shape_describe_budgets::de_describe_budgets_http_response(
+                response,
+            )
         }
     }
 }
@@ -583,9 +607,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationsFor
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_notifications_for_budget_error(response)
+            crate::protocol_serde::shape_describe_notifications_for_budget::de_describe_notifications_for_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_notifications_for_budget_response(response)
+            crate::protocol_serde::shape_describe_notifications_for_budget::de_describe_notifications_for_budget_http_response(response)
         }
     }
 }
@@ -618,9 +642,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubscribersForNo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_subscribers_for_notification_error(response)
+            crate::protocol_serde::shape_describe_subscribers_for_notification::de_describe_subscribers_for_notification_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_subscribers_for_notification_response(response)
+            crate::protocol_serde::shape_describe_subscribers_for_notification::de_describe_subscribers_for_notification_http_response(response)
         }
     }
 }
@@ -653,9 +677,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteBudgetAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_execute_budget_action_error(response)
+            crate::protocol_serde::shape_execute_budget_action::de_execute_budget_action_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_execute_budget_action_response(response)
+            crate::protocol_serde::shape_execute_budget_action::de_execute_budget_action_http_response(response)
         }
     }
 }
@@ -686,9 +712,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBudget {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_budget_error(response)
+            crate::protocol_serde::shape_update_budget::de_update_budget_http_error(response)
         } else {
-            crate::operation_deser::parse_update_budget_response(response)
+            crate::protocol_serde::shape_update_budget::de_update_budget_http_response(response)
         }
     }
 }
@@ -721,9 +747,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBudgetAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_budget_action_error(response)
+            crate::protocol_serde::shape_update_budget_action::de_update_budget_action_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_budget_action_response(response)
+            crate::protocol_serde::shape_update_budget_action::de_update_budget_action_http_response(
+                response,
+            )
         }
     }
 }
@@ -756,9 +786,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotification {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_notification_error(response)
+            crate::protocol_serde::shape_update_notification::de_update_notification_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_notification_response(response)
+            crate::protocol_serde::shape_update_notification::de_update_notification_http_response(
+                response,
+            )
         }
     }
 }
@@ -791,9 +825,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSubscriber {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_subscriber_error(response)
+            crate::protocol_serde::shape_update_subscriber::de_update_subscriber_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_subscriber_response(response)
+            crate::protocol_serde::shape_update_subscriber::de_update_subscriber_http_response(
+                response,
+            )
         }
     }
 }

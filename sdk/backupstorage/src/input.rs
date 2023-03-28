@@ -994,10 +994,8 @@ impl NotifyObjectCompleteInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_notify_object_complete_input(
-                self.metadata_blob,
-            )?
-            .into_inner(),
+            crate::protocol_serde::shape_notify_object_complete_input::ser_metadata_blob_http_payload( self.metadata_blob)?
+            .into_inner()
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1220,7 +1218,8 @@ impl PutChunkInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_chunk_input(self.data)?.into_inner(),
+            crate::protocol_serde::shape_put_chunk_input::ser_data_http_payload(self.data)?
+                .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1448,8 +1447,10 @@ impl PutObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_input(self.inline_chunk)?
-                .into_inner(),
+            crate::protocol_serde::shape_put_object_input::ser_inline_chunk_http_payload(
+                self.inline_chunk,
+            )?
+            .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1618,7 +1619,7 @@ impl StartObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_object(&self)?,
+            crate::protocol_serde::shape_start_object::ser_start_object_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

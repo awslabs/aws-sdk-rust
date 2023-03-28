@@ -82,7 +82,8 @@ impl DescribeObjectsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_objects_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_objects_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -192,7 +193,7 @@ impl ListPipelinesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pipelines_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_pipelines_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -310,7 +311,7 @@ impl QueryObjectsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_query_objects_output_marker(resp);
+                            let new_token = crate::lens::reflens_query_objects_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -357,7 +358,7 @@ impl DescribeObjectsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_objects_output_pipeline_objects(page)
+            crate::lens::lens_describe_objects_output_pipeline_objects(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -384,7 +385,7 @@ impl ListPipelinesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_pipelines_output_pipeline_id_list(page)
+            crate::lens::lens_list_pipelines_output_pipeline_id_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -411,7 +412,7 @@ impl QueryObjectsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_query_objects_output_ids(page)
+            crate::lens::lens_query_objects_output_ids(page)
                 .unwrap_or_default()
                 .into_iter()
         })

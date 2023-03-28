@@ -90,7 +90,8 @@ impl DescribeDocumentVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_document_versions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_document_versions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -200,7 +201,8 @@ impl DescribeFolderContentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_folder_contents_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_folder_contents_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -318,7 +320,7 @@ impl DescribeUsersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_users_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_users_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -364,7 +366,11 @@ impl DescribeDocumentVersionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeDocumentVersionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_document_versions_output_document_versions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_document_versions_output_document_versions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -388,7 +394,7 @@ impl DescribeUsersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_users_output_users(page)
+            crate::lens::lens_describe_users_output_users(page)
                 .unwrap_or_default()
                 .into_iter()
         })

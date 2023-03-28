@@ -90,7 +90,10 @@ impl GetComplianceSummaryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_compliance_summary_output_pagination_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_compliance_summary_output_pagination_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.pagination_token.as_ref()
@@ -208,7 +211,8 @@ impl GetResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_resources_output_pagination_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_resources_output_pagination_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.pagination_token.as_ref()
@@ -318,7 +322,8 @@ impl GetTagKeysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_tag_keys_output_pagination_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_tag_keys_output_pagination_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.pagination_token.as_ref()
@@ -428,7 +433,8 @@ impl GetTagValuesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_tag_values_output_pagination_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_tag_values_output_pagination_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.pagination_token.as_ref()
@@ -475,11 +481,9 @@ impl GetComplianceSummaryPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_compliance_summary_output_summary_list(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_compliance_summary_output_summary_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -504,11 +508,9 @@ impl GetResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_resources_output_resource_tag_mapping_list(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_resources_output_resource_tag_mapping_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -533,7 +535,7 @@ impl GetTagKeysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_tag_keys_output_tag_keys(page)
+            crate::lens::lens_get_tag_keys_output_tag_keys(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -560,7 +562,7 @@ impl GetTagValuesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_tag_values_output_tag_values(page)
+            crate::lens::lens_get_tag_values_output_tag_values(page)
                 .unwrap_or_default()
                 .into_iter()
         })

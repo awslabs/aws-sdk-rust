@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSettings {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_service_settings_error(response)
+            crate::protocol_serde::shape_get_service_settings::de_get_service_settings_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_service_settings_response(response)
+            crate::protocol_serde::shape_get_service_settings::de_get_service_settings_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +66,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptionIns
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_linux_subscription_instances_error(response)
+            crate::protocol_serde::shape_list_linux_subscription_instances::de_list_linux_subscription_instances_http_error(response)
         } else {
-            crate::operation_deser::parse_list_linux_subscription_instances_response(response)
+            crate::protocol_serde::shape_list_linux_subscription_instances::de_list_linux_subscription_instances_http_response(response)
         }
     }
 }
@@ -97,9 +101,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptions {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_linux_subscriptions_error(response)
+            crate::protocol_serde::shape_list_linux_subscriptions::de_list_linux_subscriptions_http_error(response)
         } else {
-            crate::operation_deser::parse_list_linux_subscriptions_response(response)
+            crate::protocol_serde::shape_list_linux_subscriptions::de_list_linux_subscriptions_http_response(response)
         }
     }
 }
@@ -132,9 +136,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSettings {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_service_settings_error(response)
+            crate::protocol_serde::shape_update_service_settings::de_update_service_settings_http_error(response)
         } else {
-            crate::operation_deser::parse_update_service_settings_response(response)
+            crate::protocol_serde::shape_update_service_settings::de_update_service_settings_http_response(response)
         }
     }
 }

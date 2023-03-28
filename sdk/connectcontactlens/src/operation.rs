@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRealtimeContactAnaly
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_realtime_contact_analysis_segments_error(response)
+            crate::protocol_serde::shape_list_realtime_contact_analysis_segments::de_list_realtime_contact_analysis_segments_http_error(response)
         } else {
-            crate::operation_deser::parse_list_realtime_contact_analysis_segments_response(response)
+            crate::protocol_serde::shape_list_realtime_contact_analysis_segments::de_list_realtime_contact_analysis_segments_http_response(response)
         }
     }
 }

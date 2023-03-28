@@ -90,7 +90,8 @@ impl ListAccessesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_accesses_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_accesses_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListAgreementsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_agreements_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_agreements_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_certificates_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_certificates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl ListConnectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_connectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_connectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,8 @@ impl ListExecutionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_executions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_executions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +685,8 @@ impl ListProfilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_profiles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_profiles_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +804,8 @@ impl ListSecurityPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_security_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_security_policies_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +923,8 @@ impl ListServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_servers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_servers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1042,8 @@ impl ListTagsForResourcePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tags_for_resource_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tags_for_resource_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1161,7 @@ impl ListUsersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_users_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_users_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1270,7 +1279,8 @@ impl ListWorkflowsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_workflows_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_workflows_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1317,7 +1327,7 @@ impl ListAccessesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_accesses_output_accesses(page)
+            crate::lens::lens_list_accesses_output_accesses(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1344,7 +1354,7 @@ impl ListAgreementsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_agreements_output_agreements(page)
+            crate::lens::lens_list_agreements_output_agreements(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1371,7 +1381,7 @@ impl ListCertificatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_certificates_output_certificates(page)
+            crate::lens::lens_list_certificates_output_certificates(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1398,7 +1408,7 @@ impl ListConnectorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_connectors_output_connectors(page)
+            crate::lens::lens_list_connectors_output_connectors(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1425,7 +1435,7 @@ impl ListExecutionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_executions_output_executions(page)
+            crate::lens::lens_list_executions_output_executions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1452,7 +1462,7 @@ impl ListProfilesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_profiles_output_profiles(page)
+            crate::lens::lens_list_profiles_output_profiles(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1478,7 +1488,11 @@ impl ListSecurityPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListSecurityPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_security_policies_output_security_policy_names(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_security_policies_output_security_policy_names(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1502,7 +1516,7 @@ impl ListServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_servers_output_servers(page)
+            crate::lens::lens_list_servers_output_servers(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1529,7 +1543,7 @@ impl ListTagsForResourcePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tags_for_resource_output_tags(page)
+            crate::lens::lens_list_tags_for_resource_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1556,7 +1570,7 @@ impl ListUsersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_users_output_users(page)
+            crate::lens::lens_list_users_output_users(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1583,7 +1597,7 @@ impl ListWorkflowsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_workflows_output_workflows(page)
+            crate::lens::lens_list_workflows_output_workflows(page)
                 .unwrap_or_default()
                 .into_iter()
         })

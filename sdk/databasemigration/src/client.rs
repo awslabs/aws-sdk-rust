@@ -89,1031 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AddTagsToResource`](crate::client::fluent_builders::AddTagsToResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::AddTagsToResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::AddTagsToResource::set_resource_arn): <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>  <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToResource::set_tags): <p>One or more tags to be assigned to the resource.</p>
-    /// - On success, responds with [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput)
-
-    /// - On failure, responds with [`SdkError<AddTagsToResourceError>`](crate::error::AddTagsToResourceError)
-    pub fn add_tags_to_resource(&self) -> crate::client::fluent_builders::AddTagsToResource {
-        crate::client::fluent_builders::AddTagsToResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ApplyPendingMaintenanceAction`](crate::client::fluent_builders::ApplyPendingMaintenanceAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action applies to.</p>
-    ///   - [`apply_action(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::apply_action) / [`set_apply_action(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_apply_action): <p>The pending maintenance action to apply to this resource.</p>  <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code> </p>
-    ///   - [`opt_in_type(impl Into<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::opt_in_type) / [`set_opt_in_type(Option<String>)`](crate::client::fluent_builders::ApplyPendingMaintenanceAction::set_opt_in_type): <p>A value that specifies the type of opt-in request, or undoes an opt-in request. You can't undo an opt-in request of type <code>immediate</code>.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>immediate</code> - Apply the maintenance action immediately.</p> </li>   <li> <p> <code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p> </li>   <li> <p> <code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p> </li>  </ul>
-    /// - On success, responds with [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput) with field(s):
-    ///   - [`resource_pending_maintenance_actions(Option<ResourcePendingMaintenanceActions>)`](crate::output::ApplyPendingMaintenanceActionOutput::resource_pending_maintenance_actions): <p>The DMS resource that the pending maintenance action will be applied to.</p>
-    /// - On failure, responds with [`SdkError<ApplyPendingMaintenanceActionError>`](crate::error::ApplyPendingMaintenanceActionError)
-    pub fn apply_pending_maintenance_action(
-        &self,
-    ) -> crate::client::fluent_builders::ApplyPendingMaintenanceAction {
-        crate::client::fluent_builders::ApplyPendingMaintenanceAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CancelReplicationTaskAssessmentRun`](crate::client::fluent_builders::CancelReplicationTaskAssessmentRun) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::CancelReplicationTaskAssessmentRun::replication_task_assessment_run_arn) / [`set_replication_task_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::CancelReplicationTaskAssessmentRun::set_replication_task_assessment_run_arn): <p>Amazon Resource Name (ARN) of the premigration assessment run to be canceled.</p>
-    /// - On success, responds with [`CancelReplicationTaskAssessmentRunOutput`](crate::output::CancelReplicationTaskAssessmentRunOutput) with field(s):
-    ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::output::CancelReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
-    /// - On failure, responds with [`SdkError<CancelReplicationTaskAssessmentRunError>`](crate::error::CancelReplicationTaskAssessmentRunError)
-    pub fn cancel_replication_task_assessment_run(
-        &self,
-    ) -> crate::client::fluent_builders::CancelReplicationTaskAssessmentRun {
-        crate::client::fluent_builders::CancelReplicationTaskAssessmentRun::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateEndpoint`](crate::client::fluent_builders::CreateEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::endpoint_identifier) / [`set_endpoint_identifier(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_endpoint_identifier): <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
-    ///   - [`endpoint_type(ReplicationEndpointTypeValue)`](crate::client::fluent_builders::CreateEndpoint::endpoint_type) / [`set_endpoint_type(Option<ReplicationEndpointTypeValue>)`](crate::client::fluent_builders::CreateEndpoint::set_endpoint_type): <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    ///   - [`engine_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::engine_name) / [`set_engine_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_engine_name): <p>The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_username): <p>The user name to be used to log in to the endpoint database.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_password): <p>The password to be used to log in to the endpoint database.</p>
-    ///   - [`server_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::server_name) / [`set_server_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_server_name): <p>The name of the server where the endpoint database resides.</p>
-    ///   - [`port(i32)`](crate::client::fluent_builders::CreateEndpoint::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::CreateEndpoint::set_port): <p>The port used by the endpoint database.</p>
-    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_database_name): <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.</p>
-    ///   - [`extra_connection_attributes(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::extra_connection_attributes) / [`set_extra_connection_attributes(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_extra_connection_attributes): <p>Additional attributes associated with the connection. Each attribute is specified as a name-value pair associated by an equal sign (=). Multiple attributes are separated by a semicolon (;) with no additional white space. For information on the attributes available for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with DMS Endpoints</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_kms_key_id): <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>  <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>  <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEndpoint::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEndpoint::set_tags): <p>One or more tags to be assigned to the endpoint.</p>
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_certificate_arn): <p>The Amazon Resource Name (ARN) for the certificate.</p>
-    ///   - [`ssl_mode(DmsSslModeValue)`](crate::client::fluent_builders::CreateEndpoint::ssl_mode) / [`set_ssl_mode(Option<DmsSslModeValue>)`](crate::client::fluent_builders::CreateEndpoint::set_ssl_mode): <p>The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is <code>none</code> </p>
-    ///   - [`service_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::service_access_role_arn) / [`set_service_access_role_arn(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_service_access_role_arn): <p> The Amazon Resource Name (ARN) for the service access role that you want to use to create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-    ///   - [`external_table_definition(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::external_table_definition) / [`set_external_table_definition(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_external_table_definition): <p>The external table definition. </p>
-    ///   - [`dynamo_db_settings(DynamoDbSettings)`](crate::client::fluent_builders::CreateEndpoint::dynamo_db_settings) / [`set_dynamo_db_settings(Option<DynamoDbSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_dynamo_db_settings): <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`s3_settings(S3Settings)`](crate::client::fluent_builders::CreateEndpoint::s3_settings) / [`set_s3_settings(Option<S3Settings>)`](crate::client::fluent_builders::CreateEndpoint::set_s3_settings): <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`dms_transfer_settings(DmsTransferSettings)`](crate::client::fluent_builders::CreateEndpoint::dms_transfer_settings) / [`set_dms_transfer_settings(Option<DmsTransferSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_dms_transfer_settings): <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>  <p>Possible settings include the following:</p>  <ul>   <li> <p> <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>   <li> <p> <code>BucketName</code> - The name of the S3 bucket to use.</p> </li>  </ul>  <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code> </p>  <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code> </p>
-    ///   - [`mongo_db_settings(MongoDbSettings)`](crate::client::fluent_builders::CreateEndpoint::mongo_db_settings) / [`set_mongo_db_settings(Option<MongoDbSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_mongo_db_settings): <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`kinesis_settings(KinesisSettings)`](crate::client::fluent_builders::CreateEndpoint::kinesis_settings) / [`set_kinesis_settings(Option<KinesisSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_kinesis_settings): <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`kafka_settings(KafkaSettings)`](crate::client::fluent_builders::CreateEndpoint::kafka_settings) / [`set_kafka_settings(Option<KafkaSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_kafka_settings): <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`elasticsearch_settings(ElasticsearchSettings)`](crate::client::fluent_builders::CreateEndpoint::elasticsearch_settings) / [`set_elasticsearch_settings(Option<ElasticsearchSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_elasticsearch_settings): <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide</i>.</p>
-    ///   - [`neptune_settings(NeptuneSettings)`](crate::client::fluent_builders::CreateEndpoint::neptune_settings) / [`set_neptune_settings(Option<NeptuneSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_neptune_settings): <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`redshift_settings(RedshiftSettings)`](crate::client::fluent_builders::CreateEndpoint::redshift_settings) / [`set_redshift_settings(Option<RedshiftSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_redshift_settings): <p>Provides information that defines an Amazon Redshift endpoint.</p>
-    ///   - [`postgre_sql_settings(PostgreSqlSettings)`](crate::client::fluent_builders::CreateEndpoint::postgre_sql_settings) / [`set_postgre_sql_settings(Option<PostgreSqlSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_postgre_sql_settings): <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`my_sql_settings(MySqlSettings)`](crate::client::fluent_builders::CreateEndpoint::my_sql_settings) / [`set_my_sql_settings(Option<MySqlSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_my_sql_settings): <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`oracle_settings(OracleSettings)`](crate::client::fluent_builders::CreateEndpoint::oracle_settings) / [`set_oracle_settings(Option<OracleSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_oracle_settings): <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`sybase_settings(SybaseSettings)`](crate::client::fluent_builders::CreateEndpoint::sybase_settings) / [`set_sybase_settings(Option<SybaseSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_sybase_settings): <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`microsoft_sql_server_settings(MicrosoftSqlServerSettings)`](crate::client::fluent_builders::CreateEndpoint::microsoft_sql_server_settings) / [`set_microsoft_sql_server_settings(Option<MicrosoftSqlServerSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_microsoft_sql_server_settings): <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`ibm_db2_settings(IbmDb2Settings)`](crate::client::fluent_builders::CreateEndpoint::ibm_db2_settings) / [`set_ibm_db2_settings(Option<IbmDb2Settings>)`](crate::client::fluent_builders::CreateEndpoint::set_ibm_db2_settings): <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateEndpoint::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::CreateEndpoint::set_resource_identifier): <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    ///   - [`doc_db_settings(DocDbSettings)`](crate::client::fluent_builders::CreateEndpoint::doc_db_settings) / [`set_doc_db_settings(Option<DocDbSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_doc_db_settings): <p>Provides information that defines a DocumentDB endpoint.</p>
-    ///   - [`redis_settings(RedisSettings)`](crate::client::fluent_builders::CreateEndpoint::redis_settings) / [`set_redis_settings(Option<RedisSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_redis_settings): <p>Settings in JSON format for the target Redis endpoint.</p>
-    ///   - [`gcp_my_sql_settings(GcpMySqlSettings)`](crate::client::fluent_builders::CreateEndpoint::gcp_my_sql_settings) / [`set_gcp_my_sql_settings(Option<GcpMySqlSettings>)`](crate::client::fluent_builders::CreateEndpoint::set_gcp_my_sql_settings): <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-    /// - On success, responds with [`CreateEndpointOutput`](crate::output::CreateEndpointOutput) with field(s):
-    ///   - [`endpoint(Option<Endpoint>)`](crate::output::CreateEndpointOutput::endpoint): <p>The endpoint that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateEndpointError>`](crate::error::CreateEndpointError)
-    pub fn create_endpoint(&self) -> crate::client::fluent_builders::CreateEndpoint {
-        crate::client::fluent_builders::CreateEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateEventSubscription`](crate::client::fluent_builders::CreateEventSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_subscription_name): <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
-    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_sns_topic_arn): <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it. </p>
-    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::CreateEventSubscription::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::CreateEventSubscription::set_source_type): <p> The type of DMS resource that generates the events. For example, if you want to be notified of events generated by a replication instance, you set this parameter to <code>replication-instance</code>. If this value isn't specified, all events are returned. </p>  <p>Valid values: <code>replication-instance</code> | <code>replication-task</code> </p>
-    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::CreateEventSubscription::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEventSubscription::set_event_categories): <p>A list of event categories for a source type that you want to subscribe to. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`source_ids(Vec<String>)`](crate::client::fluent_builders::CreateEventSubscription::source_ids) / [`set_source_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEventSubscription::set_source_ids): <p>A list of identifiers for which DMS provides notification events.</p>  <p>If you don't specify a value, notifications are provided for all sources.</p>  <p>If you specify multiple values, they must be of the same type. For example, if you specify a database instance ID, then all of the other values must be database instance IDs.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::CreateEventSubscription::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::CreateEventSubscription::set_enabled): <p> A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create the subscription but not activate it. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEventSubscription::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEventSubscription::set_tags): <p>One or more tags to be assigned to the event subscription.</p>
-    /// - On success, responds with [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput) with field(s):
-    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::CreateEventSubscriptionOutput::event_subscription): <p>The event subscription that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateEventSubscriptionError>`](crate::error::CreateEventSubscriptionError)
-    pub fn create_event_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::CreateEventSubscription {
-        crate::client::fluent_builders::CreateEventSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateFleetAdvisorCollector`](crate::client::fluent_builders::CreateFleetAdvisorCollector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collector_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::collector_name) / [`set_collector_name(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_collector_name): <p>The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_description): <p>A summary description of your Fleet Advisor collector.</p>
-    ///   - [`service_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::service_access_role_arn) / [`set_service_access_role_arn(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_service_access_role_arn): <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    ///   - [`s3_bucket_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::s3_bucket_name) / [`set_s3_bucket_name(Option<String>)`](crate::client::fluent_builders::CreateFleetAdvisorCollector::set_s3_bucket_name): <p>The Amazon S3 bucket that the Fleet Advisor collector uses to store inventory metadata.</p>
-    /// - On success, responds with [`CreateFleetAdvisorCollectorOutput`](crate::output::CreateFleetAdvisorCollectorOutput) with field(s):
-    ///   - [`collector_referenced_id(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::collector_referenced_id): <p>The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code> </p>
-    ///   - [`collector_name(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::collector_name): <p>The name of the new Fleet Advisor collector.</p>
-    ///   - [`description(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::description): <p>A summary description of the Fleet Advisor collector.</p>
-    ///   - [`service_access_role_arn(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::service_access_role_arn): <p>The IAM role that grants permissions to access the specified Amazon S3 bucket.</p>
-    ///   - [`s3_bucket_name(Option<String>)`](crate::output::CreateFleetAdvisorCollectorOutput::s3_bucket_name): <p>The Amazon S3 bucket that the collector uses to store inventory metadata.</p>
-    /// - On failure, responds with [`SdkError<CreateFleetAdvisorCollectorError>`](crate::error::CreateFleetAdvisorCollectorError)
-    pub fn create_fleet_advisor_collector(
-        &self,
-    ) -> crate::client::fluent_builders::CreateFleetAdvisorCollector {
-        crate::client::fluent_builders::CreateFleetAdvisorCollector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateReplicationInstance`](crate::client::fluent_builders::CreateReplicationInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::replication_instance_identifier) / [`set_replication_instance_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_replication_instance_identifier): <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1-63 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p>Example: <code>myrepinstance</code> </p>
-    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::CreateReplicationInstance::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::CreateReplicationInstance::set_allocated_storage): <p>The amount of storage (in gigabytes) to be initially allocated for the replication instance.</p>
-    ///   - [`replication_instance_class(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::replication_instance_class) / [`set_replication_instance_class(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_replication_instance_class): <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>  <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateReplicationInstance::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateReplicationInstance::set_vpc_security_group_ids): <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    ///   - [`availability_zone(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::availability_zone) / [`set_availability_zone(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_availability_zone): <p>The Availability Zone where the replication instance will be created. The default value is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
-    ///   - [`replication_subnet_group_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_replication_subnet_group_identifier): <p>A subnet group to associate with the replication instance.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p>Default: A 30-minute window selected at random from an 8-hour block of time per Amazon Web Services Region, occurring on a random day of the week.</p>  <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p>Constraints: Minimum 30-minute window.</p>
-    ///   - [`multi_az(bool)`](crate::client::fluent_builders::CreateReplicationInstance::multi_az) / [`set_multi_az(Option<bool>)`](crate::client::fluent_builders::CreateReplicationInstance::set_multi_az): <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_engine_version): <p>The engine version number of the replication instance.</p>  <p>If an engine version number is not specified when a replication instance is created, the default is the latest engine version available.</p>
-    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::CreateReplicationInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::CreateReplicationInstance::set_auto_minor_version_upgrade): <p>A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to <code>true</code>.</p>  <p>Default: <code>true</code> </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateReplicationInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateReplicationInstance::set_tags): <p>One or more tags to be assigned to the replication instance.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_kms_key_id): <p>An KMS key identifier that is used to encrypt the data on the replication instance.</p>  <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses your default encryption key.</p>  <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
-    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateReplicationInstance::publicly_accessible) / [`set_publicly_accessible(Option<bool>)`](crate::client::fluent_builders::CreateReplicationInstance::set_publicly_accessible): <p> Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an instance with a public IP address. A value of <code>false</code> represents an instance with a private IP address. The default value is <code>true</code>. </p>
-    ///   - [`dns_name_servers(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::dns_name_servers) / [`set_dns_name_servers(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_dns_name_servers): <p>A list of custom DNS name servers supported for the replication instance to access your on-premise source or target database. This list overrides the default name servers supported by the replication instance. You can specify a comma-separated list of internet addresses for up to four on-premise DNS name servers. For example: <code>"1.1.1.1,2.2.2.2,3.3.3.3,4.4.4.4"</code> </p>
-    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_resource_identifier): <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationInstance::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::CreateReplicationInstance::set_network_type): <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    /// - On success, responds with [`CreateReplicationInstanceOutput`](crate::output::CreateReplicationInstanceOutput) with field(s):
-    ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::output::CreateReplicationInstanceOutput::replication_instance): <p>The replication instance that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateReplicationInstanceError>`](crate::error::CreateReplicationInstanceError)
-    pub fn create_replication_instance(
-        &self,
-    ) -> crate::client::fluent_builders::CreateReplicationInstance {
-        crate::client::fluent_builders::CreateReplicationInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateReplicationSubnetGroup`](crate::client::fluent_builders::CreateReplicationSubnetGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_subnet_group_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::set_replication_subnet_group_identifier): <p>The name for the replication subnet group. This value is stored as a lowercase string.</p>  <p>Constraints: Must contain no more than 255 alphanumeric characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>  <p>Example: <code>mySubnetgroup</code> </p>
-    ///   - [`replication_subnet_group_description(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::replication_subnet_group_description) / [`set_replication_subnet_group_description(Option<String>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::set_replication_subnet_group_description): <p>The description for the subnet group.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::set_subnet_ids): <p>One or more subnet IDs to be assigned to the subnet group.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateReplicationSubnetGroup::set_tags): <p>One or more tags to be assigned to the subnet group.</p>
-    /// - On success, responds with [`CreateReplicationSubnetGroupOutput`](crate::output::CreateReplicationSubnetGroupOutput) with field(s):
-    ///   - [`replication_subnet_group(Option<ReplicationSubnetGroup>)`](crate::output::CreateReplicationSubnetGroupOutput::replication_subnet_group): <p>The replication subnet group that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateReplicationSubnetGroupError>`](crate::error::CreateReplicationSubnetGroupError)
-    pub fn create_replication_subnet_group(
-        &self,
-    ) -> crate::client::fluent_builders::CreateReplicationSubnetGroup {
-        crate::client::fluent_builders::CreateReplicationSubnetGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateReplicationTask`](crate::client::fluent_builders::CreateReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::replication_task_identifier) / [`set_replication_task_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_replication_task_identifier): <p>An identifier for the replication task.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
-    ///   - [`source_endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::source_endpoint_arn) / [`set_source_endpoint_arn(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_source_endpoint_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
-    ///   - [`target_endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::target_endpoint_arn) / [`set_target_endpoint_arn(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_target_endpoint_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies the target endpoint.</p>
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of a replication instance.</p>
-    ///   - [`migration_type(MigrationTypeValue)`](crate::client::fluent_builders::CreateReplicationTask::migration_type) / [`set_migration_type(Option<MigrationTypeValue>)`](crate::client::fluent_builders::CreateReplicationTask::set_migration_type): <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
-    ///   - [`table_mappings(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::table_mappings) / [`set_table_mappings(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_table_mappings): <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table Mapping to Specify Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`replication_task_settings(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::replication_task_settings) / [`set_replication_task_settings(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_replication_task_settings): <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`cdc_start_time(DateTime)`](crate::client::fluent_builders::CreateReplicationTask::cdc_start_time) / [`set_cdc_start_time(Option<DateTime>)`](crate::client::fluent_builders::CreateReplicationTask::set_cdc_start_time): <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    ///   - [`cdc_start_position(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::cdc_start_position) / [`set_cdc_start_position(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_cdc_start_position): <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p> The value can be in date, checkpoint, or LSN/SCN format.</p>  <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>  <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>  <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>   <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>  </note>
-    ///   - [`cdc_stop_position(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::cdc_stop_position) / [`set_cdc_stop_position(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_cdc_stop_position): <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>  <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>  <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateReplicationTask::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateReplicationTask::set_tags): <p>One or more tags to be assigned to the replication task.</p>
-    ///   - [`task_data(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::task_data) / [`set_task_data(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_task_data): <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateReplicationTask::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::CreateReplicationTask::set_resource_identifier): <p>A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier value for the end of <code>EndpointArn</code>.</p>
-    /// - On success, responds with [`CreateReplicationTaskOutput`](crate::output::CreateReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::CreateReplicationTaskOutput::replication_task): <p>The replication task that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateReplicationTaskError>`](crate::error::CreateReplicationTaskError)
-    pub fn create_replication_task(&self) -> crate::client::fluent_builders::CreateReplicationTask {
-        crate::client::fluent_builders::CreateReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    /// - On success, responds with [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput) with field(s):
-    ///   - [`certificate(Option<Certificate>)`](crate::output::DeleteCertificateOutput::certificate): <p>The Secure Sockets Layer (SSL) certificate.</p>
-    /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::error::DeleteCertificateError)
-    pub fn delete_certificate(&self) -> crate::client::fluent_builders::DeleteCertificate {
-        crate::client::fluent_builders::DeleteCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput) with field(s):
-    ///   - [`connection(Option<Connection>)`](crate::output::DeleteConnectionOutput::connection): <p>The connection that is being deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
-    pub fn delete_connection(&self) -> crate::client::fluent_builders::DeleteConnection {
-        crate::client::fluent_builders::DeleteConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEndpoint`](crate::client::fluent_builders::DeleteEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteEndpoint::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DeleteEndpoint::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    /// - On success, responds with [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput) with field(s):
-    ///   - [`endpoint(Option<Endpoint>)`](crate::output::DeleteEndpointOutput::endpoint): <p>The endpoint that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteEndpointError>`](crate::error::DeleteEndpointError)
-    pub fn delete_endpoint(&self) -> crate::client::fluent_builders::DeleteEndpoint {
-        crate::client::fluent_builders::DeleteEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEventSubscription`](crate::client::fluent_builders::DeleteEventSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::DeleteEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::DeleteEventSubscription::set_subscription_name): <p>The name of the DMS event notification subscription to be deleted.</p>
-    /// - On success, responds with [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput) with field(s):
-    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::DeleteEventSubscriptionOutput::event_subscription): <p>The event subscription that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteEventSubscriptionError>`](crate::error::DeleteEventSubscriptionError)
-    pub fn delete_event_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteEventSubscription {
-        crate::client::fluent_builders::DeleteEventSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFleetAdvisorCollector`](crate::client::fluent_builders::DeleteFleetAdvisorCollector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collector_referenced_id(impl Into<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorCollector::collector_referenced_id) / [`set_collector_referenced_id(Option<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorCollector::set_collector_referenced_id): <p>The reference ID of the Fleet Advisor collector to delete.</p>
-    /// - On success, responds with [`DeleteFleetAdvisorCollectorOutput`](crate::output::DeleteFleetAdvisorCollectorOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFleetAdvisorCollectorError>`](crate::error::DeleteFleetAdvisorCollectorError)
-    pub fn delete_fleet_advisor_collector(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteFleetAdvisorCollector {
-        crate::client::fluent_builders::DeleteFleetAdvisorCollector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFleetAdvisorDatabases`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`database_ids(Vec<String>)`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases::database_ids) / [`set_database_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteFleetAdvisorDatabases::set_database_ids): <p>The IDs of the Fleet Advisor collector databases to delete.</p>
-    /// - On success, responds with [`DeleteFleetAdvisorDatabasesOutput`](crate::output::DeleteFleetAdvisorDatabasesOutput) with field(s):
-    ///   - [`database_ids(Option<Vec<String>>)`](crate::output::DeleteFleetAdvisorDatabasesOutput::database_ids): <p>The IDs of the databases that the operation deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteFleetAdvisorDatabasesError>`](crate::error::DeleteFleetAdvisorDatabasesError)
-    pub fn delete_fleet_advisor_databases(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteFleetAdvisorDatabases {
-        crate::client::fluent_builders::DeleteFleetAdvisorDatabases::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReplicationInstance`](crate::client::fluent_builders::DeleteReplicationInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationInstance::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteReplicationInstance::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance to be deleted.</p>
-    /// - On success, responds with [`DeleteReplicationInstanceOutput`](crate::output::DeleteReplicationInstanceOutput) with field(s):
-    ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::output::DeleteReplicationInstanceOutput::replication_instance): <p>The replication instance that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteReplicationInstanceError>`](crate::error::DeleteReplicationInstanceError)
-    pub fn delete_replication_instance(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteReplicationInstance {
-        crate::client::fluent_builders::DeleteReplicationInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReplicationSubnetGroup`](crate::client::fluent_builders::DeleteReplicationSubnetGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_subnet_group_identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationSubnetGroup::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::client::fluent_builders::DeleteReplicationSubnetGroup::set_replication_subnet_group_identifier): <p>The subnet group name of the replication instance.</p>
-    /// - On success, responds with [`DeleteReplicationSubnetGroupOutput`](crate::output::DeleteReplicationSubnetGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteReplicationSubnetGroupError>`](crate::error::DeleteReplicationSubnetGroupError)
-    pub fn delete_replication_subnet_group(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteReplicationSubnetGroup {
-        crate::client::fluent_builders::DeleteReplicationSubnetGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReplicationTask`](crate::client::fluent_builders::DeleteReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationTask::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::DeleteReplicationTask::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task to be deleted.</p>
-    /// - On success, responds with [`DeleteReplicationTaskOutput`](crate::output::DeleteReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::DeleteReplicationTaskOutput::replication_task): <p>The deleted replication task.</p>
-    /// - On failure, responds with [`SdkError<DeleteReplicationTaskError>`](crate::error::DeleteReplicationTaskError)
-    pub fn delete_replication_task(&self) -> crate::client::fluent_builders::DeleteReplicationTask {
-        crate::client::fluent_builders::DeleteReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReplicationTaskAssessmentRun`](crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_assessment_run_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun::replication_task_assessment_run_arn) / [`set_replication_task_assessment_run_arn(Option<String>)`](crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun::set_replication_task_assessment_run_arn): <p>Amazon Resource Name (ARN) of the premigration assessment run to be deleted.</p>
-    /// - On success, responds with [`DeleteReplicationTaskAssessmentRunOutput`](crate::output::DeleteReplicationTaskAssessmentRunOutput) with field(s):
-    ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::output::DeleteReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
-    /// - On failure, responds with [`SdkError<DeleteReplicationTaskAssessmentRunError>`](crate::error::DeleteReplicationTaskAssessmentRunError)
-    pub fn delete_replication_task_assessment_run(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun {
-        crate::client::fluent_builders::DeleteReplicationTaskAssessmentRun::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAccountAttributes`](crate::client::fluent_builders::DescribeAccountAttributes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccountAttributes::send) it.
-
-    /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput) with field(s):
-    ///   - [`account_quotas(Option<Vec<AccountQuota>>)`](crate::output::DescribeAccountAttributesOutput::account_quotas): <p>Account quota information.</p>
-    ///   - [`unique_account_identifier(Option<String>)`](crate::output::DescribeAccountAttributesOutput::unique_account_identifier): <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>   <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>  </note>
-    /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::error::DescribeAccountAttributesError)
-    pub fn describe_account_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAccountAttributes {
-        crate::client::fluent_builders::DescribeAccountAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeApplicableIndividualAssessments`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_replication_task_arn): <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_replication_instance_arn): <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
-    ///   - [`source_engine_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::source_engine_name) / [`set_source_engine_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_source_engine_name): <p>Name of a database engine that the specified replication instance supports as a source.</p>
-    ///   - [`target_engine_name(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::target_engine_name) / [`set_target_engine_name(Option<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_target_engine_name): <p>Name of a database engine that the specified replication instance supports as a target.</p>
-    ///   - [`migration_type(MigrationTypeValue)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::migration_type) / [`set_migration_type(Option<MigrationTypeValue>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_migration_type): <p>Name of the migration type that each provided individual assessment must support.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_max_records): <p>Maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeApplicableIndividualAssessments::set_marker): <p>Optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeApplicableIndividualAssessmentsOutput`](crate::output::DescribeApplicableIndividualAssessmentsOutput) with field(s):
-    ///   - [`individual_assessment_names(Option<Vec<String>>)`](crate::output::DescribeApplicableIndividualAssessmentsOutput::individual_assessment_names): <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`marker(Option<String>)`](crate::output::DescribeApplicableIndividualAssessmentsOutput::marker): <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeApplicableIndividualAssessmentsError>`](crate::error::DescribeApplicableIndividualAssessmentsError)
-    pub fn describe_applicable_individual_assessments(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeApplicableIndividualAssessments {
-        crate::client::fluent_builders::DescribeApplicableIndividualAssessments::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeCertificates`](crate::client::fluent_builders::DescribeCertificates) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeCertificates::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeCertificates::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeCertificates::set_filters): <p>Filters applied to the certificates described in the form of key-value pairs. Valid values are <code>certificate-arn</code> and <code>certificate-id</code>.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeCertificates::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeCertificates::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 10</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificates::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeCertificates::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeCertificatesOutput::marker): <p>The pagination token.</p>
-    ///   - [`certificates(Option<Vec<Certificate>>)`](crate::output::DescribeCertificatesOutput::certificates): <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
-    /// - On failure, responds with [`SdkError<DescribeCertificatesError>`](crate::error::DescribeCertificatesError)
-    pub fn describe_certificates(&self) -> crate::client::fluent_builders::DescribeCertificates {
-        crate::client::fluent_builders::DescribeCertificates::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeConnections`](crate::client::fluent_builders::DescribeConnections) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeConnections::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeConnections::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeConnections::set_filters): <p>The filters applied to the connection.</p>  <p>Valid filter names: endpoint-arn | replication-instance-arn</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeConnections::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeConnections::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeConnections::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeConnections::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeConnectionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::DescribeConnectionsOutput::connections): <p>A description of the connections.</p>
-    /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::error::DescribeConnectionsError)
-    pub fn describe_connections(&self) -> crate::client::fluent_builders::DescribeConnections {
-        crate::client::fluent_builders::DescribeConnections::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEndpoints`](crate::client::fluent_builders::DescribeEndpoints) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpoints::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEndpoints::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEndpoints::set_filters): <p>Filters applied to the endpoints.</p>  <p>Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEndpoints::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEndpoints::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpoints::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEndpoints::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeEndpointsOutput`](crate::output::DescribeEndpointsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeEndpointsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`endpoints(Option<Vec<Endpoint>>)`](crate::output::DescribeEndpointsOutput::endpoints): <p>Endpoint description.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointsError>`](crate::error::DescribeEndpointsError)
-    pub fn describe_endpoints(&self) -> crate::client::fluent_builders::DescribeEndpoints {
-        crate::client::fluent_builders::DescribeEndpoints::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEndpointSettings`](crate::client::fluent_builders::DescribeEndpointSettings) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointSettings::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`engine_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpointSettings::engine_name) / [`set_engine_name(Option<String>)`](crate::client::fluent_builders::DescribeEndpointSettings::set_engine_name): <p>The databse engine used for your source or target endpoint.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEndpointSettings::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEndpointSettings::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpointSettings::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEndpointSettings::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeEndpointSettingsOutput`](crate::output::DescribeEndpointSettingsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeEndpointSettingsOutput::marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    ///   - [`endpoint_settings(Option<Vec<EndpointSetting>>)`](crate::output::DescribeEndpointSettingsOutput::endpoint_settings): <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointSettingsError>`](crate::error::DescribeEndpointSettingsError)
-    pub fn describe_endpoint_settings(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEndpointSettings {
-        crate::client::fluent_builders::DescribeEndpointSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEndpointTypes`](crate::client::fluent_builders::DescribeEndpointTypes) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEndpointTypes::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEndpointTypes::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEndpointTypes::set_filters): <p>Filters applied to the endpoint types.</p>  <p>Valid filter names: engine-name | endpoint-type</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEndpointTypes::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEndpointTypes::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEndpointTypes::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEndpointTypes::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeEndpointTypesOutput`](crate::output::DescribeEndpointTypesOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeEndpointTypesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`supported_endpoint_types(Option<Vec<SupportedEndpointType>>)`](crate::output::DescribeEndpointTypesOutput::supported_endpoint_types): <p>The types of endpoints that are supported.</p>
-    /// - On failure, responds with [`SdkError<DescribeEndpointTypesError>`](crate::error::DescribeEndpointTypesError)
-    pub fn describe_endpoint_types(&self) -> crate::client::fluent_builders::DescribeEndpointTypes {
-        crate::client::fluent_builders::DescribeEndpointTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEventCategories`](crate::client::fluent_builders::DescribeEventCategories) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::DescribeEventCategories::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::DescribeEventCategories::set_source_type): <p> The type of DMS resource that generates events. </p>  <p>Valid values: replication-instance | replication-task</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEventCategories::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEventCategories::set_filters): <p>Filters applied to the event categories.</p>
-    /// - On success, responds with [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput) with field(s):
-    ///   - [`event_category_group_list(Option<Vec<EventCategoryGroup>>)`](crate::output::DescribeEventCategoriesOutput::event_category_group_list): <p>A list of event categories.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventCategoriesError>`](crate::error::DescribeEventCategoriesError)
-    pub fn describe_event_categories(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEventCategories {
-        crate::client::fluent_builders::DescribeEventCategories::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEvents`](crate::client::fluent_builders::DescribeEvents) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEvents::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_identifier(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::source_identifier) / [`set_source_identifier(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_source_identifier): <p> The identifier of an event source.</p>
-    ///   - [`source_type(SourceType)`](crate::client::fluent_builders::DescribeEvents::source_type) / [`set_source_type(Option<SourceType>)`](crate::client::fluent_builders::DescribeEvents::set_source_type): <p>The type of DMS resource that generates events.</p>  <p>Valid values: replication-instance | replication-task</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_start_time): <p>The start time for the events to be listed.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeEvents::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeEvents::set_end_time): <p>The end time for the events to be listed.</p>
-    ///   - [`duration(i32)`](crate::client::fluent_builders::DescribeEvents::duration) / [`set_duration(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_duration): <p>The duration of the events to be listed.</p>
-    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::DescribeEvents::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeEvents::set_event_categories): <p>A list of event categories for the source type that you've chosen.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEvents::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEvents::set_filters): <p>Filters applied to events. The only valid filter is <code>replication-instance-id</code>.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEvents::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEvents::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEvents::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEvents::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeEventsOutput`](crate::output::DescribeEventsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeEventsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`events(Option<Vec<Event>>)`](crate::output::DescribeEventsOutput::events): <p>The events described.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventsError>`](crate::error::DescribeEventsError)
-    pub fn describe_events(&self) -> crate::client::fluent_builders::DescribeEvents {
-        crate::client::fluent_builders::DescribeEvents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEventSubscriptions`](crate::client::fluent_builders::DescribeEventSubscriptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeEventSubscriptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_subscription_name): <p>The name of the DMS event subscription to be described.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeEventSubscriptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_filters): <p>Filters applied to event subscriptions.</p>  <p>Valid filter names: event-subscription-arn | event-subscription-id </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeEventSubscriptions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeEventSubscriptions::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeEventSubscriptionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`event_subscriptions_list(Option<Vec<EventSubscription>>)`](crate::output::DescribeEventSubscriptionsOutput::event_subscriptions_list): <p>A list of event subscriptions.</p>
-    /// - On failure, responds with [`SdkError<DescribeEventSubscriptionsError>`](crate::error::DescribeEventSubscriptionsError)
-    pub fn describe_event_subscriptions(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEventSubscriptions {
-        crate::client::fluent_builders::DescribeEventSubscriptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetAdvisorCollectors`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_filters): <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>  <ul>   <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>   <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorCollectors::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On success, responds with [`DescribeFleetAdvisorCollectorsOutput`](crate::output::DescribeFleetAdvisorCollectorsOutput) with field(s):
-    ///   - [`collectors(Option<Vec<CollectorResponse>>)`](crate::output::DescribeFleetAdvisorCollectorsOutput::collectors): <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorCollectorsOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorCollectorsError>`](crate::error::DescribeFleetAdvisorCollectorsError)
-    pub fn describe_fleet_advisor_collectors(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeFleetAdvisorCollectors {
-        crate::client::fluent_builders::DescribeFleetAdvisorCollectors::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetAdvisorDatabases`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_filters): <p> If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria: </p>  <ul>   <li> <p> <code>database-id</code> – The ID of the database.</p> </li>   <li> <p> <code>database-name</code> – The name of the database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the database engine.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the database server.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the database.</p> </li>   <li> <p> <code>collector-name</code> – The name of the associated Fleet Advisor collector.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorDatabases::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On success, responds with [`DescribeFleetAdvisorDatabasesOutput`](crate::output::DescribeFleetAdvisorDatabasesOutput) with field(s):
-    ///   - [`databases(Option<Vec<DatabaseResponse>>)`](crate::output::DescribeFleetAdvisorDatabasesOutput::databases): <p>Provides descriptions of the Fleet Advisor collector databases, including the database's collector, ID, and name.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorDatabasesOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorDatabasesError>`](crate::error::DescribeFleetAdvisorDatabasesError)
-    pub fn describe_fleet_advisor_databases(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeFleetAdvisorDatabases {
-        crate::client::fluent_builders::DescribeFleetAdvisorDatabases::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetAdvisorLsaAnalysis`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On success, responds with [`DescribeFleetAdvisorLsaAnalysisOutput`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput) with field(s):
-    ///   - [`analysis(Option<Vec<FleetAdvisorLsaAnalysisResponse>>)`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput::analysis): <p>A list of <code>FleetAdvisorLsaAnalysisResponse</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorLsaAnalysisOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorLsaAnalysisError>`](crate::error::DescribeFleetAdvisorLsaAnalysisError)
-    pub fn describe_fleet_advisor_lsa_analysis(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis {
-        crate::client::fluent_builders::DescribeFleetAdvisorLsaAnalysis::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetAdvisorSchemaObjectSummary`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_filters): <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>  <ul>   <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>  </ul>  <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On success, responds with [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput) with field(s):
-    ///   - [`fleet_advisor_schema_objects(Option<Vec<FleetAdvisorSchemaObjectResponse>>)`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput::fleet_advisor_schema_objects): <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorSchemaObjectSummaryOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemaObjectSummaryError>`](crate::error::DescribeFleetAdvisorSchemaObjectSummaryError)
-    pub fn describe_fleet_advisor_schema_object_summary(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary {
-        crate::client::fluent_builders::DescribeFleetAdvisorSchemaObjectSummary::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetAdvisorSchemas`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_filters): <p> If you specify any of the following filters, the output includes information for only those schemas that meet the filter criteria:</p>  <ul>   <li> <p> <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.</p> </li>   <li> <p> <code>database-id</code> – The ID of the schema's database.</p> </li>   <li> <p> <code>database-ip-address</code> – The IP address of the schema's database.</p> </li>   <li> <p> <code>database-name</code> – The name of the schema's database.</p> </li>   <li> <p> <code>database-engine</code> – The name of the schema database's engine.</p> </li>   <li> <p> <code>original-schema-name</code> – The name of the schema's database's main schema.</p> </li>   <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>15</code>.</p> </li>   <li> <p> <code>schema-name</code> – The name of the schema.</p> </li>   <li> <p> <code>server-ip-address</code> – The IP address of the schema database's server.</p> </li>  </ul>  <p>An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_max_records): <p>Sets the maximum number of records returned in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeFleetAdvisorSchemas::set_next_token): <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On success, responds with [`DescribeFleetAdvisorSchemasOutput`](crate::output::DescribeFleetAdvisorSchemasOutput) with field(s):
-    ///   - [`fleet_advisor_schemas(Option<Vec<SchemaResponse>>)`](crate::output::DescribeFleetAdvisorSchemasOutput::fleet_advisor_schemas): <p>A collection of <code>SchemaResponse</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeFleetAdvisorSchemasOutput::next_token): <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    /// - On failure, responds with [`SdkError<DescribeFleetAdvisorSchemasError>`](crate::error::DescribeFleetAdvisorSchemasError)
-    pub fn describe_fleet_advisor_schemas(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeFleetAdvisorSchemas {
-        crate::client::fluent_builders::DescribeFleetAdvisorSchemas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeOrderableReplicationInstances`](crate::client::fluent_builders::DescribeOrderableReplicationInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeOrderableReplicationInstances::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeOrderableReplicationInstancesOutput`](crate::output::DescribeOrderableReplicationInstancesOutput) with field(s):
-    ///   - [`orderable_replication_instances(Option<Vec<OrderableReplicationInstance>>)`](crate::output::DescribeOrderableReplicationInstancesOutput::orderable_replication_instances): <p>The order-able replication instances available.</p>
-    ///   - [`marker(Option<String>)`](crate::output::DescribeOrderableReplicationInstancesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On failure, responds with [`SdkError<DescribeOrderableReplicationInstancesError>`](crate::error::DescribeOrderableReplicationInstancesError)
-    pub fn describe_orderable_replication_instances(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeOrderableReplicationInstances {
-        crate::client::fluent_builders::DescribeOrderableReplicationInstances::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribePendingMaintenanceActions`](crate::client::fluent_builders::DescribePendingMaintenanceActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePendingMaintenanceActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_filters): <p></p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribePendingMaintenanceActions::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    /// - On success, responds with [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput) with field(s):
-    ///   - [`pending_maintenance_actions(Option<Vec<ResourcePendingMaintenanceActions>>)`](crate::output::DescribePendingMaintenanceActionsOutput::pending_maintenance_actions): <p>The pending maintenance action.</p>
-    ///   - [`marker(Option<String>)`](crate::output::DescribePendingMaintenanceActionsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On failure, responds with [`SdkError<DescribePendingMaintenanceActionsError>`](crate::error::DescribePendingMaintenanceActionsError)
-    pub fn describe_pending_maintenance_actions(
-        &self,
-    ) -> crate::client::fluent_builders::DescribePendingMaintenanceActions {
-        crate::client::fluent_builders::DescribePendingMaintenanceActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRefreshSchemasStatus`](crate::client::fluent_builders::DescribeRefreshSchemasStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeRefreshSchemasStatus::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DescribeRefreshSchemasStatus::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    /// - On success, responds with [`DescribeRefreshSchemasStatusOutput`](crate::output::DescribeRefreshSchemasStatusOutput) with field(s):
-    ///   - [`refresh_schemas_status(Option<RefreshSchemasStatus>)`](crate::output::DescribeRefreshSchemasStatusOutput::refresh_schemas_status): <p>The status of the schema.</p>
-    /// - On failure, responds with [`SdkError<DescribeRefreshSchemasStatusError>`](crate::error::DescribeRefreshSchemasStatusError)
-    pub fn describe_refresh_schemas_status(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeRefreshSchemasStatus {
-        crate::client::fluent_builders::DescribeRefreshSchemasStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationInstances`](crate::client::fluent_builders::DescribeReplicationInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeReplicationInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeReplicationInstances::set_filters): <p>Filters applied to replication instances.</p>  <p>Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class | engine-version</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationInstances::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationInstances::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationInstances::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationInstances::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeReplicationInstancesOutput`](crate::output::DescribeReplicationInstancesOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationInstancesOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`replication_instances(Option<Vec<ReplicationInstance>>)`](crate::output::DescribeReplicationInstancesOutput::replication_instances): <p>The replication instances described.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationInstancesError>`](crate::error::DescribeReplicationInstancesError)
-    pub fn describe_replication_instances(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationInstances {
-        crate::client::fluent_builders::DescribeReplicationInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationInstanceTaskLogs`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeReplicationInstanceTaskLogsOutput`](crate::output::DescribeReplicationInstanceTaskLogsOutput) with field(s):
-    ///   - [`replication_instance_arn(Option<String>)`](crate::output::DescribeReplicationInstanceTaskLogsOutput::replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`replication_instance_task_logs(Option<Vec<ReplicationInstanceTaskLog>>)`](crate::output::DescribeReplicationInstanceTaskLogsOutput::replication_instance_task_logs): <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationInstanceTaskLogsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationInstanceTaskLogsError>`](crate::error::DescribeReplicationInstanceTaskLogsError)
-    pub fn describe_replication_instance_task_logs(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs {
-        crate::client::fluent_builders::DescribeReplicationInstanceTaskLogs::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationSubnetGroups`](crate::client::fluent_builders::DescribeReplicationSubnetGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::set_filters): <p>Filters applied to replication subnet groups.</p>  <p>Valid filter names: replication-subnet-group-id</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationSubnetGroups::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeReplicationSubnetGroupsOutput`](crate::output::DescribeReplicationSubnetGroupsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationSubnetGroupsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`replication_subnet_groups(Option<Vec<ReplicationSubnetGroup>>)`](crate::output::DescribeReplicationSubnetGroupsOutput::replication_subnet_groups): <p>A description of the replication subnet groups.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationSubnetGroupsError>`](crate::error::DescribeReplicationSubnetGroupsError)
-    pub fn describe_replication_subnet_groups(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationSubnetGroups {
-        crate::client::fluent_builders::DescribeReplicationSubnetGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationTaskAssessmentResults`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::set_replication_task_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeReplicationTaskAssessmentResultsOutput`](crate::output::DescribeReplicationTaskAssessmentResultsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationTaskAssessmentResultsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`bucket_name(Option<String>)`](crate::output::DescribeReplicationTaskAssessmentResultsOutput::bucket_name): <p>- The Amazon S3 bucket where the task assessment report is located. </p>
-    ///   - [`replication_task_assessment_results(Option<Vec<ReplicationTaskAssessmentResult>>)`](crate::output::DescribeReplicationTaskAssessmentResultsOutput::replication_task_assessment_results): <p> The task assessment report. </p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationTaskAssessmentResultsError>`](crate::error::DescribeReplicationTaskAssessmentResultsError)
-    pub fn describe_replication_task_assessment_results(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults {
-        crate::client::fluent_builders::DescribeReplicationTaskAssessmentResults::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationTaskAssessmentRuns`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::set_filters): <p>Filters applied to the premigration assessment runs described in the form of key-value pairs.</p>  <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>replication-instance-arn</code>, <code>status</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeReplicationTaskAssessmentRunsOutput`](crate::output::DescribeReplicationTaskAssessmentRunsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationTaskAssessmentRunsOutput::marker): <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    ///   - [`replication_task_assessment_runs(Option<Vec<ReplicationTaskAssessmentRun>>)`](crate::output::DescribeReplicationTaskAssessmentRunsOutput::replication_task_assessment_runs): <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationTaskAssessmentRunsError>`](crate::error::DescribeReplicationTaskAssessmentRunsError)
-    pub fn describe_replication_task_assessment_runs(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns {
-        crate::client::fluent_builders::DescribeReplicationTaskAssessmentRuns::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationTaskIndividualAssessments`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::set_filters): <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>  <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::set_max_records): <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::set_marker): <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    /// - On success, responds with [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput::marker): <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    ///   - [`replication_task_individual_assessments(Option<Vec<ReplicationTaskIndividualAssessment>>)`](crate::output::DescribeReplicationTaskIndividualAssessmentsOutput::replication_task_individual_assessments): <p>One or more individual assessments as specified by <code>Filters</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationTaskIndividualAssessmentsError>`](crate::error::DescribeReplicationTaskIndividualAssessmentsError)
-    pub fn describe_replication_task_individual_assessments(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments {
-        crate::client::fluent_builders::DescribeReplicationTaskIndividualAssessments::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeReplicationTasks`](crate::client::fluent_builders::DescribeReplicationTasks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeReplicationTasks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeReplicationTasks::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeReplicationTasks::set_filters): <p>Filters applied to replication tasks.</p>  <p>Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeReplicationTasks::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeReplicationTasks::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeReplicationTasks::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeReplicationTasks::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`without_settings(bool)`](crate::client::fluent_builders::DescribeReplicationTasks::without_settings) / [`set_without_settings(Option<bool>)`](crate::client::fluent_builders::DescribeReplicationTasks::set_without_settings): <p>An option to set to avoid returning information about settings. Use this to reduce overhead when setting information is too large. To use this option, choose <code>true</code>; otherwise, choose <code>false</code> (the default).</p>
-    /// - On success, responds with [`DescribeReplicationTasksOutput`](crate::output::DescribeReplicationTasksOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeReplicationTasksOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`replication_tasks(Option<Vec<ReplicationTask>>)`](crate::output::DescribeReplicationTasksOutput::replication_tasks): <p>A description of the replication tasks.</p>
-    /// - On failure, responds with [`SdkError<DescribeReplicationTasksError>`](crate::error::DescribeReplicationTasksError)
-    pub fn describe_replication_tasks(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeReplicationTasks {
-        crate::client::fluent_builders::DescribeReplicationTasks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeSchemas`](crate::client::fluent_builders::DescribeSchemas) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeSchemas::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSchemas::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::DescribeSchemas::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeSchemas::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeSchemas::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 100.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeSchemas::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeSchemas::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On success, responds with [`DescribeSchemasOutput`](crate::output::DescribeSchemasOutput) with field(s):
-    ///   - [`marker(Option<String>)`](crate::output::DescribeSchemasOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`schemas(Option<Vec<String>>)`](crate::output::DescribeSchemasOutput::schemas): <p>The described schema.</p>
-    /// - On failure, responds with [`SdkError<DescribeSchemasError>`](crate::error::DescribeSchemasError)
-    pub fn describe_schemas(&self) -> crate::client::fluent_builders::DescribeSchemas {
-        crate::client::fluent_builders::DescribeSchemas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTableStatistics`](crate::client::fluent_builders::DescribeTableStatistics) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeTableStatistics::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeTableStatistics::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::DescribeTableStatistics::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeTableStatistics::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeTableStatistics::set_max_records): <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>  <p>Default: 100</p>  <p>Constraints: Minimum 20, maximum 500.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::DescribeTableStatistics::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::DescribeTableStatistics::set_marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeTableStatistics::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeTableStatistics::set_filters): <p>Filters applied to table statistics.</p>  <p>Valid filter names: schema-name | table-name | table-state</p>  <p>A combination of filters creates an AND condition where each record matches all specified filters.</p>
-    /// - On success, responds with [`DescribeTableStatisticsOutput`](crate::output::DescribeTableStatisticsOutput) with field(s):
-    ///   - [`replication_task_arn(Option<String>)`](crate::output::DescribeTableStatisticsOutput::replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    ///   - [`table_statistics(Option<Vec<TableStatistics>>)`](crate::output::DescribeTableStatisticsOutput::table_statistics): <p>The table statistics.</p>
-    ///   - [`marker(Option<String>)`](crate::output::DescribeTableStatisticsOutput::marker): <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    /// - On failure, responds with [`SdkError<DescribeTableStatisticsError>`](crate::error::DescribeTableStatisticsError)
-    pub fn describe_table_statistics(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeTableStatistics {
-        crate::client::fluent_builders::DescribeTableStatistics::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportCertificate`](crate::client::fluent_builders::ImportCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_identifier(impl Into<String>)`](crate::client::fluent_builders::ImportCertificate::certificate_identifier) / [`set_certificate_identifier(Option<String>)`](crate::client::fluent_builders::ImportCertificate::set_certificate_identifier): <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    ///   - [`certificate_pem(impl Into<String>)`](crate::client::fluent_builders::ImportCertificate::certificate_pem) / [`set_certificate_pem(Option<String>)`](crate::client::fluent_builders::ImportCertificate::set_certificate_pem): <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    ///   - [`certificate_wallet(Blob)`](crate::client::fluent_builders::ImportCertificate::certificate_wallet) / [`set_certificate_wallet(Option<Blob>)`](crate::client::fluent_builders::ImportCertificate::set_certificate_wallet): <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>  <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportCertificate::set_tags): <p>The tags associated with the certificate.</p>
-    /// - On success, responds with [`ImportCertificateOutput`](crate::output::ImportCertificateOutput) with field(s):
-    ///   - [`certificate(Option<Certificate>)`](crate::output::ImportCertificateOutput::certificate): <p>The certificate to be uploaded.</p>
-    /// - On failure, responds with [`SdkError<ImportCertificateError>`](crate::error::ImportCertificateError)
-    pub fn import_certificate(&self) -> crate::client::fluent_builders::ImportCertificate {
-        crate::client::fluent_builders::ImportCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS resource to list tags for. This returns a list of keys (names of tags) created for the resource and their associated tag values.</p>
-    ///   - [`resource_arn_list(Vec<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn_list) / [`set_resource_arn_list(Option<Vec<String>>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn_list): <p>List of ARNs that identify multiple DMS resources that you want to list tags for. This returns a list of keys (tag names) and their associated tag values. It also returns each tag's associated <code>ResourceArn</code> value, which is the ARN of the resource for which each listed tag is created. </p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tag_list(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tag_list): <p>A list of tags for the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyEndpoint`](crate::client::fluent_builders::ModifyEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    ///   - [`endpoint_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::endpoint_identifier) / [`set_endpoint_identifier(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_endpoint_identifier): <p>The database endpoint identifier. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    ///   - [`endpoint_type(ReplicationEndpointTypeValue)`](crate::client::fluent_builders::ModifyEndpoint::endpoint_type) / [`set_endpoint_type(Option<ReplicationEndpointTypeValue>)`](crate::client::fluent_builders::ModifyEndpoint::set_endpoint_type): <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    ///   - [`engine_name(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::engine_name) / [`set_engine_name(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_engine_name): <p>The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.</p>
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_username): <p>The user name to be used to login to the endpoint database.</p>
-    ///   - [`password(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::password) / [`set_password(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_password): <p>The password to be used to login to the endpoint database.</p>
-    ///   - [`server_name(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::server_name) / [`set_server_name(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_server_name): <p>The name of the server where the endpoint database resides.</p>
-    ///   - [`port(i32)`](crate::client::fluent_builders::ModifyEndpoint::port) / [`set_port(Option<i32>)`](crate::client::fluent_builders::ModifyEndpoint::set_port): <p>The port used by the endpoint database.</p>
-    ///   - [`database_name(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::database_name) / [`set_database_name(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_database_name): <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
-    ///   - [`extra_connection_attributes(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::extra_connection_attributes) / [`set_extra_connection_attributes(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_extra_connection_attributes): <p>Additional attributes associated with the connection. To reset this parameter, pass the empty string ("") as an argument.</p>
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
-    ///   - [`ssl_mode(DmsSslModeValue)`](crate::client::fluent_builders::ModifyEndpoint::ssl_mode) / [`set_ssl_mode(Option<DmsSslModeValue>)`](crate::client::fluent_builders::ModifyEndpoint::set_ssl_mode): <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
-    ///   - [`service_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::service_access_role_arn) / [`set_service_access_role_arn(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_service_access_role_arn): <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
-    ///   - [`external_table_definition(impl Into<String>)`](crate::client::fluent_builders::ModifyEndpoint::external_table_definition) / [`set_external_table_definition(Option<String>)`](crate::client::fluent_builders::ModifyEndpoint::set_external_table_definition): <p>The external table definition.</p>
-    ///   - [`dynamo_db_settings(DynamoDbSettings)`](crate::client::fluent_builders::ModifyEndpoint::dynamo_db_settings) / [`set_dynamo_db_settings(Option<DynamoDbSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_dynamo_db_settings): <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate Data to DynamoDB</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`s3_settings(S3Settings)`](crate::client::fluent_builders::ModifyEndpoint::s3_settings) / [`set_s3_settings(Option<S3Settings>)`](crate::client::fluent_builders::ModifyEndpoint::set_s3_settings): <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`dms_transfer_settings(DmsTransferSettings)`](crate::client::fluent_builders::ModifyEndpoint::dms_transfer_settings) / [`set_dms_transfer_settings(Option<DmsTransferSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_dms_transfer_settings): <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>  <p>Attributes include the following:</p>  <ul>   <li> <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p> </li>   <li> <p>BucketName - The name of the S3 bucket to use.</p> </li>  </ul>  <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code> </p>  <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code> </p>
-    ///   - [`mongo_db_settings(MongoDbSettings)`](crate::client::fluent_builders::ModifyEndpoint::mongo_db_settings) / [`set_mongo_db_settings(Option<MongoDbSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_mongo_db_settings): <p>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings when using MongoDB as a source for Database Migration Service</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`kinesis_settings(KinesisSettings)`](crate::client::fluent_builders::ModifyEndpoint::kinesis_settings) / [`set_kinesis_settings(Option<KinesisSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_kinesis_settings): <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`kafka_settings(KafkaSettings)`](crate::client::fluent_builders::ModifyEndpoint::kafka_settings) / [`set_kafka_settings(Option<KafkaSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_kafka_settings): <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`elasticsearch_settings(ElasticsearchSettings)`](crate::client::fluent_builders::ModifyEndpoint::elasticsearch_settings) / [`set_elasticsearch_settings(Option<ElasticsearchSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_elasticsearch_settings): <p>Settings in JSON format for the target OpenSearch endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using OpenSearch as a Target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`neptune_settings(NeptuneSettings)`](crate::client::fluent_builders::ModifyEndpoint::neptune_settings) / [`set_neptune_settings(Option<NeptuneSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_neptune_settings): <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`redshift_settings(RedshiftSettings)`](crate::client::fluent_builders::ModifyEndpoint::redshift_settings) / [`set_redshift_settings(Option<RedshiftSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_redshift_settings): <p>Provides information that defines an Amazon Redshift endpoint.</p>
-    ///   - [`postgre_sql_settings(PostgreSqlSettings)`](crate::client::fluent_builders::ModifyEndpoint::postgre_sql_settings) / [`set_postgre_sql_settings(Option<PostgreSqlSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_postgre_sql_settings): <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection attributes when using PostgreSQL as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`my_sql_settings(MySqlSettings)`](crate::client::fluent_builders::ModifyEndpoint::my_sql_settings) / [`set_my_sql_settings(Option<MySqlSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_my_sql_settings): <p>Settings in JSON format for the source and target MySQL endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`oracle_settings(OracleSettings)`](crate::client::fluent_builders::ModifyEndpoint::oracle_settings) / [`set_oracle_settings(Option<OracleSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_oracle_settings): <p>Settings in JSON format for the source and target Oracle endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib"> Extra connection attributes when using Oracle as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`sybase_settings(SybaseSettings)`](crate::client::fluent_builders::ModifyEndpoint::sybase_settings) / [`set_sybase_settings(Option<SybaseSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_sybase_settings): <p>Settings in JSON format for the source and target SAP ASE endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`microsoft_sql_server_settings(MicrosoftSqlServerSettings)`](crate::client::fluent_builders::ModifyEndpoint::microsoft_sql_server_settings) / [`set_microsoft_sql_server_settings(Option<MicrosoftSqlServerSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_microsoft_sql_server_settings): <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection attributes when using SQL Server as a target for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`ibm_db2_settings(IbmDb2Settings)`](crate::client::fluent_builders::ModifyEndpoint::ibm_db2_settings) / [`set_ibm_db2_settings(Option<IbmDb2Settings>)`](crate::client::fluent_builders::ModifyEndpoint::set_ibm_db2_settings): <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`doc_db_settings(DocDbSettings)`](crate::client::fluent_builders::ModifyEndpoint::doc_db_settings) / [`set_doc_db_settings(Option<DocDbSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_doc_db_settings): <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service </a> in the <i>Database Migration Service User Guide.</i> </p>
-    ///   - [`redis_settings(RedisSettings)`](crate::client::fluent_builders::ModifyEndpoint::redis_settings) / [`set_redis_settings(Option<RedisSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_redis_settings): <p>Settings in JSON format for the Redis target endpoint.</p>
-    ///   - [`exact_settings(bool)`](crate::client::fluent_builders::ModifyEndpoint::exact_settings) / [`set_exact_settings(Option<bool>)`](crate::client::fluent_builders::ModifyEndpoint::set_exact_settings): <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>  <ul>   <li> <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p> </li>   <li> <p>It creates new endpoint settings that you specify in the call, for settings with different names. </p> </li>  </ul>  <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>  <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify. </p>
-    ///   - [`gcp_my_sql_settings(GcpMySqlSettings)`](crate::client::fluent_builders::ModifyEndpoint::gcp_my_sql_settings) / [`set_gcp_my_sql_settings(Option<GcpMySqlSettings>)`](crate::client::fluent_builders::ModifyEndpoint::set_gcp_my_sql_settings): <p>Settings in JSON format for the source GCP MySQL endpoint.</p>
-    /// - On success, responds with [`ModifyEndpointOutput`](crate::output::ModifyEndpointOutput) with field(s):
-    ///   - [`endpoint(Option<Endpoint>)`](crate::output::ModifyEndpointOutput::endpoint): <p>The modified endpoint.</p>
-    /// - On failure, responds with [`SdkError<ModifyEndpointError>`](crate::error::ModifyEndpointError)
-    pub fn modify_endpoint(&self) -> crate::client::fluent_builders::ModifyEndpoint {
-        crate::client::fluent_builders::ModifyEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyEventSubscription`](crate::client::fluent_builders::ModifyEventSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_name(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::subscription_name) / [`set_subscription_name(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_subscription_name): <p>The name of the DMS event notification subscription to be modified.</p>
-    ///   - [`sns_topic_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::sns_topic_arn) / [`set_sns_topic_arn(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_sns_topic_arn): <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-    ///   - [`source_type(impl Into<String>)`](crate::client::fluent_builders::ModifyEventSubscription::source_type) / [`set_source_type(Option<String>)`](crate::client::fluent_builders::ModifyEventSubscription::set_source_type): <p> The type of DMS resource that generates the events you want to subscribe to. </p>  <p>Valid values: replication-instance | replication-task</p>
-    ///   - [`event_categories(Vec<String>)`](crate::client::fluent_builders::ModifyEventSubscription::event_categories) / [`set_event_categories(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyEventSubscription::set_event_categories): <p> A list of event categories for a source type that you want to subscribe to. Use the <code>DescribeEventCategories</code> action to see a list of event categories. </p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::ModifyEventSubscription::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::ModifyEventSubscription::set_enabled): <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
-    /// - On success, responds with [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput) with field(s):
-    ///   - [`event_subscription(Option<EventSubscription>)`](crate::output::ModifyEventSubscriptionOutput::event_subscription): <p>The modified event subscription.</p>
-    /// - On failure, responds with [`SdkError<ModifyEventSubscriptionError>`](crate::error::ModifyEventSubscriptionError)
-    pub fn modify_event_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::ModifyEventSubscription {
-        crate::client::fluent_builders::ModifyEventSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyReplicationInstance`](crate::client::fluent_builders::ModifyReplicationInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`allocated_storage(i32)`](crate::client::fluent_builders::ModifyReplicationInstance::allocated_storage) / [`set_allocated_storage(Option<i32>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_allocated_storage): <p>The amount of storage (in gigabytes) to be allocated for the replication instance.</p>
-    ///   - [`apply_immediately(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::apply_immediately) / [`set_apply_immediately(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::set_apply_immediately): <p>Indicates whether the changes should be applied immediately or during the next maintenance window.</p>
-    ///   - [`replication_instance_class(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::replication_instance_class) / [`set_replication_instance_class(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_replication_instance_class): <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>  <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_vpc_security_group_ids): <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_preferred_maintenance_window): <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>  <p>Default: Uses existing setting</p>  <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>  <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>  <p>Constraints: Must be at least 30 minutes</p>
-    ///   - [`multi_az(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::multi_az) / [`set_multi_az(Option<bool>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_multi_az): <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>. </p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_engine_version): <p>The engine version number of the replication instance.</p>  <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
-    ///   - [`allow_major_version_upgrade(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::allow_major_version_upgrade) / [`set_allow_major_version_upgrade(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::set_allow_major_version_upgrade): <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>  <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
-    ///   - [`auto_minor_version_upgrade(bool)`](crate::client::fluent_builders::ModifyReplicationInstance::auto_minor_version_upgrade) / [`set_auto_minor_version_upgrade(Option<bool>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_auto_minor_version_upgrade): <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>  <p>An outage does result if these factors apply: </p>  <ul>   <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>   <li> <p>A newer minor version is available. </p> </li>   <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>  </ul>
-    ///   - [`replication_instance_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::replication_instance_identifier) / [`set_replication_instance_identifier(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_replication_instance_identifier): <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    ///   - [`network_type(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::network_type) / [`set_network_type(Option<String>)`](crate::client::fluent_builders::ModifyReplicationInstance::set_network_type): <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    /// - On success, responds with [`ModifyReplicationInstanceOutput`](crate::output::ModifyReplicationInstanceOutput) with field(s):
-    ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::output::ModifyReplicationInstanceOutput::replication_instance): <p>The modified replication instance.</p>
-    /// - On failure, responds with [`SdkError<ModifyReplicationInstanceError>`](crate::error::ModifyReplicationInstanceError)
-    pub fn modify_replication_instance(
-        &self,
-    ) -> crate::client::fluent_builders::ModifyReplicationInstance {
-        crate::client::fluent_builders::ModifyReplicationInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyReplicationSubnetGroup`](crate::client::fluent_builders::ModifyReplicationSubnetGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_subnet_group_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::replication_subnet_group_identifier) / [`set_replication_subnet_group_identifier(Option<String>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::set_replication_subnet_group_identifier): <p>The name of the replication instance subnet group.</p>
-    ///   - [`replication_subnet_group_description(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::replication_subnet_group_description) / [`set_replication_subnet_group_description(Option<String>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::set_replication_subnet_group_description): <p>A description for the replication instance subnet group.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ModifyReplicationSubnetGroup::set_subnet_ids): <p>A list of subnet IDs.</p>
-    /// - On success, responds with [`ModifyReplicationSubnetGroupOutput`](crate::output::ModifyReplicationSubnetGroupOutput) with field(s):
-    ///   - [`replication_subnet_group(Option<ReplicationSubnetGroup>)`](crate::output::ModifyReplicationSubnetGroupOutput::replication_subnet_group): <p>The modified replication subnet group.</p>
-    /// - On failure, responds with [`SdkError<ModifyReplicationSubnetGroupError>`](crate::error::ModifyReplicationSubnetGroupError)
-    pub fn modify_replication_subnet_group(
-        &self,
-    ) -> crate::client::fluent_builders::ModifyReplicationSubnetGroup {
-        crate::client::fluent_builders::ModifyReplicationSubnetGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyReplicationTask`](crate::client::fluent_builders::ModifyReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    ///   - [`replication_task_identifier(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::replication_task_identifier) / [`set_replication_task_identifier(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_replication_task_identifier): <p>The replication task identifier.</p>  <p>Constraints:</p>  <ul>   <li> <p>Must contain 1-255 alphanumeric characters or hyphens.</p> </li>   <li> <p>First character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>
-    ///   - [`migration_type(MigrationTypeValue)`](crate::client::fluent_builders::ModifyReplicationTask::migration_type) / [`set_migration_type(Option<MigrationTypeValue>)`](crate::client::fluent_builders::ModifyReplicationTask::set_migration_type): <p>The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code> </p>
-    ///   - [`table_mappings(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::table_mappings) / [`set_table_mappings(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_table_mappings): <p>When using the CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as the parameter value. </p>
-    ///   - [`replication_task_settings(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::replication_task_settings) / [`set_replication_task_settings(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_replication_task_settings): <p>JSON file that contains settings for the task, such as task metadata settings.</p>
-    ///   - [`cdc_start_time(DateTime)`](crate::client::fluent_builders::ModifyReplicationTask::cdc_start_time) / [`set_cdc_start_time(Option<DateTime>)`](crate::client::fluent_builders::ModifyReplicationTask::set_cdc_start_time): <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    ///   - [`cdc_start_position(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::cdc_start_position) / [`set_cdc_start_position(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_cdc_start_position): <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p> The value can be in date, checkpoint, or LSN/SCN format.</p>  <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>  <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>  <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>   <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>  </note>
-    ///   - [`cdc_stop_position(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::cdc_stop_position) / [`set_cdc_stop_position(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_cdc_stop_position): <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>  <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>  <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-    ///   - [`task_data(impl Into<String>)`](crate::client::fluent_builders::ModifyReplicationTask::task_data) / [`set_task_data(Option<String>)`](crate::client::fluent_builders::ModifyReplicationTask::set_task_data): <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    /// - On success, responds with [`ModifyReplicationTaskOutput`](crate::output::ModifyReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::ModifyReplicationTaskOutput::replication_task): <p>The replication task that was modified.</p>
-    /// - On failure, responds with [`SdkError<ModifyReplicationTaskError>`](crate::error::ModifyReplicationTaskError)
-    pub fn modify_replication_task(&self) -> crate::client::fluent_builders::ModifyReplicationTask {
-        crate::client::fluent_builders::ModifyReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`MoveReplicationTask`](crate::client::fluent_builders::MoveReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::MoveReplicationTask::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::MoveReplicationTask::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    ///   - [`target_replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::MoveReplicationTask::target_replication_instance_arn) / [`set_target_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::MoveReplicationTask::set_target_replication_instance_arn): <p>The ARN of the replication instance where you want to move the task to.</p>
-    /// - On success, responds with [`MoveReplicationTaskOutput`](crate::output::MoveReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::MoveReplicationTaskOutput::replication_task): <p>The replication task that was moved.</p>
-    /// - On failure, responds with [`SdkError<MoveReplicationTaskError>`](crate::error::MoveReplicationTaskError)
-    pub fn move_replication_task(&self) -> crate::client::fluent_builders::MoveReplicationTask {
-        crate::client::fluent_builders::MoveReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RebootReplicationInstance`](crate::client::fluent_builders::RebootReplicationInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::RebootReplicationInstance::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::RebootReplicationInstance::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`force_failover(bool)`](crate::client::fluent_builders::RebootReplicationInstance::force_failover) / [`set_force_failover(Option<bool>)`](crate::client::fluent_builders::RebootReplicationInstance::set_force_failover): <p>If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-    ///   - [`force_planned_failover(bool)`](crate::client::fluent_builders::RebootReplicationInstance::force_planned_failover) / [`set_force_planned_failover(Option<bool>)`](crate::client::fluent_builders::RebootReplicationInstance::set_force_planned_failover): <p>If this parameter is <code>true</code>, the reboot is conducted through a planned Multi-AZ failover where resources are released and cleaned up prior to conducting the failover. If the instance isn''t configured for Multi-AZ, then you can't specify <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both be set to <code>true</code>.)</p>
-    /// - On success, responds with [`RebootReplicationInstanceOutput`](crate::output::RebootReplicationInstanceOutput) with field(s):
-    ///   - [`replication_instance(Option<ReplicationInstance>)`](crate::output::RebootReplicationInstanceOutput::replication_instance): <p>The replication instance that is being rebooted. </p>
-    /// - On failure, responds with [`SdkError<RebootReplicationInstanceError>`](crate::error::RebootReplicationInstanceError)
-    pub fn reboot_replication_instance(
-        &self,
-    ) -> crate::client::fluent_builders::RebootReplicationInstance {
-        crate::client::fluent_builders::RebootReplicationInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RefreshSchemas`](crate::client::fluent_builders::RefreshSchemas) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::RefreshSchemas::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::RefreshSchemas::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::RefreshSchemas::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::RefreshSchemas::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    /// - On success, responds with [`RefreshSchemasOutput`](crate::output::RefreshSchemasOutput) with field(s):
-    ///   - [`refresh_schemas_status(Option<RefreshSchemasStatus>)`](crate::output::RefreshSchemasOutput::refresh_schemas_status): <p>The status of the refreshed schema.</p>
-    /// - On failure, responds with [`SdkError<RefreshSchemasError>`](crate::error::RefreshSchemasError)
-    pub fn refresh_schemas(&self) -> crate::client::fluent_builders::RefreshSchemas {
-        crate::client::fluent_builders::RefreshSchemas::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ReloadTables`](crate::client::fluent_builders::ReloadTables) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::ReloadTables::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::ReloadTables::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    ///   - [`tables_to_reload(Vec<TableToReload>)`](crate::client::fluent_builders::ReloadTables::tables_to_reload) / [`set_tables_to_reload(Option<Vec<TableToReload>>)`](crate::client::fluent_builders::ReloadTables::set_tables_to_reload): <p>The name and schema of the table to be reloaded. </p>
-    ///   - [`reload_option(ReloadOptionValue)`](crate::client::fluent_builders::ReloadTables::reload_option) / [`set_reload_option(Option<ReloadOptionValue>)`](crate::client::fluent_builders::ReloadTables::set_reload_option): <p>Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is enabled for the task. </p>  <p>Valid values: data-reload, validate-only</p>  <p>Default value is data-reload.</p>
-    /// - On success, responds with [`ReloadTablesOutput`](crate::output::ReloadTablesOutput) with field(s):
-    ///   - [`replication_task_arn(Option<String>)`](crate::output::ReloadTablesOutput::replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task. </p>
-    /// - On failure, responds with [`SdkError<ReloadTablesError>`](crate::error::ReloadTablesError)
-    pub fn reload_tables(&self) -> crate::client::fluent_builders::ReloadTables {
-        crate::client::fluent_builders::ReloadTables::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveTagsFromResource`](crate::client::fluent_builders::RemoveTagsFromResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_resource_arn): <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTagsFromResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTagsFromResource::set_tag_keys): <p>The tag key (name) of the tag to be removed.</p>
-    /// - On success, responds with [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveTagsFromResourceError>`](crate::error::RemoveTagsFromResourceError)
-    pub fn remove_tags_from_resource(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveTagsFromResource {
-        crate::client::fluent_builders::RemoveTagsFromResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RunFleetAdvisorLsaAnalysis`](crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis::send) it.
-
-    /// - On success, responds with [`RunFleetAdvisorLsaAnalysisOutput`](crate::output::RunFleetAdvisorLsaAnalysisOutput) with field(s):
-    ///   - [`lsa_analysis_id(Option<String>)`](crate::output::RunFleetAdvisorLsaAnalysisOutput::lsa_analysis_id): <p>The ID of the LSA analysis run.</p>
-    ///   - [`status(Option<String>)`](crate::output::RunFleetAdvisorLsaAnalysisOutput::status): <p>The status of the LSA analysis, for example <code>COMPLETED</code>.</p>
-    /// - On failure, responds with [`SdkError<RunFleetAdvisorLsaAnalysisError>`](crate::error::RunFleetAdvisorLsaAnalysisError)
-    pub fn run_fleet_advisor_lsa_analysis(
-        &self,
-    ) -> crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis {
-        crate::client::fluent_builders::RunFleetAdvisorLsaAnalysis::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartReplicationTask`](crate::client::fluent_builders::StartReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTask::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::StartReplicationTask::set_replication_task_arn): <p>The Amazon Resource Name (ARN) of the replication task to be started.</p>
-    ///   - [`start_replication_task_type(StartReplicationTaskTypeValue)`](crate::client::fluent_builders::StartReplicationTask::start_replication_task_type) / [`set_start_replication_task_type(Option<StartReplicationTaskTypeValue>)`](crate::client::fluent_builders::StartReplicationTask::set_start_replication_task_type): <p>The type of replication task to start.</p>  <p>When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value for the first run of the task is <code>start-replication</code>. You use <code>reload-target</code> to restart the task and <code>resume-processing</code> to resume the task.</p>  <p>When the migration type is <code>cdc</code>, you use <code>start-replication</code> to start or restart the task, and <code>resume-processing</code> to resume the task. <code>reload-target</code> is not a valid value for a task with migration type of <code>cdc</code>.</p>
-    ///   - [`cdc_start_time(DateTime)`](crate::client::fluent_builders::StartReplicationTask::cdc_start_time) / [`set_cdc_start_time(Option<DateTime>)`](crate::client::fluent_builders::StartReplicationTask::set_cdc_start_time): <p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
-    ///   - [`cdc_start_position(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTask::cdc_start_position) / [`set_cdc_start_position(Option<String>)`](crate::client::fluent_builders::StartReplicationTask::set_cdc_start_position): <p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>  <p> The value can be in date, checkpoint, or LSN/SCN format.</p>  <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>  <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>  <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>   <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>  </note>
-    ///   - [`cdc_stop_position(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTask::cdc_stop_position) / [`set_cdc_stop_position(Option<String>)`](crate::client::fluent_builders::StartReplicationTask::set_cdc_stop_position): <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>  <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>  <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
-    /// - On success, responds with [`StartReplicationTaskOutput`](crate::output::StartReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::StartReplicationTaskOutput::replication_task): <p>The replication task started.</p>
-    /// - On failure, responds with [`SdkError<StartReplicationTaskError>`](crate::error::StartReplicationTaskError)
-    pub fn start_replication_task(&self) -> crate::client::fluent_builders::StartReplicationTask {
-        crate::client::fluent_builders::StartReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartReplicationTaskAssessment`](crate::client::fluent_builders::StartReplicationTaskAssessment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessment::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessment::set_replication_task_arn): <p> The Amazon Resource Name (ARN) of the replication task. </p>
-    /// - On success, responds with [`StartReplicationTaskAssessmentOutput`](crate::output::StartReplicationTaskAssessmentOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::StartReplicationTaskAssessmentOutput::replication_task): <p> The assessed replication task. </p>
-    /// - On failure, responds with [`SdkError<StartReplicationTaskAssessmentError>`](crate::error::StartReplicationTaskAssessmentError)
-    pub fn start_replication_task_assessment(
-        &self,
-    ) -> crate::client::fluent_builders::StartReplicationTaskAssessment {
-        crate::client::fluent_builders::StartReplicationTaskAssessment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartReplicationTaskAssessmentRun`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_replication_task_arn): <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
-    ///   - [`service_access_role_arn(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::service_access_role_arn) / [`set_service_access_role_arn(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_service_access_role_arn): <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
-    ///   - [`result_location_bucket(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::result_location_bucket) / [`set_result_location_bucket(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_result_location_bucket): <p>Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    ///   - [`result_location_folder(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::result_location_folder) / [`set_result_location_folder(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_result_location_folder): <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment run.</p>
-    ///   - [`result_encryption_mode(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::result_encryption_mode) / [`set_result_encryption_mode(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_result_encryption_mode): <p>Encryption mode that you can specify to encrypt the results of this assessment run. If you don't specify this request parameter, DMS stores the assessment run results without encryption. You can specify one of the options following:</p>  <ul>   <li> <p> <code>"SSE_S3"</code> – The server-side encryption provided as a default by Amazon S3.</p> </li>   <li> <p> <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption. This encryption can use either a custom KMS encryption key that you specify or the default KMS encryption key that DMS provides.</p> </li>  </ul>
-    ///   - [`result_kms_key_arn(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::result_kms_key_arn) / [`set_result_kms_key_arn(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_result_kms_key_arn): <p>ARN of a custom KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>"SSE_KMS</code>".</p>
-    ///   - [`assessment_run_name(impl Into<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::assessment_run_name) / [`set_assessment_run_name(Option<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_assessment_run_name): <p>Unique name to identify the assessment run.</p>
-    ///   - [`include_only(Vec<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::include_only) / [`set_include_only(Option<Vec<String>>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_include_only): <p>Space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>   <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for <code>Exclude</code> in the API operation. </p>   <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>  </note>
-    ///   - [`exclude(Vec<String>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::exclude) / [`set_exclude(Option<Vec<String>>)`](crate::client::fluent_builders::StartReplicationTaskAssessmentRun::set_exclude): <p>Space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that DMS supports for the associated migration task. This task is specified by <code>ReplicationTaskArn</code>.</p> <note>   <p>You can't set a value for <code>Exclude</code> if you also set a value for <code>IncludeOnly</code> in the API operation.</p>   <p>To identify the names of the default individual assessments that DMS supports for the associated migration task, run the <code>DescribeApplicableIndividualAssessments</code> operation using its own <code>ReplicationTaskArn</code> request parameter.</p>  </note>
-    /// - On success, responds with [`StartReplicationTaskAssessmentRunOutput`](crate::output::StartReplicationTaskAssessmentRunOutput) with field(s):
-    ///   - [`replication_task_assessment_run(Option<ReplicationTaskAssessmentRun>)`](crate::output::StartReplicationTaskAssessmentRunOutput::replication_task_assessment_run): <p>The premigration assessment run that was started.</p>
-    /// - On failure, responds with [`SdkError<StartReplicationTaskAssessmentRunError>`](crate::error::StartReplicationTaskAssessmentRunError)
-    pub fn start_replication_task_assessment_run(
-        &self,
-    ) -> crate::client::fluent_builders::StartReplicationTaskAssessmentRun {
-        crate::client::fluent_builders::StartReplicationTaskAssessmentRun::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopReplicationTask`](crate::client::fluent_builders::StopReplicationTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_task_arn(impl Into<String>)`](crate::client::fluent_builders::StopReplicationTask::replication_task_arn) / [`set_replication_task_arn(Option<String>)`](crate::client::fluent_builders::StopReplicationTask::set_replication_task_arn): <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
-    /// - On success, responds with [`StopReplicationTaskOutput`](crate::output::StopReplicationTaskOutput) with field(s):
-    ///   - [`replication_task(Option<ReplicationTask>)`](crate::output::StopReplicationTaskOutput::replication_task): <p>The replication task stopped.</p>
-    /// - On failure, responds with [`SdkError<StopReplicationTaskError>`](crate::error::StopReplicationTaskError)
-    pub fn stop_replication_task(&self) -> crate::client::fluent_builders::StopReplicationTask {
-        crate::client::fluent_builders::StopReplicationTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TestConnection`](crate::client::fluent_builders::TestConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`replication_instance_arn(impl Into<String>)`](crate::client::fluent_builders::TestConnection::replication_instance_arn) / [`set_replication_instance_arn(Option<String>)`](crate::client::fluent_builders::TestConnection::set_replication_instance_arn): <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    ///   - [`endpoint_arn(impl Into<String>)`](crate::client::fluent_builders::TestConnection::endpoint_arn) / [`set_endpoint_arn(Option<String>)`](crate::client::fluent_builders::TestConnection::set_endpoint_arn): <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    /// - On success, responds with [`TestConnectionOutput`](crate::output::TestConnectionOutput) with field(s):
-    ///   - [`connection(Option<Connection>)`](crate::output::TestConnectionOutput::connection): <p>The connection tested.</p>
-    /// - On failure, responds with [`SdkError<TestConnectionError>`](crate::error::TestConnectionError)
-    pub fn test_connection(&self) -> crate::client::fluent_builders::TestConnection {
-        crate::client::fluent_builders::TestConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSubscriptionsToEventBridge`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`force_move(bool)`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge::force_move) / [`set_force_move(Option<bool>)`](crate::client::fluent_builders::UpdateSubscriptionsToEventBridge::set_force_move): <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
-    /// - On success, responds with [`UpdateSubscriptionsToEventBridgeOutput`](crate::output::UpdateSubscriptionsToEventBridgeOutput) with field(s):
-    ///   - [`result(Option<String>)`](crate::output::UpdateSubscriptionsToEventBridgeOutput::result): <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    /// - On failure, responds with [`SdkError<UpdateSubscriptionsToEventBridgeError>`](crate::error::UpdateSubscriptionsToEventBridgeError)
-    pub fn update_subscriptions_to_event_bridge(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSubscriptionsToEventBridge {
-        crate::client::fluent_builders::UpdateSubscriptionsToEventBridge::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1199,9 +174,139 @@ impl Client {
     }
 }
 
+mod add_tags_to_resource;
+
+mod apply_pending_maintenance_action;
+
+mod cancel_replication_task_assessment_run;
+
+mod create_endpoint;
+
+mod create_event_subscription;
+
+mod create_fleet_advisor_collector;
+
+mod create_replication_instance;
+
+mod create_replication_subnet_group;
+
+mod create_replication_task;
+
+mod delete_certificate;
+
+mod delete_connection;
+
+mod delete_endpoint;
+
+mod delete_event_subscription;
+
+mod delete_fleet_advisor_collector;
+
+mod delete_fleet_advisor_databases;
+
+mod delete_replication_instance;
+
+mod delete_replication_subnet_group;
+
+mod delete_replication_task;
+
+mod delete_replication_task_assessment_run;
+
+mod describe_account_attributes;
+
+mod describe_applicable_individual_assessments;
+
+mod describe_certificates;
+
+mod describe_connections;
+
+mod describe_endpoint_settings;
+
+mod describe_endpoint_types;
+
+mod describe_endpoints;
+
+mod describe_event_categories;
+
+mod describe_event_subscriptions;
+
+mod describe_events;
+
+mod describe_fleet_advisor_collectors;
+
+mod describe_fleet_advisor_databases;
+
+mod describe_fleet_advisor_lsa_analysis;
+
+mod describe_fleet_advisor_schema_object_summary;
+
+mod describe_fleet_advisor_schemas;
+
+mod describe_orderable_replication_instances;
+
+mod describe_pending_maintenance_actions;
+
+mod describe_refresh_schemas_status;
+
+mod describe_replication_instance_task_logs;
+
+mod describe_replication_instances;
+
+mod describe_replication_subnet_groups;
+
+mod describe_replication_task_assessment_results;
+
+mod describe_replication_task_assessment_runs;
+
+mod describe_replication_task_individual_assessments;
+
+mod describe_replication_tasks;
+
+mod describe_schemas;
+
+mod describe_table_statistics;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod import_certificate;
+
+mod list_tags_for_resource;
+
+mod modify_endpoint;
+
+mod modify_event_subscription;
+
+mod modify_replication_instance;
+
+mod modify_replication_subnet_group;
+
+mod modify_replication_task;
+
+mod move_replication_task;
+
+mod reboot_replication_instance;
+
+mod refresh_schemas;
+
+mod reload_tables;
+
+mod remove_tags_from_resource;
+
+mod run_fleet_advisor_lsa_analysis;
+
+mod start_replication_task;
+
+mod start_replication_task_assessment;
+
+mod start_replication_task_assessment_run;
+
+mod stop_replication_task;
+
+mod test_connection;
+
+mod update_subscriptions_to_event_bridge;

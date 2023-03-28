@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_alternate_contact_error(response)
+            crate::protocol_serde::shape_delete_alternate_contact::de_delete_alternate_contact_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_alternate_contact_response(response)
+            crate::protocol_serde::shape_delete_alternate_contact::de_delete_alternate_contact_http_response(response)
         }
     }
 }
@@ -62,9 +62,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlternateContact {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_alternate_contact_error(response)
+            crate::protocol_serde::shape_get_alternate_contact::de_get_alternate_contact_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_alternate_contact_response(response)
+            crate::protocol_serde::shape_get_alternate_contact::de_get_alternate_contact_http_response(response)
         }
     }
 }
@@ -97,9 +99,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactInformation {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_contact_information_error(response)
+            crate::protocol_serde::shape_get_contact_information::de_get_contact_information_http_error(response)
         } else {
-            crate::operation_deser::parse_get_contact_information_response(response)
+            crate::protocol_serde::shape_get_contact_information::de_get_contact_information_http_response(response)
         }
     }
 }
@@ -132,9 +134,11 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlternateContact {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_alternate_contact_error(response)
+            crate::protocol_serde::shape_put_alternate_contact::de_put_alternate_contact_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_alternate_contact_response(response)
+            crate::protocol_serde::shape_put_alternate_contact::de_put_alternate_contact_http_response(response)
         }
     }
 }
@@ -167,9 +171,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContactInformation {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_contact_information_error(response)
+            crate::protocol_serde::shape_put_contact_information::de_put_contact_information_http_error(response)
         } else {
-            crate::operation_deser::parse_put_contact_information_response(response)
+            crate::protocol_serde::shape_put_contact_information::de_put_contact_information_http_response(response)
         }
     }
 }

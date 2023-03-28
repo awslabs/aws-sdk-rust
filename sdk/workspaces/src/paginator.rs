@@ -82,7 +82,10 @@ impl DescribeWorkspaceBundlesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_workspace_bundles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_workspace_bundles_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +195,7 @@ impl DescribeWorkspaceDirectoriesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_workspace_directories_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_workspace_directories_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -310,7 +313,8 @@ impl DescribeWorkspacesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_workspaces_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_workspaces_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -357,7 +361,7 @@ impl DescribeWorkspaceBundlesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_workspace_bundles_output_bundles(page)
+            crate::lens::lens_describe_workspace_bundles_output_bundles(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -383,7 +387,11 @@ impl DescribeWorkspaceDirectoriesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeWorkspaceDirectoriesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_workspace_directories_output_directories(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_workspace_directories_output_directories(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -407,7 +415,7 @@ impl DescribeWorkspacesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_workspaces_output_workspaces(page)
+            crate::lens::lens_describe_workspaces_output_workspaces(page)
                 .unwrap_or_default()
                 .into_iter()
         })

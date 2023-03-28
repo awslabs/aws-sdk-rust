@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_to_stream_error(response)
+            crate::protocol_serde::shape_add_tags_to_stream::de_add_tags_to_stream_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_add_tags_to_stream_response(response)
+            crate::protocol_serde::shape_add_tags_to_stream::de_add_tags_to_stream_http_response(
+                response,
+            )
         }
     }
 }
@@ -60,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_stream_error(response)
+            crate::protocol_serde::shape_create_stream::de_create_stream_http_error(response)
         } else {
-            crate::operation_deser::parse_create_stream_response(response)
+            crate::protocol_serde::shape_create_stream::de_create_stream_http_response(response)
         }
     }
 }
@@ -95,9 +99,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DecreaseStreamRetentionP
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_decrease_stream_retention_period_error(response)
+            crate::protocol_serde::shape_decrease_stream_retention_period::de_decrease_stream_retention_period_http_error(response)
         } else {
-            crate::operation_deser::parse_decrease_stream_retention_period_response(response)
+            crate::protocol_serde::shape_decrease_stream_retention_period::de_decrease_stream_retention_period_http_response(response)
         }
     }
 }
@@ -128,9 +132,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_stream_error(response)
+            crate::protocol_serde::shape_delete_stream::de_delete_stream_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_stream_response(response)
+            crate::protocol_serde::shape_delete_stream::de_delete_stream_http_response(response)
         }
     }
 }
@@ -163,9 +167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_stream_consumer_error(response)
+            crate::protocol_serde::shape_deregister_stream_consumer::de_deregister_stream_consumer_http_error(response)
         } else {
-            crate::operation_deser::parse_deregister_stream_consumer_response(response)
+            crate::protocol_serde::shape_deregister_stream_consumer::de_deregister_stream_consumer_http_response(response)
         }
     }
 }
@@ -196,9 +200,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLimits {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_limits_error(response)
+            crate::protocol_serde::shape_describe_limits::de_describe_limits_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_limits_response(response)
+            crate::protocol_serde::shape_describe_limits::de_describe_limits_http_response(response)
         }
     }
 }
@@ -229,9 +233,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_stream_error(response)
+            crate::protocol_serde::shape_describe_stream::de_describe_stream_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_stream_response(response)
+            crate::protocol_serde::shape_describe_stream::de_describe_stream_http_response(response)
         }
     }
 }
@@ -264,9 +268,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStreamConsumer {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_stream_consumer_error(response)
+            crate::protocol_serde::shape_describe_stream_consumer::de_describe_stream_consumer_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_stream_consumer_response(response)
+            crate::protocol_serde::shape_describe_stream_consumer::de_describe_stream_consumer_http_response(response)
         }
     }
 }
@@ -299,9 +303,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStreamSummary {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_stream_summary_error(response)
+            crate::protocol_serde::shape_describe_stream_summary::de_describe_stream_summary_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_stream_summary_response(response)
+            crate::protocol_serde::shape_describe_stream_summary::de_describe_stream_summary_http_response(response)
         }
     }
 }
@@ -334,9 +338,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableEnhancedMonitorin
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_enhanced_monitoring_error(response)
+            crate::protocol_serde::shape_disable_enhanced_monitoring::de_disable_enhanced_monitoring_http_error(response)
         } else {
-            crate::operation_deser::parse_disable_enhanced_monitoring_response(response)
+            crate::protocol_serde::shape_disable_enhanced_monitoring::de_disable_enhanced_monitoring_http_response(response)
         }
     }
 }
@@ -369,9 +373,9 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableEnhancedMonitoring
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_enhanced_monitoring_error(response)
+            crate::protocol_serde::shape_enable_enhanced_monitoring::de_enable_enhanced_monitoring_http_error(response)
         } else {
-            crate::operation_deser::parse_enable_enhanced_monitoring_response(response)
+            crate::protocol_serde::shape_enable_enhanced_monitoring::de_enable_enhanced_monitoring_http_response(response)
         }
     }
 }
@@ -402,9 +406,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecords {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_records_error(response)
+            crate::protocol_serde::shape_get_records::de_get_records_http_error(response)
         } else {
-            crate::operation_deser::parse_get_records_response(response)
+            crate::protocol_serde::shape_get_records::de_get_records_http_response(response)
         }
     }
 }
@@ -437,9 +441,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetShardIterator {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_shard_iterator_error(response)
+            crate::protocol_serde::shape_get_shard_iterator::de_get_shard_iterator_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_shard_iterator_response(response)
+            crate::protocol_serde::shape_get_shard_iterator::de_get_shard_iterator_http_response(
+                response,
+            )
         }
     }
 }
@@ -472,9 +480,9 @@ impl aws_smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionP
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_increase_stream_retention_period_error(response)
+            crate::protocol_serde::shape_increase_stream_retention_period::de_increase_stream_retention_period_http_error(response)
         } else {
-            crate::operation_deser::parse_increase_stream_retention_period_response(response)
+            crate::protocol_serde::shape_increase_stream_retention_period::de_increase_stream_retention_period_http_response(response)
         }
     }
 }
@@ -505,9 +513,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListShards {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_shards_error(response)
+            crate::protocol_serde::shape_list_shards::de_list_shards_http_error(response)
         } else {
-            crate::operation_deser::parse_list_shards_response(response)
+            crate::protocol_serde::shape_list_shards::de_list_shards_http_response(response)
         }
     }
 }
@@ -540,9 +548,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamConsumers {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_stream_consumers_error(response)
+            crate::protocol_serde::shape_list_stream_consumers::de_list_stream_consumers_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_stream_consumers_response(response)
+            crate::protocol_serde::shape_list_stream_consumers::de_list_stream_consumers_http_response(response)
         }
     }
 }
@@ -573,9 +583,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreams {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_streams_error(response)
+            crate::protocol_serde::shape_list_streams::de_list_streams_http_error(response)
         } else {
-            crate::operation_deser::parse_list_streams_response(response)
+            crate::protocol_serde::shape_list_streams::de_list_streams_http_response(response)
         }
     }
 }
@@ -608,9 +618,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_stream_error(response)
+            crate::protocol_serde::shape_list_tags_for_stream::de_list_tags_for_stream_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_tags_for_stream_response(response)
+            crate::protocol_serde::shape_list_tags_for_stream::de_list_tags_for_stream_http_response(
+                response,
+            )
         }
     }
 }
@@ -641,9 +655,9 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeShards {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_merge_shards_error(response)
+            crate::protocol_serde::shape_merge_shards::de_merge_shards_http_error(response)
         } else {
-            crate::operation_deser::parse_merge_shards_response(response)
+            crate::protocol_serde::shape_merge_shards::de_merge_shards_http_response(response)
         }
     }
 }
@@ -673,9 +687,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_record_error(response)
+            crate::protocol_serde::shape_put_record::de_put_record_http_error(response)
         } else {
-            crate::operation_deser::parse_put_record_response(response)
+            crate::protocol_serde::shape_put_record::de_put_record_http_response(response)
         }
     }
 }
@@ -706,9 +720,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecords {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_records_error(response)
+            crate::protocol_serde::shape_put_records::de_put_records_http_error(response)
         } else {
-            crate::operation_deser::parse_put_records_response(response)
+            crate::protocol_serde::shape_put_records::de_put_records_http_response(response)
         }
     }
 }
@@ -741,9 +755,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_stream_consumer_error(response)
+            crate::protocol_serde::shape_register_stream_consumer::de_register_stream_consumer_http_error(response)
         } else {
-            crate::operation_deser::parse_register_stream_consumer_response(response)
+            crate::protocol_serde::shape_register_stream_consumer::de_register_stream_consumer_http_response(response)
         }
     }
 }
@@ -776,9 +790,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromStream {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_from_stream_error(response)
+            crate::protocol_serde::shape_remove_tags_from_stream::de_remove_tags_from_stream_http_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_from_stream_response(response)
+            crate::protocol_serde::shape_remove_tags_from_stream::de_remove_tags_from_stream_http_response(response)
         }
     }
 }
@@ -809,9 +823,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SplitShard {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_split_shard_error(response)
+            crate::protocol_serde::shape_split_shard::de_split_shard_http_error(response)
         } else {
-            crate::operation_deser::parse_split_shard_response(response)
+            crate::protocol_serde::shape_split_shard::de_split_shard_http_response(response)
         }
     }
 }
@@ -844,9 +858,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStreamEncryption {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_stream_encryption_error(response)
+            crate::protocol_serde::shape_start_stream_encryption::de_start_stream_encryption_http_error(response)
         } else {
-            crate::operation_deser::parse_start_stream_encryption_response(response)
+            crate::protocol_serde::shape_start_stream_encryption::de_start_stream_encryption_http_response(response)
         }
     }
 }
@@ -879,9 +893,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStreamEncryption {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_stream_encryption_error(response)
+            crate::protocol_serde::shape_stop_stream_encryption::de_stop_stream_encryption_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_stream_encryption_response(response)
+            crate::protocol_serde::shape_stop_stream_encryption::de_stop_stream_encryption_http_response(response)
         }
     }
 }
@@ -914,9 +928,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShardCount {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_shard_count_error(response)
+            crate::protocol_serde::shape_update_shard_count::de_update_shard_count_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_shard_count_response(response)
+            crate::protocol_serde::shape_update_shard_count::de_update_shard_count_http_response(
+                response,
+            )
         }
     }
 }
@@ -949,9 +967,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamMode {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_stream_mode_error(response)
+            crate::protocol_serde::shape_update_stream_mode::de_update_stream_mode_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_stream_mode_response(response)
+            crate::protocol_serde::shape_update_stream_mode::de_update_stream_mode_http_response(
+                response,
+            )
         }
     }
 }

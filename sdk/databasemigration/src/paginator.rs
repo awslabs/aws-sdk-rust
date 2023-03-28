@@ -84,7 +84,7 @@ impl DescribeApplicableIndividualAssessmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_applicable_individual_assessments_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_applicable_individual_assessments_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -194,7 +194,8 @@ impl DescribeCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_certificates_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_certificates_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -304,7 +305,8 @@ impl DescribeConnectionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_connections_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_connections_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -414,7 +416,8 @@ impl DescribeEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_endpoints_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_endpoints_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -524,7 +527,8 @@ impl DescribeEndpointSettingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_endpoint_settings_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_endpoint_settings_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -634,7 +638,8 @@ impl DescribeEndpointTypesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_endpoint_types_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_endpoint_types_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -744,7 +749,8 @@ impl DescribeEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_events_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_events_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -854,7 +860,10 @@ impl DescribeEventSubscriptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_event_subscriptions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_event_subscriptions_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -964,7 +973,7 @@ impl DescribeFleetAdvisorCollectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_collectors_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_advisor_collectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1074,7 +1083,7 @@ impl DescribeFleetAdvisorDatabasesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_databases_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_advisor_databases_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1184,7 +1193,7 @@ impl DescribeFleetAdvisorLsaAnalysisPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_lsa_analysis_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_advisor_lsa_analysis_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1296,7 +1305,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_schema_object_summary_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_advisor_schema_object_summary_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1406,7 +1415,7 @@ impl DescribeFleetAdvisorSchemasPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_advisor_schemas_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_advisor_schemas_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1518,7 +1527,7 @@ impl DescribeOrderableReplicationInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_orderable_replication_instances_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_orderable_replication_instances_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1628,7 +1637,7 @@ impl DescribePendingMaintenanceActionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_pending_maintenance_actions_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_pending_maintenance_actions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1738,7 +1747,10 @@ impl DescribeReplicationInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_instances_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_replication_instances_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1850,7 +1862,7 @@ impl DescribeReplicationInstanceTaskLogsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_instance_task_logs_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_replication_instance_task_logs_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1960,7 +1972,7 @@ impl DescribeReplicationSubnetGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_subnet_groups_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_replication_subnet_groups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2072,7 +2084,7 @@ impl DescribeReplicationTaskAssessmentResultsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_task_assessment_results_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_replication_task_assessment_results_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2184,7 +2196,7 @@ impl DescribeReplicationTaskAssessmentRunsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_task_assessment_runs_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_replication_task_assessment_runs_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2296,7 +2308,7 @@ impl DescribeReplicationTaskIndividualAssessmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_task_individual_assessments_output_marker(resp);
+                            let new_token = crate::lens::reflens_describe_replication_task_individual_assessments_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2406,7 +2418,8 @@ impl DescribeReplicationTasksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_replication_tasks_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_replication_tasks_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2516,7 +2529,8 @@ impl DescribeSchemasPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_schemas_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_schemas_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2626,7 +2640,8 @@ impl DescribeTableStatisticsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_table_statistics_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_table_statistics_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()

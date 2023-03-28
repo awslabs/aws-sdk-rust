@@ -89,349 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateIdentityPool`](crate::client::fluent_builders::CreateIdentityPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityPool::identity_pool_name) / [`set_identity_pool_name(Option<String>)`](crate::client::fluent_builders::CreateIdentityPool::set_identity_pool_name): <p>A string that you provide.</p>
-    ///   - [`allow_unauthenticated_identities(bool)`](crate::client::fluent_builders::CreateIdentityPool::allow_unauthenticated_identities) / [`set_allow_unauthenticated_identities(bool)`](crate::client::fluent_builders::CreateIdentityPool::set_allow_unauthenticated_identities): <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    ///   - [`allow_classic_flow(bool)`](crate::client::fluent_builders::CreateIdentityPool::allow_classic_flow) / [`set_allow_classic_flow(Option<bool>)`](crate::client::fluent_builders::CreateIdentityPool::set_allow_classic_flow): <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    ///   - [`supported_login_providers(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityPool::supported_login_providers) / [`set_supported_login_providers(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityPool::set_supported_login_providers): <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    ///   - [`developer_provider_name(impl Into<String>)`](crate::client::fluent_builders::CreateIdentityPool::developer_provider_name) / [`set_developer_provider_name(Option<String>)`](crate::client::fluent_builders::CreateIdentityPool::set_developer_provider_name): <p>The "domain" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p>  <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
-    ///   - [`open_id_connect_provider_ar_ns(Vec<String>)`](crate::client::fluent_builders::CreateIdentityPool::open_id_connect_provider_ar_ns) / [`set_open_id_connect_provider_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIdentityPool::set_open_id_connect_provider_ar_ns): <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    ///   - [`cognito_identity_providers(Vec<CognitoIdentityProvider>)`](crate::client::fluent_builders::CreateIdentityPool::cognito_identity_providers) / [`set_cognito_identity_providers(Option<Vec<CognitoIdentityProvider>>)`](crate::client::fluent_builders::CreateIdentityPool::set_cognito_identity_providers): <p>An array of Amazon Cognito user pools and their client IDs.</p>
-    ///   - [`saml_provider_ar_ns(Vec<String>)`](crate::client::fluent_builders::CreateIdentityPool::saml_provider_ar_ns) / [`set_saml_provider_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateIdentityPool::set_saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    ///   - [`identity_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateIdentityPool::identity_pool_tags) / [`set_identity_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateIdentityPool::set_identity_pool_tags): <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    /// - On success, responds with [`CreateIdentityPoolOutput`](crate::output::CreateIdentityPoolOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::CreateIdentityPoolOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_pool_name(Option<String>)`](crate::output::CreateIdentityPoolOutput::identity_pool_name): <p>A string that you provide.</p>
-    ///   - [`allow_unauthenticated_identities(bool)`](crate::output::CreateIdentityPoolOutput::allow_unauthenticated_identities): <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    ///   - [`allow_classic_flow(Option<bool>)`](crate::output::CreateIdentityPoolOutput::allow_classic_flow): <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    ///   - [`supported_login_providers(Option<HashMap<String, String>>)`](crate::output::CreateIdentityPoolOutput::supported_login_providers): <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    ///   - [`developer_provider_name(Option<String>)`](crate::output::CreateIdentityPoolOutput::developer_provider_name): <p>The "domain" by which Cognito will refer to your users.</p>
-    ///   - [`open_id_connect_provider_ar_ns(Option<Vec<String>>)`](crate::output::CreateIdentityPoolOutput::open_id_connect_provider_ar_ns): <p>The ARNs of the OpenID Connect providers.</p>
-    ///   - [`cognito_identity_providers(Option<Vec<CognitoIdentityProvider>>)`](crate::output::CreateIdentityPoolOutput::cognito_identity_providers): <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    ///   - [`saml_provider_ar_ns(Option<Vec<String>>)`](crate::output::CreateIdentityPoolOutput::saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    ///   - [`identity_pool_tags(Option<HashMap<String, String>>)`](crate::output::CreateIdentityPoolOutput::identity_pool_tags): <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    /// - On failure, responds with [`SdkError<CreateIdentityPoolError>`](crate::error::CreateIdentityPoolError)
-    pub fn create_identity_pool(&self) -> crate::client::fluent_builders::CreateIdentityPool {
-        crate::client::fluent_builders::CreateIdentityPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteIdentities`](crate::client::fluent_builders::DeleteIdentities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_ids_to_delete(Vec<String>)`](crate::client::fluent_builders::DeleteIdentities::identity_ids_to_delete) / [`set_identity_ids_to_delete(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteIdentities::set_identity_ids_to_delete): <p>A list of 1-60 identities that you want to delete.</p>
-    /// - On success, responds with [`DeleteIdentitiesOutput`](crate::output::DeleteIdentitiesOutput) with field(s):
-    ///   - [`unprocessed_identity_ids(Option<Vec<UnprocessedIdentityId>>)`](crate::output::DeleteIdentitiesOutput::unprocessed_identity_ids): <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
-    /// - On failure, responds with [`SdkError<DeleteIdentitiesError>`](crate::error::DeleteIdentitiesError)
-    pub fn delete_identities(&self) -> crate::client::fluent_builders::DeleteIdentities {
-        crate::client::fluent_builders::DeleteIdentities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteIdentityPool`](crate::client::fluent_builders::DeleteIdentityPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteIdentityPool::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteIdentityPool::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    /// - On success, responds with [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteIdentityPoolError>`](crate::error::DeleteIdentityPoolError)
-    pub fn delete_identity_pool(&self) -> crate::client::fluent_builders::DeleteIdentityPool {
-        crate::client::fluent_builders::DeleteIdentityPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIdentity`](crate::client::fluent_builders::DescribeIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    /// - On success, responds with [`DescribeIdentityOutput`](crate::output::DescribeIdentityOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::DescribeIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(Option<Vec<String>>)`](crate::output::DescribeIdentityOutput::logins): <p>The provider names.</p>
-    ///   - [`creation_date(Option<DateTime>)`](crate::output::DescribeIdentityOutput::creation_date): <p>Date on which the identity was created.</p>
-    ///   - [`last_modified_date(Option<DateTime>)`](crate::output::DescribeIdentityOutput::last_modified_date): <p>Date on which the identity was last modified.</p>
-    /// - On failure, responds with [`SdkError<DescribeIdentityError>`](crate::error::DescribeIdentityError)
-    pub fn describe_identity(&self) -> crate::client::fluent_builders::DescribeIdentity {
-        crate::client::fluent_builders::DescribeIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIdentityPool`](crate::client::fluent_builders::DescribeIdentityPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityPool::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityPool::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    /// - On success, responds with [`DescribeIdentityPoolOutput`](crate::output::DescribeIdentityPoolOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::DescribeIdentityPoolOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_pool_name(Option<String>)`](crate::output::DescribeIdentityPoolOutput::identity_pool_name): <p>A string that you provide.</p>
-    ///   - [`allow_unauthenticated_identities(bool)`](crate::output::DescribeIdentityPoolOutput::allow_unauthenticated_identities): <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    ///   - [`allow_classic_flow(Option<bool>)`](crate::output::DescribeIdentityPoolOutput::allow_classic_flow): <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    ///   - [`supported_login_providers(Option<HashMap<String, String>>)`](crate::output::DescribeIdentityPoolOutput::supported_login_providers): <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    ///   - [`developer_provider_name(Option<String>)`](crate::output::DescribeIdentityPoolOutput::developer_provider_name): <p>The "domain" by which Cognito will refer to your users.</p>
-    ///   - [`open_id_connect_provider_ar_ns(Option<Vec<String>>)`](crate::output::DescribeIdentityPoolOutput::open_id_connect_provider_ar_ns): <p>The ARNs of the OpenID Connect providers.</p>
-    ///   - [`cognito_identity_providers(Option<Vec<CognitoIdentityProvider>>)`](crate::output::DescribeIdentityPoolOutput::cognito_identity_providers): <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    ///   - [`saml_provider_ar_ns(Option<Vec<String>>)`](crate::output::DescribeIdentityPoolOutput::saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    ///   - [`identity_pool_tags(Option<HashMap<String, String>>)`](crate::output::DescribeIdentityPoolOutput::identity_pool_tags): <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    /// - On failure, responds with [`SdkError<DescribeIdentityPoolError>`](crate::error::DescribeIdentityPoolError)
-    pub fn describe_identity_pool(&self) -> crate::client::fluent_builders::DescribeIdentityPool {
-        crate::client::fluent_builders::DescribeIdentityPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCredentialsForIdentity`](crate::client::fluent_builders::GetCredentialsForIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetCredentialsForIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetCredentialsForIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(HashMap<String, String>)`](crate::client::fluent_builders::GetCredentialsForIdentity::logins) / [`set_logins(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetCredentialsForIdentity::set_logins): <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p>  <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p>  <p>The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
-    ///   - [`custom_role_arn(impl Into<String>)`](crate::client::fluent_builders::GetCredentialsForIdentity::custom_role_arn) / [`set_custom_role_arn(Option<String>)`](crate::client::fluent_builders::GetCredentialsForIdentity::set_custom_role_arn): <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
-    /// - On success, responds with [`GetCredentialsForIdentityOutput`](crate::output::GetCredentialsForIdentityOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::GetCredentialsForIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`credentials(Option<Credentials>)`](crate::output::GetCredentialsForIdentityOutput::credentials): <p>Credentials for the provided identity ID.</p>
-    /// - On failure, responds with [`SdkError<GetCredentialsForIdentityError>`](crate::error::GetCredentialsForIdentityError)
-    pub fn get_credentials_for_identity(
-        &self,
-    ) -> crate::client::fluent_builders::GetCredentialsForIdentity {
-        crate::client::fluent_builders::GetCredentialsForIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetId`](crate::client::fluent_builders::GetId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetId::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetId::set_account_id): <p>A standard AWS account ID (9+ digits).</p>
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetId::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetId::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`logins(HashMap<String, String>)`](crate::client::fluent_builders::GetId::logins) / [`set_logins(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetId::set_logins): <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p>  <ul>   <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li>   <li> <p>Amazon Cognito user pool: <code>cognito-idp.     <region>      .amazonaws.com/      <your_user_pool_id></your_user_pool_id>     </region></code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>   <li> <p>Google: <code>accounts.google.com</code> </p> </li>   <li> <p>Amazon: <code>www.amazon.com</code> </p> </li>   <li> <p>Twitter: <code>api.twitter.com</code> </p> </li>   <li> <p>Digits: <code>www.digits.com</code> </p> </li>  </ul>
-    /// - On success, responds with [`GetIdOutput`](crate::output::GetIdOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::GetIdOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    /// - On failure, responds with [`SdkError<GetIdError>`](crate::error::GetIdError)
-    pub fn get_id(&self) -> crate::client::fluent_builders::GetId {
-        crate::client::fluent_builders::GetId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetIdentityPoolRoles`](crate::client::fluent_builders::GetIdentityPoolRoles) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetIdentityPoolRoles::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetIdentityPoolRoles::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    /// - On success, responds with [`GetIdentityPoolRolesOutput`](crate::output::GetIdentityPoolRolesOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::GetIdentityPoolRolesOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`roles(Option<HashMap<String, String>>)`](crate::output::GetIdentityPoolRolesOutput::roles): <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
-    ///   - [`role_mappings(Option<HashMap<String, RoleMapping>>)`](crate::output::GetIdentityPoolRolesOutput::role_mappings): <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
-    /// - On failure, responds with [`SdkError<GetIdentityPoolRolesError>`](crate::error::GetIdentityPoolRolesError)
-    pub fn get_identity_pool_roles(&self) -> crate::client::fluent_builders::GetIdentityPoolRoles {
-        crate::client::fluent_builders::GetIdentityPoolRoles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOpenIdToken`](crate::client::fluent_builders::GetOpenIdToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetOpenIdToken::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetOpenIdToken::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(HashMap<String, String>)`](crate::client::fluent_builders::GetOpenIdToken::logins) / [`set_logins(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetOpenIdToken::set_logins): <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenID Connect provider, always include the <code>id_token</code>.</p>
-    /// - On success, responds with [`GetOpenIdTokenOutput`](crate::output::GetOpenIdTokenOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::GetOpenIdTokenOutput::identity_id): <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
-    ///   - [`token(Option<String>)`](crate::output::GetOpenIdTokenOutput::token): <p>An OpenID token, valid for 10 minutes.</p>
-    /// - On failure, responds with [`SdkError<GetOpenIdTokenError>`](crate::error::GetOpenIdTokenError)
-    pub fn get_open_id_token(&self) -> crate::client::fluent_builders::GetOpenIdToken {
-        crate::client::fluent_builders::GetOpenIdToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOpenIdTokenForDeveloperIdentity`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(HashMap<String, String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::logins) / [`set_logins(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::set_logins): <p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>"developer_provider_name": "developer_user_identifier"</code>. The developer provider is the "domain" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>
-    ///   - [`principal_tags(HashMap<String, String>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::principal_tags) / [`set_principal_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::set_principal_tags): <p>Use this operation to configure attribute mappings for custom providers. </p>
-    ///   - [`token_duration(i64)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::token_duration) / [`set_token_duration(Option<i64>)`](crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::set_token_duration): <p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p> <note>   <p>Please provide for a small grace period, usually no more than 5 minutes, to account for clock skew.</p>  </note>
-    /// - On success, responds with [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`token(Option<String>)`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput::token): <p>An OpenID token.</p>
-    /// - On failure, responds with [`SdkError<GetOpenIdTokenForDeveloperIdentityError>`](crate::error::GetOpenIdTokenForDeveloperIdentityError)
-    pub fn get_open_id_token_for_developer_identity(
-        &self,
-    ) -> crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity {
-        crate::client::fluent_builders::GetOpenIdTokenForDeveloperIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPrincipalTagAttributeMap`](crate::client::fluent_builders::GetPrincipalTagAttributeMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetPrincipalTagAttributeMap::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetPrincipalTagAttributeMap::set_identity_pool_id): <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    ///   - [`identity_provider_name(impl Into<String>)`](crate::client::fluent_builders::GetPrincipalTagAttributeMap::identity_provider_name) / [`set_identity_provider_name(Option<String>)`](crate::client::fluent_builders::GetPrincipalTagAttributeMap::set_identity_provider_name): <p>You can use this operation to get the provider name.</p>
-    /// - On success, responds with [`GetPrincipalTagAttributeMapOutput`](crate::output::GetPrincipalTagAttributeMapOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::GetPrincipalTagAttributeMapOutput::identity_pool_id): <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
-    ///   - [`identity_provider_name(Option<String>)`](crate::output::GetPrincipalTagAttributeMapOutput::identity_provider_name): <p>You can use this operation to get the provider name.</p>
-    ///   - [`use_defaults(Option<bool>)`](crate::output::GetPrincipalTagAttributeMapOutput::use_defaults): <p>You can use this operation to list </p>
-    ///   - [`principal_tags(Option<HashMap<String, String>>)`](crate::output::GetPrincipalTagAttributeMapOutput::principal_tags): <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    /// - On failure, responds with [`SdkError<GetPrincipalTagAttributeMapError>`](crate::error::GetPrincipalTagAttributeMapError)
-    pub fn get_principal_tag_attribute_map(
-        &self,
-    ) -> crate::client::fluent_builders::GetPrincipalTagAttributeMap {
-        crate::client::fluent_builders::GetPrincipalTagAttributeMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListIdentities`](crate::client::fluent_builders::ListIdentities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListIdentities::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::ListIdentities::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentities::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListIdentities::set_max_results): <p>The maximum number of identities to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentities::set_next_token): <p>A pagination token.</p>
-    ///   - [`hide_disabled(bool)`](crate::client::fluent_builders::ListIdentities::hide_disabled) / [`set_hide_disabled(bool)`](crate::client::fluent_builders::ListIdentities::set_hide_disabled): <p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>
-    /// - On success, responds with [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::ListIdentitiesOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identities(Option<Vec<IdentityDescription>>)`](crate::output::ListIdentitiesOutput::identities): <p>An object containing a set of identities and associated mappings.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListIdentitiesOutput::next_token): <p>A pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListIdentitiesError>`](crate::error::ListIdentitiesError)
-    pub fn list_identities(&self) -> crate::client::fluent_builders::ListIdentities {
-        crate::client::fluent_builders::ListIdentities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListIdentityPools`](crate::client::fluent_builders::ListIdentityPools) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIdentityPools::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentityPools::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListIdentityPools::set_max_results): <p>The maximum number of identities to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentityPools::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentityPools::set_next_token): <p>A pagination token.</p>
-    /// - On success, responds with [`ListIdentityPoolsOutput`](crate::output::ListIdentityPoolsOutput) with field(s):
-    ///   - [`identity_pools(Option<Vec<IdentityPoolShortDescription>>)`](crate::output::ListIdentityPoolsOutput::identity_pools): <p>The identity pools returned by the ListIdentityPools action.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityPoolsOutput::next_token): <p>A pagination token.</p>
-    /// - On failure, responds with [`SdkError<ListIdentityPoolsError>`](crate::error::ListIdentityPoolsError)
-    pub fn list_identity_pools(&self) -> crate::client::fluent_builders::ListIdentityPools {
-        crate::client::fluent_builders::ListIdentityPools::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags that are assigned to the identity pool.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`LookupDeveloperIdentity`](crate::client::fluent_builders::LookupDeveloperIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`developer_user_identifier(impl Into<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::developer_user_identifier) / [`set_developer_user_identifier(Option<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::set_developer_user_identifier): <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::LookupDeveloperIdentity::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::LookupDeveloperIdentity::set_max_results): <p>The maximum number of identities to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::LookupDeveloperIdentity::set_next_token): <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    /// - On success, responds with [`LookupDeveloperIdentityOutput`](crate::output::LookupDeveloperIdentityOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::LookupDeveloperIdentityOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`developer_user_identifier_list(Option<Vec<String>>)`](crate::output::LookupDeveloperIdentityOutput::developer_user_identifier_list): <p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::LookupDeveloperIdentityOutput::next_token): <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
-    /// - On failure, responds with [`SdkError<LookupDeveloperIdentityError>`](crate::error::LookupDeveloperIdentityError)
-    pub fn lookup_developer_identity(
-        &self,
-    ) -> crate::client::fluent_builders::LookupDeveloperIdentity {
-        crate::client::fluent_builders::LookupDeveloperIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`MergeDeveloperIdentities`](crate::client::fluent_builders::MergeDeveloperIdentities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_user_identifier(impl Into<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::source_user_identifier) / [`set_source_user_identifier(Option<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::set_source_user_identifier): <p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    ///   - [`destination_user_identifier(impl Into<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::destination_user_identifier) / [`set_destination_user_identifier(Option<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::set_destination_user_identifier): <p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>
-    ///   - [`developer_provider_name(impl Into<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::developer_provider_name) / [`set_developer_provider_name(Option<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::set_developer_provider_name): <p>The "domain" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::MergeDeveloperIdentities::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    /// - On success, responds with [`MergeDeveloperIdentitiesOutput`](crate::output::MergeDeveloperIdentitiesOutput) with field(s):
-    ///   - [`identity_id(Option<String>)`](crate::output::MergeDeveloperIdentitiesOutput::identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    /// - On failure, responds with [`SdkError<MergeDeveloperIdentitiesError>`](crate::error::MergeDeveloperIdentitiesError)
-    pub fn merge_developer_identities(
-        &self,
-    ) -> crate::client::fluent_builders::MergeDeveloperIdentities {
-        crate::client::fluent_builders::MergeDeveloperIdentities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetIdentityPoolRoles`](crate::client::fluent_builders::SetIdentityPoolRoles) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetIdentityPoolRoles::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::SetIdentityPoolRoles::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`roles(HashMap<String, String>)`](crate::client::fluent_builders::SetIdentityPoolRoles::roles) / [`set_roles(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetIdentityPoolRoles::set_roles): <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
-    ///   - [`role_mappings(HashMap<String, RoleMapping>)`](crate::client::fluent_builders::SetIdentityPoolRoles::role_mappings) / [`set_role_mappings(Option<HashMap<String, RoleMapping>>)`](crate::client::fluent_builders::SetIdentityPoolRoles::set_role_mappings): <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>  <p>Up to 25 rules can be specified per identity provider.</p>
-    /// - On success, responds with [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput)
-
-    /// - On failure, responds with [`SdkError<SetIdentityPoolRolesError>`](crate::error::SetIdentityPoolRolesError)
-    pub fn set_identity_pool_roles(&self) -> crate::client::fluent_builders::SetIdentityPoolRoles {
-        crate::client::fluent_builders::SetIdentityPoolRoles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetPrincipalTagAttributeMap`](crate::client::fluent_builders::SetPrincipalTagAttributeMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::set_identity_pool_id): <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    ///   - [`identity_provider_name(impl Into<String>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::identity_provider_name) / [`set_identity_provider_name(Option<String>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::set_identity_provider_name): <p>The provider name you want to use for attribute mappings.</p>
-    ///   - [`use_defaults(bool)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::use_defaults) / [`set_use_defaults(Option<bool>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::set_use_defaults): <p>You can use this operation to use default (username and clientID) attribute mappings.</p>
-    ///   - [`principal_tags(HashMap<String, String>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::principal_tags) / [`set_principal_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetPrincipalTagAttributeMap::set_principal_tags): <p>You can use this operation to add principal tags.</p>
-    /// - On success, responds with [`SetPrincipalTagAttributeMapOutput`](crate::output::SetPrincipalTagAttributeMapOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::SetPrincipalTagAttributeMapOutput::identity_pool_id): <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
-    ///   - [`identity_provider_name(Option<String>)`](crate::output::SetPrincipalTagAttributeMapOutput::identity_provider_name): <p>The provider name you want to use for attribute mappings.</p>
-    ///   - [`use_defaults(Option<bool>)`](crate::output::SetPrincipalTagAttributeMapOutput::use_defaults): <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
-    ///   - [`principal_tags(Option<HashMap<String, String>>)`](crate::output::SetPrincipalTagAttributeMapOutput::principal_tags): <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
-    /// - On failure, responds with [`SdkError<SetPrincipalTagAttributeMapError>`](crate::error::SetPrincipalTagAttributeMapError)
-    pub fn set_principal_tag_attribute_map(
-        &self,
-    ) -> crate::client::fluent_builders::SetPrincipalTagAttributeMap {
-        crate::client::fluent_builders::SetPrincipalTagAttributeMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the identity pool.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnlinkDeveloperIdentity`](crate::client::fluent_builders::UnlinkDeveloperIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`developer_provider_name(impl Into<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::developer_provider_name) / [`set_developer_provider_name(Option<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::set_developer_provider_name): <p>The "domain" by which Cognito will refer to your users.</p>
-    ///   - [`developer_user_identifier(impl Into<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::developer_user_identifier) / [`set_developer_user_identifier(Option<String>)`](crate::client::fluent_builders::UnlinkDeveloperIdentity::set_developer_user_identifier): <p>A unique ID used by your backend authentication process to identify a user.</p>
-    /// - On success, responds with [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput)
-
-    /// - On failure, responds with [`SdkError<UnlinkDeveloperIdentityError>`](crate::error::UnlinkDeveloperIdentityError)
-    pub fn unlink_developer_identity(
-        &self,
-    ) -> crate::client::fluent_builders::UnlinkDeveloperIdentity {
-        crate::client::fluent_builders::UnlinkDeveloperIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnlinkIdentity`](crate::client::fluent_builders::UnlinkIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UnlinkIdentity::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UnlinkIdentity::set_identity_id): <p>A unique identifier in the format REGION:GUID.</p>
-    ///   - [`logins(HashMap<String, String>)`](crate::client::fluent_builders::UnlinkIdentity::logins) / [`set_logins(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UnlinkIdentity::set_logins): <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
-    ///   - [`logins_to_remove(Vec<String>)`](crate::client::fluent_builders::UnlinkIdentity::logins_to_remove) / [`set_logins_to_remove(Option<Vec<String>>)`](crate::client::fluent_builders::UnlinkIdentity::set_logins_to_remove): <p>Provider names to unlink from this identity.</p>
-    /// - On success, responds with [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput)
-
-    /// - On failure, responds with [`SdkError<UnlinkIdentityError>`](crate::error::UnlinkIdentityError)
-    pub fn unlink_identity(&self) -> crate::client::fluent_builders::UnlinkIdentity {
-        crate::client::fluent_builders::UnlinkIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the identity pool.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to remove from the user pool.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateIdentityPool`](crate::client::fluent_builders::UpdateIdentityPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityPool::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateIdentityPool::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_pool_name(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityPool::identity_pool_name) / [`set_identity_pool_name(Option<String>)`](crate::client::fluent_builders::UpdateIdentityPool::set_identity_pool_name): <p>A string that you provide.</p>
-    ///   - [`allow_unauthenticated_identities(bool)`](crate::client::fluent_builders::UpdateIdentityPool::allow_unauthenticated_identities) / [`set_allow_unauthenticated_identities(bool)`](crate::client::fluent_builders::UpdateIdentityPool::set_allow_unauthenticated_identities): <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    ///   - [`allow_classic_flow(bool)`](crate::client::fluent_builders::UpdateIdentityPool::allow_classic_flow) / [`set_allow_classic_flow(Option<bool>)`](crate::client::fluent_builders::UpdateIdentityPool::set_allow_classic_flow): <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    ///   - [`supported_login_providers(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityPool::supported_login_providers) / [`set_supported_login_providers(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityPool::set_supported_login_providers): <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    ///   - [`developer_provider_name(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityPool::developer_provider_name) / [`set_developer_provider_name(Option<String>)`](crate::client::fluent_builders::UpdateIdentityPool::set_developer_provider_name): <p>The "domain" by which Cognito will refer to your users.</p>
-    ///   - [`open_id_connect_provider_ar_ns(Vec<String>)`](crate::client::fluent_builders::UpdateIdentityPool::open_id_connect_provider_ar_ns) / [`set_open_id_connect_provider_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIdentityPool::set_open_id_connect_provider_ar_ns): <p>The ARNs of the OpenID Connect providers.</p>
-    ///   - [`cognito_identity_providers(Vec<CognitoIdentityProvider>)`](crate::client::fluent_builders::UpdateIdentityPool::cognito_identity_providers) / [`set_cognito_identity_providers(Option<Vec<CognitoIdentityProvider>>)`](crate::client::fluent_builders::UpdateIdentityPool::set_cognito_identity_providers): <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    ///   - [`saml_provider_ar_ns(Vec<String>)`](crate::client::fluent_builders::UpdateIdentityPool::saml_provider_ar_ns) / [`set_saml_provider_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateIdentityPool::set_saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    ///   - [`identity_pool_tags(HashMap<String, String>)`](crate::client::fluent_builders::UpdateIdentityPool::identity_pool_tags) / [`set_identity_pool_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateIdentityPool::set_identity_pool_tags): <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    /// - On success, responds with [`UpdateIdentityPoolOutput`](crate::output::UpdateIdentityPoolOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::UpdateIdentityPoolOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
-    ///   - [`identity_pool_name(Option<String>)`](crate::output::UpdateIdentityPoolOutput::identity_pool_name): <p>A string that you provide.</p>
-    ///   - [`allow_unauthenticated_identities(bool)`](crate::output::UpdateIdentityPoolOutput::allow_unauthenticated_identities): <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    ///   - [`allow_classic_flow(Option<bool>)`](crate::output::UpdateIdentityPoolOutput::allow_classic_flow): <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
-    ///   - [`supported_login_providers(Option<HashMap<String, String>>)`](crate::output::UpdateIdentityPoolOutput::supported_login_providers): <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    ///   - [`developer_provider_name(Option<String>)`](crate::output::UpdateIdentityPoolOutput::developer_provider_name): <p>The "domain" by which Cognito will refer to your users.</p>
-    ///   - [`open_id_connect_provider_ar_ns(Option<Vec<String>>)`](crate::output::UpdateIdentityPoolOutput::open_id_connect_provider_ar_ns): <p>The ARNs of the OpenID Connect providers.</p>
-    ///   - [`cognito_identity_providers(Option<Vec<CognitoIdentityProvider>>)`](crate::output::UpdateIdentityPoolOutput::cognito_identity_providers): <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    ///   - [`saml_provider_ar_ns(Option<Vec<String>>)`](crate::output::UpdateIdentityPoolOutput::saml_provider_ar_ns): <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    ///   - [`identity_pool_tags(Option<HashMap<String, String>>)`](crate::output::UpdateIdentityPoolOutput::identity_pool_tags): <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    /// - On failure, responds with [`SdkError<UpdateIdentityPoolError>`](crate::error::UpdateIdentityPoolError)
-    pub fn update_identity_pool(&self) -> crate::client::fluent_builders::UpdateIdentityPool {
-        crate::client::fluent_builders::UpdateIdentityPool::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -517,9 +174,55 @@ impl Client {
     }
 }
 
+mod create_identity_pool;
+
+mod delete_identities;
+
+mod delete_identity_pool;
+
+mod describe_identity;
+
+mod describe_identity_pool;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_credentials_for_identity;
+
+mod get_id;
+
+mod get_identity_pool_roles;
+
+mod get_open_id_token;
+
+mod get_open_id_token_for_developer_identity;
+
+mod get_principal_tag_attribute_map;
+
+mod list_identities;
+
+mod list_identity_pools;
+
+mod list_tags_for_resource;
+
+mod lookup_developer_identity;
+
+mod merge_developer_identities;
+
+mod set_identity_pool_roles;
+
+mod set_principal_tag_attribute_map;
+
+mod tag_resource;
+
+mod unlink_developer_identity;
+
+mod unlink_identity;
+
+mod untag_resource;
+
+mod update_identity_pool;

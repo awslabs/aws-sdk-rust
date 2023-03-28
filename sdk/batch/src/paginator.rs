@@ -90,7 +90,7 @@ impl DescribeComputeEnvironmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_compute_environments_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_compute_environments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +208,10 @@ impl DescribeJobDefinitionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_job_definitions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_job_definitions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +329,8 @@ impl DescribeJobQueuesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_job_queues_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_job_queues_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +448,7 @@ impl ListJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_jobs_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,10 @@ impl ListSchedulingPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_scheduling_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_scheduling_policies_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -608,7 +615,11 @@ impl DescribeComputeEnvironmentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeComputeEnvironmentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_compute_environments_output_compute_environments(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_compute_environments_output_compute_environments(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -631,7 +642,11 @@ impl DescribeJobDefinitionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeJobDefinitionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_job_definitions_output_job_definitions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_job_definitions_output_job_definitions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -655,7 +670,7 @@ impl DescribeJobQueuesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_job_queues_output_job_queues(page)
+            crate::lens::lens_describe_job_queues_output_job_queues(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -682,7 +697,7 @@ impl ListJobsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_jobs_output_job_summary_list(page)
+            crate::lens::lens_list_jobs_output_job_summary_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -708,6 +723,10 @@ impl ListSchedulingPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListSchedulingPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_scheduling_policies_output_scheduling_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_scheduling_policies_output_scheduling_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

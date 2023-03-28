@@ -90,7 +90,8 @@ impl DescribeAlarmHistoryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_alarm_history_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_alarm_history_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -200,7 +201,8 @@ impl DescribeAlarmsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_alarms_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_alarms_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -318,7 +320,10 @@ impl DescribeAnomalyDetectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_anomaly_detectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_anomaly_detectors_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -428,7 +433,8 @@ impl DescribeInsightRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_insight_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_insight_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -538,7 +544,8 @@ impl GetMetricDataPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_metric_data_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_metric_data_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -648,7 +655,8 @@ impl ListDashboardsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_dashboards_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_dashboards_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -758,7 +766,10 @@ impl ListManagedInsightRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_managed_insight_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_managed_insight_rules_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -860,7 +871,8 @@ impl ListMetricsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_metrics_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_metrics_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -970,7 +982,8 @@ impl ListMetricStreamsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_metric_streams_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_metric_streams_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1016,7 +1029,11 @@ impl DescribeAlarmHistoryPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeAlarmHistoryError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_alarm_history_output_alarm_history_items(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_alarm_history_output_alarm_history_items(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1039,7 +1056,11 @@ impl DescribeAnomalyDetectorsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeAnomalyDetectorsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_anomaly_detectors_output_anomaly_detectors(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_anomaly_detectors_output_anomaly_detectors(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1063,7 +1084,7 @@ impl ListDashboardsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_dashboards_output_dashboard_entries(page)
+            crate::lens::lens_list_dashboards_output_dashboard_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })

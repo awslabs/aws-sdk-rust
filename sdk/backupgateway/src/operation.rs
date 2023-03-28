@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateGatewayToServer
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_gateway_to_server_error(response)
+            crate::protocol_serde::shape_associate_gateway_to_server::de_associate_gateway_to_server_http_error(response)
         } else {
-            crate::operation_deser::parse_associate_gateway_to_server_response(response)
+            crate::protocol_serde::shape_associate_gateway_to_server::de_associate_gateway_to_server_http_response(response)
         }
     }
 }
@@ -60,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_gateway_error(response)
+            crate::protocol_serde::shape_create_gateway::de_create_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_create_gateway_response(response)
+            crate::protocol_serde::shape_create_gateway::de_create_gateway_http_response(response)
         }
     }
 }
@@ -93,9 +93,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_gateway_error(response)
+            crate::protocol_serde::shape_delete_gateway::de_delete_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_gateway_response(response)
+            crate::protocol_serde::shape_delete_gateway::de_delete_gateway_http_response(response)
         }
     }
 }
@@ -128,9 +128,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHypervisor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hypervisor_error(response)
+            crate::protocol_serde::shape_delete_hypervisor::de_delete_hypervisor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_hypervisor_response(response)
+            crate::protocol_serde::shape_delete_hypervisor::de_delete_hypervisor_http_response(
+                response,
+            )
         }
     }
 }
@@ -163,9 +167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_gateway_from_server_error(response)
+            crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_error(response)
         } else {
-            crate::operation_deser::parse_disassociate_gateway_from_server_response(response)
+            crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_response(response)
         }
     }
 }
@@ -198,9 +202,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBandwidthRateLimitSch
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bandwidth_rate_limit_schedule_error(response)
+            crate::protocol_serde::shape_get_bandwidth_rate_limit_schedule::de_get_bandwidth_rate_limit_schedule_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bandwidth_rate_limit_schedule_response(response)
+            crate::protocol_serde::shape_get_bandwidth_rate_limit_schedule::de_get_bandwidth_rate_limit_schedule_http_response(response)
         }
     }
 }
@@ -231,9 +235,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGateway {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_gateway_error(response)
+            crate::protocol_serde::shape_get_gateway::de_get_gateway_http_error(response)
         } else {
-            crate::operation_deser::parse_get_gateway_response(response)
+            crate::protocol_serde::shape_get_gateway::de_get_gateway_http_response(response)
         }
     }
 }
@@ -264,9 +268,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHypervisor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_hypervisor_error(response)
+            crate::protocol_serde::shape_get_hypervisor::de_get_hypervisor_http_error(response)
         } else {
-            crate::operation_deser::parse_get_hypervisor_response(response)
+            crate::protocol_serde::shape_get_hypervisor::de_get_hypervisor_http_response(response)
         }
     }
 }
@@ -299,9 +303,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHypervisorPropertyMap
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_hypervisor_property_mappings_error(response)
+            crate::protocol_serde::shape_get_hypervisor_property_mappings::de_get_hypervisor_property_mappings_http_error(response)
         } else {
-            crate::operation_deser::parse_get_hypervisor_property_mappings_response(response)
+            crate::protocol_serde::shape_get_hypervisor_property_mappings::de_get_hypervisor_property_mappings_http_response(response)
         }
     }
 }
@@ -334,9 +338,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_virtual_machine_error(response)
+            crate::protocol_serde::shape_get_virtual_machine::de_get_virtual_machine_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_virtual_machine_response(response)
+            crate::protocol_serde::shape_get_virtual_machine::de_get_virtual_machine_http_response(
+                response,
+            )
         }
     }
 }
@@ -369,9 +377,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportHypervisorConfigur
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_import_hypervisor_configuration_error(response)
+            crate::protocol_serde::shape_import_hypervisor_configuration::de_import_hypervisor_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_import_hypervisor_configuration_response(response)
+            crate::protocol_serde::shape_import_hypervisor_configuration::de_import_hypervisor_configuration_http_response(response)
         }
     }
 }
@@ -402,9 +410,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGateways {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_gateways_error(response)
+            crate::protocol_serde::shape_list_gateways::de_list_gateways_http_error(response)
         } else {
-            crate::operation_deser::parse_list_gateways_response(response)
+            crate::protocol_serde::shape_list_gateways::de_list_gateways_http_response(response)
         }
     }
 }
@@ -437,9 +445,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHypervisors {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_hypervisors_error(response)
+            crate::protocol_serde::shape_list_hypervisors::de_list_hypervisors_http_error(response)
         } else {
-            crate::operation_deser::parse_list_hypervisors_response(response)
+            crate::protocol_serde::shape_list_hypervisors::de_list_hypervisors_http_response(
+                response,
+            )
         }
     }
 }
@@ -472,9 +482,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -507,9 +517,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMachines {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_virtual_machines_error(response)
+            crate::protocol_serde::shape_list_virtual_machines::de_list_virtual_machines_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_virtual_machines_response(response)
+            crate::protocol_serde::shape_list_virtual_machines::de_list_virtual_machines_http_response(response)
         }
     }
 }
@@ -542,9 +554,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBandwidthRateLimitSch
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bandwidth_rate_limit_schedule_error(response)
+            crate::protocol_serde::shape_put_bandwidth_rate_limit_schedule::de_put_bandwidth_rate_limit_schedule_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bandwidth_rate_limit_schedule_response(response)
+            crate::protocol_serde::shape_put_bandwidth_rate_limit_schedule::de_put_bandwidth_rate_limit_schedule_http_response(response)
         }
     }
 }
@@ -577,9 +589,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutHypervisorPropertyMap
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_hypervisor_property_mappings_error(response)
+            crate::protocol_serde::shape_put_hypervisor_property_mappings::de_put_hypervisor_property_mappings_http_error(response)
         } else {
-            crate::operation_deser::parse_put_hypervisor_property_mappings_response(response)
+            crate::protocol_serde::shape_put_hypervisor_property_mappings::de_put_hypervisor_property_mappings_http_response(response)
         }
     }
 }
@@ -612,9 +624,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_maintenance_start_time_error(response)
+            crate::protocol_serde::shape_put_maintenance_start_time::de_put_maintenance_start_time_http_error(response)
         } else {
-            crate::operation_deser::parse_put_maintenance_start_time_response(response)
+            crate::protocol_serde::shape_put_maintenance_start_time::de_put_maintenance_start_time_http_response(response)
         }
     }
 }
@@ -647,9 +659,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVirtualMachinesMeta
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_virtual_machines_metadata_sync_error(response)
+            crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_error(response)
         } else {
-            crate::operation_deser::parse_start_virtual_machines_metadata_sync_response(response)
+            crate::protocol_serde::shape_start_virtual_machines_metadata_sync::de_start_virtual_machines_metadata_sync_http_response(response)
         }
     }
 }
@@ -680,9 +692,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -715,9 +727,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TestHypervisorConfigurat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_test_hypervisor_configuration_error(response)
+            crate::protocol_serde::shape_test_hypervisor_configuration::de_test_hypervisor_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_test_hypervisor_configuration_response(response)
+            crate::protocol_serde::shape_test_hypervisor_configuration::de_test_hypervisor_configuration_http_response(response)
         }
     }
 }
@@ -748,9 +760,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -783,9 +795,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_gateway_information_error(response)
+            crate::protocol_serde::shape_update_gateway_information::de_update_gateway_information_http_error(response)
         } else {
-            crate::operation_deser::parse_update_gateway_information_response(response)
+            crate::protocol_serde::shape_update_gateway_information::de_update_gateway_information_http_response(response)
         }
     }
 }
@@ -818,9 +830,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewaySoftwareNow
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_gateway_software_now_error(response)
+            crate::protocol_serde::shape_update_gateway_software_now::de_update_gateway_software_now_http_error(response)
         } else {
-            crate::operation_deser::parse_update_gateway_software_now_response(response)
+            crate::protocol_serde::shape_update_gateway_software_now::de_update_gateway_software_now_http_response(response)
         }
     }
 }
@@ -853,9 +865,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHypervisor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_hypervisor_error(response)
+            crate::protocol_serde::shape_update_hypervisor::de_update_hypervisor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_hypervisor_response(response)
+            crate::protocol_serde::shape_update_hypervisor::de_update_hypervisor_http_response(
+                response,
+            )
         }
     }
 }

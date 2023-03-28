@@ -89,416 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateAwsLogSource`](crate::client::fluent_builders::CreateAwsLogSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`input_order(Vec<Dimension>)`](crate::client::fluent_builders::CreateAwsLogSource::input_order) / [`set_input_order(Option<Vec<Dimension>>)`](crate::client::fluent_builders::CreateAwsLogSource::set_input_order): <p>Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.</p>
-    ///   - [`enable_all_dimensions(HashMap<String, HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateAwsLogSource::enable_all_dimensions) / [`set_enable_all_dimensions(Option<HashMap<String, HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::CreateAwsLogSource::set_enable_all_dimensions): <p>Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.</p>
-    ///   - [`enable_two_dimensions(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::CreateAwsLogSource::enable_two_dimensions) / [`set_enable_two_dimensions(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::CreateAwsLogSource::set_enable_two_dimensions): <p>Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.</p>
-    ///   - [`enable_single_dimension(Vec<String>)`](crate::client::fluent_builders::CreateAwsLogSource::enable_single_dimension) / [`set_enable_single_dimension(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAwsLogSource::set_enable_single_dimension): <p>Enables data collection from all Amazon Web Services sources in specific accounts or Regions.</p>
-    /// - On success, responds with [`CreateAwsLogSourceOutput`](crate::output::CreateAwsLogSourceOutput) with field(s):
-    ///   - [`processing(Option<Vec<String>>)`](crate::output::CreateAwsLogSourceOutput::processing): <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    ///   - [`failed(Option<Vec<String>>)`](crate::output::CreateAwsLogSourceOutput::failed): <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    /// - On failure, responds with [`SdkError<CreateAwsLogSourceError>`](crate::error::CreateAwsLogSourceError)
-    pub fn create_aws_log_source(&self) -> crate::client::fluent_builders::CreateAwsLogSource {
-        crate::client::fluent_builders::CreateAwsLogSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCustomLogSource`](crate::client::fluent_builders::CreateCustomLogSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_source_name(impl Into<String>)`](crate::client::fluent_builders::CreateCustomLogSource::custom_source_name) / [`set_custom_source_name(Option<String>)`](crate::client::fluent_builders::CreateCustomLogSource::set_custom_source_name): <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    ///   - [`event_class(OcsfEventClass)`](crate::client::fluent_builders::CreateCustomLogSource::event_class) / [`set_event_class(Option<OcsfEventClass>)`](crate::client::fluent_builders::CreateCustomLogSource::set_event_class): <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
-    ///   - [`glue_invocation_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateCustomLogSource::glue_invocation_role_arn) / [`set_glue_invocation_role_arn(Option<String>)`](crate::client::fluent_builders::CreateCustomLogSource::set_glue_invocation_role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>  <ul>   <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>   <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>  </ul>
-    ///   - [`log_provider_account_id(impl Into<String>)`](crate::client::fluent_builders::CreateCustomLogSource::log_provider_account_id) / [`set_log_provider_account_id(Option<String>)`](crate::client::fluent_builders::CreateCustomLogSource::set_log_provider_account_id): <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-    /// - On success, responds with [`CreateCustomLogSourceOutput`](crate::output::CreateCustomLogSourceOutput) with field(s):
-    ///   - [`custom_data_location(Option<String>)`](crate::output::CreateCustomLogSourceOutput::custom_data_location): <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    ///   - [`glue_crawler_name(Option<String>)`](crate::output::CreateCustomLogSourceOutput::glue_crawler_name): <p>The name of the Glue crawler.</p>
-    ///   - [`glue_table_name(Option<String>)`](crate::output::CreateCustomLogSourceOutput::glue_table_name): <p>The table name of the Glue crawler.</p>
-    ///   - [`glue_database_name(Option<String>)`](crate::output::CreateCustomLogSourceOutput::glue_database_name): <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-    ///   - [`log_provider_access_role_arn(Option<String>)`](crate::output::CreateCustomLogSourceOutput::log_provider_access_role_arn): <p>The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake will apply the correct access policies to this role, but you must first manually create the trust policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code> to assume the role.</p>
-    /// - On failure, responds with [`SdkError<CreateCustomLogSourceError>`](crate::error::CreateCustomLogSourceError)
-    pub fn create_custom_log_source(
-        &self,
-    ) -> crate::client::fluent_builders::CreateCustomLogSource {
-        crate::client::fluent_builders::CreateCustomLogSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDatalake`](crate::client::fluent_builders::CreateDatalake) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`regions(Vec<Region>)`](crate::client::fluent_builders::CreateDatalake::regions) / [`set_regions(Option<Vec<Region>>)`](crate::client::fluent_builders::CreateDatalake::set_regions): <p>Enable Security Lake in the specified Regions. To enable Security Lake in specific Amazon Web Services Regions, such as us-east-1 or ap-northeast-3, provide the Region codes. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/securitylake.html">Amazon Security Lake endpoints</a> in the Amazon Web Services General Reference.</p>
-    ///   - [`configurations(HashMap<Region, LakeConfigurationRequest>)`](crate::client::fluent_builders::CreateDatalake::configurations) / [`set_configurations(Option<HashMap<Region, LakeConfigurationRequest>>)`](crate::client::fluent_builders::CreateDatalake::set_configurations): <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    ///   - [`enable_all(bool)`](crate::client::fluent_builders::CreateDatalake::enable_all) / [`set_enable_all(Option<bool>)`](crate::client::fluent_builders::CreateDatalake::set_enable_all): <p>Enable Security Lake in all Regions.</p>
-    ///   - [`meta_store_manager_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateDatalake::meta_store_manager_role_arn) / [`set_meta_store_manager_role_arn(Option<String>)`](crate::client::fluent_builders::CreateDatalake::set_meta_store_manager_role_arn): <p>The Amazon Resource Name (ARN) used to create and update the Glue table. This table contains partitions generated by the ingestion and normalization of Amazon Web Services log sources and custom sources.</p>
-    /// - On success, responds with [`CreateDatalakeOutput`](crate::output::CreateDatalakeOutput)
-
-    /// - On failure, responds with [`SdkError<CreateDatalakeError>`](crate::error::CreateDatalakeError)
-    pub fn create_datalake(&self) -> crate::client::fluent_builders::CreateDatalake {
-        crate::client::fluent_builders::CreateDatalake::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDatalakeAutoEnable`](crate::client::fluent_builders::CreateDatalakeAutoEnable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_for_new_accounts(Vec<AutoEnableNewRegionConfiguration>)`](crate::client::fluent_builders::CreateDatalakeAutoEnable::configuration_for_new_accounts) / [`set_configuration_for_new_accounts(Option<Vec<AutoEnableNewRegionConfiguration>>)`](crate::client::fluent_builders::CreateDatalakeAutoEnable::set_configuration_for_new_accounts): <p>Enable Security Lake with the specified configuration settings to begin collecting security data for new accounts in your organization. </p>
-    /// - On success, responds with [`CreateDatalakeAutoEnableOutput`](crate::output::CreateDatalakeAutoEnableOutput)
-
-    /// - On failure, responds with [`SdkError<CreateDatalakeAutoEnableError>`](crate::error::CreateDatalakeAutoEnableError)
-    pub fn create_datalake_auto_enable(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDatalakeAutoEnable {
-        crate::client::fluent_builders::CreateDatalakeAutoEnable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDatalakeDelegatedAdmin`](crate::client::fluent_builders::CreateDatalakeDelegatedAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::CreateDatalakeDelegatedAdmin::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::CreateDatalakeDelegatedAdmin::set_account): <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-    /// - On success, responds with [`CreateDatalakeDelegatedAdminOutput`](crate::output::CreateDatalakeDelegatedAdminOutput)
-
-    /// - On failure, responds with [`SdkError<CreateDatalakeDelegatedAdminError>`](crate::error::CreateDatalakeDelegatedAdminError)
-    pub fn create_datalake_delegated_admin(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDatalakeDelegatedAdmin {
-        crate::client::fluent_builders::CreateDatalakeDelegatedAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDatalakeExceptionsSubscription`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_protocol(SubscriptionProtocolType)`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::subscription_protocol) / [`set_subscription_protocol(Option<SubscriptionProtocolType>)`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::set_subscription_protocol): <p>The subscription protocol to which exception notifications are posted. </p>
-    ///   - [`notification_endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::notification_endpoint) / [`set_notification_endpoint(Option<String>)`](crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::set_notification_endpoint): <p>The Amazon Web Services account where you want to receive exception notifications.</p>
-    /// - On success, responds with [`CreateDatalakeExceptionsSubscriptionOutput`](crate::output::CreateDatalakeExceptionsSubscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<CreateDatalakeExceptionsSubscriptionError>`](crate::error::CreateDatalakeExceptionsSubscriptionError)
-    pub fn create_datalake_exceptions_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDatalakeExceptionsSubscription {
-        crate::client::fluent_builders::CreateDatalakeExceptionsSubscription::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateSubscriber`](crate::client::fluent_builders::CreateSubscriber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_types(Vec<SourceType>)`](crate::client::fluent_builders::CreateSubscriber::source_types) / [`set_source_types(Option<Vec<SourceType>>)`](crate::client::fluent_builders::CreateSubscriber::set_source_types): <p>The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event collection for natively supported Amazon Web Services.</p>
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_account_id): <p>The Amazon Web Services account ID used to access your data.</p>
-    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_external_id): <p>The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which they are operating. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances.</p>
-    ///   - [`access_types(Vec<AccessType>)`](crate::client::fluent_builders::CreateSubscriber::access_types) / [`set_access_types(Option<Vec<AccessType>>)`](crate::client::fluent_builders::CreateSubscriber::set_access_types): <p>The Amazon S3 or Lake Formation access type.</p>
-    ///   - [`subscriber_name(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::subscriber_name) / [`set_subscriber_name(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_subscriber_name): <p>The name of your Security Lake subscriber account.</p>
-    ///   - [`subscriber_description(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriber::subscriber_description) / [`set_subscriber_description(Option<String>)`](crate::client::fluent_builders::CreateSubscriber::set_subscriber_description): <p>The description for your subscriber account in Security Lake. </p>
-    /// - On success, responds with [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput) with field(s):
-    ///   - [`subscription_id(Option<String>)`](crate::output::CreateSubscriberOutput::subscription_id): <p>The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.</p>
-    ///   - [`role_arn(Option<String>)`](crate::output::CreateSubscriberOutput::role_arn): <p>The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the Identity and Access Management (IAM) User Guide</a>. .</p>
-    ///   - [`sns_arn(Option<String>)`](crate::output::CreateSubscriberOutput::sns_arn): <p>The ARN for the Amazon Simple Notification Service.</p>
-    ///   - [`s3_bucket_arn(Option<String>)`](crate::output::CreateSubscriberOutput::s3_bucket_arn): <p>The ARN for the Amazon S3 bucket. </p>
-    /// - On failure, responds with [`SdkError<CreateSubscriberError>`](crate::error::CreateSubscriberError)
-    pub fn create_subscriber(&self) -> crate::client::fluent_builders::CreateSubscriber {
-        crate::client::fluent_builders::CreateSubscriber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSubscriptionNotificationConfiguration`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_id(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::subscription_id) / [`set_subscription_id(Option<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_subscription_id): <p>The subscription ID for the notification subscription/</p>
-    ///   - [`subscription_endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::subscription_endpoint) / [`set_subscription_endpoint(Option<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_subscription_endpoint): <p>The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this field.</p>
-    ///   - [`https_api_key_name(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::https_api_key_name) / [`set_https_api_key_name(Option<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_https_api_key_name): <p>The key name for the notification subscription.</p>
-    ///   - [`https_api_key_value(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::https_api_key_value) / [`set_https_api_key_value(Option<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_https_api_key_value): <p>The key value for the notification subscription.</p>
-    ///   - [`https_method(HttpsMethod)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::https_method) / [`set_https_method(Option<HttpsMethod>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_https_method): <p>The HTTPS method used for the notification subscription. </p>
-    ///   - [`create_sqs(bool)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::create_sqs) / [`set_create_sqs(Option<bool>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_create_sqs): <p>Create an Amazon Simple Queue Service queue.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::set_role_arn): <p>The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.</p>
-    /// - On success, responds with [`CreateSubscriptionNotificationConfigurationOutput`](crate::output::CreateSubscriptionNotificationConfigurationOutput) with field(s):
-    ///   - [`queue_arn(Option<String>)`](crate::output::CreateSubscriptionNotificationConfigurationOutput::queue_arn): <p>Returns the Amazon Resource Name (ARN) of the queue.</p>
-    /// - On failure, responds with [`SdkError<CreateSubscriptionNotificationConfigurationError>`](crate::error::CreateSubscriptionNotificationConfigurationError)
-    pub fn create_subscription_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration {
-        crate::client::fluent_builders::CreateSubscriptionNotificationConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteAwsLogSource`](crate::client::fluent_builders::DeleteAwsLogSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`input_order(Vec<Dimension>)`](crate::client::fluent_builders::DeleteAwsLogSource::input_order) / [`set_input_order(Option<Vec<Dimension>>)`](crate::client::fluent_builders::DeleteAwsLogSource::set_input_order): <p>This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account). </p>
-    ///   - [`disable_all_dimensions(HashMap<String, HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::DeleteAwsLogSource::disable_all_dimensions) / [`set_disable_all_dimensions(Option<HashMap<String, HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::DeleteAwsLogSource::set_disable_all_dimensions): <p>Removes the specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    ///   - [`disable_two_dimensions(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::DeleteAwsLogSource::disable_two_dimensions) / [`set_disable_two_dimensions(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::DeleteAwsLogSource::set_disable_two_dimensions): <p>Remove a specific Amazon Web Services source from specific accounts or Regions.</p>
-    ///   - [`disable_single_dimension(Vec<String>)`](crate::client::fluent_builders::DeleteAwsLogSource::disable_single_dimension) / [`set_disable_single_dimension(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteAwsLogSource::set_disable_single_dimension): <p>Removes all Amazon Web Services sources from specific accounts or Regions.</p>
-    /// - On success, responds with [`DeleteAwsLogSourceOutput`](crate::output::DeleteAwsLogSourceOutput) with field(s):
-    ///   - [`processing(Option<Vec<String>>)`](crate::output::DeleteAwsLogSourceOutput::processing): <p>Deletion of the Amazon Web Services sources is in progress.</p>
-    ///   - [`failed(Option<Vec<String>>)`](crate::output::DeleteAwsLogSourceOutput::failed): <p>Deletion of the Amazon Web Services sources failed as the account is not a part of the organization.</p>
-    /// - On failure, responds with [`SdkError<DeleteAwsLogSourceError>`](crate::error::DeleteAwsLogSourceError)
-    pub fn delete_aws_log_source(&self) -> crate::client::fluent_builders::DeleteAwsLogSource {
-        crate::client::fluent_builders::DeleteAwsLogSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCustomLogSource`](crate::client::fluent_builders::DeleteCustomLogSource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`custom_source_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCustomLogSource::custom_source_name) / [`set_custom_source_name(Option<String>)`](crate::client::fluent_builders::DeleteCustomLogSource::set_custom_source_name): <p>The custom source name for the custom log source.</p>
-    /// - On success, responds with [`DeleteCustomLogSourceOutput`](crate::output::DeleteCustomLogSourceOutput) with field(s):
-    ///   - [`custom_data_location(Option<String>)`](crate::output::DeleteCustomLogSourceOutput::custom_data_location): <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-    /// - On failure, responds with [`SdkError<DeleteCustomLogSourceError>`](crate::error::DeleteCustomLogSourceError)
-    pub fn delete_custom_log_source(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteCustomLogSource {
-        crate::client::fluent_builders::DeleteCustomLogSource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDatalake`](crate::client::fluent_builders::DeleteDatalake) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteDatalake::send) it.
-
-    /// - On success, responds with [`DeleteDatalakeOutput`](crate::output::DeleteDatalakeOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDatalakeError>`](crate::error::DeleteDatalakeError)
-    pub fn delete_datalake(&self) -> crate::client::fluent_builders::DeleteDatalake {
-        crate::client::fluent_builders::DeleteDatalake::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDatalakeAutoEnable`](crate::client::fluent_builders::DeleteDatalakeAutoEnable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`remove_from_configuration_for_new_accounts(Vec<AutoEnableNewRegionConfiguration>)`](crate::client::fluent_builders::DeleteDatalakeAutoEnable::remove_from_configuration_for_new_accounts) / [`set_remove_from_configuration_for_new_accounts(Option<Vec<AutoEnableNewRegionConfiguration>>)`](crate::client::fluent_builders::DeleteDatalakeAutoEnable::set_remove_from_configuration_for_new_accounts): <p>Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new accounts in Security Lake. </p>
-    /// - On success, responds with [`DeleteDatalakeAutoEnableOutput`](crate::output::DeleteDatalakeAutoEnableOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDatalakeAutoEnableError>`](crate::error::DeleteDatalakeAutoEnableError)
-    pub fn delete_datalake_auto_enable(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteDatalakeAutoEnable {
-        crate::client::fluent_builders::DeleteDatalakeAutoEnable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDatalakeDelegatedAdmin`](crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account(impl Into<String>)`](crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin::account) / [`set_account(Option<String>)`](crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin::set_account): <p>The account ID the Security Lake delegated administrator.</p>
-    /// - On success, responds with [`DeleteDatalakeDelegatedAdminOutput`](crate::output::DeleteDatalakeDelegatedAdminOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDatalakeDelegatedAdminError>`](crate::error::DeleteDatalakeDelegatedAdminError)
-    pub fn delete_datalake_delegated_admin(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin {
-        crate::client::fluent_builders::DeleteDatalakeDelegatedAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDatalakeExceptionsSubscription`](crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription::send) it.
-
-    /// - On success, responds with [`DeleteDatalakeExceptionsSubscriptionOutput`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput) with field(s):
-    ///   - [`status(Option<String>)`](crate::output::DeleteDatalakeExceptionsSubscriptionOutput::status): <p>Retrieves the status of the delete Security Lake operation for an account. </p>
-    /// - On failure, responds with [`SdkError<DeleteDatalakeExceptionsSubscriptionError>`](crate::error::DeleteDatalakeExceptionsSubscriptionError)
-    pub fn delete_datalake_exceptions_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription {
-        crate::client::fluent_builders::DeleteDatalakeExceptionsSubscription::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteSubscriber`](crate::client::fluent_builders::DeleteSubscriber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriber::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteSubscriber::set_id): <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    /// - On success, responds with [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSubscriberError>`](crate::error::DeleteSubscriberError)
-    pub fn delete_subscriber(&self) -> crate::client::fluent_builders::DeleteSubscriber {
-        crate::client::fluent_builders::DeleteSubscriber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSubscriptionNotificationConfiguration`](crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration::subscription_id) / [`set_subscription_id(Option<String>)`](crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration::set_subscription_id): <p>The ID of the Security Lake subscriber account.</p>
-    /// - On success, responds with [`DeleteSubscriptionNotificationConfigurationOutput`](crate::output::DeleteSubscriptionNotificationConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSubscriptionNotificationConfigurationError>`](crate::error::DeleteSubscriptionNotificationConfigurationError)
-    pub fn delete_subscription_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration {
-        crate::client::fluent_builders::DeleteSubscriptionNotificationConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetDatalake`](crate::client::fluent_builders::GetDatalake) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDatalake::send) it.
-
-    /// - On success, responds with [`GetDatalakeOutput`](crate::output::GetDatalakeOutput) with field(s):
-    ///   - [`configurations(Option<HashMap<Region, LakeConfigurationResponse>>)`](crate::output::GetDatalakeOutput::configurations): <p>Retrieves the Security Lake configuration object. </p>
-    /// - On failure, responds with [`SdkError<GetDatalakeError>`](crate::error::GetDatalakeError)
-    pub fn get_datalake(&self) -> crate::client::fluent_builders::GetDatalake {
-        crate::client::fluent_builders::GetDatalake::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDatalakeAutoEnable`](crate::client::fluent_builders::GetDatalakeAutoEnable) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDatalakeAutoEnable::send) it.
-
-    /// - On success, responds with [`GetDatalakeAutoEnableOutput`](crate::output::GetDatalakeAutoEnableOutput) with field(s):
-    ///   - [`auto_enable_new_accounts(Option<Vec<AutoEnableNewRegionConfiguration>>)`](crate::output::GetDatalakeAutoEnableOutput::auto_enable_new_accounts): <p>The configuration for new accounts.</p>
-    /// - On failure, responds with [`SdkError<GetDatalakeAutoEnableError>`](crate::error::GetDatalakeAutoEnableError)
-    pub fn get_datalake_auto_enable(
-        &self,
-    ) -> crate::client::fluent_builders::GetDatalakeAutoEnable {
-        crate::client::fluent_builders::GetDatalakeAutoEnable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDatalakeExceptionsExpiry`](crate::client::fluent_builders::GetDatalakeExceptionsExpiry) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDatalakeExceptionsExpiry::send) it.
-
-    /// - On success, responds with [`GetDatalakeExceptionsExpiryOutput`](crate::output::GetDatalakeExceptionsExpiryOutput) with field(s):
-    ///   - [`exception_message_expiry(Option<i64>)`](crate::output::GetDatalakeExceptionsExpiryOutput::exception_message_expiry): <p>The expiration period and time-to-live (TTL).</p>
-    /// - On failure, responds with [`SdkError<GetDatalakeExceptionsExpiryError>`](crate::error::GetDatalakeExceptionsExpiryError)
-    pub fn get_datalake_exceptions_expiry(
-        &self,
-    ) -> crate::client::fluent_builders::GetDatalakeExceptionsExpiry {
-        crate::client::fluent_builders::GetDatalakeExceptionsExpiry::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDatalakeExceptionsSubscription`](crate::client::fluent_builders::GetDatalakeExceptionsSubscription) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDatalakeExceptionsSubscription::send) it.
-
-    /// - On success, responds with [`GetDatalakeExceptionsSubscriptionOutput`](crate::output::GetDatalakeExceptionsSubscriptionOutput) with field(s):
-    ///   - [`protocol_and_notification_endpoint(Option<ProtocolAndNotificationEndpoint>)`](crate::output::GetDatalakeExceptionsSubscriptionOutput::protocol_and_notification_endpoint): <p>Retrieves the exception notification subscription information.</p>
-    /// - On failure, responds with [`SdkError<GetDatalakeExceptionsSubscriptionError>`](crate::error::GetDatalakeExceptionsSubscriptionError)
-    pub fn get_datalake_exceptions_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::GetDatalakeExceptionsSubscription {
-        crate::client::fluent_builders::GetDatalakeExceptionsSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDatalakeStatus`](crate::client::fluent_builders::GetDatalakeStatus) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDatalakeStatus::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_set(Vec<String>)`](crate::client::fluent_builders::GetDatalakeStatus::account_set) / [`set_account_set(Option<Vec<String>>)`](crate::client::fluent_builders::GetDatalakeStatus::set_account_set): <p>The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region, including enabled accounts and log sources, is retrieved.</p>
-    ///   - [`max_account_results(i32)`](crate::client::fluent_builders::GetDatalakeStatus::max_account_results) / [`set_max_account_results(Option<i32>)`](crate::client::fluent_builders::GetDatalakeStatus::set_max_account_results): <p>The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and log sources, is retrieved.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDatalakeStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDatalakeStatus::set_next_token): <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On success, responds with [`GetDatalakeStatusOutput`](crate::output::GetDatalakeStatusOutput) with field(s):
-    ///   - [`account_sources_list(Option<Vec<AccountSources>>)`](crate::output::GetDatalakeStatusOutput::account_sources_list): <p>The list of enabled accounts and enabled sources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetDatalakeStatusOutput::next_token): <p>Lists if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On failure, responds with [`SdkError<GetDatalakeStatusError>`](crate::error::GetDatalakeStatusError)
-    pub fn get_datalake_status(&self) -> crate::client::fluent_builders::GetDatalakeStatus {
-        crate::client::fluent_builders::GetDatalakeStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSubscriber`](crate::client::fluent_builders::GetSubscriber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetSubscriber::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetSubscriber::set_id): <p>A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.</p>
-    /// - On success, responds with [`GetSubscriberOutput`](crate::output::GetSubscriberOutput) with field(s):
-    ///   - [`subscriber(Option<SubscriberResource>)`](crate::output::GetSubscriberOutput::subscriber): <p>The subscription information for the specified subscription ID.</p>
-    /// - On failure, responds with [`SdkError<GetSubscriberError>`](crate::error::GetSubscriberError)
-    pub fn get_subscriber(&self) -> crate::client::fluent_builders::GetSubscriber {
-        crate::client::fluent_builders::GetSubscriber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDatalakeExceptions`](crate::client::fluent_builders::ListDatalakeExceptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDatalakeExceptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`region_set(Vec<Region>)`](crate::client::fluent_builders::ListDatalakeExceptions::region_set) / [`set_region_set(Option<Vec<Region>>)`](crate::client::fluent_builders::ListDatalakeExceptions::set_region_set): <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-    ///   - [`max_failures(i32)`](crate::client::fluent_builders::ListDatalakeExceptions::max_failures) / [`set_max_failures(Option<i32>)`](crate::client::fluent_builders::ListDatalakeExceptions::set_max_failures): <p>List the maximum number of failures in Security Lake.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatalakeExceptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatalakeExceptions::set_next_token): <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On success, responds with [`ListDatalakeExceptionsOutput`](crate::output::ListDatalakeExceptionsOutput) with field(s):
-    ///   - [`non_retryable_failures(Option<Vec<FailuresResponse>>)`](crate::output::ListDatalakeExceptionsOutput::non_retryable_failures): <p>Lists the failures that cannot be retried in the current Region.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDatalakeExceptionsOutput::next_token): <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>  <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    /// - On failure, responds with [`SdkError<ListDatalakeExceptionsError>`](crate::error::ListDatalakeExceptionsError)
-    pub fn list_datalake_exceptions(
-        &self,
-    ) -> crate::client::fluent_builders::ListDatalakeExceptions {
-        crate::client::fluent_builders::ListDatalakeExceptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLogSources`](crate::client::fluent_builders::ListLogSources) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLogSources::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`input_order(Vec<Dimension>)`](crate::client::fluent_builders::ListLogSources::input_order) / [`set_input_order(Option<Vec<Dimension>>)`](crate::client::fluent_builders::ListLogSources::set_input_order): <p>Lists the log sources in input order, namely Region, source type, and member account.</p>
-    ///   - [`list_all_dimensions(HashMap<String, HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::ListLogSources::list_all_dimensions) / [`set_list_all_dimensions(Option<HashMap<String, HashMap<String, Vec<String>>>>)`](crate::client::fluent_builders::ListLogSources::set_list_all_dimensions): <p>List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources from specific accounts and specific Regions.</p>
-    ///   - [`list_two_dimensions(HashMap<String, Vec<String>>)`](crate::client::fluent_builders::ListLogSources::list_two_dimensions) / [`set_list_two_dimensions(Option<HashMap<String, Vec<String>>>)`](crate::client::fluent_builders::ListLogSources::set_list_two_dimensions): <p>Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from specific accounts or specific Regions.</p>
-    ///   - [`list_single_dimension(Vec<String>)`](crate::client::fluent_builders::ListLogSources::list_single_dimension) / [`set_list_single_dimension(Option<Vec<String>>)`](crate::client::fluent_builders::ListLogSources::set_list_single_dimension): <p>List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific accounts or specific Regions.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLogSources::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLogSources::set_max_results): <p>The maximum number of accounts for which the log sources are displayed.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLogSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLogSources::set_next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    /// - On success, responds with [`ListLogSourcesOutput`](crate::output::ListLogSourcesOutput) with field(s):
-    ///   - [`region_source_types_accounts_list(Option<Vec<HashMap<String, HashMap<String, Vec<String>>>>>)`](crate::output::ListLogSourcesOutput::region_source_types_accounts_list): <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLogSourcesOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListLogSourcesError>`](crate::error::ListLogSourcesError)
-    pub fn list_log_sources(&self) -> crate::client::fluent_builders::ListLogSources {
-        crate::client::fluent_builders::ListLogSources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSubscribers`](crate::client::fluent_builders::ListSubscribers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSubscribers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSubscribers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSubscribers::set_next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSubscribers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSubscribers::set_max_results): <p>The maximum number of accounts for which the configuration is displayed.</p>
-    /// - On success, responds with [`ListSubscribersOutput`](crate::output::ListSubscribersOutput) with field(s):
-    ///   - [`subscribers(Option<Vec<SubscriberResource>>)`](crate::output::ListSubscribersOutput::subscribers): <p>The subscribers available for the specified Security Lake account ID.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSubscribersOutput::next_token): <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListSubscribersError>`](crate::error::ListSubscribersError)
-    pub fn list_subscribers(&self) -> crate::client::fluent_builders::ListSubscribers {
-        crate::client::fluent_builders::ListSubscribers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDatalake`](crate::client::fluent_builders::UpdateDatalake) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configurations(HashMap<Region, LakeConfigurationRequest>)`](crate::client::fluent_builders::UpdateDatalake::configurations) / [`set_configurations(Option<HashMap<Region, LakeConfigurationRequest>>)`](crate::client::fluent_builders::UpdateDatalake::set_configurations): <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    /// - On success, responds with [`UpdateDatalakeOutput`](crate::output::UpdateDatalakeOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDatalakeError>`](crate::error::UpdateDatalakeError)
-    pub fn update_datalake(&self) -> crate::client::fluent_builders::UpdateDatalake {
-        crate::client::fluent_builders::UpdateDatalake::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDatalakeExceptionsExpiry`](crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`exception_message_expiry(i64)`](crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry::exception_message_expiry) / [`set_exception_message_expiry(Option<i64>)`](crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry::set_exception_message_expiry): <p>The time-to-live (TTL) for the exception message to remain.</p>
-    /// - On success, responds with [`UpdateDatalakeExceptionsExpiryOutput`](crate::output::UpdateDatalakeExceptionsExpiryOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDatalakeExceptionsExpiryError>`](crate::error::UpdateDatalakeExceptionsExpiryError)
-    pub fn update_datalake_exceptions_expiry(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry {
-        crate::client::fluent_builders::UpdateDatalakeExceptionsExpiry::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDatalakeExceptionsSubscription`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_protocol(SubscriptionProtocolType)`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::subscription_protocol) / [`set_subscription_protocol(Option<SubscriptionProtocolType>)`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::set_subscription_protocol): <p>The subscription protocol to which exception messages are posted. </p>
-    ///   - [`notification_endpoint(impl Into<String>)`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::notification_endpoint) / [`set_notification_endpoint(Option<String>)`](crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::set_notification_endpoint): <p>The account that is subscribed to receive exception notifications.</p>
-    /// - On success, responds with [`UpdateDatalakeExceptionsSubscriptionOutput`](crate::output::UpdateDatalakeExceptionsSubscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDatalakeExceptionsSubscriptionError>`](crate::error::UpdateDatalakeExceptionsSubscriptionError)
-    pub fn update_datalake_exceptions_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription {
-        crate::client::fluent_builders::UpdateDatalakeExceptionsSubscription::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`UpdateSubscriber`](crate::client::fluent_builders::UpdateSubscriber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_id): <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-    ///   - [`source_types(Vec<SourceType>)`](crate::client::fluent_builders::UpdateSubscriber::source_types) / [`set_source_types(Option<Vec<SourceType>>)`](crate::client::fluent_builders::UpdateSubscriber::set_source_types): <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    ///   - [`external_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::external_id) / [`set_external_id(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_external_id): <p>The external ID of the Security Lake account.</p>
-    ///   - [`subscriber_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::subscriber_name) / [`set_subscriber_name(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_subscriber_name): <p>The name of the Security Lake account subscriber. </p>
-    ///   - [`subscriber_description(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriber::subscriber_description) / [`set_subscriber_description(Option<String>)`](crate::client::fluent_builders::UpdateSubscriber::set_subscriber_description): <p>The description of the Security Lake account subscriber.</p>
-    /// - On success, responds with [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput) with field(s):
-    ///   - [`subscriber(Option<SubscriberResource>)`](crate::output::UpdateSubscriberOutput::subscriber): <p>The account of the subscriber.</p>
-    /// - On failure, responds with [`SdkError<UpdateSubscriberError>`](crate::error::UpdateSubscriberError)
-    pub fn update_subscriber(&self) -> crate::client::fluent_builders::UpdateSubscriber {
-        crate::client::fluent_builders::UpdateSubscriber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSubscriptionNotificationConfiguration`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`subscription_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::subscription_id) / [`set_subscription_id(Option<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_subscription_id): <p>The subscription ID for which the subscription notification is specified. </p>
-    ///   - [`subscription_endpoint(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::subscription_endpoint) / [`set_subscription_endpoint(Option<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_subscription_endpoint): <p>The subscription endpoint in Security Lake.</p>
-    ///   - [`https_api_key_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::https_api_key_name) / [`set_https_api_key_name(Option<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_https_api_key_name): <p>The key name for the subscription notification.</p>
-    ///   - [`https_api_key_value(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::https_api_key_value) / [`set_https_api_key_value(Option<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_https_api_key_value): <p>The key value for the subscription notification.</p>
-    ///   - [`https_method(HttpsMethod)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::https_method) / [`set_https_method(Option<HttpsMethod>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_https_method): <p>The HTTPS method used for the subscription notification. </p>
-    ///   - [`create_sqs(bool)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::create_sqs) / [`set_create_sqs(Option<bool>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_create_sqs): <p>Create a new subscription notification for the specified subscription ID in Amazon Security Lake.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::set_role_arn): <p>The Amazon Resource Name (ARN) specifying the role of the subscriber. </p>
-    /// - On success, responds with [`UpdateSubscriptionNotificationConfigurationOutput`](crate::output::UpdateSubscriptionNotificationConfigurationOutput) with field(s):
-    ///   - [`queue_arn(Option<String>)`](crate::output::UpdateSubscriptionNotificationConfigurationOutput::queue_arn): <p>Returns the ARN of the queue.</p>
-    /// - On failure, responds with [`SdkError<UpdateSubscriptionNotificationConfigurationError>`](crate::error::UpdateSubscriptionNotificationConfigurationError)
-    pub fn update_subscription_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration {
-        crate::client::fluent_builders::UpdateSubscriptionNotificationConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -584,9 +174,69 @@ impl Client {
     }
 }
 
+mod create_aws_log_source;
+
+mod create_custom_log_source;
+
+mod create_datalake;
+
+mod create_datalake_auto_enable;
+
+mod create_datalake_delegated_admin;
+
+mod create_datalake_exceptions_subscription;
+
+mod create_subscriber;
+
+mod create_subscription_notification_configuration;
+
+mod delete_aws_log_source;
+
+mod delete_custom_log_source;
+
+mod delete_datalake;
+
+mod delete_datalake_auto_enable;
+
+mod delete_datalake_delegated_admin;
+
+mod delete_datalake_exceptions_subscription;
+
+mod delete_subscriber;
+
+mod delete_subscription_notification_configuration;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_datalake;
+
+mod get_datalake_auto_enable;
+
+mod get_datalake_exceptions_expiry;
+
+mod get_datalake_exceptions_subscription;
+
+mod get_datalake_status;
+
+mod get_subscriber;
+
+mod list_datalake_exceptions;
+
+mod list_log_sources;
+
+mod list_subscribers;
+
+mod update_datalake;
+
+mod update_datalake_exceptions_expiry;
+
+mod update_datalake_exceptions_subscription;
+
+mod update_subscriber;
+
+mod update_subscription_notification_configuration;

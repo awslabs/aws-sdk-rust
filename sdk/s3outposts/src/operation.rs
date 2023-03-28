@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_endpoint_error(response)
+            crate::protocol_serde::shape_create_endpoint::de_create_endpoint_http_error(response)
         } else {
-            crate::operation_deser::parse_create_endpoint_response(response)
+            crate::protocol_serde::shape_create_endpoint::de_create_endpoint_http_response(response)
         }
     }
 }
@@ -58,9 +58,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_endpoint_error(response)
+            crate::protocol_serde::shape_delete_endpoint::de_delete_endpoint_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_endpoint_response(response)
+            crate::protocol_serde::shape_delete_endpoint::de_delete_endpoint_http_response(response)
         }
     }
 }
@@ -91,9 +91,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_endpoints_error(response)
+            crate::protocol_serde::shape_list_endpoints::de_list_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_list_endpoints_response(response)
+            crate::protocol_serde::shape_list_endpoints::de_list_endpoints_http_response(response)
         }
     }
 }
@@ -126,9 +126,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSharedEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_shared_endpoints_error(response)
+            crate::protocol_serde::shape_list_shared_endpoints::de_list_shared_endpoints_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_shared_endpoints_response(response)
+            crate::protocol_serde::shape_list_shared_endpoints::de_list_shared_endpoints_http_response(response)
         }
     }
 }

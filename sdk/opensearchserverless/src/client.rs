@@ -89,398 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchGetCollection`](crate::client::fluent_builders::BatchGetCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ids(Vec<String>)`](crate::client::fluent_builders::BatchGetCollection::ids) / [`set_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCollection::set_ids): <p>A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::BatchGetCollection::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetCollection::set_names): <p>A list of collection names. You can't provide names and IDs in the same request.</p>
-    /// - On success, responds with [`BatchGetCollectionOutput`](crate::output::BatchGetCollectionOutput) with field(s):
-    ///   - [`collection_details(Option<Vec<CollectionDetail>>)`](crate::output::BatchGetCollectionOutput::collection_details): <p>Details about each collection.</p>
-    ///   - [`collection_error_details(Option<Vec<CollectionErrorDetail>>)`](crate::output::BatchGetCollectionOutput::collection_error_details): <p>Error information for the request.</p>
-    /// - On failure, responds with [`SdkError<BatchGetCollectionError>`](crate::error::BatchGetCollectionError)
-    pub fn batch_get_collection(&self) -> crate::client::fluent_builders::BatchGetCollection {
-        crate::client::fluent_builders::BatchGetCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchGetVpcEndpoint`](crate::client::fluent_builders::BatchGetVpcEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ids(Vec<String>)`](crate::client::fluent_builders::BatchGetVpcEndpoint::ids) / [`set_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetVpcEndpoint::set_ids): <p>A list of VPC endpoint identifiers.</p>
-    /// - On success, responds with [`BatchGetVpcEndpointOutput`](crate::output::BatchGetVpcEndpointOutput) with field(s):
-    ///   - [`vpc_endpoint_details(Option<Vec<VpcEndpointDetail>>)`](crate::output::BatchGetVpcEndpointOutput::vpc_endpoint_details): <p>Details about the specified VPC endpoint.</p>
-    ///   - [`vpc_endpoint_error_details(Option<Vec<VpcEndpointErrorDetail>>)`](crate::output::BatchGetVpcEndpointOutput::vpc_endpoint_error_details): <p>Error information for a failed request.</p>
-    /// - On failure, responds with [`SdkError<BatchGetVpcEndpointError>`](crate::error::BatchGetVpcEndpointError)
-    pub fn batch_get_vpc_endpoint(&self) -> crate::client::fluent_builders::BatchGetVpcEndpoint {
-        crate::client::fluent_builders::BatchGetVpcEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAccessPolicy`](crate::client::fluent_builders::CreateAccessPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::client::fluent_builders::CreateAccessPolicy::type) / [`set_type(Option<AccessPolicyType>)`](crate::client::fluent_builders::CreateAccessPolicy::set_type): <p>The type of policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_name): <p>The name of the policy.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_description): <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_policy): <p>The JSON policy document to use as the content for the policy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateAccessPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`CreateAccessPolicyOutput`](crate::output::CreateAccessPolicyOutput) with field(s):
-    ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::output::CreateAccessPolicyOutput::access_policy_detail): <p>Details about the created access policy.</p>
-    /// - On failure, responds with [`SdkError<CreateAccessPolicyError>`](crate::error::CreateAccessPolicyError)
-    pub fn create_access_policy(&self) -> crate::client::fluent_builders::CreateAccessPolicy {
-        crate::client::fluent_builders::CreateAccessPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCollection`](crate::client::fluent_builders::CreateCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCollection::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCollection::set_name): <p>Name of the collection.</p>
-    ///   - [`r#type(CollectionType)`](crate::client::fluent_builders::CreateCollection::type) / [`set_type(Option<CollectionType>)`](crate::client::fluent_builders::CreateCollection::set_type): <p>The type of collection.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCollection::set_description): <p>Description of the collection.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCollection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCollection::set_tags): <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCollection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCollection::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`CreateCollectionOutput`](crate::output::CreateCollectionOutput) with field(s):
-    ///   - [`create_collection_detail(Option<CreateCollectionDetail>)`](crate::output::CreateCollectionOutput::create_collection_detail): <p>Details about the collection.</p>
-    /// - On failure, responds with [`SdkError<CreateCollectionError>`](crate::error::CreateCollectionError)
-    pub fn create_collection(&self) -> crate::client::fluent_builders::CreateCollection {
-        crate::client::fluent_builders::CreateCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSecurityConfig`](crate::client::fluent_builders::CreateSecurityConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityConfigType)`](crate::client::fluent_builders::CreateSecurityConfig::type) / [`set_type(Option<SecurityConfigType>)`](crate::client::fluent_builders::CreateSecurityConfig::set_type): <p>The type of security configuration.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfig::set_name): <p>The name of the security configuration.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfig::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfig::set_description): <p>A description of the security configuration.</p>
-    ///   - [`saml_options(SamlConfigOptions)`](crate::client::fluent_builders::CreateSecurityConfig::saml_options) / [`set_saml_options(Option<SamlConfigOptions>)`](crate::client::fluent_builders::CreateSecurityConfig::set_saml_options): <p>Describes SAML options in in the form of a key-value map.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfig::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfig::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`CreateSecurityConfigOutput`](crate::output::CreateSecurityConfigOutput) with field(s):
-    ///   - [`security_config_detail(Option<SecurityConfigDetail>)`](crate::output::CreateSecurityConfigOutput::security_config_detail): <p>Details about the created security configuration. </p>
-    /// - On failure, responds with [`SdkError<CreateSecurityConfigError>`](crate::error::CreateSecurityConfigError)
-    pub fn create_security_config(&self) -> crate::client::fluent_builders::CreateSecurityConfig {
-        crate::client::fluent_builders::CreateSecurityConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSecurityPolicy`](crate::client::fluent_builders::CreateSecurityPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityPolicyType)`](crate::client::fluent_builders::CreateSecurityPolicy::type) / [`set_type(Option<SecurityPolicyType>)`](crate::client::fluent_builders::CreateSecurityPolicy::set_type): <p>The type of security policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::set_name): <p>The name of the policy.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::set_description): <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::set_policy): <p>The JSON policy document to use as the content for the new policy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateSecurityPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`CreateSecurityPolicyOutput`](crate::output::CreateSecurityPolicyOutput) with field(s):
-    ///   - [`security_policy_detail(Option<SecurityPolicyDetail>)`](crate::output::CreateSecurityPolicyOutput::security_policy_detail): <p>Details about the created security policy.</p>
-    /// - On failure, responds with [`SdkError<CreateSecurityPolicyError>`](crate::error::CreateSecurityPolicyError)
-    pub fn create_security_policy(&self) -> crate::client::fluent_builders::CreateSecurityPolicy {
-        crate::client::fluent_builders::CreateSecurityPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateVpcEndpoint`](crate::client::fluent_builders::CreateVpcEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_name): <p>The name of the interface endpoint.</p>
-    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_vpc_id): <p>The ID of the VPC from which you'll access OpenSearch Serverless.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_subnet_ids): <p>The ID of one or more subnets from which you'll access OpenSearch Serverless.</p>
-    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_security_group_ids): <p>The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput) with field(s):
-    ///   - [`create_vpc_endpoint_detail(Option<CreateVpcEndpointDetail>)`](crate::output::CreateVpcEndpointOutput::create_vpc_endpoint_detail): <p>Details about the created interface VPC endpoint.</p>
-    /// - On failure, responds with [`SdkError<CreateVpcEndpointError>`](crate::error::CreateVpcEndpointError)
-    pub fn create_vpc_endpoint(&self) -> crate::client::fluent_builders::CreateVpcEndpoint {
-        crate::client::fluent_builders::CreateVpcEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAccessPolicy`](crate::client::fluent_builders::DeleteAccessPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::client::fluent_builders::DeleteAccessPolicy::type) / [`set_type(Option<AccessPolicyType>)`](crate::client::fluent_builders::DeleteAccessPolicy::set_type): <p>The type of policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::set_name): <p>The name of the policy to delete.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteAccessPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`DeleteAccessPolicyOutput`](crate::output::DeleteAccessPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAccessPolicyError>`](crate::error::DeleteAccessPolicyError)
-    pub fn delete_access_policy(&self) -> crate::client::fluent_builders::DeleteAccessPolicy {
-        crate::client::fluent_builders::DeleteAccessPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCollection`](crate::client::fluent_builders::DeleteCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCollection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCollection::set_id): <p>The unique identifier of the collection. For example, <code>1iu5usc406kd</code>. The ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a> API.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteCollection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteCollection::set_client_token): <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`DeleteCollectionOutput`](crate::output::DeleteCollectionOutput) with field(s):
-    ///   - [`delete_collection_detail(Option<DeleteCollectionDetail>)`](crate::output::DeleteCollectionOutput::delete_collection_detail): <p>Details of the deleted collection.</p>
-    /// - On failure, responds with [`SdkError<DeleteCollectionError>`](crate::error::DeleteCollectionError)
-    pub fn delete_collection(&self) -> crate::client::fluent_builders::DeleteCollection {
-        crate::client::fluent_builders::DeleteCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSecurityConfig`](crate::client::fluent_builders::DeleteSecurityConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteSecurityConfig::set_id): <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityConfig::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteSecurityConfig::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`DeleteSecurityConfigOutput`](crate::output::DeleteSecurityConfigOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSecurityConfigError>`](crate::error::DeleteSecurityConfigError)
-    pub fn delete_security_config(&self) -> crate::client::fluent_builders::DeleteSecurityConfig {
-        crate::client::fluent_builders::DeleteSecurityConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSecurityPolicy`](crate::client::fluent_builders::DeleteSecurityPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityPolicyType)`](crate::client::fluent_builders::DeleteSecurityPolicy::type) / [`set_type(Option<SecurityPolicyType>)`](crate::client::fluent_builders::DeleteSecurityPolicy::set_type): <p>The type of policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteSecurityPolicy::set_name): <p>The name of the policy to delete.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteSecurityPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`DeleteSecurityPolicyOutput`](crate::output::DeleteSecurityPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSecurityPolicyError>`](crate::error::DeleteSecurityPolicyError)
-    pub fn delete_security_policy(&self) -> crate::client::fluent_builders::DeleteSecurityPolicy {
-        crate::client::fluent_builders::DeleteSecurityPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::client::fluent_builders::DeleteVpcEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::set_id): <p>The VPC endpoint identifier.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::DeleteVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::output::DeleteVpcEndpointOutput) with field(s):
-    ///   - [`delete_vpc_endpoint_detail(Option<DeleteVpcEndpointDetail>)`](crate::output::DeleteVpcEndpointOutput::delete_vpc_endpoint_detail): <p>Details about the deleted endpoint.</p>
-    /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::error::DeleteVpcEndpointError)
-    pub fn delete_vpc_endpoint(&self) -> crate::client::fluent_builders::DeleteVpcEndpoint {
-        crate::client::fluent_builders::DeleteVpcEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccessPolicy`](crate::client::fluent_builders::GetAccessPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::client::fluent_builders::GetAccessPolicy::type) / [`set_type(Option<AccessPolicyType>)`](crate::client::fluent_builders::GetAccessPolicy::set_type): <p>Tye type of policy. Currently the only supported value is <code>data</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetAccessPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetAccessPolicy::set_name): <p>The name of the access policy.</p>
-    /// - On success, responds with [`GetAccessPolicyOutput`](crate::output::GetAccessPolicyOutput) with field(s):
-    ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::output::GetAccessPolicyOutput::access_policy_detail): <p>Details about the requested access policy.</p>
-    /// - On failure, responds with [`SdkError<GetAccessPolicyError>`](crate::error::GetAccessPolicyError)
-    pub fn get_access_policy(&self) -> crate::client::fluent_builders::GetAccessPolicy {
-        crate::client::fluent_builders::GetAccessPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountSettings::send) it.
-
-    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
-    ///   - [`account_settings_detail(Option<AccountSettingsDetail>)`](crate::output::GetAccountSettingsOutput::account_settings_detail): <p>OpenSearch Serverless-related details for the current account.</p>
-    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
-    pub fn get_account_settings(&self) -> crate::client::fluent_builders::GetAccountSettings {
-        crate::client::fluent_builders::GetAccountSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPoliciesStats`](crate::client::fluent_builders::GetPoliciesStats) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPoliciesStats::send) it.
-
-    /// - On success, responds with [`GetPoliciesStatsOutput`](crate::output::GetPoliciesStatsOutput) with field(s):
-    ///   - [`access_policy_stats(Option<AccessPolicyStats>)`](crate::output::GetPoliciesStatsOutput::access_policy_stats): <p>Information about the data access policies in your account.</p>
-    ///   - [`security_policy_stats(Option<SecurityPolicyStats>)`](crate::output::GetPoliciesStatsOutput::security_policy_stats): <p>Information about the security policies in your account.</p>
-    ///   - [`security_config_stats(Option<SecurityConfigStats>)`](crate::output::GetPoliciesStatsOutput::security_config_stats): <p>Information about the security configurations in your account.</p>
-    ///   - [`total_policy_count(Option<i64>)`](crate::output::GetPoliciesStatsOutput::total_policy_count): <p>The total number of OpenSearch Serverless security policies and configurations in your account.</p>
-    /// - On failure, responds with [`SdkError<GetPoliciesStatsError>`](crate::error::GetPoliciesStatsError)
-    pub fn get_policies_stats(&self) -> crate::client::fluent_builders::GetPoliciesStats {
-        crate::client::fluent_builders::GetPoliciesStats::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSecurityConfig`](crate::client::fluent_builders::GetSecurityConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetSecurityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetSecurityConfig::set_id): <p>The unique identifier of the security configuration.</p>
-    /// - On success, responds with [`GetSecurityConfigOutput`](crate::output::GetSecurityConfigOutput) with field(s):
-    ///   - [`security_config_detail(Option<SecurityConfigDetail>)`](crate::output::GetSecurityConfigOutput::security_config_detail): <p>Details of the requested security configuration.</p>
-    /// - On failure, responds with [`SdkError<GetSecurityConfigError>`](crate::error::GetSecurityConfigError)
-    pub fn get_security_config(&self) -> crate::client::fluent_builders::GetSecurityConfig {
-        crate::client::fluent_builders::GetSecurityConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSecurityPolicy`](crate::client::fluent_builders::GetSecurityPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityPolicyType)`](crate::client::fluent_builders::GetSecurityPolicy::type) / [`set_type(Option<SecurityPolicyType>)`](crate::client::fluent_builders::GetSecurityPolicy::set_type): <p>The type of security policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSecurityPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSecurityPolicy::set_name): <p>The name of the security policy.</p>
-    /// - On success, responds with [`GetSecurityPolicyOutput`](crate::output::GetSecurityPolicyOutput) with field(s):
-    ///   - [`security_policy_detail(Option<SecurityPolicyDetail>)`](crate::output::GetSecurityPolicyOutput::security_policy_detail): <p>Details about the requested security policy.</p>
-    /// - On failure, responds with [`SdkError<GetSecurityPolicyError>`](crate::error::GetSecurityPolicyError)
-    pub fn get_security_policy(&self) -> crate::client::fluent_builders::GetSecurityPolicy {
-        crate::client::fluent_builders::GetSecurityPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAccessPolicies`](crate::client::fluent_builders::ListAccessPolicies) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessPolicies::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::client::fluent_builders::ListAccessPolicies::type) / [`set_type(Option<AccessPolicyType>)`](crate::client::fluent_builders::ListAccessPolicies::set_type): <p>The type of access policy.</p>
-    ///   - [`resource(Vec<String>)`](crate::client::fluent_builders::ListAccessPolicies::resource) / [`set_resource(Option<Vec<String>>)`](crate::client::fluent_builders::ListAccessPolicies::set_resource): <p>Resource filters (can be collection or indexes) that policies can apply to.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessPolicies::set_next_token): <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessPolicies::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
-    /// - On success, responds with [`ListAccessPoliciesOutput`](crate::output::ListAccessPoliciesOutput) with field(s):
-    ///   - [`access_policy_summaries(Option<Vec<AccessPolicySummary>>)`](crate::output::ListAccessPoliciesOutput::access_policy_summaries): <p>Details about the requested access policies.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccessPoliciesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListAccessPoliciesError>`](crate::error::ListAccessPoliciesError)
-    pub fn list_access_policies(&self) -> crate::client::fluent_builders::ListAccessPolicies {
-        crate::client::fluent_builders::ListAccessPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCollections`](crate::client::fluent_builders::ListCollections) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCollections::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_filters(CollectionFilters)`](crate::client::fluent_builders::ListCollections::collection_filters) / [`set_collection_filters(Option<CollectionFilters>)`](crate::client::fluent_builders::ListCollections::set_collection_filters): <p>List of filter names and values that you can use for requests.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCollections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCollections::set_next_token): <p>If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code> operations, which returns results in the next page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCollections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCollections::set_max_results): <p>The maximum number of results to return. Default is 20. You can use <code>nextToken</code> to get the next page of results.</p>
-    /// - On success, responds with [`ListCollectionsOutput`](crate::output::ListCollectionsOutput) with field(s):
-    ///   - [`collection_summaries(Option<Vec<CollectionSummary>>)`](crate::output::ListCollectionsOutput::collection_summaries): <p>Details about each collection.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListCollectionsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListCollectionsError>`](crate::error::ListCollectionsError)
-    pub fn list_collections(&self) -> crate::client::fluent_builders::ListCollections {
-        crate::client::fluent_builders::ListCollections::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSecurityConfigs`](crate::client::fluent_builders::ListSecurityConfigs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityConfigs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityConfigType)`](crate::client::fluent_builders::ListSecurityConfigs::type) / [`set_type(Option<SecurityConfigType>)`](crate::client::fluent_builders::ListSecurityConfigs::set_type): <p>The type of security configuration.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityConfigs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityConfigs::set_next_token): <p>If your initial <code>ListSecurityConfigs</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityConfigs</code> operations, which returns results in the next page. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityConfigs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityConfigs::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
-    /// - On success, responds with [`ListSecurityConfigsOutput`](crate::output::ListSecurityConfigsOutput) with field(s):
-    ///   - [`security_config_summaries(Option<Vec<SecurityConfigSummary>>)`](crate::output::ListSecurityConfigsOutput::security_config_summaries): <p>Details about the security configurations in your account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityConfigsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityConfigsError>`](crate::error::ListSecurityConfigsError)
-    pub fn list_security_configs(&self) -> crate::client::fluent_builders::ListSecurityConfigs {
-        crate::client::fluent_builders::ListSecurityConfigs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSecurityPolicies`](crate::client::fluent_builders::ListSecurityPolicies) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityPolicies::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityPolicyType)`](crate::client::fluent_builders::ListSecurityPolicies::type) / [`set_type(Option<SecurityPolicyType>)`](crate::client::fluent_builders::ListSecurityPolicies::set_type): <p>The type of policy.</p>
-    ///   - [`resource(Vec<String>)`](crate::client::fluent_builders::ListSecurityPolicies::resource) / [`set_resource(Option<Vec<String>>)`](crate::client::fluent_builders::ListSecurityPolicies::set_resource): <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSecurityPolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSecurityPolicies::set_next_token): <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSecurityPolicies::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSecurityPolicies::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
-    /// - On success, responds with [`ListSecurityPoliciesOutput`](crate::output::ListSecurityPoliciesOutput) with field(s):
-    ///   - [`security_policy_summaries(Option<Vec<SecurityPolicySummary>>)`](crate::output::ListSecurityPoliciesOutput::security_policy_summaries): <p>Details about the security policies in your account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSecurityPoliciesOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityPoliciesError>`](crate::error::ListSecurityPoliciesError)
-    pub fn list_security_policies(&self) -> crate::client::fluent_builders::ListSecurityPolicies {
-        crate::client::fluent_builders::ListSecurityPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the <code>DELETING</code> state), and must be owned by the account ID included in the request.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListVpcEndpoints`](crate::client::fluent_builders::ListVpcEndpoints) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVpcEndpoints::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`vpc_endpoint_filters(VpcEndpointFilters)`](crate::client::fluent_builders::ListVpcEndpoints::vpc_endpoint_filters) / [`set_vpc_endpoint_filters(Option<VpcEndpointFilters>)`](crate::client::fluent_builders::ListVpcEndpoints::set_vpc_endpoint_filters): <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVpcEndpoints::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVpcEndpoints::set_next_token): <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVpcEndpoints::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVpcEndpoints::set_max_results): <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
-    /// - On success, responds with [`ListVpcEndpointsOutput`](crate::output::ListVpcEndpointsOutput) with field(s):
-    ///   - [`vpc_endpoint_summaries(Option<Vec<VpcEndpointSummary>>)`](crate::output::ListVpcEndpointsOutput::vpc_endpoint_summaries): <p>Details about each VPC endpoint, including the name and current status.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListVpcEndpointsOutput::next_token): <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    /// - On failure, responds with [`SdkError<ListVpcEndpointsError>`](crate::error::ListVpcEndpointsError)
-    pub fn list_vpc_endpoints(&self) -> crate::client::fluent_builders::ListVpcEndpoints {
-        crate::client::fluent_builders::ListVpcEndpoints::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the <code>DELETING</code> state), and must be owned by the account ID included in the request.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags (key-value pairs) to add to the resource. All tag keys in the request must be unique.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to remove tags from. The resource must be active (not in the <code>DELETING</code> state), and must be owned by the account ID included in the request.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag or set of tags to remove from the resource. All tag keys in the request must be unique.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAccessPolicy`](crate::client::fluent_builders::UpdateAccessPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(AccessPolicyType)`](crate::client::fluent_builders::UpdateAccessPolicy::type) / [`set_type(Option<AccessPolicyType>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_type): <p>The type of policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_name): <p>The name of the policy.</p>
-    ///   - [`policy_version(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::policy_version) / [`set_policy_version(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_policy_version): <p>The version of the policy being updated.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_description): <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_policy): <p>The JSON policy document to use as the content for the policy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateAccessPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`UpdateAccessPolicyOutput`](crate::output::UpdateAccessPolicyOutput) with field(s):
-    ///   - [`access_policy_detail(Option<AccessPolicyDetail>)`](crate::output::UpdateAccessPolicyOutput::access_policy_detail): <p>Details about the updated access policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateAccessPolicyError>`](crate::error::UpdateAccessPolicyError)
-    pub fn update_access_policy(&self) -> crate::client::fluent_builders::UpdateAccessPolicy {
-        crate::client::fluent_builders::UpdateAccessPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`capacity_limits(CapacityLimits)`](crate::client::fluent_builders::UpdateAccountSettings::capacity_limits) / [`set_capacity_limits(Option<CapacityLimits>)`](crate::client::fluent_builders::UpdateAccountSettings::set_capacity_limits): <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p>
-    /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput) with field(s):
-    ///   - [`account_settings_detail(Option<AccountSettingsDetail>)`](crate::output::UpdateAccountSettingsOutput::account_settings_detail): <p>OpenSearch Serverless-related settings for the current Amazon Web Services account. </p>
-    /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
-    pub fn update_account_settings(&self) -> crate::client::fluent_builders::UpdateAccountSettings {
-        crate::client::fluent_builders::UpdateAccountSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCollection`](crate::client::fluent_builders::UpdateCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCollection::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCollection::set_id): <p>The unique identifier of the collection.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateCollection::set_description): <p>A description of the collection.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateCollection::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateCollection::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`UpdateCollectionOutput`](crate::output::UpdateCollectionOutput) with field(s):
-    ///   - [`update_collection_detail(Option<UpdateCollectionDetail>)`](crate::output::UpdateCollectionOutput::update_collection_detail): <p>Details about the updated collection.</p>
-    /// - On failure, responds with [`SdkError<UpdateCollectionError>`](crate::error::UpdateCollectionError)
-    pub fn update_collection(&self) -> crate::client::fluent_builders::UpdateCollection {
-        crate::client::fluent_builders::UpdateCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSecurityConfig`](crate::client::fluent_builders::UpdateSecurityConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::set_id): <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    ///   - [`config_version(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::config_version) / [`set_config_version(Option<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::set_config_version): <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::set_description): <p>A description of the security configuration.</p>
-    ///   - [`saml_options(SamlConfigOptions)`](crate::client::fluent_builders::UpdateSecurityConfig::saml_options) / [`set_saml_options(Option<SamlConfigOptions>)`](crate::client::fluent_builders::UpdateSecurityConfig::set_saml_options): <p>SAML options in in the form of a key-value map.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateSecurityConfig::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`UpdateSecurityConfigOutput`](crate::output::UpdateSecurityConfigOutput) with field(s):
-    ///   - [`security_config_detail(Option<SecurityConfigDetail>)`](crate::output::UpdateSecurityConfigOutput::security_config_detail): <p>Details about the updated security configuration. </p>
-    /// - On failure, responds with [`SdkError<UpdateSecurityConfigError>`](crate::error::UpdateSecurityConfigError)
-    pub fn update_security_config(&self) -> crate::client::fluent_builders::UpdateSecurityConfig {
-        crate::client::fluent_builders::UpdateSecurityConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSecurityPolicy`](crate::client::fluent_builders::UpdateSecurityPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(SecurityPolicyType)`](crate::client::fluent_builders::UpdateSecurityPolicy::type) / [`set_type(Option<SecurityPolicyType>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_type): <p>The type of access policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_name): <p>The name of the policy.</p>
-    ///   - [`policy_version(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::policy_version) / [`set_policy_version(Option<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_policy_version): <p>The version of the policy being updated.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_description): <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_policy): <p>The JSON policy document to use as the content for the new policy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateSecurityPolicy::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`UpdateSecurityPolicyOutput`](crate::output::UpdateSecurityPolicyOutput) with field(s):
-    ///   - [`security_policy_detail(Option<SecurityPolicyDetail>)`](crate::output::UpdateSecurityPolicyOutput::security_policy_detail): <p>Details about the updated security policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateSecurityPolicyError>`](crate::error::UpdateSecurityPolicyError)
-    pub fn update_security_policy(&self) -> crate::client::fluent_builders::UpdateSecurityPolicy {
-        crate::client::fluent_builders::UpdateSecurityPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateVpcEndpoint`](crate::client::fluent_builders::UpdateVpcEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_id): <p>The unique identifier of the interface endpoint to update.</p>
-    ///   - [`add_subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::add_subnet_ids) / [`set_add_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_add_subnet_ids): <p>The ID of one or more subnets to add to the endpoint.</p>
-    ///   - [`remove_subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::remove_subnet_ids) / [`set_remove_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_remove_subnet_ids): <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    ///   - [`add_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::add_security_group_ids) / [`set_add_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_add_security_group_ids): <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    ///   - [`remove_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::remove_security_group_ids) / [`set_remove_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_remove_security_group_ids): <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateVpcEndpoint::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    /// - On success, responds with [`UpdateVpcEndpointOutput`](crate::output::UpdateVpcEndpointOutput) with field(s):
-    ///   - [`update_vpc_endpoint_detail(Option<UpdateVpcEndpointDetail>)`](crate::output::UpdateVpcEndpointOutput::update_vpc_endpoint_detail): <p>Details about the updated VPC endpoint.</p>
-    /// - On failure, responds with [`SdkError<UpdateVpcEndpointError>`](crate::error::UpdateVpcEndpointError)
-    pub fn update_vpc_endpoint(&self) -> crate::client::fluent_builders::UpdateVpcEndpoint {
-        crate::client::fluent_builders::UpdateVpcEndpoint::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -566,9 +174,71 @@ impl Client {
     }
 }
 
+mod batch_get_collection;
+
+mod batch_get_vpc_endpoint;
+
+mod create_access_policy;
+
+mod create_collection;
+
+mod create_security_config;
+
+mod create_security_policy;
+
+mod create_vpc_endpoint;
+
+mod delete_access_policy;
+
+mod delete_collection;
+
+mod delete_security_config;
+
+mod delete_security_policy;
+
+mod delete_vpc_endpoint;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_access_policy;
+
+mod get_account_settings;
+
+mod get_policies_stats;
+
+mod get_security_config;
+
+mod get_security_policy;
+
+mod list_access_policies;
+
+mod list_collections;
+
+mod list_security_configs;
+
+mod list_security_policies;
+
+mod list_tags_for_resource;
+
+mod list_vpc_endpoints;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_access_policy;
+
+mod update_account_settings;
+
+mod update_collection;
+
+mod update_security_config;
+
+mod update_security_policy;
+
+mod update_vpc_endpoint;

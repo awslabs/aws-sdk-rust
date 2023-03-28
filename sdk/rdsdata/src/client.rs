@@ -89,103 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchExecuteStatement`](crate::client::fluent_builders::BatchExecuteStatement) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_secret_arn): <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_sql): <p>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</p>
-    ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_database): <p>The name of the database.</p>
-    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_schema): <p>The name of the database schema.</p> <note>   <p>Currently, the <code>schema</code> parameter isn't supported.</p>  </note>
-    ///   - [`parameter_sets(Vec<Vec<SqlParameter>>)`](crate::client::fluent_builders::BatchExecuteStatement::parameter_sets) / [`set_parameter_sets(Option<Vec<Vec<SqlParameter>>>)`](crate::client::fluent_builders::BatchExecuteStatement::set_parameter_sets): <p>The parameter set for the batch operation.</p>  <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>  <ul>   <li> <p>Specify one or more empty parameter sets.</p> </li>   <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>  </ul> <note>   <p>Array parameters are not supported.</p>  </note>
-    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::BatchExecuteStatement::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::BatchExecuteStatement::set_transaction_id): <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>  <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    /// - On success, responds with [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput) with field(s):
-    ///   - [`update_results(Option<Vec<UpdateResult>>)`](crate::output::BatchExecuteStatementOutput::update_results): <p>The execution results of each batch entry.</p>
-    /// - On failure, responds with [`SdkError<BatchExecuteStatementError>`](crate::error::BatchExecuteStatementError)
-    pub fn batch_execute_statement(&self) -> crate::client::fluent_builders::BatchExecuteStatement {
-        crate::client::fluent_builders::BatchExecuteStatement::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BeginTransaction`](crate::client::fluent_builders::BeginTransaction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::BeginTransaction::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::BeginTransaction::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::BeginTransaction::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::BeginTransaction::set_secret_arn): <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::BeginTransaction::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::BeginTransaction::set_database): <p>The name of the database.</p>
-    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::BeginTransaction::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::BeginTransaction::set_schema): <p>The name of the database schema.</p>
-    /// - On success, responds with [`BeginTransactionOutput`](crate::output::BeginTransactionOutput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::output::BeginTransactionOutput::transaction_id): <p>The transaction ID of the transaction started by the call.</p>
-    /// - On failure, responds with [`SdkError<BeginTransactionError>`](crate::error::BeginTransactionError)
-    pub fn begin_transaction(&self) -> crate::client::fluent_builders::BeginTransaction {
-        crate::client::fluent_builders::BeginTransaction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CommitTransaction`](crate::client::fluent_builders::CommitTransaction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::CommitTransaction::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::CommitTransaction::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::CommitTransaction::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::CommitTransaction::set_secret_arn): <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::CommitTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::CommitTransaction::set_transaction_id): <p>The identifier of the transaction to end and commit.</p>
-    /// - On success, responds with [`CommitTransactionOutput`](crate::output::CommitTransactionOutput) with field(s):
-    ///   - [`transaction_status(Option<String>)`](crate::output::CommitTransactionOutput::transaction_status): <p>The status of the commit operation.</p>
-    /// - On failure, responds with [`SdkError<CommitTransactionError>`](crate::error::CommitTransactionError)
-    pub fn commit_transaction(&self) -> crate::client::fluent_builders::CommitTransaction {
-        crate::client::fluent_builders::CommitTransaction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExecuteSql`](crate::client::fluent_builders::ExecuteSql) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`db_cluster_or_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::db_cluster_or_instance_arn) / [`set_db_cluster_or_instance_arn(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_db_cluster_or_instance_arn): <p>The ARN of the Aurora Serverless DB cluster.</p>
-    ///   - [`aws_secret_store_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::aws_secret_store_arn) / [`set_aws_secret_store_arn(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_aws_secret_store_arn): <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    ///   - [`sql_statements(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::sql_statements) / [`set_sql_statements(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_sql_statements): <p>One or more SQL statements to run on the DB cluster.</p>  <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
-    ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_database): <p>The name of the database.</p>
-    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::ExecuteSql::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::ExecuteSql::set_schema): <p>The name of the database schema.</p>
-    /// - On success, responds with [`ExecuteSqlOutput`](crate::output::ExecuteSqlOutput) with field(s):
-    ///   - [`sql_statement_results(Option<Vec<SqlStatementResult>>)`](crate::output::ExecuteSqlOutput::sql_statement_results): <p>The results of the SQL statement or statements.</p>
-    /// - On failure, responds with [`SdkError<ExecuteSqlError>`](crate::error::ExecuteSqlError)
-    #[deprecated(
-        note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.",
-        since = "2019-03-21"
-    )]
-    pub fn execute_sql(&self) -> crate::client::fluent_builders::ExecuteSql {
-        crate::client::fluent_builders::ExecuteSql::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExecuteStatement`](crate::client::fluent_builders::ExecuteStatement) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_secret_arn): <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>  <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    ///   - [`sql(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::sql) / [`set_sql(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_sql): <p>The SQL statement to run.</p>
-    ///   - [`database(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::database) / [`set_database(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_database): <p>The name of the database.</p>
-    ///   - [`schema(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::schema) / [`set_schema(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_schema): <p>The name of the database schema.</p> <note>   <p>Currently, the <code>schema</code> parameter isn't supported.</p>  </note>
-    ///   - [`parameters(Vec<SqlParameter>)`](crate::client::fluent_builders::ExecuteStatement::parameters) / [`set_parameters(Option<Vec<SqlParameter>>)`](crate::client::fluent_builders::ExecuteStatement::set_parameters): <p>The parameters for the SQL statement.</p> <note>   <p>Array parameters are not supported.</p>  </note>
-    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::ExecuteStatement::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::ExecuteStatement::set_transaction_id): <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>  <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-    ///   - [`include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::include_result_metadata) / [`set_include_result_metadata(bool)`](crate::client::fluent_builders::ExecuteStatement::set_include_result_metadata): <p>A value that indicates whether to include metadata in the results.</p>
-    ///   - [`continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::continue_after_timeout) / [`set_continue_after_timeout(bool)`](crate::client::fluent_builders::ExecuteStatement::set_continue_after_timeout): <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>   <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>  </note>
-    ///   - [`result_set_options(ResultSetOptions)`](crate::client::fluent_builders::ExecuteStatement::result_set_options) / [`set_result_set_options(Option<ResultSetOptions>)`](crate::client::fluent_builders::ExecuteStatement::set_result_set_options): <p>Options that control how the result set is returned.</p>
-    ///   - [`format_records_as(RecordsFormatType)`](crate::client::fluent_builders::ExecuteStatement::format_records_as) / [`set_format_records_as(Option<RecordsFormatType>)`](crate::client::fluent_builders::ExecuteStatement::set_format_records_as): <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>  <p>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    /// - On success, responds with [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput) with field(s):
-    ///   - [`records(Option<Vec<Vec<Field>>>)`](crate::output::ExecuteStatementOutput::records): <p>The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    ///   - [`column_metadata(Option<Vec<ColumnMetadata>>)`](crate::output::ExecuteStatementOutput::column_metadata): <p>Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>
-    ///   - [`number_of_records_updated(i64)`](crate::output::ExecuteStatementOutput::number_of_records_updated): <p>The number of records updated by the request.</p>
-    ///   - [`generated_fields(Option<Vec<Field>>)`](crate::output::ExecuteStatementOutput::generated_fields): <p>Values for fields generated during a DML request.</p> <note>   <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>  </note>
-    ///   - [`formatted_records(Option<String>)`](crate::output::ExecuteStatementOutput::formatted_records): <p>A string value that represents the result set of a <code>SELECT</code> statement in JSON format. This value is only present when the <code>formatRecordsAs</code> parameter is set to <code>JSON</code>.</p>  <p>The size limit for this field is currently 10 MB. If the JSON-formatted string representing the result set requires more than 10 MB, the call returns an error.</p>
-    /// - On failure, responds with [`SdkError<ExecuteStatementError>`](crate::error::ExecuteStatementError)
-    pub fn execute_statement(&self) -> crate::client::fluent_builders::ExecuteStatement {
-        crate::client::fluent_builders::ExecuteStatement::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RollbackTransaction`](crate::client::fluent_builders::RollbackTransaction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::RollbackTransaction::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::RollbackTransaction::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    ///   - [`secret_arn(impl Into<String>)`](crate::client::fluent_builders::RollbackTransaction::secret_arn) / [`set_secret_arn(Option<String>)`](crate::client::fluent_builders::RollbackTransaction::set_secret_arn): <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::RollbackTransaction::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::RollbackTransaction::set_transaction_id): <p>The identifier of the transaction to roll back.</p>
-    /// - On success, responds with [`RollbackTransactionOutput`](crate::output::RollbackTransactionOutput) with field(s):
-    ///   - [`transaction_status(Option<String>)`](crate::output::RollbackTransactionOutput::transaction_status): <p>The status of the rollback operation.</p>
-    /// - On failure, responds with [`SdkError<RollbackTransactionError>`](crate::error::RollbackTransactionError)
-    pub fn rollback_transaction(&self) -> crate::client::fluent_builders::RollbackTransaction {
-        crate::client::fluent_builders::RollbackTransaction::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -271,9 +174,21 @@ impl Client {
     }
 }
 
+mod batch_execute_statement;
+
+mod begin_transaction;
+
+mod commit_transaction;
+
+mod execute_sql;
+
+mod execute_statement;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod rollback_transaction;

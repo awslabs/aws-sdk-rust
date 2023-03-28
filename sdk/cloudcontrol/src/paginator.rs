@@ -90,7 +90,8 @@ impl ListResourceRequestsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resource_requests_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resource_requests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -254,7 +256,11 @@ impl ListResourceRequestsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListResourceRequestsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_resource_requests_output_resource_request_status_summaries(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_resource_requests_output_resource_request_status_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -278,11 +284,9 @@ impl ListResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_resources_output_resource_descriptions(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_resources_output_resource_descriptions(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

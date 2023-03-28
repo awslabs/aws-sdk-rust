@@ -27,9 +27,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIceServerConfig {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_ice_server_config_error(response)
+            crate::protocol_serde::shape_get_ice_server_config::de_get_ice_server_config_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_ice_server_config_response(response)
+            crate::protocol_serde::shape_get_ice_server_config::de_get_ice_server_config_http_response(response)
         }
     }
 }
@@ -62,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SendAlexaOfferToMaster {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_send_alexa_offer_to_master_error(response)
+            crate::protocol_serde::shape_send_alexa_offer_to_master::de_send_alexa_offer_to_master_http_error(response)
         } else {
-            crate::operation_deser::parse_send_alexa_offer_to_master_response(response)
+            crate::protocol_serde::shape_send_alexa_offer_to_master::de_send_alexa_offer_to_master_http_response(response)
         }
     }
 }

@@ -84,7 +84,7 @@ impl DescribeAnomalyDetectionExecutionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_anomaly_detection_executions_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_anomaly_detection_executions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -194,7 +194,8 @@ impl GetFeedbackPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_feedback_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_feedback_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -304,7 +305,8 @@ impl ListAlertsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_alerts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_alerts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -414,7 +416,8 @@ impl ListAnomalyDetectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomaly_detectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_anomaly_detectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -524,7 +527,7 @@ impl ListAnomalyGroupRelatedMetricsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomaly_group_related_metrics_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_anomaly_group_related_metrics_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -634,7 +637,10 @@ impl ListAnomalyGroupSummariesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomaly_group_summaries_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_anomaly_group_summaries_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -744,7 +750,7 @@ impl ListAnomalyGroupTimeSeriesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomaly_group_time_series_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_anomaly_group_time_series_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -854,7 +860,8 @@ impl ListMetricSetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_metric_sets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_metric_sets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

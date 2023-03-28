@@ -89,190 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateKeyspace`](crate::client::fluent_builders::CreateKeyspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::CreateKeyspace::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::CreateKeyspace::set_keyspace_name): <p>The name of the keyspace to be created.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateKeyspace::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateKeyspace::set_tags): <p>A list of key-value pair tags to be attached to the keyspace.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::output::CreateKeyspaceOutput::resource_arn): <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    /// - On failure, responds with [`SdkError<CreateKeyspaceError>`](crate::error::CreateKeyspaceError)
-    pub fn create_keyspace(&self) -> crate::client::fluent_builders::CreateKeyspace {
-        crate::client::fluent_builders::CreateKeyspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateTable`](crate::client::fluent_builders::CreateTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::CreateTable::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::CreateTable::set_keyspace_name): <p>The name of the keyspace that the table is going to be created in.</p>
-    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::CreateTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::CreateTable::set_table_name): <p>The name of the table.</p>
-    ///   - [`schema_definition(SchemaDefinition)`](crate::client::fluent_builders::CreateTable::schema_definition) / [`set_schema_definition(Option<SchemaDefinition>)`](crate::client::fluent_builders::CreateTable::set_schema_definition): <p>The <code>schemaDefinition</code> consists of the following parameters.</p>  <p>For each column to be created:</p>  <p>• <code>name</code> - The name of the column.</p>  <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>  <p>The primary key of the table consists of the following columns:</p>  <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p>  <p>• <code>name</code> - The name of each partition key column.</p>  <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>  <p>• <code>name</code> - The name of the clustering column. </p>  <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>  <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>  <p>• <code>name</code> - The name of the column.</p>  <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
-    ///   - [`comment(Comment)`](crate::client::fluent_builders::CreateTable::comment) / [`set_comment(Option<Comment>)`](crate::client::fluent_builders::CreateTable::set_comment): <p>This parameter allows to enter a description of the table.</p>
-    ///   - [`capacity_specification(CapacitySpecification)`](crate::client::fluent_builders::CreateTable::capacity_specification) / [`set_capacity_specification(Option<CapacitySpecification>)`](crate::client::fluent_builders::CreateTable::set_capacity_specification): <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>  <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>  <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>  <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`encryption_specification(EncryptionSpecification)`](crate::client::fluent_builders::CreateTable::encryption_specification) / [`set_encryption_specification(Option<EncryptionSpecification>)`](crate::client::fluent_builders::CreateTable::set_encryption_specification): <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>  <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>  <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>  <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`point_in_time_recovery(PointInTimeRecovery)`](crate::client::fluent_builders::CreateTable::point_in_time_recovery) / [`set_point_in_time_recovery(Option<PointInTimeRecovery>)`](crate::client::fluent_builders::CreateTable::set_point_in_time_recovery): <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>  <p>• <code>ENABLED</code> </p>  <p>• <code>DISABLED</code> </p>  <p>If it's not specified, the default is <code>DISABLED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`ttl(TimeToLive)`](crate::client::fluent_builders::CreateTable::ttl) / [`set_ttl(Option<TimeToLive>)`](crate::client::fluent_builders::CreateTable::set_ttl): <p>Enables Time to Live custom settings for the table. The options are:</p>  <p>• <code>status:enabled</code> </p>  <p>• <code>status:disabled</code> </p>  <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`default_time_to_live(i32)`](crate::client::fluent_builders::CreateTable::default_time_to_live) / [`set_default_time_to_live(Option<i32>)`](crate::client::fluent_builders::CreateTable::set_default_time_to_live): <p>The default Time to Live setting in seconds for the table.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateTable::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateTable::set_tags): <p>A list of key-value pair tags to be attached to the resource. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateTableOutput`](crate::output::CreateTableOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::output::CreateTableOutput::resource_arn): <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    /// - On failure, responds with [`SdkError<CreateTableError>`](crate::error::CreateTableError)
-    pub fn create_table(&self) -> crate::client::fluent_builders::CreateTable {
-        crate::client::fluent_builders::CreateTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteKeyspace`](crate::client::fluent_builders::DeleteKeyspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyspace::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::DeleteKeyspace::set_keyspace_name): <p>The name of the keyspace to be deleted.</p>
-    /// - On success, responds with [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteKeyspaceError>`](crate::error::DeleteKeyspaceError)
-    pub fn delete_keyspace(&self) -> crate::client::fluent_builders::DeleteKeyspace {
-        crate::client::fluent_builders::DeleteKeyspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTable`](crate::client::fluent_builders::DeleteTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_keyspace_name): <p>The name of the keyspace of the to be deleted table.</p>
-    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::DeleteTable::set_table_name): <p>The name of the table to be deleted.</p>
-    /// - On success, responds with [`DeleteTableOutput`](crate::output::DeleteTableOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::error::DeleteTableError)
-    pub fn delete_table(&self) -> crate::client::fluent_builders::DeleteTable {
-        crate::client::fluent_builders::DeleteTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetKeyspace`](crate::client::fluent_builders::GetKeyspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::GetKeyspace::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::GetKeyspace::set_keyspace_name): <p>The name of the keyspace.</p>
-    /// - On success, responds with [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput) with field(s):
-    ///   - [`keyspace_name(Option<String>)`](crate::output::GetKeyspaceOutput::keyspace_name): <p>The name of the keyspace.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::output::GetKeyspaceOutput::resource_arn): <p>The ARN of the keyspace.</p>
-    /// - On failure, responds with [`SdkError<GetKeyspaceError>`](crate::error::GetKeyspaceError)
-    pub fn get_keyspace(&self) -> crate::client::fluent_builders::GetKeyspace {
-        crate::client::fluent_builders::GetKeyspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetTable`](crate::client::fluent_builders::GetTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::GetTable::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::GetTable::set_keyspace_name): <p>The name of the keyspace that the table is stored in.</p>
-    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::GetTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::GetTable::set_table_name): <p>The name of the table.</p>
-    /// - On success, responds with [`GetTableOutput`](crate::output::GetTableOutput) with field(s):
-    ///   - [`keyspace_name(Option<String>)`](crate::output::GetTableOutput::keyspace_name): <p>The name of the keyspace that the specified table is stored in.</p>
-    ///   - [`table_name(Option<String>)`](crate::output::GetTableOutput::table_name): <p>The name of the specified table.</p>
-    ///   - [`resource_arn(Option<String>)`](crate::output::GetTableOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the specified table.</p>
-    ///   - [`creation_timestamp(Option<DateTime>)`](crate::output::GetTableOutput::creation_timestamp): <p>The creation timestamp of the specified table.</p>
-    ///   - [`status(Option<TableStatus>)`](crate::output::GetTableOutput::status): <p>The current status of the specified table.</p>
-    ///   - [`schema_definition(Option<SchemaDefinition>)`](crate::output::GetTableOutput::schema_definition): <p>The schema definition of the specified table.</p>
-    ///   - [`capacity_specification(Option<CapacitySpecificationSummary>)`](crate::output::GetTableOutput::capacity_specification): <p>The read/write throughput capacity mode for a table. The options are:</p>  <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>  <p>• <code>throughputMode:PROVISIONED</code> </p>
-    ///   - [`encryption_specification(Option<EncryptionSpecification>)`](crate::output::GetTableOutput::encryption_specification): <p>The encryption settings of the specified table.</p>
-    ///   - [`point_in_time_recovery(Option<PointInTimeRecoverySummary>)`](crate::output::GetTableOutput::point_in_time_recovery): <p>The point-in-time recovery status of the specified table.</p>
-    ///   - [`ttl(Option<TimeToLive>)`](crate::output::GetTableOutput::ttl): <p>The custom Time to Live settings of the specified table.</p>
-    ///   - [`default_time_to_live(Option<i32>)`](crate::output::GetTableOutput::default_time_to_live): <p>The default Time to Live settings of the specified table.</p>
-    ///   - [`comment(Option<Comment>)`](crate::output::GetTableOutput::comment): <p>The the description of the specified table.</p>
-    /// - On failure, responds with [`SdkError<GetTableError>`](crate::error::GetTableError)
-    pub fn get_table(&self) -> crate::client::fluent_builders::GetTable {
-        crate::client::fluent_builders::GetTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListKeyspaces`](crate::client::fluent_builders::ListKeyspaces) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListKeyspaces::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListKeyspaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListKeyspaces::set_next_token): <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListKeyspaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListKeyspaces::set_max_results): <p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
-    /// - On success, responds with [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListKeyspacesOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    ///   - [`keyspaces(Option<Vec<KeyspaceSummary>>)`](crate::output::ListKeyspacesOutput::keyspaces): <p>A list of keyspaces.</p>
-    /// - On failure, responds with [`SdkError<ListKeyspacesError>`](crate::error::ListKeyspacesError)
-    pub fn list_keyspaces(&self) -> crate::client::fluent_builders::ListKeyspaces {
-        crate::client::fluent_builders::ListKeyspaces::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTables`](crate::client::fluent_builders::ListTables) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTables::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTables::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTables::set_next_token): <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTables::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTables::set_max_results): <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::ListTables::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::ListTables::set_keyspace_name): <p>The name of the keyspace.</p>
-    /// - On success, responds with [`ListTablesOutput`](crate::output::ListTablesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListTablesOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    ///   - [`tables(Option<Vec<TableSummary>>)`](crate::output::ListTablesOutput::tables): <p>A list of tables.</p>
-    /// - On failure, responds with [`SdkError<ListTablesError>`](crate::error::ListTablesError)
-    pub fn list_tables(&self) -> crate::client::fluent_builders::ListTables {
-        crate::client::fluent_builders::ListTables::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTagsForResource::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTagsForResource::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTagsForResource::set_max_results): <p>The total number of tags to return in the output. If the total number of tags available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tags.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RestoreTable`](crate::client::fluent_builders::RestoreTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_keyspace_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTable::source_keyspace_name) / [`set_source_keyspace_name(Option<String>)`](crate::client::fluent_builders::RestoreTable::set_source_keyspace_name): <p>The keyspace name of the source table.</p>
-    ///   - [`source_table_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTable::source_table_name) / [`set_source_table_name(Option<String>)`](crate::client::fluent_builders::RestoreTable::set_source_table_name): <p>The name of the source table.</p>
-    ///   - [`target_keyspace_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTable::target_keyspace_name) / [`set_target_keyspace_name(Option<String>)`](crate::client::fluent_builders::RestoreTable::set_target_keyspace_name): <p>The name of the target keyspace.</p>
-    ///   - [`target_table_name(impl Into<String>)`](crate::client::fluent_builders::RestoreTable::target_table_name) / [`set_target_table_name(Option<String>)`](crate::client::fluent_builders::RestoreTable::set_target_table_name): <p>The name of the target table.</p>
-    ///   - [`restore_timestamp(DateTime)`](crate::client::fluent_builders::RestoreTable::restore_timestamp) / [`set_restore_timestamp(Option<DateTime>)`](crate::client::fluent_builders::RestoreTable::set_restore_timestamp): <p>The restore timestamp in ISO 8601 format.</p>
-    ///   - [`capacity_specification_override(CapacitySpecification)`](crate::client::fluent_builders::RestoreTable::capacity_specification_override) / [`set_capacity_specification_override(Option<CapacitySpecification>)`](crate::client::fluent_builders::RestoreTable::set_capacity_specification_override): <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>  <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>  <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>  <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`encryption_specification_override(EncryptionSpecification)`](crate::client::fluent_builders::RestoreTable::encryption_specification_override) / [`set_encryption_specification_override(Option<EncryptionSpecification>)`](crate::client::fluent_builders::RestoreTable::set_encryption_specification_override): <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>  <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>  <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>  <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`point_in_time_recovery_override(PointInTimeRecovery)`](crate::client::fluent_builders::RestoreTable::point_in_time_recovery_override) / [`set_point_in_time_recovery_override(Option<PointInTimeRecovery>)`](crate::client::fluent_builders::RestoreTable::set_point_in_time_recovery_override): <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>  <p>• <code>ENABLED</code> </p>  <p>• <code>DISABLED</code> </p>  <p>If it's not specified, the default is <code>DISABLED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`tags_override(Vec<Tag>)`](crate::client::fluent_builders::RestoreTable::tags_override) / [`set_tags_override(Option<Vec<Tag>>)`](crate::client::fluent_builders::RestoreTable::set_tags_override): <p>A list of key-value pair tags to be attached to the restored table. </p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// - On success, responds with [`RestoreTableOutput`](crate::output::RestoreTableOutput) with field(s):
-    ///   - [`restored_table_arn(Option<String>)`](crate::output::RestoreTableOutput::restored_table_arn): <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    /// - On failure, responds with [`SdkError<RestoreTableError>`](crate::error::RestoreTableError)
-    pub fn restore_table(&self) -> crate::client::fluent_builders::RestoreTable {
-        crate::client::fluent_builders::RestoreTable::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be assigned to the Amazon Keyspaces resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::UntagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::UntagResource::set_tags): <p>A list of existing tags to be removed from the Amazon Keyspaces resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTable`](crate::client::fluent_builders::UpdateTable) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_keyspace_name): <p>The name of the keyspace the specified table is stored in.</p>
-    ///   - [`table_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTable::table_name) / [`set_table_name(Option<String>)`](crate::client::fluent_builders::UpdateTable::set_table_name): <p>The name of the table.</p>
-    ///   - [`add_columns(Vec<ColumnDefinition>)`](crate::client::fluent_builders::UpdateTable::add_columns) / [`set_add_columns(Option<Vec<ColumnDefinition>>)`](crate::client::fluent_builders::UpdateTable::set_add_columns): <p>For each column to be added to the specified table:</p>  <p>• <code>name</code> - The name of the column.</p>  <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`capacity_specification(CapacitySpecification)`](crate::client::fluent_builders::UpdateTable::capacity_specification) / [`set_capacity_specification(Option<CapacitySpecification>)`](crate::client::fluent_builders::UpdateTable::set_capacity_specification): <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>  <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>  <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>  <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`encryption_specification(EncryptionSpecification)`](crate::client::fluent_builders::UpdateTable::encryption_specification) / [`set_encryption_specification(Option<EncryptionSpecification>)`](crate::client::fluent_builders::UpdateTable::set_encryption_specification): <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>  <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>  <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>  <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`point_in_time_recovery(PointInTimeRecovery)`](crate::client::fluent_builders::UpdateTable::point_in_time_recovery) / [`set_point_in_time_recovery(Option<PointInTimeRecovery>)`](crate::client::fluent_builders::UpdateTable::set_point_in_time_recovery): <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>  <p>• <code>ENABLED</code> </p>  <p>• <code>DISABLED</code> </p>  <p>If it's not specified, the default is <code>DISABLED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`ttl(TimeToLive)`](crate::client::fluent_builders::UpdateTable::ttl) / [`set_ttl(Option<TimeToLive>)`](crate::client::fluent_builders::UpdateTable::set_ttl): <p>Modifies Time to Live custom settings for the table. The options are:</p>  <p>• <code>status:enabled</code> </p>  <p>• <code>status:disabled</code> </p>  <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    ///   - [`default_time_to_live(i32)`](crate::client::fluent_builders::UpdateTable::default_time_to_live) / [`set_default_time_to_live(Option<i32>)`](crate::client::fluent_builders::UpdateTable::set_default_time_to_live): <p>The default Time to Live setting in seconds for the table.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// - On success, responds with [`UpdateTableOutput`](crate::output::UpdateTableOutput) with field(s):
-    ///   - [`resource_arn(Option<String>)`](crate::output::UpdateTableOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the modified table.</p>
-    /// - On failure, responds with [`SdkError<UpdateTableError>`](crate::error::UpdateTableError)
-    pub fn update_table(&self) -> crate::client::fluent_builders::UpdateTable {
-        crate::client::fluent_builders::UpdateTable::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -358,9 +174,35 @@ impl Client {
     }
 }
 
+mod create_keyspace;
+
+mod create_table;
+
+mod delete_keyspace;
+
+mod delete_table;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_keyspace;
+
+mod get_table;
+
+mod list_keyspaces;
+
+mod list_tables;
+
+mod list_tags_for_resource;
+
+mod restore_table;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_table;

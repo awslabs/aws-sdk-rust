@@ -90,7 +90,7 @@ impl GetApiKeysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_api_keys_output_position(resp);
+                            let new_token = crate::lens::reflens_get_api_keys_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -208,7 +208,8 @@ impl GetBasePathMappingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_base_path_mappings_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_base_path_mappings_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -326,7 +327,8 @@ impl GetClientCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_client_certificates_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_client_certificates_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -444,7 +446,8 @@ impl GetDeploymentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_deployments_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_deployments_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -562,7 +565,8 @@ impl GetDomainNamesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_domain_names_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_domain_names_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -680,7 +684,7 @@ impl GetModelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_models_output_position(resp);
+                            let new_token = crate::lens::reflens_get_models_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -798,7 +802,8 @@ impl GetResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_resources_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_resources_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -916,7 +921,8 @@ impl GetRestApisPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_rest_apis_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_rest_apis_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -1034,7 +1040,7 @@ impl GetUsagePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_usage_output_position(resp);
+                            let new_token = crate::lens::reflens_get_usage_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -1152,7 +1158,8 @@ impl GetUsagePlanKeysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_usage_plan_keys_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_usage_plan_keys_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -1270,7 +1277,8 @@ impl GetUsagePlansPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_usage_plans_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_usage_plans_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -1388,7 +1396,8 @@ impl GetVpcLinksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_vpc_links_output_position(resp);
+                            let new_token =
+                                crate::lens::reflens_get_vpc_links_output_position(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.position.as_ref()
@@ -1435,7 +1444,7 @@ impl GetApiKeysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_api_keys_output_items(page)
+            crate::lens::lens_get_api_keys_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1462,7 +1471,7 @@ impl GetBasePathMappingsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_base_path_mappings_output_items(page)
+            crate::lens::lens_get_base_path_mappings_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1489,7 +1498,7 @@ impl GetClientCertificatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_client_certificates_output_items(page)
+            crate::lens::lens_get_client_certificates_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1516,7 +1525,7 @@ impl GetDeploymentsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_deployments_output_items(page)
+            crate::lens::lens_get_deployments_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1543,7 +1552,7 @@ impl GetDomainNamesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_domain_names_output_items(page)
+            crate::lens::lens_get_domain_names_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1570,7 +1579,7 @@ impl GetModelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_models_output_items(page)
+            crate::lens::lens_get_models_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1597,7 +1606,7 @@ impl GetResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_resources_output_items(page)
+            crate::lens::lens_get_resources_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1624,7 +1633,7 @@ impl GetRestApisPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_rest_apis_output_items(page)
+            crate::lens::lens_get_rest_apis_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1651,7 +1660,7 @@ impl GetUsagePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_usage_output_items(page)
+            crate::lens::lens_get_usage_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1678,7 +1687,7 @@ impl GetUsagePlanKeysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_usage_plan_keys_output_items(page)
+            crate::lens::lens_get_usage_plan_keys_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1705,7 +1714,7 @@ impl GetUsagePlansPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_usage_plans_output_items(page)
+            crate::lens::lens_get_usage_plans_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1732,7 +1741,7 @@ impl GetVpcLinksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_vpc_links_output_items(page)
+            crate::lens::lens_get_vpc_links_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })

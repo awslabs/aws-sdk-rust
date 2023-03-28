@@ -76,8 +76,7 @@ impl AssociateChannelFlowInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_associate_channel_flow(input, builder)?;
+                let builder = crate::protocol_serde::shape_associate_channel_flow::ser_associate_channel_flow_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -91,7 +90,7 @@ impl AssociateChannelFlowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_channel_flow(
+            crate::protocol_serde::shape_associate_channel_flow::ser_associate_channel_flow_input(
                 &self,
             )?,
         );
@@ -236,8 +235,7 @@ impl BatchCreateChannelMembershipInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_batch_create_channel_membership(input, builder)?;
+                let builder = crate::protocol_serde::shape_batch_create_channel_membership::ser_batch_create_channel_membership_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -251,7 +249,7 @@ impl BatchCreateChannelMembershipInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_batch_create_channel_membership(&self)?
+            crate::protocol_serde::shape_batch_create_channel_membership::ser_batch_create_channel_membership_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -406,7 +404,9 @@ impl ChannelFlowCallbackInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_channel_flow_callback(&self)?,
+            crate::protocol_serde::shape_channel_flow_callback::ser_channel_flow_callback_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -519,7 +519,10 @@ impl CreateChannelInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_channel(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_channel::ser_create_channel_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -533,7 +536,7 @@ impl CreateChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_channel(&self)?,
+            crate::protocol_serde::shape_create_channel::ser_create_channel_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -667,7 +670,7 @@ impl CreateChannelBanInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_channel_ban(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_channel_ban::ser_create_channel_ban_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -681,7 +684,7 @@ impl CreateChannelBanInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_ban(&self)?,
+            crate::protocol_serde::shape_create_channel_ban::ser_create_channel_ban_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -804,7 +807,7 @@ impl CreateChannelFlowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_flow(&self)?,
+            crate::protocol_serde::shape_create_channel_flow::ser_create_channel_flow_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -938,8 +941,7 @@ impl CreateChannelMembershipInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_channel_membership(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_channel_membership::ser_create_channel_membership_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -953,9 +955,7 @@ impl CreateChannelMembershipInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_membership(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_channel_membership::ser_create_channel_membership_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1089,8 +1089,7 @@ impl CreateChannelModeratorInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_channel_moderator(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_channel_moderator::ser_create_channel_moderator_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1104,9 +1103,7 @@ impl CreateChannelModeratorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_channel_moderator(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_channel_moderator::ser_create_channel_moderator_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1252,7 +1249,10 @@ impl DeleteChannelInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_channel(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_channel::ser_delete_channel_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1406,7 +1406,7 @@ impl DeleteChannelBanInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_channel_ban(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_channel_ban::ser_delete_channel_ban_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1709,8 +1709,7 @@ impl DeleteChannelMembershipInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_channel_membership(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_channel_membership::ser_delete_channel_membership_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1880,8 +1879,7 @@ impl DeleteChannelMessageInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_channel_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_channel_message::ser_delete_channel_message_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2035,8 +2033,7 @@ impl DeleteChannelModeratorInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_channel_moderator(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_channel_moderator::ser_delete_channel_moderator_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2166,7 +2163,10 @@ impl DescribeChannelInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_channel(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_describe_channel::ser_describe_channel_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2320,7 +2320,7 @@ impl DescribeChannelBanInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_channel_ban(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_channel_ban::ser_describe_channel_ban_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2623,8 +2623,7 @@ impl DescribeChannelMembershipInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_channel_membership(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_channel_membership::ser_describe_channel_membership_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2782,7 +2781,7 @@ impl DescribeChannelMembershipForAppInstanceUserInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_channel_membership_for_app_instance_user(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_channel_membership_for_app_instance_user::ser_describe_channel_membership_for_app_instance_user_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2940,10 +2939,7 @@ impl DescribeChannelModeratedByAppInstanceUserInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_channel_moderated_by_app_instance_user(
-                        input, builder,
-                    )?;
+                let builder = crate::protocol_serde::shape_describe_channel_moderated_by_app_instance_user::ser_describe_channel_moderated_by_app_instance_user_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3097,8 +3093,7 @@ impl DescribeChannelModeratorInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_channel_moderator(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_channel_moderator::ser_describe_channel_moderator_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3252,8 +3247,7 @@ impl DisassociateChannelFlowInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_disassociate_channel_flow(input, builder)?;
+                let builder = crate::protocol_serde::shape_disassociate_channel_flow::ser_disassociate_channel_flow_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3407,9 +3401,7 @@ impl GetChannelMembershipPreferencesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_channel_membership_preferences(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_get_channel_membership_preferences::ser_get_channel_membership_preferences_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3579,7 +3571,7 @@ impl GetChannelMessageInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_channel_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_channel_message::ser_get_channel_message_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3750,8 +3742,7 @@ impl GetChannelMessageStatusInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_get_channel_message_status(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_channel_message_status::ser_get_channel_message_status_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4015,7 +4006,10 @@ impl ListChannelBansInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_channel_bans(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_list_channel_bans::ser_list_channel_bans_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4332,8 +4326,7 @@ impl ListChannelMembershipsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_channel_memberships(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_channel_memberships::ser_list_channel_memberships_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4473,10 +4466,7 @@ impl ListChannelMembershipsForAppInstanceUserInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_channel_memberships_for_app_instance_user(
-                        input, builder,
-                    )?;
+                let builder = crate::protocol_serde::shape_list_channel_memberships_for_app_instance_user::ser_list_channel_memberships_for_app_instance_user_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4666,7 +4656,7 @@ impl ListChannelMessagesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_channel_messages(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_channel_messages::ser_list_channel_messages_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4821,8 +4811,7 @@ impl ListChannelModeratorsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_channel_moderators(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_channel_moderators::ser_list_channel_moderators_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4977,7 +4966,10 @@ impl ListChannelsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_channels(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_list_channels::ser_list_channels_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5267,10 +5259,7 @@ impl ListChannelsModeratedByAppInstanceUserInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_channels_moderated_by_app_instance_user(
-                        input, builder,
-                    )?;
+                let builder = crate::protocol_serde::shape_list_channels_moderated_by_app_instance_user::ser_list_channels_moderated_by_app_instance_user_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5425,7 +5414,10 @@ impl ListSubChannelsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_sub_channels(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_list_sub_channels::ser_list_sub_channels_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5712,9 +5704,7 @@ impl PutChannelMembershipPreferencesInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_channel_membership_preferences(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_put_channel_membership_preferences::ser_put_channel_membership_preferences_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5728,7 +5718,7 @@ impl PutChannelMembershipPreferencesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_channel_membership_preferences(&self)?
+            crate::protocol_serde::shape_put_channel_membership_preferences::ser_put_channel_membership_preferences_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5891,8 +5881,7 @@ impl RedactChannelMessageInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_redact_channel_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_redact_channel_message::ser_redact_channel_message_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5906,7 +5895,7 @@ impl RedactChannelMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_redact_channel_message(
+            crate::protocol_serde::shape_redact_channel_message::ser_redact_channel_message_input(
                 &self,
             )?,
         );
@@ -6040,7 +6029,10 @@ impl SearchChannelsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_search_channels(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_search_channels::ser_search_channels_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6054,7 +6046,7 @@ impl SearchChannelsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_channels(&self)?,
+            crate::protocol_serde::shape_search_channels::ser_search_channels_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6191,7 +6183,7 @@ impl SendChannelMessageInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_send_channel_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_send_channel_message::ser_send_channel_message_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6205,7 +6197,9 @@ impl SendChannelMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_channel_message(&self)?,
+            crate::protocol_serde::shape_send_channel_message::ser_send_channel_message_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6337,7 +6331,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6469,7 +6463,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6599,7 +6593,10 @@ impl UpdateChannelInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_channel(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_update_channel::ser_update_channel_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6613,7 +6610,7 @@ impl UpdateChannelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_channel(&self)?,
+            crate::protocol_serde::shape_update_channel::ser_update_channel_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6760,7 +6757,7 @@ impl UpdateChannelFlowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_flow(&self)?,
+            crate::protocol_serde::shape_update_channel_flow::ser_update_channel_flow_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6914,8 +6911,7 @@ impl UpdateChannelMessageInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_channel_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_channel_message::ser_update_channel_message_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6929,7 +6925,7 @@ impl UpdateChannelMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_message(
+            crate::protocol_serde::shape_update_channel_message::ser_update_channel_message_input(
                 &self,
             )?,
         );
@@ -7065,8 +7061,7 @@ impl UpdateChannelReadMarkerInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_channel_read_marker(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_channel_read_marker::ser_update_channel_read_marker_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -7080,9 +7075,7 @@ impl UpdateChannelReadMarkerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_channel_read_marker(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_channel_read_marker::ser_update_channel_read_marker_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

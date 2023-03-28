@@ -70,7 +70,7 @@ impl DescribeEntitiesDetectionV2JobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_entities_detection_v2_job(&self)?
+            crate::protocol_serde::shape_describe_entities_detection_v2_job::ser_describe_entities_detection_v2_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -198,7 +198,7 @@ impl DescribeIcd10CmInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_icd10_cm_inference_job(&self)?
+            crate::protocol_serde::shape_describe_icd10_cm_inference_job::ser_describe_icd10_cm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -326,9 +326,7 @@ impl DescribePhiDetectionJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_phi_detection_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_phi_detection_job::ser_describe_phi_detection_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -456,7 +454,7 @@ impl DescribeRxNormInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_rx_norm_inference_job(&self)?
+            crate::protocol_serde::shape_describe_rx_norm_inference_job::ser_describe_rx_norm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -584,7 +582,7 @@ impl DescribeSnomedctInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_snomedct_inference_job(&self)?
+            crate::protocol_serde::shape_describe_snomedct_inference_job::ser_describe_snomedct_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -712,7 +710,7 @@ impl DetectEntitiesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detect_entities(&self)?,
+            crate::protocol_serde::shape_detect_entities::ser_detect_entities_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -840,7 +838,7 @@ impl DetectEntitiesV2Input {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detect_entities_v2(&self)?,
+            crate::protocol_serde::shape_detect_entities_v2::ser_detect_entities_v2_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -968,7 +966,7 @@ impl DetectPhiInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detect_phi(&self)?,
+            crate::protocol_serde::shape_detect_phi::ser_detect_phi_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1094,7 +1092,7 @@ impl InferIcd10CmInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_infer_icd10_cm(&self)?,
+            crate::protocol_serde::shape_infer_icd10_cm::ser_infer_icd10_cm_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1222,7 +1220,7 @@ impl InferRxNormInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_infer_rx_norm(&self)?,
+            crate::protocol_serde::shape_infer_rx_norm::ser_infer_rx_norm_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1350,7 +1348,7 @@ impl InferSnomedctInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_infer_snomedct(&self)?,
+            crate::protocol_serde::shape_infer_snomedct::ser_infer_snomedct_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1478,7 +1476,7 @@ impl ListEntitiesDetectionV2JobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_entities_detection_v2_jobs(&self)?
+            crate::protocol_serde::shape_list_entities_detection_v2_jobs::ser_list_entities_detection_v2_jobs_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1606,9 +1604,7 @@ impl ListIcd10CmInferenceJobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_icd10_cm_inference_jobs(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_icd10_cm_inference_jobs::ser_list_icd10_cm_inference_jobs_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1736,9 +1732,7 @@ impl ListPhiDetectionJobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_phi_detection_jobs(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_phi_detection_jobs::ser_list_phi_detection_jobs_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1866,9 +1860,7 @@ impl ListRxNormInferenceJobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_rx_norm_inference_jobs(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_rx_norm_inference_jobs::ser_list_rx_norm_inference_jobs_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1996,9 +1988,7 @@ impl ListSnomedctInferenceJobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_snomedct_inference_jobs(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_snomedct_inference_jobs::ser_list_snomedct_inference_jobs_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2129,7 +2119,7 @@ impl StartEntitiesDetectionV2JobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_entities_detection_v2_job(&self)?
+            crate::protocol_serde::shape_start_entities_detection_v2_job::ser_start_entities_detection_v2_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2260,9 +2250,7 @@ impl StartIcd10CmInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_icd10_cm_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_icd10_cm_inference_job::ser_start_icd10_cm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2393,9 +2381,7 @@ impl StartPhiDetectionJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_phi_detection_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_phi_detection_job::ser_start_phi_detection_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2526,9 +2512,7 @@ impl StartRxNormInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_rx_norm_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_rx_norm_inference_job::ser_start_rx_norm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2659,9 +2643,7 @@ impl StartSnomedctInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_snomedct_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_snomedct_inference_job::ser_start_snomedct_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2789,7 +2771,7 @@ impl StopEntitiesDetectionV2JobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_entities_detection_v2_job(&self)?
+            crate::protocol_serde::shape_stop_entities_detection_v2_job::ser_stop_entities_detection_v2_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2917,9 +2899,7 @@ impl StopIcd10CmInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_icd10_cm_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_stop_icd10_cm_inference_job::ser_stop_icd10_cm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3047,7 +3027,7 @@ impl StopPhiDetectionJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_phi_detection_job(
+            crate::protocol_serde::shape_stop_phi_detection_job::ser_stop_phi_detection_job_input(
                 &self,
             )?,
         );
@@ -3177,9 +3157,7 @@ impl StopRxNormInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_rx_norm_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_stop_rx_norm_inference_job::ser_stop_rx_norm_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3307,9 +3285,7 @@ impl StopSnomedctInferenceJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_snomedct_inference_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_stop_snomedct_inference_job::ser_stop_snomedct_inference_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

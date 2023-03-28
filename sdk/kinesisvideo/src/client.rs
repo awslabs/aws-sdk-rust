@@ -89,392 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateSignalingChannel`](crate::client::fluent_builders::CreateSignalingChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::CreateSignalingChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::CreateSignalingChannel::set_channel_name): <p>A name for the signaling channel that you are creating. It must be unique for each Amazon Web Services account and Amazon Web Services Region.</p>
-    ///   - [`channel_type(ChannelType)`](crate::client::fluent_builders::CreateSignalingChannel::channel_type) / [`set_channel_type(Option<ChannelType>)`](crate::client::fluent_builders::CreateSignalingChannel::set_channel_type): <p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>
-    ///   - [`single_master_configuration(SingleMasterConfiguration)`](crate::client::fluent_builders::CreateSignalingChannel::single_master_configuration) / [`set_single_master_configuration(Option<SingleMasterConfiguration>)`](crate::client::fluent_builders::CreateSignalingChannel::set_single_master_configuration): <p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateSignalingChannel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateSignalingChannel::set_tags): <p>A set of tags (key-value pairs) that you want to associate with this channel.</p>
-    /// - On success, responds with [`CreateSignalingChannelOutput`](crate::output::CreateSignalingChannelOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::CreateSignalingChannelOutput::channel_arn): <p>The Amazon Resource Name (ARN) of the created channel.</p>
-    /// - On failure, responds with [`SdkError<CreateSignalingChannelError>`](crate::error::CreateSignalingChannelError)
-    pub fn create_signaling_channel(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSignalingChannel {
-        crate::client::fluent_builders::CreateSignalingChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStream`](crate::client::fluent_builders::CreateStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::CreateStream::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::CreateStream::set_device_name): <p>The name of the device that is writing to the stream. </p> <note>   <p>In the current implementation, Kinesis Video Streams does not use this name.</p>  </note>
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::CreateStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::CreateStream::set_stream_name): <p>A name for the stream that you are creating.</p>  <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-    ///   - [`media_type(impl Into<String>)`](crate::client::fluent_builders::CreateStream::media_type) / [`set_media_type(Option<String>)`](crate::client::fluent_builders::CreateStream::set_media_type): <p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a> for guidelines.</p>  <p>Example valid values include "video/h264" and "video/h264,audio/aac".</p>  <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateStream::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateStream::set_kms_key_id): <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p>  <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>  <p> For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>. </p>
-    ///   - [`data_retention_in_hours(i32)`](crate::client::fluent_builders::CreateStream::data_retention_in_hours) / [`set_data_retention_in_hours(Option<i32>)`](crate::client::fluent_builders::CreateStream::set_data_retention_in_hours): <p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>  <p>The default value is 0, indicating that the stream does not persist data.</p>  <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStream::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStream::set_tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    /// - On success, responds with [`CreateStreamOutput`](crate::output::CreateStreamOutput) with field(s):
-    ///   - [`stream_arn(Option<String>)`](crate::output::CreateStreamOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamError>`](crate::error::CreateStreamError)
-    pub fn create_stream(&self) -> crate::client::fluent_builders::CreateStream {
-        crate::client::fluent_builders::CreateStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSignalingChannel`](crate::client::fluent_builders::DeleteSignalingChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteSignalingChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteSignalingChannel::set_channel_arn): <p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::DeleteSignalingChannel::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::DeleteSignalingChannel::set_current_version): <p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>
-    /// - On success, responds with [`DeleteSignalingChannelOutput`](crate::output::DeleteSignalingChannelOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSignalingChannelError>`](crate::error::DeleteSignalingChannelError)
-    pub fn delete_signaling_channel(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteSignalingChannel {
-        crate::client::fluent_builders::DeleteSignalingChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStream`](crate::client::fluent_builders::DeleteStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DeleteStream::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
-    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::DeleteStream::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::DeleteStream::set_current_version): <p>Optional: The version of the stream that you want to delete. </p>  <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>  <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
-    /// - On success, responds with [`DeleteStreamOutput`](crate::output::DeleteStreamOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::error::DeleteStreamError)
-    pub fn delete_stream(&self) -> crate::client::fluent_builders::DeleteStream {
-        crate::client::fluent_builders::DeleteStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeEdgeConfiguration`](crate::client::fluent_builders::DescribeEdgeConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::set_stream_name): <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeEdgeConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
-    /// - On success, responds with [`DescribeEdgeConfigurationOutput`](crate::output::DescribeEdgeConfigurationOutput) with field(s):
-    ///   - [`stream_name(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::stream_name): <p>The name of the stream from which the edge configuration was updated.</p>
-    ///   - [`stream_arn(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::DescribeEdgeConfigurationOutput::creation_time): <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeEdgeConfigurationOutput::last_updated_time): <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    ///   - [`sync_status(Option<SyncStatus>)`](crate::output::DescribeEdgeConfigurationOutput::sync_status): <p>The latest status of the edge configuration update.</p>
-    ///   - [`failed_status_details(Option<String>)`](crate::output::DescribeEdgeConfigurationOutput::failed_status_details): <p>A description of the generated failure status.</p>
-    ///   - [`edge_config(Option<EdgeConfig>)`](crate::output::DescribeEdgeConfigurationOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    /// - On failure, responds with [`SdkError<DescribeEdgeConfigurationError>`](crate::error::DescribeEdgeConfigurationError)
-    pub fn describe_edge_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeEdgeConfiguration {
-        crate::client::fluent_builders::DescribeEdgeConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeImageGenerationConfiguration`](crate::client::fluent_builders::DescribeImageGenerationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::set_stream_name): <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeImageGenerationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    /// - On success, responds with [`DescribeImageGenerationConfigurationOutput`](crate::output::DescribeImageGenerationConfigurationOutput) with field(s):
-    ///   - [`image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::output::DescribeImageGenerationConfigurationOutput::image_generation_configuration): <p>The structure that contains the information required for the Kinesis video stream (KVS) images delivery. If this structure is null, the configuration will be deleted from the stream.</p>
-    /// - On failure, responds with [`SdkError<DescribeImageGenerationConfigurationError>`](crate::error::DescribeImageGenerationConfigurationError)
-    pub fn describe_image_generation_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeImageGenerationConfiguration {
-        crate::client::fluent_builders::DescribeImageGenerationConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeMappedResourceConfiguration`](crate::client::fluent_builders::DescribeMappedResourceConfiguration) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_stream_name): <p>The name of the stream.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_max_results): <p>The maximum number of results to return in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeMappedResourceConfiguration::set_next_token): <p>The token to provide in your next request, to get another batch of results.</p>
-    /// - On success, responds with [`DescribeMappedResourceConfigurationOutput`](crate::output::DescribeMappedResourceConfigurationOutput) with field(s):
-    ///   - [`mapped_resource_configuration_list(Option<Vec<MappedResourceConfigurationListItem>>)`](crate::output::DescribeMappedResourceConfigurationOutput::mapped_resource_configuration_list): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeMappedResourceConfigurationOutput::next_token): <p>The token that was used in the <code>NextToken</code>request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<DescribeMappedResourceConfigurationError>`](crate::error::DescribeMappedResourceConfigurationError)
-    pub fn describe_mapped_resource_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeMappedResourceConfiguration {
-        crate::client::fluent_builders::DescribeMappedResourceConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeMediaStorageConfiguration`](crate::client::fluent_builders::DescribeMediaStorageConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::set_channel_name): <p>The name of the channel.</p>
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeMediaStorageConfiguration::set_channel_arn): <p>The Amazon Resource Name (ARN) of the channel.</p>
-    /// - On success, responds with [`DescribeMediaStorageConfigurationOutput`](crate::output::DescribeMediaStorageConfigurationOutput) with field(s):
-    ///   - [`media_storage_configuration(Option<MediaStorageConfiguration>)`](crate::output::DescribeMediaStorageConfigurationOutput::media_storage_configuration): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    /// - On failure, responds with [`SdkError<DescribeMediaStorageConfigurationError>`](crate::error::DescribeMediaStorageConfigurationError)
-    pub fn describe_media_storage_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeMediaStorageConfiguration {
-        crate::client::fluent_builders::DescribeMediaStorageConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeNotificationConfiguration`](crate::client::fluent_builders::DescribeNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::set_stream_name): <p>The name of the stream from which to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeNotificationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to retrieve the notification configuration. You must specify either the <code>StreamName</code> or the StreamARN.</p>
-    /// - On success, responds with [`DescribeNotificationConfigurationOutput`](crate::output::DescribeNotificationConfigurationOutput) with field(s):
-    ///   - [`notification_configuration(Option<NotificationConfiguration>)`](crate::output::DescribeNotificationConfigurationOutput::notification_configuration): <p>The structure that contains the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationError>`](crate::error::DescribeNotificationConfigurationError)
-    pub fn describe_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeNotificationConfiguration {
-        crate::client::fluent_builders::DescribeNotificationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeSignalingChannel`](crate::client::fluent_builders::DescribeSignalingChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::client::fluent_builders::DescribeSignalingChannel::channel_name) / [`set_channel_name(Option<String>)`](crate::client::fluent_builders::DescribeSignalingChannel::set_channel_name): <p>The name of the signaling channel that you want to describe.</p>
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeSignalingChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeSignalingChannel::set_channel_arn): <p>The ARN of the signaling channel that you want to describe.</p>
-    /// - On success, responds with [`DescribeSignalingChannelOutput`](crate::output::DescribeSignalingChannelOutput) with field(s):
-    ///   - [`channel_info(Option<ChannelInfo>)`](crate::output::DescribeSignalingChannelOutput::channel_info): <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    /// - On failure, responds with [`SdkError<DescribeSignalingChannelError>`](crate::error::DescribeSignalingChannelError)
-    pub fn describe_signaling_channel(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeSignalingChannel {
-        crate::client::fluent_builders::DescribeSignalingChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeStream`](crate::client::fluent_builders::DescribeStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_name): <p>The name of the stream.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::DescribeStream::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
-    /// - On success, responds with [`DescribeStreamOutput`](crate::output::DescribeStreamOutput) with field(s):
-    ///   - [`stream_info(Option<StreamInfo>)`](crate::output::DescribeStreamOutput::stream_info): <p>An object that describes the stream.</p>
-    /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::error::DescribeStreamError)
-    pub fn describe_stream(&self) -> crate::client::fluent_builders::DescribeStream {
-        crate::client::fluent_builders::DescribeStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDataEndpoint`](crate::client::fluent_builders::GetDataEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::GetDataEndpoint::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::GetDataEndpoint::set_stream_name): <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::GetDataEndpoint::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::GetDataEndpoint::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
-    ///   - [`api_name(ApiName)`](crate::client::fluent_builders::GetDataEndpoint::api_name) / [`set_api_name(Option<ApiName>)`](crate::client::fluent_builders::GetDataEndpoint::set_api_name): <p>The name of the API action for which to get an endpoint.</p>
-    /// - On success, responds with [`GetDataEndpointOutput`](crate::output::GetDataEndpointOutput) with field(s):
-    ///   - [`data_endpoint(Option<String>)`](crate::output::GetDataEndpointOutput::data_endpoint): <p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>
-    /// - On failure, responds with [`SdkError<GetDataEndpointError>`](crate::error::GetDataEndpointError)
-    pub fn get_data_endpoint(&self) -> crate::client::fluent_builders::GetDataEndpoint {
-        crate::client::fluent_builders::GetDataEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSignalingChannelEndpoint`](crate::client::fluent_builders::GetSignalingChannelEndpoint) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetSignalingChannelEndpoint::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetSignalingChannelEndpoint::set_channel_arn): <p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>
-    ///   - [`single_master_channel_endpoint_configuration(SingleMasterChannelEndpointConfiguration)`](crate::client::fluent_builders::GetSignalingChannelEndpoint::single_master_channel_endpoint_configuration) / [`set_single_master_channel_endpoint_configuration(Option<SingleMasterChannelEndpointConfiguration>)`](crate::client::fluent_builders::GetSignalingChannelEndpoint::set_single_master_channel_endpoint_configuration): <p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>
-    /// - On success, responds with [`GetSignalingChannelEndpointOutput`](crate::output::GetSignalingChannelEndpointOutput) with field(s):
-    ///   - [`resource_endpoint_list(Option<Vec<ResourceEndpointListItem>>)`](crate::output::GetSignalingChannelEndpointOutput::resource_endpoint_list): <p>A list of endpoints for the specified signaling channel.</p>
-    /// - On failure, responds with [`SdkError<GetSignalingChannelEndpointError>`](crate::error::GetSignalingChannelEndpointError)
-    pub fn get_signaling_channel_endpoint(
-        &self,
-    ) -> crate::client::fluent_builders::GetSignalingChannelEndpoint {
-        crate::client::fluent_builders::GetSignalingChannelEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSignalingChannels`](crate::client::fluent_builders::ListSignalingChannels) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSignalingChannels::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSignalingChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSignalingChannels::set_max_results): <p>The maximum number of channels to return in the response. The default is 500.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSignalingChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSignalingChannels::set_next_token): <p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>
-    ///   - [`channel_name_condition(ChannelNameCondition)`](crate::client::fluent_builders::ListSignalingChannels::channel_name_condition) / [`set_channel_name_condition(Option<ChannelNameCondition>)`](crate::client::fluent_builders::ListSignalingChannels::set_channel_name_condition): <p>Optional: Returns only the channels that satisfy a specific condition.</p>
-    /// - On success, responds with [`ListSignalingChannelsOutput`](crate::output::ListSignalingChannelsOutput) with field(s):
-    ///   - [`channel_info_list(Option<Vec<ChannelInfo>>)`](crate::output::ListSignalingChannelsOutput::channel_info_list): <p>An array of <code>ChannelInfo</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSignalingChannelsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>
-    /// - On failure, responds with [`SdkError<ListSignalingChannelsError>`](crate::error::ListSignalingChannelsError)
-    pub fn list_signaling_channels(&self) -> crate::client::fluent_builders::ListSignalingChannels {
-        crate::client::fluent_builders::ListSignalingChannels::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStreams`](crate::client::fluent_builders::ListStreams) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreams::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStreams::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStreams::set_max_results): <p>The maximum number of streams to return in the response. The default is 10,000.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStreams::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStreams::set_next_token): <p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>
-    ///   - [`stream_name_condition(StreamNameCondition)`](crate::client::fluent_builders::ListStreams::stream_name_condition) / [`set_stream_name_condition(Option<StreamNameCondition>)`](crate::client::fluent_builders::ListStreams::set_stream_name_condition): <p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>
-    /// - On success, responds with [`ListStreamsOutput`](crate::output::ListStreamsOutput) with field(s):
-    ///   - [`stream_info_list(Option<Vec<StreamInfo>>)`](crate::output::ListStreamsOutput::stream_info_list): <p>An array of <code>StreamInfo</code> objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListStreamsOutput::next_token): <p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>
-    /// - On failure, responds with [`SdkError<ListStreamsError>`](crate::error::ListStreamsError)
-    pub fn list_streams(&self) -> crate::client::fluent_builders::ListStreams {
-        crate::client::fluent_builders::ListStreams::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_next_token): <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForResourceOutput::next_token): <p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A map of tag keys and values associated with the specified signaling channel.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForStream`](crate::client::fluent_builders::ListTagsForStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_next_token): <p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::ListTagsForStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::ListTagsForStream::set_stream_name): <p>The name of the stream that you want to list tags for.</p>
-    /// - On success, responds with [`ListTagsForStreamOutput`](crate::output::ListTagsForStreamOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListTagsForStreamOutput::next_token): <p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForStreamOutput::tags): <p>A map of tag keys and values associated with the specified stream.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForStreamError>`](crate::error::ListTagsForStreamError)
-    pub fn list_tags_for_stream(&self) -> crate::client::fluent_builders::ListTagsForStream {
-        crate::client::fluent_builders::ListTagsForStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartEdgeConfigurationUpdate`](crate::client::fluent_builders::StartEdgeConfigurationUpdate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_stream_name): <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_stream_arn): <p> The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`edge_config(EdgeConfig)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::edge_config) / [`set_edge_config(Option<EdgeConfig>)`](crate::client::fluent_builders::StartEdgeConfigurationUpdate::set_edge_config): <p>The edge configuration details required to invoke the update process.</p>
-    /// - On success, responds with [`StartEdgeConfigurationUpdateOutput`](crate::output::StartEdgeConfigurationUpdateOutput) with field(s):
-    ///   - [`stream_name(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::stream_name): <p>The name of the stream from which the edge configuration was updated.</p>
-    ///   - [`stream_arn(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::stream_arn): <p>The Amazon Resource Name (ARN) of the stream.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::StartEdgeConfigurationUpdateOutput::creation_time): <p>The timestamp at which a stream’s edge configuration was first created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::StartEdgeConfigurationUpdateOutput::last_updated_time): <p>The timestamp at which a stream’s edge configuration was last updated.</p>
-    ///   - [`sync_status(Option<SyncStatus>)`](crate::output::StartEdgeConfigurationUpdateOutput::sync_status): <p> The current sync status of the stream's edge configuration. When you invoke this API, the sync status will be set to the <code>SYNCING</code> state. Use the <code>DescribeEdgeConfiguration</code> API to get the latest status of the edge configuration.</p>
-    ///   - [`failed_status_details(Option<String>)`](crate::output::StartEdgeConfigurationUpdateOutput::failed_status_details): <p>A description of the generated failure status.</p>
-    ///   - [`edge_config(Option<EdgeConfig>)`](crate::output::StartEdgeConfigurationUpdateOutput::edge_config): <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
-    /// - On failure, responds with [`SdkError<StartEdgeConfigurationUpdateError>`](crate::error::StartEdgeConfigurationUpdateError)
-    pub fn start_edge_configuration_update(
-        &self,
-    ) -> crate::client::fluent_builders::StartEdgeConfigurationUpdate {
-        crate::client::fluent_builders::StartEdgeConfigurationUpdate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagStream`](crate::client::fluent_builders::TagStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::TagStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::TagStream::set_stream_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::TagStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::TagStream::set_stream_name): <p>The name of the stream that you want to add the tag or tags to.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagStream::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagStream::set_tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
-    /// - On success, responds with [`TagStreamOutput`](crate::output::TagStreamOutput)
-
-    /// - On failure, responds with [`SdkError<TagStreamError>`](crate::error::TagStreamError)
-    pub fn tag_stream(&self) -> crate::client::fluent_builders::TagStream {
-        crate::client::fluent_builders::TagStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>
-    ///   - [`tag_key_list(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagStream`](crate::client::fluent_builders::UntagStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UntagStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UntagStream::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UntagStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UntagStream::set_stream_name): <p>The name of the stream that you want to remove tags from.</p>
-    ///   - [`tag_key_list(Vec<String>)`](crate::client::fluent_builders::UntagStream::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::client::fluent_builders::UntagStream::set_tag_key_list): <p>A list of the keys of the tags that you want to remove.</p>
-    /// - On success, responds with [`UntagStreamOutput`](crate::output::UntagStreamOutput)
-
-    /// - On failure, responds with [`SdkError<UntagStreamError>`](crate::error::UntagStreamError)
-    pub fn untag_stream(&self) -> crate::client::fluent_builders::UntagStream {
-        crate::client::fluent_builders::UntagStream::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDataRetention`](crate::client::fluent_builders::UpdateDataRetention) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDataRetention::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateDataRetention::set_stream_name): <p>The name of the stream whose retention period you want to change.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDataRetention::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateDataRetention::set_stream_arn): <p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateDataRetention::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateDataRetention::set_current_version): <p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>
-    ///   - [`operation(UpdateDataRetentionOperation)`](crate::client::fluent_builders::UpdateDataRetention::operation) / [`set_operation(Option<UpdateDataRetentionOperation>)`](crate::client::fluent_builders::UpdateDataRetention::set_operation): <p>Indicates whether you want to increase or decrease the retention period.</p>
-    ///   - [`data_retention_change_in_hours(i32)`](crate::client::fluent_builders::UpdateDataRetention::data_retention_change_in_hours) / [`set_data_retention_change_in_hours(Option<i32>)`](crate::client::fluent_builders::UpdateDataRetention::set_data_retention_change_in_hours): <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
-    /// - On success, responds with [`UpdateDataRetentionOutput`](crate::output::UpdateDataRetentionOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDataRetentionError>`](crate::error::UpdateDataRetentionError)
-    pub fn update_data_retention(&self) -> crate::client::fluent_builders::UpdateDataRetention {
-        crate::client::fluent_builders::UpdateDataRetention::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateImageGenerationConfiguration`](crate::client::fluent_builders::UpdateImageGenerationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_stream_name): <p>The name of the stream from which to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`image_generation_configuration(ImageGenerationConfiguration)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::image_generation_configuration) / [`set_image_generation_configuration(Option<ImageGenerationConfiguration>)`](crate::client::fluent_builders::UpdateImageGenerationConfiguration::set_image_generation_configuration): <p>The structure that contains the information required for the KVS images delivery. If the structure is null, the configuration will be deleted from the stream.</p>
-    /// - On success, responds with [`UpdateImageGenerationConfigurationOutput`](crate::output::UpdateImageGenerationConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateImageGenerationConfigurationError>`](crate::error::UpdateImageGenerationConfigurationError)
-    pub fn update_image_generation_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateImageGenerationConfiguration {
-        crate::client::fluent_builders::UpdateImageGenerationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateMediaStorageConfiguration`](crate::client::fluent_builders::UpdateMediaStorageConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::set_channel_arn): <p>The Amazon Resource Name (ARN) of the channel.</p>
-    ///   - [`media_storage_configuration(MediaStorageConfiguration)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::media_storage_configuration) / [`set_media_storage_configuration(Option<MediaStorageConfiguration>)`](crate::client::fluent_builders::UpdateMediaStorageConfiguration::set_media_storage_configuration): <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    /// - On success, responds with [`UpdateMediaStorageConfigurationOutput`](crate::output::UpdateMediaStorageConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateMediaStorageConfigurationError>`](crate::error::UpdateMediaStorageConfigurationError)
-    pub fn update_media_storage_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateMediaStorageConfiguration {
-        crate::client::fluent_builders::UpdateMediaStorageConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateNotificationConfiguration`](crate::client::fluent_builders::UpdateNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_stream_name): <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_stream_arn): <p>The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    ///   - [`notification_configuration(NotificationConfiguration)`](crate::client::fluent_builders::UpdateNotificationConfiguration::notification_configuration) / [`set_notification_configuration(Option<NotificationConfiguration>)`](crate::client::fluent_builders::UpdateNotificationConfiguration::set_notification_configuration): <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    /// - On success, responds with [`UpdateNotificationConfigurationOutput`](crate::output::UpdateNotificationConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateNotificationConfigurationError>`](crate::error::UpdateNotificationConfigurationError)
-    pub fn update_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateNotificationConfiguration {
-        crate::client::fluent_builders::UpdateNotificationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSignalingChannel`](crate::client::fluent_builders::UpdateSignalingChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateSignalingChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateSignalingChannel::set_channel_arn): <p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateSignalingChannel::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateSignalingChannel::set_current_version): <p>The current version of the signaling channel that you want to update.</p>
-    ///   - [`single_master_configuration(SingleMasterConfiguration)`](crate::client::fluent_builders::UpdateSignalingChannel::single_master_configuration) / [`set_single_master_configuration(Option<SingleMasterConfiguration>)`](crate::client::fluent_builders::UpdateSignalingChannel::set_single_master_configuration): <p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>
-    /// - On success, responds with [`UpdateSignalingChannelOutput`](crate::output::UpdateSignalingChannelOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateSignalingChannelError>`](crate::error::UpdateSignalingChannelError)
-    pub fn update_signaling_channel(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSignalingChannel {
-        crate::client::fluent_builders::UpdateSignalingChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStream`](crate::client::fluent_builders::UpdateStream) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::stream_name) / [`set_stream_name(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_stream_name): <p>The name of the stream whose metadata you want to update.</p>  <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::stream_arn) / [`set_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_stream_arn): <p>The ARN of the stream whose metadata you want to update.</p>
-    ///   - [`current_version(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::current_version) / [`set_current_version(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_current_version): <p>The version of the stream whose metadata you want to update.</p>
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_device_name): <p>The name of the device that is writing to the stream. </p> <note>   <p> In the current implementation, Kinesis Video Streams does not use this name. </p>  </note>
-    ///   - [`media_type(impl Into<String>)`](crate::client::fluent_builders::UpdateStream::media_type) / [`set_media_type(Option<String>)`](crate::client::fluent_builders::UpdateStream::set_media_type): <p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>.</p>  <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>
-    /// - On success, responds with [`UpdateStreamOutput`](crate::output::UpdateStreamOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateStreamError>`](crate::error::UpdateStreamError)
-    pub fn update_stream(&self) -> crate::client::fluent_builders::UpdateStream {
-        crate::client::fluent_builders::UpdateStream::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -560,9 +174,65 @@ impl Client {
     }
 }
 
+mod create_signaling_channel;
+
+mod create_stream;
+
+mod delete_signaling_channel;
+
+mod delete_stream;
+
+mod describe_edge_configuration;
+
+mod describe_image_generation_configuration;
+
+mod describe_mapped_resource_configuration;
+
+mod describe_media_storage_configuration;
+
+mod describe_notification_configuration;
+
+mod describe_signaling_channel;
+
+mod describe_stream;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_data_endpoint;
+
+mod get_signaling_channel_endpoint;
+
+mod list_signaling_channels;
+
+mod list_streams;
+
+mod list_tags_for_resource;
+
+mod list_tags_for_stream;
+
+mod start_edge_configuration_update;
+
+mod tag_resource;
+
+mod tag_stream;
+
+mod untag_resource;
+
+mod untag_stream;
+
+mod update_data_retention;
+
+mod update_image_generation_configuration;
+
+mod update_media_storage_configuration;
+
+mod update_notification_configuration;
+
+mod update_signaling_channel;
+
+mod update_stream;

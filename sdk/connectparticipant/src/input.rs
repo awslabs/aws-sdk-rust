@@ -56,8 +56,7 @@ impl CompleteAttachmentUploadInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_complete_attachment_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_complete_attachment_upload::ser_complete_attachment_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -71,9 +70,7 @@ impl CompleteAttachmentUploadInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_complete_attachment_upload(
-                &self,
-            )?,
+            crate::protocol_serde::shape_complete_attachment_upload::ser_complete_attachment_upload_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -183,8 +180,7 @@ impl CreateParticipantConnectionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_participant_connection(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_participant_connection::ser_create_participant_connection_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -198,7 +194,7 @@ impl CreateParticipantConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_participant_connection(&self)?
+            crate::protocol_serde::shape_create_participant_connection::ser_create_participant_connection_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -311,8 +307,7 @@ impl DisconnectParticipantInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_disconnect_participant(input, builder)?;
+                let builder = crate::protocol_serde::shape_disconnect_participant::ser_disconnect_participant_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -326,7 +321,7 @@ impl DisconnectParticipantInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disconnect_participant(
+            crate::protocol_serde::shape_disconnect_participant::ser_disconnect_participant_input(
                 &self,
             )?,
         );
@@ -438,7 +433,10 @@ impl GetAttachmentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_attachment(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_attachment::ser_get_attachment_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -452,7 +450,7 @@ impl GetAttachmentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_attachment(&self)?,
+            crate::protocol_serde::shape_get_attachment::ser_get_attachment_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -562,7 +560,10 @@ impl GetTranscriptInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_transcript(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_transcript::ser_get_transcript_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -576,7 +577,7 @@ impl GetTranscriptInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_transcript(&self)?,
+            crate::protocol_serde::shape_get_transcript::ser_get_transcript_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -689,7 +690,9 @@ impl SendEventInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_send_event(input, builder)?;
+                let builder = crate::protocol_serde::shape_send_event::ser_send_event_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -703,7 +706,7 @@ impl SendEventInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_event(&self)?,
+            crate::protocol_serde::shape_send_event::ser_send_event_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -814,7 +817,9 @@ impl SendMessageInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_send_message(input, builder)?;
+                let builder = crate::protocol_serde::shape_send_message::ser_send_message_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -828,7 +833,7 @@ impl SendMessageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_send_message(&self)?,
+            crate::protocol_serde::shape_send_message::ser_send_message_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -942,8 +947,7 @@ impl StartAttachmentUploadInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_start_attachment_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_attachment_upload::ser_start_attachment_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -957,9 +961,7 @@ impl StartAttachmentUploadInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_attachment_upload(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_attachment_upload::ser_start_attachment_upload_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

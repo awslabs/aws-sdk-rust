@@ -79,15 +79,9 @@ pub mod types;
 
 pub(crate) mod http_body_checksum;
 
-mod http_serde;
-
 pub mod middleware;
 
 mod no_credentials;
-
-mod operation_deser;
-
-mod operation_ser;
 
 /// Paginators for the service
 pub mod paginator;
@@ -99,9 +93,7 @@ mod s3_request_id;
 /// Generated accessors for nested fields
 mod lens;
 
-mod xml_deser;
-
-mod xml_ser;
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;

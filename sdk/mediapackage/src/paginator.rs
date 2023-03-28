@@ -90,7 +90,8 @@ impl ListChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListHarvestJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_harvest_jobs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_harvest_jobs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListOriginEndpointsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_origin_endpoints_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_origin_endpoints_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +376,7 @@ impl ListChannelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_channels_output_channels(page)
+            crate::lens::lens_list_channels_output_channels(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -400,7 +403,7 @@ impl ListHarvestJobsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_harvest_jobs_output_harvest_jobs(page)
+            crate::lens::lens_list_harvest_jobs_output_harvest_jobs(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -427,11 +430,9 @@ impl ListOriginEndpointsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_origin_endpoints_output_origin_endpoints(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_origin_endpoints_output_origin_endpoints(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

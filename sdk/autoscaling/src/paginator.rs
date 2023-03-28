@@ -90,7 +90,10 @@ impl DescribeAutoScalingGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_auto_scaling_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_auto_scaling_groups_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,7 @@ impl DescribeAutoScalingInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_auto_scaling_instances_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_auto_scaling_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +329,7 @@ impl DescribeLaunchConfigurationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_launch_configurations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_launch_configurations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -446,7 +449,7 @@ impl DescribeNotificationConfigurationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_notification_configurations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_notification_configurations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -564,7 +567,8 @@ impl DescribePoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_policies_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -682,7 +686,10 @@ impl DescribeScalingActivitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scaling_activities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scaling_activities_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -800,7 +807,10 @@ impl DescribeScheduledActionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scheduled_actions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scheduled_actions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -918,7 +928,8 @@ impl DescribeTagsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_tags_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_tags_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -964,7 +975,11 @@ impl DescribeAutoScalingGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeAutoScalingGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_auto_scaling_groups_output_auto_scaling_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_auto_scaling_groups_output_auto_scaling_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -987,7 +1002,11 @@ impl DescribeAutoScalingInstancesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeAutoScalingInstancesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_auto_scaling_instances_output_auto_scaling_instances(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_auto_scaling_instances_output_auto_scaling_instances(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1010,7 +1029,11 @@ impl DescribeLaunchConfigurationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeLaunchConfigurationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_launch_configurations_output_launch_configurations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_launch_configurations_output_launch_configurations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1037,7 +1060,7 @@ impl DescribeNotificationConfigurationsPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_notification_configurations_output_notification_configurations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_notification_configurations_output_notification_configurations(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1061,7 +1084,7 @@ impl DescribePoliciesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_policies_output_scaling_policies(page)
+            crate::lens::lens_describe_policies_output_scaling_policies(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1088,11 +1111,9 @@ impl DescribeScalingActivitiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_scaling_activities_output_activities(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_scaling_activities_output_activities(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1116,7 +1137,11 @@ impl DescribeScheduledActionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scheduled_actions_output_scheduled_update_group_actions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scheduled_actions_output_scheduled_update_group_actions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1140,7 +1165,7 @@ impl DescribeTagsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_tags_output_tags(page)
+            crate::lens::lens_describe_tags_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })

@@ -89,103 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`DeleteThingShadow`](crate::client::fluent_builders::DeleteThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::DeleteThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::DeleteThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    /// - On success, responds with [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::DeleteThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<DeleteThingShadowError>`](crate::error::DeleteThingShadowError)
-    pub fn delete_thing_shadow(&self) -> crate::client::fluent_builders::DeleteThingShadow {
-        crate::client::fluent_builders::DeleteThingShadow::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRetainedMessage`](crate::client::fluent_builders::GetRetainedMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::GetRetainedMessage::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::GetRetainedMessage::set_topic): <p>The topic name of the retained message to retrieve.</p>
-    /// - On success, responds with [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput) with field(s):
-    ///   - [`topic(Option<String>)`](crate::output::GetRetainedMessageOutput::topic): <p>The topic name to which the retained message was published.</p>
-    ///   - [`payload(Option<Blob>)`](crate::output::GetRetainedMessageOutput::payload): <p>The Base64-encoded message payload of the retained message body.</p>
-    ///   - [`qos(i32)`](crate::output::GetRetainedMessageOutput::qos): <p>The quality of service (QoS) level used to publish the retained message.</p>
-    ///   - [`last_modified_time(i64)`](crate::output::GetRetainedMessageOutput::last_modified_time): <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
-    /// - On failure, responds with [`SdkError<GetRetainedMessageError>`](crate::error::GetRetainedMessageError)
-    pub fn get_retained_message(&self) -> crate::client::fluent_builders::GetRetainedMessage {
-        crate::client::fluent_builders::GetRetainedMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetThingShadow`](crate::client::fluent_builders::GetThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::GetThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::GetThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    /// - On success, responds with [`GetThingShadowOutput`](crate::output::GetThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::GetThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<GetThingShadowError>`](crate::error::GetThingShadowError)
-    pub fn get_thing_shadow(&self) -> crate::client::fluent_builders::GetThingShadow {
-        crate::client::fluent_builders::GetThingShadow::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListNamedShadowsForThing`](crate::client::fluent_builders::ListNamedShadowsForThing) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_next_token): <p>The token to retrieve the next set of results.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListNamedShadowsForThing::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListNamedShadowsForThing::set_page_size): <p>The result page size.</p>
-    /// - On success, responds with [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput) with field(s):
-    ///   - [`results(Option<Vec<String>>)`](crate::output::ListNamedShadowsForThingOutput::results): <p>The list of shadows for the specified thing.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListNamedShadowsForThingOutput::next_token): <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    ///   - [`timestamp(i64)`](crate::output::ListNamedShadowsForThingOutput::timestamp): <p>The Epoch date and time the response was generated by IoT.</p>
-    /// - On failure, responds with [`SdkError<ListNamedShadowsForThingError>`](crate::error::ListNamedShadowsForThingError)
-    pub fn list_named_shadows_for_thing(
-        &self,
-    ) -> crate::client::fluent_builders::ListNamedShadowsForThing {
-        crate::client::fluent_builders::ListNamedShadowsForThing::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRetainedMessages`](crate::client::fluent_builders::ListRetainedMessages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRetainedMessages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRetainedMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRetainedMessages::set_next_token): <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRetainedMessages::set_max_results): <p>The maximum number of results to return at one time.</p>
-    /// - On success, responds with [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput) with field(s):
-    ///   - [`retained_topics(Option<Vec<RetainedMessageSummary>>)`](crate::output::ListRetainedMessagesOutput::retained_topics): <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRetainedMessagesOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
-    /// - On failure, responds with [`SdkError<ListRetainedMessagesError>`](crate::error::ListRetainedMessagesError)
-    pub fn list_retained_messages(&self) -> crate::client::fluent_builders::ListRetainedMessages {
-        crate::client::fluent_builders::ListRetainedMessages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`Publish`](crate::client::fluent_builders::Publish) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`topic(impl Into<String>)`](crate::client::fluent_builders::Publish::topic) / [`set_topic(Option<String>)`](crate::client::fluent_builders::Publish::set_topic): <p>The name of the MQTT topic.</p>
-    ///   - [`qos(i32)`](crate::client::fluent_builders::Publish::qos) / [`set_qos(i32)`](crate::client::fluent_builders::Publish::set_qos): <p>The Quality of Service (QoS) level. The default QoS level is 0.</p>
-    ///   - [`retain(bool)`](crate::client::fluent_builders::Publish::retain) / [`set_retain(bool)`](crate::client::fluent_builders::Publish::set_retain): <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>  <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>  <p>Valid values: <code>true</code> | <code>false</code> </p>  <p>Default value: <code>false</code> </p>
-    ///   - [`payload(Blob)`](crate::client::fluent_builders::Publish::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::Publish::set_payload): <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>  <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.</p>
-    ///   - [`user_properties(impl Into<String>)`](crate::client::fluent_builders::Publish::user_properties) / [`set_user_properties(Option<String>)`](crate::client::fluent_builders::Publish::set_user_properties): <p>A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an HTTP header value in the API.</p>  <p>The following example <code>userProperties</code> parameter is a JSON string which represents two User Properties. Note that it needs to be base64-encoded:</p>  <p> <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
-    ///   - [`payload_format_indicator(PayloadFormatIndicator)`](crate::client::fluent_builders::Publish::payload_format_indicator) / [`set_payload_format_indicator(Option<PayloadFormatIndicator>)`](crate::client::fluent_builders::Publish::set_payload_format_indicator): <p>An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.</p>
-    ///   - [`content_type(impl Into<String>)`](crate::client::fluent_builders::Publish::content_type) / [`set_content_type(Option<String>)`](crate::client::fluent_builders::Publish::set_content_type): <p>A UTF-8 encoded string that describes the content of the publishing message.</p>
-    ///   - [`response_topic(impl Into<String>)`](crate::client::fluent_builders::Publish::response_topic) / [`set_response_topic(Option<String>)`](crate::client::fluent_builders::Publish::set_response_topic): <p>A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to describe the topic which the receiver should publish to as part of the request-response flow. The topic must not contain wildcard characters.</p>
-    ///   - [`correlation_data(impl Into<String>)`](crate::client::fluent_builders::Publish::correlation_data) / [`set_correlation_data(Option<String>)`](crate::client::fluent_builders::Publish::set_correlation_data): <p>The base64-encoded binary data used by the sender of the request message to identify which request the response message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.</p>
-    ///   - [`message_expiry(i64)`](crate::client::fluent_builders::Publish::message_expiry) / [`set_message_expiry(i64)`](crate::client::fluent_builders::Publish::set_message_expiry): <p>A user-defined integer value that represents the message expiry interval in seconds. If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.</p>
-    /// - On success, responds with [`PublishOutput`](crate::output::PublishOutput)
-
-    /// - On failure, responds with [`SdkError<PublishError>`](crate::error::PublishError)
-    pub fn publish(&self) -> crate::client::fluent_builders::Publish {
-        crate::client::fluent_builders::Publish::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateThingShadow`](crate::client::fluent_builders::UpdateThingShadow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::thing_name) / [`set_thing_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_thing_name): <p>The name of the thing.</p>
-    ///   - [`shadow_name(impl Into<String>)`](crate::client::fluent_builders::UpdateThingShadow::shadow_name) / [`set_shadow_name(Option<String>)`](crate::client::fluent_builders::UpdateThingShadow::set_shadow_name): <p>The name of the shadow.</p>
-    ///   - [`payload(Blob)`](crate::client::fluent_builders::UpdateThingShadow::payload) / [`set_payload(Option<Blob>)`](crate::client::fluent_builders::UpdateThingShadow::set_payload): <p>The state information, in JSON format.</p>
-    /// - On success, responds with [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput) with field(s):
-    ///   - [`payload(Option<Blob>)`](crate::output::UpdateThingShadowOutput::payload): <p>The state information, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<UpdateThingShadowError>`](crate::error::UpdateThingShadowError)
-    pub fn update_thing_shadow(&self) -> crate::client::fluent_builders::UpdateThingShadow {
-        crate::client::fluent_builders::UpdateThingShadow::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -271,9 +174,23 @@ impl Client {
     }
 }
 
+mod delete_thing_shadow;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_retained_message;
+
+mod get_thing_shadow;
+
+mod list_named_shadows_for_thing;
+
+mod list_retained_messages;
+
+mod publish;
+
+mod update_thing_shadow;

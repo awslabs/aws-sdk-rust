@@ -90,7 +90,8 @@ impl DescribeCasesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_cases_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_cases_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,10 @@ impl DescribeCommunicationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_communications_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_communications_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -255,7 +259,7 @@ impl DescribeCasesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_cases_output_cases(page)
+            crate::lens::lens_describe_cases_output_cases(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -282,11 +286,9 @@ impl DescribeCommunicationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_communications_output_communications(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_communications_output_communications(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

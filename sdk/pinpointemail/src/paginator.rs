@@ -82,7 +82,8 @@ impl GetDedicatedIpsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_dedicated_ips_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_dedicated_ips_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,10 @@ impl ListConfigurationSetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_configuration_sets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_configuration_sets_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +306,10 @@ impl ListDedicatedIpPoolsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_dedicated_ip_pools_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_dedicated_ip_pools_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +419,7 @@ impl ListDeliverabilityTestReportsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_deliverability_test_reports_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_deliverability_test_reports_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -522,7 +529,7 @@ impl ListDomainDeliverabilityCampaignsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_domain_deliverability_campaigns_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_domain_deliverability_campaigns_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -632,7 +639,8 @@ impl ListEmailIdentitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_email_identities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_email_identities_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

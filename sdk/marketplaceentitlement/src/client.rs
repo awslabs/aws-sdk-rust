@@ -89,22 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`GetEntitlements`](crate::client::fluent_builders::GetEntitlements) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_code(impl Into<String>)`](crate::client::fluent_builders::GetEntitlements::product_code) / [`set_product_code(Option<String>)`](crate::client::fluent_builders::GetEntitlements::set_product_code): <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
-    ///   - [`filter(HashMap<GetEntitlementFilterName, Vec<String>>)`](crate::client::fluent_builders::GetEntitlements::filter) / [`set_filter(Option<HashMap<GetEntitlementFilterName, Vec<String>>>)`](crate::client::fluent_builders::GetEntitlements::set_filter): <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetEntitlements::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetEntitlements::set_next_token): <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetEntitlements::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetEntitlements::set_max_results): <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
-    /// - On success, responds with [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput) with field(s):
-    ///   - [`entitlements(Option<Vec<Entitlement>>)`](crate::output::GetEntitlementsOutput::entitlements): <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetEntitlementsOutput::next_token): <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
-    /// - On failure, responds with [`SdkError<GetEntitlementsError>`](crate::error::GetEntitlementsError)
-    pub fn get_entitlements(&self) -> crate::client::fluent_builders::GetEntitlements {
-        crate::client::fluent_builders::GetEntitlements::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -196,3 +180,5 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_entitlements;

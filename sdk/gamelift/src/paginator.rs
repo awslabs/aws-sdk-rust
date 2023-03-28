@@ -90,7 +90,10 @@ impl DescribeFleetAttributesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_attributes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_fleet_attributes_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,10 @@ impl DescribeFleetCapacityPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_capacity_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_fleet_capacity_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +332,8 @@ impl DescribeFleetEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_events_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_fleet_events_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -436,7 +443,7 @@ impl DescribeFleetLocationAttributesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_location_attributes_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_fleet_location_attributes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -554,7 +561,10 @@ impl DescribeFleetUtilizationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_fleet_utilization_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_fleet_utilization_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -672,7 +682,7 @@ impl DescribeGameServerInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_game_server_instances_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_game_server_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -790,7 +800,7 @@ impl DescribeGameSessionDetailsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_game_session_details_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_game_session_details_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -908,7 +918,10 @@ impl DescribeGameSessionQueuesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_game_session_queues_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_game_session_queues_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1026,7 +1039,8 @@ impl DescribeGameSessionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_game_sessions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_game_sessions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1144,7 +1158,8 @@ impl DescribeInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_instances_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1262,7 +1277,7 @@ impl DescribeMatchmakingConfigurationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_matchmaking_configurations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_matchmaking_configurations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1380,7 +1395,7 @@ impl DescribeMatchmakingRuleSetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_matchmaking_rule_sets_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_matchmaking_rule_sets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1498,7 +1513,10 @@ impl DescribePlayerSessionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_player_sessions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_player_sessions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1616,7 +1634,10 @@ impl DescribeScalingPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scaling_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scaling_policies_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1734,7 +1755,8 @@ impl ListAliasesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_aliases_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_aliases_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1852,7 +1874,8 @@ impl ListBuildsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_builds_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_builds_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1970,7 +1993,8 @@ impl ListComputePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_compute_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_compute_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2088,7 +2112,8 @@ impl ListFleetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_fleets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_fleets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2206,7 +2231,10 @@ impl ListGameServerGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_game_server_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_game_server_groups_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2324,7 +2352,8 @@ impl ListGameServersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_game_servers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_game_servers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2442,7 +2471,8 @@ impl ListLocationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_locations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_locations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2560,7 +2590,8 @@ impl ListScriptsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_scripts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_scripts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2678,7 +2709,8 @@ impl SearchGameSessionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_game_sessions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_game_sessions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2724,7 +2756,11 @@ impl DescribeFleetAttributesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeFleetAttributesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_fleet_attributes_output_fleet_attributes(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_fleet_attributes_output_fleet_attributes(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2748,11 +2784,9 @@ impl DescribeFleetCapacityPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_fleet_capacity_output_fleet_capacity(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_fleet_capacity_output_fleet_capacity(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -2777,7 +2811,7 @@ impl DescribeFleetEventsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_fleet_events_output_events(page)
+            crate::lens::lens_describe_fleet_events_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2803,7 +2837,11 @@ impl DescribeFleetUtilizationPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeFleetUtilizationError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_fleet_utilization_output_fleet_utilization(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_fleet_utilization_output_fleet_utilization(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2826,7 +2864,11 @@ impl DescribeGameServerInstancesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeGameServerInstancesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_game_server_instances_output_game_server_instances(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_game_server_instances_output_game_server_instances(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2849,7 +2891,11 @@ impl DescribeGameSessionDetailsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionDetailsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_game_session_details_output_game_session_details(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_game_session_details_output_game_session_details(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2872,7 +2918,11 @@ impl DescribeGameSessionQueuesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeGameSessionQueuesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_game_session_queues_output_game_session_queues(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_game_session_queues_output_game_session_queues(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2896,11 +2946,9 @@ impl DescribeGameSessionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_game_sessions_output_game_sessions(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_describe_game_sessions_output_game_sessions(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -2925,7 +2973,7 @@ impl DescribeInstancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_instances_output_instances(page)
+            crate::lens::lens_describe_instances_output_instances(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2953,7 +3001,11 @@ impl DescribeMatchmakingConfigurationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingConfigurationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_matchmaking_configurations_output_configurations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_matchmaking_configurations_output_configurations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2976,7 +3028,11 @@ impl DescribeMatchmakingRuleSetsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeMatchmakingRuleSetsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_matchmaking_rule_sets_output_rule_sets(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_matchmaking_rule_sets_output_rule_sets(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2999,7 +3055,11 @@ impl DescribePlayerSessionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribePlayerSessionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_player_sessions_output_player_sessions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_player_sessions_output_player_sessions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3022,7 +3082,11 @@ impl DescribeScalingPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scaling_policies_output_scaling_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scaling_policies_output_scaling_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3046,7 +3110,7 @@ impl ListAliasesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_aliases_output_aliases(page)
+            crate::lens::lens_list_aliases_output_aliases(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3073,7 +3137,7 @@ impl ListBuildsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_builds_output_builds(page)
+            crate::lens::lens_list_builds_output_builds(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3100,7 +3164,7 @@ impl ListComputePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_compute_output_compute_list(page)
+            crate::lens::lens_list_compute_output_compute_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3127,7 +3191,7 @@ impl ListFleetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_fleets_output_fleet_ids(page)
+            crate::lens::lens_list_fleets_output_fleet_ids(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3153,7 +3217,11 @@ impl ListGameServerGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListGameServerGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_game_server_groups_output_game_server_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_game_server_groups_output_game_server_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3177,7 +3245,7 @@ impl ListGameServersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_game_servers_output_game_servers(page)
+            crate::lens::lens_list_game_servers_output_game_servers(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3204,7 +3272,7 @@ impl ListLocationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_locations_output_locations(page)
+            crate::lens::lens_list_locations_output_locations(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3231,7 +3299,7 @@ impl ListScriptsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_scripts_output_scripts(page)
+            crate::lens::lens_list_scripts_output_scripts(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3258,7 +3326,7 @@ impl SearchGameSessionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_search_game_sessions_output_game_sessions(page)
+            crate::lens::lens_search_game_sessions_output_game_sessions(page)
                 .unwrap_or_default()
                 .into_iter()
         })

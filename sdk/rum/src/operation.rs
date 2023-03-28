@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRumMetricDefi
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_create_rum_metric_definitions_error(response)
+            crate::protocol_serde::shape_batch_create_rum_metric_definitions::de_batch_create_rum_metric_definitions_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_create_rum_metric_definitions_response(response)
+            crate::protocol_serde::shape_batch_create_rum_metric_definitions::de_batch_create_rum_metric_definitions_http_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteRumMetricDefi
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_delete_rum_metric_definitions_error(response)
+            crate::protocol_serde::shape_batch_delete_rum_metric_definitions::de_batch_delete_rum_metric_definitions_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_delete_rum_metric_definitions_response(response)
+            crate::protocol_serde::shape_batch_delete_rum_metric_definitions::de_batch_delete_rum_metric_definitions_http_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRumMetricDefinit
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_get_rum_metric_definitions_error(response)
+            crate::protocol_serde::shape_batch_get_rum_metric_definitions::de_batch_get_rum_metric_definitions_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_get_rum_metric_definitions_response(response)
+            crate::protocol_serde::shape_batch_get_rum_metric_definitions::de_batch_get_rum_metric_definitions_http_response(response)
         }
     }
 }
@@ -132,9 +132,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppMonitor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_app_monitor_error(response)
+            crate::protocol_serde::shape_create_app_monitor::de_create_app_monitor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_app_monitor_response(response)
+            crate::protocol_serde::shape_create_app_monitor::de_create_app_monitor_http_response(
+                response,
+            )
         }
     }
 }
@@ -167,9 +171,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppMonitor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_app_monitor_error(response)
+            crate::protocol_serde::shape_delete_app_monitor::de_delete_app_monitor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_app_monitor_response(response)
+            crate::protocol_serde::shape_delete_app_monitor::de_delete_app_monitor_http_response(
+                response,
+            )
         }
     }
 }
@@ -202,9 +210,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRumMetricsDestinat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_rum_metrics_destination_error(response)
+            crate::protocol_serde::shape_delete_rum_metrics_destination::de_delete_rum_metrics_destination_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_rum_metrics_destination_response(response)
+            crate::protocol_serde::shape_delete_rum_metrics_destination::de_delete_rum_metrics_destination_http_response(response)
         }
     }
 }
@@ -235,9 +243,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_app_monitor_error(response)
+            crate::protocol_serde::shape_get_app_monitor::de_get_app_monitor_http_error(response)
         } else {
-            crate::operation_deser::parse_get_app_monitor_response(response)
+            crate::protocol_serde::shape_get_app_monitor::de_get_app_monitor_http_response(response)
         }
     }
 }
@@ -270,9 +278,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitorData {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_app_monitor_data_error(response)
+            crate::protocol_serde::shape_get_app_monitor_data::de_get_app_monitor_data_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_app_monitor_data_response(response)
+            crate::protocol_serde::shape_get_app_monitor_data::de_get_app_monitor_data_http_response(
+                response,
+            )
         }
     }
 }
@@ -305,9 +317,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppMonitors {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_app_monitors_error(response)
+            crate::protocol_serde::shape_list_app_monitors::de_list_app_monitors_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_app_monitors_response(response)
+            crate::protocol_serde::shape_list_app_monitors::de_list_app_monitors_http_response(
+                response,
+            )
         }
     }
 }
@@ -340,9 +356,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRumMetricsDestinatio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_rum_metrics_destinations_error(response)
+            crate::protocol_serde::shape_list_rum_metrics_destinations::de_list_rum_metrics_destinations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_rum_metrics_destinations_response(response)
+            crate::protocol_serde::shape_list_rum_metrics_destinations::de_list_rum_metrics_destinations_http_response(response)
         }
     }
 }
@@ -375,9 +391,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -408,9 +424,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumEvents {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_rum_events_error(response)
+            crate::protocol_serde::shape_put_rum_events::de_put_rum_events_http_error(response)
         } else {
-            crate::operation_deser::parse_put_rum_events_response(response)
+            crate::protocol_serde::shape_put_rum_events::de_put_rum_events_http_response(response)
         }
     }
 }
@@ -443,9 +459,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRumMetricsDestination
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_rum_metrics_destination_error(response)
+            crate::protocol_serde::shape_put_rum_metrics_destination::de_put_rum_metrics_destination_http_error(response)
         } else {
-            crate::operation_deser::parse_put_rum_metrics_destination_response(response)
+            crate::protocol_serde::shape_put_rum_metrics_destination::de_put_rum_metrics_destination_http_response(response)
         }
     }
 }
@@ -476,9 +492,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -509,9 +525,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -544,9 +560,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppMonitor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_app_monitor_error(response)
+            crate::protocol_serde::shape_update_app_monitor::de_update_app_monitor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_app_monitor_response(response)
+            crate::protocol_serde::shape_update_app_monitor::de_update_app_monitor_http_response(
+                response,
+            )
         }
     }
 }
@@ -579,9 +599,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRumMetricDefinitio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_rum_metric_definition_error(response)
+            crate::protocol_serde::shape_update_rum_metric_definition::de_update_rum_metric_definition_http_error(response)
         } else {
-            crate::operation_deser::parse_update_rum_metric_definition_response(response)
+            crate::protocol_serde::shape_update_rum_metric_definition::de_update_rum_metric_definition_http_response(response)
         }
     }
 }

@@ -89,323 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateDestination`](crate::client::fluent_builders::CreateDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_client_token): Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_name): Human friendly name of the resource.
-    ///   - [`site(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::site) / [`set_site(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_site): Site ARN.
-    ///   - [`state(DestinationState)`](crate::client::fluent_builders::CreateDestination::state) / [`set_state(Option<DestinationState>)`](crate::client::fluent_builders::CreateDestination::set_state): The state of the destination. Default used if not specified.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::CreateDestination::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::CreateDestination::set_additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
-    /// - On success, responds with [`CreateDestinationOutput`](crate::output::CreateDestinationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateDestinationOutput::arn): Destination ARN.
-    ///   - [`id(Option<String>)`](crate::output::CreateDestinationOutput::id): Filters access by the destination's identifier
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateDestinationOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateDestinationOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`state(Option<DestinationState>)`](crate::output::CreateDestinationOutput::state): State of the destination.
-    /// - On failure, responds with [`SdkError<CreateDestinationError>`](crate::error::CreateDestinationError)
-    pub fn create_destination(&self) -> crate::client::fluent_builders::CreateDestination {
-        crate::client::fluent_builders::CreateDestination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSite`](crate::client::fluent_builders::CreateSite) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateSite::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateSite::set_client_token): Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSite::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSite::set_name): Human friendly name of the resource.
-    ///   - [`country_code(impl Into<String>)`](crate::client::fluent_builders::CreateSite::country_code) / [`set_country_code(Option<String>)`](crate::client::fluent_builders::CreateSite::set_country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSite::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSite::set_description): A high-level description of the site.
-    /// - On success, responds with [`CreateSiteOutput`](crate::output::CreateSiteOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateSiteOutput::arn): Site ARN.
-    ///   - [`id(Option<String>)`](crate::output::CreateSiteOutput::id): Filters access by the site's identifier
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateSiteOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateSiteOutput::updated_at): Timestamp at which the resource was last updated.
-    /// - On failure, responds with [`SdkError<CreateSiteError>`](crate::error::CreateSiteError)
-    pub fn create_site(&self) -> crate::client::fluent_builders::CreateSite {
-        crate::client::fluent_builders::CreateSite::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateWorker`](crate::client::fluent_builders::CreateWorker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorker::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateWorker::set_client_token): Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorker::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorker::set_name): Human friendly name of the resource.
-    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::CreateWorker::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::CreateWorker::set_fleet): Full ARN of the worker fleet.
-    ///   - [`additional_transient_properties(impl Into<String>)`](crate::client::fluent_builders::CreateWorker::additional_transient_properties) / [`set_additional_transient_properties(Option<String>)`](crate::client::fluent_builders::CreateWorker::set_additional_transient_properties): JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::CreateWorker::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::CreateWorker::set_additional_fixed_properties): JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    ///   - [`vendor_properties(VendorProperties)`](crate::client::fluent_builders::CreateWorker::vendor_properties) / [`set_vendor_properties(Option<VendorProperties>)`](crate::client::fluent_builders::CreateWorker::set_vendor_properties): Properties of the worker that are provided by the vendor FMS.
-    ///   - [`position(PositionCoordinates)`](crate::client::fluent_builders::CreateWorker::position) / [`set_position(Option<PositionCoordinates>)`](crate::client::fluent_builders::CreateWorker::set_position): Supported coordinates for worker position.
-    ///   - [`orientation(Orientation)`](crate::client::fluent_builders::CreateWorker::orientation) / [`set_orientation(Option<Orientation>)`](crate::client::fluent_builders::CreateWorker::set_orientation): Worker orientation measured in units clockwise from north.
-    /// - On success, responds with [`CreateWorkerOutput`](crate::output::CreateWorkerOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateWorkerOutput::arn): Full ARN of the worker.
-    ///   - [`id(Option<String>)`](crate::output::CreateWorkerOutput::id): Filters access by the workers identifier
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateWorkerOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateWorkerOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`site(Option<String>)`](crate::output::CreateWorkerOutput::site): Site ARN.
-    /// - On failure, responds with [`SdkError<CreateWorkerError>`](crate::error::CreateWorkerError)
-    pub fn create_worker(&self) -> crate::client::fluent_builders::CreateWorker {
-        crate::client::fluent_builders::CreateWorker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateWorkerFleet`](crate::client::fluent_builders::CreateWorkerFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerFleet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateWorkerFleet::set_client_token): Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkerFleet::set_name): Human friendly name of the resource.
-    ///   - [`site(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerFleet::site) / [`set_site(Option<String>)`](crate::client::fluent_builders::CreateWorkerFleet::set_site): Site ARN.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::CreateWorkerFleet::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::CreateWorkerFleet::set_additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
-    /// - On success, responds with [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateWorkerFleetOutput::arn): Full ARN of the worker fleet.
-    ///   - [`id(Option<String>)`](crate::output::CreateWorkerFleetOutput::id): Filters access by the worker fleet's identifier
-    ///   - [`created_at(Option<DateTime>)`](crate::output::CreateWorkerFleetOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::CreateWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
-    /// - On failure, responds with [`SdkError<CreateWorkerFleetError>`](crate::error::CreateWorkerFleetError)
-    pub fn create_worker_fleet(&self) -> crate::client::fluent_builders::CreateWorkerFleet {
-        crate::client::fluent_builders::CreateWorkerFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDestination`](crate::client::fluent_builders::DeleteDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDestination::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDestination::set_id): Destination ARN.
-    /// - On success, responds with [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDestinationError>`](crate::error::DeleteDestinationError)
-    pub fn delete_destination(&self) -> crate::client::fluent_builders::DeleteDestination {
-        crate::client::fluent_builders::DeleteDestination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSite`](crate::client::fluent_builders::DeleteSite) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteSite::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteSite::set_id): Site ARN.
-    /// - On success, responds with [`DeleteSiteOutput`](crate::output::DeleteSiteOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSiteError>`](crate::error::DeleteSiteError)
-    pub fn delete_site(&self) -> crate::client::fluent_builders::DeleteSite {
-        crate::client::fluent_builders::DeleteSite::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWorker`](crate::client::fluent_builders::DeleteWorker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorker::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWorker::set_id): Full ARN of the worker.
-    /// - On success, responds with [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteWorkerError>`](crate::error::DeleteWorkerError)
-    pub fn delete_worker(&self) -> crate::client::fluent_builders::DeleteWorker {
-        crate::client::fluent_builders::DeleteWorker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWorkerFleet`](crate::client::fluent_builders::DeleteWorkerFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkerFleet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkerFleet::set_id): Full ARN of the worker fleet.
-    /// - On success, responds with [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteWorkerFleetError>`](crate::error::DeleteWorkerFleetError)
-    pub fn delete_worker_fleet(&self) -> crate::client::fluent_builders::DeleteWorkerFleet {
-        crate::client::fluent_builders::DeleteWorkerFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDestination`](crate::client::fluent_builders::GetDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetDestination::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetDestination::set_id): Destination ARN.
-    /// - On success, responds with [`GetDestinationOutput`](crate::output::GetDestinationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetDestinationOutput::arn): Destination ARN.
-    ///   - [`id(Option<String>)`](crate::output::GetDestinationOutput::id): Filters access by the destination's identifier
-    ///   - [`name(Option<String>)`](crate::output::GetDestinationOutput::name): Human friendly name of the resource.
-    ///   - [`site(Option<String>)`](crate::output::GetDestinationOutput::site): Site ARN.
-    ///   - [`created_at(Option<DateTime>)`](crate::output::GetDestinationOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetDestinationOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`state(Option<DestinationState>)`](crate::output::GetDestinationOutput::state): State of the destination.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::GetDestinationOutput::additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
-    /// - On failure, responds with [`SdkError<GetDestinationError>`](crate::error::GetDestinationError)
-    pub fn get_destination(&self) -> crate::client::fluent_builders::GetDestination {
-        crate::client::fluent_builders::GetDestination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSite`](crate::client::fluent_builders::GetSite) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetSite::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetSite::set_id): Site ARN.
-    /// - On success, responds with [`GetSiteOutput`](crate::output::GetSiteOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetSiteOutput::arn): Site ARN.
-    ///   - [`id(Option<String>)`](crate::output::GetSiteOutput::id): Filters access by the site's identifier
-    ///   - [`name(Option<String>)`](crate::output::GetSiteOutput::name): Human friendly name of the resource.
-    ///   - [`country_code(Option<String>)`](crate::output::GetSiteOutput::country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    ///   - [`description(Option<String>)`](crate::output::GetSiteOutput::description): A high-level description of the site.
-    ///   - [`created_at(Option<DateTime>)`](crate::output::GetSiteOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetSiteOutput::updated_at): Timestamp at which the resource was last updated.
-    /// - On failure, responds with [`SdkError<GetSiteError>`](crate::error::GetSiteError)
-    pub fn get_site(&self) -> crate::client::fluent_builders::GetSite {
-        crate::client::fluent_builders::GetSite::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetWorker`](crate::client::fluent_builders::GetWorker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWorker::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWorker::set_id): Full ARN of the worker.
-    /// - On success, responds with [`GetWorkerOutput`](crate::output::GetWorkerOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetWorkerOutput::arn): Full ARN of the worker.
-    ///   - [`id(Option<String>)`](crate::output::GetWorkerOutput::id): Filters access by the workers identifier
-    ///   - [`fleet(Option<String>)`](crate::output::GetWorkerOutput::fleet): Full ARN of the worker fleet.
-    ///   - [`site(Option<String>)`](crate::output::GetWorkerOutput::site): Site ARN.
-    ///   - [`created_at(Option<DateTime>)`](crate::output::GetWorkerOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetWorkerOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`name(Option<String>)`](crate::output::GetWorkerOutput::name): Human friendly name of the resource.
-    ///   - [`additional_transient_properties(Option<String>)`](crate::output::GetWorkerOutput::additional_transient_properties): JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::GetWorkerOutput::additional_fixed_properties): JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    ///   - [`vendor_properties(Option<VendorProperties>)`](crate::output::GetWorkerOutput::vendor_properties): Properties of the worker that are provided by the vendor FMS.
-    ///   - [`position(Option<PositionCoordinates>)`](crate::output::GetWorkerOutput::position): Supported coordinates for worker position.
-    ///   - [`orientation(Option<Orientation>)`](crate::output::GetWorkerOutput::orientation): Worker orientation measured in units clockwise from north.
-    /// - On failure, responds with [`SdkError<GetWorkerError>`](crate::error::GetWorkerError)
-    pub fn get_worker(&self) -> crate::client::fluent_builders::GetWorker {
-        crate::client::fluent_builders::GetWorker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetWorkerFleet`](crate::client::fluent_builders::GetWorkerFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetWorkerFleet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetWorkerFleet::set_id): Full ARN of the worker fleet.
-    /// - On success, responds with [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::GetWorkerFleetOutput::id): Filters access by the worker fleet's identifier
-    ///   - [`arn(Option<String>)`](crate::output::GetWorkerFleetOutput::arn): Full ARN of the worker fleet.
-    ///   - [`name(Option<String>)`](crate::output::GetWorkerFleetOutput::name): Human friendly name of the resource.
-    ///   - [`site(Option<String>)`](crate::output::GetWorkerFleetOutput::site): Site ARN.
-    ///   - [`created_at(Option<DateTime>)`](crate::output::GetWorkerFleetOutput::created_at): Timestamp at which the resource was created.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::GetWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::GetWorkerFleetOutput::additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
-    /// - On failure, responds with [`SdkError<GetWorkerFleetError>`](crate::error::GetWorkerFleetError)
-    pub fn get_worker_fleet(&self) -> crate::client::fluent_builders::GetWorkerFleet {
-        crate::client::fluent_builders::GetWorkerFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDestinations`](crate::client::fluent_builders::ListDestinations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDestinations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`site(impl Into<String>)`](crate::client::fluent_builders::ListDestinations::site) / [`set_site(Option<String>)`](crate::client::fluent_builders::ListDestinations::set_site): Site ARN.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDestinations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDestinations::set_max_results): Maximum number of results to retrieve in a single call.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDestinations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDestinations::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`state(DestinationState)`](crate::client::fluent_builders::ListDestinations::state) / [`set_state(Option<DestinationState>)`](crate::client::fluent_builders::ListDestinations::set_state): State of the destination.
-    /// - On success, responds with [`ListDestinationsOutput`](crate::output::ListDestinationsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListDestinationsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`destinations(Option<Vec<Destination>>)`](crate::output::ListDestinationsOutput::destinations): List of destinations.
-    /// - On failure, responds with [`SdkError<ListDestinationsError>`](crate::error::ListDestinationsError)
-    pub fn list_destinations(&self) -> crate::client::fluent_builders::ListDestinations {
-        crate::client::fluent_builders::ListDestinations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSites`](crate::client::fluent_builders::ListSites) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSites::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSites::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSites::set_max_results): Maximum number of results to retrieve in a single ListSites call.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSites::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSites::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    /// - On success, responds with [`ListSitesOutput`](crate::output::ListSitesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListSitesOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`sites(Option<Vec<Site>>)`](crate::output::ListSitesOutput::sites): List of facilities.
-    /// - On failure, responds with [`SdkError<ListSitesError>`](crate::error::ListSitesError)
-    pub fn list_sites(&self) -> crate::client::fluent_builders::ListSites {
-        crate::client::fluent_builders::ListSites::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWorkerFleets`](crate::client::fluent_builders::ListWorkerFleets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkerFleets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`site(impl Into<String>)`](crate::client::fluent_builders::ListWorkerFleets::site) / [`set_site(Option<String>)`](crate::client::fluent_builders::ListWorkerFleets::set_site): Site ARN.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkerFleets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkerFleets::set_max_results): Maximum number of results to retrieve in a single ListWorkerFleets call.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkerFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkerFleets::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    /// - On success, responds with [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListWorkerFleetsOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`worker_fleets(Option<Vec<WorkerFleet>>)`](crate::output::ListWorkerFleetsOutput::worker_fleets): List of worker fleets.
-    /// - On failure, responds with [`SdkError<ListWorkerFleetsError>`](crate::error::ListWorkerFleetsError)
-    pub fn list_worker_fleets(&self) -> crate::client::fluent_builders::ListWorkerFleets {
-        crate::client::fluent_builders::ListWorkerFleets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWorkers`](crate::client::fluent_builders::ListWorkers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`site(impl Into<String>)`](crate::client::fluent_builders::ListWorkers::site) / [`set_site(Option<String>)`](crate::client::fluent_builders::ListWorkers::set_site): Site ARN.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkers::set_max_results): Maximum number of results to retrieve in a single ListWorkers call.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkers::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`fleet(impl Into<String>)`](crate::client::fluent_builders::ListWorkers::fleet) / [`set_fleet(Option<String>)`](crate::client::fluent_builders::ListWorkers::set_fleet): Full ARN of the worker fleet.
-    /// - On success, responds with [`ListWorkersOutput`](crate::output::ListWorkersOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListWorkersOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    ///   - [`workers(Option<Vec<Worker>>)`](crate::output::ListWorkersOutput::workers): List of workers.
-    /// - On failure, responds with [`SdkError<ListWorkersError>`](crate::error::ListWorkersError)
-    pub fn list_workers(&self) -> crate::client::fluent_builders::ListWorkers {
-        crate::client::fluent_builders::ListWorkers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDestination`](crate::client::fluent_builders::UpdateDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_id): Destination ARN.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_name): Human friendly name of the resource.
-    ///   - [`state(DestinationState)`](crate::client::fluent_builders::UpdateDestination::state) / [`set_state(Option<DestinationState>)`](crate::client::fluent_builders::UpdateDestination::set_state): State of the destination.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::UpdateDestination::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::UpdateDestination::set_additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
-    /// - On success, responds with [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateDestinationOutput::arn): Destination ARN.
-    ///   - [`id(Option<String>)`](crate::output::UpdateDestinationOutput::id): Filters access by the destination's identifier
-    ///   - [`name(Option<String>)`](crate::output::UpdateDestinationOutput::name): Human friendly name of the resource.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateDestinationOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`state(Option<DestinationState>)`](crate::output::UpdateDestinationOutput::state): State of the destination.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::UpdateDestinationOutput::additional_fixed_properties): JSON document containing additional fixed properties regarding the destination
-    /// - On failure, responds with [`SdkError<UpdateDestinationError>`](crate::error::UpdateDestinationError)
-    pub fn update_destination(&self) -> crate::client::fluent_builders::UpdateDestination {
-        crate::client::fluent_builders::UpdateDestination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSite`](crate::client::fluent_builders::UpdateSite) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_id): Site ARN.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_name): Human friendly name of the resource.
-    ///   - [`country_code(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::country_code) / [`set_country_code(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSite::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSite::set_description): A high-level description of the site.
-    /// - On success, responds with [`UpdateSiteOutput`](crate::output::UpdateSiteOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateSiteOutput::arn): Site ARN.
-    ///   - [`id(Option<String>)`](crate::output::UpdateSiteOutput::id): Filters access by the site's identifier
-    ///   - [`name(Option<String>)`](crate::output::UpdateSiteOutput::name): Human friendly name of the resource.
-    ///   - [`country_code(Option<String>)`](crate::output::UpdateSiteOutput::country_code): A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-    ///   - [`description(Option<String>)`](crate::output::UpdateSiteOutput::description): A high-level description of the site.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateSiteOutput::updated_at): Timestamp at which the resource was last updated.
-    /// - On failure, responds with [`SdkError<UpdateSiteError>`](crate::error::UpdateSiteError)
-    pub fn update_site(&self) -> crate::client::fluent_builders::UpdateSite {
-        crate::client::fluent_builders::UpdateSite::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWorker`](crate::client::fluent_builders::UpdateWorker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorker::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWorker::set_id): Full ARN of the worker.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorker::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWorker::set_name): Human friendly name of the resource.
-    ///   - [`additional_transient_properties(impl Into<String>)`](crate::client::fluent_builders::UpdateWorker::additional_transient_properties) / [`set_additional_transient_properties(Option<String>)`](crate::client::fluent_builders::UpdateWorker::set_additional_transient_properties): JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::UpdateWorker::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::UpdateWorker::set_additional_fixed_properties): JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    ///   - [`vendor_properties(VendorProperties)`](crate::client::fluent_builders::UpdateWorker::vendor_properties) / [`set_vendor_properties(Option<VendorProperties>)`](crate::client::fluent_builders::UpdateWorker::set_vendor_properties): Properties of the worker that are provided by the vendor FMS.
-    ///   - [`position(PositionCoordinates)`](crate::client::fluent_builders::UpdateWorker::position) / [`set_position(Option<PositionCoordinates>)`](crate::client::fluent_builders::UpdateWorker::set_position): Supported coordinates for worker position.
-    ///   - [`orientation(Orientation)`](crate::client::fluent_builders::UpdateWorker::orientation) / [`set_orientation(Option<Orientation>)`](crate::client::fluent_builders::UpdateWorker::set_orientation): Worker orientation measured in units clockwise from north.
-    /// - On success, responds with [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateWorkerOutput::arn): Full ARN of the worker.
-    ///   - [`id(Option<String>)`](crate::output::UpdateWorkerOutput::id): Filters access by the workers identifier
-    ///   - [`fleet(Option<String>)`](crate::output::UpdateWorkerOutput::fleet): Full ARN of the worker fleet.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateWorkerOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`name(Option<String>)`](crate::output::UpdateWorkerOutput::name): Human friendly name of the resource.
-    ///   - [`additional_transient_properties(Option<String>)`](crate::output::UpdateWorkerOutput::additional_transient_properties): JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::UpdateWorkerOutput::additional_fixed_properties): JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-    ///   - [`orientation(Option<Orientation>)`](crate::output::UpdateWorkerOutput::orientation): Worker orientation measured in units clockwise from north.
-    ///   - [`vendor_properties(Option<VendorProperties>)`](crate::output::UpdateWorkerOutput::vendor_properties): Properties of the worker that are provided by the vendor FMS.
-    ///   - [`position(Option<PositionCoordinates>)`](crate::output::UpdateWorkerOutput::position): Supported coordinates for worker position.
-    /// - On failure, responds with [`SdkError<UpdateWorkerError>`](crate::error::UpdateWorkerError)
-    pub fn update_worker(&self) -> crate::client::fluent_builders::UpdateWorker {
-        crate::client::fluent_builders::UpdateWorker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWorkerFleet`](crate::client::fluent_builders::UpdateWorkerFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::set_id): Full ARN of the worker fleet.
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::set_name): Human friendly name of the resource.
-    ///   - [`additional_fixed_properties(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::client::fluent_builders::UpdateWorkerFleet::set_additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
-    /// - On success, responds with [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateWorkerFleetOutput::arn): Full ARN of the worker fleet.
-    ///   - [`id(Option<String>)`](crate::output::UpdateWorkerFleetOutput::id): Filters access by the worker fleet's identifier
-    ///   - [`name(Option<String>)`](crate::output::UpdateWorkerFleetOutput::name): Human friendly name of the resource.
-    ///   - [`updated_at(Option<DateTime>)`](crate::output::UpdateWorkerFleetOutput::updated_at): Timestamp at which the resource was last updated.
-    ///   - [`additional_fixed_properties(Option<String>)`](crate::output::UpdateWorkerFleetOutput::additional_fixed_properties): JSON blob containing additional fixed properties regarding the worker fleet
-    /// - On failure, responds with [`SdkError<UpdateWorkerFleetError>`](crate::error::UpdateWorkerFleetError)
-    pub fn update_worker_fleet(&self) -> crate::client::fluent_builders::UpdateWorkerFleet {
-        crate::client::fluent_builders::UpdateWorkerFleet::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -491,9 +174,49 @@ impl Client {
     }
 }
 
+mod create_destination;
+
+mod create_site;
+
+mod create_worker;
+
+mod create_worker_fleet;
+
+mod delete_destination;
+
+mod delete_site;
+
+mod delete_worker;
+
+mod delete_worker_fleet;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_destination;
+
+mod get_site;
+
+mod get_worker;
+
+mod get_worker_fleet;
+
+mod list_destinations;
+
+mod list_sites;
+
+mod list_worker_fleets;
+
+mod list_workers;
+
+mod update_destination;
+
+mod update_site;
+
+mod update_worker;
+
+mod update_worker_fleet;

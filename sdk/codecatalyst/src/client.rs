@@ -89,384 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateAccessToken`](crate::client::fluent_builders::CreateAccessToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccessToken::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccessToken::set_name): <p>The friendly name of the personal access token.</p>
-    ///   - [`expires_time(DateTime)`](crate::client::fluent_builders::CreateAccessToken::expires_time) / [`set_expires_time(Option<DateTime>)`](crate::client::fluent_builders::CreateAccessToken::set_expires_time): <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    /// - On success, responds with [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput) with field(s):
-    ///   - [`secret(Option<String>)`](crate::output::CreateAccessTokenOutput::secret): <p>The secret value of the personal access token.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateAccessTokenOutput::name): <p>The friendly name of the personal access token.</p>
-    ///   - [`expires_time(Option<DateTime>)`](crate::output::CreateAccessTokenOutput::expires_time): <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    /// - On failure, responds with [`SdkError<CreateAccessTokenError>`](crate::error::CreateAccessTokenError)
-    pub fn create_access_token(&self) -> crate::client::fluent_builders::CreateAccessToken {
-        crate::client::fluent_builders::CreateAccessToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDevEnvironment`](crate::client::fluent_builders::CreateDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreateDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreateDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreateDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreateDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`repositories(Vec<RepositoryInput>)`](crate::client::fluent_builders::CreateDevEnvironment::repositories) / [`set_repositories(Option<Vec<RepositoryInput>>)`](crate::client::fluent_builders::CreateDevEnvironment::set_repositories): <p>The source repository that contains the branch to clone into the Dev Environment. </p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDevEnvironment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDevEnvironment::set_client_token): <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::CreateDevEnvironment::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::CreateDevEnvironment::set_alias): <p>The user-defined alias for a Dev Environment.</p>
-    ///   - [`ides(Vec<IdeConfiguration>)`](crate::client::fluent_builders::CreateDevEnvironment::ides) / [`set_ides(Option<Vec<IdeConfiguration>>)`](crate::client::fluent_builders::CreateDevEnvironment::set_ides): <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p> <note>   <p>An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.</p>  </note>
-    ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::CreateDevEnvironment::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::CreateDevEnvironment::set_instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    ///   - [`inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::CreateDevEnvironment::inactivity_timeout_minutes) / [`set_inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::CreateDevEnvironment::set_inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    ///   - [`persistent_storage(PersistentStorageConfiguration)`](crate::client::fluent_builders::CreateDevEnvironment::persistent_storage) / [`set_persistent_storage(Option<PersistentStorageConfiguration>)`](crate::client::fluent_builders::CreateDevEnvironment::set_persistent_storage): <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p> <note>   <p>Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>  </note>
-    /// - On success, responds with [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::CreateDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::CreateDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::CreateDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
-    /// - On failure, responds with [`SdkError<CreateDevEnvironmentError>`](crate::error::CreateDevEnvironmentError)
-    pub fn create_dev_environment(&self) -> crate::client::fluent_builders::CreateDevEnvironment {
-        crate::client::fluent_builders::CreateDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProject`](crate::client::fluent_builders::CreateProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_space_name): <p>The name of the space.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateProject::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateProject::set_display_name): <p>The friendly name of the project that will be displayed to users.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProject::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProject::set_description): <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
-    /// - On success, responds with [`CreateProjectOutput`](crate::output::CreateProjectOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::CreateProjectOutput::space_name): <p>The name of the space.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateProjectOutput::name): <p>The name of the project in the space.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::CreateProjectOutput::display_name): <p>The friendly name of the project.</p>
-    ///   - [`description(Option<String>)`](crate::output::CreateProjectOutput::description): <p>The description of the project.</p>
-    /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::error::CreateProjectError)
-    pub fn create_project(&self) -> crate::client::fluent_builders::CreateProject {
-        crate::client::fluent_builders::CreateProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSourceRepositoryBranch`](crate::client::fluent_builders::CreateSourceRepositoryBranch) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`source_repository_name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::source_repository_name) / [`set_source_repository_name(Option<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::set_source_repository_name): <p>The name of the repository where you want to create a branch.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::set_name): <p>The name for the branch you're creating.</p>
-    ///   - [`head_commit_id(impl Into<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::head_commit_id) / [`set_head_commit_id(Option<String>)`](crate::client::fluent_builders::CreateSourceRepositoryBranch::set_head_commit_id): <p>The commit ID in an existing branch from which you want to create the new branch.</p>
-    /// - On success, responds with [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput) with field(s):
-    ///   - [`r#ref(Option<String>)`](crate::output::CreateSourceRepositoryBranchOutput::ref): <p>The Git reference name of the branch.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateSourceRepositoryBranchOutput::name): <p>The name of the newly created branch.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::CreateSourceRepositoryBranchOutput::last_updated_time): <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    ///   - [`head_commit_id(Option<String>)`](crate::output::CreateSourceRepositoryBranchOutput::head_commit_id): <p>The commit ID of the tip of the newly created branch.</p>
-    /// - On failure, responds with [`SdkError<CreateSourceRepositoryBranchError>`](crate::error::CreateSourceRepositoryBranchError)
-    pub fn create_source_repository_branch(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSourceRepositoryBranch {
-        crate::client::fluent_builders::CreateSourceRepositoryBranch::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAccessToken`](crate::client::fluent_builders::DeleteAccessToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessToken::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessToken::set_id): <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your user account by calling <code>ListAccessTokens</code>.</p>
-    /// - On success, responds with [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAccessTokenError>`](crate::error::DeleteAccessTokenError)
-    pub fn delete_access_token(&self) -> crate::client::fluent_builders::DeleteAccessToken {
-        crate::client::fluent_builders::DeleteAccessToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDevEnvironment`](crate::client::fluent_builders::DeleteDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDevEnvironment::set_id): <p>The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
-    /// - On success, responds with [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::DeleteDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::DeleteDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::DeleteDevEnvironmentOutput::id): <p>The system-generated unique ID of the deleted Dev Environment. </p>
-    /// - On failure, responds with [`SdkError<DeleteDevEnvironmentError>`](crate::error::DeleteDevEnvironmentError)
-    pub fn delete_dev_environment(&self) -> crate::client::fluent_builders::DeleteDevEnvironment {
-        crate::client::fluent_builders::DeleteDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDevEnvironment`](crate::client::fluent_builders::GetDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::GetDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::GetDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::GetDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::GetDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetDevEnvironment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetDevEnvironment::set_id): <p>The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
-    /// - On success, responds with [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::GetDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::GetDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::GetDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetDevEnvironmentOutput::last_updated_time): <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    ///   - [`creator_id(Option<String>)`](crate::output::GetDevEnvironmentOutput::creator_id): <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    ///   - [`status(Option<DevEnvironmentStatus>)`](crate::output::GetDevEnvironmentOutput::status): <p>The current status of the Dev Environment.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetDevEnvironmentOutput::status_reason): <p>The reason for the status.</p>
-    ///   - [`repositories(Option<Vec<DevEnvironmentRepositorySummary>>)`](crate::output::GetDevEnvironmentOutput::repositories): <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-    ///   - [`alias(Option<String>)`](crate::output::GetDevEnvironmentOutput::alias): <p>The user-specified alias for the Dev Environment. </p>
-    ///   - [`ides(Option<Vec<Ide>>)`](crate::output::GetDevEnvironmentOutput::ides): <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
-    ///   - [`instance_type(Option<InstanceType>)`](crate::output::GetDevEnvironmentOutput::instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    ///   - [`inactivity_timeout_minutes(i32)`](crate::output::GetDevEnvironmentOutput::inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
-    ///   - [`persistent_storage(Option<PersistentStorage>)`](crate::output::GetDevEnvironmentOutput::persistent_storage): <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-    /// - On failure, responds with [`SdkError<GetDevEnvironmentError>`](crate::error::GetDevEnvironmentError)
-    pub fn get_dev_environment(&self) -> crate::client::fluent_builders::GetDevEnvironment {
-        crate::client::fluent_builders::GetDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProject`](crate::client::fluent_builders::GetProject) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::GetProject::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::GetProject::set_space_name): <p>The name of the space.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetProject::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetProject::set_name): <p>The name of the project in the space.</p>
-    /// - On success, responds with [`GetProjectOutput`](crate::output::GetProjectOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::GetProjectOutput::space_name): <p>The name of the space.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetProjectOutput::name): <p>The name of the project in the space.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::GetProjectOutput::display_name): <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetProjectOutput::description): <p>The description of the project.</p>
-    /// - On failure, responds with [`SdkError<GetProjectError>`](crate::error::GetProjectError)
-    pub fn get_project(&self) -> crate::client::fluent_builders::GetProject {
-        crate::client::fluent_builders::GetProject::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSourceRepositoryCloneUrls`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`source_repository_name(impl Into<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::source_repository_name) / [`set_source_repository_name(Option<String>)`](crate::client::fluent_builders::GetSourceRepositoryCloneUrls::set_source_repository_name): <p>The name of the source repository.</p>
-    /// - On success, responds with [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput) with field(s):
-    ///   - [`https(Option<String>)`](crate::output::GetSourceRepositoryCloneUrlsOutput::https): <p>The HTTPS URL to use when cloning the source repository.</p>
-    /// - On failure, responds with [`SdkError<GetSourceRepositoryCloneUrlsError>`](crate::error::GetSourceRepositoryCloneUrlsError)
-    pub fn get_source_repository_clone_urls(
-        &self,
-    ) -> crate::client::fluent_builders::GetSourceRepositoryCloneUrls {
-        crate::client::fluent_builders::GetSourceRepositoryCloneUrls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSpace`](crate::client::fluent_builders::GetSpace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetSpace::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetSpace::set_name): <p>The name of the space.</p>
-    /// - On success, responds with [`GetSpaceOutput`](crate::output::GetSpaceOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetSpaceOutput::name): <p>The name of the space.</p>
-    ///   - [`region_name(Option<String>)`](crate::output::GetSpaceOutput::region_name): <p>The Amazon Web Services Region where the space exists.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::GetSpaceOutput::display_name): <p>The friendly name of the space displayed to users.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetSpaceOutput::description): <p>The description of the space.</p>
-    /// - On failure, responds with [`SdkError<GetSpaceError>`](crate::error::GetSpaceError)
-    pub fn get_space(&self) -> crate::client::fluent_builders::GetSpace {
-        crate::client::fluent_builders::GetSpace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSubscription`](crate::client::fluent_builders::GetSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::GetSubscription::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::GetSubscription::set_space_name): <p>The name of the space.</p>
-    /// - On success, responds with [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput) with field(s):
-    ///   - [`subscription_type(Option<String>)`](crate::output::GetSubscriptionOutput::subscription_type): <p>The type of the billing plan for the space.</p>
-    ///   - [`aws_account_name(Option<String>)`](crate::output::GetSubscriptionOutput::aws_account_name): <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    /// - On failure, responds with [`SdkError<GetSubscriptionError>`](crate::error::GetSubscriptionError)
-    pub fn get_subscription(&self) -> crate::client::fluent_builders::GetSubscription {
-        crate::client::fluent_builders::GetSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetUserDetails`](crate::client::fluent_builders::GetUserDetails) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetUserDetails::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetUserDetails::set_id): <p>The system-generated unique ID of the user. </p>
-    ///   - [`user_name(impl Into<String>)`](crate::client::fluent_builders::GetUserDetails::user_name) / [`set_user_name(Option<String>)`](crate::client::fluent_builders::GetUserDetails::set_user_name): <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    /// - On success, responds with [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput) with field(s):
-    ///   - [`user_id(Option<String>)`](crate::output::GetUserDetailsOutput::user_id): <p>The system-generated unique ID of the user.</p>
-    ///   - [`user_name(Option<String>)`](crate::output::GetUserDetailsOutput::user_name): <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::GetUserDetailsOutput::display_name): <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
-    ///   - [`primary_email(Option<EmailAddress>)`](crate::output::GetUserDetailsOutput::primary_email): <p>The email address provided by the user when they signed up.</p>
-    ///   - [`version(Option<String>)`](crate::output::GetUserDetailsOutput::version): <p></p>
-    /// - On failure, responds with [`SdkError<GetUserDetailsError>`](crate::error::GetUserDetailsError)
-    pub fn get_user_details(&self) -> crate::client::fluent_builders::GetUserDetails {
-        crate::client::fluent_builders::GetUserDetails::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAccessTokens`](crate::client::fluent_builders::ListAccessTokens) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessTokens::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessTokens::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessTokens::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessTokens::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessTokens::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On success, responds with [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput) with field(s):
-    ///   - [`items(Option<Vec<AccessTokenSummary>>)`](crate::output::ListAccessTokensOutput::items): <p>A list of personal access tokens (PATs) associated with the calling user.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccessTokensOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListAccessTokensError>`](crate::error::ListAccessTokensError)
-    pub fn list_access_tokens(&self) -> crate::client::fluent_builders::ListAccessTokens {
-        crate::client::fluent_builders::ListAccessTokens::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDevEnvironments`](crate::client::fluent_builders::ListDevEnvironments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevEnvironments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::ListDevEnvironments::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::ListDevEnvironments::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::ListDevEnvironments::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::ListDevEnvironments::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListDevEnvironments::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListDevEnvironments::set_filters): <p>Information about filters to apply to narrow the results returned in the list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevEnvironments::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevEnvironments::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput) with field(s):
-    ///   - [`items(Option<Vec<DevEnvironmentSummary>>)`](crate::output::ListDevEnvironmentsOutput::items): <p>Information about the Dev Environments in a project.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDevEnvironmentsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListDevEnvironmentsError>`](crate::error::ListDevEnvironmentsError)
-    pub fn list_dev_environments(&self) -> crate::client::fluent_builders::ListDevEnvironments {
-        crate::client::fluent_builders::ListDevEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEventLogs`](crate::client::fluent_builders::ListEventLogs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEventLogs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::ListEventLogs::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::ListEventLogs::set_space_name): <p>The name of the space.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::ListEventLogs::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::ListEventLogs::set_start_time): <p>The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::ListEventLogs::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::ListEventLogs::set_end_time): <p>The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    ///   - [`event_name(impl Into<String>)`](crate::client::fluent_builders::ListEventLogs::event_name) / [`set_event_name(Option<String>)`](crate::client::fluent_builders::ListEventLogs::set_event_name): <p>The name of the event.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEventLogs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEventLogs::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEventLogs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEventLogs::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListEventLogsOutput`](crate::output::ListEventLogsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListEventLogsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Option<Vec<EventLogEntry>>)`](crate::output::ListEventLogsOutput::items): <p>Information about each event retrieved in the list.</p>
-    /// - On failure, responds with [`SdkError<ListEventLogsError>`](crate::error::ListEventLogsError)
-    pub fn list_event_logs(&self) -> crate::client::fluent_builders::ListEventLogs {
-        crate::client::fluent_builders::ListEventLogs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProjects`](crate::client::fluent_builders::ListProjects) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProjects::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::ListProjects::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::ListProjects::set_space_name): <p>The name of the space.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProjects::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProjects::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProjects::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProjects::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    ///   - [`filters(Vec<ProjectListFilter>)`](crate::client::fluent_builders::ListProjects::filters) / [`set_filters(Option<Vec<ProjectListFilter>>)`](crate::client::fluent_builders::ListProjects::set_filters): <p>Information about filters to apply to narrow the results returned in the list.</p>
-    /// - On success, responds with [`ListProjectsOutput`](crate::output::ListProjectsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListProjectsOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Option<Vec<ProjectSummary>>)`](crate::output::ListProjectsOutput::items): <p>Information about the projects.</p>
-    /// - On failure, responds with [`SdkError<ListProjectsError>`](crate::error::ListProjectsError)
-    pub fn list_projects(&self) -> crate::client::fluent_builders::ListProjects {
-        crate::client::fluent_builders::ListProjects::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSourceRepositories`](crate::client::fluent_builders::ListSourceRepositories) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSourceRepositories::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositories::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::ListSourceRepositories::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositories::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::ListSourceRepositories::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositories::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceRepositories::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceRepositories::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSourceRepositories::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput) with field(s):
-    ///   - [`items(Option<Vec<ListSourceRepositoriesItem>>)`](crate::output::ListSourceRepositoriesOutput::items): <p>Information about the source repositories.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSourceRepositoriesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On failure, responds with [`SdkError<ListSourceRepositoriesError>`](crate::error::ListSourceRepositoriesError)
-    pub fn list_source_repositories(
-        &self,
-    ) -> crate::client::fluent_builders::ListSourceRepositories {
-        crate::client::fluent_builders::ListSourceRepositories::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSourceRepositoryBranches`](crate::client::fluent_builders::ListSourceRepositoryBranches) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSourceRepositoryBranches::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`source_repository_name(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::source_repository_name) / [`set_source_repository_name(Option<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::set_source_repository_name): <p>The name of the source repository.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSourceRepositoryBranches::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSourceRepositoryBranches::set_max_results): <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListSourceRepositoryBranchesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Option<Vec<ListSourceRepositoryBranchesItem>>)`](crate::output::ListSourceRepositoryBranchesOutput::items): <p>Information about the source branches.</p>
-    /// - On failure, responds with [`SdkError<ListSourceRepositoryBranchesError>`](crate::error::ListSourceRepositoryBranchesError)
-    pub fn list_source_repository_branches(
-        &self,
-    ) -> crate::client::fluent_builders::ListSourceRepositoryBranches {
-        crate::client::fluent_builders::ListSourceRepositoryBranches::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSpaces`](crate::client::fluent_builders::ListSpaces) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSpaces::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSpaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSpaces::set_next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    /// - On success, responds with [`ListSpacesOutput`](crate::output::ListSpacesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListSpacesOutput::next_token): <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    ///   - [`items(Option<Vec<SpaceSummary>>)`](crate::output::ListSpacesOutput::items): <p>Information about the space. </p>
-    /// - On failure, responds with [`SdkError<ListSpacesError>`](crate::error::ListSpacesError)
-    pub fn list_spaces(&self) -> crate::client::fluent_builders::ListSpaces {
-        crate::client::fluent_builders::ListSpaces::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartDevEnvironment`](crate::client::fluent_builders::StartDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::StartDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::StartDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartDevEnvironment::set_id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`ides(Vec<IdeConfiguration>)`](crate::client::fluent_builders::StartDevEnvironment::ides) / [`set_ides(Option<Vec<IdeConfiguration>>)`](crate::client::fluent_builders::StartDevEnvironment::set_ides): <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
-    ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::StartDevEnvironment::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::StartDevEnvironment::set_instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    ///   - [`inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::StartDevEnvironment::inactivity_timeout_minutes) / [`set_inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::StartDevEnvironment::set_inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    /// - On success, responds with [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::StartDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::StartDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::StartDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`status(Option<DevEnvironmentStatus>)`](crate::output::StartDevEnvironmentOutput::status): <p>The status of the Dev Environment. </p>
-    /// - On failure, responds with [`SdkError<StartDevEnvironmentError>`](crate::error::StartDevEnvironmentError)
-    pub fn start_dev_environment(&self) -> crate::client::fluent_builders::StartDevEnvironment {
-        crate::client::fluent_builders::StartDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartDevEnvironmentSession`](crate::client::fluent_builders::StartDevEnvironmentSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartDevEnvironmentSession::set_id): <p>The system-generated unique ID of the Dev Environment.</p>
-    ///   - [`session_configuration(DevEnvironmentSessionConfiguration)`](crate::client::fluent_builders::StartDevEnvironmentSession::session_configuration) / [`set_session_configuration(Option<DevEnvironmentSessionConfiguration>)`](crate::client::fluent_builders::StartDevEnvironmentSession::set_session_configuration): <p>Information about the configuration of a Dev Environment session.</p>
-    /// - On success, responds with [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput) with field(s):
-    ///   - [`access_details(Option<DevEnvironmentAccessDetails>)`](crate::output::StartDevEnvironmentSessionOutput::access_details): <p>Information about connection details for a Dev Environment.</p>
-    ///   - [`session_id(Option<String>)`](crate::output::StartDevEnvironmentSessionOutput::session_id): <p>The system-generated unique ID of the Dev Environment session.</p>
-    ///   - [`space_name(Option<String>)`](crate::output::StartDevEnvironmentSessionOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::StartDevEnvironmentSessionOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::StartDevEnvironmentSessionOutput::id): <p>The system-generated unique ID of the Dev Environment.</p>
-    /// - On failure, responds with [`SdkError<StartDevEnvironmentSessionError>`](crate::error::StartDevEnvironmentSessionError)
-    pub fn start_dev_environment_session(
-        &self,
-    ) -> crate::client::fluent_builders::StartDevEnvironmentSession {
-        crate::client::fluent_builders::StartDevEnvironmentSession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopDevEnvironment`](crate::client::fluent_builders::StopDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::StopDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::StopDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::StopDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::StopDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopDevEnvironment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopDevEnvironment::set_id): <p>The system-generated unique ID of the Dev Environment. </p>
-    /// - On success, responds with [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput) with field(s):
-    ///   - [`space_name(Option<String>)`](crate::output::StopDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::StopDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(Option<String>)`](crate::output::StopDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`status(Option<DevEnvironmentStatus>)`](crate::output::StopDevEnvironmentOutput::status): <p>The status of the Dev Environment. </p>
-    /// - On failure, responds with [`SdkError<StopDevEnvironmentError>`](crate::error::StopDevEnvironmentError)
-    pub fn stop_dev_environment(&self) -> crate::client::fluent_builders::StopDevEnvironment {
-        crate::client::fluent_builders::StopDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDevEnvironment`](crate::client::fluent_builders::UpdateDevEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`space_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::space_name) / [`set_space_name(Option<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_space_name): <p>The name of the space.</p>
-    ///   - [`project_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::project_name) / [`set_project_name(Option<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_project_name): <p>The name of the project in the space.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_alias): <p>The user-specified alias for the Dev Environment. Changing this value will not cause a restart.</p>
-    ///   - [`ides(Vec<IdeConfiguration>)`](crate::client::fluent_builders::UpdateDevEnvironment::ides) / [`set_ides(Option<Vec<IdeConfiguration>>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_ides): <p>Information about the integrated development environment (IDE) configured for a Dev Environment.</p>
-    ///   - [`instance_type(InstanceType)`](crate::client::fluent_builders::UpdateDevEnvironment::instance_type) / [`set_instance_type(Option<InstanceType>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p> <note>   <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>  </note>
-    ///   - [`inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::UpdateDevEnvironment::inactivity_timeout_minutes) / [`set_inactivity_timeout_minutes(i32)`](crate::client::fluent_builders::UpdateDevEnvironment::set_inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p> <note>   <p>Changing this value will cause a restart of the Dev Environment if it is running.</p>  </note>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateDevEnvironment::set_client_token): <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    /// - On success, responds with [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::UpdateDevEnvironmentOutput::id): <p>The system-generated unique ID of the Dev Environment. </p>
-    ///   - [`space_name(Option<String>)`](crate::output::UpdateDevEnvironmentOutput::space_name): <p>The name of the space.</p>
-    ///   - [`project_name(Option<String>)`](crate::output::UpdateDevEnvironmentOutput::project_name): <p>The name of the project in the space.</p>
-    ///   - [`alias(Option<String>)`](crate::output::UpdateDevEnvironmentOutput::alias): <p>The user-specified alias for the Dev Environment.</p>
-    ///   - [`ides(Option<Vec<IdeConfiguration>>)`](crate::output::UpdateDevEnvironmentOutput::ides): <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-    ///   - [`instance_type(Option<InstanceType>)`](crate::output::UpdateDevEnvironmentOutput::instance_type): <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    ///   - [`inactivity_timeout_minutes(i32)`](crate::output::UpdateDevEnvironmentOutput::inactivity_timeout_minutes): <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
-    ///   - [`client_token(Option<String>)`](crate::output::UpdateDevEnvironmentOutput::client_token): <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    /// - On failure, responds with [`SdkError<UpdateDevEnvironmentError>`](crate::error::UpdateDevEnvironmentError)
-    pub fn update_dev_environment(&self) -> crate::client::fluent_builders::UpdateDevEnvironment {
-        crate::client::fluent_builders::UpdateDevEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`VerifySession`](crate::client::fluent_builders::VerifySession) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::VerifySession::send) it.
-
-    /// - On success, responds with [`VerifySessionOutput`](crate::output::VerifySessionOutput) with field(s):
-    ///   - [`identity(Option<String>)`](crate::output::VerifySessionOutput::identity): <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
-    /// - On failure, responds with [`SdkError<VerifySessionError>`](crate::error::VerifySessionError)
-    pub fn verify_session(&self) -> crate::client::fluent_builders::VerifySession {
-        crate::client::fluent_builders::VerifySession::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -552,9 +174,57 @@ impl Client {
     }
 }
 
+mod create_access_token;
+
+mod create_dev_environment;
+
+mod create_project;
+
+mod create_source_repository_branch;
+
+mod delete_access_token;
+
+mod delete_dev_environment;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_dev_environment;
+
+mod get_project;
+
+mod get_source_repository_clone_urls;
+
+mod get_space;
+
+mod get_subscription;
+
+mod get_user_details;
+
+mod list_access_tokens;
+
+mod list_dev_environments;
+
+mod list_event_logs;
+
+mod list_projects;
+
+mod list_source_repositories;
+
+mod list_source_repository_branches;
+
+mod list_spaces;
+
+mod start_dev_environment;
+
+mod start_dev_environment_session;
+
+mod stop_dev_environment;
+
+mod update_dev_environment;
+
+mod verify_session;

@@ -89,46 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`GetDeployments`](crate::client::fluent_builders::GetDeployments) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_name): <p>The unique name of the device you want to get the configuration of active deployments from.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeployments::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeployments::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    /// - On success, responds with [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput) with field(s):
-    ///   - [`deployments(Option<Vec<EdgeDeployment>>)`](crate::output::GetDeploymentsOutput::deployments): <p>Returns a list of the configurations of the active deployments on the device.</p>
-    /// - On failure, responds with [`SdkError<GetDeploymentsError>`](crate::error::GetDeploymentsError)
-    pub fn get_deployments(&self) -> crate::client::fluent_builders::GetDeployments {
-        crate::client::fluent_builders::GetDeployments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeviceRegistration`](crate::client::fluent_builders::GetDeviceRegistration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_name): <p>The unique name of the device you want to get the registration status from.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::GetDeviceRegistration::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::GetDeviceRegistration::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    /// - On success, responds with [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput) with field(s):
-    ///   - [`device_registration(Option<String>)`](crate::output::GetDeviceRegistrationOutput::device_registration): <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-    ///   - [`cache_ttl(Option<String>)`](crate::output::GetDeviceRegistrationOutput::cache_ttl): <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-    /// - On failure, responds with [`SdkError<GetDeviceRegistrationError>`](crate::error::GetDeviceRegistrationError)
-    pub fn get_device_registration(&self) -> crate::client::fluent_builders::GetDeviceRegistration {
-        crate::client::fluent_builders::GetDeviceRegistration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendHeartbeat`](crate::client::fluent_builders::SendHeartbeat) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`agent_metrics(Vec<EdgeMetric>)`](crate::client::fluent_builders::SendHeartbeat::agent_metrics) / [`set_agent_metrics(Option<Vec<EdgeMetric>>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_metrics): <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    ///   - [`models(Vec<Model>)`](crate::client::fluent_builders::SendHeartbeat::models) / [`set_models(Option<Vec<Model>>)`](crate::client::fluent_builders::SendHeartbeat::set_models): <p>Returns a list of models deployed on the the device.</p>
-    ///   - [`agent_version(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::agent_version) / [`set_agent_version(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_agent_version): <p>Returns the version of the agent.</p>
-    ///   - [`device_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_name) / [`set_device_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_name): <p>The unique name of the device.</p>
-    ///   - [`device_fleet_name(impl Into<String>)`](crate::client::fluent_builders::SendHeartbeat::device_fleet_name) / [`set_device_fleet_name(Option<String>)`](crate::client::fluent_builders::SendHeartbeat::set_device_fleet_name): <p>The name of the fleet that the device belongs to.</p>
-    ///   - [`deployment_result(DeploymentResult)`](crate::client::fluent_builders::SendHeartbeat::deployment_result) / [`set_deployment_result(Option<DeploymentResult>)`](crate::client::fluent_builders::SendHeartbeat::set_deployment_result): <p>Returns the result of a deployment on the device.</p>
-    /// - On success, responds with [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput)
-
-    /// - On failure, responds with [`SdkError<SendHeartbeatError>`](crate::error::SendHeartbeatError)
-    pub fn send_heartbeat(&self) -> crate::client::fluent_builders::SendHeartbeat {
-        crate::client::fluent_builders::SendHeartbeat::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -220,3 +180,9 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_deployments;
+
+mod get_device_registration;
+
+mod send_heartbeat;

@@ -90,10 +90,7 @@ impl ListJobsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_structure_crate_output_list_jobs_output_marker(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_list_jobs_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -211,7 +208,8 @@ impl ListMultipartUploadsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_multipart_uploads_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_multipart_uploads_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -329,7 +327,7 @@ impl ListPartsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_parts_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_parts_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -447,7 +445,7 @@ impl ListVaultsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_vaults_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_vaults_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -494,7 +492,7 @@ impl ListJobsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_jobs_output_job_list(page)
+            crate::lens::lens_list_jobs_output_job_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -521,11 +519,9 @@ impl ListMultipartUploadsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_multipart_uploads_output_uploads_list(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_multipart_uploads_output_uploads_list(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -550,7 +546,7 @@ impl ListPartsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_parts_output_parts(page)
+            crate::lens::lens_list_parts_output_parts(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -577,7 +573,7 @@ impl ListVaultsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_vaults_output_vault_list(page)
+            crate::lens::lens_list_vaults_output_vault_list(page)
                 .unwrap_or_default()
                 .into_iter()
         })

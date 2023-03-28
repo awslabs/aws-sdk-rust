@@ -89,738 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AddInstanceFleet`](crate::client::fluent_builders::AddInstanceFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::AddInstanceFleet::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::AddInstanceFleet::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`instance_fleet(InstanceFleetConfig)`](crate::client::fluent_builders::AddInstanceFleet::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetConfig>)`](crate::client::fluent_builders::AddInstanceFleet::set_instance_fleet): <p>Specifies the configuration of the instance fleet.</p>
-    /// - On success, responds with [`AddInstanceFleetOutput`](crate::output::AddInstanceFleetOutput) with field(s):
-    ///   - [`cluster_id(Option<String>)`](crate::output::AddInstanceFleetOutput::cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`instance_fleet_id(Option<String>)`](crate::output::AddInstanceFleetOutput::instance_fleet_id): <p>The unique identifier of the instance fleet.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::output::AddInstanceFleetOutput::cluster_arn): <p>The Amazon Resource Name of the cluster.</p>
-    /// - On failure, responds with [`SdkError<AddInstanceFleetError>`](crate::error::AddInstanceFleetError)
-    pub fn add_instance_fleet(&self) -> crate::client::fluent_builders::AddInstanceFleet {
-        crate::client::fluent_builders::AddInstanceFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AddInstanceGroups`](crate::client::fluent_builders::AddInstanceGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_groups(Vec<InstanceGroupConfig>)`](crate::client::fluent_builders::AddInstanceGroups::instance_groups) / [`set_instance_groups(Option<Vec<InstanceGroupConfig>>)`](crate::client::fluent_builders::AddInstanceGroups::set_instance_groups): <p>Instance groups to add.</p>
-    ///   - [`job_flow_id(impl Into<String>)`](crate::client::fluent_builders::AddInstanceGroups::job_flow_id) / [`set_job_flow_id(Option<String>)`](crate::client::fluent_builders::AddInstanceGroups::set_job_flow_id): <p>Job flow in which to add the instance groups.</p>
-    /// - On success, responds with [`AddInstanceGroupsOutput`](crate::output::AddInstanceGroupsOutput) with field(s):
-    ///   - [`job_flow_id(Option<String>)`](crate::output::AddInstanceGroupsOutput::job_flow_id): <p>The job flow ID in which the instance groups are added.</p>
-    ///   - [`instance_group_ids(Option<Vec<String>>)`](crate::output::AddInstanceGroupsOutput::instance_group_ids): <p>Instance group IDs of the newly created instance groups.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::output::AddInstanceGroupsOutput::cluster_arn): <p>The Amazon Resource Name of the cluster.</p>
-    /// - On failure, responds with [`SdkError<AddInstanceGroupsError>`](crate::error::AddInstanceGroupsError)
-    pub fn add_instance_groups(&self) -> crate::client::fluent_builders::AddInstanceGroups {
-        crate::client::fluent_builders::AddInstanceGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AddJobFlowSteps`](crate::client::fluent_builders::AddJobFlowSteps) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_flow_id(impl Into<String>)`](crate::client::fluent_builders::AddJobFlowSteps::job_flow_id) / [`set_job_flow_id(Option<String>)`](crate::client::fluent_builders::AddJobFlowSteps::set_job_flow_id): <p>A string that uniquely identifies the job flow. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>ListClusters</code>. </p>
-    ///   - [`steps(Vec<StepConfig>)`](crate::client::fluent_builders::AddJobFlowSteps::steps) / [`set_steps(Option<Vec<StepConfig>>)`](crate::client::fluent_builders::AddJobFlowSteps::set_steps): <p> A list of <code>StepConfig</code> to be executed by the job flow. </p>
-    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::AddJobFlowSteps::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::AddJobFlowSteps::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>. </p>  <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
-    /// - On success, responds with [`AddJobFlowStepsOutput`](crate::output::AddJobFlowStepsOutput) with field(s):
-    ///   - [`step_ids(Option<Vec<String>>)`](crate::output::AddJobFlowStepsOutput::step_ids): <p>The identifiers of the list of steps added to the job flow.</p>
-    /// - On failure, responds with [`SdkError<AddJobFlowStepsError>`](crate::error::AddJobFlowStepsError)
-    pub fn add_job_flow_steps(&self) -> crate::client::fluent_builders::AddJobFlowSteps {
-        crate::client::fluent_builders::AddJobFlowSteps::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AddTags`](crate::client::fluent_builders::AddTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::AddTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::AddTags::set_resource_id): <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTags::set_tags): <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    /// - On success, responds with [`AddTagsOutput`](crate::output::AddTagsOutput)
-
-    /// - On failure, responds with [`SdkError<AddTagsError>`](crate::error::AddTagsError)
-    pub fn add_tags(&self) -> crate::client::fluent_builders::AddTags {
-        crate::client::fluent_builders::AddTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CancelSteps`](crate::client::fluent_builders::CancelSteps) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::CancelSteps::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::CancelSteps::set_cluster_id): <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
-    ///   - [`step_ids(Vec<String>)`](crate::client::fluent_builders::CancelSteps::step_ids) / [`set_step_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CancelSteps::set_step_ids): <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    ///   - [`step_cancellation_option(StepCancellationOption)`](crate::client::fluent_builders::CancelSteps::step_cancellation_option) / [`set_step_cancellation_option(Option<StepCancellationOption>)`](crate::client::fluent_builders::CancelSteps::set_step_cancellation_option): <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    /// - On success, responds with [`CancelStepsOutput`](crate::output::CancelStepsOutput) with field(s):
-    ///   - [`cancel_steps_info_list(Option<Vec<CancelStepsInfo>>)`](crate::output::CancelStepsOutput::cancel_steps_info_list): <p>A list of <code>CancelStepsInfo</code>, which shows the status of specified cancel requests for each <code>StepID</code> specified.</p>
-    /// - On failure, responds with [`SdkError<CancelStepsError>`](crate::error::CancelStepsError)
-    pub fn cancel_steps(&self) -> crate::client::fluent_builders::CancelSteps {
-        crate::client::fluent_builders::CancelSteps::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSecurityConfiguration`](crate::client::fluent_builders::CreateSecurityConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::set_name): <p>The name of the security configuration.</p>
-    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::CreateSecurityConfiguration::set_security_configuration): <p>The security configuration details in JSON format. For JSON parameters and examples, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    /// - On success, responds with [`CreateSecurityConfigurationOutput`](crate::output::CreateSecurityConfigurationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::CreateSecurityConfigurationOutput::name): <p>The name of the security configuration.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::CreateSecurityConfigurationOutput::creation_date_time): <p>The date and time the security configuration was created.</p>
-    /// - On failure, responds with [`SdkError<CreateSecurityConfigurationError>`](crate::error::CreateSecurityConfigurationError)
-    pub fn create_security_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSecurityConfiguration {
-        crate::client::fluent_builders::CreateSecurityConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStudio`](crate::client::fluent_builders::CreateStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_name): <p>A descriptive name for the Amazon EMR Studio.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_description): <p>A detailed description of the Amazon EMR Studio.</p>
-    ///   - [`auth_mode(AuthMode)`](crate::client::fluent_builders::CreateStudio::auth_mode) / [`set_auth_mode(Option<AuthMode>)`](crate::client::fluent_builders::CreateStudio::set_auth_mode): <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_vpc_id): <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateStudio::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateStudio::set_subnet_ids): <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in any of the specified subnets.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_service_role): <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-    ///   - [`user_role(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::user_role) / [`set_user_role(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_user_role): <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the <code>UserRole</code> can be scoped down for each user or group using session policies.</p>
-    ///   - [`workspace_security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::workspace_security_group_id) / [`set_workspace_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_workspace_security_group_id): <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group allows outbound network traffic to resources in the Engine security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    ///   - [`engine_security_group_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::engine_security_group_id) / [`set_engine_security_group_id(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_engine_security_group_id): <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by <code>VpcId</code>.</p>
-    ///   - [`default_s3_location(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::default_s3_location) / [`set_default_s3_location(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_default_s3_location): <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-    ///   - [`idp_auth_url(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::idp_auth_url) / [`set_idp_auth_url(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_idp_auth_url): <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
-    ///   - [`idp_relay_state_parameter_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudio::idp_relay_state_parameter_name) / [`set_idp_relay_state_parameter_name(Option<String>)`](crate::client::fluent_builders::CreateStudio::set_idp_relay_state_parameter_name): <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateStudio::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateStudio::set_tags): <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    /// - On success, responds with [`CreateStudioOutput`](crate::output::CreateStudioOutput) with field(s):
-    ///   - [`studio_id(Option<String>)`](crate::output::CreateStudioOutput::studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`url(Option<String>)`](crate::output::CreateStudioOutput::url): <p>The unique Studio access URL.</p>
-    /// - On failure, responds with [`SdkError<CreateStudioError>`](crate::error::CreateStudioError)
-    pub fn create_studio(&self) -> crate::client::fluent_builders::CreateStudio {
-        crate::client::fluent_builders::CreateStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStudioSessionMapping`](crate::client::fluent_builders::CreateStudioSessionMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_name): <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::CreateStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
-    ///   - [`session_policy_arn(impl Into<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::client::fluent_builders::CreateStudioSessionMapping::set_session_policy_arn): <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
-    /// - On success, responds with [`CreateStudioSessionMappingOutput`](crate::output::CreateStudioSessionMappingOutput)
-
-    /// - On failure, responds with [`SdkError<CreateStudioSessionMappingError>`](crate::error::CreateStudioSessionMappingError)
-    pub fn create_studio_session_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::CreateStudioSessionMapping {
-        crate::client::fluent_builders::CreateStudioSessionMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSecurityConfiguration`](crate::client::fluent_builders::DeleteSecurityConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteSecurityConfiguration::set_name): <p>The name of the security configuration.</p>
-    /// - On success, responds with [`DeleteSecurityConfigurationOutput`](crate::output::DeleteSecurityConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSecurityConfigurationError>`](crate::error::DeleteSecurityConfigurationError)
-    pub fn delete_security_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteSecurityConfiguration {
-        crate::client::fluent_builders::DeleteSecurityConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStudio`](crate::client::fluent_builders::DeleteStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudio::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    /// - On success, responds with [`DeleteStudioOutput`](crate::output::DeleteStudioOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStudioError>`](crate::error::DeleteStudioError)
-    pub fn delete_studio(&self) -> crate::client::fluent_builders::DeleteStudio {
-        crate::client::fluent_builders::DeleteStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStudioSessionMapping`](crate::client::fluent_builders::DeleteStudioSessionMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_name): <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::DeleteStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::DeleteStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-    /// - On success, responds with [`DeleteStudioSessionMappingOutput`](crate::output::DeleteStudioSessionMappingOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStudioSessionMappingError>`](crate::error::DeleteStudioSessionMappingError)
-    pub fn delete_studio_session_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteStudioSessionMapping {
-        crate::client::fluent_builders::DeleteStudioSessionMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCluster`](crate::client::fluent_builders::DescribeCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::DescribeCluster::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::DescribeCluster::set_cluster_id): <p>The identifier of the cluster to describe.</p>
-    /// - On success, responds with [`DescribeClusterOutput`](crate::output::DescribeClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::DescribeClusterOutput::cluster): <p>This output contains the details for the requested cluster.</p>
-    /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::error::DescribeClusterError)
-    pub fn describe_cluster(&self) -> crate::client::fluent_builders::DescribeCluster {
-        crate::client::fluent_builders::DescribeCluster::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeJobFlows`](crate::client::fluent_builders::DescribeJobFlows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::DescribeJobFlows::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::DescribeJobFlows::set_created_after): <p>Return only job flows created after this date and time.</p>
-    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::DescribeJobFlows::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::DescribeJobFlows::set_created_before): <p>Return only job flows created before this date and time.</p>
-    ///   - [`job_flow_ids(Vec<String>)`](crate::client::fluent_builders::DescribeJobFlows::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeJobFlows::set_job_flow_ids): <p>Return only job flows whose job flow ID is contained in this list.</p>
-    ///   - [`job_flow_states(Vec<JobFlowExecutionState>)`](crate::client::fluent_builders::DescribeJobFlows::job_flow_states) / [`set_job_flow_states(Option<Vec<JobFlowExecutionState>>)`](crate::client::fluent_builders::DescribeJobFlows::set_job_flow_states): <p>Return only job flows whose state is contained in this list.</p>
-    /// - On success, responds with [`DescribeJobFlowsOutput`](crate::output::DescribeJobFlowsOutput) with field(s):
-    ///   - [`job_flows(Option<Vec<JobFlowDetail>>)`](crate::output::DescribeJobFlowsOutput::job_flows): <p>A list of job flows matching the parameters supplied.</p>
-    /// - On failure, responds with [`SdkError<DescribeJobFlowsError>`](crate::error::DescribeJobFlowsError)
-    #[deprecated]
-    pub fn describe_job_flows(&self) -> crate::client::fluent_builders::DescribeJobFlows {
-        crate::client::fluent_builders::DescribeJobFlows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeNotebookExecution`](crate::client::fluent_builders::DescribeNotebookExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`notebook_execution_id(impl Into<String>)`](crate::client::fluent_builders::DescribeNotebookExecution::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::client::fluent_builders::DescribeNotebookExecution::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
-    /// - On success, responds with [`DescribeNotebookExecutionOutput`](crate::output::DescribeNotebookExecutionOutput) with field(s):
-    ///   - [`notebook_execution(Option<NotebookExecution>)`](crate::output::DescribeNotebookExecutionOutput::notebook_execution): <p>Properties of the notebook execution.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotebookExecutionError>`](crate::error::DescribeNotebookExecutionError)
-    pub fn describe_notebook_execution(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeNotebookExecution {
-        crate::client::fluent_builders::DescribeNotebookExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeReleaseLabel`](crate::client::fluent_builders::DescribeReleaseLabel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`release_label(impl Into<String>)`](crate::client::fluent_builders::DescribeReleaseLabel::release_label) / [`set_release_label(Option<String>)`](crate::client::fluent_builders::DescribeReleaseLabel::set_release_label): <p>The target release label to be described.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeReleaseLabel::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeReleaseLabel::set_next_token): <p>The pagination token. Reserved for future use. Currently set to null.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeReleaseLabel::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeReleaseLabel::set_max_results): <p>Reserved for future use. Currently set to null.</p>
-    /// - On success, responds with [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput) with field(s):
-    ///   - [`release_label(Option<String>)`](crate::output::DescribeReleaseLabelOutput::release_label): <p>The target release label described in the response.</p>
-    ///   - [`applications(Option<Vec<SimplifiedApplication>>)`](crate::output::DescribeReleaseLabelOutput::applications): <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeReleaseLabelOutput::next_token): <p>The pagination token. Reserved for future use. Currently set to null.</p>
-    ///   - [`available_os_releases(Option<Vec<OsRelease>>)`](crate::output::DescribeReleaseLabelOutput::available_os_releases): <p>The list of available Amazon Linux release versions for an Amazon EMR release. Contains a Label field that is formatted as shown in <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-al2.html"> <i>Amazon Linux 2 Release Notes</i> </a>. For example, <a href="https://docs.aws.amazon.com/AL2/latest/relnotes/relnotes-20220218.html">2.0.20220218.1</a>.</p>
-    /// - On failure, responds with [`SdkError<DescribeReleaseLabelError>`](crate::error::DescribeReleaseLabelError)
-    pub fn describe_release_label(&self) -> crate::client::fluent_builders::DescribeReleaseLabel {
-        crate::client::fluent_builders::DescribeReleaseLabel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeSecurityConfiguration`](crate::client::fluent_builders::DescribeSecurityConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeSecurityConfiguration::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeSecurityConfiguration::set_name): <p>The name of the security configuration.</p>
-    /// - On success, responds with [`DescribeSecurityConfigurationOutput`](crate::output::DescribeSecurityConfigurationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::DescribeSecurityConfigurationOutput::name): <p>The name of the security configuration.</p>
-    ///   - [`security_configuration(Option<String>)`](crate::output::DescribeSecurityConfigurationOutput::security_configuration): <p>The security configuration details in JSON format.</p>
-    ///   - [`creation_date_time(Option<DateTime>)`](crate::output::DescribeSecurityConfigurationOutput::creation_date_time): <p>The date and time the security configuration was created</p>
-    /// - On failure, responds with [`SdkError<DescribeSecurityConfigurationError>`](crate::error::DescribeSecurityConfigurationError)
-    pub fn describe_security_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeSecurityConfiguration {
-        crate::client::fluent_builders::DescribeSecurityConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeStep`](crate::client::fluent_builders::DescribeStep) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStep::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::DescribeStep::set_cluster_id): <p>The identifier of the cluster with steps to describe.</p>
-    ///   - [`step_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStep::step_id) / [`set_step_id(Option<String>)`](crate::client::fluent_builders::DescribeStep::set_step_id): <p>The identifier of the step to describe.</p>
-    /// - On success, responds with [`DescribeStepOutput`](crate::output::DescribeStepOutput) with field(s):
-    ///   - [`step(Option<Step>)`](crate::output::DescribeStepOutput::step): <p>The step details for the requested step identifier.</p>
-    /// - On failure, responds with [`SdkError<DescribeStepError>`](crate::error::DescribeStepError)
-    pub fn describe_step(&self) -> crate::client::fluent_builders::DescribeStep {
-        crate::client::fluent_builders::DescribeStep::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeStudio`](crate::client::fluent_builders::DescribeStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::DescribeStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::DescribeStudio::set_studio_id): <p>The Amazon EMR Studio ID.</p>
-    /// - On success, responds with [`DescribeStudioOutput`](crate::output::DescribeStudioOutput) with field(s):
-    ///   - [`studio(Option<Studio>)`](crate::output::DescribeStudioOutput::studio): <p>The Amazon EMR Studio details.</p>
-    /// - On failure, responds with [`SdkError<DescribeStudioError>`](crate::error::DescribeStudioError)
-    pub fn describe_studio(&self) -> crate::client::fluent_builders::DescribeStudio {
-        crate::client::fluent_builders::DescribeStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAutoTerminationPolicy`](crate::client::fluent_builders::GetAutoTerminationPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::GetAutoTerminationPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::GetAutoTerminationPolicy::set_cluster_id): <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
-    /// - On success, responds with [`GetAutoTerminationPolicyOutput`](crate::output::GetAutoTerminationPolicyOutput) with field(s):
-    ///   - [`auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::output::GetAutoTerminationPolicyOutput::auto_termination_policy): <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
-    /// - On failure, responds with [`SdkError<GetAutoTerminationPolicyError>`](crate::error::GetAutoTerminationPolicyError)
-    pub fn get_auto_termination_policy(
-        &self,
-    ) -> crate::client::fluent_builders::GetAutoTerminationPolicy {
-        crate::client::fluent_builders::GetAutoTerminationPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBlockPublicAccessConfiguration`](crate::client::fluent_builders::GetBlockPublicAccessConfiguration) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetBlockPublicAccessConfiguration::send) it.
-
-    /// - On success, responds with [`GetBlockPublicAccessConfigurationOutput`](crate::output::GetBlockPublicAccessConfigurationOutput) with field(s):
-    ///   - [`block_public_access_configuration(Option<BlockPublicAccessConfiguration>)`](crate::output::GetBlockPublicAccessConfigurationOutput::block_public_access_configuration): <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating the block public access configuration to remove the exception.</p> <note>   <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>  </note>
-    ///   - [`block_public_access_configuration_metadata(Option<BlockPublicAccessConfigurationMetadata>)`](crate::output::GetBlockPublicAccessConfigurationOutput::block_public_access_configuration_metadata): <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
-    /// - On failure, responds with [`SdkError<GetBlockPublicAccessConfigurationError>`](crate::error::GetBlockPublicAccessConfigurationError)
-    pub fn get_block_public_access_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetBlockPublicAccessConfiguration {
-        crate::client::fluent_builders::GetBlockPublicAccessConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetClusterSessionCredentials`](crate::client::fluent_builders::GetClusterSessionCredentials) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`execution_role_arn(impl Into<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::execution_role_arn) / [`set_execution_role_arn(Option<String>)`](crate::client::fluent_builders::GetClusterSessionCredentials::set_execution_role_arn): <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    /// - On success, responds with [`GetClusterSessionCredentialsOutput`](crate::output::GetClusterSessionCredentialsOutput) with field(s):
-    ///   - [`credentials(Option<Credentials>)`](crate::output::GetClusterSessionCredentialsOutput::credentials): <p>The credentials that you can use to connect to cluster endpoints that support username-based and password-based authentication.</p>
-    ///   - [`expires_at(Option<DateTime>)`](crate::output::GetClusterSessionCredentialsOutput::expires_at): <p>The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code> API expire.</p>
-    /// - On failure, responds with [`SdkError<GetClusterSessionCredentialsError>`](crate::error::GetClusterSessionCredentialsError)
-    pub fn get_cluster_session_credentials(
-        &self,
-    ) -> crate::client::fluent_builders::GetClusterSessionCredentials {
-        crate::client::fluent_builders::GetClusterSessionCredentials::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetManagedScalingPolicy`](crate::client::fluent_builders::GetManagedScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::GetManagedScalingPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::GetManagedScalingPolicy::set_cluster_id): <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
-    /// - On success, responds with [`GetManagedScalingPolicyOutput`](crate::output::GetManagedScalingPolicyOutput) with field(s):
-    ///   - [`managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::output::GetManagedScalingPolicyOutput::managed_scaling_policy): <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
-    /// - On failure, responds with [`SdkError<GetManagedScalingPolicyError>`](crate::error::GetManagedScalingPolicyError)
-    pub fn get_managed_scaling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::GetManagedScalingPolicy {
-        crate::client::fluent_builders::GetManagedScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStudioSessionMapping`](crate::client::fluent_builders::GetStudioSessionMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_name): <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::GetStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::GetStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to fetch is a user or a group.</p>
-    /// - On success, responds with [`GetStudioSessionMappingOutput`](crate::output::GetStudioSessionMappingOutput) with field(s):
-    ///   - [`session_mapping(Option<SessionMappingDetail>)`](crate::output::GetStudioSessionMappingOutput::session_mapping): <p>The session mapping details for the specified Amazon EMR Studio and identity, including session policy ARN and creation time.</p>
-    /// - On failure, responds with [`SdkError<GetStudioSessionMappingError>`](crate::error::GetStudioSessionMappingError)
-    pub fn get_studio_session_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::GetStudioSessionMapping {
-        crate::client::fluent_builders::GetStudioSessionMapping::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBootstrapActions`](crate::client::fluent_builders::ListBootstrapActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBootstrapActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListBootstrapActions::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListBootstrapActions::set_cluster_id): <p>The cluster identifier for the bootstrap actions to list.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListBootstrapActions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListBootstrapActions::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListBootstrapActionsOutput`](crate::output::ListBootstrapActionsOutput) with field(s):
-    ///   - [`bootstrap_actions(Option<Vec<Command>>)`](crate::output::ListBootstrapActionsOutput::bootstrap_actions): <p>The bootstrap actions associated with the cluster.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListBootstrapActionsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListBootstrapActionsError>`](crate::error::ListBootstrapActionsError)
-    pub fn list_bootstrap_actions(&self) -> crate::client::fluent_builders::ListBootstrapActions {
-        crate::client::fluent_builders::ListBootstrapActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`created_after(DateTime)`](crate::client::fluent_builders::ListClusters::created_after) / [`set_created_after(Option<DateTime>)`](crate::client::fluent_builders::ListClusters::set_created_after): <p>The creation date and time beginning value filter for listing clusters.</p>
-    ///   - [`created_before(DateTime)`](crate::client::fluent_builders::ListClusters::created_before) / [`set_created_before(Option<DateTime>)`](crate::client::fluent_builders::ListClusters::set_created_before): <p>The creation date and time end value filter for listing clusters.</p>
-    ///   - [`cluster_states(Vec<ClusterState>)`](crate::client::fluent_builders::ListClusters::cluster_states) / [`set_cluster_states(Option<Vec<ClusterState>>)`](crate::client::fluent_builders::ListClusters::set_cluster_states): <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListClusters::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListClusters::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
-    ///   - [`clusters(Option<Vec<ClusterSummary>>)`](crate::output::ListClustersOutput::clusters): <p>The list of clusters for the account based on the given filters.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListClustersOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
-    pub fn list_clusters(&self) -> crate::client::fluent_builders::ListClusters {
-        crate::client::fluent_builders::ListClusters::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInstanceFleets`](crate::client::fluent_builders::ListInstanceFleets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceFleets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListInstanceFleets::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListInstanceFleets::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstanceFleets::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstanceFleets::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListInstanceFleetsOutput`](crate::output::ListInstanceFleetsOutput) with field(s):
-    ///   - [`instance_fleets(Option<Vec<InstanceFleet>>)`](crate::output::ListInstanceFleetsOutput::instance_fleets): <p>The list of instance fleets for the cluster and given filters.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListInstanceFleetsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListInstanceFleetsError>`](crate::error::ListInstanceFleetsError)
-    pub fn list_instance_fleets(&self) -> crate::client::fluent_builders::ListInstanceFleets {
-        crate::client::fluent_builders::ListInstanceFleets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInstanceGroups`](crate::client::fluent_builders::ListInstanceGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstanceGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListInstanceGroups::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListInstanceGroups::set_cluster_id): <p>The identifier of the cluster for which to list the instance groups.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstanceGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstanceGroups::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListInstanceGroupsOutput`](crate::output::ListInstanceGroupsOutput) with field(s):
-    ///   - [`instance_groups(Option<Vec<InstanceGroup>>)`](crate::output::ListInstanceGroupsOutput::instance_groups): <p>The list of instance groups for the cluster and given filters.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListInstanceGroupsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListInstanceGroupsError>`](crate::error::ListInstanceGroupsError)
-    pub fn list_instance_groups(&self) -> crate::client::fluent_builders::ListInstanceGroups {
-        crate::client::fluent_builders::ListInstanceGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListInstances::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListInstances::set_cluster_id): <p>The identifier of the cluster for which to list the instances.</p>
-    ///   - [`instance_group_id(impl Into<String>)`](crate::client::fluent_builders::ListInstances::instance_group_id) / [`set_instance_group_id(Option<String>)`](crate::client::fluent_builders::ListInstances::set_instance_group_id): <p>The identifier of the instance group for which to list the instances.</p>
-    ///   - [`instance_group_types(Vec<InstanceGroupType>)`](crate::client::fluent_builders::ListInstances::instance_group_types) / [`set_instance_group_types(Option<Vec<InstanceGroupType>>)`](crate::client::fluent_builders::ListInstances::set_instance_group_types): <p>The type of instance group for which to list the instances.</p>
-    ///   - [`instance_fleet_id(impl Into<String>)`](crate::client::fluent_builders::ListInstances::instance_fleet_id) / [`set_instance_fleet_id(Option<String>)`](crate::client::fluent_builders::ListInstances::set_instance_fleet_id): <p>The unique identifier of the instance fleet.</p>
-    ///   - [`instance_fleet_type(InstanceFleetType)`](crate::client::fluent_builders::ListInstances::instance_fleet_type) / [`set_instance_fleet_type(Option<InstanceFleetType>)`](crate::client::fluent_builders::ListInstances::set_instance_fleet_type): <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-    ///   - [`instance_states(Vec<InstanceState>)`](crate::client::fluent_builders::ListInstances::instance_states) / [`set_instance_states(Option<Vec<InstanceState>>)`](crate::client::fluent_builders::ListInstances::set_instance_states): <p>A list of instance states that will filter the instances returned with this request.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInstances::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInstances::set_marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
-    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::ListInstancesOutput::instances): <p>The list of instances for the cluster and given filters.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListInstancesOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::error::ListInstancesError)
-    pub fn list_instances(&self) -> crate::client::fluent_builders::ListInstances {
-        crate::client::fluent_builders::ListInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListNotebookExecutions`](crate::client::fluent_builders::ListNotebookExecutions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNotebookExecutions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`editor_id(impl Into<String>)`](crate::client::fluent_builders::ListNotebookExecutions::editor_id) / [`set_editor_id(Option<String>)`](crate::client::fluent_builders::ListNotebookExecutions::set_editor_id): <p>The unique ID of the editor associated with the notebook execution.</p>
-    ///   - [`status(NotebookExecutionStatus)`](crate::client::fluent_builders::ListNotebookExecutions::status) / [`set_status(Option<NotebookExecutionStatus>)`](crate::client::fluent_builders::ListNotebookExecutions::set_status): <p>The status filter for listing notebook executions.</p>  <ul>   <li> <p> <code>START_PENDING</code> indicates that the cluster has received the execution request but execution has not begun.</p> </li>   <li> <p> <code>STARTING</code> indicates that the execution is starting on the cluster.</p> </li>   <li> <p> <code>RUNNING</code> indicates that the execution is being processed by the cluster.</p> </li>   <li> <p> <code>FINISHING</code> indicates that execution processing is in the final stages.</p> </li>   <li> <p> <code>FINISHED</code> indicates that the execution has completed without error.</p> </li>   <li> <p> <code>FAILING</code> indicates that the execution is failing and will not finish successfully.</p> </li>   <li> <p> <code>FAILED</code> indicates that the execution failed.</p> </li>   <li> <p> <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code> request and the stop is pending.</p> </li>   <li> <p> <code>STOPPING</code> indicates that the cluster is in the process of stopping the execution as a result of a <code>StopNotebookExecution</code> request.</p> </li>   <li> <p> <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code> request.</p> </li>  </ul>
-    ///   - [`from(DateTime)`](crate::client::fluent_builders::ListNotebookExecutions::from) / [`set_from(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookExecutions::set_from): <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    ///   - [`to(DateTime)`](crate::client::fluent_builders::ListNotebookExecutions::to) / [`set_to(Option<DateTime>)`](crate::client::fluent_builders::ListNotebookExecutions::set_to): <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListNotebookExecutions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListNotebookExecutions::set_marker): <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    /// - On success, responds with [`ListNotebookExecutionsOutput`](crate::output::ListNotebookExecutionsOutput) with field(s):
-    ///   - [`notebook_executions(Option<Vec<NotebookExecutionSummary>>)`](crate::output::ListNotebookExecutionsOutput::notebook_executions): <p>A list of notebook executions.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListNotebookExecutionsOutput::marker): <p>A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to determine the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListNotebookExecutionsError>`](crate::error::ListNotebookExecutionsError)
-    pub fn list_notebook_executions(
-        &self,
-    ) -> crate::client::fluent_builders::ListNotebookExecutions {
-        crate::client::fluent_builders::ListNotebookExecutions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListReleaseLabels`](crate::client::fluent_builders::ListReleaseLabels) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReleaseLabels::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(ReleaseLabelFilter)`](crate::client::fluent_builders::ListReleaseLabels::filters) / [`set_filters(Option<ReleaseLabelFilter>)`](crate::client::fluent_builders::ListReleaseLabels::set_filters): <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReleaseLabels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReleaseLabels::set_next_token): <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReleaseLabels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListReleaseLabels::set_max_results): <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
-    /// - On success, responds with [`ListReleaseLabelsOutput`](crate::output::ListReleaseLabelsOutput) with field(s):
-    ///   - [`release_labels(Option<Vec<String>>)`](crate::output::ListReleaseLabelsOutput::release_labels): <p>The returned release labels.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListReleaseLabelsOutput::next_token): <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
-    /// - On failure, responds with [`SdkError<ListReleaseLabelsError>`](crate::error::ListReleaseLabelsError)
-    pub fn list_release_labels(&self) -> crate::client::fluent_builders::ListReleaseLabels {
-        crate::client::fluent_builders::ListReleaseLabels::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSecurityConfigurations`](crate::client::fluent_builders::ListSecurityConfigurations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSecurityConfigurations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListSecurityConfigurations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListSecurityConfigurations::set_marker): <p>The pagination token that indicates the set of results to retrieve.</p>
-    /// - On success, responds with [`ListSecurityConfigurationsOutput`](crate::output::ListSecurityConfigurationsOutput) with field(s):
-    ///   - [`security_configurations(Option<Vec<SecurityConfigurationSummary>>)`](crate::output::ListSecurityConfigurationsOutput::security_configurations): <p>The creation date and time, and name, of each security configuration.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListSecurityConfigurationsOutput::marker): <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>
-    /// - On failure, responds with [`SdkError<ListSecurityConfigurationsError>`](crate::error::ListSecurityConfigurationsError)
-    pub fn list_security_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::ListSecurityConfigurations {
-        crate::client::fluent_builders::ListSecurityConfigurations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSteps`](crate::client::fluent_builders::ListSteps) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSteps::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ListSteps::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ListSteps::set_cluster_id): <p>The identifier of the cluster for which to list the steps.</p>
-    ///   - [`step_states(Vec<StepState>)`](crate::client::fluent_builders::ListSteps::step_states) / [`set_step_states(Option<Vec<StepState>>)`](crate::client::fluent_builders::ListSteps::set_step_states): <p>The filter to limit the step list based on certain states.</p>
-    ///   - [`step_ids(Vec<String>)`](crate::client::fluent_builders::ListSteps::step_ids) / [`set_step_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListSteps::set_step_ids): <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListSteps::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListSteps::set_marker): <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListStepsOutput`](crate::output::ListStepsOutput) with field(s):
-    ///   - [`steps(Option<Vec<StepSummary>>)`](crate::output::ListStepsOutput::steps): <p>The filtered list of steps for the cluster.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListStepsOutput::marker): <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListStepsError>`](crate::error::ListStepsError)
-    pub fn list_steps(&self) -> crate::client::fluent_builders::ListSteps {
-        crate::client::fluent_builders::ListSteps::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStudios`](crate::client::fluent_builders::ListStudios) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudios::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListStudios::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListStudios::set_marker): <p>The pagination token that indicates the set of results to retrieve.</p>
-    /// - On success, responds with [`ListStudiosOutput`](crate::output::ListStudiosOutput) with field(s):
-    ///   - [`studios(Option<Vec<StudioSummary>>)`](crate::output::ListStudiosOutput::studios): <p>The list of Studio summary objects.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListStudiosOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListStudiosError>`](crate::error::ListStudiosError)
-    pub fn list_studios(&self) -> crate::client::fluent_builders::ListStudios {
-        crate::client::fluent_builders::ListStudios::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStudioSessionMappings`](crate::client::fluent_builders::ListStudioSessionMappings) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStudioSessionMappings::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::ListStudioSessionMappings::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::ListStudioSessionMappings::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::ListStudioSessionMappings::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::ListStudioSessionMappings::set_identity_type): <p>Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListStudioSessionMappings::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListStudioSessionMappings::set_marker): <p>The pagination token that indicates the set of results to retrieve.</p>
-    /// - On success, responds with [`ListStudioSessionMappingsOutput`](crate::output::ListStudioSessionMappingsOutput) with field(s):
-    ///   - [`session_mappings(Option<Vec<SessionMappingSummary>>)`](crate::output::ListStudioSessionMappingsOutput::session_mappings): <p>A list of session mapping summary objects. Each object includes session mapping details such as creation time, identity type (user or group), and Amazon EMR Studio ID.</p>
-    ///   - [`marker(Option<String>)`](crate::output::ListStudioSessionMappingsOutput::marker): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListStudioSessionMappingsError>`](crate::error::ListStudioSessionMappingsError)
-    pub fn list_studio_session_mappings(
-        &self,
-    ) -> crate::client::fluent_builders::ListStudioSessionMappings {
-        crate::client::fluent_builders::ListStudioSessionMappings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyCluster`](crate::client::fluent_builders::ModifyCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ModifyCluster::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ModifyCluster::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`step_concurrency_level(i32)`](crate::client::fluent_builders::ModifyCluster::step_concurrency_level) / [`set_step_concurrency_level(Option<i32>)`](crate::client::fluent_builders::ModifyCluster::set_step_concurrency_level): <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <code>Step$ActionOnFailure</code>.</p>
-    /// - On success, responds with [`ModifyClusterOutput`](crate::output::ModifyClusterOutput) with field(s):
-    ///   - [`step_concurrency_level(Option<i32>)`](crate::output::ModifyClusterOutput::step_concurrency_level): <p>The number of steps that can be executed concurrently.</p>
-    /// - On failure, responds with [`SdkError<ModifyClusterError>`](crate::error::ModifyClusterError)
-    pub fn modify_cluster(&self) -> crate::client::fluent_builders::ModifyCluster {
-        crate::client::fluent_builders::ModifyCluster::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyInstanceFleet`](crate::client::fluent_builders::ModifyInstanceFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ModifyInstanceFleet::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ModifyInstanceFleet::set_cluster_id): <p>The unique identifier of the cluster.</p>
-    ///   - [`instance_fleet(InstanceFleetModifyConfig)`](crate::client::fluent_builders::ModifyInstanceFleet::instance_fleet) / [`set_instance_fleet(Option<InstanceFleetModifyConfig>)`](crate::client::fluent_builders::ModifyInstanceFleet::set_instance_fleet): <p>The configuration parameters of the instance fleet.</p>
-    /// - On success, responds with [`ModifyInstanceFleetOutput`](crate::output::ModifyInstanceFleetOutput)
-
-    /// - On failure, responds with [`SdkError<ModifyInstanceFleetError>`](crate::error::ModifyInstanceFleetError)
-    pub fn modify_instance_fleet(&self) -> crate::client::fluent_builders::ModifyInstanceFleet {
-        crate::client::fluent_builders::ModifyInstanceFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ModifyInstanceGroups`](crate::client::fluent_builders::ModifyInstanceGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::ModifyInstanceGroups::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::ModifyInstanceGroups::set_cluster_id): <p>The ID of the cluster to which the instance group belongs.</p>
-    ///   - [`instance_groups(Vec<InstanceGroupModifyConfig>)`](crate::client::fluent_builders::ModifyInstanceGroups::instance_groups) / [`set_instance_groups(Option<Vec<InstanceGroupModifyConfig>>)`](crate::client::fluent_builders::ModifyInstanceGroups::set_instance_groups): <p>Instance groups to change.</p>
-    /// - On success, responds with [`ModifyInstanceGroupsOutput`](crate::output::ModifyInstanceGroupsOutput)
-
-    /// - On failure, responds with [`SdkError<ModifyInstanceGroupsError>`](crate::error::ModifyInstanceGroupsError)
-    pub fn modify_instance_groups(&self) -> crate::client::fluent_builders::ModifyInstanceGroups {
-        crate::client::fluent_builders::ModifyInstanceGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAutoScalingPolicy`](crate::client::fluent_builders::PutAutoScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::PutAutoScalingPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::PutAutoScalingPolicy::set_cluster_id): <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    ///   - [`instance_group_id(impl Into<String>)`](crate::client::fluent_builders::PutAutoScalingPolicy::instance_group_id) / [`set_instance_group_id(Option<String>)`](crate::client::fluent_builders::PutAutoScalingPolicy::set_instance_group_id): <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    ///   - [`auto_scaling_policy(AutoScalingPolicy)`](crate::client::fluent_builders::PutAutoScalingPolicy::auto_scaling_policy) / [`set_auto_scaling_policy(Option<AutoScalingPolicy>)`](crate::client::fluent_builders::PutAutoScalingPolicy::set_auto_scaling_policy): <p>Specifies the definition of the automatic scaling policy.</p>
-    /// - On success, responds with [`PutAutoScalingPolicyOutput`](crate::output::PutAutoScalingPolicyOutput) with field(s):
-    ///   - [`cluster_id(Option<String>)`](crate::output::PutAutoScalingPolicyOutput::cluster_id): <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    ///   - [`instance_group_id(Option<String>)`](crate::output::PutAutoScalingPolicyOutput::instance_group_id): <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    ///   - [`auto_scaling_policy(Option<AutoScalingPolicyDescription>)`](crate::output::PutAutoScalingPolicyOutput::auto_scaling_policy): <p>The automatic scaling policy definition.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::output::PutAutoScalingPolicyOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    /// - On failure, responds with [`SdkError<PutAutoScalingPolicyError>`](crate::error::PutAutoScalingPolicyError)
-    pub fn put_auto_scaling_policy(&self) -> crate::client::fluent_builders::PutAutoScalingPolicy {
-        crate::client::fluent_builders::PutAutoScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAutoTerminationPolicy`](crate::client::fluent_builders::PutAutoTerminationPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::PutAutoTerminationPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::PutAutoTerminationPolicy::set_cluster_id): <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
-    ///   - [`auto_termination_policy(AutoTerminationPolicy)`](crate::client::fluent_builders::PutAutoTerminationPolicy::auto_termination_policy) / [`set_auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::client::fluent_builders::PutAutoTerminationPolicy::set_auto_termination_policy): <p>Specifies the auto-termination policy to attach to the cluster.</p>
-    /// - On success, responds with [`PutAutoTerminationPolicyOutput`](crate::output::PutAutoTerminationPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<PutAutoTerminationPolicyError>`](crate::error::PutAutoTerminationPolicyError)
-    pub fn put_auto_termination_policy(
-        &self,
-    ) -> crate::client::fluent_builders::PutAutoTerminationPolicy {
-        crate::client::fluent_builders::PutAutoTerminationPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutBlockPublicAccessConfiguration`](crate::client::fluent_builders::PutBlockPublicAccessConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`block_public_access_configuration(BlockPublicAccessConfiguration)`](crate::client::fluent_builders::PutBlockPublicAccessConfiguration::block_public_access_configuration) / [`set_block_public_access_configuration(Option<BlockPublicAccessConfiguration>)`](crate::client::fluent_builders::PutBlockPublicAccessConfiguration::set_block_public_access_configuration): <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>   <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>  </note>
-    /// - On success, responds with [`PutBlockPublicAccessConfigurationOutput`](crate::output::PutBlockPublicAccessConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<PutBlockPublicAccessConfigurationError>`](crate::error::PutBlockPublicAccessConfigurationError)
-    pub fn put_block_public_access_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutBlockPublicAccessConfiguration {
-        crate::client::fluent_builders::PutBlockPublicAccessConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutManagedScalingPolicy`](crate::client::fluent_builders::PutManagedScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::PutManagedScalingPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::PutManagedScalingPolicy::set_cluster_id): <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
-    ///   - [`managed_scaling_policy(ManagedScalingPolicy)`](crate::client::fluent_builders::PutManagedScalingPolicy::managed_scaling_policy) / [`set_managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::client::fluent_builders::PutManagedScalingPolicy::set_managed_scaling_policy): <p>Specifies the constraints for the managed scaling policy. </p>
-    /// - On success, responds with [`PutManagedScalingPolicyOutput`](crate::output::PutManagedScalingPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<PutManagedScalingPolicyError>`](crate::error::PutManagedScalingPolicyError)
-    pub fn put_managed_scaling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::PutManagedScalingPolicy {
-        crate::client::fluent_builders::PutManagedScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveAutoScalingPolicy`](crate::client::fluent_builders::RemoveAutoScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAutoScalingPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::RemoveAutoScalingPolicy::set_cluster_id): <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    ///   - [`instance_group_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAutoScalingPolicy::instance_group_id) / [`set_instance_group_id(Option<String>)`](crate::client::fluent_builders::RemoveAutoScalingPolicy::set_instance_group_id): <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-    /// - On success, responds with [`RemoveAutoScalingPolicyOutput`](crate::output::RemoveAutoScalingPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveAutoScalingPolicyError>`](crate::error::RemoveAutoScalingPolicyError)
-    pub fn remove_auto_scaling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveAutoScalingPolicy {
-        crate::client::fluent_builders::RemoveAutoScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveAutoTerminationPolicy`](crate::client::fluent_builders::RemoveAutoTerminationPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::RemoveAutoTerminationPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::RemoveAutoTerminationPolicy::set_cluster_id): <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
-    /// - On success, responds with [`RemoveAutoTerminationPolicyOutput`](crate::output::RemoveAutoTerminationPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveAutoTerminationPolicyError>`](crate::error::RemoveAutoTerminationPolicyError)
-    pub fn remove_auto_termination_policy(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveAutoTerminationPolicy {
-        crate::client::fluent_builders::RemoveAutoTerminationPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveManagedScalingPolicy`](crate::client::fluent_builders::RemoveManagedScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::client::fluent_builders::RemoveManagedScalingPolicy::cluster_id) / [`set_cluster_id(Option<String>)`](crate::client::fluent_builders::RemoveManagedScalingPolicy::set_cluster_id): <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
-    /// - On success, responds with [`RemoveManagedScalingPolicyOutput`](crate::output::RemoveManagedScalingPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveManagedScalingPolicyError>`](crate::error::RemoveManagedScalingPolicyError)
-    pub fn remove_managed_scaling_policy(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveManagedScalingPolicy {
-        crate::client::fluent_builders::RemoveManagedScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveTags`](crate::client::fluent_builders::RemoveTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::client::fluent_builders::RemoveTags::resource_id) / [`set_resource_id(Option<String>)`](crate::client::fluent_builders::RemoveTags::set_resource_id): <p>The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::RemoveTags::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::RemoveTags::set_tag_keys): <p>A list of tag keys to remove from the resource.</p>
-    /// - On success, responds with [`RemoveTagsOutput`](crate::output::RemoveTagsOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveTagsError>`](crate::error::RemoveTagsError)
-    pub fn remove_tags(&self) -> crate::client::fluent_builders::RemoveTags {
-        crate::client::fluent_builders::RemoveTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RunJobFlow`](crate::client::fluent_builders::RunJobFlow) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_name): <p>The name of the job flow.</p>
-    ///   - [`log_uri(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::log_uri) / [`set_log_uri(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_log_uri): <p>The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.</p>
-    ///   - [`log_encryption_kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::log_encryption_kms_key_id) / [`set_log_encryption_kms_key_id(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_log_encryption_kms_key_id): <p>The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
-    ///   - [`additional_info(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::additional_info) / [`set_additional_info(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_additional_info): <p>A JSON string for selecting additional features.</p>
-    ///   - [`ami_version(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::ami_version) / [`set_ami_version(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_ami_version): <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</p>
-    ///   - [`release_label(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::release_label) / [`set_release_label(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_release_label): <p>The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more information about Amazon EMR release versions and included application versions and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use <code>AmiVersion</code>.</p>
-    ///   - [`instances(JobFlowInstancesConfig)`](crate::client::fluent_builders::RunJobFlow::instances) / [`set_instances(Option<JobFlowInstancesConfig>)`](crate::client::fluent_builders::RunJobFlow::set_instances): <p>A specification of the number and type of Amazon EC2 instances.</p>
-    ///   - [`steps(Vec<StepConfig>)`](crate::client::fluent_builders::RunJobFlow::steps) / [`set_steps(Option<Vec<StepConfig>>)`](crate::client::fluent_builders::RunJobFlow::set_steps): <p>A list of steps to run.</p>
-    ///   - [`bootstrap_actions(Vec<BootstrapActionConfig>)`](crate::client::fluent_builders::RunJobFlow::bootstrap_actions) / [`set_bootstrap_actions(Option<Vec<BootstrapActionConfig>>)`](crate::client::fluent_builders::RunJobFlow::set_bootstrap_actions): <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
-    ///   - [`supported_products(Vec<String>)`](crate::client::fluent_builders::RunJobFlow::supported_products) / [`set_supported_products(Option<Vec<String>>)`](crate::client::fluent_builders::RunJobFlow::set_supported_products): <note>   <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>  </note>  <p>A list of strings that indicates third-party software to use. For more information, see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Currently supported values are:</p>  <ul>   <li> <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li>   <li> <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li>  </ul>
-    ///   - [`new_supported_products(Vec<SupportedProductConfig>)`](crate::client::fluent_builders::RunJobFlow::new_supported_products) / [`set_new_supported_products(Option<Vec<SupportedProductConfig>>)`](crate::client::fluent_builders::RunJobFlow::set_new_supported_products): <note>   <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</p>  </note>  <p>A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported values are:</p>  <ul>   <li> <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p> </li>   <li> <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p> </li>   <li> <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</p> </li>   <li> <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p> </li>   <li> <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p> </li>   <li> <p>"hue"- launch the cluster with Hue installed.</p> </li>   <li> <p>"spark" - launch the cluster with Apache Spark installed.</p> </li>   <li> <p>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</p> </li>  </ul>
-    ///   - [`applications(Vec<Application>)`](crate::client::fluent_builders::RunJobFlow::applications) / [`set_applications(Option<Vec<Application>>)`](crate::client::fluent_builders::RunJobFlow::set_applications): <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMRRelease Guide</a>.</p>
-    ///   - [`configurations(Vec<Configuration>)`](crate::client::fluent_builders::RunJobFlow::configurations) / [`set_configurations(Option<Vec<Configuration>>)`](crate::client::fluent_builders::RunJobFlow::set_configurations): <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.</p>
-    ///   - [`visible_to_all_users(bool)`](crate::client::fluent_builders::RunJobFlow::visible_to_all_users) / [`set_visible_to_all_users(bool)`](crate::client::fluent_builders::RunJobFlow::set_visible_to_all_users): <important>   <p>The VisibleToAllUsers parameter is no longer supported. By default, the value is set to <code>true</code>. Setting it to <code>false</code> now has no effect.</p>  </important>  <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>  <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-    ///   - [`job_flow_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::job_flow_role) / [`set_job_flow_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_job_flow_role): <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have already created it using the CLI or console.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_service_role): <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RunJobFlow::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RunJobFlow::set_tags): <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
-    ///   - [`security_configuration(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::security_configuration) / [`set_security_configuration(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_security_configuration): <p>The name of a security configuration to apply to the cluster.</p>
-    ///   - [`auto_scaling_role(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::auto_scaling_role) / [`set_auto_scaling_role(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_auto_scaling_role): <p>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate EC2 instances in an instance group.</p>
-    ///   - [`scale_down_behavior(ScaleDownBehavior)`](crate::client::fluent_builders::RunJobFlow::scale_down_behavior) / [`set_scale_down_behavior(Option<ScaleDownBehavior>)`](crate::client::fluent_builders::RunJobFlow::set_scale_down_behavior): <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.</p>
-    ///   - [`custom_ami_id(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::custom_ami_id) / [`set_custom_ami_id(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_custom_ami_id): <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>  <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>. </p>
-    ///   - [`ebs_root_volume_size(i32)`](crate::client::fluent_builders::RunJobFlow::ebs_root_volume_size) / [`set_ebs_root_volume_size(Option<i32>)`](crate::client::fluent_builders::RunJobFlow::set_ebs_root_volume_size): <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
-    ///   - [`repo_upgrade_on_boot(RepoUpgradeOnBoot)`](crate::client::fluent_builders::RunJobFlow::repo_upgrade_on_boot) / [`set_repo_upgrade_on_boot(Option<RepoUpgradeOnBoot>)`](crate::client::fluent_builders::RunJobFlow::set_repo_upgrade_on_boot): <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.</p>
-    ///   - [`kerberos_attributes(KerberosAttributes)`](crate::client::fluent_builders::RunJobFlow::kerberos_attributes) / [`set_kerberos_attributes(Option<KerberosAttributes>)`](crate::client::fluent_builders::RunJobFlow::set_kerberos_attributes): <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.</p>
-    ///   - [`step_concurrency_level(i32)`](crate::client::fluent_builders::RunJobFlow::step_concurrency_level) / [`set_step_concurrency_level(Option<i32>)`](crate::client::fluent_builders::RunJobFlow::set_step_concurrency_level): <p>Specifies the number of steps that can be executed concurrently. The default value is <code>1</code>. The maximum value is <code>256</code>.</p>
-    ///   - [`managed_scaling_policy(ManagedScalingPolicy)`](crate::client::fluent_builders::RunJobFlow::managed_scaling_policy) / [`set_managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::client::fluent_builders::RunJobFlow::set_managed_scaling_policy): <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
-    ///   - [`placement_group_configs(Vec<PlacementGroupConfig>)`](crate::client::fluent_builders::RunJobFlow::placement_group_configs) / [`set_placement_group_configs(Option<Vec<PlacementGroupConfig>>)`](crate::client::fluent_builders::RunJobFlow::set_placement_group_configs): <p>The specified placement group configuration for an Amazon EMR cluster.</p>
-    ///   - [`auto_termination_policy(AutoTerminationPolicy)`](crate::client::fluent_builders::RunJobFlow::auto_termination_policy) / [`set_auto_termination_policy(Option<AutoTerminationPolicy>)`](crate::client::fluent_builders::RunJobFlow::set_auto_termination_policy): <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
-    ///   - [`os_release_label(impl Into<String>)`](crate::client::fluent_builders::RunJobFlow::os_release_label) / [`set_os_release_label(Option<String>)`](crate::client::fluent_builders::RunJobFlow::set_os_release_label): <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>
-    /// - On success, responds with [`RunJobFlowOutput`](crate::output::RunJobFlowOutput) with field(s):
-    ///   - [`job_flow_id(Option<String>)`](crate::output::RunJobFlowOutput::job_flow_id): <p>A unique identifier for the job flow.</p>
-    ///   - [`cluster_arn(Option<String>)`](crate::output::RunJobFlowOutput::cluster_arn): <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    /// - On failure, responds with [`SdkError<RunJobFlowError>`](crate::error::RunJobFlowError)
-    pub fn run_job_flow(&self) -> crate::client::fluent_builders::RunJobFlow {
-        crate::client::fluent_builders::RunJobFlow::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetTerminationProtection`](crate::client::fluent_builders::SetTerminationProtection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_flow_ids(Vec<String>)`](crate::client::fluent_builders::SetTerminationProtection::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::client::fluent_builders::SetTerminationProtection::set_job_flow_ids): <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    ///   - [`termination_protected(bool)`](crate::client::fluent_builders::SetTerminationProtection::termination_protected) / [`set_termination_protected(bool)`](crate::client::fluent_builders::SetTerminationProtection::set_termination_protected): <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
-    /// - On success, responds with [`SetTerminationProtectionOutput`](crate::output::SetTerminationProtectionOutput)
-
-    /// - On failure, responds with [`SdkError<SetTerminationProtectionError>`](crate::error::SetTerminationProtectionError)
-    pub fn set_termination_protection(
-        &self,
-    ) -> crate::client::fluent_builders::SetTerminationProtection {
-        crate::client::fluent_builders::SetTerminationProtection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetVisibleToAllUsers`](crate::client::fluent_builders::SetVisibleToAllUsers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_flow_ids(Vec<String>)`](crate::client::fluent_builders::SetVisibleToAllUsers::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::client::fluent_builders::SetVisibleToAllUsers::set_job_flow_ids): <p>The unique identifier of the job flow (cluster).</p>
-    ///   - [`visible_to_all_users(bool)`](crate::client::fluent_builders::SetVisibleToAllUsers::visible_to_all_users) / [`set_visible_to_all_users(bool)`](crate::client::fluent_builders::SetVisibleToAllUsers::set_visible_to_all_users): <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
-    /// - On success, responds with [`SetVisibleToAllUsersOutput`](crate::output::SetVisibleToAllUsersOutput)
-
-    /// - On failure, responds with [`SdkError<SetVisibleToAllUsersError>`](crate::error::SetVisibleToAllUsersError)
-    pub fn set_visible_to_all_users(&self) -> crate::client::fluent_builders::SetVisibleToAllUsers {
-        crate::client::fluent_builders::SetVisibleToAllUsers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartNotebookExecution`](crate::client::fluent_builders::StartNotebookExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`editor_id(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::editor_id) / [`set_editor_id(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_editor_id): <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
-    ///   - [`relative_path(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::relative_path) / [`set_relative_path(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_relative_path): <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
-    ///   - [`notebook_execution_name(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::notebook_execution_name) / [`set_notebook_execution_name(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_notebook_execution_name): <p>An optional name for the notebook execution.</p>
-    ///   - [`notebook_params(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::notebook_params) / [`set_notebook_params(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_notebook_params): <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
-    ///   - [`execution_engine(ExecutionEngineConfig)`](crate::client::fluent_builders::StartNotebookExecution::execution_engine) / [`set_execution_engine(Option<ExecutionEngineConfig>)`](crate::client::fluent_builders::StartNotebookExecution::set_execution_engine): <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-    ///   - [`service_role(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::service_role) / [`set_service_role(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_service_role): <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
-    ///   - [`notebook_instance_security_group_id(impl Into<String>)`](crate::client::fluent_builders::StartNotebookExecution::notebook_instance_security_group_id) / [`set_notebook_instance_security_group_id(Option<String>)`](crate::client::fluent_builders::StartNotebookExecution::set_notebook_instance_security_group_id): <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::StartNotebookExecution::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::StartNotebookExecution::set_tags): <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    /// - On success, responds with [`StartNotebookExecutionOutput`](crate::output::StartNotebookExecutionOutput) with field(s):
-    ///   - [`notebook_execution_id(Option<String>)`](crate::output::StartNotebookExecutionOutput::notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
-    /// - On failure, responds with [`SdkError<StartNotebookExecutionError>`](crate::error::StartNotebookExecutionError)
-    pub fn start_notebook_execution(
-        &self,
-    ) -> crate::client::fluent_builders::StartNotebookExecution {
-        crate::client::fluent_builders::StartNotebookExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopNotebookExecution`](crate::client::fluent_builders::StopNotebookExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`notebook_execution_id(impl Into<String>)`](crate::client::fluent_builders::StopNotebookExecution::notebook_execution_id) / [`set_notebook_execution_id(Option<String>)`](crate::client::fluent_builders::StopNotebookExecution::set_notebook_execution_id): <p>The unique identifier of the notebook execution.</p>
-    /// - On success, responds with [`StopNotebookExecutionOutput`](crate::output::StopNotebookExecutionOutput)
-
-    /// - On failure, responds with [`SdkError<StopNotebookExecutionError>`](crate::error::StopNotebookExecutionError)
-    pub fn stop_notebook_execution(&self) -> crate::client::fluent_builders::StopNotebookExecution {
-        crate::client::fluent_builders::StopNotebookExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TerminateJobFlows`](crate::client::fluent_builders::TerminateJobFlows) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`job_flow_ids(Vec<String>)`](crate::client::fluent_builders::TerminateJobFlows::job_flow_ids) / [`set_job_flow_ids(Option<Vec<String>>)`](crate::client::fluent_builders::TerminateJobFlows::set_job_flow_ids): <p>A list of job flows to be shut down.</p>
-    /// - On success, responds with [`TerminateJobFlowsOutput`](crate::output::TerminateJobFlowsOutput)
-
-    /// - On failure, responds with [`SdkError<TerminateJobFlowsError>`](crate::error::TerminateJobFlowsError)
-    pub fn terminate_job_flows(&self) -> crate::client::fluent_builders::TerminateJobFlows {
-        crate::client::fluent_builders::TerminateJobFlows::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStudio`](crate::client::fluent_builders::UpdateStudio) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_studio_id): <p>The ID of the Amazon EMR Studio to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_name): <p>A descriptive name for the Amazon EMR Studio.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_description): <p>A detailed description to assign to the Amazon EMR Studio.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateStudio::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateStudio::set_subnet_ids): <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
-    ///   - [`default_s3_location(impl Into<String>)`](crate::client::fluent_builders::UpdateStudio::default_s3_location) / [`set_default_s3_location(Option<String>)`](crate::client::fluent_builders::UpdateStudio::set_default_s3_location): <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-    /// - On success, responds with [`UpdateStudioOutput`](crate::output::UpdateStudioOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateStudioError>`](crate::error::UpdateStudioError)
-    pub fn update_studio(&self) -> crate::client::fluent_builders::UpdateStudio {
-        crate::client::fluent_builders::UpdateStudio::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStudioSessionMapping`](crate::client::fluent_builders::UpdateStudioSessionMapping) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::studio_id) / [`set_studio_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_studio_id): <p>The ID of the Amazon EMR Studio.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_id): <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_name) / [`set_identity_name(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_name): <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    ///   - [`identity_type(IdentityType)`](crate::client::fluent_builders::UpdateStudioSessionMapping::identity_type) / [`set_identity_type(Option<IdentityType>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_identity_type): <p>Specifies whether the identity to update is a user or a group.</p>
-    ///   - [`session_policy_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::session_policy_arn) / [`set_session_policy_arn(Option<String>)`](crate::client::fluent_builders::UpdateStudioSessionMapping::set_session_policy_arn): <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified user or group.</p>
-    /// - On success, responds with [`UpdateStudioSessionMappingOutput`](crate::output::UpdateStudioSessionMappingOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateStudioSessionMappingError>`](crate::error::UpdateStudioSessionMappingError)
-    pub fn update_studio_session_mapping(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateStudioSessionMapping {
-        crate::client::fluent_builders::UpdateStudioSessionMapping::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -906,9 +174,115 @@ impl Client {
     }
 }
 
+mod add_instance_fleet;
+
+mod add_instance_groups;
+
+mod add_job_flow_steps;
+
+mod add_tags;
+
+mod cancel_steps;
+
+mod create_security_configuration;
+
+mod create_studio;
+
+mod create_studio_session_mapping;
+
+mod delete_security_configuration;
+
+mod delete_studio;
+
+mod delete_studio_session_mapping;
+
+mod describe_cluster;
+
+mod describe_job_flows;
+
+mod describe_notebook_execution;
+
+mod describe_release_label;
+
+mod describe_security_configuration;
+
+mod describe_step;
+
+mod describe_studio;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_auto_termination_policy;
+
+mod get_block_public_access_configuration;
+
+mod get_cluster_session_credentials;
+
+mod get_managed_scaling_policy;
+
+mod get_studio_session_mapping;
+
+mod list_bootstrap_actions;
+
+mod list_clusters;
+
+mod list_instance_fleets;
+
+mod list_instance_groups;
+
+mod list_instances;
+
+mod list_notebook_executions;
+
+mod list_release_labels;
+
+mod list_security_configurations;
+
+mod list_steps;
+
+mod list_studio_session_mappings;
+
+mod list_studios;
+
+mod modify_cluster;
+
+mod modify_instance_fleet;
+
+mod modify_instance_groups;
+
+mod put_auto_scaling_policy;
+
+mod put_auto_termination_policy;
+
+mod put_block_public_access_configuration;
+
+mod put_managed_scaling_policy;
+
+mod remove_auto_scaling_policy;
+
+mod remove_auto_termination_policy;
+
+mod remove_managed_scaling_policy;
+
+mod remove_tags;
+
+mod run_job_flow;
+
+mod set_termination_protection;
+
+mod set_visible_to_all_users;
+
+mod start_notebook_execution;
+
+mod stop_notebook_execution;
+
+mod terminate_job_flows;
+
+mod update_studio;
+
+mod update_studio_session_mapping;

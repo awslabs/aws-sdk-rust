@@ -27,9 +27,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPolicy {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_scaling_policy_error(response)
+            crate::protocol_serde::shape_delete_scaling_policy::de_delete_scaling_policy_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_scaling_policy_response(response)
+            crate::protocol_serde::shape_delete_scaling_policy::de_delete_scaling_policy_http_response(response)
         }
     }
 }
@@ -62,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduledAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_scheduled_action_error(response)
+            crate::protocol_serde::shape_delete_scheduled_action::de_delete_scheduled_action_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_scheduled_action_response(response)
+            crate::protocol_serde::shape_delete_scheduled_action::de_delete_scheduled_action_http_response(response)
         }
     }
 }
@@ -97,9 +99,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterScalableTarget
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_scalable_target_error(response)
+            crate::protocol_serde::shape_deregister_scalable_target::de_deregister_scalable_target_http_error(response)
         } else {
-            crate::operation_deser::parse_deregister_scalable_target_response(response)
+            crate::protocol_serde::shape_deregister_scalable_target::de_deregister_scalable_target_http_response(response)
         }
     }
 }
@@ -132,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalableTargets 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scalable_targets_error(response)
+            crate::protocol_serde::shape_describe_scalable_targets::de_describe_scalable_targets_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scalable_targets_response(response)
+            crate::protocol_serde::shape_describe_scalable_targets::de_describe_scalable_targets_http_response(response)
         }
     }
 }
@@ -167,9 +169,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingActivitie
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_activities_error(response)
+            crate::protocol_serde::shape_describe_scaling_activities::de_describe_scaling_activities_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_activities_response(response)
+            crate::protocol_serde::shape_describe_scaling_activities::de_describe_scaling_activities_http_response(response)
         }
     }
 }
@@ -202,9 +204,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPolicies 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_policies_error(response)
+            crate::protocol_serde::shape_describe_scaling_policies::de_describe_scaling_policies_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_policies_response(response)
+            crate::protocol_serde::shape_describe_scaling_policies::de_describe_scaling_policies_http_response(response)
         }
     }
 }
@@ -237,9 +239,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScheduledActions
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scheduled_actions_error(response)
+            crate::protocol_serde::shape_describe_scheduled_actions::de_describe_scheduled_actions_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scheduled_actions_response(response)
+            crate::protocol_serde::shape_describe_scheduled_actions::de_describe_scheduled_actions_http_response(response)
         }
     }
 }
@@ -272,9 +274,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScalingPolicy {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_scaling_policy_error(response)
+            crate::protocol_serde::shape_put_scaling_policy::de_put_scaling_policy_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_scaling_policy_response(response)
+            crate::protocol_serde::shape_put_scaling_policy::de_put_scaling_policy_http_response(
+                response,
+            )
         }
     }
 }
@@ -307,9 +313,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScheduledAction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_scheduled_action_error(response)
+            crate::protocol_serde::shape_put_scheduled_action::de_put_scheduled_action_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_scheduled_action_response(response)
+            crate::protocol_serde::shape_put_scheduled_action::de_put_scheduled_action_http_response(
+                response,
+            )
         }
     }
 }
@@ -342,9 +352,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterScalableTarget {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_scalable_target_error(response)
+            crate::protocol_serde::shape_register_scalable_target::de_register_scalable_target_http_error(response)
         } else {
-            crate::operation_deser::parse_register_scalable_target_response(response)
+            crate::protocol_serde::shape_register_scalable_target::de_register_scalable_target_http_response(response)
         }
     }
 }

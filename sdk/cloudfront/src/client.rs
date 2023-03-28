@@ -89,1404 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateAlias`](crate::client::fluent_builders::AssociateAlias) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`target_distribution_id(impl Into<String>)`](crate::client::fluent_builders::AssociateAlias::target_distribution_id) / [`set_target_distribution_id(Option<String>)`](crate::client::fluent_builders::AssociateAlias::set_target_distribution_id): <p>The ID of the distribution that you're associating the alias with.</p>
-    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::AssociateAlias::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::AssociateAlias::set_alias): <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-    /// - On success, responds with [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateAliasError>`](crate::error::AssociateAliasError)
-    pub fn associate_alias(&self) -> crate::client::fluent_builders::AssociateAlias {
-        crate::client::fluent_builders::AssociateAlias::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CopyDistribution`](crate::client::fluent_builders::CopyDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`primary_distribution_id(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::primary_distribution_id) / [`set_primary_distribution_id(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_primary_distribution_id): <p>The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use <code>ListDistributions</code>.</p>
-    ///   - [`staging(bool)`](crate::client::fluent_builders::CopyDistribution::staging) / [`set_staging(Option<bool>)`](crate::client::fluent_builders::CopyDistribution::set_staging): <p>The type of distribution that your primary distribution will be copied to. The only valid value is <code>True</code>, indicating that you are copying to a staging distribution.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_if_match): <p>The version identifier of the primary distribution whose configuration you are copying. This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code> and <code>GetDistributionConfig</code>.</p>
-    ///   - [`caller_reference(impl Into<String>)`](crate::client::fluent_builders::CopyDistribution::caller_reference) / [`set_caller_reference(Option<String>)`](crate::client::fluent_builders::CopyDistribution::set_caller_reference): <p>A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.</p>
-    /// - On success, responds with [`CopyDistributionOutput`](crate::output::CopyDistributionOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::CopyDistributionOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    ///   - [`location(Option<String>)`](crate::output::CopyDistributionOutput::location): <p>The URL of the staging distribution.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CopyDistributionOutput::e_tag): <p>The version identifier for the current version of the staging distribution.</p>
-    /// - On failure, responds with [`SdkError<CopyDistributionError>`](crate::error::CopyDistributionError)
-    pub fn copy_distribution(&self) -> crate::client::fluent_builders::CopyDistribution {
-        crate::client::fluent_builders::CopyDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCachePolicy`](crate::client::fluent_builders::CreateCachePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cache_policy_config(CachePolicyConfig)`](crate::client::fluent_builders::CreateCachePolicy::cache_policy_config) / [`set_cache_policy_config(Option<CachePolicyConfig>)`](crate::client::fluent_builders::CreateCachePolicy::set_cache_policy_config): <p>A cache policy configuration.</p>
-    /// - On success, responds with [`CreateCachePolicyOutput`](crate::output::CreateCachePolicyOutput) with field(s):
-    ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::CreateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateCachePolicyOutput::location): <p>The fully qualified URI of the cache policy just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
-    /// - On failure, responds with [`SdkError<CreateCachePolicyError>`](crate::error::CreateCachePolicyError)
-    pub fn create_cache_policy(&self) -> crate::client::fluent_builders::CreateCachePolicy {
-        crate::client::fluent_builders::CreateCachePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cloud_front_origin_access_identity_config(CloudFrontOriginAccessIdentityConfig)`](crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity::cloud_front_origin_access_identity_config) / [`set_cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity::set_cloud_front_origin_access_identity_config): <p>The current configuration information for the identity.</p>
-    /// - On success, responds with [`CreateCloudFrontOriginAccessIdentityOutput`](crate::output::CreateCloudFrontOriginAccessIdentityOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::output::CreateCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateCloudFrontOriginAccessIdentityOutput::location): <p>The fully qualified URI of the new origin access identity just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity created.</p>
-    /// - On failure, responds with [`SdkError<CreateCloudFrontOriginAccessIdentityError>`](crate::error::CreateCloudFrontOriginAccessIdentityError)
-    pub fn create_cloud_front_origin_access_identity(
-        &self,
-    ) -> crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity {
-        crate::client::fluent_builders::CreateCloudFrontOriginAccessIdentity::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateContinuousDeploymentPolicy`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`continuous_deployment_policy_config(ContinuousDeploymentPolicyConfig)`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy::continuous_deployment_policy_config) / [`set_continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::client::fluent_builders::CreateContinuousDeploymentPolicy::set_continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
-    /// - On success, responds with [`CreateContinuousDeploymentPolicyOutput`](crate::output::CreateContinuousDeploymentPolicyOutput) with field(s):
-    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::CreateContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::location): <p>The location of the continuous deployment policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
-    /// - On failure, responds with [`SdkError<CreateContinuousDeploymentPolicyError>`](crate::error::CreateContinuousDeploymentPolicyError)
-    pub fn create_continuous_deployment_policy(
-        &self,
-    ) -> crate::client::fluent_builders::CreateContinuousDeploymentPolicy {
-        crate::client::fluent_builders::CreateContinuousDeploymentPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDistribution`](crate::client::fluent_builders::CreateDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_config(DistributionConfig)`](crate::client::fluent_builders::CreateDistribution::distribution_config) / [`set_distribution_config(Option<DistributionConfig>)`](crate::client::fluent_builders::CreateDistribution::set_distribution_config): <p>The distribution's configuration information.</p>
-    /// - On success, responds with [`CreateDistributionOutput`](crate::output::CreateDistributionOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::CreateDistributionOutput::distribution): <p>The distribution's information.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateDistributionOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateDistributionOutput::e_tag): <p>The current version of the distribution created.</p>
-    /// - On failure, responds with [`SdkError<CreateDistributionError>`](crate::error::CreateDistributionError)
-    pub fn create_distribution(&self) -> crate::client::fluent_builders::CreateDistribution {
-        crate::client::fluent_builders::CreateDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDistributionWithTags`](crate::client::fluent_builders::CreateDistributionWithTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_config_with_tags(DistributionConfigWithTags)`](crate::client::fluent_builders::CreateDistributionWithTags::distribution_config_with_tags) / [`set_distribution_config_with_tags(Option<DistributionConfigWithTags>)`](crate::client::fluent_builders::CreateDistributionWithTags::set_distribution_config_with_tags): <p>The distribution's configuration information.</p>
-    /// - On success, responds with [`CreateDistributionWithTagsOutput`](crate::output::CreateDistributionWithTagsOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::CreateDistributionWithTagsOutput::distribution): <p>The distribution's information.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::location): <p>The fully qualified URI of the new distribution resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
-    /// - On failure, responds with [`SdkError<CreateDistributionWithTagsError>`](crate::error::CreateDistributionWithTagsError)
-    pub fn create_distribution_with_tags(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDistributionWithTags {
-        crate::client::fluent_builders::CreateDistributionWithTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateFieldLevelEncryptionConfig`](crate::client::fluent_builders::CreateFieldLevelEncryptionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_config(FieldLevelEncryptionConfig)`](crate::client::fluent_builders::CreateFieldLevelEncryptionConfig::field_level_encryption_config) / [`set_field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::client::fluent_builders::CreateFieldLevelEncryptionConfig::set_field_level_encryption_config): <p>The request to create a new field-level encryption configuration.</p>
-    /// - On success, responds with [`CreateFieldLevelEncryptionConfigOutput`](crate::output::CreateFieldLevelEncryptionConfigOutput) with field(s):
-    ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::output::CreateFieldLevelEncryptionConfigOutput::field_level_encryption): <p>Returned when you create a new field-level encryption configuration.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateFieldLevelEncryptionConfigOutput::location): <p>The fully qualified URI of the new configuration resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionConfigError>`](crate::error::CreateFieldLevelEncryptionConfigError)
-    pub fn create_field_level_encryption_config(
-        &self,
-    ) -> crate::client::fluent_builders::CreateFieldLevelEncryptionConfig {
-        crate::client::fluent_builders::CreateFieldLevelEncryptionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateFieldLevelEncryptionProfile`](crate::client::fluent_builders::CreateFieldLevelEncryptionProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_profile_config(FieldLevelEncryptionProfileConfig)`](crate::client::fluent_builders::CreateFieldLevelEncryptionProfile::field_level_encryption_profile_config) / [`set_field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::client::fluent_builders::CreateFieldLevelEncryptionProfile::set_field_level_encryption_profile_config): <p>The request to create a field-level encryption profile.</p>
-    /// - On success, responds with [`CreateFieldLevelEncryptionProfileOutput`](crate::output::CreateFieldLevelEncryptionProfileOutput) with field(s):
-    ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::CreateFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Returned when you create a new field-level encryption profile.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateFieldLevelEncryptionProfileOutput::location): <p>The fully qualified URI of the new profile resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateFieldLevelEncryptionProfileOutput::e_tag): <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateFieldLevelEncryptionProfileError>`](crate::error::CreateFieldLevelEncryptionProfileError)
-    pub fn create_field_level_encryption_profile(
-        &self,
-    ) -> crate::client::fluent_builders::CreateFieldLevelEncryptionProfile {
-        crate::client::fluent_builders::CreateFieldLevelEncryptionProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateFunction`](crate::client::fluent_builders::CreateFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateFunction::set_name): <p>A name to identify the function.</p>
-    ///   - [`function_config(FunctionConfig)`](crate::client::fluent_builders::CreateFunction::function_config) / [`set_function_config(Option<FunctionConfig>)`](crate::client::fluent_builders::CreateFunction::set_function_config): <p>Configuration information about the function, including an optional comment and the function's runtime.</p>
-    ///   - [`function_code(Blob)`](crate::client::fluent_builders::CreateFunction::function_code) / [`set_function_code(Option<Blob>)`](crate::client::fluent_builders::CreateFunction::set_function_code): <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateFunctionOutput`](crate::output::CreateFunctionOutput) with field(s):
-    ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::CreateFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateFunctionOutput::location): <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront API.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
-    /// - On failure, responds with [`SdkError<CreateFunctionError>`](crate::error::CreateFunctionError)
-    pub fn create_function(&self) -> crate::client::fluent_builders::CreateFunction {
-        crate::client::fluent_builders::CreateFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateInvalidation`](crate::client::fluent_builders::CreateInvalidation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::CreateInvalidation::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::CreateInvalidation::set_distribution_id): <p>The distribution's id.</p>
-    ///   - [`invalidation_batch(InvalidationBatch)`](crate::client::fluent_builders::CreateInvalidation::invalidation_batch) / [`set_invalidation_batch(Option<InvalidationBatch>)`](crate::client::fluent_builders::CreateInvalidation::set_invalidation_batch): <p>The batch information for the invalidation.</p>
-    /// - On success, responds with [`CreateInvalidationOutput`](crate::output::CreateInvalidationOutput) with field(s):
-    ///   - [`location(Option<String>)`](crate::output::CreateInvalidationOutput::location): <p>The fully qualified URI of the distribution and invalidation batch request, including the <code>Invalidation ID</code>.</p>
-    ///   - [`invalidation(Option<Invalidation>)`](crate::output::CreateInvalidationOutput::invalidation): <p>The invalidation's information.</p>
-    /// - On failure, responds with [`SdkError<CreateInvalidationError>`](crate::error::CreateInvalidationError)
-    pub fn create_invalidation(&self) -> crate::client::fluent_builders::CreateInvalidation {
-        crate::client::fluent_builders::CreateInvalidation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateKeyGroup`](crate::client::fluent_builders::CreateKeyGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`key_group_config(KeyGroupConfig)`](crate::client::fluent_builders::CreateKeyGroup::key_group_config) / [`set_key_group_config(Option<KeyGroupConfig>)`](crate::client::fluent_builders::CreateKeyGroup::set_key_group_config): <p>A key group configuration.</p>
-    /// - On success, responds with [`CreateKeyGroupOutput`](crate::output::CreateKeyGroupOutput) with field(s):
-    ///   - [`key_group(Option<KeyGroup>)`](crate::output::CreateKeyGroupOutput::key_group): <p>The key group that was just created.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateKeyGroupOutput::location): <p>The URL of the key group.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
-    /// - On failure, responds with [`SdkError<CreateKeyGroupError>`](crate::error::CreateKeyGroupError)
-    pub fn create_key_group(&self) -> crate::client::fluent_builders::CreateKeyGroup {
-        crate::client::fluent_builders::CreateKeyGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMonitoringSubscription`](crate::client::fluent_builders::CreateMonitoringSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::CreateMonitoringSubscription::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::CreateMonitoringSubscription::set_distribution_id): <p>The ID of the distribution that you are enabling metrics for.</p>
-    ///   - [`monitoring_subscription(MonitoringSubscription)`](crate::client::fluent_builders::CreateMonitoringSubscription::monitoring_subscription) / [`set_monitoring_subscription(Option<MonitoringSubscription>)`](crate::client::fluent_builders::CreateMonitoringSubscription::set_monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    /// - On success, responds with [`CreateMonitoringSubscriptionOutput`](crate::output::CreateMonitoringSubscriptionOutput) with field(s):
-    ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::output::CreateMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    /// - On failure, responds with [`SdkError<CreateMonitoringSubscriptionError>`](crate::error::CreateMonitoringSubscriptionError)
-    pub fn create_monitoring_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMonitoringSubscription {
-        crate::client::fluent_builders::CreateMonitoringSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateOriginAccessControl`](crate::client::fluent_builders::CreateOriginAccessControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::client::fluent_builders::CreateOriginAccessControl::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::client::fluent_builders::CreateOriginAccessControl::set_origin_access_control_config): <p>Contains the origin access control.</p>
-    /// - On success, responds with [`CreateOriginAccessControlOutput`](crate::output::CreateOriginAccessControlOutput) with field(s):
-    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::CreateOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateOriginAccessControlOutput::location): <p>The URL of the origin access control.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
-    /// - On failure, responds with [`SdkError<CreateOriginAccessControlError>`](crate::error::CreateOriginAccessControlError)
-    pub fn create_origin_access_control(
-        &self,
-    ) -> crate::client::fluent_builders::CreateOriginAccessControl {
-        crate::client::fluent_builders::CreateOriginAccessControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateOriginRequestPolicy`](crate::client::fluent_builders::CreateOriginRequestPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`origin_request_policy_config(OriginRequestPolicyConfig)`](crate::client::fluent_builders::CreateOriginRequestPolicy::origin_request_policy_config) / [`set_origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::client::fluent_builders::CreateOriginRequestPolicy::set_origin_request_policy_config): <p>An origin request policy configuration.</p>
-    /// - On success, responds with [`CreateOriginRequestPolicyOutput`](crate::output::CreateOriginRequestPolicyOutput) with field(s):
-    ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::CreateOriginRequestPolicyOutput::origin_request_policy): <p>An origin request policy.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateOriginRequestPolicyOutput::location): <p>The fully qualified URI of the origin request policy just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
-    /// - On failure, responds with [`SdkError<CreateOriginRequestPolicyError>`](crate::error::CreateOriginRequestPolicyError)
-    pub fn create_origin_request_policy(
-        &self,
-    ) -> crate::client::fluent_builders::CreateOriginRequestPolicy {
-        crate::client::fluent_builders::CreateOriginRequestPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePublicKey`](crate::client::fluent_builders::CreatePublicKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`public_key_config(PublicKeyConfig)`](crate::client::fluent_builders::CreatePublicKey::public_key_config) / [`set_public_key_config(Option<PublicKeyConfig>)`](crate::client::fluent_builders::CreatePublicKey::set_public_key_config): <p>A CloudFront public key configuration.</p>
-    /// - On success, responds with [`CreatePublicKeyOutput`](crate::output::CreatePublicKeyOutput) with field(s):
-    ///   - [`public_key(Option<PublicKey>)`](crate::output::CreatePublicKeyOutput::public_key): <p>The public key.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreatePublicKeyOutput::location): <p>The URL of the public key.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreatePublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
-    /// - On failure, responds with [`SdkError<CreatePublicKeyError>`](crate::error::CreatePublicKeyError)
-    pub fn create_public_key(&self) -> crate::client::fluent_builders::CreatePublicKey {
-        crate::client::fluent_builders::CreatePublicKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRealtimeLogConfig`](crate::client::fluent_builders::CreateRealtimeLogConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`end_points(Vec<EndPoint>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::end_points) / [`set_end_points(Option<Vec<EndPoint>>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::set_end_points): <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    ///   - [`fields(Vec<String>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::fields) / [`set_fields(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::set_fields): <p>A list of fields to include in each real-time log record.</p>  <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::set_name): <p>A unique name to identify this real-time log configuration.</p>
-    ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::CreateRealtimeLogConfig::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::CreateRealtimeLogConfig::set_sampling_rate): <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-    /// - On success, responds with [`CreateRealtimeLogConfigOutput`](crate::output::CreateRealtimeLogConfigOutput) with field(s):
-    ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::CreateRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
-    /// - On failure, responds with [`SdkError<CreateRealtimeLogConfigError>`](crate::error::CreateRealtimeLogConfigError)
-    pub fn create_realtime_log_config(
-        &self,
-    ) -> crate::client::fluent_builders::CreateRealtimeLogConfig {
-        crate::client::fluent_builders::CreateRealtimeLogConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateResponseHeadersPolicy`](crate::client::fluent_builders::CreateResponseHeadersPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`response_headers_policy_config(ResponseHeadersPolicyConfig)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::response_headers_policy_config) / [`set_response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::client::fluent_builders::CreateResponseHeadersPolicy::set_response_headers_policy_config): <p>Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.</p>
-    /// - On success, responds with [`CreateResponseHeadersPolicyOutput`](crate::output::CreateResponseHeadersPolicyOutput) with field(s):
-    ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::CreateResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateResponseHeadersPolicyOutput::location): <p>The URL of the response headers policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
-    /// - On failure, responds with [`SdkError<CreateResponseHeadersPolicyError>`](crate::error::CreateResponseHeadersPolicyError)
-    pub fn create_response_headers_policy(
-        &self,
-    ) -> crate::client::fluent_builders::CreateResponseHeadersPolicy {
-        crate::client::fluent_builders::CreateResponseHeadersPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStreamingDistribution`](crate::client::fluent_builders::CreateStreamingDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`streaming_distribution_config(StreamingDistributionConfig)`](crate::client::fluent_builders::CreateStreamingDistribution::streaming_distribution_config) / [`set_streaming_distribution_config(Option<StreamingDistributionConfig>)`](crate::client::fluent_builders::CreateStreamingDistribution::set_streaming_distribution_config): <p>The streaming distribution's configuration information.</p>
-    /// - On success, responds with [`CreateStreamingDistributionOutput`](crate::output::CreateStreamingDistributionOutput) with field(s):
-    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::CreateStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateStreamingDistributionOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution created.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamingDistributionError>`](crate::error::CreateStreamingDistributionError)
-    pub fn create_streaming_distribution(
-        &self,
-    ) -> crate::client::fluent_builders::CreateStreamingDistribution {
-        crate::client::fluent_builders::CreateStreamingDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStreamingDistributionWithTags`](crate::client::fluent_builders::CreateStreamingDistributionWithTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`streaming_distribution_config_with_tags(StreamingDistributionConfigWithTags)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::streaming_distribution_config_with_tags) / [`set_streaming_distribution_config_with_tags(Option<StreamingDistributionConfigWithTags>)`](crate::client::fluent_builders::CreateStreamingDistributionWithTags::set_streaming_distribution_config_with_tags): <p>The streaming distribution's configuration information.</p>
-    /// - On success, responds with [`CreateStreamingDistributionWithTagsOutput`](crate::output::CreateStreamingDistributionWithTagsOutput) with field(s):
-    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::CreateStreamingDistributionWithTagsOutput::streaming_distribution): <p>The streaming distribution's information.</p>
-    ///   - [`location(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::location): <p>The fully qualified URI of the new streaming distribution resource just created.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::CreateStreamingDistributionWithTagsOutput::e_tag): <p>The current version of the distribution created.</p>
-    /// - On failure, responds with [`SdkError<CreateStreamingDistributionWithTagsError>`](crate::error::CreateStreamingDistributionWithTagsError)
-    pub fn create_streaming_distribution_with_tags(
-        &self,
-    ) -> crate::client::fluent_builders::CreateStreamingDistributionWithTags {
-        crate::client::fluent_builders::CreateStreamingDistributionWithTags::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteCachePolicy`](crate::client::fluent_builders::DeleteCachePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCachePolicy::set_id): <p>The unique identifier for the cache policy that you are deleting. To get the identifier, you can use <code>ListCachePolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteCachePolicy::set_if_match): <p>The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.</p>
-    /// - On success, responds with [`DeleteCachePolicyOutput`](crate::output::DeleteCachePolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCachePolicyError>`](crate::error::DeleteCachePolicyError)
-    pub fn delete_cache_policy(&self) -> crate::client::fluent_builders::DeleteCachePolicy {
-        crate::client::fluent_builders::DeleteCachePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::set_id): <p>The origin access identity's ID.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::set_if_match): <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeleteCloudFrontOriginAccessIdentityOutput`](crate::output::DeleteCloudFrontOriginAccessIdentityOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCloudFrontOriginAccessIdentityError>`](crate::error::DeleteCloudFrontOriginAccessIdentityError)
-    pub fn delete_cloud_front_origin_access_identity(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity {
-        crate::client::fluent_builders::DeleteCloudFrontOriginAccessIdentity::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteContinuousDeploymentPolicy`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are deleting.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::set_if_match): <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-    /// - On success, responds with [`DeleteContinuousDeploymentPolicyOutput`](crate::output::DeleteContinuousDeploymentPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteContinuousDeploymentPolicyError>`](crate::error::DeleteContinuousDeploymentPolicyError)
-    pub fn delete_continuous_deployment_policy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteContinuousDeploymentPolicy {
-        crate::client::fluent_builders::DeleteContinuousDeploymentPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDistribution`](crate::client::fluent_builders::DeleteDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_id): <p>The distribution ID.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeleteDistributionOutput`](crate::output::DeleteDistributionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDistributionError>`](crate::error::DeleteDistributionError)
-    pub fn delete_distribution(&self) -> crate::client::fluent_builders::DeleteDistribution {
-        crate::client::fluent_builders::DeleteDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFieldLevelEncryptionConfig`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::set_id): <p>The ID of the configuration you want to delete from CloudFront.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeleteFieldLevelEncryptionConfigOutput`](crate::output::DeleteFieldLevelEncryptionConfigOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionConfigError>`](crate::error::DeleteFieldLevelEncryptionConfigError)
-    pub fn delete_field_level_encryption_config(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig {
-        crate::client::fluent_builders::DeleteFieldLevelEncryptionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFieldLevelEncryptionProfile`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::set_id): <p>Request the ID of the profile you want to delete from CloudFront.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeleteFieldLevelEncryptionProfileOutput`](crate::output::DeleteFieldLevelEncryptionProfileOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFieldLevelEncryptionProfileError>`](crate::error::DeleteFieldLevelEncryptionProfileError)
-    pub fn delete_field_level_encryption_profile(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile {
-        crate::client::fluent_builders::DeleteFieldLevelEncryptionProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFunction`](crate::client::fluent_builders::DeleteFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteFunction::set_name): <p>The name of the function that you are deleting.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteFunction::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteFunction::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
-    /// - On success, responds with [`DeleteFunctionOutput`](crate::output::DeleteFunctionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFunctionError>`](crate::error::DeleteFunctionError)
-    pub fn delete_function(&self) -> crate::client::fluent_builders::DeleteFunction {
-        crate::client::fluent_builders::DeleteFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteKeyGroup`](crate::client::fluent_builders::DeleteKeyGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteKeyGroup::set_id): <p>The identifier of the key group that you are deleting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteKeyGroup::set_if_match): <p>The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
-    /// - On success, responds with [`DeleteKeyGroupOutput`](crate::output::DeleteKeyGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteKeyGroupError>`](crate::error::DeleteKeyGroupError)
-    pub fn delete_key_group(&self) -> crate::client::fluent_builders::DeleteKeyGroup {
-        crate::client::fluent_builders::DeleteKeyGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMonitoringSubscription`](crate::client::fluent_builders::DeleteMonitoringSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMonitoringSubscription::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::DeleteMonitoringSubscription::set_distribution_id): <p>The ID of the distribution that you are disabling metrics for.</p>
-    /// - On success, responds with [`DeleteMonitoringSubscriptionOutput`](crate::output::DeleteMonitoringSubscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMonitoringSubscriptionError>`](crate::error::DeleteMonitoringSubscriptionError)
-    pub fn delete_monitoring_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteMonitoringSubscription {
-        crate::client::fluent_builders::DeleteMonitoringSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteOriginAccessControl`](crate::client::fluent_builders::DeleteOriginAccessControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::set_id): <p>The unique identifier of the origin access control that you are deleting.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteOriginAccessControl::set_if_match): <p>The current version (<code>ETag</code> value) of the origin access control that you are deleting.</p>
-    /// - On success, responds with [`DeleteOriginAccessControlOutput`](crate::output::DeleteOriginAccessControlOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteOriginAccessControlError>`](crate::error::DeleteOriginAccessControlError)
-    pub fn delete_origin_access_control(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteOriginAccessControl {
-        crate::client::fluent_builders::DeleteOriginAccessControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteOriginRequestPolicy`](crate::client::fluent_builders::DeleteOriginRequestPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are deleting. The version is the origin request policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.</p>
-    /// - On success, responds with [`DeleteOriginRequestPolicyOutput`](crate::output::DeleteOriginRequestPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteOriginRequestPolicyError>`](crate::error::DeleteOriginRequestPolicyError)
-    pub fn delete_origin_request_policy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteOriginRequestPolicy {
-        crate::client::fluent_builders::DeleteOriginRequestPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePublicKey`](crate::client::fluent_builders::DeletePublicKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeletePublicKey::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeletePublicKey::set_id): <p>The ID of the public key you want to remove from CloudFront.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeletePublicKey::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeletePublicKey::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeletePublicKeyOutput`](crate::output::DeletePublicKeyOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePublicKeyError>`](crate::error::DeletePublicKeyError)
-    pub fn delete_public_key(&self) -> crate::client::fluent_builders::DeletePublicKey {
-        crate::client::fluent_builders::DeletePublicKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRealtimeLogConfig`](crate::client::fluent_builders::DeleteRealtimeLogConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DeleteRealtimeLogConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DeleteRealtimeLogConfig::set_name): <p>The name of the real-time log configuration to delete.</p>
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::DeleteRealtimeLogConfig::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::DeleteRealtimeLogConfig::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
-    /// - On success, responds with [`DeleteRealtimeLogConfigOutput`](crate::output::DeleteRealtimeLogConfigOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRealtimeLogConfigError>`](crate::error::DeleteRealtimeLogConfigError)
-    pub fn delete_realtime_log_config(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteRealtimeLogConfig {
-        crate::client::fluent_builders::DeleteRealtimeLogConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteResponseHeadersPolicy`](crate::client::fluent_builders::DeleteResponseHeadersPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy that you are deleting.</p>  <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are deleting.</p>  <p>The version is the response headers policy's <code>ETag</code> value, which you can get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or <code>GetResponseHeadersPolicyConfig</code>.</p>
-    /// - On success, responds with [`DeleteResponseHeadersPolicyOutput`](crate::output::DeleteResponseHeadersPolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteResponseHeadersPolicyError>`](crate::error::DeleteResponseHeadersPolicyError)
-    pub fn delete_response_headers_policy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteResponseHeadersPolicy {
-        crate::client::fluent_builders::DeleteResponseHeadersPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStreamingDistribution`](crate::client::fluent_builders::DeleteStreamingDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::set_id): <p>The distribution ID.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::DeleteStreamingDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when you disabled the streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`DeleteStreamingDistributionOutput`](crate::output::DeleteStreamingDistributionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStreamingDistributionError>`](crate::error::DeleteStreamingDistributionError)
-    pub fn delete_streaming_distribution(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteStreamingDistribution {
-        crate::client::fluent_builders::DeleteStreamingDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFunction`](crate::client::fluent_builders::DescribeFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::DescribeFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::DescribeFunction::set_name): <p>The name of the function that you are getting information about.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::DescribeFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::DescribeFunction::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// - On success, responds with [`DescribeFunctionOutput`](crate::output::DescribeFunctionOutput) with field(s):
-    ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::DescribeFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::DescribeFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
-    /// - On failure, responds with [`SdkError<DescribeFunctionError>`](crate::error::DescribeFunctionError)
-    pub fn describe_function(&self) -> crate::client::fluent_builders::DescribeFunction {
-        crate::client::fluent_builders::DescribeFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCachePolicy`](crate::client::fluent_builders::GetCachePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicy::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-    /// - On success, responds with [`GetCachePolicyOutput`](crate::output::GetCachePolicyOutput) with field(s):
-    ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::GetCachePolicyOutput::cache_policy): <p>The cache policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
-    /// - On failure, responds with [`SdkError<GetCachePolicyError>`](crate::error::GetCachePolicyError)
-    pub fn get_cache_policy(&self) -> crate::client::fluent_builders::GetCachePolicy {
-        crate::client::fluent_builders::GetCachePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCachePolicyConfig`](crate::client::fluent_builders::GetCachePolicyConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCachePolicyConfig::set_id): <p>The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
-    /// - On success, responds with [`GetCachePolicyConfigOutput`](crate::output::GetCachePolicyConfigOutput) with field(s):
-    ///   - [`cache_policy_config(Option<CachePolicyConfig>)`](crate::output::GetCachePolicyConfigOutput::cache_policy_config): <p>The cache policy configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetCachePolicyConfigOutput::e_tag): <p>The current version of the cache policy.</p>
-    /// - On failure, responds with [`SdkError<GetCachePolicyConfigError>`](crate::error::GetCachePolicyConfigError)
-    pub fn get_cache_policy_config(&self) -> crate::client::fluent_builders::GetCachePolicyConfig {
-        crate::client::fluent_builders::GetCachePolicyConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity::set_id): <p>The identity's ID.</p>
-    /// - On success, responds with [`GetCloudFrontOriginAccessIdentityOutput`](crate::output::GetCloudFrontOriginAccessIdentityOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::output::GetCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityError>`](crate::error::GetCloudFrontOriginAccessIdentityError)
-    pub fn get_cloud_front_origin_access_identity(
-        &self,
-    ) -> crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity {
-        crate::client::fluent_builders::GetCloudFrontOriginAccessIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCloudFrontOriginAccessIdentityConfig`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::set_id): <p>The identity's ID.</p>
-    /// - On success, responds with [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::cloud_front_origin_access_identity_config): <p>The origin access identity's configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetCloudFrontOriginAccessIdentityConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetCloudFrontOriginAccessIdentityConfigError>`](crate::error::GetCloudFrontOriginAccessIdentityConfigError)
-    pub fn get_cloud_front_origin_access_identity_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig {
-        crate::client::fluent_builders::GetCloudFrontOriginAccessIdentityConfig::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicy`](crate::client::fluent_builders::GetContinuousDeploymentPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are getting.</p>
-    /// - On success, responds with [`GetContinuousDeploymentPolicyOutput`](crate::output::GetContinuousDeploymentPolicyOutput) with field(s):
-    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::GetContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
-    /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyError>`](crate::error::GetContinuousDeploymentPolicyError)
-    pub fn get_continuous_deployment_policy(
-        &self,
-    ) -> crate::client::fluent_builders::GetContinuousDeploymentPolicy {
-        crate::client::fluent_builders::GetContinuousDeploymentPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetContinuousDeploymentPolicyConfig`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::set_id): <p>The identifier of the continuous deployment policy whose configuration you are getting.</p>
-    /// - On success, responds with [`GetContinuousDeploymentPolicyConfigOutput`](crate::output::GetContinuousDeploymentPolicyConfigOutput) with field(s):
-    ///   - [`continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::continuous_deployment_policy_config): <p>Contains the configuration for a continuous deployment policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetContinuousDeploymentPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
-    /// - On failure, responds with [`SdkError<GetContinuousDeploymentPolicyConfigError>`](crate::error::GetContinuousDeploymentPolicyConfigError)
-    pub fn get_continuous_deployment_policy_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig {
-        crate::client::fluent_builders::GetContinuousDeploymentPolicyConfig::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetDistribution`](crate::client::fluent_builders::GetDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetDistribution::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-    /// - On success, responds with [`GetDistributionOutput`](crate::output::GetDistributionOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::GetDistributionOutput::distribution): <p>The distribution's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetDistributionOutput::e_tag): <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetDistributionError>`](crate::error::GetDistributionError)
-    pub fn get_distribution(&self) -> crate::client::fluent_builders::GetDistribution {
-        crate::client::fluent_builders::GetDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDistributionConfig`](crate::client::fluent_builders::GetDistributionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetDistributionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetDistributionConfig::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-    /// - On success, responds with [`GetDistributionConfigOutput`](crate::output::GetDistributionConfigOutput) with field(s):
-    ///   - [`distribution_config(Option<DistributionConfig>)`](crate::output::GetDistributionConfigOutput::distribution_config): <p>The distribution's configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetDistributionConfigError>`](crate::error::GetDistributionConfigError)
-    pub fn get_distribution_config(&self) -> crate::client::fluent_builders::GetDistributionConfig {
-        crate::client::fluent_builders::GetDistributionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetFieldLevelEncryption`](crate::client::fluent_builders::GetFieldLevelEncryption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFieldLevelEncryption::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFieldLevelEncryption::set_id): <p>Request the ID for the field-level encryption configuration information.</p>
-    /// - On success, responds with [`GetFieldLevelEncryptionOutput`](crate::output::GetFieldLevelEncryptionOutput) with field(s):
-    ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::output::GetFieldLevelEncryptionOutput::field_level_encryption): <p>Return the field-level encryption configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionError>`](crate::error::GetFieldLevelEncryptionError)
-    pub fn get_field_level_encryption(
-        &self,
-    ) -> crate::client::fluent_builders::GetFieldLevelEncryption {
-        crate::client::fluent_builders::GetFieldLevelEncryption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetFieldLevelEncryptionConfig`](crate::client::fluent_builders::GetFieldLevelEncryptionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionConfig::set_id): <p>Request the ID for the field-level encryption configuration information.</p>
-    /// - On success, responds with [`GetFieldLevelEncryptionConfigOutput`](crate::output::GetFieldLevelEncryptionConfigOutput) with field(s):
-    ///   - [`field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::output::GetFieldLevelEncryptionConfigOutput::field_level_encryption_config): <p>Return the field-level encryption configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionConfigError>`](crate::error::GetFieldLevelEncryptionConfigError)
-    pub fn get_field_level_encryption_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetFieldLevelEncryptionConfig {
-        crate::client::fluent_builders::GetFieldLevelEncryptionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetFieldLevelEncryptionProfile`](crate::client::fluent_builders::GetFieldLevelEncryptionProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionProfile::set_id): <p>Get the ID for the field-level encryption profile information.</p>
-    /// - On success, responds with [`GetFieldLevelEncryptionProfileOutput`](crate::output::GetFieldLevelEncryptionProfileOutput) with field(s):
-    ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::GetFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the field-level encryption profile information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionProfileOutput::e_tag): <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionProfileError>`](crate::error::GetFieldLevelEncryptionProfileError)
-    pub fn get_field_level_encryption_profile(
-        &self,
-    ) -> crate::client::fluent_builders::GetFieldLevelEncryptionProfile {
-        crate::client::fluent_builders::GetFieldLevelEncryptionProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetFieldLevelEncryptionProfileConfig`](crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig::set_id): <p>Get the ID for the field-level encryption profile configuration information.</p>
-    /// - On success, responds with [`GetFieldLevelEncryptionProfileConfigOutput`](crate::output::GetFieldLevelEncryptionProfileConfigOutput) with field(s):
-    ///   - [`field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::output::GetFieldLevelEncryptionProfileConfigOutput::field_level_encryption_profile_config): <p>Return the field-level encryption profile configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetFieldLevelEncryptionProfileConfigOutput::e_tag): <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetFieldLevelEncryptionProfileConfigError>`](crate::error::GetFieldLevelEncryptionProfileConfigError)
-    pub fn get_field_level_encryption_profile_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig {
-        crate::client::fluent_builders::GetFieldLevelEncryptionProfileConfig::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetFunction`](crate::client::fluent_builders::GetFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetFunction::set_name): <p>The name of the function whose code you are getting.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::GetFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::GetFunction::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// - On success, responds with [`GetFunctionOutput`](crate::output::GetFunctionOutput) with field(s):
-    ///   - [`function_code(Option<Blob>)`](crate::output::GetFunctionOutput::function_code): <p>The function code of a CloudFront function.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetFunctionOutput::content_type): <p>The content type (media type) of the response.</p>
-    /// - On failure, responds with [`SdkError<GetFunctionError>`](crate::error::GetFunctionError)
-    pub fn get_function(&self) -> crate::client::fluent_builders::GetFunction {
-        crate::client::fluent_builders::GetFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetInvalidation`](crate::client::fluent_builders::GetInvalidation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::GetInvalidation::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::GetInvalidation::set_distribution_id): <p>The distribution's ID.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetInvalidation::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetInvalidation::set_id): <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
-    /// - On success, responds with [`GetInvalidationOutput`](crate::output::GetInvalidationOutput) with field(s):
-    ///   - [`invalidation(Option<Invalidation>)`](crate::output::GetInvalidationOutput::invalidation): <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
-    /// - On failure, responds with [`SdkError<GetInvalidationError>`](crate::error::GetInvalidationError)
-    pub fn get_invalidation(&self) -> crate::client::fluent_builders::GetInvalidation {
-        crate::client::fluent_builders::GetInvalidation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetKeyGroup`](crate::client::fluent_builders::GetKeyGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetKeyGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetKeyGroup::set_id): <p>The identifier of the key group that you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-    /// - On success, responds with [`GetKeyGroupOutput`](crate::output::GetKeyGroupOutput) with field(s):
-    ///   - [`key_group(Option<KeyGroup>)`](crate::output::GetKeyGroupOutput::key_group): <p>The key group.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
-    /// - On failure, responds with [`SdkError<GetKeyGroupError>`](crate::error::GetKeyGroupError)
-    pub fn get_key_group(&self) -> crate::client::fluent_builders::GetKeyGroup {
-        crate::client::fluent_builders::GetKeyGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetKeyGroupConfig`](crate::client::fluent_builders::GetKeyGroupConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetKeyGroupConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetKeyGroupConfig::set_id): <p>The identifier of the key group whose configuration you are getting. To get the identifier, use <code>ListKeyGroups</code>.</p>
-    /// - On success, responds with [`GetKeyGroupConfigOutput`](crate::output::GetKeyGroupConfigOutput) with field(s):
-    ///   - [`key_group_config(Option<KeyGroupConfig>)`](crate::output::GetKeyGroupConfigOutput::key_group_config): <p>The key group configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetKeyGroupConfigOutput::e_tag): <p>The identifier for this version of the key group.</p>
-    /// - On failure, responds with [`SdkError<GetKeyGroupConfigError>`](crate::error::GetKeyGroupConfigError)
-    pub fn get_key_group_config(&self) -> crate::client::fluent_builders::GetKeyGroupConfig {
-        crate::client::fluent_builders::GetKeyGroupConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMonitoringSubscription`](crate::client::fluent_builders::GetMonitoringSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::GetMonitoringSubscription::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::GetMonitoringSubscription::set_distribution_id): <p>The ID of the distribution that you are getting metrics information for.</p>
-    /// - On success, responds with [`GetMonitoringSubscriptionOutput`](crate::output::GetMonitoringSubscriptionOutput) with field(s):
-    ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::output::GetMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    /// - On failure, responds with [`SdkError<GetMonitoringSubscriptionError>`](crate::error::GetMonitoringSubscriptionError)
-    pub fn get_monitoring_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::GetMonitoringSubscription {
-        crate::client::fluent_builders::GetMonitoringSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOriginAccessControl`](crate::client::fluent_builders::GetOriginAccessControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControl::set_id): <p>The unique identifier of the origin access control.</p>
-    /// - On success, responds with [`GetOriginAccessControlOutput`](crate::output::GetOriginAccessControlOutput) with field(s):
-    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::GetOriginAccessControlOutput::origin_access_control): <p>Contains an origin access control, including its unique identifier.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
-    /// - On failure, responds with [`SdkError<GetOriginAccessControlError>`](crate::error::GetOriginAccessControlError)
-    pub fn get_origin_access_control(
-        &self,
-    ) -> crate::client::fluent_builders::GetOriginAccessControl {
-        crate::client::fluent_builders::GetOriginAccessControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOriginAccessControlConfig`](crate::client::fluent_builders::GetOriginAccessControlConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginAccessControlConfig::set_id): <p>The unique identifier of the origin access control.</p>
-    /// - On success, responds with [`GetOriginAccessControlConfigOutput`](crate::output::GetOriginAccessControlConfigOutput) with field(s):
-    ///   - [`origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::output::GetOriginAccessControlConfigOutput::origin_access_control_config): <p>Contains an origin access control configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginAccessControlConfigOutput::e_tag): <p>The version identifier for the current version of the origin access control.</p>
-    /// - On failure, responds with [`SdkError<GetOriginAccessControlConfigError>`](crate::error::GetOriginAccessControlConfigError)
-    pub fn get_origin_access_control_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetOriginAccessControlConfig {
-        crate::client::fluent_builders::GetOriginAccessControlConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOriginRequestPolicy`](crate::client::fluent_builders::GetOriginRequestPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-    /// - On success, responds with [`GetOriginRequestPolicyOutput`](crate::output::GetOriginRequestPolicyOutput) with field(s):
-    ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::GetOriginRequestPolicyOutput::origin_request_policy): <p>The origin request policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
-    /// - On failure, responds with [`SdkError<GetOriginRequestPolicyError>`](crate::error::GetOriginRequestPolicyError)
-    pub fn get_origin_request_policy(
-        &self,
-    ) -> crate::client::fluent_builders::GetOriginRequestPolicy {
-        crate::client::fluent_builders::GetOriginRequestPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetOriginRequestPolicyConfig`](crate::client::fluent_builders::GetOriginRequestPolicyConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetOriginRequestPolicyConfig::set_id): <p>The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
-    /// - On success, responds with [`GetOriginRequestPolicyConfigOutput`](crate::output::GetOriginRequestPolicyConfigOutput) with field(s):
-    ///   - [`origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::output::GetOriginRequestPolicyConfigOutput::origin_request_policy_config): <p>The origin request policy configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetOriginRequestPolicyConfigOutput::e_tag): <p>The current version of the origin request policy.</p>
-    /// - On failure, responds with [`SdkError<GetOriginRequestPolicyConfigError>`](crate::error::GetOriginRequestPolicyConfigError)
-    pub fn get_origin_request_policy_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetOriginRequestPolicyConfig {
-        crate::client::fluent_builders::GetOriginRequestPolicyConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPublicKey`](crate::client::fluent_builders::GetPublicKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetPublicKey::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetPublicKey::set_id): <p>The identifier of the public key you are getting.</p>
-    /// - On success, responds with [`GetPublicKeyOutput`](crate::output::GetPublicKeyOutput) with field(s):
-    ///   - [`public_key(Option<PublicKey>)`](crate::output::GetPublicKeyOutput::public_key): <p>The public key.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetPublicKeyOutput::e_tag): <p>The identifier for this version of the public key.</p>
-    /// - On failure, responds with [`SdkError<GetPublicKeyError>`](crate::error::GetPublicKeyError)
-    pub fn get_public_key(&self) -> crate::client::fluent_builders::GetPublicKey {
-        crate::client::fluent_builders::GetPublicKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPublicKeyConfig`](crate::client::fluent_builders::GetPublicKeyConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetPublicKeyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetPublicKeyConfig::set_id): <p>The identifier of the public key whose configuration you are getting.</p>
-    /// - On success, responds with [`GetPublicKeyConfigOutput`](crate::output::GetPublicKeyConfigOutput) with field(s):
-    ///   - [`public_key_config(Option<PublicKeyConfig>)`](crate::output::GetPublicKeyConfigOutput::public_key_config): <p>A public key configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetPublicKeyConfigOutput::e_tag): <p>The identifier for this version of the public key configuration.</p>
-    /// - On failure, responds with [`SdkError<GetPublicKeyConfigError>`](crate::error::GetPublicKeyConfigError)
-    pub fn get_public_key_config(&self) -> crate::client::fluent_builders::GetPublicKeyConfig {
-        crate::client::fluent_builders::GetPublicKeyConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRealtimeLogConfig`](crate::client::fluent_builders::GetRealtimeLogConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetRealtimeLogConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetRealtimeLogConfig::set_name): <p>The name of the real-time log configuration to get.</p>
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::GetRealtimeLogConfig::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::GetRealtimeLogConfig::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
-    /// - On success, responds with [`GetRealtimeLogConfigOutput`](crate::output::GetRealtimeLogConfigOutput) with field(s):
-    ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::GetRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
-    /// - On failure, responds with [`SdkError<GetRealtimeLogConfigError>`](crate::error::GetRealtimeLogConfigError)
-    pub fn get_realtime_log_config(&self) -> crate::client::fluent_builders::GetRealtimeLogConfig {
-        crate::client::fluent_builders::GetRealtimeLogConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResponseHeadersPolicy`](crate::client::fluent_builders::GetResponseHeadersPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    /// - On success, responds with [`GetResponseHeadersPolicyOutput`](crate::output::GetResponseHeadersPolicyOutput) with field(s):
-    ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::GetResponseHeadersPolicyOutput::response_headers_policy): <p>Contains a response headers policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
-    /// - On failure, responds with [`SdkError<GetResponseHeadersPolicyError>`](crate::error::GetResponseHeadersPolicyError)
-    pub fn get_response_headers_policy(
-        &self,
-    ) -> crate::client::fluent_builders::GetResponseHeadersPolicy {
-        crate::client::fluent_builders::GetResponseHeadersPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResponseHeadersPolicyConfig`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetResponseHeadersPolicyConfig::set_id): <p>The identifier for the response headers policy.</p>  <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
-    /// - On success, responds with [`GetResponseHeadersPolicyConfigOutput`](crate::output::GetResponseHeadersPolicyConfigOutput) with field(s):
-    ///   - [`response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::output::GetResponseHeadersPolicyConfigOutput::response_headers_policy_config): <p>Contains a response headers policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetResponseHeadersPolicyConfigOutput::e_tag): <p>The version identifier for the current version of the response headers policy.</p>
-    /// - On failure, responds with [`SdkError<GetResponseHeadersPolicyConfigError>`](crate::error::GetResponseHeadersPolicyConfigError)
-    pub fn get_response_headers_policy_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetResponseHeadersPolicyConfig {
-        crate::client::fluent_builders::GetResponseHeadersPolicyConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingDistribution`](crate::client::fluent_builders::GetStreamingDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetStreamingDistribution::set_id): <p>The streaming distribution's ID.</p>
-    /// - On success, responds with [`GetStreamingDistributionOutput`](crate::output::GetStreamingDistributionOutput) with field(s):
-    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::GetStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetStreamingDistributionOutput::e_tag): <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<GetStreamingDistributionError>`](crate::error::GetStreamingDistributionError)
-    pub fn get_streaming_distribution(
-        &self,
-    ) -> crate::client::fluent_builders::GetStreamingDistribution {
-        crate::client::fluent_builders::GetStreamingDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStreamingDistributionConfig`](crate::client::fluent_builders::GetStreamingDistributionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetStreamingDistributionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetStreamingDistributionConfig::set_id): <p>The streaming distribution's ID.</p>
-    /// - On success, responds with [`GetStreamingDistributionConfigOutput`](crate::output::GetStreamingDistributionConfigOutput) with field(s):
-    ///   - [`streaming_distribution_config(Option<StreamingDistributionConfig>)`](crate::output::GetStreamingDistributionConfigOutput::streaming_distribution_config): <p>The streaming distribution's configuration information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::GetStreamingDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>. </p>
-    /// - On failure, responds with [`SdkError<GetStreamingDistributionConfigError>`](crate::error::GetStreamingDistributionConfigError)
-    pub fn get_streaming_distribution_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetStreamingDistributionConfig {
-        crate::client::fluent_builders::GetStreamingDistributionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCachePolicies`](crate::client::fluent_builders::ListCachePolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(CachePolicyType)`](crate::client::fluent_builders::ListCachePolicies::type) / [`set_type(Option<CachePolicyType>)`](crate::client::fluent_builders::ListCachePolicies::set_type): <p>A filter to return only the specified kinds of cache policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCachePolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCachePolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCachePolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCachePolicies::set_max_items): <p>The maximum number of cache policies that you want in the response.</p>
-    /// - On success, responds with [`ListCachePoliciesOutput`](crate::output::ListCachePoliciesOutput) with field(s):
-    ///   - [`cache_policy_list(Option<CachePolicyList>)`](crate::output::ListCachePoliciesOutput::cache_policy_list): <p>A list of cache policies.</p>
-    /// - On failure, responds with [`SdkError<ListCachePoliciesError>`](crate::error::ListCachePoliciesError)
-    pub fn list_cache_policies(&self) -> crate::client::fluent_builders::ListCachePolicies {
-        crate::client::fluent_builders::ListCachePolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCloudFrontOriginAccessIdentities`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::set_marker): <p>Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last identity on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::set_max_items): <p>The maximum number of origin access identities you want in the response body.</p>
-    /// - On success, responds with [`ListCloudFrontOriginAccessIdentitiesOutput`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity_list(Option<CloudFrontOriginAccessIdentityList>)`](crate::output::ListCloudFrontOriginAccessIdentitiesOutput::cloud_front_origin_access_identity_list): <p>The <code>CloudFrontOriginAccessIdentityList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListCloudFrontOriginAccessIdentitiesError>`](crate::error::ListCloudFrontOriginAccessIdentitiesError)
-    pub fn list_cloud_front_origin_access_identities(
-        &self,
-    ) -> crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities {
-        crate::client::fluent_builders::ListCloudFrontOriginAccessIdentities::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListConflictingAliases`](crate::client::fluent_builders::ListConflictingAliases) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_distribution_id): <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that includes the provided alias.</p>
-    ///   - [`alias(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::alias) / [`set_alias(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_alias): <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListConflictingAliases::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListConflictingAliases::set_marker): <p>Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListConflictingAliases::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListConflictingAliases::set_max_items): <p>The maximum number of conflicting aliases that you want in the response.</p>
-    /// - On success, responds with [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput) with field(s):
-    ///   - [`conflicting_aliases_list(Option<ConflictingAliasesList>)`](crate::output::ListConflictingAliasesOutput::conflicting_aliases_list): <p>A list of conflicting aliases.</p>
-    /// - On failure, responds with [`SdkError<ListConflictingAliasesError>`](crate::error::ListConflictingAliasesError)
-    pub fn list_conflicting_aliases(
-        &self,
-    ) -> crate::client::fluent_builders::ListConflictingAliases {
-        crate::client::fluent_builders::ListConflictingAliases::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListContinuousDeploymentPolicies`](crate::client::fluent_builders::ListContinuousDeploymentPolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListContinuousDeploymentPolicies::set_max_items): <p>The maximum number of continuous deployment policies that you want returned in the response.</p>
-    /// - On success, responds with [`ListContinuousDeploymentPoliciesOutput`](crate::output::ListContinuousDeploymentPoliciesOutput) with field(s):
-    ///   - [`continuous_deployment_policy_list(Option<ContinuousDeploymentPolicyList>)`](crate::output::ListContinuousDeploymentPoliciesOutput::continuous_deployment_policy_list): <p>A list of continuous deployment policies.</p>
-    /// - On failure, responds with [`SdkError<ListContinuousDeploymentPoliciesError>`](crate::error::ListContinuousDeploymentPoliciesError)
-    pub fn list_continuous_deployment_policies(
-        &self,
-    ) -> crate::client::fluent_builders::ListContinuousDeploymentPolicies {
-        crate::client::fluent_builders::ListContinuousDeploymentPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDistributions`](crate::client::fluent_builders::ListDistributions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDistributions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributions::set_marker): <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributions::set_max_items): <p>The maximum number of distributions you want in the response body.</p>
-    /// - On success, responds with [`ListDistributionsOutput`](crate::output::ListDistributionsOutput) with field(s):
-    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsError>`](crate::error::ListDistributionsError)
-    pub fn list_distributions(&self) -> crate::client::fluent_builders::ListDistributions {
-        crate::client::fluent_builders::ListDistributions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByCachePolicyId`](crate::client::fluent_builders::ListDistributionsByCachePolicyId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
-    ///   - [`cache_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::cache_policy_id) / [`set_cache_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByCachePolicyId::set_cache_policy_id): <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-    /// - On success, responds with [`ListDistributionsByCachePolicyIdOutput`](crate::output::ListDistributionsByCachePolicyIdOutput) with field(s):
-    ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByCachePolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByCachePolicyIdError>`](crate::error::ListDistributionsByCachePolicyIdError)
-    pub fn list_distributions_by_cache_policy_id(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByCachePolicyId {
-        crate::client::fluent_builders::ListDistributionsByCachePolicyId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByKeyGroup`](crate::client::fluent_builders::ListDistributionsByKeyGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
-    ///   - [`key_group_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::key_group_id) / [`set_key_group_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByKeyGroup::set_key_group_id): <p>The ID of the key group whose associated distribution IDs you are listing.</p>
-    /// - On success, responds with [`ListDistributionsByKeyGroupOutput`](crate::output::ListDistributionsByKeyGroupOutput) with field(s):
-    ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByKeyGroupOutput::distribution_id_list): <p>A list of distribution IDs.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByKeyGroupError>`](crate::error::ListDistributionsByKeyGroupError)
-    pub fn list_distributions_by_key_group(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByKeyGroup {
-        crate::client::fluent_builders::ListDistributionsByKeyGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByOriginRequestPolicyId`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_max_items): <p>The maximum number of distribution IDs that you want in the response.</p>
-    ///   - [`origin_request_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::origin_request_policy_id) / [`set_origin_request_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::set_origin_request_policy_id): <p>The ID of the origin request policy whose associated distribution IDs you want to list.</p>
-    /// - On success, responds with [`ListDistributionsByOriginRequestPolicyIdOutput`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput) with field(s):
-    ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByOriginRequestPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByOriginRequestPolicyIdError>`](crate::error::ListDistributionsByOriginRequestPolicyIdError)
-    pub fn list_distributions_by_origin_request_policy_id(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId {
-        crate::client::fluent_builders::ListDistributionsByOriginRequestPolicyId::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByRealtimeLogConfig`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_max_items): <p>The maximum number of distributions that you want in the response.</p>
-    ///   - [`realtime_log_config_name(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::realtime_log_config_name) / [`set_realtime_log_config_name(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_realtime_log_config_name): <p>The name of the real-time log configuration whose associated distributions you want to list.</p>
-    ///   - [`realtime_log_config_arn(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::realtime_log_config_arn) / [`set_realtime_log_config_arn(Option<String>)`](crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::set_realtime_log_config_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.</p>
-    /// - On success, responds with [`ListDistributionsByRealtimeLogConfigOutput`](crate::output::ListDistributionsByRealtimeLogConfigOutput) with field(s):
-    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByRealtimeLogConfigOutput::distribution_list): <p>A distribution list.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByRealtimeLogConfigError>`](crate::error::ListDistributionsByRealtimeLogConfigError)
-    pub fn list_distributions_by_realtime_log_config(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig {
-        crate::client::fluent_builders::ListDistributionsByRealtimeLogConfig::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByResponseHeadersPolicyId`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_max_items): <p>The maximum number of distribution IDs that you want to get in the response.</p>
-    ///   - [`response_headers_policy_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::response_headers_policy_id) / [`set_response_headers_policy_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::set_response_headers_policy_id): <p>The ID of the response headers policy whose associated distribution IDs you want to list.</p>
-    /// - On success, responds with [`ListDistributionsByResponseHeadersPolicyIdOutput`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput) with field(s):
-    ///   - [`distribution_id_list(Option<DistributionIdList>)`](crate::output::ListDistributionsByResponseHeadersPolicyIdOutput::distribution_id_list): <p>A list of distribution IDs.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByResponseHeadersPolicyIdError>`](crate::error::ListDistributionsByResponseHeadersPolicyIdError)
-    pub fn list_distributions_by_response_headers_policy_id(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId {
-        crate::client::fluent_builders::ListDistributionsByResponseHeadersPolicyId::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListDistributionsByWebACLId`](crate::client::fluent_builders::ListDistributionsByWebACLId) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_marker): <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListDistributionsByWebACLId::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_max_items): <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
-    ///   - [`web_acl_id(impl Into<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::web_acl_id) / [`set_web_acl_id(Option<String>)`](crate::client::fluent_builders::ListDistributionsByWebACLId::set_web_acl_id): <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
-    /// - On success, responds with [`ListDistributionsByWebAclIdOutput`](crate::output::ListDistributionsByWebAclIdOutput) with field(s):
-    ///   - [`distribution_list(Option<DistributionList>)`](crate::output::ListDistributionsByWebAclIdOutput::distribution_list): <p>The <code>DistributionList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListDistributionsByWebACLIdError>`](crate::error::ListDistributionsByWebACLIdError)
-    pub fn list_distributions_by_web_acl_id(
-        &self,
-    ) -> crate::client::fluent_builders::ListDistributionsByWebACLId {
-        crate::client::fluent_builders::ListDistributionsByWebACLId::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListFieldLevelEncryptionConfigs`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_marker): <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::set_max_items): <p>The maximum number of field-level encryption configurations you want in the response body.</p>
-    /// - On success, responds with [`ListFieldLevelEncryptionConfigsOutput`](crate::output::ListFieldLevelEncryptionConfigsOutput) with field(s):
-    ///   - [`field_level_encryption_list(Option<FieldLevelEncryptionList>)`](crate::output::ListFieldLevelEncryptionConfigsOutput::field_level_encryption_list): <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
-    /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionConfigsError>`](crate::error::ListFieldLevelEncryptionConfigsError)
-    pub fn list_field_level_encryption_configs(
-        &self,
-    ) -> crate::client::fluent_builders::ListFieldLevelEncryptionConfigs {
-        crate::client::fluent_builders::ListFieldLevelEncryptionConfigs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListFieldLevelEncryptionProfiles`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::set_marker): <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::set_max_items): <p>The maximum number of field-level encryption profiles you want in the response body. </p>
-    /// - On success, responds with [`ListFieldLevelEncryptionProfilesOutput`](crate::output::ListFieldLevelEncryptionProfilesOutput) with field(s):
-    ///   - [`field_level_encryption_profile_list(Option<FieldLevelEncryptionProfileList>)`](crate::output::ListFieldLevelEncryptionProfilesOutput::field_level_encryption_profile_list): <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
-    /// - On failure, responds with [`SdkError<ListFieldLevelEncryptionProfilesError>`](crate::error::ListFieldLevelEncryptionProfilesError)
-    pub fn list_field_level_encryption_profiles(
-        &self,
-    ) -> crate::client::fluent_builders::ListFieldLevelEncryptionProfiles {
-        crate::client::fluent_builders::ListFieldLevelEncryptionProfiles::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListFunctions`](crate::client::fluent_builders::ListFunctions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListFunctions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListFunctions::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListFunctions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListFunctions::set_max_items): <p>The maximum number of functions that you want in the response.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::ListFunctions::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::ListFunctions::set_stage): <p>An optional filter to return only the functions that are in the specified stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// - On success, responds with [`ListFunctionsOutput`](crate::output::ListFunctionsOutput) with field(s):
-    ///   - [`function_list(Option<FunctionList>)`](crate::output::ListFunctionsOutput::function_list): <p>A list of CloudFront functions.</p>
-    /// - On failure, responds with [`SdkError<ListFunctionsError>`](crate::error::ListFunctionsError)
-    pub fn list_functions(&self) -> crate::client::fluent_builders::ListFunctions {
-        crate::client::fluent_builders::ListFunctions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInvalidations`](crate::client::fluent_builders::ListInvalidations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvalidations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::client::fluent_builders::ListInvalidations::distribution_id) / [`set_distribution_id(Option<String>)`](crate::client::fluent_builders::ListInvalidations::set_distribution_id): <p>The distribution's ID.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListInvalidations::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListInvalidations::set_marker): <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListInvalidations::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListInvalidations::set_max_items): <p>The maximum number of invalidation batches that you want in the response body.</p>
-    /// - On success, responds with [`ListInvalidationsOutput`](crate::output::ListInvalidationsOutput) with field(s):
-    ///   - [`invalidation_list(Option<InvalidationList>)`](crate::output::ListInvalidationsOutput::invalidation_list): <p>Information about invalidation batches.</p>
-    /// - On failure, responds with [`SdkError<ListInvalidationsError>`](crate::error::ListInvalidationsError)
-    pub fn list_invalidations(&self) -> crate::client::fluent_builders::ListInvalidations {
-        crate::client::fluent_builders::ListInvalidations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListKeyGroups`](crate::client::fluent_builders::ListKeyGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListKeyGroups::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListKeyGroups::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListKeyGroups::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListKeyGroups::set_max_items): <p>The maximum number of key groups that you want in the response.</p>
-    /// - On success, responds with [`ListKeyGroupsOutput`](crate::output::ListKeyGroupsOutput) with field(s):
-    ///   - [`key_group_list(Option<KeyGroupList>)`](crate::output::ListKeyGroupsOutput::key_group_list): <p>A list of key groups.</p>
-    /// - On failure, responds with [`SdkError<ListKeyGroupsError>`](crate::error::ListKeyGroupsError)
-    pub fn list_key_groups(&self) -> crate::client::fluent_builders::ListKeyGroups {
-        crate::client::fluent_builders::ListKeyGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListOriginAccessControls`](crate::client::fluent_builders::ListOriginAccessControls) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOriginAccessControls::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOriginAccessControls::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOriginAccessControls::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOriginAccessControls::set_max_items): <p>The maximum number of origin access controls that you want in the response.</p>
-    /// - On success, responds with [`ListOriginAccessControlsOutput`](crate::output::ListOriginAccessControlsOutput) with field(s):
-    ///   - [`origin_access_control_list(Option<OriginAccessControlList>)`](crate::output::ListOriginAccessControlsOutput::origin_access_control_list): <p>A list of origin access controls.</p>
-    /// - On failure, responds with [`SdkError<ListOriginAccessControlsError>`](crate::error::ListOriginAccessControlsError)
-    pub fn list_origin_access_controls(
-        &self,
-    ) -> crate::client::fluent_builders::ListOriginAccessControls {
-        crate::client::fluent_builders::ListOriginAccessControls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListOriginRequestPolicies`](crate::client::fluent_builders::ListOriginRequestPolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(OriginRequestPolicyType)`](crate::client::fluent_builders::ListOriginRequestPolicies::type) / [`set_type(Option<OriginRequestPolicyType>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_type): <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListOriginRequestPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListOriginRequestPolicies::set_max_items): <p>The maximum number of origin request policies that you want in the response.</p>
-    /// - On success, responds with [`ListOriginRequestPoliciesOutput`](crate::output::ListOriginRequestPoliciesOutput) with field(s):
-    ///   - [`origin_request_policy_list(Option<OriginRequestPolicyList>)`](crate::output::ListOriginRequestPoliciesOutput::origin_request_policy_list): <p>A list of origin request policies.</p>
-    /// - On failure, responds with [`SdkError<ListOriginRequestPoliciesError>`](crate::error::ListOriginRequestPoliciesError)
-    pub fn list_origin_request_policies(
-        &self,
-    ) -> crate::client::fluent_builders::ListOriginRequestPolicies {
-        crate::client::fluent_builders::ListOriginRequestPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPublicKeys`](crate::client::fluent_builders::ListPublicKeys) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListPublicKeys::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListPublicKeys::set_marker): <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page).</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListPublicKeys::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListPublicKeys::set_max_items): <p>The maximum number of public keys you want in the response body.</p>
-    /// - On success, responds with [`ListPublicKeysOutput`](crate::output::ListPublicKeysOutput) with field(s):
-    ///   - [`public_key_list(Option<PublicKeyList>)`](crate::output::ListPublicKeysOutput::public_key_list): <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
-    /// - On failure, responds with [`SdkError<ListPublicKeysError>`](crate::error::ListPublicKeysError)
-    pub fn list_public_keys(&self) -> crate::client::fluent_builders::ListPublicKeys {
-        crate::client::fluent_builders::ListPublicKeys::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRealtimeLogConfigs`](crate::client::fluent_builders::ListRealtimeLogConfigs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListRealtimeLogConfigs::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::set_max_items): <p>The maximum number of real-time log configurations that you want in the response.</p>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListRealtimeLogConfigs::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    /// - On success, responds with [`ListRealtimeLogConfigsOutput`](crate::output::ListRealtimeLogConfigsOutput) with field(s):
-    ///   - [`realtime_log_configs(Option<RealtimeLogConfigs>)`](crate::output::ListRealtimeLogConfigsOutput::realtime_log_configs): <p>A list of real-time log configurations.</p>
-    /// - On failure, responds with [`SdkError<ListRealtimeLogConfigsError>`](crate::error::ListRealtimeLogConfigsError)
-    pub fn list_realtime_log_configs(
-        &self,
-    ) -> crate::client::fluent_builders::ListRealtimeLogConfigs {
-        crate::client::fluent_builders::ListRealtimeLogConfigs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListResponseHeadersPolicies`](crate::client::fluent_builders::ListResponseHeadersPolicies) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`r#type(ResponseHeadersPolicyType)`](crate::client::fluent_builders::ListResponseHeadersPolicies::type) / [`set_type(Option<ResponseHeadersPolicyType>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_type): <p>A filter to get only the specified kind of response headers policies. Valid values are:</p>  <ul>   <li> <p> <code>managed</code> – Gets only the managed policies created by Amazon Web Services.</p> </li>   <li> <p> <code>custom</code> – Gets only the custom policies created in your Amazon Web Services account.</p> </li>  </ul>
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_marker): <p>Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListResponseHeadersPolicies::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListResponseHeadersPolicies::set_max_items): <p>The maximum number of response headers policies that you want to get in the response.</p>
-    /// - On success, responds with [`ListResponseHeadersPoliciesOutput`](crate::output::ListResponseHeadersPoliciesOutput) with field(s):
-    ///   - [`response_headers_policy_list(Option<ResponseHeadersPolicyList>)`](crate::output::ListResponseHeadersPoliciesOutput::response_headers_policy_list): <p>A list of response headers policies.</p>
-    /// - On failure, responds with [`SdkError<ListResponseHeadersPoliciesError>`](crate::error::ListResponseHeadersPoliciesError)
-    pub fn list_response_headers_policies(
-        &self,
-    ) -> crate::client::fluent_builders::ListResponseHeadersPolicies {
-        crate::client::fluent_builders::ListResponseHeadersPolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStreamingDistributions`](crate::client::fluent_builders::ListStreamingDistributions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStreamingDistributions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::client::fluent_builders::ListStreamingDistributions::marker) / [`set_marker(Option<String>)`](crate::client::fluent_builders::ListStreamingDistributions::set_marker): <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListStreamingDistributions::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListStreamingDistributions::set_max_items): <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
-    /// - On success, responds with [`ListStreamingDistributionsOutput`](crate::output::ListStreamingDistributionsOutput) with field(s):
-    ///   - [`streaming_distribution_list(Option<StreamingDistributionList>)`](crate::output::ListStreamingDistributionsOutput::streaming_distribution_list): <p>The <code>StreamingDistributionList</code> type.</p>
-    /// - On failure, responds with [`SdkError<ListStreamingDistributionsError>`](crate::error::ListStreamingDistributionsError)
-    pub fn list_streaming_distributions(
-        &self,
-    ) -> crate::client::fluent_builders::ListStreamingDistributions {
-        crate::client::fluent_builders::ListStreamingDistributions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource): <p>An ARN of a CloudFront resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Tags>)`](crate::output::ListTagsForResourceOutput::tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PublishFunction`](crate::client::fluent_builders::PublishFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::PublishFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::PublishFunction::set_name): <p>The name of the function that you are publishing.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::PublishFunction::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::PublishFunction::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are publishing, which you can get using <code>DescribeFunction</code>.</p>
-    /// - On success, responds with [`PublishFunctionOutput`](crate::output::PublishFunctionOutput) with field(s):
-    ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::PublishFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
-    /// - On failure, responds with [`SdkError<PublishFunctionError>`](crate::error::PublishFunctionError)
-    pub fn publish_function(&self) -> crate::client::fluent_builders::PublishFunction {
-        crate::client::fluent_builders::PublishFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource): <p>An ARN of a CloudFront resource.</p>
-    ///   - [`tags(Tags)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Tags>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TestFunction`](crate::client::fluent_builders::TestFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::TestFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::TestFunction::set_name): <p>The name of the function that you are testing.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::TestFunction::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::TestFunction::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are testing, which you can get using <code>DescribeFunction</code>.</p>
-    ///   - [`stage(FunctionStage)`](crate::client::fluent_builders::TestFunction::stage) / [`set_stage(Option<FunctionStage>)`](crate::client::fluent_builders::TestFunction::set_stage): <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    ///   - [`event_object(Blob)`](crate::client::fluent_builders::TestFunction::event_object) / [`set_event_object(Option<Blob>)`](crate::client::fluent_builders::TestFunction::set_event_object): <p>The event object to test the function with. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// - On success, responds with [`TestFunctionOutput`](crate::output::TestFunctionOutput) with field(s):
-    ///   - [`test_result(Option<TestResult>)`](crate::output::TestFunctionOutput::test_result): <p>An object that represents the result of running the function with the provided event object.</p>
-    /// - On failure, responds with [`SdkError<TestFunctionError>`](crate::error::TestFunctionError)
-    pub fn test_function(&self) -> crate::client::fluent_builders::TestFunction {
-        crate::client::fluent_builders::TestFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource) / [`set_resource(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource): <p>An ARN of a CloudFront resource.</p>
-    ///   - [`tag_keys(TagKeys)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<TagKeys>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCachePolicy`](crate::client::fluent_builders::UpdateCachePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cache_policy_config(CachePolicyConfig)`](crate::client::fluent_builders::UpdateCachePolicy::cache_policy_config) / [`set_cache_policy_config(Option<CachePolicyConfig>)`](crate::client::fluent_builders::UpdateCachePolicy::set_cache_policy_config): <p>A cache policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_id): <p>The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateCachePolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateCachePolicy::set_if_match): <p>The version of the cache policy that you are updating. The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.</p>
-    /// - On success, responds with [`UpdateCachePolicyOutput`](crate::output::UpdateCachePolicyOutput) with field(s):
-    ///   - [`cache_policy(Option<CachePolicy>)`](crate::output::UpdateCachePolicyOutput::cache_policy): <p>A cache policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateCachePolicyOutput::e_tag): <p>The current version of the cache policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateCachePolicyError>`](crate::error::UpdateCachePolicyError)
-    pub fn update_cache_policy(&self) -> crate::client::fluent_builders::UpdateCachePolicy {
-        crate::client::fluent_builders::UpdateCachePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCloudFrontOriginAccessIdentity`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cloud_front_origin_access_identity_config(CloudFrontOriginAccessIdentityConfig)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::cloud_front_origin_access_identity_config) / [`set_cloud_front_origin_access_identity_config(Option<CloudFrontOriginAccessIdentityConfig>)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::set_cloud_front_origin_access_identity_config): <p>The identity's configuration information.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::set_id): <p>The identity's id.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdateCloudFrontOriginAccessIdentityOutput`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput) with field(s):
-    ///   - [`cloud_front_origin_access_identity(Option<CloudFrontOriginAccessIdentity>)`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput::cloud_front_origin_access_identity): <p>The origin access identity's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateCloudFrontOriginAccessIdentityOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<UpdateCloudFrontOriginAccessIdentityError>`](crate::error::UpdateCloudFrontOriginAccessIdentityError)
-    pub fn update_cloud_front_origin_access_identity(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity {
-        crate::client::fluent_builders::UpdateCloudFrontOriginAccessIdentity::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`UpdateContinuousDeploymentPolicy`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`continuous_deployment_policy_config(ContinuousDeploymentPolicyConfig)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::continuous_deployment_policy_config) / [`set_continuous_deployment_policy_config(Option<ContinuousDeploymentPolicyConfig>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_continuous_deployment_policy_config): <p>The continuous deployment policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_id): <p>The identifier of the continuous deployment policy that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::set_if_match): <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are updating.</p>
-    /// - On success, responds with [`UpdateContinuousDeploymentPolicyOutput`](crate::output::UpdateContinuousDeploymentPolicyOutput) with field(s):
-    ///   - [`continuous_deployment_policy(Option<ContinuousDeploymentPolicy>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::continuous_deployment_policy): <p>A continuous deployment policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateContinuousDeploymentPolicyOutput::e_tag): <p>The version identifier for the current version of the continuous deployment policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateContinuousDeploymentPolicyError>`](crate::error::UpdateContinuousDeploymentPolicyError)
-    pub fn update_continuous_deployment_policy(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateContinuousDeploymentPolicy {
-        crate::client::fluent_builders::UpdateContinuousDeploymentPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDistribution`](crate::client::fluent_builders::UpdateDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`distribution_config(DistributionConfig)`](crate::client::fluent_builders::UpdateDistribution::distribution_config) / [`set_distribution_config(Option<DistributionConfig>)`](crate::client::fluent_builders::UpdateDistribution::set_distribution_config): <p>The distribution's configuration information.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDistribution::set_id): <p>The distribution's id.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdateDistributionOutput`](crate::output::UpdateDistributionOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::UpdateDistributionOutput::distribution): <p>The distribution's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateDistributionOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<UpdateDistributionError>`](crate::error::UpdateDistributionError)
-    pub fn update_distribution(&self) -> crate::client::fluent_builders::UpdateDistribution {
-        crate::client::fluent_builders::UpdateDistribution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDistributionWithStagingConfig`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_id): <p>The identifier of the primary distribution to which you are copying a staging distribution's configuration.</p>
-    ///   - [`staging_distribution_id(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::staging_distribution_id) / [`set_staging_distribution_id(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_staging_distribution_id): <p>The identifier of the staging distribution whose configuration you are copying to the primary distribution.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateDistributionWithStagingConfig::set_if_match): <p>The current versions (<code>ETag</code> values) of both primary and staging distributions. Provide these in the following format:</p>  <p> <code>   <primary etag>    ,     <staging etag></staging>   </primary></code> </p>
-    /// - On success, responds with [`UpdateDistributionWithStagingConfigOutput`](crate::output::UpdateDistributionWithStagingConfigOutput) with field(s):
-    ///   - [`distribution(Option<Distribution>)`](crate::output::UpdateDistributionWithStagingConfigOutput::distribution): <p>A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateDistributionWithStagingConfigOutput::e_tag): <p>The current version of the primary distribution (after it's updated).</p>
-    /// - On failure, responds with [`SdkError<UpdateDistributionWithStagingConfigError>`](crate::error::UpdateDistributionWithStagingConfigError)
-    pub fn update_distribution_with_staging_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateDistributionWithStagingConfig {
-        crate::client::fluent_builders::UpdateDistributionWithStagingConfig::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionConfig`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_config(FieldLevelEncryptionConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::field_level_encryption_config) / [`set_field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_field_level_encryption_config): <p>Request to update a field-level encryption configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_id): <p>The ID of the configuration you want to update.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdateFieldLevelEncryptionConfigOutput`](crate::output::UpdateFieldLevelEncryptionConfigOutput) with field(s):
-    ///   - [`field_level_encryption(Option<FieldLevelEncryption>)`](crate::output::UpdateFieldLevelEncryptionConfigOutput::field_level_encryption): <p>Return the results of updating the configuration.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionConfigOutput::e_tag): <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionConfigError>`](crate::error::UpdateFieldLevelEncryptionConfigError)
-    pub fn update_field_level_encryption_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig {
-        crate::client::fluent_builders::UpdateFieldLevelEncryptionConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateFieldLevelEncryptionProfile`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`field_level_encryption_profile_config(FieldLevelEncryptionProfileConfig)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::field_level_encryption_profile_config) / [`set_field_level_encryption_profile_config(Option<FieldLevelEncryptionProfileConfig>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_field_level_encryption_profile_config): <p>Request to update a field-level encryption profile.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_id): <p>The ID of the field-level encryption profile request.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdateFieldLevelEncryptionProfileOutput`](crate::output::UpdateFieldLevelEncryptionProfileOutput) with field(s):
-    ///   - [`field_level_encryption_profile(Option<FieldLevelEncryptionProfile>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::field_level_encryption_profile): <p>Return the results of updating the profile.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateFieldLevelEncryptionProfileOutput::e_tag): <p>The result of the field-level encryption profile request.</p>
-    /// - On failure, responds with [`SdkError<UpdateFieldLevelEncryptionProfileError>`](crate::error::UpdateFieldLevelEncryptionProfileError)
-    pub fn update_field_level_encryption_profile(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile {
-        crate::client::fluent_builders::UpdateFieldLevelEncryptionProfile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateFunction`](crate::client::fluent_builders::UpdateFunction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_name): <p>The name of the function that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateFunction::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateFunction::set_if_match): <p>The current version (<code>ETag</code> value) of the function that you are updating, which you can get using <code>DescribeFunction</code>.</p>
-    ///   - [`function_config(FunctionConfig)`](crate::client::fluent_builders::UpdateFunction::function_config) / [`set_function_config(Option<FunctionConfig>)`](crate::client::fluent_builders::UpdateFunction::set_function_config): <p>Configuration information about the function.</p>
-    ///   - [`function_code(Blob)`](crate::client::fluent_builders::UpdateFunction::function_code) / [`set_function_code(Option<Blob>)`](crate::client::fluent_builders::UpdateFunction::set_function_code): <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// - On success, responds with [`UpdateFunctionOutput`](crate::output::UpdateFunctionOutput) with field(s):
-    ///   - [`function_summary(Option<FunctionSummary>)`](crate::output::UpdateFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateFunctionOutput::e_tag): <p>The version identifier for the current version of the CloudFront function.</p>
-    /// - On failure, responds with [`SdkError<UpdateFunctionError>`](crate::error::UpdateFunctionError)
-    pub fn update_function(&self) -> crate::client::fluent_builders::UpdateFunction {
-        crate::client::fluent_builders::UpdateFunction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateKeyGroup`](crate::client::fluent_builders::UpdateKeyGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`key_group_config(KeyGroupConfig)`](crate::client::fluent_builders::UpdateKeyGroup::key_group_config) / [`set_key_group_config(Option<KeyGroupConfig>)`](crate::client::fluent_builders::UpdateKeyGroup::set_key_group_config): <p>The key group configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateKeyGroup::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateKeyGroup::set_id): <p>The identifier of the key group that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateKeyGroup::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateKeyGroup::set_if_match): <p>The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.</p>
-    /// - On success, responds with [`UpdateKeyGroupOutput`](crate::output::UpdateKeyGroupOutput) with field(s):
-    ///   - [`key_group(Option<KeyGroup>)`](crate::output::UpdateKeyGroupOutput::key_group): <p>The key group that was just updated.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateKeyGroupOutput::e_tag): <p>The identifier for this version of the key group.</p>
-    /// - On failure, responds with [`SdkError<UpdateKeyGroupError>`](crate::error::UpdateKeyGroupError)
-    pub fn update_key_group(&self) -> crate::client::fluent_builders::UpdateKeyGroup {
-        crate::client::fluent_builders::UpdateKeyGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateOriginAccessControl`](crate::client::fluent_builders::UpdateOriginAccessControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`origin_access_control_config(OriginAccessControlConfig)`](crate::client::fluent_builders::UpdateOriginAccessControl::origin_access_control_config) / [`set_origin_access_control_config(Option<OriginAccessControlConfig>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_origin_access_control_config): <p>An origin access control.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_id): <p>The unique identifier of the origin access control that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateOriginAccessControl::set_if_match): <p>The current version (<code>ETag</code> value) of the origin access control that you are updating.</p>
-    /// - On success, responds with [`UpdateOriginAccessControlOutput`](crate::output::UpdateOriginAccessControlOutput) with field(s):
-    ///   - [`origin_access_control(Option<OriginAccessControl>)`](crate::output::UpdateOriginAccessControlOutput::origin_access_control): <p>The origin access control after it has been updated.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginAccessControlOutput::e_tag): <p>The new version of the origin access control after it has been updated.</p>
-    /// - On failure, responds with [`SdkError<UpdateOriginAccessControlError>`](crate::error::UpdateOriginAccessControlError)
-    pub fn update_origin_access_control(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateOriginAccessControl {
-        crate::client::fluent_builders::UpdateOriginAccessControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateOriginRequestPolicy`](crate::client::fluent_builders::UpdateOriginRequestPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`origin_request_policy_config(OriginRequestPolicyConfig)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::origin_request_policy_config) / [`set_origin_request_policy_config(Option<OriginRequestPolicyConfig>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_origin_request_policy_config): <p>An origin request policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_id): <p>The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateOriginRequestPolicy::set_if_match): <p>The version of the origin request policy that you are updating. The version is returned in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.</p>
-    /// - On success, responds with [`UpdateOriginRequestPolicyOutput`](crate::output::UpdateOriginRequestPolicyOutput) with field(s):
-    ///   - [`origin_request_policy(Option<OriginRequestPolicy>)`](crate::output::UpdateOriginRequestPolicyOutput::origin_request_policy): <p>An origin request policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateOriginRequestPolicyOutput::e_tag): <p>The current version of the origin request policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateOriginRequestPolicyError>`](crate::error::UpdateOriginRequestPolicyError)
-    pub fn update_origin_request_policy(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateOriginRequestPolicy {
-        crate::client::fluent_builders::UpdateOriginRequestPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePublicKey`](crate::client::fluent_builders::UpdatePublicKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`public_key_config(PublicKeyConfig)`](crate::client::fluent_builders::UpdatePublicKey::public_key_config) / [`set_public_key_config(Option<PublicKeyConfig>)`](crate::client::fluent_builders::UpdatePublicKey::set_public_key_config): <p>A public key configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdatePublicKey::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdatePublicKey::set_id): <p>The identifier of the public key that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdatePublicKey::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdatePublicKey::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdatePublicKeyOutput`](crate::output::UpdatePublicKeyOutput) with field(s):
-    ///   - [`public_key(Option<PublicKey>)`](crate::output::UpdatePublicKeyOutput::public_key): <p>The public key.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdatePublicKeyOutput::e_tag): <p>The identifier of the current version of the public key.</p>
-    /// - On failure, responds with [`SdkError<UpdatePublicKeyError>`](crate::error::UpdatePublicKeyError)
-    pub fn update_public_key(&self) -> crate::client::fluent_builders::UpdatePublicKey {
-        crate::client::fluent_builders::UpdatePublicKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRealtimeLogConfig`](crate::client::fluent_builders::UpdateRealtimeLogConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`end_points(Vec<EndPoint>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::end_points) / [`set_end_points(Option<Vec<EndPoint>>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::set_end_points): <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    ///   - [`fields(Vec<String>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::fields) / [`set_fields(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::set_fields): <p>A list of fields to include in each real-time log record.</p>  <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::set_name): <p>The name for this real-time log configuration.</p>
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::set_arn): <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
-    ///   - [`sampling_rate(i64)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::sampling_rate) / [`set_sampling_rate(Option<i64>)`](crate::client::fluent_builders::UpdateRealtimeLogConfig::set_sampling_rate): <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.</p>
-    /// - On success, responds with [`UpdateRealtimeLogConfigOutput`](crate::output::UpdateRealtimeLogConfigOutput) with field(s):
-    ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::output::UpdateRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
-    /// - On failure, responds with [`SdkError<UpdateRealtimeLogConfigError>`](crate::error::UpdateRealtimeLogConfigError)
-    pub fn update_realtime_log_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateRealtimeLogConfig {
-        crate::client::fluent_builders::UpdateRealtimeLogConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateResponseHeadersPolicy`](crate::client::fluent_builders::UpdateResponseHeadersPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`response_headers_policy_config(ResponseHeadersPolicyConfig)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::response_headers_policy_config) / [`set_response_headers_policy_config(Option<ResponseHeadersPolicyConfig>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_response_headers_policy_config): <p>A response headers policy configuration.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_id): <p>The identifier for the response headers policy that you are updating.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateResponseHeadersPolicy::set_if_match): <p>The version of the response headers policy that you are updating.</p>  <p>The version is returned in the cache policy's <code>ETag</code> field in the response to <code>GetResponseHeadersPolicyConfig</code>.</p>
-    /// - On success, responds with [`UpdateResponseHeadersPolicyOutput`](crate::output::UpdateResponseHeadersPolicyOutput) with field(s):
-    ///   - [`response_headers_policy(Option<ResponseHeadersPolicy>)`](crate::output::UpdateResponseHeadersPolicyOutput::response_headers_policy): <p>A response headers policy.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateResponseHeadersPolicyOutput::e_tag): <p>The current version of the response headers policy.</p>
-    /// - On failure, responds with [`SdkError<UpdateResponseHeadersPolicyError>`](crate::error::UpdateResponseHeadersPolicyError)
-    pub fn update_response_headers_policy(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateResponseHeadersPolicy {
-        crate::client::fluent_builders::UpdateResponseHeadersPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStreamingDistribution`](crate::client::fluent_builders::UpdateStreamingDistribution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`streaming_distribution_config(StreamingDistributionConfig)`](crate::client::fluent_builders::UpdateStreamingDistribution::streaming_distribution_config) / [`set_streaming_distribution_config(Option<StreamingDistributionConfig>)`](crate::client::fluent_builders::UpdateStreamingDistribution::set_streaming_distribution_config): <p>The streaming distribution's configuration information.</p>
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingDistribution::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateStreamingDistribution::set_id): <p>The streaming distribution's id.</p>
-    ///   - [`if_match(impl Into<String>)`](crate::client::fluent_builders::UpdateStreamingDistribution::if_match) / [`set_if_match(Option<String>)`](crate::client::fluent_builders::UpdateStreamingDistribution::set_if_match): <p>The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On success, responds with [`UpdateStreamingDistributionOutput`](crate::output::UpdateStreamingDistributionOutput) with field(s):
-    ///   - [`streaming_distribution(Option<StreamingDistribution>)`](crate::output::UpdateStreamingDistributionOutput::streaming_distribution): <p>The streaming distribution's information.</p>
-    ///   - [`e_tag(Option<String>)`](crate::output::UpdateStreamingDistributionOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    /// - On failure, responds with [`SdkError<UpdateStreamingDistributionError>`](crate::error::UpdateStreamingDistributionError)
-    pub fn update_streaming_distribution(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateStreamingDistribution {
-        crate::client::fluent_builders::UpdateStreamingDistribution::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1572,9 +174,221 @@ impl Client {
     }
 }
 
+mod associate_alias;
+
+mod copy_distribution;
+
+mod create_cache_policy;
+
+mod create_cloud_front_origin_access_identity;
+
+mod create_continuous_deployment_policy;
+
+mod create_distribution;
+
+mod create_distribution_with_tags;
+
+mod create_field_level_encryption_config;
+
+mod create_field_level_encryption_profile;
+
+mod create_function;
+
+mod create_invalidation;
+
+mod create_key_group;
+
+mod create_monitoring_subscription;
+
+mod create_origin_access_control;
+
+mod create_origin_request_policy;
+
+mod create_public_key;
+
+mod create_realtime_log_config;
+
+mod create_response_headers_policy;
+
+mod create_streaming_distribution;
+
+mod create_streaming_distribution_with_tags;
+
+mod delete_cache_policy;
+
+mod delete_cloud_front_origin_access_identity;
+
+mod delete_continuous_deployment_policy;
+
+mod delete_distribution;
+
+mod delete_field_level_encryption_config;
+
+mod delete_field_level_encryption_profile;
+
+mod delete_function;
+
+mod delete_key_group;
+
+mod delete_monitoring_subscription;
+
+mod delete_origin_access_control;
+
+mod delete_origin_request_policy;
+
+mod delete_public_key;
+
+mod delete_realtime_log_config;
+
+mod delete_response_headers_policy;
+
+mod delete_streaming_distribution;
+
+mod describe_function;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_cache_policy;
+
+mod get_cache_policy_config;
+
+mod get_cloud_front_origin_access_identity;
+
+mod get_cloud_front_origin_access_identity_config;
+
+mod get_continuous_deployment_policy;
+
+mod get_continuous_deployment_policy_config;
+
+mod get_distribution;
+
+mod get_distribution_config;
+
+mod get_field_level_encryption;
+
+mod get_field_level_encryption_config;
+
+mod get_field_level_encryption_profile;
+
+mod get_field_level_encryption_profile_config;
+
+mod get_function;
+
+mod get_invalidation;
+
+mod get_key_group;
+
+mod get_key_group_config;
+
+mod get_monitoring_subscription;
+
+mod get_origin_access_control;
+
+mod get_origin_access_control_config;
+
+mod get_origin_request_policy;
+
+mod get_origin_request_policy_config;
+
+mod get_public_key;
+
+mod get_public_key_config;
+
+mod get_realtime_log_config;
+
+mod get_response_headers_policy;
+
+mod get_response_headers_policy_config;
+
+mod get_streaming_distribution;
+
+mod get_streaming_distribution_config;
+
+mod list_cache_policies;
+
+mod list_cloud_front_origin_access_identities;
+
+mod list_conflicting_aliases;
+
+mod list_continuous_deployment_policies;
+
+mod list_distributions;
+
+mod list_distributions_by_cache_policy_id;
+
+mod list_distributions_by_key_group;
+
+mod list_distributions_by_origin_request_policy_id;
+
+mod list_distributions_by_realtime_log_config;
+
+mod list_distributions_by_response_headers_policy_id;
+
+mod list_distributions_by_web_acl_id;
+
+mod list_field_level_encryption_configs;
+
+mod list_field_level_encryption_profiles;
+
+mod list_functions;
+
+mod list_invalidations;
+
+mod list_key_groups;
+
+mod list_origin_access_controls;
+
+mod list_origin_request_policies;
+
+mod list_public_keys;
+
+mod list_realtime_log_configs;
+
+mod list_response_headers_policies;
+
+mod list_streaming_distributions;
+
+mod list_tags_for_resource;
+
+mod publish_function;
+
+mod tag_resource;
+
+mod test_function;
+
+mod untag_resource;
+
+mod update_cache_policy;
+
+mod update_cloud_front_origin_access_identity;
+
+mod update_continuous_deployment_policy;
+
+mod update_distribution;
+
+mod update_distribution_with_staging_config;
+
+mod update_field_level_encryption_config;
+
+mod update_field_level_encryption_profile;
+
+mod update_function;
+
+mod update_key_group;
+
+mod update_origin_access_control;
+
+mod update_origin_request_policy;
+
+mod update_public_key;
+
+mod update_realtime_log_config;
+
+mod update_response_headers_policy;
+
+mod update_streaming_distribution;

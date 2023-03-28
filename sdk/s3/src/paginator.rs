@@ -82,7 +82,10 @@ impl ListObjectsV2Paginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_objects_v2_output_next_continuation_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_objects_v2_output_next_continuation_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.continuation_token.as_ref()
@@ -200,7 +203,10 @@ impl ListPartsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_parts_output_next_part_number_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_parts_output_next_part_number_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.part_number_marker.as_ref()
@@ -247,7 +253,7 @@ impl ListPartsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_parts_output_parts(page)
+            crate::lens::lens_list_parts_output_parts(page)
                 .unwrap_or_default()
                 .into_iter()
         })

@@ -70,7 +70,7 @@ impl CreateAnomalyMonitorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_anomaly_monitor(
+            crate::protocol_serde::shape_create_anomaly_monitor::ser_create_anomaly_monitor_input(
                 &self,
             )?,
         );
@@ -200,9 +200,7 @@ impl CreateAnomalySubscriptionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_anomaly_subscription(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_anomaly_subscription::ser_create_anomaly_subscription_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -330,7 +328,7 @@ impl CreateCostCategoryDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_cost_category_definition(&self)?
+            crate::protocol_serde::shape_create_cost_category_definition::ser_create_cost_category_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -458,7 +456,7 @@ impl DeleteAnomalyMonitorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_monitor(
+            crate::protocol_serde::shape_delete_anomaly_monitor::ser_delete_anomaly_monitor_input(
                 &self,
             )?,
         );
@@ -588,9 +586,7 @@ impl DeleteAnomalySubscriptionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_subscription(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_anomaly_subscription::ser_delete_anomaly_subscription_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -718,7 +714,7 @@ impl DeleteCostCategoryDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_cost_category_definition(&self)?
+            crate::protocol_serde::shape_delete_cost_category_definition::ser_delete_cost_category_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -846,7 +842,7 @@ impl DescribeCostCategoryDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_cost_category_definition(&self)?
+            crate::protocol_serde::shape_describe_cost_category_definition::ser_describe_cost_category_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -974,7 +970,7 @@ impl GetAnomaliesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_anomalies(&self)?,
+            crate::protocol_serde::shape_get_anomalies::ser_get_anomalies_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1102,7 +1098,9 @@ impl GetAnomalyMonitorsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_anomaly_monitors(&self)?,
+            crate::protocol_serde::shape_get_anomaly_monitors::ser_get_anomaly_monitors_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1230,9 +1228,7 @@ impl GetAnomalySubscriptionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_anomaly_subscriptions(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_anomaly_subscriptions::ser_get_anomaly_subscriptions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1360,7 +1356,7 @@ impl GetCostAndUsageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage(&self)?,
+            crate::protocol_serde::shape_get_cost_and_usage::ser_get_cost_and_usage_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1488,7 +1484,7 @@ impl GetCostAndUsageWithResourcesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage_with_resources(&self)?
+            crate::protocol_serde::shape_get_cost_and_usage_with_resources::ser_get_cost_and_usage_with_resources_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1616,7 +1612,7 @@ impl GetCostCategoriesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_cost_categories(&self)?,
+            crate::protocol_serde::shape_get_cost_categories::ser_get_cost_categories_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1744,7 +1740,7 @@ impl GetCostForecastInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_cost_forecast(&self)?,
+            crate::protocol_serde::shape_get_cost_forecast::ser_get_cost_forecast_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1872,7 +1868,9 @@ impl GetDimensionValuesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_dimension_values(&self)?,
+            crate::protocol_serde::shape_get_dimension_values::ser_get_dimension_values_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2000,9 +1998,7 @@ impl GetReservationCoverageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_reservation_coverage(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_reservation_coverage::ser_get_reservation_coverage_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2130,7 +2126,7 @@ impl GetReservationPurchaseRecommendationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_reservation_purchase_recommendation(&self)?
+            crate::protocol_serde::shape_get_reservation_purchase_recommendation::ser_get_reservation_purchase_recommendation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2258,9 +2254,7 @@ impl GetReservationUtilizationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_reservation_utilization(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_reservation_utilization::ser_get_reservation_utilization_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2388,7 +2382,7 @@ impl GetRightsizingRecommendationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_rightsizing_recommendation(&self)?
+            crate::protocol_serde::shape_get_rightsizing_recommendation::ser_get_rightsizing_recommendation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2516,9 +2510,7 @@ impl GetSavingsPlansCoverageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_coverage(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_savings_plans_coverage::ser_get_savings_plans_coverage_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2646,7 +2638,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_purchase_recommendation(&self)?
+            crate::protocol_serde::shape_get_savings_plans_purchase_recommendation::ser_get_savings_plans_purchase_recommendation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2774,7 +2766,7 @@ impl GetSavingsPlansUtilizationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization(&self)?
+            crate::protocol_serde::shape_get_savings_plans_utilization::ser_get_savings_plans_utilization_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2902,7 +2894,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization_details(&self)?
+            crate::protocol_serde::shape_get_savings_plans_utilization_details::ser_get_savings_plans_utilization_details_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3030,7 +3022,7 @@ impl GetTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_tags(&self)?,
+            crate::protocol_serde::shape_get_tags::ser_get_tags_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3156,7 +3148,7 @@ impl GetUsageForecastInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_usage_forecast(&self)?,
+            crate::protocol_serde::shape_get_usage_forecast::ser_get_usage_forecast_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3284,9 +3276,7 @@ impl ListCostAllocationTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_cost_allocation_tags(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_cost_allocation_tags::ser_list_cost_allocation_tags_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3414,7 +3404,7 @@ impl ListCostCategoryDefinitionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_cost_category_definitions(&self)?
+            crate::protocol_serde::shape_list_cost_category_definitions::ser_list_cost_category_definitions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3542,7 +3532,7 @@ impl ListSavingsPlansPurchaseRecommendationGenerationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_savings_plans_purchase_recommendation_generation(&self)?
+            crate::protocol_serde::shape_list_savings_plans_purchase_recommendation_generation::ser_list_savings_plans_purchase_recommendation_generation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3670,7 +3660,7 @@ impl ListTagsForResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
+            crate::protocol_serde::shape_list_tags_for_resource::ser_list_tags_for_resource_input(
                 &self,
             )?,
         );
@@ -3800,9 +3790,7 @@ impl ProvideAnomalyFeedbackInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_provide_anomaly_feedback(
-                &self,
-            )?,
+            crate::protocol_serde::shape_provide_anomaly_feedback::ser_provide_anomaly_feedback_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3930,7 +3918,7 @@ impl StartSavingsPlansPurchaseRecommendationGenerationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_savings_plans_purchase_recommendation_generation(&self)?
+            crate::protocol_serde::shape_start_savings_plans_purchase_recommendation_generation::ser_start_savings_plans_purchase_recommendation_generation_input(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -4051,7 +4039,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4179,7 +4167,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4307,7 +4295,7 @@ impl UpdateAnomalyMonitorInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_anomaly_monitor(
+            crate::protocol_serde::shape_update_anomaly_monitor::ser_update_anomaly_monitor_input(
                 &self,
             )?,
         );
@@ -4437,9 +4425,7 @@ impl UpdateAnomalySubscriptionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_anomaly_subscription(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_anomaly_subscription::ser_update_anomaly_subscription_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4567,7 +4553,7 @@ impl UpdateCostAllocationTagsStatusInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_cost_allocation_tags_status(&self)?
+            crate::protocol_serde::shape_update_cost_allocation_tags_status::ser_update_cost_allocation_tags_status_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4695,7 +4681,7 @@ impl UpdateCostCategoryDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_cost_category_definition(&self)?
+            crate::protocol_serde::shape_update_cost_category_definition::ser_update_cost_category_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

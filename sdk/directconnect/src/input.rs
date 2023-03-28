@@ -70,7 +70,7 @@ impl AcceptDirectConnectGatewayAssociationProposalInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_accept_direct_connect_gateway_association_proposal(&self)?
+            crate::protocol_serde::shape_accept_direct_connect_gateway_association_proposal::ser_accept_direct_connect_gateway_association_proposal_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -198,7 +198,7 @@ impl AllocateConnectionOnInterconnectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_allocate_connection_on_interconnect(&self)?
+            crate::protocol_serde::shape_allocate_connection_on_interconnect::ser_allocate_connection_on_interconnect_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -326,9 +326,7 @@ impl AllocateHostedConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_allocate_hosted_connection(
-                &self,
-            )?,
+            crate::protocol_serde::shape_allocate_hosted_connection::ser_allocate_hosted_connection_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -456,7 +454,7 @@ impl AllocatePrivateVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_allocate_private_virtual_interface(&self)?
+            crate::protocol_serde::shape_allocate_private_virtual_interface::ser_allocate_private_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -584,7 +582,7 @@ impl AllocatePublicVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_allocate_public_virtual_interface(&self)?
+            crate::protocol_serde::shape_allocate_public_virtual_interface::ser_allocate_public_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -712,7 +710,7 @@ impl AllocateTransitVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_allocate_transit_virtual_interface(&self)?
+            crate::protocol_serde::shape_allocate_transit_virtual_interface::ser_allocate_transit_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -840,7 +838,7 @@ impl AssociateConnectionWithLagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_connection_with_lag(&self)?
+            crate::protocol_serde::shape_associate_connection_with_lag::ser_associate_connection_with_lag_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -968,9 +966,7 @@ impl AssociateHostedConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_hosted_connection(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_hosted_connection::ser_associate_hosted_connection_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1098,7 +1094,9 @@ impl AssociateMacSecKeyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_mac_sec_key(&self)?,
+            crate::protocol_serde::shape_associate_mac_sec_key::ser_associate_mac_sec_key_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1226,9 +1224,7 @@ impl AssociateVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_virtual_interface(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_virtual_interface::ser_associate_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1356,7 +1352,7 @@ impl ConfirmConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_confirm_connection(&self)?,
+            crate::protocol_serde::shape_confirm_connection::ser_confirm_connection_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1484,9 +1480,7 @@ impl ConfirmCustomerAgreementInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_confirm_customer_agreement(
-                &self,
-            )?,
+            crate::protocol_serde::shape_confirm_customer_agreement::ser_confirm_customer_agreement_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1614,7 +1608,7 @@ impl ConfirmPrivateVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_confirm_private_virtual_interface(&self)?
+            crate::protocol_serde::shape_confirm_private_virtual_interface::ser_confirm_private_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1742,7 +1736,7 @@ impl ConfirmPublicVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_confirm_public_virtual_interface(&self)?
+            crate::protocol_serde::shape_confirm_public_virtual_interface::ser_confirm_public_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1870,7 +1864,7 @@ impl ConfirmTransitVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_confirm_transit_virtual_interface(&self)?
+            crate::protocol_serde::shape_confirm_transit_virtual_interface::ser_confirm_transit_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1998,7 +1992,7 @@ impl CreateBgpPeerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_bgp_peer(&self)?,
+            crate::protocol_serde::shape_create_bgp_peer::ser_create_bgp_peer_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2126,7 +2120,7 @@ impl CreateConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_connection(&self)?,
+            crate::protocol_serde::shape_create_connection::ser_create_connection_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2254,7 +2248,7 @@ impl CreateDirectConnectGatewayInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway(&self)?
+            crate::protocol_serde::shape_create_direct_connect_gateway::ser_create_direct_connect_gateway_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2382,7 +2376,7 @@ impl CreateDirectConnectGatewayAssociationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association(&self)?
+            crate::protocol_serde::shape_create_direct_connect_gateway_association::ser_create_direct_connect_gateway_association_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2510,7 +2504,7 @@ impl CreateDirectConnectGatewayAssociationProposalInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_direct_connect_gateway_association_proposal(&self)?
+            crate::protocol_serde::shape_create_direct_connect_gateway_association_proposal::ser_create_direct_connect_gateway_association_proposal_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2638,7 +2632,7 @@ impl CreateInterconnectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_interconnect(&self)?,
+            crate::protocol_serde::shape_create_interconnect::ser_create_interconnect_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2766,7 +2760,7 @@ impl CreateLagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_lag(&self)?,
+            crate::protocol_serde::shape_create_lag::ser_create_lag_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2892,7 +2886,7 @@ impl CreatePrivateVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_private_virtual_interface(&self)?
+            crate::protocol_serde::shape_create_private_virtual_interface::ser_create_private_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3020,7 +3014,7 @@ impl CreatePublicVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_public_virtual_interface(&self)?
+            crate::protocol_serde::shape_create_public_virtual_interface::ser_create_public_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3148,7 +3142,7 @@ impl CreateTransitVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_transit_virtual_interface(&self)?
+            crate::protocol_serde::shape_create_transit_virtual_interface::ser_create_transit_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3276,7 +3270,7 @@ impl DeleteBgpPeerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_bgp_peer(&self)?,
+            crate::protocol_serde::shape_delete_bgp_peer::ser_delete_bgp_peer_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3404,7 +3398,7 @@ impl DeleteConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_connection(&self)?,
+            crate::protocol_serde::shape_delete_connection::ser_delete_connection_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3532,7 +3526,7 @@ impl DeleteDirectConnectGatewayInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway(&self)?
+            crate::protocol_serde::shape_delete_direct_connect_gateway::ser_delete_direct_connect_gateway_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3660,7 +3654,7 @@ impl DeleteDirectConnectGatewayAssociationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association(&self)?
+            crate::protocol_serde::shape_delete_direct_connect_gateway_association::ser_delete_direct_connect_gateway_association_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3788,7 +3782,7 @@ impl DeleteDirectConnectGatewayAssociationProposalInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_direct_connect_gateway_association_proposal(&self)?
+            crate::protocol_serde::shape_delete_direct_connect_gateway_association_proposal::ser_delete_direct_connect_gateway_association_proposal_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3916,7 +3910,7 @@ impl DeleteInterconnectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_interconnect(&self)?,
+            crate::protocol_serde::shape_delete_interconnect::ser_delete_interconnect_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4044,7 +4038,7 @@ impl DeleteLagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_lag(&self)?,
+            crate::protocol_serde::shape_delete_lag::ser_delete_lag_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4170,9 +4164,7 @@ impl DeleteVirtualInterfaceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_virtual_interface(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_virtual_interface::ser_delete_virtual_interface_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4300,9 +4292,7 @@ impl DescribeConnectionLoaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connection_loa(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_connection_loa::ser_describe_connection_loa_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4430,7 +4420,9 @@ impl DescribeConnectionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connections(&self)?,
+            crate::protocol_serde::shape_describe_connections::ser_describe_connections_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4558,7 +4550,7 @@ impl DescribeConnectionsOnInterconnectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_connections_on_interconnect(&self)?
+            crate::protocol_serde::shape_describe_connections_on_interconnect::ser_describe_connections_on_interconnect_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4686,9 +4678,7 @@ impl DescribeCustomerMetadataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_customer_metadata(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_customer_metadata::ser_describe_customer_metadata_input(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -4809,7 +4799,7 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_association_proposals(&self)?
+            crate::protocol_serde::shape_describe_direct_connect_gateway_association_proposals::ser_describe_direct_connect_gateway_association_proposals_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4937,7 +4927,7 @@ impl DescribeDirectConnectGatewayAssociationsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_associations(&self)?
+            crate::protocol_serde::shape_describe_direct_connect_gateway_associations::ser_describe_direct_connect_gateway_associations_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5065,7 +5055,7 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateway_attachments(&self)?
+            crate::protocol_serde::shape_describe_direct_connect_gateway_attachments::ser_describe_direct_connect_gateway_attachments_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5193,7 +5183,7 @@ impl DescribeDirectConnectGatewaysInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_direct_connect_gateways(&self)?
+            crate::protocol_serde::shape_describe_direct_connect_gateways::ser_describe_direct_connect_gateways_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5321,9 +5311,7 @@ impl DescribeHostedConnectionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_hosted_connections(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_hosted_connections::ser_describe_hosted_connections_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5451,9 +5439,7 @@ impl DescribeInterconnectLoaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_interconnect_loa(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_interconnect_loa::ser_describe_interconnect_loa_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5581,7 +5567,7 @@ impl DescribeInterconnectsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_interconnects(
+            crate::protocol_serde::shape_describe_interconnects::ser_describe_interconnects_input(
                 &self,
             )?,
         );
@@ -5711,7 +5697,7 @@ impl DescribeLagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_lags(&self)?,
+            crate::protocol_serde::shape_describe_lags::ser_describe_lags_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5839,7 +5825,7 @@ impl DescribeLoaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_loa(&self)?,
+            crate::protocol_serde::shape_describe_loa::ser_describe_loa_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5967,7 +5953,7 @@ impl DescribeLocationsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_locations(&self)?,
+            crate::protocol_serde::shape_describe_locations::ser_describe_locations_input(&self)?,
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -6088,7 +6074,7 @@ impl DescribeRouterConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_router_configuration(&self)?
+            crate::protocol_serde::shape_describe_router_configuration::ser_describe_router_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6216,7 +6202,7 @@ impl DescribeTagsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)?,
+            crate::protocol_serde::shape_describe_tags::ser_describe_tags_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6344,9 +6330,7 @@ impl DescribeVirtualGatewaysInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_virtual_gateways(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_virtual_gateways::ser_describe_virtual_gateways_input(&self)?
         );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
@@ -6467,9 +6451,7 @@ impl DescribeVirtualInterfacesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_virtual_interfaces(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_virtual_interfaces::ser_describe_virtual_interfaces_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6597,7 +6579,7 @@ impl DisassociateConnectionFromLagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_connection_from_lag(&self)?
+            crate::protocol_serde::shape_disassociate_connection_from_lag::ser_disassociate_connection_from_lag_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6725,9 +6707,7 @@ impl DisassociateMacSecKeyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_mac_sec_key(
-                &self,
-            )?,
+            crate::protocol_serde::shape_disassociate_mac_sec_key::ser_disassociate_mac_sec_key_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6855,7 +6835,7 @@ impl ListVirtualInterfaceTestHistoryInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_virtual_interface_test_history(&self)?
+            crate::protocol_serde::shape_list_virtual_interface_test_history::ser_list_virtual_interface_test_history_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6983,9 +6963,7 @@ impl StartBgpFailoverTestInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_bgp_failover_test(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_bgp_failover_test::ser_start_bgp_failover_test_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7113,7 +7091,7 @@ impl StopBgpFailoverTestInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_bgp_failover_test(
+            crate::protocol_serde::shape_stop_bgp_failover_test::ser_stop_bgp_failover_test_input(
                 &self,
             )?,
         );
@@ -7243,7 +7221,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7371,7 +7349,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7499,7 +7477,7 @@ impl UpdateConnectionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_connection(&self)?,
+            crate::protocol_serde::shape_update_connection::ser_update_connection_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7627,7 +7605,7 @@ impl UpdateDirectConnectGatewayInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway(&self)?
+            crate::protocol_serde::shape_update_direct_connect_gateway::ser_update_direct_connect_gateway_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7755,7 +7733,7 @@ impl UpdateDirectConnectGatewayAssociationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_direct_connect_gateway_association(&self)?
+            crate::protocol_serde::shape_update_direct_connect_gateway_association::ser_update_direct_connect_gateway_association_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -7883,7 +7861,7 @@ impl UpdateLagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_lag(&self)?,
+            crate::protocol_serde::shape_update_lag::ser_update_lag_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -8009,7 +7987,7 @@ impl UpdateVirtualInterfaceAttributesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_virtual_interface_attributes(&self)?
+            crate::protocol_serde::shape_update_virtual_interface_attributes::ser_update_virtual_interface_attributes_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

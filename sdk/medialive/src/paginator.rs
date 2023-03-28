@@ -90,7 +90,8 @@ impl DescribeSchedulePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_schedule_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_schedule_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListInputDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_input_devices_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_input_devices_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,10 @@ impl ListInputDeviceTransfersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_input_device_transfers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_input_device_transfers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +568,8 @@ impl ListInputsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_inputs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_inputs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +687,10 @@ impl ListInputSecurityGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_input_security_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_input_security_groups_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +808,8 @@ impl ListMultiplexesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_multiplexes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_multiplexes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +927,10 @@ impl ListMultiplexProgramsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_multiplex_programs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_multiplex_programs_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1048,8 @@ impl ListOfferingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_offerings_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_offerings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1167,8 @@ impl ListReservationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_reservations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_reservations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1199,7 +1215,7 @@ impl DescribeSchedulePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_schedule_output_schedule_actions(page)
+            crate::lens::lens_describe_schedule_output_schedule_actions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1226,7 +1242,7 @@ impl ListChannelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_channels_output_channels(page)
+            crate::lens::lens_list_channels_output_channels(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1253,7 +1269,7 @@ impl ListInputDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_input_devices_output_input_devices(page)
+            crate::lens::lens_list_input_devices_output_input_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1279,7 +1295,11 @@ impl ListInputDeviceTransfersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListInputDeviceTransfersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_input_device_transfers_output_input_device_transfers(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_input_device_transfers_output_input_device_transfers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1303,7 +1323,7 @@ impl ListInputsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_inputs_output_inputs(page)
+            crate::lens::lens_list_inputs_output_inputs(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1329,7 +1349,11 @@ impl ListInputSecurityGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListInputSecurityGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_input_security_groups_output_input_security_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_input_security_groups_output_input_security_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1353,7 +1377,7 @@ impl ListMultiplexesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_multiplexes_output_multiplexes(page)
+            crate::lens::lens_list_multiplexes_output_multiplexes(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1379,7 +1403,11 @@ impl ListMultiplexProgramsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListMultiplexProgramsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_multiplex_programs_output_multiplex_programs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_multiplex_programs_output_multiplex_programs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1403,7 +1431,7 @@ impl ListOfferingsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_offerings_output_offerings(page)
+            crate::lens::lens_list_offerings_output_offerings(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1430,7 +1458,7 @@ impl ListReservationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_reservations_output_reservations(page)
+            crate::lens::lens_list_reservations_output_reservations(page)
                 .unwrap_or_default()
                 .into_iter()
         })

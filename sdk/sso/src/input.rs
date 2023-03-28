@@ -92,7 +92,7 @@ impl GetRoleCredentialsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_role_credentials(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_role_credentials::ser_get_role_credentials_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -240,7 +240,7 @@ impl ListAccountRolesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_account_roles(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_account_roles::ser_list_account_roles_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -372,7 +372,10 @@ impl ListAccountsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_accounts(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_list_accounts::ser_list_accounts_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -483,7 +486,8 @@ impl LogoutInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_logout(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_logout::ser_logout_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;

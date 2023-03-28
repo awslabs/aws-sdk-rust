@@ -89,265 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateCampaign`](crate::client::fluent_builders::CreateCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_name): The name of an Amazon Connect Campaign name.
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateCampaign::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::CreateCampaign::set_connect_instance_id): Amazon Connect Instance Id
-    ///   - [`dialer_config(DialerConfig)`](crate::client::fluent_builders::CreateCampaign::dialer_config) / [`set_dialer_config(Option<DialerConfig>)`](crate::client::fluent_builders::CreateCampaign::set_dialer_config): The possible types of dialer config parameters
-    ///   - [`outbound_call_config(OutboundCallConfig)`](crate::client::fluent_builders::CreateCampaign::outbound_call_config) / [`set_outbound_call_config(Option<OutboundCallConfig>)`](crate::client::fluent_builders::CreateCampaign::set_outbound_call_config): The configuration used for outbound calls.
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCampaign::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCampaign::set_tags): Tag map with key and value.
-    /// - On success, responds with [`CreateCampaignOutput`](crate::output::CreateCampaignOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::output::CreateCampaignOutput::id): Identifier representing a Campaign
-    ///   - [`arn(Option<String>)`](crate::output::CreateCampaignOutput::arn): The resource name of an Amazon Connect campaign.
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateCampaignOutput::tags): Tag map with key and value.
-    /// - On failure, responds with [`SdkError<CreateCampaignError>`](crate::error::CreateCampaignError)
-    pub fn create_campaign(&self) -> crate::client::fluent_builders::CreateCampaign {
-        crate::client::fluent_builders::CreateCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCampaign`](crate::client::fluent_builders::DeleteCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DeleteCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DeleteCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`DeleteCampaignOutput`](crate::output::DeleteCampaignOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCampaignError>`](crate::error::DeleteCampaignError)
-    pub fn delete_campaign(&self) -> crate::client::fluent_builders::DeleteCampaign {
-        crate::client::fluent_builders::DeleteCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConnectInstanceConfig`](crate::client::fluent_builders::DeleteConnectInstanceConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteConnectInstanceConfig::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteConnectInstanceConfig::set_connect_instance_id): Amazon Connect Instance Id
-    /// - On success, responds with [`DeleteConnectInstanceConfigOutput`](crate::output::DeleteConnectInstanceConfigOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConnectInstanceConfigError>`](crate::error::DeleteConnectInstanceConfigError)
-    pub fn delete_connect_instance_config(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteConnectInstanceConfig {
-        crate::client::fluent_builders::DeleteConnectInstanceConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteInstanceOnboardingJob`](crate::client::fluent_builders::DeleteInstanceOnboardingJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::DeleteInstanceOnboardingJob::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::DeleteInstanceOnboardingJob::set_connect_instance_id): Amazon Connect Instance Id
-    /// - On success, responds with [`DeleteInstanceOnboardingJobOutput`](crate::output::DeleteInstanceOnboardingJobOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteInstanceOnboardingJobError>`](crate::error::DeleteInstanceOnboardingJobError)
-    pub fn delete_instance_onboarding_job(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteInstanceOnboardingJob {
-        crate::client::fluent_builders::DeleteInstanceOnboardingJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCampaign`](crate::client::fluent_builders::DescribeCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::DescribeCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::DescribeCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`DescribeCampaignOutput`](crate::output::DescribeCampaignOutput) with field(s):
-    ///   - [`campaign(Option<Campaign>)`](crate::output::DescribeCampaignOutput::campaign): An Amazon Connect campaign.
-    /// - On failure, responds with [`SdkError<DescribeCampaignError>`](crate::error::DescribeCampaignError)
-    pub fn describe_campaign(&self) -> crate::client::fluent_builders::DescribeCampaign {
-        crate::client::fluent_builders::DescribeCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCampaignState`](crate::client::fluent_builders::GetCampaignState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::GetCampaignState::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::GetCampaignState::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`GetCampaignStateOutput`](crate::output::GetCampaignStateOutput) with field(s):
-    ///   - [`state(Option<CampaignState>)`](crate::output::GetCampaignStateOutput::state): State of a campaign
-    /// - On failure, responds with [`SdkError<GetCampaignStateError>`](crate::error::GetCampaignStateError)
-    pub fn get_campaign_state(&self) -> crate::client::fluent_builders::GetCampaignState {
-        crate::client::fluent_builders::GetCampaignState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCampaignStateBatch`](crate::client::fluent_builders::GetCampaignStateBatch) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`campaign_ids(Vec<String>)`](crate::client::fluent_builders::GetCampaignStateBatch::campaign_ids) / [`set_campaign_ids(Option<Vec<String>>)`](crate::client::fluent_builders::GetCampaignStateBatch::set_campaign_ids): List of CampaignId
-    /// - On success, responds with [`GetCampaignStateBatchOutput`](crate::output::GetCampaignStateBatchOutput) with field(s):
-    ///   - [`successful_requests(Option<Vec<SuccessfulCampaignStateResponse>>)`](crate::output::GetCampaignStateBatchOutput::successful_requests): List of successful response of campaign state
-    ///   - [`failed_requests(Option<Vec<FailedCampaignStateResponse>>)`](crate::output::GetCampaignStateBatchOutput::failed_requests): List of failed requests of campaign state
-    /// - On failure, responds with [`SdkError<GetCampaignStateBatchError>`](crate::error::GetCampaignStateBatchError)
-    pub fn get_campaign_state_batch(
-        &self,
-    ) -> crate::client::fluent_builders::GetCampaignStateBatch {
-        crate::client::fluent_builders::GetCampaignStateBatch::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConnectInstanceConfig`](crate::client::fluent_builders::GetConnectInstanceConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::GetConnectInstanceConfig::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::GetConnectInstanceConfig::set_connect_instance_id): Amazon Connect Instance Id
-    /// - On success, responds with [`GetConnectInstanceConfigOutput`](crate::output::GetConnectInstanceConfigOutput) with field(s):
-    ///   - [`connect_instance_config(Option<InstanceConfig>)`](crate::output::GetConnectInstanceConfigOutput::connect_instance_config): Instance config object
-    /// - On failure, responds with [`SdkError<GetConnectInstanceConfigError>`](crate::error::GetConnectInstanceConfigError)
-    pub fn get_connect_instance_config(
-        &self,
-    ) -> crate::client::fluent_builders::GetConnectInstanceConfig {
-        crate::client::fluent_builders::GetConnectInstanceConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetInstanceOnboardingJobStatus`](crate::client::fluent_builders::GetInstanceOnboardingJobStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::GetInstanceOnboardingJobStatus::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::GetInstanceOnboardingJobStatus::set_connect_instance_id): Amazon Connect Instance Id
-    /// - On success, responds with [`GetInstanceOnboardingJobStatusOutput`](crate::output::GetInstanceOnboardingJobStatusOutput) with field(s):
-    ///   - [`connect_instance_onboarding_job_status(Option<InstanceOnboardingJobStatus>)`](crate::output::GetInstanceOnboardingJobStatusOutput::connect_instance_onboarding_job_status): Instance onboarding job status object
-    /// - On failure, responds with [`SdkError<GetInstanceOnboardingJobStatusError>`](crate::error::GetInstanceOnboardingJobStatusError)
-    pub fn get_instance_onboarding_job_status(
-        &self,
-    ) -> crate::client::fluent_builders::GetInstanceOnboardingJobStatus {
-        crate::client::fluent_builders::GetInstanceOnboardingJobStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCampaigns`](crate::client::fluent_builders::ListCampaigns) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCampaigns::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCampaigns::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListCampaigns::set_max_results): The maximum number of results to return per page.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCampaigns::set_next_token): The token for the next set of results.
-    ///   - [`filters(CampaignFilters)`](crate::client::fluent_builders::ListCampaigns::filters) / [`set_filters(Option<CampaignFilters>)`](crate::client::fluent_builders::ListCampaigns::set_filters): Filter model by type
-    /// - On success, responds with [`ListCampaignsOutput`](crate::output::ListCampaignsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListCampaignsOutput::next_token): The token for the next set of results.
-    ///   - [`campaign_summary_list(Option<Vec<CampaignSummary>>)`](crate::output::ListCampaignsOutput::campaign_summary_list): A list of Amazon Connect campaigns.
-    /// - On failure, responds with [`SdkError<ListCampaignsError>`](crate::error::ListCampaignsError)
-    pub fn list_campaigns(&self) -> crate::client::fluent_builders::ListCampaigns {
-        crate::client::fluent_builders::ListCampaigns::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_arn): Arn
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): Tag map with key and value.
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PauseCampaign`](crate::client::fluent_builders::PauseCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::PauseCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::PauseCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`PauseCampaignOutput`](crate::output::PauseCampaignOutput)
-
-    /// - On failure, responds with [`SdkError<PauseCampaignError>`](crate::error::PauseCampaignError)
-    pub fn pause_campaign(&self) -> crate::client::fluent_builders::PauseCampaign {
-        crate::client::fluent_builders::PauseCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutDialRequestBatch`](crate::client::fluent_builders::PutDialRequestBatch) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::PutDialRequestBatch::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::PutDialRequestBatch::set_id): Identifier representing a Campaign
-    ///   - [`dial_requests(Vec<DialRequest>)`](crate::client::fluent_builders::PutDialRequestBatch::dial_requests) / [`set_dial_requests(Option<Vec<DialRequest>>)`](crate::client::fluent_builders::PutDialRequestBatch::set_dial_requests): A list of dial requests.
-    /// - On success, responds with [`PutDialRequestBatchOutput`](crate::output::PutDialRequestBatchOutput) with field(s):
-    ///   - [`successful_requests(Option<Vec<SuccessfulRequest>>)`](crate::output::PutDialRequestBatchOutput::successful_requests): A list of successful requests identified by the unique client token.
-    ///   - [`failed_requests(Option<Vec<FailedRequest>>)`](crate::output::PutDialRequestBatchOutput::failed_requests): A list of failed requests.
-    /// - On failure, responds with [`SdkError<PutDialRequestBatchError>`](crate::error::PutDialRequestBatchError)
-    pub fn put_dial_request_batch(&self) -> crate::client::fluent_builders::PutDialRequestBatch {
-        crate::client::fluent_builders::PutDialRequestBatch::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ResumeCampaign`](crate::client::fluent_builders::ResumeCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::ResumeCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::ResumeCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`ResumeCampaignOutput`](crate::output::ResumeCampaignOutput)
-
-    /// - On failure, responds with [`SdkError<ResumeCampaignError>`](crate::error::ResumeCampaignError)
-    pub fn resume_campaign(&self) -> crate::client::fluent_builders::ResumeCampaign {
-        crate::client::fluent_builders::ResumeCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartCampaign`](crate::client::fluent_builders::StartCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StartCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StartCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`StartCampaignOutput`](crate::output::StartCampaignOutput)
-
-    /// - On failure, responds with [`SdkError<StartCampaignError>`](crate::error::StartCampaignError)
-    pub fn start_campaign(&self) -> crate::client::fluent_builders::StartCampaign {
-        crate::client::fluent_builders::StartCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartInstanceOnboardingJob`](crate::client::fluent_builders::StartInstanceOnboardingJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connect_instance_id(impl Into<String>)`](crate::client::fluent_builders::StartInstanceOnboardingJob::connect_instance_id) / [`set_connect_instance_id(Option<String>)`](crate::client::fluent_builders::StartInstanceOnboardingJob::set_connect_instance_id): Amazon Connect Instance Id
-    ///   - [`encryption_config(EncryptionConfig)`](crate::client::fluent_builders::StartInstanceOnboardingJob::encryption_config) / [`set_encryption_config(Option<EncryptionConfig>)`](crate::client::fluent_builders::StartInstanceOnboardingJob::set_encryption_config): Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    /// - On success, responds with [`StartInstanceOnboardingJobOutput`](crate::output::StartInstanceOnboardingJobOutput) with field(s):
-    ///   - [`connect_instance_onboarding_job_status(Option<InstanceOnboardingJobStatus>)`](crate::output::StartInstanceOnboardingJobOutput::connect_instance_onboarding_job_status): Instance onboarding job status object
-    /// - On failure, responds with [`SdkError<StartInstanceOnboardingJobError>`](crate::error::StartInstanceOnboardingJobError)
-    pub fn start_instance_onboarding_job(
-        &self,
-    ) -> crate::client::fluent_builders::StartInstanceOnboardingJob {
-        crate::client::fluent_builders::StartInstanceOnboardingJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopCampaign`](crate::client::fluent_builders::StopCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::StopCampaign::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::StopCampaign::set_id): Identifier representing a Campaign
-    /// - On success, responds with [`StopCampaignOutput`](crate::output::StopCampaignOutput)
-
-    /// - On failure, responds with [`SdkError<StopCampaignError>`](crate::error::StopCampaignError)
-    pub fn stop_campaign(&self) -> crate::client::fluent_builders::StopCampaign {
-        crate::client::fluent_builders::StopCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_arn): Arn
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): Tag map with key and value.
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::arn) / [`set_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_arn): Arn
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): List of tag keys.
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCampaignDialerConfig`](crate::client::fluent_builders::UpdateCampaignDialerConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignDialerConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaignDialerConfig::set_id): Identifier representing a Campaign
-    ///   - [`dialer_config(DialerConfig)`](crate::client::fluent_builders::UpdateCampaignDialerConfig::dialer_config) / [`set_dialer_config(Option<DialerConfig>)`](crate::client::fluent_builders::UpdateCampaignDialerConfig::set_dialer_config): The possible types of dialer config parameters
-    /// - On success, responds with [`UpdateCampaignDialerConfigOutput`](crate::output::UpdateCampaignDialerConfigOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateCampaignDialerConfigError>`](crate::error::UpdateCampaignDialerConfigError)
-    pub fn update_campaign_dialer_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateCampaignDialerConfig {
-        crate::client::fluent_builders::UpdateCampaignDialerConfig::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCampaignName`](crate::client::fluent_builders::UpdateCampaignName) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignName::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaignName::set_id): Identifier representing a Campaign
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignName::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateCampaignName::set_name): The name of an Amazon Connect Campaign name.
-    /// - On success, responds with [`UpdateCampaignNameOutput`](crate::output::UpdateCampaignNameOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateCampaignNameError>`](crate::error::UpdateCampaignNameError)
-    pub fn update_campaign_name(&self) -> crate::client::fluent_builders::UpdateCampaignName {
-        crate::client::fluent_builders::UpdateCampaignName::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCampaignOutboundCallConfig`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::id) / [`set_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::set_id): Identifier representing a Campaign
-    ///   - [`connect_contact_flow_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::connect_contact_flow_id) / [`set_connect_contact_flow_id(Option<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::set_connect_contact_flow_id): The identifier of the contact flow for the outbound call.
-    ///   - [`connect_source_phone_number(impl Into<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::connect_source_phone_number) / [`set_connect_source_phone_number(Option<String>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::set_connect_source_phone_number): The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-    ///   - [`answer_machine_detection_config(AnswerMachineDetectionConfig)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::answer_machine_detection_config) / [`set_answer_machine_detection_config(Option<AnswerMachineDetectionConfig>)`](crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::set_answer_machine_detection_config): Answering Machine Detection config
-    /// - On success, responds with [`UpdateCampaignOutboundCallConfigOutput`](crate::output::UpdateCampaignOutboundCallConfigOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateCampaignOutboundCallConfigError>`](crate::error::UpdateCampaignOutboundCallConfigError)
-    pub fn update_campaign_outbound_call_config(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateCampaignOutboundCallConfig {
-        crate::client::fluent_builders::UpdateCampaignOutboundCallConfig::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -433,9 +174,53 @@ impl Client {
     }
 }
 
+mod create_campaign;
+
+mod delete_campaign;
+
+mod delete_connect_instance_config;
+
+mod delete_instance_onboarding_job;
+
+mod describe_campaign;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_campaign_state;
+
+mod get_campaign_state_batch;
+
+mod get_connect_instance_config;
+
+mod get_instance_onboarding_job_status;
+
+mod list_campaigns;
+
+mod list_tags_for_resource;
+
+mod pause_campaign;
+
+mod put_dial_request_batch;
+
+mod resume_campaign;
+
+mod start_campaign;
+
+mod start_instance_onboarding_job;
+
+mod stop_campaign;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_campaign_dialer_config;
+
+mod update_campaign_name;
+
+mod update_campaign_outbound_call_config;

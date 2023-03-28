@@ -84,7 +84,7 @@ impl ListCustomVerificationEmailTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_verification_email_templates_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_verification_email_templates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -202,7 +202,8 @@ impl ListIdentitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_identities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_identities_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -249,7 +250,7 @@ impl ListIdentitiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_identities_output_identities(page)
+            crate::lens::lens_list_identities_output_identities(page)
                 .unwrap_or_default()
                 .into_iter()
         })

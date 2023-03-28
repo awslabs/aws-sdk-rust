@@ -89,273 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`author(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::author) / [`set_author(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>The description of the application.</p> <p>Minimum length=1. Maximum length=256</p>
-    ///   - [`home_page_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::home_page_url) / [`set_home_page_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_home_page_url): <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    ///   - [`labels(Vec<String>)`](crate::client::fluent_builders::CreateApplication::labels) / [`set_labels(Option<Vec<String>>)`](crate::client::fluent_builders::CreateApplication::set_labels): <p>Labels to improve discovery of apps in search results.</p> <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p> <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///   - [`license_body(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::license_body) / [`set_license_body(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_license_body): <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p> <p>Maximum size 5 MB</p> <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    ///   - [`license_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::license_url) / [`set_license_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_license_url): <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p> <p>Maximum size 5 MB</p> <p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The name of the application that you want to publish.</p> <p>Minimum length=1. Maximum length=140</p> <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    ///   - [`readme_body(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::readme_body) / [`set_readme_body(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_readme_body): <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p> <p>Maximum size 5 MB</p> <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    ///   - [`readme_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::readme_url) / [`set_readme_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_readme_url): <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p> <p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`source_code_archive_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::source_code_archive_url) / [`set_source_code_archive_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_source_code_archive_url): <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p> <p>Maximum size 50 MB</p>
-    ///   - [`source_code_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::source_code_url) / [`set_source_code_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_source_code_url): <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    ///   - [`spdx_license_id(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::spdx_license_id) / [`set_spdx_license_id(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_spdx_license_id): <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_template_body): <p>The local raw packaged AWS SAM template file of your application. The file has the format file://&lt;path&gt;/&lt;filename&gt;.</p> <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    ///   - [`template_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::template_url) / [`set_template_url(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_template_url): <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p> <p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`author(Option<String>)`](crate::output::CreateApplicationOutput::author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::CreateApplicationOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`description(Option<String>)`](crate::output::CreateApplicationOutput::description): <p>The description of the application.</p> <p>Minimum length=1. Maximum length=256</p>
-    ///   - [`home_page_url(Option<String>)`](crate::output::CreateApplicationOutput::home_page_url): <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    ///   - [`is_verified_author(bool)`](crate::output::CreateApplicationOutput::is_verified_author): <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
-    ///   - [`labels(Option<Vec<String>>)`](crate::output::CreateApplicationOutput::labels): <p>Labels to improve discovery of apps in search results.</p> <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p> <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///   - [`license_url(Option<String>)`](crate::output::CreateApplicationOutput::license_url): <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p> <p>Maximum size 5 MB</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateApplicationOutput::name): <p>The name of the application.</p> <p>Minimum length=1. Maximum length=140</p> <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    ///   - [`readme_url(Option<String>)`](crate::output::CreateApplicationOutput::readme_url): <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p>
-    ///   - [`spdx_license_id(Option<String>)`](crate::output::CreateApplicationOutput::spdx_license_id): <p>A valid identifier from https://spdx.org/licenses/.</p>
-    ///   - [`verified_author_url(Option<String>)`](crate::output::CreateApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    ///   - [`version(Option<Version>)`](crate::output::CreateApplicationOutput::version): <p>Version information about the application.</p>
-    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
-    pub fn create_application(&self) -> crate::client::fluent_builders::CreateApplication {
-        crate::client::fluent_builders::CreateApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateApplicationVersion`](crate::client::fluent_builders::CreateApplicationVersion) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_semantic_version): <p>The semantic version of the new version.</p>
-    ///   - [`source_code_archive_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::source_code_archive_url) / [`set_source_code_archive_url(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_source_code_archive_url): <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p> <p>Maximum size 50 MB</p>
-    ///   - [`source_code_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::source_code_url) / [`set_source_code_url(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_source_code_url): <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    ///   - [`template_body(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::template_body) / [`set_template_body(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_template_body): <p>The raw packaged AWS SAM template of your application.</p>
-    ///   - [`template_url(impl Into<String>)`](crate::client::fluent_builders::CreateApplicationVersion::template_url) / [`set_template_url(Option<String>)`](crate::client::fluent_builders::CreateApplicationVersion::set_template_url): <p>A link to the packaged AWS SAM template of your application.</p>
-    /// - On success, responds with [`CreateApplicationVersionOutput`](crate::output::CreateApplicationVersionOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationVersionOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::CreateApplicationVersionOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`parameter_definitions(Option<Vec<ParameterDefinition>>)`](crate::output::CreateApplicationVersionOutput::parameter_definitions): <p>An array of parameter types supported by the application.</p>
-    ///   - [`required_capabilities(Option<Vec<Capability>>)`](crate::output::CreateApplicationVersionOutput::required_capabilities): <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p> <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p> <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p> <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p> <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p> <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    ///   - [`resources_supported(bool)`](crate::output::CreateApplicationVersionOutput::resources_supported): <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
-    ///   - [`semantic_version(Option<String>)`](crate::output::CreateApplicationVersionOutput::semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`source_code_archive_url(Option<String>)`](crate::output::CreateApplicationVersionOutput::source_code_archive_url): <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p> <p>Maximum size 50 MB</p>
-    ///   - [`source_code_url(Option<String>)`](crate::output::CreateApplicationVersionOutput::source_code_url): <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-    ///   - [`template_url(Option<String>)`](crate::output::CreateApplicationVersionOutput::template_url): <p>A link to the packaged AWS SAM template of your application.</p>
-    /// - On failure, responds with [`SdkError<CreateApplicationVersionError>`](crate::error::CreateApplicationVersionError)
-    pub fn create_application_version(
-        &self,
-    ) -> crate::client::fluent_builders::CreateApplicationVersion {
-        crate::client::fluent_builders::CreateApplicationVersion::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCloudFormationChangeSet`](crate::client::fluent_builders::CreateCloudFormationChangeSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`capabilities(Vec<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::capabilities) / [`set_capabilities(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_capabilities): <p>A list of values that you must specify before you can deploy certain applications. Some applications might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management (IAM) users. For those applications, you must explicitly acknowledge their capabilities by specifying this parameter.</p> <p>The only valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p> <p>The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>. If the application contains IAM resources, you can specify either CAPABILITY_IAM or CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM.</p> <p>The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>, <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>, and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p> <p>Applications that contain one or more nested applications require you to specify CAPABILITY_AUTO_EXPAND.</p> <p>If your application template contains any of the above resources, we recommend that you review all permissions associated with the application before deploying. If you don't specify this parameter for an application that requires capabilities, the call will fail.</p>
-    ///   - [`change_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::change_set_name) / [`set_change_set_name(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_change_set_name): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_client_token): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_description): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`notification_arns(Vec<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::notification_arns) / [`set_notification_arns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_notification_arns): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`parameter_overrides(Vec<ParameterValue>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::parameter_overrides) / [`set_parameter_overrides(Option<Vec<ParameterValue>>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_parameter_overrides): <p>A list of parameter values for the parameters of the application.</p>
-    ///   - [`resource_types(Vec<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::resource_types) / [`set_resource_types(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_resource_types): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`rollback_configuration(RollbackConfiguration)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::rollback_configuration) / [`set_rollback_configuration(Option<RollbackConfiguration>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_rollback_configuration): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`stack_name(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::stack_name) / [`set_stack_name(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_stack_name): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_tags): <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a> </i> API.</p>
-    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationChangeSet::set_template_id): <p>The UUID returned by CreateCloudFormationTemplate.</p> <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    /// - On success, responds with [`CreateCloudFormationChangeSetOutput`](crate::output::CreateCloudFormationChangeSetOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::CreateCloudFormationChangeSetOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`change_set_id(Option<String>)`](crate::output::CreateCloudFormationChangeSetOutput::change_set_id): <p>The Amazon Resource Name (ARN) of the change set.</p> <p>Length constraints: Minimum length of 1.</p> <p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
-    ///   - [`semantic_version(Option<String>)`](crate::output::CreateCloudFormationChangeSetOutput::semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`stack_id(Option<String>)`](crate::output::CreateCloudFormationChangeSetOutput::stack_id): <p>The unique ID of the stack.</p>
-    /// - On failure, responds with [`SdkError<CreateCloudFormationChangeSetError>`](crate::error::CreateCloudFormationChangeSetError)
-    pub fn create_cloud_formation_change_set(
-        &self,
-    ) -> crate::client::fluent_builders::CreateCloudFormationChangeSet {
-        crate::client::fluent_builders::CreateCloudFormationChangeSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCloudFormationTemplate`](crate::client::fluent_builders::CreateCloudFormationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationTemplate::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationTemplate::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::CreateCloudFormationTemplate::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::CreateCloudFormationTemplate::set_semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    /// - On success, responds with [`CreateCloudFormationTemplateOutput`](crate::output::CreateCloudFormationTemplateOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`expiration_time(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::expiration_time): <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    ///   - [`semantic_version(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`status(Option<Status>)`](crate::output::CreateCloudFormationTemplateOutput::status): <p>Status of the template creation workflow.</p> <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    ///   - [`template_id(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::template_id): <p>The UUID returned by CreateCloudFormationTemplate.</p> <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    ///   - [`template_url(Option<String>)`](crate::output::CreateCloudFormationTemplateOutput::template_url): <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    /// - On failure, responds with [`SdkError<CreateCloudFormationTemplateError>`](crate::error::CreateCloudFormationTemplateError)
-    pub fn create_cloud_formation_template(
-        &self,
-    ) -> crate::client::fluent_builders::CreateCloudFormationTemplate {
-        crate::client::fluent_builders::CreateCloudFormationTemplate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
-    pub fn delete_application(&self) -> crate::client::fluent_builders::DeleteApplication {
-        crate::client::fluent_builders::DeleteApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::GetApplication::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::GetApplication::set_semantic_version): <p>The semantic version of the application to get.</p>
-    /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::GetApplicationOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`author(Option<String>)`](crate::output::GetApplicationOutput::author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::GetApplicationOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetApplicationOutput::description): <p>The description of the application.</p> <p>Minimum length=1. Maximum length=256</p>
-    ///   - [`home_page_url(Option<String>)`](crate::output::GetApplicationOutput::home_page_url): <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    ///   - [`is_verified_author(bool)`](crate::output::GetApplicationOutput::is_verified_author): <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
-    ///   - [`labels(Option<Vec<String>>)`](crate::output::GetApplicationOutput::labels): <p>Labels to improve discovery of apps in search results.</p> <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p> <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///   - [`license_url(Option<String>)`](crate::output::GetApplicationOutput::license_url): <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p> <p>Maximum size 5 MB</p>
-    ///   - [`name(Option<String>)`](crate::output::GetApplicationOutput::name): <p>The name of the application.</p> <p>Minimum length=1. Maximum length=140</p> <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    ///   - [`readme_url(Option<String>)`](crate::output::GetApplicationOutput::readme_url): <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p>
-    ///   - [`spdx_license_id(Option<String>)`](crate::output::GetApplicationOutput::spdx_license_id): <p>A valid identifier from https://spdx.org/licenses/.</p>
-    ///   - [`verified_author_url(Option<String>)`](crate::output::GetApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    ///   - [`version(Option<Version>)`](crate::output::GetApplicationOutput::version): <p>Version information about the application.</p>
-    /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
-    pub fn get_application(&self) -> crate::client::fluent_builders::GetApplication {
-        crate::client::fluent_builders::GetApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetApplicationPolicy`](crate::client::fluent_builders::GetApplicationPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationPolicy::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplicationPolicy::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    /// - On success, responds with [`GetApplicationPolicyOutput`](crate::output::GetApplicationPolicyOutput) with field(s):
-    ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::output::GetApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
-    /// - On failure, responds with [`SdkError<GetApplicationPolicyError>`](crate::error::GetApplicationPolicyError)
-    pub fn get_application_policy(&self) -> crate::client::fluent_builders::GetApplicationPolicy {
-        crate::client::fluent_builders::GetApplicationPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCloudFormationTemplate`](crate::client::fluent_builders::GetCloudFormationTemplate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFormationTemplate::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetCloudFormationTemplate::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`template_id(impl Into<String>)`](crate::client::fluent_builders::GetCloudFormationTemplate::template_id) / [`set_template_id(Option<String>)`](crate::client::fluent_builders::GetCloudFormationTemplate::set_template_id): <p>The UUID returned by CreateCloudFormationTemplate.</p> <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    /// - On success, responds with [`GetCloudFormationTemplateOutput`](crate::output::GetCloudFormationTemplateOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`expiration_time(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::expiration_time): <p>The date and time this template expires. Templates expire 1 hour after creation.</p>
-    ///   - [`semantic_version(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::semantic_version): <p>The semantic version of the application:</p> <p> <a href="https://semver.org/">https://semver.org/</a> </p>
-    ///   - [`status(Option<Status>)`](crate::output::GetCloudFormationTemplateOutput::status): <p>Status of the template creation workflow.</p> <p>Possible values: PREPARING | ACTIVE | EXPIRED </p>
-    ///   - [`template_id(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::template_id): <p>The UUID returned by CreateCloudFormationTemplate.</p> <p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-    ///   - [`template_url(Option<String>)`](crate::output::GetCloudFormationTemplateOutput::template_url): <p>A link to the template that can be used to deploy the application using AWS CloudFormation.</p>
-    /// - On failure, responds with [`SdkError<GetCloudFormationTemplateError>`](crate::error::GetCloudFormationTemplateError)
-    pub fn get_cloud_formation_template(
-        &self,
-    ) -> crate::client::fluent_builders::GetCloudFormationTemplate {
-        crate::client::fluent_builders::GetCloudFormationTemplate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplicationDependencies`](crate::client::fluent_builders::ListApplicationDependencies) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationDependencies::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListApplicationDependencies::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListApplicationDependencies::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListApplicationDependencies::max_items) / [`set_max_items(i32)`](crate::client::fluent_builders::ListApplicationDependencies::set_max_items): <p>The total number of items to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationDependencies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationDependencies::set_next_token): <p>A token to specify where to start paginating.</p>
-    ///   - [`semantic_version(impl Into<String>)`](crate::client::fluent_builders::ListApplicationDependencies::semantic_version) / [`set_semantic_version(Option<String>)`](crate::client::fluent_builders::ListApplicationDependencies::set_semantic_version): <p>The semantic version of the application to get.</p>
-    /// - On success, responds with [`ListApplicationDependenciesOutput`](crate::output::ListApplicationDependenciesOutput) with field(s):
-    ///   - [`dependencies(Option<Vec<ApplicationDependencySummary>>)`](crate::output::ListApplicationDependenciesOutput::dependencies): <p>An array of application summaries nested in the application.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationDependenciesOutput::next_token): <p>The token to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationDependenciesError>`](crate::error::ListApplicationDependenciesError)
-    pub fn list_application_dependencies(
-        &self,
-    ) -> crate::client::fluent_builders::ListApplicationDependencies {
-        crate::client::fluent_builders::ListApplicationDependencies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListApplications::max_items) / [`set_max_items(i32)`](crate::client::fluent_builders::ListApplications::set_max_items): <p>The total number of items to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>A token to specify where to start paginating.</p>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>An array of application summaries.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>The token to request the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
-    pub fn list_applications(&self) -> crate::client::fluent_builders::ListApplications {
-        crate::client::fluent_builders::ListApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplicationVersions`](crate::client::fluent_builders::ListApplicationVersions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationVersions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListApplicationVersions::max_items) / [`set_max_items(i32)`](crate::client::fluent_builders::ListApplicationVersions::set_max_items): <p>The total number of items to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_next_token): <p>A token to specify where to start paginating.</p>
-    /// - On success, responds with [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationVersionsOutput::next_token): <p>The token to request the next page of results.</p>
-    ///   - [`versions(Option<Vec<VersionSummary>>)`](crate::output::ListApplicationVersionsOutput::versions): <p>An array of version summaries for the application.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::error::ListApplicationVersionsError)
-    pub fn list_application_versions(
-        &self,
-    ) -> crate::client::fluent_builders::ListApplicationVersions {
-        crate::client::fluent_builders::ListApplicationVersions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutApplicationPolicy`](crate::client::fluent_builders::PutApplicationPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::PutApplicationPolicy::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::PutApplicationPolicy::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`statements(Vec<ApplicationPolicyStatement>)`](crate::client::fluent_builders::PutApplicationPolicy::statements) / [`set_statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::client::fluent_builders::PutApplicationPolicy::set_statements): <p>An array of policy statements applied to the application.</p>
-    /// - On success, responds with [`PutApplicationPolicyOutput`](crate::output::PutApplicationPolicyOutput) with field(s):
-    ///   - [`statements(Option<Vec<ApplicationPolicyStatement>>)`](crate::output::PutApplicationPolicyOutput::statements): <p>An array of policy statements applied to the application.</p>
-    /// - On failure, responds with [`SdkError<PutApplicationPolicyError>`](crate::error::PutApplicationPolicyError)
-    pub fn put_application_policy(&self) -> crate::client::fluent_builders::PutApplicationPolicy {
-        crate::client::fluent_builders::PutApplicationPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnshareApplication`](crate::client::fluent_builders::UnshareApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UnshareApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UnshareApplication::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`organization_id(impl Into<String>)`](crate::client::fluent_builders::UnshareApplication::organization_id) / [`set_organization_id(Option<String>)`](crate::client::fluent_builders::UnshareApplication::set_organization_id): <p>The AWS Organization ID to unshare the application from.</p>
-    /// - On success, responds with [`UnshareApplicationOutput`](crate::output::UnshareApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<UnshareApplicationError>`](crate::error::UnshareApplicationError)
-    pub fn unshare_application(&self) -> crate::client::fluent_builders::UnshareApplication {
-        crate::client::fluent_builders::UnshareApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`author(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::author) / [`set_author(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>The description of the application.</p> <p>Minimum length=1. Maximum length=256</p>
-    ///   - [`home_page_url(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::home_page_url) / [`set_home_page_url(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_home_page_url): <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    ///   - [`labels(Vec<String>)`](crate::client::fluent_builders::UpdateApplication::labels) / [`set_labels(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateApplication::set_labels): <p>Labels to improve discovery of apps in search results.</p> <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p> <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///   - [`readme_body(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::readme_body) / [`set_readme_body(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_readme_body): <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p>
-    ///   - [`readme_url(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::readme_url) / [`set_readme_url(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_readme_url): <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p>
-    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
-    ///   - [`application_id(Option<String>)`](crate::output::UpdateApplicationOutput::application_id): <p>The application Amazon Resource Name (ARN).</p>
-    ///   - [`author(Option<String>)`](crate::output::UpdateApplicationOutput::author): <p>The name of the author publishing the app.</p> <p>Minimum length=1. Maximum length=127.</p> <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-    ///   - [`creation_time(Option<String>)`](crate::output::UpdateApplicationOutput::creation_time): <p>The date and time this resource was created.</p>
-    ///   - [`description(Option<String>)`](crate::output::UpdateApplicationOutput::description): <p>The description of the application.</p> <p>Minimum length=1. Maximum length=256</p>
-    ///   - [`home_page_url(Option<String>)`](crate::output::UpdateApplicationOutput::home_page_url): <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-    ///   - [`is_verified_author(bool)`](crate::output::UpdateApplicationOutput::is_verified_author): <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
-    ///   - [`labels(Option<Vec<String>>)`](crate::output::UpdateApplicationOutput::labels): <p>Labels to improve discovery of apps in search results.</p> <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p> <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    ///   - [`license_url(Option<String>)`](crate::output::UpdateApplicationOutput::license_url): <p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p> <p>Maximum size 5 MB</p>
-    ///   - [`name(Option<String>)`](crate::output::UpdateApplicationOutput::name): <p>The name of the application.</p> <p>Minimum length=1. Maximum length=140</p> <p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-    ///   - [`readme_url(Option<String>)`](crate::output::UpdateApplicationOutput::readme_url): <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p> <p>Maximum size 5 MB</p>
-    ///   - [`spdx_license_id(Option<String>)`](crate::output::UpdateApplicationOutput::spdx_license_id): <p>A valid identifier from https://spdx.org/licenses/.</p>
-    ///   - [`verified_author_url(Option<String>)`](crate::output::UpdateApplicationOutput::verified_author_url): <p>The URL to the public profile of a verified author. This URL is submitted by the author.</p>
-    ///   - [`version(Option<Version>)`](crate::output::UpdateApplicationOutput::version): <p>Version information about the application.</p>
-    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
-    pub fn update_application(&self) -> crate::client::fluent_builders::UpdateApplication {
-        crate::client::fluent_builders::UpdateApplication::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -441,9 +174,37 @@ impl Client {
     }
 }
 
+mod create_application;
+
+mod create_application_version;
+
+mod create_cloud_formation_change_set;
+
+mod create_cloud_formation_template;
+
+mod delete_application;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_application;
+
+mod get_application_policy;
+
+mod get_cloud_formation_template;
+
+mod list_application_dependencies;
+
+mod list_application_versions;
+
+mod list_applications;
+
+mod put_application_policy;
+
+mod unshare_application;
+
+mod update_application;

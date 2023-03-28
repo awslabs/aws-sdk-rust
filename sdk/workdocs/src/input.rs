@@ -96,8 +96,7 @@ impl AbortDocumentVersionUploadInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_abort_document_version_upload(input, builder)?;
+                let builder = crate::protocol_serde::shape_abort_document_version_upload::ser_abort_document_version_upload_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -231,7 +230,10 @@ impl ActivateUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_activate_user(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_activate_user::ser_activate_user_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -365,8 +367,7 @@ impl AddResourcePermissionsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_add_resource_permissions(input, builder)?;
+                let builder = crate::protocol_serde::shape_add_resource_permissions::ser_add_resource_permissions_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -380,9 +381,7 @@ impl AddResourcePermissionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_resource_permissions(
-                &self,
-            )?,
+            crate::protocol_serde::shape_add_resource_permissions::ser_add_resource_permissions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -536,7 +535,10 @@ impl CreateCommentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_comment(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_comment::ser_create_comment_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -550,7 +552,7 @@ impl CreateCommentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_comment(&self)?,
+            crate::protocol_serde::shape_create_comment::ser_create_comment_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -697,8 +699,7 @@ impl CreateCustomMetadataInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_custom_metadata(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_custom_metadata::ser_create_custom_metadata_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -712,7 +713,7 @@ impl CreateCustomMetadataInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_metadata(
+            crate::protocol_serde::shape_create_custom_metadata::ser_create_custom_metadata_input(
                 &self,
             )?,
         );
@@ -824,7 +825,10 @@ impl CreateFolderInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_folder(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_folder::ser_create_folder_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -838,7 +842,7 @@ impl CreateFolderInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_folder(&self)?,
+            crate::protocol_serde::shape_create_folder::ser_create_folder_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -972,7 +976,10 @@ impl CreateLabelsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_labels(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_labels::ser_create_labels_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -986,7 +993,7 @@ impl CreateLabelsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_labels(&self)?,
+            crate::protocol_serde::shape_create_labels::ser_create_labels_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1133,7 +1140,7 @@ impl CreateNotificationSubscriptionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_notification_subscription(&self)?
+            crate::protocol_serde::shape_create_notification_subscription::ser_create_notification_subscription_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1243,7 +1250,9 @@ impl CreateUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_user(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_user::ser_create_user_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1257,7 +1266,7 @@ impl CreateUserInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_user(&self)?,
+            crate::protocol_serde::shape_create_user::ser_create_user_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1391,7 +1400,10 @@ impl DeactivateUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_deactivate_user(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_deactivate_user::ser_deactivate_user_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1565,7 +1577,10 @@ impl DeleteCommentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_comment(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_comment::ser_delete_comment_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1725,8 +1740,7 @@ impl DeleteCustomMetadataInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_custom_metadata(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_custom_metadata::ser_delete_custom_metadata_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1860,7 +1874,10 @@ impl DeleteDocumentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_document(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_document::ser_delete_document_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2027,8 +2044,7 @@ impl DeleteDocumentVersionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_document_version(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_document_version::ser_delete_document_version_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2158,7 +2174,10 @@ impl DeleteFolderInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_folder(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_folder::ser_delete_folder_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2292,8 +2311,7 @@ impl DeleteFolderContentsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_delete_folder_contents(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_folder_contents::ser_delete_folder_contents_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2448,7 +2466,10 @@ impl DeleteLabelsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_labels(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_delete_labels::ser_delete_labels_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2731,7 +2752,9 @@ impl DeleteUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_delete_user(input, builder)?;
+                let builder = crate::protocol_serde::shape_delete_user::ser_delete_user_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2919,7 +2942,7 @@ impl DescribeActivitiesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_activities(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_activities::ser_describe_activities_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3094,7 +3117,10 @@ impl DescribeCommentsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_comments(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_describe_comments::ser_describe_comments_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3259,8 +3285,7 @@ impl DescribeDocumentVersionsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_document_versions(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_document_versions::ser_describe_document_versions_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3435,8 +3460,7 @@ impl DescribeFolderContentsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_folder_contents(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_folder_contents::ser_describe_folder_contents_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3594,7 +3618,10 @@ impl DescribeGroupsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_groups(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_describe_groups::ser_describe_groups_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -3911,8 +3938,7 @@ impl DescribeResourcePermissionsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_describe_resource_permissions(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_resource_permissions::ser_describe_resource_permissions_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4043,7 +4069,7 @@ impl DescribeRootFoldersInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_root_folders(input, builder)?;
+                let builder = crate::protocol_serde::shape_describe_root_folders::ser_describe_root_folders_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4212,7 +4238,10 @@ impl DescribeUsersInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_describe_users(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_describe_users::ser_describe_users_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4322,7 +4351,10 @@ impl GetCurrentUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_current_user(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_current_user::ser_get_current_user_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4471,7 +4503,9 @@ impl GetDocumentInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_document(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_document::ser_get_document_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4631,7 +4665,10 @@ impl GetDocumentPathInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_document_path(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_document_path::ser_get_document_path_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4805,7 +4842,7 @@ impl GetDocumentVersionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_document_version(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_document_version::ser_get_document_version_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -4950,7 +4987,9 @@ impl GetFolderInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_folder(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_folder::ser_get_folder_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5108,7 +5147,10 @@ impl GetFolderPathInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_folder_path(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_folder_path::ser_get_folder_path_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5252,7 +5294,10 @@ impl GetResourcesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_resources(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_get_resources::ser_get_resources_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5362,9 +5407,7 @@ impl InitiateDocumentVersionUploadInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_initiate_document_version_upload(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_initiate_document_version_upload::ser_initiate_document_version_upload_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5378,7 +5421,7 @@ impl InitiateDocumentVersionUploadInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_initiate_document_version_upload(&self)?
+            crate::protocol_serde::shape_initiate_document_version_upload::ser_initiate_document_version_upload_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5512,8 +5555,7 @@ impl RemoveAllResourcePermissionsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_remove_all_resource_permissions(input, builder)?;
+                let builder = crate::protocol_serde::shape_remove_all_resource_permissions::ser_remove_all_resource_permissions_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5680,8 +5722,7 @@ impl RemoveResourcePermissionInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_remove_resource_permission(input, builder)?;
+                let builder = crate::protocol_serde::shape_remove_resource_permission::ser_remove_resource_permission_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5815,8 +5856,7 @@ impl RestoreDocumentVersionsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_restore_document_versions(input, builder)?;
+                let builder = crate::protocol_serde::shape_restore_document_versions::ser_restore_document_versions_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5950,7 +5990,10 @@ impl UpdateDocumentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_document(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_update_document::ser_update_document_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -5964,7 +6007,7 @@ impl UpdateDocumentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_document(&self)?,
+            crate::protocol_serde::shape_update_document::ser_update_document_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6118,8 +6161,7 @@ impl UpdateDocumentVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_update_document_version(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_document_version::ser_update_document_version_headers(input, builder)?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6133,9 +6175,7 @@ impl UpdateDocumentVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_document_version(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_document_version::ser_update_document_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6265,7 +6305,10 @@ impl UpdateFolderInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_folder(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_update_folder::ser_update_folder_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6279,7 +6322,7 @@ impl UpdateFolderInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_folder(&self)?,
+            crate::protocol_serde::shape_update_folder::ser_update_folder_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6409,7 +6452,9 @@ impl UpdateUserInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_update_user(input, builder)?;
+                let builder = crate::protocol_serde::shape_update_user::ser_update_user_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6423,7 +6468,7 @@ impl UpdateUserInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_user(&self)?,
+            crate::protocol_serde::shape_update_user::ser_update_user_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

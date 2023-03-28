@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCustomRoutingEndpoint
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_custom_routing_endpoints_error(response)
+            crate::protocol_serde::shape_add_custom_routing_endpoints::de_add_custom_routing_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_add_custom_routing_endpoints_response(response)
+            crate::protocol_serde::shape_add_custom_routing_endpoints::de_add_custom_routing_endpoints_http_response(response)
         }
     }
 }
@@ -60,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_endpoints_error(response)
+            crate::protocol_serde::shape_add_endpoints::de_add_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_add_endpoints_response(response)
+            crate::protocol_serde::shape_add_endpoints::de_add_endpoints_http_response(response)
         }
     }
 }
@@ -95,9 +95,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_advertise_byoip_cidr_error(response)
+            crate::protocol_serde::shape_advertise_byoip_cidr::de_advertise_byoip_cidr_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_advertise_byoip_cidr_response(response)
+            crate::protocol_serde::shape_advertise_byoip_cidr::de_advertise_byoip_cidr_http_response(
+                response,
+            )
         }
     }
 }
@@ -130,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AllowCustomRoutingTraffi
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_allow_custom_routing_traffic_error(response)
+            crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_error(response)
         } else {
-            crate::operation_deser::parse_allow_custom_routing_traffic_response(response)
+            crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_response(response)
         }
     }
 }
@@ -165,9 +169,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccelerator {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_accelerator_error(response)
+            crate::protocol_serde::shape_create_accelerator::de_create_accelerator_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_accelerator_response(response)
+            crate::protocol_serde::shape_create_accelerator::de_create_accelerator_http_response(
+                response,
+            )
         }
     }
 }
@@ -200,9 +208,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingAccel
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_routing_accelerator_error(response)
+            crate::protocol_serde::shape_create_custom_routing_accelerator::de_create_custom_routing_accelerator_http_error(response)
         } else {
-            crate::operation_deser::parse_create_custom_routing_accelerator_response(response)
+            crate::protocol_serde::shape_create_custom_routing_accelerator::de_create_custom_routing_accelerator_http_response(response)
         }
     }
 }
@@ -235,9 +243,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingEndpo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_routing_endpoint_group_error(response)
+            crate::protocol_serde::shape_create_custom_routing_endpoint_group::de_create_custom_routing_endpoint_group_http_error(response)
         } else {
-            crate::operation_deser::parse_create_custom_routing_endpoint_group_response(response)
+            crate::protocol_serde::shape_create_custom_routing_endpoint_group::de_create_custom_routing_endpoint_group_http_response(response)
         }
     }
 }
@@ -270,9 +278,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomRoutingListe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_routing_listener_error(response)
+            crate::protocol_serde::shape_create_custom_routing_listener::de_create_custom_routing_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_create_custom_routing_listener_response(response)
+            crate::protocol_serde::shape_create_custom_routing_listener::de_create_custom_routing_listener_http_response(response)
         }
     }
 }
@@ -305,9 +313,11 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEndpointGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_endpoint_group_error(response)
+            crate::protocol_serde::shape_create_endpoint_group::de_create_endpoint_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_endpoint_group_response(response)
+            crate::protocol_serde::shape_create_endpoint_group::de_create_endpoint_group_http_response(response)
         }
     }
 }
@@ -338,9 +348,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateListener {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_listener_error(response)
+            crate::protocol_serde::shape_create_listener::de_create_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_create_listener_response(response)
+            crate::protocol_serde::shape_create_listener::de_create_listener_http_response(response)
         }
     }
 }
@@ -373,9 +383,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccelerator {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_accelerator_error(response)
+            crate::protocol_serde::shape_delete_accelerator::de_delete_accelerator_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_accelerator_response(response)
+            crate::protocol_serde::shape_delete_accelerator::de_delete_accelerator_http_response(
+                response,
+            )
         }
     }
 }
@@ -408,9 +422,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingAccel
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_routing_accelerator_error(response)
+            crate::protocol_serde::shape_delete_custom_routing_accelerator::de_delete_custom_routing_accelerator_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_custom_routing_accelerator_response(response)
+            crate::protocol_serde::shape_delete_custom_routing_accelerator::de_delete_custom_routing_accelerator_http_response(response)
         }
     }
 }
@@ -443,9 +457,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingEndpo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_routing_endpoint_group_error(response)
+            crate::protocol_serde::shape_delete_custom_routing_endpoint_group::de_delete_custom_routing_endpoint_group_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_custom_routing_endpoint_group_response(response)
+            crate::protocol_serde::shape_delete_custom_routing_endpoint_group::de_delete_custom_routing_endpoint_group_http_response(response)
         }
     }
 }
@@ -478,9 +492,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomRoutingListe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_routing_listener_error(response)
+            crate::protocol_serde::shape_delete_custom_routing_listener::de_delete_custom_routing_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_custom_routing_listener_response(response)
+            crate::protocol_serde::shape_delete_custom_routing_listener::de_delete_custom_routing_listener_http_response(response)
         }
     }
 }
@@ -513,9 +527,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpointGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_endpoint_group_error(response)
+            crate::protocol_serde::shape_delete_endpoint_group::de_delete_endpoint_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_endpoint_group_response(response)
+            crate::protocol_serde::shape_delete_endpoint_group::de_delete_endpoint_group_http_response(response)
         }
     }
 }
@@ -546,9 +562,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteListener {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_listener_error(response)
+            crate::protocol_serde::shape_delete_listener::de_delete_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_listener_response(response)
+            crate::protocol_serde::shape_delete_listener::de_delete_listener_http_response(response)
         }
     }
 }
@@ -581,9 +597,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DenyCustomRoutingTraffic
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deny_custom_routing_traffic_error(response)
+            crate::protocol_serde::shape_deny_custom_routing_traffic::de_deny_custom_routing_traffic_http_error(response)
         } else {
-            crate::operation_deser::parse_deny_custom_routing_traffic_response(response)
+            crate::protocol_serde::shape_deny_custom_routing_traffic::de_deny_custom_routing_traffic_http_response(response)
         }
     }
 }
@@ -616,9 +632,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionByoipCidr {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deprovision_byoip_cidr_error(response)
+            crate::protocol_serde::shape_deprovision_byoip_cidr::de_deprovision_byoip_cidr_http_error(response)
         } else {
-            crate::operation_deser::parse_deprovision_byoip_cidr_response(response)
+            crate::protocol_serde::shape_deprovision_byoip_cidr::de_deprovision_byoip_cidr_http_response(response)
         }
     }
 }
@@ -651,9 +667,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccelerator {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_accelerator_error(response)
+            crate::protocol_serde::shape_describe_accelerator::de_describe_accelerator_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_accelerator_response(response)
+            crate::protocol_serde::shape_describe_accelerator::de_describe_accelerator_http_response(
+                response,
+            )
         }
     }
 }
@@ -686,9 +706,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorAttri
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_accelerator_attributes_error(response)
+            crate::protocol_serde::shape_describe_accelerator_attributes::de_describe_accelerator_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_accelerator_attributes_response(response)
+            crate::protocol_serde::shape_describe_accelerator_attributes::de_describe_accelerator_attributes_http_response(response)
         }
     }
 }
@@ -721,9 +741,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAcc
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_routing_accelerator_error(response)
+            crate::protocol_serde::shape_describe_custom_routing_accelerator::de_describe_custom_routing_accelerator_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_custom_routing_accelerator_response(response)
+            crate::protocol_serde::shape_describe_custom_routing_accelerator::de_describe_custom_routing_accelerator_http_response(response)
         }
     }
 }
@@ -757,13 +777,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingAcc
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_routing_accelerator_attributes_error(
-                response,
-            )
+            crate::protocol_serde::shape_describe_custom_routing_accelerator_attributes::de_describe_custom_routing_accelerator_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_custom_routing_accelerator_attributes_response(
-                response,
-            )
+            crate::protocol_serde::shape_describe_custom_routing_accelerator_attributes::de_describe_custom_routing_accelerator_attributes_http_response(response)
         }
     }
 }
@@ -796,9 +812,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingEnd
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_routing_endpoint_group_error(response)
+            crate::protocol_serde::shape_describe_custom_routing_endpoint_group::de_describe_custom_routing_endpoint_group_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_custom_routing_endpoint_group_response(response)
+            crate::protocol_serde::shape_describe_custom_routing_endpoint_group::de_describe_custom_routing_endpoint_group_http_response(response)
         }
     }
 }
@@ -831,9 +847,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomRoutingLis
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_routing_listener_error(response)
+            crate::protocol_serde::shape_describe_custom_routing_listener::de_describe_custom_routing_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_custom_routing_listener_response(response)
+            crate::protocol_serde::shape_describe_custom_routing_listener::de_describe_custom_routing_listener_http_response(response)
         }
     }
 }
@@ -866,9 +882,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEndpointGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_endpoint_group_error(response)
+            crate::protocol_serde::shape_describe_endpoint_group::de_describe_endpoint_group_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_endpoint_group_response(response)
+            crate::protocol_serde::shape_describe_endpoint_group::de_describe_endpoint_group_http_response(response)
         }
     }
 }
@@ -901,9 +917,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeListener {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_listener_error(response)
+            crate::protocol_serde::shape_describe_listener::de_describe_listener_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_listener_response(response)
+            crate::protocol_serde::shape_describe_listener::de_describe_listener_http_response(
+                response,
+            )
         }
     }
 }
@@ -936,9 +956,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccelerators {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_accelerators_error(response)
+            crate::protocol_serde::shape_list_accelerators::de_list_accelerators_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_accelerators_response(response)
+            crate::protocol_serde::shape_list_accelerators::de_list_accelerators_http_response(
+                response,
+            )
         }
     }
 }
@@ -969,9 +993,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListByoipCidrs {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_byoip_cidrs_error(response)
+            crate::protocol_serde::shape_list_byoip_cidrs::de_list_byoip_cidrs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_byoip_cidrs_response(response)
+            crate::protocol_serde::shape_list_byoip_cidrs::de_list_byoip_cidrs_http_response(
+                response,
+            )
         }
     }
 }
@@ -1004,9 +1030,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingAcceler
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_routing_accelerators_error(response)
+            crate::protocol_serde::shape_list_custom_routing_accelerators::de_list_custom_routing_accelerators_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_routing_accelerators_response(response)
+            crate::protocol_serde::shape_list_custom_routing_accelerators::de_list_custom_routing_accelerators_http_response(response)
         }
     }
 }
@@ -1039,9 +1065,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingEndpoin
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_routing_endpoint_groups_error(response)
+            crate::protocol_serde::shape_list_custom_routing_endpoint_groups::de_list_custom_routing_endpoint_groups_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_routing_endpoint_groups_response(response)
+            crate::protocol_serde::shape_list_custom_routing_endpoint_groups::de_list_custom_routing_endpoint_groups_http_response(response)
         }
     }
 }
@@ -1074,9 +1100,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingListene
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_routing_listeners_error(response)
+            crate::protocol_serde::shape_list_custom_routing_listeners::de_list_custom_routing_listeners_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_routing_listeners_response(response)
+            crate::protocol_serde::shape_list_custom_routing_listeners::de_list_custom_routing_listeners_http_response(response)
         }
     }
 }
@@ -1109,9 +1135,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMap
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_routing_port_mappings_error(response)
+            crate::protocol_serde::shape_list_custom_routing_port_mappings::de_list_custom_routing_port_mappings_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_routing_port_mappings_response(response)
+            crate::protocol_serde::shape_list_custom_routing_port_mappings::de_list_custom_routing_port_mappings_http_response(response)
         }
     }
 }
@@ -1145,13 +1171,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMap
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_routing_port_mappings_by_destination_error(
-                response,
-            )
+            crate::protocol_serde::shape_list_custom_routing_port_mappings_by_destination::de_list_custom_routing_port_mappings_by_destination_http_error(response)
         } else {
-            crate::operation_deser::parse_list_custom_routing_port_mappings_by_destination_response(
-                response,
-            )
+            crate::protocol_serde::shape_list_custom_routing_port_mappings_by_destination::de_list_custom_routing_port_mappings_by_destination_http_response(response)
         }
     }
 }
@@ -1184,9 +1206,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointGroups {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_endpoint_groups_error(response)
+            crate::protocol_serde::shape_list_endpoint_groups::de_list_endpoint_groups_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_endpoint_groups_response(response)
+            crate::protocol_serde::shape_list_endpoint_groups::de_list_endpoint_groups_http_response(
+                response,
+            )
         }
     }
 }
@@ -1217,9 +1243,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListListeners {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_listeners_error(response)
+            crate::protocol_serde::shape_list_listeners::de_list_listeners_http_error(response)
         } else {
-            crate::operation_deser::parse_list_listeners_response(response)
+            crate::protocol_serde::shape_list_listeners::de_list_listeners_http_response(response)
         }
     }
 }
@@ -1252,9 +1278,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -1287,9 +1313,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_provision_byoip_cidr_error(response)
+            crate::protocol_serde::shape_provision_byoip_cidr::de_provision_byoip_cidr_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_provision_byoip_cidr_response(response)
+            crate::protocol_serde::shape_provision_byoip_cidr::de_provision_byoip_cidr_http_response(
+                response,
+            )
         }
     }
 }
@@ -1322,9 +1352,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveCustomRoutingEndpo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_custom_routing_endpoints_error(response)
+            crate::protocol_serde::shape_remove_custom_routing_endpoints::de_remove_custom_routing_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_remove_custom_routing_endpoints_response(response)
+            crate::protocol_serde::shape_remove_custom_routing_endpoints::de_remove_custom_routing_endpoints_http_response(response)
         }
     }
 }
@@ -1357,9 +1387,11 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_endpoints_error(response)
+            crate::protocol_serde::shape_remove_endpoints::de_remove_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_remove_endpoints_response(response)
+            crate::protocol_serde::shape_remove_endpoints::de_remove_endpoints_http_response(
+                response,
+            )
         }
     }
 }
@@ -1390,9 +1422,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -1423,9 +1455,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -1458,9 +1490,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccelerator {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_accelerator_error(response)
+            crate::protocol_serde::shape_update_accelerator::de_update_accelerator_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_accelerator_response(response)
+            crate::protocol_serde::shape_update_accelerator::de_update_accelerator_http_response(
+                response,
+            )
         }
     }
 }
@@ -1493,9 +1529,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAcceleratorAttribu
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_accelerator_attributes_error(response)
+            crate::protocol_serde::shape_update_accelerator_attributes::de_update_accelerator_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_update_accelerator_attributes_response(response)
+            crate::protocol_serde::shape_update_accelerator_attributes::de_update_accelerator_attributes_http_response(response)
         }
     }
 }
@@ -1528,9 +1564,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAccel
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_custom_routing_accelerator_error(response)
+            crate::protocol_serde::shape_update_custom_routing_accelerator::de_update_custom_routing_accelerator_http_error(response)
         } else {
-            crate::operation_deser::parse_update_custom_routing_accelerator_response(response)
+            crate::protocol_serde::shape_update_custom_routing_accelerator::de_update_custom_routing_accelerator_http_response(response)
         }
     }
 }
@@ -1563,13 +1599,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingAccel
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_custom_routing_accelerator_attributes_error(
-                response,
-            )
+            crate::protocol_serde::shape_update_custom_routing_accelerator_attributes::de_update_custom_routing_accelerator_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_update_custom_routing_accelerator_attributes_response(
-                response,
-            )
+            crate::protocol_serde::shape_update_custom_routing_accelerator_attributes::de_update_custom_routing_accelerator_attributes_http_response(response)
         }
     }
 }
@@ -1602,9 +1634,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomRoutingListe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_custom_routing_listener_error(response)
+            crate::protocol_serde::shape_update_custom_routing_listener::de_update_custom_routing_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_update_custom_routing_listener_response(response)
+            crate::protocol_serde::shape_update_custom_routing_listener::de_update_custom_routing_listener_http_response(response)
         }
     }
 }
@@ -1637,9 +1669,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointGroup {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_endpoint_group_error(response)
+            crate::protocol_serde::shape_update_endpoint_group::de_update_endpoint_group_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_endpoint_group_response(response)
+            crate::protocol_serde::shape_update_endpoint_group::de_update_endpoint_group_http_response(response)
         }
     }
 }
@@ -1670,9 +1704,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateListener {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_listener_error(response)
+            crate::protocol_serde::shape_update_listener::de_update_listener_http_error(response)
         } else {
-            crate::operation_deser::parse_update_listener_response(response)
+            crate::protocol_serde::shape_update_listener::de_update_listener_http_response(response)
         }
     }
 }
@@ -1705,9 +1739,13 @@ impl aws_smithy_http::response::ParseStrictResponse for WithdrawByoipCidr {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_withdraw_byoip_cidr_error(response)
+            crate::protocol_serde::shape_withdraw_byoip_cidr::de_withdraw_byoip_cidr_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_withdraw_byoip_cidr_response(response)
+            crate::protocol_serde::shape_withdraw_byoip_cidr::de_withdraw_byoip_cidr_http_response(
+                response,
+            )
         }
     }
 }

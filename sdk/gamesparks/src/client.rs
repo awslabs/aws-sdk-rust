@@ -89,419 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateGame`](crate::client::fluent_builders::CreateGame) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::CreateGame::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::CreateGame::set_game_name): <p>The name of the game.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGame::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGame::set_description): <p>The description of the game.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateGame::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateGame::set_client_token): <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGame::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGame::set_tags): <p>The list of tags to apply to the game.</p>
-    /// - On success, responds with [`CreateGameOutput`](crate::output::CreateGameOutput) with field(s):
-    ///   - [`game(Option<GameDetails>)`](crate::output::CreateGameOutput::game): <p>Details about the game that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateGameError>`](crate::error::CreateGameError)
-    pub fn create_game(&self) -> crate::client::fluent_builders::CreateGame {
-        crate::client::fluent_builders::CreateGame::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSnapshot`](crate::client::fluent_builders::CreateSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_game_name): <p>The name of the game.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateSnapshot::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateSnapshot::set_description): <p>The description of the snapshot.</p>
-    /// - On success, responds with [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<SnapshotDetails>)`](crate::output::CreateSnapshotOutput::snapshot): <p>Properties that provide details of the created snapshot.</p>
-    /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::error::CreateSnapshotError)
-    pub fn create_snapshot(&self) -> crate::client::fluent_builders::CreateSnapshot {
-        crate::client::fluent_builders::CreateSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateStage`](crate::client::fluent_builders::CreateStage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::CreateStage::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::CreateStage::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::CreateStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::CreateStage::set_stage_name): <p>The name of the stage.</p>
-    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::CreateStage::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::CreateStage::set_role): <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateStage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateStage::set_description): <p>The description of the stage.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateStage::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateStage::set_client_token): <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateStage::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateStage::set_tags): <p>The list of tags to apply to the stage.</p>
-    /// - On success, responds with [`CreateStageOutput`](crate::output::CreateStageOutput) with field(s):
-    ///   - [`stage(Option<StageDetails>)`](crate::output::CreateStageOutput::stage): <p>Properties that describe the stage.</p>
-    /// - On failure, responds with [`SdkError<CreateStageError>`](crate::error::CreateStageError)
-    pub fn create_stage(&self) -> crate::client::fluent_builders::CreateStage {
-        crate::client::fluent_builders::CreateStage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteGame`](crate::client::fluent_builders::DeleteGame) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGame::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::DeleteGame::set_game_name): <p>The name of the game to delete.</p>
-    /// - On success, responds with [`DeleteGameOutput`](crate::output::DeleteGameOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteGameError>`](crate::error::DeleteGameError)
-    pub fn delete_game(&self) -> crate::client::fluent_builders::DeleteGame {
-        crate::client::fluent_builders::DeleteGame::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteStage`](crate::client::fluent_builders::DeleteStage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStage::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::DeleteStage::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DeleteStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DeleteStage::set_stage_name): <p>The name of the stage to delete.</p>
-    /// - On success, responds with [`DeleteStageOutput`](crate::output::DeleteStageOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteStageError>`](crate::error::DeleteStageError)
-    pub fn delete_stage(&self) -> crate::client::fluent_builders::DeleteStage {
-        crate::client::fluent_builders::DeleteStage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisconnectPlayer`](crate::client::fluent_builders::DisconnectPlayer) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`player_id(impl Into<String>)`](crate::client::fluent_builders::DisconnectPlayer::player_id) / [`set_player_id(Option<String>)`](crate::client::fluent_builders::DisconnectPlayer::set_player_id): <p>The unique identifier representing a player.</p>
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::DisconnectPlayer::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::DisconnectPlayer::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::DisconnectPlayer::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::DisconnectPlayer::set_stage_name): <p>The name of the stage.</p>
-    /// - On success, responds with [`DisconnectPlayerOutput`](crate::output::DisconnectPlayerOutput) with field(s):
-    ///   - [`disconnect_successes(Option<Vec<String>>)`](crate::output::DisconnectPlayerOutput::disconnect_successes): <p>The list of the connection ids that were disconnected.</p>
-    ///   - [`disconnect_failures(Option<Vec<String>>)`](crate::output::DisconnectPlayerOutput::disconnect_failures): <p>The list of the connection ids that could not be disconnected.</p>
-    /// - On failure, responds with [`SdkError<DisconnectPlayerError>`](crate::error::DisconnectPlayerError)
-    pub fn disconnect_player(&self) -> crate::client::fluent_builders::DisconnectPlayer {
-        crate::client::fluent_builders::DisconnectPlayer::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExportSnapshot`](crate::client::fluent_builders::ExportSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ExportSnapshot::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ExportSnapshot::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::ExportSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::ExportSnapshot::set_snapshot_id): <p>The identifier of the snapshot to export.</p>
-    /// - On success, responds with [`ExportSnapshotOutput`](crate::output::ExportSnapshotOutput) with field(s):
-    ///   - [`s3_url(Option<String>)`](crate::output::ExportSnapshotOutput::s3_url): <p>The presigned URL for the snapshot data.</p>  <p> This URL will be available for 10 minutes, and can be used to download the snapshot content. If the URL expires, a new one can be requested using the same operation. </p>
-    /// - On failure, responds with [`SdkError<ExportSnapshotError>`](crate::error::ExportSnapshotError)
-    pub fn export_snapshot(&self) -> crate::client::fluent_builders::ExportSnapshot {
-        crate::client::fluent_builders::ExportSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetExtension`](crate::client::fluent_builders::GetExtension) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetExtension::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetExtension::set_namespace): <p>The namespace (qualifier) of the extension.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetExtension::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetExtension::set_name): <p>The name of the extension.</p>
-    /// - On success, responds with [`GetExtensionOutput`](crate::output::GetExtensionOutput) with field(s):
-    ///   - [`extension(Option<ExtensionDetails>)`](crate::output::GetExtensionOutput::extension): <p>Details about the extension.</p>
-    /// - On failure, responds with [`SdkError<GetExtensionError>`](crate::error::GetExtensionError)
-    pub fn get_extension(&self) -> crate::client::fluent_builders::GetExtension {
-        crate::client::fluent_builders::GetExtension::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetExtensionVersion`](crate::client::fluent_builders::GetExtensionVersion) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::GetExtensionVersion::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::GetExtensionVersion::set_namespace): <p>The namespace (qualifier) of the extension.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::GetExtensionVersion::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::GetExtensionVersion::set_name): <p>The name of the extension.</p>
-    ///   - [`extension_version(impl Into<String>)`](crate::client::fluent_builders::GetExtensionVersion::extension_version) / [`set_extension_version(Option<String>)`](crate::client::fluent_builders::GetExtensionVersion::set_extension_version): <p>The version of the extension.</p>
-    /// - On success, responds with [`GetExtensionVersionOutput`](crate::output::GetExtensionVersionOutput) with field(s):
-    ///   - [`extension_version(Option<ExtensionVersionDetails>)`](crate::output::GetExtensionVersionOutput::extension_version): <p>The version of the extension.</p>
-    /// - On failure, responds with [`SdkError<GetExtensionVersionError>`](crate::error::GetExtensionVersionError)
-    pub fn get_extension_version(&self) -> crate::client::fluent_builders::GetExtensionVersion {
-        crate::client::fluent_builders::GetExtensionVersion::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGame`](crate::client::fluent_builders::GetGame) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetGame::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetGame::set_game_name): <p>The name of the game.</p>
-    /// - On success, responds with [`GetGameOutput`](crate::output::GetGameOutput) with field(s):
-    ///   - [`game(Option<GameDetails>)`](crate::output::GetGameOutput::game): <p>The details of the game.</p>
-    /// - On failure, responds with [`SdkError<GetGameError>`](crate::error::GetGameError)
-    pub fn get_game(&self) -> crate::client::fluent_builders::GetGame {
-        crate::client::fluent_builders::GetGame::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGameConfiguration`](crate::client::fluent_builders::GetGameConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetGameConfiguration::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetGameConfiguration::set_game_name): <p>The name of the game.</p>
-    ///   - [`sections(Vec<String>)`](crate::client::fluent_builders::GetGameConfiguration::sections) / [`set_sections(Option<Vec<String>>)`](crate::client::fluent_builders::GetGameConfiguration::set_sections): <p>The list of sections to return.</p>
-    /// - On success, responds with [`GetGameConfigurationOutput`](crate::output::GetGameConfigurationOutput) with field(s):
-    ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::output::GetGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>
-    /// - On failure, responds with [`SdkError<GetGameConfigurationError>`](crate::error::GetGameConfigurationError)
-    pub fn get_game_configuration(&self) -> crate::client::fluent_builders::GetGameConfiguration {
-        crate::client::fluent_builders::GetGameConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGeneratedCodeJob`](crate::client::fluent_builders::GetGeneratedCodeJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::set_snapshot_id): <p>The identifier of the snapshot for the code generation job.</p>
-    ///   - [`job_id(impl Into<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::job_id) / [`set_job_id(Option<String>)`](crate::client::fluent_builders::GetGeneratedCodeJob::set_job_id): <p>The identifier of the code generation job.</p>
-    /// - On success, responds with [`GetGeneratedCodeJobOutput`](crate::output::GetGeneratedCodeJobOutput) with field(s):
-    ///   - [`generated_code_job(Option<GeneratedCodeJobDetails>)`](crate::output::GetGeneratedCodeJobOutput::generated_code_job): <p>Details about the generated code job.</p>
-    /// - On failure, responds with [`SdkError<GetGeneratedCodeJobError>`](crate::error::GetGeneratedCodeJobError)
-    pub fn get_generated_code_job(&self) -> crate::client::fluent_builders::GetGeneratedCodeJob {
-        crate::client::fluent_builders::GetGeneratedCodeJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPlayerConnectionStatus`](crate::client::fluent_builders::GetPlayerConnectionStatus) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`player_id(impl Into<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::player_id) / [`set_player_id(Option<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::set_player_id): <p>The unique identifier representing a player.</p>
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::GetPlayerConnectionStatus::set_stage_name): <p>The name of the stage.</p>
-    /// - On success, responds with [`GetPlayerConnectionStatusOutput`](crate::output::GetPlayerConnectionStatusOutput) with field(s):
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::GetPlayerConnectionStatusOutput::connections): <p>The list of connection ids, one for each connection in use by the player.</p>
-    /// - On failure, responds with [`SdkError<GetPlayerConnectionStatusError>`](crate::error::GetPlayerConnectionStatusError)
-    pub fn get_player_connection_status(
-        &self,
-    ) -> crate::client::fluent_builders::GetPlayerConnectionStatus {
-        crate::client::fluent_builders::GetPlayerConnectionStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSnapshot`](crate::client::fluent_builders::GetSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetSnapshot::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetSnapshot::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::GetSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::GetSnapshot::set_snapshot_id): <p>The identifier of the snapshot.</p>
-    ///   - [`sections(Vec<String>)`](crate::client::fluent_builders::GetSnapshot::sections) / [`set_sections(Option<Vec<String>>)`](crate::client::fluent_builders::GetSnapshot::set_sections): <p>The list of game configuration sections to be described.</p>
-    /// - On success, responds with [`GetSnapshotOutput`](crate::output::GetSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<SnapshotDetails>)`](crate::output::GetSnapshotOutput::snapshot): <p>Properties that provide details of the snapshot.</p>
-    /// - On failure, responds with [`SdkError<GetSnapshotError>`](crate::error::GetSnapshotError)
-    pub fn get_snapshot(&self) -> crate::client::fluent_builders::GetSnapshot {
-        crate::client::fluent_builders::GetSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStage`](crate::client::fluent_builders::GetStage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetStage::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetStage::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::GetStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::GetStage::set_stage_name): <p>The name of the stage.</p>
-    /// - On success, responds with [`GetStageOutput`](crate::output::GetStageOutput) with field(s):
-    ///   - [`stage(Option<StageDetails>)`](crate::output::GetStageOutput::stage): <p>Properties that provide details of the stage.</p>
-    /// - On failure, responds with [`SdkError<GetStageError>`](crate::error::GetStageError)
-    pub fn get_stage(&self) -> crate::client::fluent_builders::GetStage {
-        crate::client::fluent_builders::GetStage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetStageDeployment`](crate::client::fluent_builders::GetStageDeployment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::GetStageDeployment::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::GetStageDeployment::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::GetStageDeployment::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::GetStageDeployment::set_stage_name): <p>The name of the stage.</p>
-    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetStageDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetStageDeployment::set_deployment_id): <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-    /// - On success, responds with [`GetStageDeploymentOutput`](crate::output::GetStageDeploymentOutput) with field(s):
-    ///   - [`stage_deployment(Option<StageDeploymentDetails>)`](crate::output::GetStageDeploymentOutput::stage_deployment): <p>Properties that provide details of the stage deployment.</p>
-    /// - On failure, responds with [`SdkError<GetStageDeploymentError>`](crate::error::GetStageDeploymentError)
-    pub fn get_stage_deployment(&self) -> crate::client::fluent_builders::GetStageDeployment {
-        crate::client::fluent_builders::GetStageDeployment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportGameConfiguration`](crate::client::fluent_builders::ImportGameConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ImportGameConfiguration::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ImportGameConfiguration::set_game_name): <p>The name of the game.</p>
-    ///   - [`import_source(ImportGameConfigurationSource)`](crate::client::fluent_builders::ImportGameConfiguration::import_source) / [`set_import_source(Option<ImportGameConfigurationSource>)`](crate::client::fluent_builders::ImportGameConfiguration::set_import_source): <p>The source used to import configuration sections.</p>
-    /// - On success, responds with [`ImportGameConfigurationOutput`](crate::output::ImportGameConfigurationOutput) with field(s):
-    ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::output::ImportGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>
-    /// - On failure, responds with [`SdkError<ImportGameConfigurationError>`](crate::error::ImportGameConfigurationError)
-    pub fn import_game_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::ImportGameConfiguration {
-        crate::client::fluent_builders::ImportGameConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListExtensions`](crate::client::fluent_builders::ListExtensions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExtensions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExtensions::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExtensions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExtensions::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    /// - On success, responds with [`ListExtensionsOutput`](crate::output::ListExtensionsOutput) with field(s):
-    ///   - [`extensions(Option<Vec<ExtensionDetails>>)`](crate::output::ListExtensionsOutput::extensions): <p>The list of extensions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListExtensionsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListExtensionsError>`](crate::error::ListExtensionsError)
-    pub fn list_extensions(&self) -> crate::client::fluent_builders::ListExtensions {
-        crate::client::fluent_builders::ListExtensions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListExtensionVersions`](crate::client::fluent_builders::ListExtensionVersions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListExtensionVersions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`namespace(impl Into<String>)`](crate::client::fluent_builders::ListExtensionVersions::namespace) / [`set_namespace(Option<String>)`](crate::client::fluent_builders::ListExtensionVersions::set_namespace): <p>The namespace (qualifier) of the extension.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListExtensionVersions::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListExtensionVersions::set_name): <p>The name of the extension.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListExtensionVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListExtensionVersions::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListExtensionVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListExtensionVersions::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    /// - On success, responds with [`ListExtensionVersionsOutput`](crate::output::ListExtensionVersionsOutput) with field(s):
-    ///   - [`extension_versions(Option<Vec<ExtensionVersionDetails>>)`](crate::output::ListExtensionVersionsOutput::extension_versions): <p>The list of extension versions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListExtensionVersionsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListExtensionVersionsError>`](crate::error::ListExtensionVersionsError)
-    pub fn list_extension_versions(&self) -> crate::client::fluent_builders::ListExtensionVersions {
-        crate::client::fluent_builders::ListExtensionVersions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGames`](crate::client::fluent_builders::ListGames) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGames::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGames::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGames::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGames::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGames::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    /// - On success, responds with [`ListGamesOutput`](crate::output::ListGamesOutput) with field(s):
-    ///   - [`games(Option<Vec<GameSummary>>)`](crate::output::ListGamesOutput::games): <p>The list of games.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGamesOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListGamesError>`](crate::error::ListGamesError)
-    pub fn list_games(&self) -> crate::client::fluent_builders::ListGames {
-        crate::client::fluent_builders::ListGames::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGeneratedCodeJobs`](crate::client::fluent_builders::ListGeneratedCodeJobs) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGeneratedCodeJobs::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::set_snapshot_id): <p>The identifier of the snapshot.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGeneratedCodeJobs::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGeneratedCodeJobs::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    /// - On success, responds with [`ListGeneratedCodeJobsOutput`](crate::output::ListGeneratedCodeJobsOutput) with field(s):
-    ///   - [`generated_code_jobs(Option<Vec<GeneratedCodeJobDetails>>)`](crate::output::ListGeneratedCodeJobsOutput::generated_code_jobs): <p>The list of generated code jobs.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGeneratedCodeJobsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListGeneratedCodeJobsError>`](crate::error::ListGeneratedCodeJobsError)
-    pub fn list_generated_code_jobs(
-        &self,
-    ) -> crate::client::fluent_builders::ListGeneratedCodeJobs {
-        crate::client::fluent_builders::ListGeneratedCodeJobs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSnapshots`](crate::client::fluent_builders::ListSnapshots) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSnapshots::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_game_name): <p>The name of the game.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSnapshots::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSnapshots::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    /// - On success, responds with [`ListSnapshotsOutput`](crate::output::ListSnapshotsOutput) with field(s):
-    ///   - [`snapshots(Option<Vec<SnapshotSummary>>)`](crate::output::ListSnapshotsOutput::snapshots): <p> A list of snapshot summaries. You can use the returned snapshot IDs in the <code>UpdateSnapshot</code> and <code>GetSnapshot</code> operations. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSnapshotsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListSnapshotsError>`](crate::error::ListSnapshotsError)
-    pub fn list_snapshots(&self) -> crate::client::fluent_builders::ListSnapshots {
-        crate::client::fluent_builders::ListSnapshots::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStageDeployments`](crate::client::fluent_builders::ListStageDeployments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStageDeployments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ListStageDeployments::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ListStageDeployments::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::ListStageDeployments::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::ListStageDeployments::set_stage_name): <p>The name of the stage.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStageDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStageDeployments::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStageDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStageDeployments::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    /// - On success, responds with [`ListStageDeploymentsOutput`](crate::output::ListStageDeploymentsOutput) with field(s):
-    ///   - [`stage_deployments(Option<Vec<StageDeploymentSummary>>)`](crate::output::ListStageDeploymentsOutput::stage_deployments): <p> A list of stage deployment summaries. You can use the deployment IDs in the <code>UpdateStageDeployment</code> and <code>GetStageDeployment</code> actions. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListStageDeploymentsOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListStageDeploymentsError>`](crate::error::ListStageDeploymentsError)
-    pub fn list_stage_deployments(&self) -> crate::client::fluent_builders::ListStageDeployments {
-        crate::client::fluent_builders::ListStageDeployments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListStages`](crate::client::fluent_builders::ListStages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListStages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::ListStages::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::ListStages::set_game_name): <p>The name of the game.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListStages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListStages::set_max_results): <p>The maximum number of results to return.</p>  <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListStages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListStages::set_next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    /// - On success, responds with [`ListStagesOutput`](crate::output::ListStagesOutput) with field(s):
-    ///   - [`stages(Option<Vec<StageSummary>>)`](crate::output::ListStagesOutput::stages): <p> A list of stage summaries. You can use the stage names in the <code>UpdateStage</code> and <code>GetStage</code> actions. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListStagesOutput::next_token): <p>The token that indicates the start of the next sequential page of results.</p>  <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    /// - On failure, responds with [`SdkError<ListStagesError>`](crate::error::ListStagesError)
-    pub fn list_stages(&self) -> crate::client::fluent_builders::ListStages {
-        crate::client::fluent_builders::ListStages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the GameSparks resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartGeneratedCodeJob`](crate::client::fluent_builders::StartGeneratedCodeJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::StartGeneratedCodeJob::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::StartGeneratedCodeJob::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::StartGeneratedCodeJob::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::StartGeneratedCodeJob::set_snapshot_id): <p>The identifier of the snapshot for which to generate code.</p>
-    ///   - [`generator(Generator)`](crate::client::fluent_builders::StartGeneratedCodeJob::generator) / [`set_generator(Option<Generator>)`](crate::client::fluent_builders::StartGeneratedCodeJob::set_generator): <p>Properties of the generator to use for the job.</p>
-    /// - On success, responds with [`StartGeneratedCodeJobOutput`](crate::output::StartGeneratedCodeJobOutput) with field(s):
-    ///   - [`generated_code_job_id(Option<String>)`](crate::output::StartGeneratedCodeJobOutput::generated_code_job_id): <p> The identifier of the code generation job. You can use this identifier in the <code>GetGeneratedCodeJob</code> operation. </p>
-    /// - On failure, responds with [`SdkError<StartGeneratedCodeJobError>`](crate::error::StartGeneratedCodeJobError)
-    pub fn start_generated_code_job(
-        &self,
-    ) -> crate::client::fluent_builders::StartGeneratedCodeJob {
-        crate::client::fluent_builders::StartGeneratedCodeJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartStageDeployment`](crate::client::fluent_builders::StartStageDeployment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::StartStageDeployment::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::StartStageDeployment::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::StartStageDeployment::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::StartStageDeployment::set_stage_name): <p>The name of the stage to deploy the snapshot onto.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::StartStageDeployment::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::StartStageDeployment::set_snapshot_id): <p>The identifier of the snapshot to deploy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::StartStageDeployment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::StartStageDeployment::set_client_token): <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    /// - On success, responds with [`StartStageDeploymentOutput`](crate::output::StartStageDeploymentOutput) with field(s):
-    ///   - [`stage_deployment(Option<StageDeploymentDetails>)`](crate::output::StartStageDeploymentOutput::stage_deployment): <p>Properties that describe the stage deployment.</p>
-    /// - On failure, responds with [`SdkError<StartStageDeploymentError>`](crate::error::StartStageDeploymentError)
-    pub fn start_stage_deployment(&self) -> crate::client::fluent_builders::StartStageDeployment {
-        crate::client::fluent_builders::StartStageDeployment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to add the tags to.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateGame`](crate::client::fluent_builders::UpdateGame) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGame::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::UpdateGame::set_game_name): <p>The name of the game.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGame::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGame::set_description): <p>The description of the game.</p>
-    /// - On success, responds with [`UpdateGameOutput`](crate::output::UpdateGameOutput) with field(s):
-    ///   - [`game(Option<GameDetails>)`](crate::output::UpdateGameOutput::game): <p>The details of the game.</p>
-    /// - On failure, responds with [`SdkError<UpdateGameError>`](crate::error::UpdateGameError)
-    pub fn update_game(&self) -> crate::client::fluent_builders::UpdateGame {
-        crate::client::fluent_builders::UpdateGame::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateGameConfiguration`](crate::client::fluent_builders::UpdateGameConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGameConfiguration::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::UpdateGameConfiguration::set_game_name): <p>The name of the game.</p>
-    ///   - [`modifications(Vec<SectionModification>)`](crate::client::fluent_builders::UpdateGameConfiguration::modifications) / [`set_modifications(Option<Vec<SectionModification>>)`](crate::client::fluent_builders::UpdateGameConfiguration::set_modifications): <p>The list of modifications to make.</p>
-    /// - On success, responds with [`UpdateGameConfigurationOutput`](crate::output::UpdateGameConfigurationOutput) with field(s):
-    ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::output::UpdateGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>
-    /// - On failure, responds with [`SdkError<UpdateGameConfigurationError>`](crate::error::UpdateGameConfigurationError)
-    pub fn update_game_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateGameConfiguration {
-        crate::client::fluent_builders::UpdateGameConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSnapshot`](crate::client::fluent_builders::UpdateSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_game_name): <p>The name of the game.</p>
-    ///   - [`snapshot_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_snapshot_id): <p>The identifier of the snapshot.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateSnapshot::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateSnapshot::set_description): <p>The description of the snapshot.</p>
-    /// - On success, responds with [`UpdateSnapshotOutput`](crate::output::UpdateSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<SnapshotDetails>)`](crate::output::UpdateSnapshotOutput::snapshot): <p>Properties that provide details of the updated snapshot.</p>
-    /// - On failure, responds with [`SdkError<UpdateSnapshotError>`](crate::error::UpdateSnapshotError)
-    pub fn update_snapshot(&self) -> crate::client::fluent_builders::UpdateSnapshot {
-        crate::client::fluent_builders::UpdateSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateStage`](crate::client::fluent_builders::UpdateStage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::game_name) / [`set_game_name(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_game_name): <p>The name of the game.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::stage_name) / [`set_stage_name(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_stage_name): <p>The name of the stage.</p>
-    ///   - [`role(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::role) / [`set_role(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_role): <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateStage::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateStage::set_description): <p>The description of the stage.</p>
-    /// - On success, responds with [`UpdateStageOutput`](crate::output::UpdateStageOutput) with field(s):
-    ///   - [`stage(Option<StageDetails>)`](crate::output::UpdateStageOutput::stage): <p>Properties that provide details of the updated stage.</p>
-    /// - On failure, responds with [`SdkError<UpdateStageError>`](crate::error::UpdateStageError)
-    pub fn update_stage(&self) -> crate::client::fluent_builders::UpdateStage {
-        crate::client::fluent_builders::UpdateStage::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -587,9 +174,75 @@ impl Client {
     }
 }
 
+mod create_game;
+
+mod create_snapshot;
+
+mod create_stage;
+
+mod delete_game;
+
+mod delete_stage;
+
+mod disconnect_player;
+
+mod export_snapshot;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_extension;
+
+mod get_extension_version;
+
+mod get_game;
+
+mod get_game_configuration;
+
+mod get_generated_code_job;
+
+mod get_player_connection_status;
+
+mod get_snapshot;
+
+mod get_stage;
+
+mod get_stage_deployment;
+
+mod import_game_configuration;
+
+mod list_extension_versions;
+
+mod list_extensions;
+
+mod list_games;
+
+mod list_generated_code_jobs;
+
+mod list_snapshots;
+
+mod list_stage_deployments;
+
+mod list_stages;
+
+mod list_tags_for_resource;
+
+mod start_generated_code_job;
+
+mod start_stage_deployment;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_game;
+
+mod update_game_configuration;
+
+mod update_snapshot;
+
+mod update_stage;

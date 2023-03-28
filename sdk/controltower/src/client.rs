@@ -89,54 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`DisableControl`](crate::client::fluent_builders::DisableControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`control_identifier(impl Into<String>)`](crate::client::fluent_builders::DisableControl::control_identifier) / [`set_control_identifier(Option<String>)`](crate::client::fluent_builders::DisableControl::set_control_identifier): <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    ///   - [`target_identifier(impl Into<String>)`](crate::client::fluent_builders::DisableControl::target_identifier) / [`set_target_identifier(Option<String>)`](crate::client::fluent_builders::DisableControl::set_target_identifier): <p>The ARN of the organizational unit.</p>
-    /// - On success, responds with [`DisableControlOutput`](crate::output::DisableControlOutput) with field(s):
-    ///   - [`operation_identifier(Option<String>)`](crate::output::DisableControlOutput::operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    /// - On failure, responds with [`SdkError<DisableControlError>`](crate::error::DisableControlError)
-    pub fn disable_control(&self) -> crate::client::fluent_builders::DisableControl {
-        crate::client::fluent_builders::DisableControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableControl`](crate::client::fluent_builders::EnableControl) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`control_identifier(impl Into<String>)`](crate::client::fluent_builders::EnableControl::control_identifier) / [`set_control_identifier(Option<String>)`](crate::client::fluent_builders::EnableControl::set_control_identifier): <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.</p>
-    ///   - [`target_identifier(impl Into<String>)`](crate::client::fluent_builders::EnableControl::target_identifier) / [`set_target_identifier(Option<String>)`](crate::client::fluent_builders::EnableControl::set_target_identifier): <p>The ARN of the organizational unit.</p>
-    /// - On success, responds with [`EnableControlOutput`](crate::output::EnableControlOutput) with field(s):
-    ///   - [`operation_identifier(Option<String>)`](crate::output::EnableControlOutput::operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    /// - On failure, responds with [`SdkError<EnableControlError>`](crate::error::EnableControlError)
-    pub fn enable_control(&self) -> crate::client::fluent_builders::EnableControl {
-        crate::client::fluent_builders::EnableControl::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetControlOperation`](crate::client::fluent_builders::GetControlOperation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`operation_identifier(impl Into<String>)`](crate::client::fluent_builders::GetControlOperation::operation_identifier) / [`set_operation_identifier(Option<String>)`](crate::client::fluent_builders::GetControlOperation::set_operation_identifier): <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    /// - On success, responds with [`GetControlOperationOutput`](crate::output::GetControlOperationOutput) with field(s):
-    ///   - [`control_operation(Option<ControlOperation>)`](crate::output::GetControlOperationOutput::control_operation): <p></p>
-    /// - On failure, responds with [`SdkError<GetControlOperationError>`](crate::error::GetControlOperationError)
-    pub fn get_control_operation(&self) -> crate::client::fluent_builders::GetControlOperation {
-        crate::client::fluent_builders::GetControlOperation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEnabledControls`](crate::client::fluent_builders::ListEnabledControls) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnabledControls::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`target_identifier(impl Into<String>)`](crate::client::fluent_builders::ListEnabledControls::target_identifier) / [`set_target_identifier(Option<String>)`](crate::client::fluent_builders::ListEnabledControls::set_target_identifier): <p>The ARN of the organizational unit.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnabledControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnabledControls::set_next_token): <p>The token to continue the list from a previous API call with the same parameters.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnabledControls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnabledControls::set_max_results): <p>How many results to return per API call.</p>
-    /// - On success, responds with [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput) with field(s):
-    ///   - [`enabled_controls(Option<Vec<EnabledControlSummary>>)`](crate::output::ListEnabledControlsOutput::enabled_controls): <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEnabledControlsOutput::next_token): <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
-    /// - On failure, responds with [`SdkError<ListEnabledControlsError>`](crate::error::ListEnabledControlsError)
-    pub fn list_enabled_controls(&self) -> crate::client::fluent_builders::ListEnabledControls {
-        crate::client::fluent_builders::ListEnabledControls::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -222,9 +174,17 @@ impl Client {
     }
 }
 
+mod disable_control;
+
+mod enable_control;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_control_operation;
+
+mod list_enabled_controls;

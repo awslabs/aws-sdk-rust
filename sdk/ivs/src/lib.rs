@@ -400,19 +400,13 @@ pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
 /// Paginators for the service
 pub mod paginator;
 
-mod json_deser;
-
-mod json_ser;
-
 /// Generated accessors for nested fields
 mod lens;
+
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;

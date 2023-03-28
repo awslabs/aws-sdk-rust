@@ -90,7 +90,8 @@ impl ListAcceleratorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_accelerators_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_accelerators_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListByoipCidrsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_byoip_cidrs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_byoip_cidrs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,7 @@ impl ListCustomRoutingAcceleratorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_accelerators_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_routing_accelerators_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -436,7 +438,7 @@ impl ListCustomRoutingEndpointGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_endpoint_groups_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_routing_endpoint_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -554,7 +556,7 @@ impl ListCustomRoutingListenersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_listeners_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_routing_listeners_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -672,7 +674,7 @@ impl ListCustomRoutingPortMappingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_port_mappings_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_routing_port_mappings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -794,7 +796,7 @@ impl ListCustomRoutingPortMappingsByDestinationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_routing_port_mappings_by_destination_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_routing_port_mappings_by_destination_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -912,7 +914,8 @@ impl ListEndpointGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_endpoint_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_endpoint_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1030,7 +1033,8 @@ impl ListListenersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_listeners_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_listeners_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1077,7 +1081,7 @@ impl ListAcceleratorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_accelerators_output_accelerators(page)
+            crate::lens::lens_list_accelerators_output_accelerators(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1104,7 +1108,7 @@ impl ListByoipCidrsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_byoip_cidrs_output_byoip_cidrs(page)
+            crate::lens::lens_list_byoip_cidrs_output_byoip_cidrs(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1130,7 +1134,11 @@ impl ListCustomRoutingAcceleratorsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingAcceleratorsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_accelerators_output_accelerators(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_custom_routing_accelerators_output_accelerators(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1154,11 +1162,9 @@ impl ListCustomRoutingListenersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_custom_routing_listeners_output_listeners(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_custom_routing_listeners_output_listeners(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1182,7 +1188,11 @@ impl ListCustomRoutingPortMappingsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCustomRoutingPortMappingsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_port_mappings_output_port_mappings(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_custom_routing_port_mappings_output_port_mappings(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1209,7 +1219,7 @@ impl ListCustomRoutingPortMappingsByDestinationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_routing_port_mappings_by_destination_output_destination_port_mappings(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_custom_routing_port_mappings_by_destination_output_destination_port_mappings(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1233,11 +1243,9 @@ impl ListEndpointGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_endpoint_groups_output_endpoint_groups(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_endpoint_groups_output_endpoint_groups(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1262,7 +1270,7 @@ impl ListListenersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_listeners_output_listeners(page)
+            crate::lens::lens_list_listeners_output_listeners(page)
                 .unwrap_or_default()
                 .into_iter()
         })

@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScalingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_scaling_plan_error(response)
+            crate::protocol_serde::shape_create_scaling_plan::de_create_scaling_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_scaling_plan_response(response)
+            crate::protocol_serde::shape_create_scaling_plan::de_create_scaling_plan_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +66,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_scaling_plan_error(response)
+            crate::protocol_serde::shape_delete_scaling_plan::de_delete_scaling_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_scaling_plan_response(response)
+            crate::protocol_serde::shape_delete_scaling_plan::de_delete_scaling_plan_http_response(
+                response,
+            )
         }
     }
 }
@@ -97,9 +105,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlanResou
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_plan_resources_error(response)
+            crate::protocol_serde::shape_describe_scaling_plan_resources::de_describe_scaling_plan_resources_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_plan_resources_response(response)
+            crate::protocol_serde::shape_describe_scaling_plan_resources::de_describe_scaling_plan_resources_http_response(response)
         }
     }
 }
@@ -132,9 +140,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScalingPlans {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_scaling_plans_error(response)
+            crate::protocol_serde::shape_describe_scaling_plans::de_describe_scaling_plans_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_scaling_plans_response(response)
+            crate::protocol_serde::shape_describe_scaling_plans::de_describe_scaling_plans_http_response(response)
         }
     }
 }
@@ -167,9 +175,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScalingPlanResourceFo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_scaling_plan_resource_forecast_data_error(response)
+            crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data_http_error(response)
         } else {
-            crate::operation_deser::parse_get_scaling_plan_resource_forecast_data_response(response)
+            crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data_http_response(response)
         }
     }
 }
@@ -202,9 +210,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateScalingPlan {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_scaling_plan_error(response)
+            crate::protocol_serde::shape_update_scaling_plan::de_update_scaling_plan_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_scaling_plan_response(response)
+            crate::protocol_serde::shape_update_scaling_plan::de_update_scaling_plan_http_response(
+                response,
+            )
         }
     }
 }

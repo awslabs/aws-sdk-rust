@@ -89,197 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AddTagsToCertificate`](crate::client::fluent_builders::AddTagsToCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::AddTagsToCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::AddTagsToCertificate::set_certificate_arn): <p>String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of the form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::AddTagsToCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::AddTagsToCertificate::set_tags): <p>The key-value pair that defines the tag. The tag value is optional.</p>
-    /// - On success, responds with [`AddTagsToCertificateOutput`](crate::output::AddTagsToCertificateOutput)
-
-    /// - On failure, responds with [`SdkError<AddTagsToCertificateError>`](crate::error::AddTagsToCertificateError)
-    pub fn add_tags_to_certificate(&self) -> crate::client::fluent_builders::AddTagsToCertificate {
-        crate::client::fluent_builders::AddTagsToCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCertificate`](crate::client::fluent_builders::DeleteCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::DeleteCertificate::set_certificate_arn): <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    /// - On success, responds with [`DeleteCertificateOutput`](crate::output::DeleteCertificateOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCertificateError>`](crate::error::DeleteCertificateError)
-    pub fn delete_certificate(&self) -> crate::client::fluent_builders::DeleteCertificate {
-        crate::client::fluent_builders::DeleteCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCertificate`](crate::client::fluent_builders::DescribeCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::DescribeCertificate::set_certificate_arn): <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    /// - On success, responds with [`DescribeCertificateOutput`](crate::output::DescribeCertificateOutput) with field(s):
-    ///   - [`certificate(Option<CertificateDetail>)`](crate::output::DescribeCertificateOutput::certificate): <p>Metadata about an ACM certificate.</p>
-    /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::error::DescribeCertificateError)
-    pub fn describe_certificate(&self) -> crate::client::fluent_builders::DescribeCertificate {
-        crate::client::fluent_builders::DescribeCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExportCertificate`](crate::client::fluent_builders::ExportCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ExportCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ExportCertificate::set_certificate_arn): <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    ///   - [`passphrase(Blob)`](crate::client::fluent_builders::ExportCertificate::passphrase) / [`set_passphrase(Option<Blob>)`](crate::client::fluent_builders::ExportCertificate::set_passphrase): <p>Passphrase to associate with the encrypted exported private key. </p> <note>   <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>  </note>  <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>  <p> <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
-    /// - On success, responds with [`ExportCertificateOutput`](crate::output::ExportCertificateOutput) with field(s):
-    ///   - [`certificate(Option<String>)`](crate::output::ExportCertificateOutput::certificate): <p>The base64 PEM-encoded certificate.</p>
-    ///   - [`certificate_chain(Option<String>)`](crate::output::ExportCertificateOutput::certificate_chain): <p>The base64 PEM-encoded certificate chain. This does not include the certificate that you are exporting.</p>
-    ///   - [`private_key(Option<String>)`](crate::output::ExportCertificateOutput::private_key): <p>The encrypted private key associated with the public key in the certificate. The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
-    /// - On failure, responds with [`SdkError<ExportCertificateError>`](crate::error::ExportCertificateError)
-    pub fn export_certificate(&self) -> crate::client::fluent_builders::ExportCertificate {
-        crate::client::fluent_builders::ExportCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccountConfiguration`](crate::client::fluent_builders::GetAccountConfiguration) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccountConfiguration::send) it.
-
-    /// - On success, responds with [`GetAccountConfigurationOutput`](crate::output::GetAccountConfigurationOutput) with field(s):
-    ///   - [`expiry_events(Option<ExpiryEventsConfiguration>)`](crate::output::GetAccountConfigurationOutput::expiry_events): <p>Expiration events configuration options associated with the Amazon Web Services account.</p>
-    /// - On failure, responds with [`SdkError<GetAccountConfigurationError>`](crate::error::GetAccountConfigurationError)
-    pub fn get_account_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetAccountConfiguration {
-        crate::client::fluent_builders::GetAccountConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCertificate`](crate::client::fluent_builders::GetCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::GetCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::GetCertificate::set_certificate_arn): <p>String that contains a certificate ARN in the following format:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    /// - On success, responds with [`GetCertificateOutput`](crate::output::GetCertificateOutput) with field(s):
-    ///   - [`certificate(Option<String>)`](crate::output::GetCertificateOutput::certificate): <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
-    ///   - [`certificate_chain(Option<String>)`](crate::output::GetCertificateOutput::certificate_chain): <p>Certificates forming the requested certificate's chain of trust. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. </p>
-    /// - On failure, responds with [`SdkError<GetCertificateError>`](crate::error::GetCertificateError)
-    pub fn get_certificate(&self) -> crate::client::fluent_builders::GetCertificate {
-        crate::client::fluent_builders::GetCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ImportCertificate`](crate::client::fluent_builders::ImportCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ImportCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ImportCertificate::set_certificate_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    ///   - [`certificate(Blob)`](crate::client::fluent_builders::ImportCertificate::certificate) / [`set_certificate(Option<Blob>)`](crate::client::fluent_builders::ImportCertificate::set_certificate): <p>The certificate to import.</p>
-    ///   - [`private_key(Blob)`](crate::client::fluent_builders::ImportCertificate::private_key) / [`set_private_key(Option<Blob>)`](crate::client::fluent_builders::ImportCertificate::set_private_key): <p>The private key that matches the public key in the certificate.</p>
-    ///   - [`certificate_chain(Blob)`](crate::client::fluent_builders::ImportCertificate::certificate_chain) / [`set_certificate_chain(Option<Blob>)`](crate::client::fluent_builders::ImportCertificate::set_certificate_chain): <p>The PEM encoded certificate chain.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::ImportCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::ImportCertificate::set_tags): <p>One or more resource tags to associate with the imported certificate. </p>  <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    /// - On success, responds with [`ImportCertificateOutput`](crate::output::ImportCertificateOutput) with field(s):
-    ///   - [`certificate_arn(Option<String>)`](crate::output::ImportCertificateOutput::certificate_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported certificate.</p>
-    /// - On failure, responds with [`SdkError<ImportCertificateError>`](crate::error::ImportCertificateError)
-    pub fn import_certificate(&self) -> crate::client::fluent_builders::ImportCertificate {
-        crate::client::fluent_builders::ImportCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCertificates`](crate::client::fluent_builders::ListCertificates) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCertificates::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_statuses(Vec<CertificateStatus>)`](crate::client::fluent_builders::ListCertificates::certificate_statuses) / [`set_certificate_statuses(Option<Vec<CertificateStatus>>)`](crate::client::fluent_builders::ListCertificates::set_certificate_statuses): <p>Filter the certificate list by status value.</p>
-    ///   - [`includes(Filters)`](crate::client::fluent_builders::ListCertificates::includes) / [`set_includes(Option<Filters>)`](crate::client::fluent_builders::ListCertificates::set_includes): <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCertificates::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCertificates::set_next_token): <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
-    ///   - [`max_items(i32)`](crate::client::fluent_builders::ListCertificates::max_items) / [`set_max_items(Option<i32>)`](crate::client::fluent_builders::ListCertificates::set_max_items): <p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
-    ///   - [`sort_by(SortBy)`](crate::client::fluent_builders::ListCertificates::sort_by) / [`set_sort_by(Option<SortBy>)`](crate::client::fluent_builders::ListCertificates::set_sort_by): <p>Specifies the field to sort results by. If you specify <code>SortBy</code>, you must also specify <code>SortOrder</code>.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListCertificates::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListCertificates::set_sort_order): <p>Specifies the order of sorted results. If you specify <code>SortOrder</code>, you must also specify <code>SortBy</code>.</p>
-    /// - On success, responds with [`ListCertificatesOutput`](crate::output::ListCertificatesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListCertificatesOutput::next_token): <p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>
-    ///   - [`certificate_summary_list(Option<Vec<CertificateSummary>>)`](crate::output::ListCertificatesOutput::certificate_summary_list): <p>A list of ACM certificates.</p>
-    /// - On failure, responds with [`SdkError<ListCertificatesError>`](crate::error::ListCertificatesError)
-    pub fn list_certificates(&self) -> crate::client::fluent_builders::ListCertificates {
-        crate::client::fluent_builders::ListCertificates::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForCertificate`](crate::client::fluent_builders::ListTagsForCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForCertificate::set_certificate_arn): <p>String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the following form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    /// - On success, responds with [`ListTagsForCertificateOutput`](crate::output::ListTagsForCertificateOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForCertificateOutput::tags): <p>The key-value pairs that define the applied tags.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForCertificateError>`](crate::error::ListTagsForCertificateError)
-    pub fn list_tags_for_certificate(
-        &self,
-    ) -> crate::client::fluent_builders::ListTagsForCertificate {
-        crate::client::fluent_builders::ListTagsForCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAccountConfiguration`](crate::client::fluent_builders::PutAccountConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`expiry_events(ExpiryEventsConfiguration)`](crate::client::fluent_builders::PutAccountConfiguration::expiry_events) / [`set_expiry_events(Option<ExpiryEventsConfiguration>)`](crate::client::fluent_builders::PutAccountConfiguration::set_expiry_events): <p>Specifies expiration events associated with an account.</p>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::PutAccountConfiguration::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::PutAccountConfiguration::set_idempotency_token): <p>Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with the same unexpired idempotency token, ACM treats it as the same request and returns the original result. If you change the idempotency token for each call, ACM treats each call as a new request.</p>
-    /// - On success, responds with [`PutAccountConfigurationOutput`](crate::output::PutAccountConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<PutAccountConfigurationError>`](crate::error::PutAccountConfigurationError)
-    pub fn put_account_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutAccountConfiguration {
-        crate::client::fluent_builders::PutAccountConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RemoveTagsFromCertificate`](crate::client::fluent_builders::RemoveTagsFromCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::RemoveTagsFromCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::RemoveTagsFromCertificate::set_certificate_arn): <p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RemoveTagsFromCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RemoveTagsFromCertificate::set_tags): <p>The key-value pair that defines the tag to remove.</p>
-    /// - On success, responds with [`RemoveTagsFromCertificateOutput`](crate::output::RemoveTagsFromCertificateOutput)
-
-    /// - On failure, responds with [`SdkError<RemoveTagsFromCertificateError>`](crate::error::RemoveTagsFromCertificateError)
-    pub fn remove_tags_from_certificate(
-        &self,
-    ) -> crate::client::fluent_builders::RemoveTagsFromCertificate {
-        crate::client::fluent_builders::RemoveTagsFromCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RenewCertificate`](crate::client::fluent_builders::RenewCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::RenewCertificate::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::RenewCertificate::set_certificate_arn): <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the form:</p>  <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>  <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    /// - On success, responds with [`RenewCertificateOutput`](crate::output::RenewCertificateOutput)
-
-    /// - On failure, responds with [`SdkError<RenewCertificateError>`](crate::error::RenewCertificateError)
-    pub fn renew_certificate(&self) -> crate::client::fluent_builders::RenewCertificate {
-        crate::client::fluent_builders::RenewCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RequestCertificate`](crate::client::fluent_builders::RequestCertificate) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_domain_name): <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p>  <p>In compliance with <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of the domain name (technically, the Common Name) that you provide cannot exceed 64 octets (characters), including periods. To add a longer domain name, specify it in the Subject Alternative Name field, which supports names up to 253 octets in length. </p>
-    ///   - [`validation_method(ValidationMethod)`](crate::client::fluent_builders::RequestCertificate::validation_method) / [`set_validation_method(Option<ValidationMethod>)`](crate::client::fluent_builders::RequestCertificate::set_validation_method): <p>The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We recommend that you use DNS validation. </p>
-    ///   - [`subject_alternative_names(Vec<String>)`](crate::client::fluent_builders::RequestCertificate::subject_alternative_names) / [`set_subject_alternative_names(Option<Vec<String>>)`](crate::client::fluent_builders::RequestCertificate::set_subject_alternative_names): <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>  <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p>  <ul>   <li> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p> </li>   <li> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.</p> </li>   <li> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p> </li>  </ul>
-    ///   - [`idempotency_token(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::idempotency_token) / [`set_idempotency_token(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_idempotency_token): <p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>
-    ///   - [`domain_validation_options(Vec<DomainValidationOption>)`](crate::client::fluent_builders::RequestCertificate::domain_validation_options) / [`set_domain_validation_options(Option<Vec<DomainValidationOption>>)`](crate::client::fluent_builders::RequestCertificate::set_domain_validation_options): <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
-    ///   - [`options(CertificateOptions)`](crate::client::fluent_builders::RequestCertificate::options) / [`set_options(Option<CertificateOptions>)`](crate::client::fluent_builders::RequestCertificate::set_options): <p>Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
-    ///   - [`certificate_authority_arn(impl Into<String>)`](crate::client::fluent_builders::RequestCertificate::certificate_authority_arn) / [`set_certificate_authority_arn(Option<String>)`](crate::client::fluent_builders::RequestCertificate::set_certificate_authority_arn): <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form: </p>  <p> <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::RequestCertificate::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::RequestCertificate::set_tags): <p>One or more resource tags to associate with the certificate.</p>
-    ///   - [`key_algorithm(KeyAlgorithm)`](crate::client::fluent_builders::RequestCertificate::key_algorithm) / [`set_key_algorithm(Option<KeyAlgorithm>)`](crate::client::fluent_builders::RequestCertificate::set_key_algorithm): <p>Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your certificate.</p>  <p>Default: RSA_2048</p>
-    /// - On success, responds with [`RequestCertificateOutput`](crate::output::RequestCertificateOutput) with field(s):
-    ///   - [`certificate_arn(Option<String>)`](crate::output::RequestCertificateOutput::certificate_arn): <p>String that contains the ARN of the issued certificate. This must be of the form:</p>  <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    /// - On failure, responds with [`SdkError<RequestCertificateError>`](crate::error::RequestCertificateError)
-    pub fn request_certificate(&self) -> crate::client::fluent_builders::RequestCertificate {
-        crate::client::fluent_builders::RequestCertificate::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ResendValidationEmail`](crate::client::fluent_builders::ResendValidationEmail) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::ResendValidationEmail::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::ResendValidationEmail::set_certificate_arn): <p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <code>RequestCertificate</code> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request. The ARN must be of the form: </p>  <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::ResendValidationEmail::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::ResendValidationEmail::set_domain): <p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>
-    ///   - [`validation_domain(impl Into<String>)`](crate::client::fluent_builders::ResendValidationEmail::validation_domain) / [`set_validation_domain(Option<String>)`](crate::client::fluent_builders::ResendValidationEmail::set_validation_domain): <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>  <ul>   <li> <p>admin@subdomain.example.com</p> </li>   <li> <p>administrator@subdomain.example.com</p> </li>   <li> <p>hostmaster@subdomain.example.com</p> </li>   <li> <p>postmaster@subdomain.example.com</p> </li>   <li> <p>webmaster@subdomain.example.com</p> </li>  </ul>
-    /// - On success, responds with [`ResendValidationEmailOutput`](crate::output::ResendValidationEmailOutput)
-
-    /// - On failure, responds with [`SdkError<ResendValidationEmailError>`](crate::error::ResendValidationEmailError)
-    pub fn resend_validation_email(&self) -> crate::client::fluent_builders::ResendValidationEmail {
-        crate::client::fluent_builders::ResendValidationEmail::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCertificateOptions`](crate::client::fluent_builders::UpdateCertificateOptions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`certificate_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCertificateOptions::certificate_arn) / [`set_certificate_arn(Option<String>)`](crate::client::fluent_builders::UpdateCertificateOptions::set_certificate_arn): <p>ARN of the requested certificate to update. This must be of the form:</p>  <p> <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>
-    ///   - [`options(CertificateOptions)`](crate::client::fluent_builders::UpdateCertificateOptions::options) / [`set_options(Option<CertificateOptions>)`](crate::client::fluent_builders::UpdateCertificateOptions::set_options): <p>Use to update the options for your certificate. Currently, you can specify whether to add your certificate to a transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. </p>
-    /// - On success, responds with [`UpdateCertificateOptionsOutput`](crate::output::UpdateCertificateOptionsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateCertificateOptionsError>`](crate::error::UpdateCertificateOptionsError)
-    pub fn update_certificate_options(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateCertificateOptions {
-        crate::client::fluent_builders::UpdateCertificateOptions::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -365,9 +174,39 @@ impl Client {
     }
 }
 
+mod add_tags_to_certificate;
+
+mod delete_certificate;
+
+mod describe_certificate;
+
+mod export_certificate;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_account_configuration;
+
+mod get_certificate;
+
+mod import_certificate;
+
+mod list_certificates;
+
+mod list_tags_for_certificate;
+
+mod put_account_configuration;
+
+mod remove_tags_from_certificate;
+
+mod renew_certificate;
+
+mod request_certificate;
+
+mod resend_validation_email;
+
+mod update_certificate_options;

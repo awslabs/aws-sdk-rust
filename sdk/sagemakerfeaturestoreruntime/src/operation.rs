@@ -25,9 +25,11 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRecord {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_get_record_error(response)
+            crate::protocol_serde::shape_batch_get_record::de_batch_get_record_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_get_record_response(response)
+            crate::protocol_serde::shape_batch_get_record::de_batch_get_record_http_response(
+                response,
+            )
         }
     }
 }
@@ -58,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecord {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_record_error(response)
+            crate::protocol_serde::shape_delete_record::de_delete_record_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_record_response(response)
+            crate::protocol_serde::shape_delete_record::de_delete_record_http_response(response)
         }
     }
 }
@@ -90,9 +92,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecord {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_record_error(response)
+            crate::protocol_serde::shape_get_record::de_get_record_http_error(response)
         } else {
-            crate::operation_deser::parse_get_record_response(response)
+            crate::protocol_serde::shape_get_record::de_get_record_http_response(response)
         }
     }
 }
@@ -122,9 +124,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_record_error(response)
+            crate::protocol_serde::shape_put_record::de_put_record_http_error(response)
         } else {
-            crate::operation_deser::parse_put_record_response(response)
+            crate::protocol_serde::shape_put_record::de_put_record_http_response(response)
         }
     }
 }

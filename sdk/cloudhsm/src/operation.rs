@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_to_resource_error(response)
+            crate::protocol_serde::shape_add_tags_to_resource::de_add_tags_to_resource_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_add_tags_to_resource_response(response)
+            crate::protocol_serde::shape_add_tags_to_resource::de_add_tags_to_resource_http_response(
+                response,
+            )
         }
     }
 }
@@ -60,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHapg {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_hapg_error(response)
+            crate::protocol_serde::shape_create_hapg::de_create_hapg_http_error(response)
         } else {
-            crate::operation_deser::parse_create_hapg_response(response)
+            crate::protocol_serde::shape_create_hapg::de_create_hapg_http_response(response)
         }
     }
 }
@@ -92,9 +96,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHsm {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_hsm_error(response)
+            crate::protocol_serde::shape_create_hsm::de_create_hsm_http_error(response)
         } else {
-            crate::operation_deser::parse_create_hsm_response(response)
+            crate::protocol_serde::shape_create_hsm::de_create_hsm_http_response(response)
         }
     }
 }
@@ -127,9 +131,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLunaClient {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_luna_client_error(response)
+            crate::protocol_serde::shape_create_luna_client::de_create_luna_client_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_luna_client_response(response)
+            crate::protocol_serde::shape_create_luna_client::de_create_luna_client_http_response(
+                response,
+            )
         }
     }
 }
@@ -160,9 +168,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHapg {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hapg_error(response)
+            crate::protocol_serde::shape_delete_hapg::de_delete_hapg_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_hapg_response(response)
+            crate::protocol_serde::shape_delete_hapg::de_delete_hapg_http_response(response)
         }
     }
 }
@@ -192,9 +200,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHsm {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_hsm_error(response)
+            crate::protocol_serde::shape_delete_hsm::de_delete_hsm_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_hsm_response(response)
+            crate::protocol_serde::shape_delete_hsm::de_delete_hsm_http_response(response)
         }
     }
 }
@@ -227,9 +235,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLunaClient {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_luna_client_error(response)
+            crate::protocol_serde::shape_delete_luna_client::de_delete_luna_client_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_luna_client_response(response)
+            crate::protocol_serde::shape_delete_luna_client::de_delete_luna_client_http_response(
+                response,
+            )
         }
     }
 }
@@ -260,9 +272,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHapg {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_hapg_error(response)
+            crate::protocol_serde::shape_describe_hapg::de_describe_hapg_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_hapg_response(response)
+            crate::protocol_serde::shape_describe_hapg::de_describe_hapg_http_response(response)
         }
     }
 }
@@ -293,9 +305,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHsm {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_hsm_error(response)
+            crate::protocol_serde::shape_describe_hsm::de_describe_hsm_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_hsm_response(response)
+            crate::protocol_serde::shape_describe_hsm::de_describe_hsm_http_response(response)
         }
     }
 }
@@ -328,9 +340,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLunaClient {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_luna_client_error(response)
+            crate::protocol_serde::shape_describe_luna_client::de_describe_luna_client_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_luna_client_response(response)
+            crate::protocol_serde::shape_describe_luna_client::de_describe_luna_client_http_response(
+                response,
+            )
         }
     }
 }
@@ -360,9 +376,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfig {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_config_error(response)
+            crate::protocol_serde::shape_get_config::de_get_config_http_error(response)
         } else {
-            crate::operation_deser::parse_get_config_response(response)
+            crate::protocol_serde::shape_get_config::de_get_config_http_response(response)
         }
     }
 }
@@ -395,9 +411,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableZones {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_available_zones_error(response)
+            crate::protocol_serde::shape_list_available_zones::de_list_available_zones_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_available_zones_response(response)
+            crate::protocol_serde::shape_list_available_zones::de_list_available_zones_http_response(
+                response,
+            )
         }
     }
 }
@@ -427,9 +447,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_hapgs_error(response)
+            crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_hapgs_response(response)
+            crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_response(response)
         }
     }
 }
@@ -459,9 +479,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHsms {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_hsms_error(response)
+            crate::protocol_serde::shape_list_hsms::de_list_hsms_http_error(response)
         } else {
-            crate::operation_deser::parse_list_hsms_response(response)
+            crate::protocol_serde::shape_list_hsms::de_list_hsms_http_response(response)
         }
     }
 }
@@ -494,9 +514,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLunaClients {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_luna_clients_error(response)
+            crate::protocol_serde::shape_list_luna_clients::de_list_luna_clients_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_luna_clients_response(response)
+            crate::protocol_serde::shape_list_luna_clients::de_list_luna_clients_http_response(
+                response,
+            )
         }
     }
 }
@@ -529,9 +553,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -562,9 +586,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHapg {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_hapg_error(response)
+            crate::protocol_serde::shape_modify_hapg::de_modify_hapg_http_error(response)
         } else {
-            crate::operation_deser::parse_modify_hapg_response(response)
+            crate::protocol_serde::shape_modify_hapg::de_modify_hapg_http_response(response)
         }
     }
 }
@@ -594,9 +618,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHsm {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_hsm_error(response)
+            crate::protocol_serde::shape_modify_hsm::de_modify_hsm_http_error(response)
         } else {
-            crate::operation_deser::parse_modify_hsm_response(response)
+            crate::protocol_serde::shape_modify_hsm::de_modify_hsm_http_response(response)
         }
     }
 }
@@ -629,9 +653,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLunaClient {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_modify_luna_client_error(response)
+            crate::protocol_serde::shape_modify_luna_client::de_modify_luna_client_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_modify_luna_client_response(response)
+            crate::protocol_serde::shape_modify_luna_client::de_modify_luna_client_http_response(
+                response,
+            )
         }
     }
 }
@@ -664,9 +692,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_from_resource_error(response)
+            crate::protocol_serde::shape_remove_tags_from_resource::de_remove_tags_from_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_from_resource_response(response)
+            crate::protocol_serde::shape_remove_tags_from_resource::de_remove_tags_from_resource_http_response(response)
         }
     }
 }

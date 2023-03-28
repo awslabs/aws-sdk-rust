@@ -84,7 +84,7 @@ impl ListEndpointsByPlatformApplicationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_endpoints_by_platform_application_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_endpoints_by_platform_application_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -202,7 +202,10 @@ impl ListOriginationNumbersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_origination_numbers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_origination_numbers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -312,7 +315,10 @@ impl ListPhoneNumbersOptedOutPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_phone_numbers_opted_out_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_phone_numbers_opted_out_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -422,7 +428,10 @@ impl ListPlatformApplicationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_platform_applications_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_platform_applications_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -540,7 +549,7 @@ impl ListSmsSandboxPhoneNumbersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sms_sandbox_phone_numbers_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_sms_sandbox_phone_numbers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -650,7 +659,8 @@ impl ListSubscriptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_subscriptions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_subscriptions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -760,7 +770,10 @@ impl ListSubscriptionsByTopicPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_subscriptions_by_topic_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_subscriptions_by_topic_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -870,7 +883,8 @@ impl ListTopicsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_topics_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_topics_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -920,7 +934,11 @@ impl ListEndpointsByPlatformApplicationPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_endpoints_by_platform_application_output_endpoints(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_endpoints_by_platform_application_output_endpoints(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -944,11 +962,9 @@ impl ListOriginationNumbersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_origination_numbers_output_phone_numbers(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_origination_numbers_output_phone_numbers(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -972,7 +988,11 @@ impl ListPhoneNumbersOptedOutPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersOptedOutError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_phone_numbers_opted_out_output_phone_numbers(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_phone_numbers_opted_out_output_phone_numbers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -995,7 +1015,11 @@ impl ListPlatformApplicationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListPlatformApplicationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_platform_applications_output_platform_applications(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_platform_applications_output_platform_applications(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1018,7 +1042,11 @@ impl ListSmsSandboxPhoneNumbersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListSMSSandboxPhoneNumbersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_sms_sandbox_phone_numbers_output_phone_numbers(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_sms_sandbox_phone_numbers_output_phone_numbers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1042,7 +1070,7 @@ impl ListSubscriptionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_subscriptions_output_subscriptions(page)
+            crate::lens::lens_list_subscriptions_output_subscriptions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1068,7 +1096,11 @@ impl ListSubscriptionsByTopicPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListSubscriptionsByTopicError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_subscriptions_by_topic_output_subscriptions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_subscriptions_by_topic_output_subscriptions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1092,7 +1124,7 @@ impl ListTopicsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_topics_output_topics(page)
+            crate::lens::lens_list_topics_output_topics(page)
                 .unwrap_or_default()
                 .into_iter()
         })

@@ -90,7 +90,10 @@ impl DescribeGlobalNetworksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_global_networks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_global_networks_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,8 @@ impl GetConnectionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_connections_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_connections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,7 @@ impl GetConnectPeerAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_connect_peer_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_connect_peer_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +448,7 @@ impl GetCoreNetworkChangeEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_core_network_change_events_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_core_network_change_events_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,10 @@ impl GetCoreNetworkChangeSetPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_core_network_change_set_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_core_network_change_set_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +687,7 @@ impl GetCustomerGatewayAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_customer_gateway_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_customer_gateway_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +805,8 @@ impl GetDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_devices_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_devices_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +924,8 @@ impl GetLinkAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_link_associations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_link_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1043,7 @@ impl GetLinksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_links_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_links_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1161,10 @@ impl GetNetworkResourceCountsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_network_resource_counts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_network_resource_counts_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1270,7 +1282,7 @@ impl GetNetworkResourceRelationshipsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_network_resource_relationships_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_network_resource_relationships_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1388,7 +1400,8 @@ impl GetNetworkResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_network_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_network_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1506,7 +1519,8 @@ impl GetNetworkTelemetryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_network_telemetry_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_network_telemetry_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1624,7 +1638,7 @@ impl GetSitesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_sites_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_sites_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1744,7 +1758,7 @@ impl GetTransitGatewayConnectPeerAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_connect_peer_associations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_transit_gateway_connect_peer_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1862,7 +1876,7 @@ impl GetTransitGatewayRegistrationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_registrations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_transit_gateway_registrations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1980,7 +1994,8 @@ impl ListAttachmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attachments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attachments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2098,7 +2113,8 @@ impl ListConnectPeersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_connect_peers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_connect_peers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2216,7 +2232,7 @@ impl ListCoreNetworkPolicyVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_core_network_policy_versions_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_core_network_policy_versions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2334,7 +2350,8 @@ impl ListCoreNetworksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_core_networks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_core_networks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2452,7 +2469,8 @@ impl ListPeeringsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_peerings_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_peerings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -2498,7 +2516,11 @@ impl DescribeGlobalNetworksPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeGlobalNetworksError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_global_networks_output_global_networks(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_global_networks_output_global_networks(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2522,7 +2544,7 @@ impl GetConnectionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_connections_output_connections(page)
+            crate::lens::lens_get_connections_output_connections(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2548,7 +2570,11 @@ impl GetConnectPeerAssociationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetConnectPeerAssociationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_connect_peer_associations_output_connect_peer_associations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_connect_peer_associations_output_connect_peer_associations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2571,7 +2597,11 @@ impl GetCoreNetworkChangeEventsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeEventsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_core_network_change_events_output_core_network_change_events(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_core_network_change_events_output_core_network_change_events(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2594,7 +2624,11 @@ impl GetCoreNetworkChangeSetPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetCoreNetworkChangeSetError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_core_network_change_set_output_core_network_changes(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_core_network_change_set_output_core_network_changes(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2617,7 +2651,7 @@ impl GetCustomerGatewayAssociationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetCustomerGatewayAssociationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_customer_gateway_associations_output_customer_gateway_associations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_customer_gateway_associations_output_customer_gateway_associations(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -2641,7 +2675,7 @@ impl GetDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_devices_output_devices(page)
+            crate::lens::lens_get_devices_output_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2668,11 +2702,9 @@ impl GetLinkAssociationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_link_associations_output_link_associations(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_link_associations_output_link_associations(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -2697,7 +2729,7 @@ impl GetLinksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_links_output_links(page)
+            crate::lens::lens_get_links_output_links(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2723,7 +2755,11 @@ impl GetNetworkResourceCountsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceCountsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_network_resource_counts_output_network_resource_counts(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_network_resource_counts_output_network_resource_counts(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2746,7 +2782,11 @@ impl GetNetworkResourceRelationshipsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetNetworkResourceRelationshipsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_network_resource_relationships_output_relationships(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_network_resource_relationships_output_relationships(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -2770,11 +2810,9 @@ impl GetNetworkResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_network_resources_output_network_resources(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_network_resources_output_network_resources(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -2799,11 +2837,9 @@ impl GetNetworkTelemetryPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_network_telemetry_output_network_telemetry(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_network_telemetry_output_network_telemetry(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -2828,7 +2864,7 @@ impl GetSitesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_sites_output_sites(page)
+            crate::lens::lens_get_sites_output_sites(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2858,7 +2894,7 @@ impl GetTransitGatewayConnectPeerAssociationsPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_transit_gateway_connect_peer_associations_output_transit_gateway_connect_peer_associations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_transit_gateway_connect_peer_associations_output_transit_gateway_connect_peer_associations(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -2881,7 +2917,7 @@ impl GetTransitGatewayRegistrationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetTransitGatewayRegistrationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_transit_gateway_registrations_output_transit_gateway_registrations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_get_transit_gateway_registrations_output_transit_gateway_registrations(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -2905,7 +2941,7 @@ impl ListAttachmentsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_attachments_output_attachments(page)
+            crate::lens::lens_list_attachments_output_attachments(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2932,7 +2968,7 @@ impl ListConnectPeersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_connect_peers_output_connect_peers(page)
+            crate::lens::lens_list_connect_peers_output_connect_peers(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -2958,7 +2994,13 @@ impl ListCoreNetworkPolicyVersionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCoreNetworkPolicyVersionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_core_network_policy_versions_output_core_network_policy_versions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_core_network_policy_versions_output_core_network_policy_versions(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -2982,7 +3024,7 @@ impl ListCoreNetworksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_core_networks_output_core_networks(page)
+            crate::lens::lens_list_core_networks_output_core_networks(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3009,7 +3051,7 @@ impl ListPeeringsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_peerings_output_peerings(page)
+            crate::lens::lens_list_peerings_output_peerings(page)
                 .unwrap_or_default()
                 .into_iter()
         })

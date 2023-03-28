@@ -76,7 +76,7 @@ impl DescribeOrganizationResourceCollectionHealthPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_organization_resource_collection_health_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_organization_resource_collection_health_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -178,7 +178,7 @@ impl DescribeResourceCollectionHealthPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_resource_collection_health_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_resource_collection_health_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -280,7 +280,8 @@ impl GetCostEstimationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_cost_estimation_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_cost_estimation_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -382,7 +383,10 @@ impl GetResourceCollectionPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_resource_collection_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_resource_collection_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -492,7 +496,10 @@ impl ListAnomaliesForInsightPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomalies_for_insight_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_anomalies_for_insight_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -602,7 +609,10 @@ impl ListAnomalousLogGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_anomalous_log_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_anomalous_log_groups_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -720,7 +730,8 @@ impl ListEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_events_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_events_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -830,7 +841,8 @@ impl ListInsightsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_insights_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_insights_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -940,7 +952,10 @@ impl ListMonitoredResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_monitored_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_monitored_resources_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1050,7 +1065,10 @@ impl ListNotificationChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_notification_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_notification_channels_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1160,7 +1178,10 @@ impl ListOrganizationInsightsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_organization_insights_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_organization_insights_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1270,7 +1291,8 @@ impl ListRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_recommendations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_recommendations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1380,7 +1402,8 @@ impl SearchInsightsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_insights_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_insights_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1490,7 +1513,10 @@ impl SearchOrganizationInsightsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_organization_insights_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_organization_insights_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1537,7 +1563,7 @@ impl ListEventsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_events_output_events(page)
+            crate::lens::lens_list_events_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1564,11 +1590,9 @@ impl ListNotificationChannelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_notification_channels_output_channels(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_notification_channels_output_channels(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1593,11 +1617,9 @@ impl ListRecommendationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_recommendations_output_recommendations(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_recommendations_output_recommendations(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

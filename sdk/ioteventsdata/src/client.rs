@@ -89,137 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchAcknowledgeAlarm`](crate::client::fluent_builders::BatchAcknowledgeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`acknowledge_action_requests(Vec<AcknowledgeAlarmActionRequest>)`](crate::client::fluent_builders::BatchAcknowledgeAlarm::acknowledge_action_requests) / [`set_acknowledge_action_requests(Option<Vec<AcknowledgeAlarmActionRequest>>)`](crate::client::fluent_builders::BatchAcknowledgeAlarm::set_acknowledge_action_requests): <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchAcknowledgeAlarmOutput`](crate::output::BatchAcknowledgeAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchAcknowledgeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchAcknowledgeAlarmError>`](crate::error::BatchAcknowledgeAlarmError)
-    pub fn batch_acknowledge_alarm(&self) -> crate::client::fluent_builders::BatchAcknowledgeAlarm {
-        crate::client::fluent_builders::BatchAcknowledgeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteDetector`](crate::client::fluent_builders::BatchDeleteDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detectors(Vec<DeleteDetectorRequest>)`](crate::client::fluent_builders::BatchDeleteDetector::detectors) / [`set_detectors(Option<Vec<DeleteDetectorRequest>>)`](crate::client::fluent_builders::BatchDeleteDetector::set_detectors): <p>The list of one or more detectors to be deleted.</p>
-    /// - On success, responds with [`BatchDeleteDetectorOutput`](crate::output::BatchDeleteDetectorOutput) with field(s):
-    ///   - [`batch_delete_detector_error_entries(Option<Vec<BatchDeleteDetectorErrorEntry>>)`](crate::output::BatchDeleteDetectorOutput::batch_delete_detector_error_entries): <p>A list of errors associated with the request, or an empty array (<code>[]</code>) if there are no errors. Each error entry contains a <code>messageId</code> that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteDetectorError>`](crate::error::BatchDeleteDetectorError)
-    pub fn batch_delete_detector(&self) -> crate::client::fluent_builders::BatchDeleteDetector {
-        crate::client::fluent_builders::BatchDeleteDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDisableAlarm`](crate::client::fluent_builders::BatchDisableAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`disable_action_requests(Vec<DisableAlarmActionRequest>)`](crate::client::fluent_builders::BatchDisableAlarm::disable_action_requests) / [`set_disable_action_requests(Option<Vec<DisableAlarmActionRequest>>)`](crate::client::fluent_builders::BatchDisableAlarm::set_disable_action_requests): <p>The list of disable action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchDisableAlarmOutput`](crate::output::BatchDisableAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchDisableAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchDisableAlarmError>`](crate::error::BatchDisableAlarmError)
-    pub fn batch_disable_alarm(&self) -> crate::client::fluent_builders::BatchDisableAlarm {
-        crate::client::fluent_builders::BatchDisableAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchEnableAlarm`](crate::client::fluent_builders::BatchEnableAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`enable_action_requests(Vec<EnableAlarmActionRequest>)`](crate::client::fluent_builders::BatchEnableAlarm::enable_action_requests) / [`set_enable_action_requests(Option<Vec<EnableAlarmActionRequest>>)`](crate::client::fluent_builders::BatchEnableAlarm::set_enable_action_requests): <p>The list of enable action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchEnableAlarmOutput`](crate::output::BatchEnableAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchEnableAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchEnableAlarmError>`](crate::error::BatchEnableAlarmError)
-    pub fn batch_enable_alarm(&self) -> crate::client::fluent_builders::BatchEnableAlarm {
-        crate::client::fluent_builders::BatchEnableAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchPutMessage`](crate::client::fluent_builders::BatchPutMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`messages(Vec<Message>)`](crate::client::fluent_builders::BatchPutMessage::messages) / [`set_messages(Option<Vec<Message>>)`](crate::client::fluent_builders::BatchPutMessage::set_messages): <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
-    /// - On success, responds with [`BatchPutMessageOutput`](crate::output::BatchPutMessageOutput) with field(s):
-    ///   - [`batch_put_message_error_entries(Option<Vec<BatchPutMessageErrorEntry>>)`](crate::output::BatchPutMessageOutput::batch_put_message_error_entries): <p>A list of any errors encountered when sending the messages.</p>
-    /// - On failure, responds with [`SdkError<BatchPutMessageError>`](crate::error::BatchPutMessageError)
-    pub fn batch_put_message(&self) -> crate::client::fluent_builders::BatchPutMessage {
-        crate::client::fluent_builders::BatchPutMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchResetAlarm`](crate::client::fluent_builders::BatchResetAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`reset_action_requests(Vec<ResetAlarmActionRequest>)`](crate::client::fluent_builders::BatchResetAlarm::reset_action_requests) / [`set_reset_action_requests(Option<Vec<ResetAlarmActionRequest>>)`](crate::client::fluent_builders::BatchResetAlarm::set_reset_action_requests): <p>The list of reset action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchResetAlarmOutput`](crate::output::BatchResetAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchResetAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchResetAlarmError>`](crate::error::BatchResetAlarmError)
-    pub fn batch_reset_alarm(&self) -> crate::client::fluent_builders::BatchResetAlarm {
-        crate::client::fluent_builders::BatchResetAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchSnoozeAlarm`](crate::client::fluent_builders::BatchSnoozeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`snooze_action_requests(Vec<SnoozeAlarmActionRequest>)`](crate::client::fluent_builders::BatchSnoozeAlarm::snooze_action_requests) / [`set_snooze_action_requests(Option<Vec<SnoozeAlarmActionRequest>>)`](crate::client::fluent_builders::BatchSnoozeAlarm::set_snooze_action_requests): <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    /// - On success, responds with [`BatchSnoozeAlarmOutput`](crate::output::BatchSnoozeAlarmOutput) with field(s):
-    ///   - [`error_entries(Option<Vec<BatchAlarmActionErrorEntry>>)`](crate::output::BatchSnoozeAlarmOutput::error_entries): <p>A list of errors associated with the request, or <code>null</code> if there are no errors. Each error entry contains an entry ID that helps you identify the entry that failed.</p>
-    /// - On failure, responds with [`SdkError<BatchSnoozeAlarmError>`](crate::error::BatchSnoozeAlarmError)
-    pub fn batch_snooze_alarm(&self) -> crate::client::fluent_builders::BatchSnoozeAlarm {
-        crate::client::fluent_builders::BatchSnoozeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateDetector`](crate::client::fluent_builders::BatchUpdateDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detectors(Vec<UpdateDetectorRequest>)`](crate::client::fluent_builders::BatchUpdateDetector::detectors) / [`set_detectors(Option<Vec<UpdateDetectorRequest>>)`](crate::client::fluent_builders::BatchUpdateDetector::set_detectors): <p>The list of detectors (instances) to update, along with the values to update.</p>
-    /// - On success, responds with [`BatchUpdateDetectorOutput`](crate::output::BatchUpdateDetectorOutput) with field(s):
-    ///   - [`batch_update_detector_error_entries(Option<Vec<BatchUpdateDetectorErrorEntry>>)`](crate::output::BatchUpdateDetectorOutput::batch_update_detector_error_entries): <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    /// - On failure, responds with [`SdkError<BatchUpdateDetectorError>`](crate::error::BatchUpdateDetectorError)
-    pub fn batch_update_detector(&self) -> crate::client::fluent_builders::BatchUpdateDetector {
-        crate::client::fluent_builders::BatchUpdateDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAlarm`](crate::client::fluent_builders::DescribeAlarm) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarm::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::DescribeAlarm::set_alarm_model_name): <p>The name of the alarm model.</p>
-    ///   - [`key_value(impl Into<String>)`](crate::client::fluent_builders::DescribeAlarm::key_value) / [`set_key_value(Option<String>)`](crate::client::fluent_builders::DescribeAlarm::set_key_value): <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    /// - On success, responds with [`DescribeAlarmOutput`](crate::output::DescribeAlarmOutput) with field(s):
-    ///   - [`alarm(Option<Alarm>)`](crate::output::DescribeAlarmOutput::alarm): <p>Contains information about an alarm.</p>
-    /// - On failure, responds with [`SdkError<DescribeAlarmError>`](crate::error::DescribeAlarmError)
-    pub fn describe_alarm(&self) -> crate::client::fluent_builders::DescribeAlarm {
-        crate::client::fluent_builders::DescribeAlarm::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDetector`](crate::client::fluent_builders::DescribeDetector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDetector::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::DescribeDetector::set_detector_model_name): <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    ///   - [`key_value(impl Into<String>)`](crate::client::fluent_builders::DescribeDetector::key_value) / [`set_key_value(Option<String>)`](crate::client::fluent_builders::DescribeDetector::set_key_value): <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    /// - On success, responds with [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput) with field(s):
-    ///   - [`detector(Option<Detector>)`](crate::output::DescribeDetectorOutput::detector): <p>Information about the detector (instance).</p>
-    /// - On failure, responds with [`SdkError<DescribeDetectorError>`](crate::error::DescribeDetectorError)
-    pub fn describe_detector(&self) -> crate::client::fluent_builders::DescribeDetector {
-        crate::client::fluent_builders::DescribeDetector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAlarms`](crate::client::fluent_builders::ListAlarms) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`alarm_model_name(impl Into<String>)`](crate::client::fluent_builders::ListAlarms::alarm_model_name) / [`set_alarm_model_name(Option<String>)`](crate::client::fluent_builders::ListAlarms::set_alarm_model_name): <p>The name of the alarm model.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAlarms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAlarms::set_next_token): <p>The token that you can use to return the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAlarms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAlarms::set_max_results): <p>The maximum number of results to be returned per request.</p>
-    /// - On success, responds with [`ListAlarmsOutput`](crate::output::ListAlarmsOutput) with field(s):
-    ///   - [`alarm_summaries(Option<Vec<AlarmSummary>>)`](crate::output::ListAlarmsOutput::alarm_summaries): <p>A list that summarizes each alarm.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAlarmsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListAlarmsError>`](crate::error::ListAlarmsError)
-    pub fn list_alarms(&self) -> crate::client::fluent_builders::ListAlarms {
-        crate::client::fluent_builders::ListAlarms::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDetectors`](crate::client::fluent_builders::ListDetectors) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`detector_model_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_detector_model_name): <p>The name of the detector model whose detectors (instances) are listed.</p>
-    ///   - [`state_name(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::state_name) / [`set_state_name(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_state_name): <p>A filter that limits results to those detectors (instances) in the given state.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDetectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDetectors::set_next_token): <p>The token that you can use to return the next set of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDetectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDetectors::set_max_results): <p>The maximum number of results to be returned per request.</p>
-    /// - On success, responds with [`ListDetectorsOutput`](crate::output::ListDetectorsOutput) with field(s):
-    ///   - [`detector_summaries(Option<Vec<DetectorSummary>>)`](crate::output::ListDetectorsOutput::detector_summaries): <p>A list of summary information about the detectors (instances).</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDetectorsOutput::next_token): <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    /// - On failure, responds with [`SdkError<ListDetectorsError>`](crate::error::ListDetectorsError)
-    pub fn list_detectors(&self) -> crate::client::fluent_builders::ListDetectors {
-        crate::client::fluent_builders::ListDetectors::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -305,9 +174,33 @@ impl Client {
     }
 }
 
+mod batch_acknowledge_alarm;
+
+mod batch_delete_detector;
+
+mod batch_disable_alarm;
+
+mod batch_enable_alarm;
+
+mod batch_put_message;
+
+mod batch_reset_alarm;
+
+mod batch_snooze_alarm;
+
+mod batch_update_detector;
+
+mod describe_alarm;
+
+mod describe_detector;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_alarms;
+
+mod list_detectors;

@@ -90,7 +90,8 @@ impl ListPlacementsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_placements_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_placements_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListProjectsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_projects_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_projects_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -255,7 +257,7 @@ impl ListPlacementsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_placements_output_placements(page)
+            crate::lens::lens_list_placements_output_placements(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -282,7 +284,7 @@ impl ListProjectsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_projects_output_projects(page)
+            crate::lens::lens_list_projects_output_projects(page)
                 .unwrap_or_default()
                 .into_iter()
         })

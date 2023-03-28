@@ -89,216 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BatchCreateAttendee`](crate::client::fluent_builders::BatchCreateAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::BatchCreateAttendee::set_meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::BatchCreateAttendee::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::BatchCreateAttendee::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
-    /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
-    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchCreateAttendeeError>`](crate::error::BatchCreateAttendeeError)
-    pub fn batch_create_attendee(&self) -> crate::client::fluent_builders::BatchCreateAttendee {
-        crate::client::fluent_builders::BatchCreateAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateAttendeeCapabilitiesExcept`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_meeting_id): <p>The ID of the meeting associated with the update request.</p>
-    ///   - [`excluded_attendee_ids(Vec<AttendeeIdItem>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::excluded_attendee_ids) / [`set_excluded_attendee_ids(Option<Vec<AttendeeIdItem>>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_excluded_attendee_ids): <p>The <code>AttendeeIDs</code> that you want to exclude from one or more capabilities.</p>
-    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to update.</p>
-    /// - On success, responds with [`BatchUpdateAttendeeCapabilitiesExceptOutput`](crate::output::BatchUpdateAttendeeCapabilitiesExceptOutput)
-
-    /// - On failure, responds with [`SdkError<BatchUpdateAttendeeCapabilitiesExceptError>`](crate::error::BatchUpdateAttendeeCapabilitiesExceptError)
-    pub fn batch_update_attendee_capabilities_except(
-        &self,
-    ) -> crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept {
-        crate::client::fluent_builders::BatchUpdateAttendeeCapabilitiesExcept::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_meeting_id): <p>The unique ID of the meeting.</p>
-    ///   - [`external_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::external_user_id) / [`set_external_user_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::CreateAttendee::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::CreateAttendee::set_capabilities): <p>The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>) that you want to grant an attendee. If you don't specify capabilities, all users have send and receive capabilities on all media channels by default.</p> <note>   <p>You use the capabilities with a set of values that control what the capabilities can do, such as <code>SendReceive</code> data. For more information about those values, see .</p>  </note>  <p>When using capabilities, be aware of these corner cases:</p>  <ul>   <li> <p>You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also set <code>video</code> capabilities to <code>SendReceive</code> or <code>Receive</code>. If you don't set the <code>video</code> capability to receive, the response will contain an HTTP 400 Bad Request status code. However, you can set your <code>video</code> capability to receive and you set your <code>content</code> capability to not receive.</p> </li>   <li> <p>When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their microphone unmuted, audio will flow from the attendee to the other meeting participants.</p> </li>   <li> <p>When you change a <code>video</code> or <code>content</code> capability from <code>None</code> or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if the attendee turned on their video or content streams, remote attendess can receive those streams, but only after media renegotiation between the client and the Amazon Chime back-end server.</p> </li>  </ul>
-    /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
-    /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
-    pub fn create_attendee(&self) -> crate::client::fluent_builders::CreateAttendee {
-        crate::client::fluent_builders::CreateAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>  <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_host_id): <p>Reserved.</p>
-    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeeting::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeeting::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeeting::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeeting::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeeting::set_tags): <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the following:</p>  <ul>   <li> <p>Not all resources have tags. For a list of services with resources that support tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>. If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.</p> </li>   <li> <p>Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>   <li> <p>You can only tag resources that are located in the specified AWS Region for the AWS account.</p> </li>   <li> <p>To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.</p> </li>  </ul> <important>   <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>  </important>  <p> <b>Minimum permissions</b> </p>  <p> In addition to the <code>tag:TagResources </code>permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code> operation, you must have both of the following permissions:</p>  <p> <code>tag:TagResources</code> </p>  <p> <code>ChimeSDKMeetings:CreateTags</code> </p> <note>   <p>Some services might have specific requirements for tagging some resources. For example, to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.</p>  </note>
-    /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
-    pub fn create_meeting(&self) -> crate::client::fluent_builders::CreateMeeting {
-        crate::client::fluent_builders::CreateMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_media_region): <p>The Region in which to create the meeting.</p>  <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>  <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_host_id): <p>Reserved.</p>
-    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`meeting_features(MeetingFeaturesConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_features) / [`set_meeting_features(Option<MeetingFeaturesConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_features): <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    ///   - [`notifications_configuration(NotificationsConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::notifications_configuration) / [`set_notifications_configuration(Option<NotificationsConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
-    ///   - [`primary_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::primary_meeting_id) / [`set_primary_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_primary_meeting_id): <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    ///   - [`tenant_ids(Vec<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tenant_ids) / [`set_tenant_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tenant_ids): <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tags): <p>The tags in the request.</p>
-    /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>The meeting information, including the meeting ID and <code>MediaPlacement</code>.</p>
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
-    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::CreateMeetingWithAttendeesOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<CreateMeetingWithAttendeesError>`](crate::error::CreateMeetingWithAttendeesError)
-    pub fn create_meeting_with_attendees(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMeetingWithAttendees {
-        crate::client::fluent_builders::CreateMeetingWithAttendees::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    /// - On success, responds with [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::error::DeleteAttendeeError)
-    pub fn delete_attendee(&self) -> crate::client::fluent_builders::DeleteAttendee {
-        crate::client::fluent_builders::DeleteAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    /// - On success, responds with [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::error::DeleteMeetingError)
-    pub fn delete_meeting(&self) -> crate::client::fluent_builders::DeleteMeeting {
-        crate::client::fluent_builders::DeleteMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAttendee`](crate::client::fluent_builders::GetAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    /// - On success, responds with [`GetAttendeeOutput`](crate::output::GetAttendeeOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
-    /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::error::GetAttendeeError)
-    pub fn get_attendee(&self) -> crate::client::fluent_builders::GetAttendee {
-        crate::client::fluent_builders::GetAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMeeting`](crate::client::fluent_builders::GetMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    /// - On success, responds with [`GetMeetingOutput`](crate::output::GetMeetingOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
-    /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::error::GetMeetingError)
-    pub fn get_meeting(&self) -> crate::client::fluent_builders::GetMeeting {
-        crate::client::fluent_builders::GetMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAttendees`](crate::client::fluent_builders::ListAttendees) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttendees::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttendees::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListAttendeesOutput`](crate::output::ListAttendeesOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::error::ListAttendeesError)
-    pub fn list_attendees(&self) -> crate::client::fluent_builders::ListAttendees {
-        crate::client::fluent_builders::ListAttendees::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags requested for the specified resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StartMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StartMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting being transcribed.</p>
-    ///   - [`transcription_configuration(TranscriptionConfiguration)`](crate::client::fluent_builders::StartMeetingTranscription::transcription_configuration) / [`set_transcription_configuration(Option<TranscriptionConfiguration>)`](crate::client::fluent_builders::StartMeetingTranscription::set_transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::error::StartMeetingTranscriptionError)
-    pub fn start_meeting_transcription(
-        &self,
-    ) -> crate::client::fluent_builders::StartMeetingTranscription {
-        crate::client::fluent_builders::StartMeetingTranscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StopMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StopMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
-    /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)
-    pub fn stop_meeting_transcription(
-        &self,
-    ) -> crate::client::fluent_builders::StopMeetingTranscription {
-        crate::client::fluent_builders::StopMeetingTranscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Lists the requested tags.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource that you're removing tags from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys being removed from the resources.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAttendeeCapabilities`](crate::client::fluent_builders::UpdateAttendeeCapabilities) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_meeting_id): <p>The ID of the meeting associated with the update request.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_attendee_id): <p>The ID of the attendee associated with the update request.</p>
-    ///   - [`capabilities(AttendeeCapabilities)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::capabilities) / [`set_capabilities(Option<AttendeeCapabilities>)`](crate::client::fluent_builders::UpdateAttendeeCapabilities::set_capabilities): <p>The capabilties that you want to update.</p>
-    /// - On success, responds with [`UpdateAttendeeCapabilitiesOutput`](crate::output::UpdateAttendeeCapabilitiesOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::UpdateAttendeeCapabilitiesOutput::attendee): <p>The updated attendee data.</p>
-    /// - On failure, responds with [`SdkError<UpdateAttendeeCapabilitiesError>`](crate::error::UpdateAttendeeCapabilitiesError)
-    pub fn update_attendee_capabilities(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateAttendeeCapabilities {
-        crate::client::fluent_builders::UpdateAttendeeCapabilities::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -384,9 +174,41 @@ impl Client {
     }
 }
 
+mod batch_create_attendee;
+
+mod batch_update_attendee_capabilities_except;
+
+mod create_attendee;
+
+mod create_meeting;
+
+mod create_meeting_with_attendees;
+
+mod delete_attendee;
+
+mod delete_meeting;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_attendee;
+
+mod get_meeting;
+
+mod list_attendees;
+
+mod list_tags_for_resource;
+
+mod start_meeting_transcription;
+
+mod stop_meeting_transcription;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_attendee_capabilities;

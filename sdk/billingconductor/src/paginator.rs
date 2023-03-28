@@ -82,7 +82,10 @@ impl ListAccountAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_account_associations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_account_associations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -200,7 +203,7 @@ impl ListBillingGroupCostReportsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_billing_group_cost_reports_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_billing_group_cost_reports_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -318,7 +321,8 @@ impl ListBillingGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_billing_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_billing_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -436,7 +440,8 @@ impl ListCustomLineItemsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_line_items_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_custom_line_items_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -554,7 +559,7 @@ impl ListCustomLineItemVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_line_item_versions_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_custom_line_item_versions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -672,7 +677,8 @@ impl ListPricingPlansPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pricing_plans_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_pricing_plans_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -794,7 +800,7 @@ impl ListPricingPlansAssociatedWithPricingRulePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pricing_plans_associated_with_pricing_rule_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_pricing_plans_associated_with_pricing_rule_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -912,7 +918,8 @@ impl ListPricingRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pricing_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_pricing_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1032,7 +1039,7 @@ impl ListPricingRulesAssociatedToPricingPlanPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pricing_rules_associated_to_pricing_plan_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_pricing_rules_associated_to_pricing_plan_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1159,7 @@ impl ListResourcesAssociatedToCustomLineItemPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resources_associated_to_custom_line_item_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_resources_associated_to_custom_line_item_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1198,7 +1205,11 @@ impl ListAccountAssociationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAccountAssociationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_account_associations_output_linked_accounts(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_account_associations_output_linked_accounts(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1221,7 +1232,13 @@ impl ListBillingGroupCostReportsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListBillingGroupCostReportsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_billing_group_cost_reports_output_billing_group_cost_reports(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_billing_group_cost_reports_output_billing_group_cost_reports(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -1245,7 +1262,7 @@ impl ListBillingGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_billing_groups_output_billing_groups(page)
+            crate::lens::lens_list_billing_groups_output_billing_groups(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1271,7 +1288,11 @@ impl ListCustomLineItemsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCustomLineItemsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_line_items_output_custom_line_items(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_custom_line_items_output_custom_line_items(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1294,7 +1315,11 @@ impl ListCustomLineItemVersionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCustomLineItemVersionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_custom_line_item_versions_output_custom_line_item_versions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_custom_line_item_versions_output_custom_line_item_versions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1318,7 +1343,7 @@ impl ListPricingPlansPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_pricing_plans_output_pricing_plans(page)
+            crate::lens::lens_list_pricing_plans_output_pricing_plans(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1348,7 +1373,7 @@ impl ListPricingPlansAssociatedWithPricingRulePaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_pricing_plans_associated_with_pricing_rule_output_pricing_plan_arns(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_pricing_plans_associated_with_pricing_rule_output_pricing_plan_arns(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1372,7 +1397,7 @@ impl ListPricingRulesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_pricing_rules_output_pricing_rules(page)
+            crate::lens::lens_list_pricing_rules_output_pricing_rules(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1402,7 +1427,7 @@ impl ListPricingRulesAssociatedToPricingPlanPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_pricing_rules_associated_to_pricing_plan_output_pricing_rule_arns(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_pricing_rules_associated_to_pricing_plan_output_pricing_rule_arns(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1429,6 +1454,6 @@ impl ListResourcesAssociatedToCustomLineItemPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_resources_associated_to_custom_line_item_output_associated_resources(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_resources_associated_to_custom_line_item_output_associated_resources(page).unwrap_or_default().into_iter())
     }
 }

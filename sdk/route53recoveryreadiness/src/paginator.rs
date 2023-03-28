@@ -90,7 +90,10 @@ impl GetCellReadinessSummaryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_cell_readiness_summary_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_cell_readiness_summary_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,7 @@ impl GetReadinessCheckResourceStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_readiness_check_resource_status_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_readiness_check_resource_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +329,10 @@ impl GetReadinessCheckStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_readiness_check_status_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_readiness_check_status_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +450,7 @@ impl GetRecoveryGroupReadinessSummaryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_recovery_group_readiness_summary_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_recovery_group_readiness_summary_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +568,7 @@ impl ListCellsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_cells_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_cells_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +686,7 @@ impl ListCrossAccountAuthorizationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_cross_account_authorizations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_cross_account_authorizations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +804,8 @@ impl ListReadinessChecksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_readiness_checks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_readiness_checks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +923,8 @@ impl ListRecoveryGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_recovery_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_recovery_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1042,8 @@ impl ListResourceSetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_resource_sets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_resource_sets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1152,7 +1161,7 @@ impl ListRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_rules_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1198,7 +1207,11 @@ impl GetCellReadinessSummaryPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetCellReadinessSummaryError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_cell_readiness_summary_output_readiness_checks(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_cell_readiness_summary_output_readiness_checks(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1221,7 +1234,11 @@ impl GetReadinessCheckResourceStatusPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetReadinessCheckResourceStatusError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_readiness_check_resource_status_output_rules(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_readiness_check_resource_status_output_rules(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1245,11 +1262,9 @@ impl GetReadinessCheckStatusPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_readiness_check_status_output_resources(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_get_readiness_check_status_output_resources(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1275,7 +1290,11 @@ impl GetRecoveryGroupReadinessSummaryPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetRecoveryGroupReadinessSummaryError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_recovery_group_readiness_summary_output_readiness_checks(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_recovery_group_readiness_summary_output_readiness_checks(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1299,7 +1318,7 @@ impl ListCellsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_cells_output_cells(page)
+            crate::lens::lens_list_cells_output_cells(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1325,7 +1344,13 @@ impl ListCrossAccountAuthorizationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCrossAccountAuthorizationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_cross_account_authorizations_output_cross_account_authorizations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_cross_account_authorizations_output_cross_account_authorizations(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -1349,11 +1374,9 @@ impl ListReadinessChecksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_readiness_checks_output_readiness_checks(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_readiness_checks_output_readiness_checks(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1378,11 +1401,9 @@ impl ListRecoveryGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_recovery_groups_output_recovery_groups(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_recovery_groups_output_recovery_groups(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1407,7 +1428,7 @@ impl ListResourceSetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_resource_sets_output_resource_sets(page)
+            crate::lens::lens_list_resource_sets_output_resource_sets(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1434,7 +1455,7 @@ impl ListRulesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_rules_output_rules(page)
+            crate::lens::lens_list_rules_output_rules(page)
                 .unwrap_or_default()
                 .into_iter()
         })

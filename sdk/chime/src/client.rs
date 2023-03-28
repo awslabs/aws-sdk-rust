@@ -89,2529 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociatePhoneNumbersWithVoiceConnector`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    ///   - [`force_associate(bool)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::force_associate) / [`set_force_associate(Option<bool>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::set_force_associate): <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
-    /// - On success, responds with [`AssociatePhoneNumbersWithVoiceConnectorOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<AssociatePhoneNumbersWithVoiceConnectorError>`](crate::error::AssociatePhoneNumbersWithVoiceConnectorError)
-    pub fn associate_phone_numbers_with_voice_connector(
-        &self,
-    ) -> crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector {
-        crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnector::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`AssociatePhoneNumbersWithVoiceConnectorGroup`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_group_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::set_voice_connector_group_id): <p>The Amazon Chime Voice Connector group ID.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    ///   - [`force_associate(bool)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::force_associate) / [`set_force_associate(Option<bool>)`](crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::set_force_associate): <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
-    /// - On success, responds with [`AssociatePhoneNumbersWithVoiceConnectorGroupOutput`](crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<AssociatePhoneNumbersWithVoiceConnectorGroupError>`](crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError)
-    pub fn associate_phone_numbers_with_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup {
-        crate::client::fluent_builders::AssociatePhoneNumbersWithVoiceConnectorGroup::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`AssociatePhoneNumberWithUser`](crate::client::fluent_builders::AssociatePhoneNumberWithUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::set_user_id): <p>The user ID.</p>
-    ///   - [`e164_phone_number(impl Into<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::e164_phone_number) / [`set_e164_phone_number(Option<String>)`](crate::client::fluent_builders::AssociatePhoneNumberWithUser::set_e164_phone_number): <p>The phone number, in E.164 format.</p>
-    /// - On success, responds with [`AssociatePhoneNumberWithUserOutput`](crate::output::AssociatePhoneNumberWithUserOutput)
-
-    /// - On failure, responds with [`SdkError<AssociatePhoneNumberWithUserError>`](crate::error::AssociatePhoneNumberWithUserError)
-    pub fn associate_phone_number_with_user(
-        &self,
-    ) -> crate::client::fluent_builders::AssociatePhoneNumberWithUser {
-        crate::client::fluent_builders::AssociatePhoneNumberWithUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateSigninDelegateGroupsWithAccount`](crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`signin_delegate_groups(Vec<SigninDelegateGroup>)`](crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount::signin_delegate_groups) / [`set_signin_delegate_groups(Option<Vec<SigninDelegateGroup>>)`](crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount::set_signin_delegate_groups): <p>The sign-in delegate groups.</p>
-    /// - On success, responds with [`AssociateSigninDelegateGroupsWithAccountOutput`](crate::output::AssociateSigninDelegateGroupsWithAccountOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateSigninDelegateGroupsWithAccountError>`](crate::error::AssociateSigninDelegateGroupsWithAccountError)
-    pub fn associate_signin_delegate_groups_with_account(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount {
-        crate::client::fluent_builders::AssociateSigninDelegateGroupsWithAccount::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`BatchCreateAttendee`](crate::client::fluent_builders::BatchCreateAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::BatchCreateAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::BatchCreateAttendee::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::BatchCreateAttendee::set_attendees): <p>The request containing the attendees to create.</p>
-    /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::output::BatchCreateAttendeeOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees IDs and join tokens.</p>
-    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::BatchCreateAttendeeOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchCreateAttendeeError>`](crate::error::BatchCreateAttendeeError)
-    pub fn batch_create_attendee(&self) -> crate::client::fluent_builders::BatchCreateAttendee {
-        crate::client::fluent_builders::BatchCreateAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchCreateChannelMembership`](crate::client::fluent_builders::BatchCreateChannelMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_channel_arn): <p>The ARN of the channel to which you're adding users.</p>
-    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::BatchCreateChannelMembership::type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    ///   - [`member_arns(Vec<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::member_arns) / [`set_member_arns(Option<Vec<String>>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_member_arns): <p>The ARNs of the members you want to add to the channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::BatchCreateChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput) with field(s):
-    ///   - [`batch_channel_memberships(Option<BatchChannelMemberships>)`](crate::output::BatchCreateChannelMembershipOutput::batch_channel_memberships): <p>The list of channel memberships in the response.</p>
-    ///   - [`errors(Option<Vec<BatchCreateChannelMembershipError>>)`](crate::output::BatchCreateChannelMembershipOutput::errors): <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchCreateChannelMembershipError>`](crate::error::BatchCreateChannelMembershipError)
-    pub fn batch_create_channel_membership(
-        &self,
-    ) -> crate::client::fluent_builders::BatchCreateChannelMembership {
-        crate::client::fluent_builders::BatchCreateChannelMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchCreateRoomMembership`](crate::client::fluent_builders::BatchCreateRoomMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateRoomMembership::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::BatchCreateRoomMembership::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::BatchCreateRoomMembership::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::BatchCreateRoomMembership::set_room_id): <p>The room ID.</p>
-    ///   - [`membership_item_list(Vec<MembershipItem>)`](crate::client::fluent_builders::BatchCreateRoomMembership::membership_item_list) / [`set_membership_item_list(Option<Vec<MembershipItem>>)`](crate::client::fluent_builders::BatchCreateRoomMembership::set_membership_item_list): <p>The list of membership items.</p>
-    /// - On success, responds with [`BatchCreateRoomMembershipOutput`](crate::output::BatchCreateRoomMembershipOutput) with field(s):
-    ///   - [`errors(Option<Vec<MemberError>>)`](crate::output::BatchCreateRoomMembershipOutput::errors): <p>If the action fails for one or more of the member IDs in the request, a list of the member IDs is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchCreateRoomMembershipError>`](crate::error::BatchCreateRoomMembershipError)
-    pub fn batch_create_room_membership(
-        &self,
-    ) -> crate::client::fluent_builders::BatchCreateRoomMembership {
-        crate::client::fluent_builders::BatchCreateRoomMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeletePhoneNumber`](crate::client::fluent_builders::BatchDeletePhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeletePhoneNumber::phone_number_ids) / [`set_phone_number_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeletePhoneNumber::set_phone_number_ids): <p>List of phone number IDs.</p>
-    /// - On success, responds with [`BatchDeletePhoneNumberOutput`](crate::output::BatchDeletePhoneNumberOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::BatchDeletePhoneNumberOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchDeletePhoneNumberError>`](crate::error::BatchDeletePhoneNumberError)
-    pub fn batch_delete_phone_number(
-        &self,
-    ) -> crate::client::fluent_builders::BatchDeletePhoneNumber {
-        crate::client::fluent_builders::BatchDeletePhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchSuspendUser`](crate::client::fluent_builders::BatchSuspendUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::BatchSuspendUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::BatchSuspendUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id_list(Vec<String>)`](crate::client::fluent_builders::BatchSuspendUser::user_id_list) / [`set_user_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchSuspendUser::set_user_id_list): <p>The request containing the user IDs to suspend.</p>
-    /// - On success, responds with [`BatchSuspendUserOutput`](crate::output::BatchSuspendUserOutput) with field(s):
-    ///   - [`user_errors(Option<Vec<UserError>>)`](crate::output::BatchSuspendUserOutput::user_errors): <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchSuspendUserError>`](crate::error::BatchSuspendUserError)
-    pub fn batch_suspend_user(&self) -> crate::client::fluent_builders::BatchSuspendUser {
-        crate::client::fluent_builders::BatchSuspendUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUnsuspendUser`](crate::client::fluent_builders::BatchUnsuspendUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::BatchUnsuspendUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::BatchUnsuspendUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id_list(Vec<String>)`](crate::client::fluent_builders::BatchUnsuspendUser::user_id_list) / [`set_user_id_list(Option<Vec<String>>)`](crate::client::fluent_builders::BatchUnsuspendUser::set_user_id_list): <p>The request containing the user IDs to unsuspend.</p>
-    /// - On success, responds with [`BatchUnsuspendUserOutput`](crate::output::BatchUnsuspendUserOutput) with field(s):
-    ///   - [`user_errors(Option<Vec<UserError>>)`](crate::output::BatchUnsuspendUserOutput::user_errors): <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchUnsuspendUserError>`](crate::error::BatchUnsuspendUserError)
-    pub fn batch_unsuspend_user(&self) -> crate::client::fluent_builders::BatchUnsuspendUser {
-        crate::client::fluent_builders::BatchUnsuspendUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdatePhoneNumber`](crate::client::fluent_builders::BatchUpdatePhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`update_phone_number_request_items(Vec<UpdatePhoneNumberRequestItem>)`](crate::client::fluent_builders::BatchUpdatePhoneNumber::update_phone_number_request_items) / [`set_update_phone_number_request_items(Option<Vec<UpdatePhoneNumberRequestItem>>)`](crate::client::fluent_builders::BatchUpdatePhoneNumber::set_update_phone_number_request_items): <p>The request containing the phone number IDs and product types or calling names to update.</p>
-    /// - On success, responds with [`BatchUpdatePhoneNumberOutput`](crate::output::BatchUpdatePhoneNumberOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::BatchUpdatePhoneNumberOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchUpdatePhoneNumberError>`](crate::error::BatchUpdatePhoneNumberError)
-    pub fn batch_update_phone_number(
-        &self,
-    ) -> crate::client::fluent_builders::BatchUpdatePhoneNumber {
-        crate::client::fluent_builders::BatchUpdatePhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateUser`](crate::client::fluent_builders::BatchUpdateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::BatchUpdateUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`update_user_request_items(Vec<UpdateUserRequestItem>)`](crate::client::fluent_builders::BatchUpdateUser::update_user_request_items) / [`set_update_user_request_items(Option<Vec<UpdateUserRequestItem>>)`](crate::client::fluent_builders::BatchUpdateUser::set_update_user_request_items): <p>The request containing the user IDs and details to update.</p>
-    /// - On success, responds with [`BatchUpdateUserOutput`](crate::output::BatchUpdateUserOutput) with field(s):
-    ///   - [`user_errors(Option<Vec<UserError>>)`](crate::output::BatchUpdateUserOutput::user_errors): <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<BatchUpdateUserError>`](crate::error::BatchUpdateUserError)
-    pub fn batch_update_user(&self) -> crate::client::fluent_builders::BatchUpdateUser {
-        crate::client::fluent_builders::BatchUpdateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAccount`](crate::client::fluent_builders::CreateAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAccount::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAccount::set_name): <p>The name of the Amazon Chime account.</p>
-    /// - On success, responds with [`CreateAccountOutput`](crate::output::CreateAccountOutput) with field(s):
-    ///   - [`account(Option<Account>)`](crate::output::CreateAccountOutput::account): <p>The Amazon Chime account details.</p>
-    /// - On failure, responds with [`SdkError<CreateAccountError>`](crate::error::CreateAccountError)
-    pub fn create_account(&self) -> crate::client::fluent_builders::CreateAccount {
-        crate::client::fluent_builders::CreateAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAppInstance`](crate::client::fluent_builders::CreateAppInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_name): <p>The name of the <code>AppInstance</code>.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_metadata): <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstance::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAppInstance::set_client_request_token): <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstance::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstance::set_tags): <p>Tags assigned to the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::output::CreateAppInstanceOutput::app_instance_arn): <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateAppInstanceError>`](crate::error::CreateAppInstanceError)
-    pub fn create_app_instance(&self) -> crate::client::fluent_builders::CreateAppInstance {
-        crate::client::fluent_builders::CreateAppInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAppInstanceAdmin`](crate::client::fluent_builders::CreateAppInstanceAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput) with field(s):
-    ///   - [`app_instance_admin(Option<Identity>)`](crate::output::CreateAppInstanceAdminOutput::app_instance_admin): <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_arn(Option<String>)`](crate::output::CreateAppInstanceAdminOutput::app_instance_arn): <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateAppInstanceAdminError>`](crate::error::CreateAppInstanceAdminError)
-    pub fn create_app_instance_admin(
-        &self,
-    ) -> crate::client::fluent_builders::CreateAppInstanceAdmin {
-        crate::client::fluent_builders::CreateAppInstanceAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAppInstanceUser`](crate::client::fluent_builders::CreateAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code> request.</p>
-    ///   - [`app_instance_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::app_instance_user_id) / [`set_app_instance_user_id(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_app_instance_user_id): <p>The user ID of the <code>AppInstance</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_name): <p>The user's name.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_metadata): <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_client_request_token): <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAppInstanceUser::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAppInstanceUser::set_tags): <p>Tags assigned to the <code>AppInstanceUser</code>.</p>
-    /// - On success, responds with [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::output::CreateAppInstanceUserOutput::app_instance_user_arn): <p>The user's ARN.</p>
-    /// - On failure, responds with [`SdkError<CreateAppInstanceUserError>`](crate::error::CreateAppInstanceUserError)
-    pub fn create_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::CreateAppInstanceUser {
-        crate::client::fluent_builders::CreateAppInstanceUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAttendee`](crate::client::fluent_builders::CreateAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`external_user_id(impl Into<String>)`](crate::client::fluent_builders::CreateAttendee::external_user_id) / [`set_external_user_id(Option<String>)`](crate::client::fluent_builders::CreateAttendee::set_external_user_id): <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAttendee::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAttendee::set_tags): <p>The tag key-value pairs.</p>
-    /// - On success, responds with [`CreateAttendeeOutput`](crate::output::CreateAttendeeOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::CreateAttendeeOutput::attendee): <p>The attendee information, including attendee ID and join token.</p>
-    /// - On failure, responds with [`SdkError<CreateAttendeeError>`](crate::error::CreateAttendeeError)
-    pub fn create_attendee(&self) -> crate::client::fluent_builders::CreateAttendee {
-        crate::client::fluent_builders::CreateAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateBot`](crate::client::fluent_builders::CreateBot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateBot::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateBot::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateBot::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateBot::set_display_name): <p>The bot display name.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::CreateBot::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::CreateBot::set_domain): <p>The domain of the Amazon Chime Enterprise account.</p>
-    /// - On success, responds with [`CreateBotOutput`](crate::output::CreateBotOutput) with field(s):
-    ///   - [`bot(Option<Bot>)`](crate::output::CreateBotOutput::bot): <p>The bot details.</p>
-    /// - On failure, responds with [`SdkError<CreateBotError>`](crate::error::CreateBotError)
-    pub fn create_bot(&self) -> crate::client::fluent_builders::CreateBot {
-        crate::client::fluent_builders::CreateBot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateChannel`](crate::client::fluent_builders::CreateChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_app_instance_arn): <p>The ARN of the channel request.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_name): <p>The name of the channel.</p>
-    ///   - [`mode(ChannelMode)`](crate::client::fluent_builders::CreateChannel::mode) / [`set_mode(Option<ChannelMode>)`](crate::client::fluent_builders::CreateChannel::set_mode): <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
-    ///   - [`privacy(ChannelPrivacy)`](crate::client::fluent_builders::CreateChannel::privacy) / [`set_privacy(Option<ChannelPrivacy>)`](crate::client::fluent_builders::CreateChannel::set_privacy): <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_metadata): <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_client_request_token): <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateChannel::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateChannel::set_tags): <p>The tags for the creation request.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`CreateChannelOutput`](crate::output::CreateChannelOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
-    /// - On failure, responds with [`SdkError<CreateChannelError>`](crate::error::CreateChannelError)
-    pub fn create_channel(&self) -> crate::client::fluent_builders::CreateChannel {
-        crate::client::fluent_builders::CreateChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateChannelBan`](crate::client::fluent_builders::CreateChannelBan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_channel_arn): <p>The ARN of the ban request.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_member_arn): <p>The ARN of the member being banned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelBanOutput::channel_arn): <p>The ARN of the response to the ban request.</p>
-    ///   - [`member(Option<Identity>)`](crate::output::CreateChannelBanOutput::member): <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
-    /// - On failure, responds with [`SdkError<CreateChannelBanError>`](crate::error::CreateChannelBanError)
-    pub fn create_channel_ban(&self) -> crate::client::fluent_builders::CreateChannelBan {
-        crate::client::fluent_builders::CreateChannelBan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateChannelMembership`](crate::client::fluent_builders::CreateChannelMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_channel_arn): <p>The ARN of the channel to which you're adding users.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_member_arn): <p>The ARN of the member you want to add to the channel.</p>
-    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::CreateChannelMembership::type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::CreateChannelMembership::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelMembershipOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`member(Option<Identity>)`](crate::output::CreateChannelMembershipOutput::member): <p>The ARN and metadata of the member being added.</p>
-    /// - On failure, responds with [`SdkError<CreateChannelMembershipError>`](crate::error::CreateChannelMembershipError)
-    pub fn create_channel_membership(
-        &self,
-    ) -> crate::client::fluent_builders::CreateChannelMembership {
-        crate::client::fluent_builders::CreateChannelMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateChannelModerator`](crate::client::fluent_builders::CreateChannelModerator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_channel_moderator_arn): <p>The ARN of the moderator.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::CreateChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::CreateChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::CreateChannelModeratorOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator(Option<Identity>)`](crate::output::CreateChannelModeratorOutput::channel_moderator): <p>The ARNs of the channel and the moderator.</p>
-    /// - On failure, responds with [`SdkError<CreateChannelModeratorError>`](crate::error::CreateChannelModeratorError)
-    pub fn create_channel_moderator(
-        &self,
-    ) -> crate::client::fluent_builders::CreateChannelModerator {
-        crate::client::fluent_builders::CreateChannelModerator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMediaCapturePipeline`](crate::client::fluent_builders::CreateMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_type(MediaPipelineSourceType)`](crate::client::fluent_builders::CreateMediaCapturePipeline::source_type) / [`set_source_type(Option<MediaPipelineSourceType>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_source_type): <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
-    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_source_arn): <p>ARN of the source from which the media artifacts are captured.</p>
-    ///   - [`sink_type(MediaPipelineSinkType)`](crate::client::fluent_builders::CreateMediaCapturePipeline::sink_type) / [`set_sink_type(Option<MediaPipelineSinkType>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_sink_type): <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
-    ///   - [`sink_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::sink_arn) / [`set_sink_arn(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_sink_arn): <p>The ARN of the sink type.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_client_request_token): <p>The token assigned to the client making the pipeline request.</p>
-    ///   - [`chime_sdk_meeting_configuration(ChimeSdkMeetingConfiguration)`](crate::client::fluent_builders::CreateMediaCapturePipeline::chime_sdk_meeting_configuration) / [`set_chime_sdk_meeting_configuration(Option<ChimeSdkMeetingConfiguration>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_chime_sdk_meeting_configuration): <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    /// - On success, responds with [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput) with field(s):
-    ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::output::CreateMediaCapturePipelineOutput::media_capture_pipeline): <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
-    /// - On failure, responds with [`SdkError<CreateMediaCapturePipelineError>`](crate::error::CreateMediaCapturePipelineError)
-    pub fn create_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMediaCapturePipeline {
-        crate::client::fluent_builders::CreateMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMeeting`](crate::client::fluent_builders::CreateMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_meeting_host_id): <p>Reserved.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeeting::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeeting::set_media_region): <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeeting::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeeting::set_tags): <p>The tag key-value pairs.</p>
-    ///   - [`notifications_configuration(MeetingNotificationConfiguration)`](crate::client::fluent_builders::CreateMeeting::notifications_configuration) / [`set_notifications_configuration(Option<MeetingNotificationConfiguration>)`](crate::client::fluent_builders::CreateMeeting::set_notifications_configuration): <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    /// - On success, responds with [`CreateMeetingOutput`](crate::output::CreateMeetingOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingOutput::meeting): <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
-    /// - On failure, responds with [`SdkError<CreateMeetingError>`](crate::error::CreateMeetingError)
-    pub fn create_meeting(&self) -> crate::client::fluent_builders::CreateMeeting {
-        crate::client::fluent_builders::CreateMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMeetingDialOut`](crate::client::fluent_builders::CreateMeetingDialOut) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`from_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::from_phone_number) / [`set_from_phone_number(Option<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::set_from_phone_number): <p>Phone number used as the caller ID when the remote party receives a call.</p>
-    ///   - [`to_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::to_phone_number) / [`set_to_phone_number(Option<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::set_to_phone_number): <p>Phone number called when inviting someone to a meeting.</p>
-    ///   - [`join_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::join_token) / [`set_join_token(Option<String>)`](crate::client::fluent_builders::CreateMeetingDialOut::set_join_token): <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-    /// - On success, responds with [`CreateMeetingDialOutOutput`](crate::output::CreateMeetingDialOutOutput) with field(s):
-    ///   - [`transaction_id(Option<String>)`](crate::output::CreateMeetingDialOutOutput::transaction_id): <p>Unique ID that tracks API calls.</p>
-    /// - On failure, responds with [`SdkError<CreateMeetingDialOutError>`](crate::error::CreateMeetingDialOutError)
-    pub fn create_meeting_dial_out(&self) -> crate::client::fluent_builders::CreateMeetingDialOut {
-        crate::client::fluent_builders::CreateMeetingDialOut::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMeetingWithAttendees`](crate::client::fluent_builders::CreateMeetingWithAttendees) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_client_request_token): <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    ///   - [`external_meeting_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::external_meeting_id) / [`set_external_meeting_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_external_meeting_id): <p>The external meeting ID.</p>
-    ///   - [`meeting_host_id(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::meeting_host_id) / [`set_meeting_host_id(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_meeting_host_id): <p>Reserved.</p>
-    ///   - [`media_region(impl Into<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::media_region) / [`set_media_region(Option<String>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_media_region): <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>  <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_tags): <p>The tag key-value pairs.</p>
-    ///   - [`notifications_configuration(MeetingNotificationConfiguration)`](crate::client::fluent_builders::CreateMeetingWithAttendees::notifications_configuration) / [`set_notifications_configuration(Option<MeetingNotificationConfiguration>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_notifications_configuration): <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
-    ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::client::fluent_builders::CreateMeetingWithAttendees::set_attendees): <p>The request containing the attendees to create.</p>
-    /// - On success, responds with [`CreateMeetingWithAttendeesOutput`](crate::output::CreateMeetingWithAttendeesOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::CreateMeetingWithAttendeesOutput::meeting): <p>A meeting created using the Amazon Chime SDK.</p>
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::CreateMeetingWithAttendeesOutput::attendees): <p>The attendee information, including attendees IDs and join tokens.</p>
-    ///   - [`errors(Option<Vec<CreateAttendeeError>>)`](crate::output::CreateMeetingWithAttendeesOutput::errors): <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<CreateMeetingWithAttendeesError>`](crate::error::CreateMeetingWithAttendeesError)
-    pub fn create_meeting_with_attendees(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMeetingWithAttendees {
-        crate::client::fluent_builders::CreateMeetingWithAttendees::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePhoneNumberOrder`](crate::client::fluent_builders::CreatePhoneNumberOrder) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_type(PhoneNumberProductType)`](crate::client::fluent_builders::CreatePhoneNumberOrder::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::client::fluent_builders::CreatePhoneNumberOrder::set_product_type): <p>The phone number product type.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::client::fluent_builders::CreatePhoneNumberOrder::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::CreatePhoneNumberOrder::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    /// - On success, responds with [`CreatePhoneNumberOrderOutput`](crate::output::CreatePhoneNumberOrderOutput) with field(s):
-    ///   - [`phone_number_order(Option<PhoneNumberOrder>)`](crate::output::CreatePhoneNumberOrderOutput::phone_number_order): <p>The phone number order details.</p>
-    /// - On failure, responds with [`SdkError<CreatePhoneNumberOrderError>`](crate::error::CreatePhoneNumberOrderError)
-    pub fn create_phone_number_order(
-        &self,
-    ) -> crate::client::fluent_builders::CreatePhoneNumberOrder {
-        crate::client::fluent_builders::CreatePhoneNumberOrder::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProxySession`](crate::client::fluent_builders::CreateProxySession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::CreateProxySession::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::CreateProxySession::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`participant_phone_numbers(Vec<String>)`](crate::client::fluent_builders::CreateProxySession::participant_phone_numbers) / [`set_participant_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::CreateProxySession::set_participant_phone_numbers): <p>The participant phone numbers.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateProxySession::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateProxySession::set_name): <p>The name of the proxy session.</p>
-    ///   - [`expiry_minutes(i32)`](crate::client::fluent_builders::CreateProxySession::expiry_minutes) / [`set_expiry_minutes(Option<i32>)`](crate::client::fluent_builders::CreateProxySession::set_expiry_minutes): <p>The number of minutes allowed for the proxy session.</p>
-    ///   - [`capabilities(Vec<Capability>)`](crate::client::fluent_builders::CreateProxySession::capabilities) / [`set_capabilities(Option<Vec<Capability>>)`](crate::client::fluent_builders::CreateProxySession::set_capabilities): <p>The proxy session capabilities.</p>
-    ///   - [`number_selection_behavior(NumberSelectionBehavior)`](crate::client::fluent_builders::CreateProxySession::number_selection_behavior) / [`set_number_selection_behavior(Option<NumberSelectionBehavior>)`](crate::client::fluent_builders::CreateProxySession::set_number_selection_behavior): <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    ///   - [`geo_match_level(GeoMatchLevel)`](crate::client::fluent_builders::CreateProxySession::geo_match_level) / [`set_geo_match_level(Option<GeoMatchLevel>)`](crate::client::fluent_builders::CreateProxySession::set_geo_match_level): <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-    ///   - [`geo_match_params(GeoMatchParams)`](crate::client::fluent_builders::CreateProxySession::geo_match_params) / [`set_geo_match_params(Option<GeoMatchParams>)`](crate::client::fluent_builders::CreateProxySession::set_geo_match_params): <p>The country and area code for the proxy phone number.</p>
-    /// - On success, responds with [`CreateProxySessionOutput`](crate::output::CreateProxySessionOutput) with field(s):
-    ///   - [`proxy_session(Option<ProxySession>)`](crate::output::CreateProxySessionOutput::proxy_session): <p>The proxy session details.</p>
-    /// - On failure, responds with [`SdkError<CreateProxySessionError>`](crate::error::CreateProxySessionError)
-    pub fn create_proxy_session(&self) -> crate::client::fluent_builders::CreateProxySession {
-        crate::client::fluent_builders::CreateProxySession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRoom`](crate::client::fluent_builders::CreateRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_name): <p>The room name.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateRoom::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateRoom::set_client_request_token): <p>The idempotency token for the request.</p>
-    /// - On success, responds with [`CreateRoomOutput`](crate::output::CreateRoomOutput) with field(s):
-    ///   - [`room(Option<Room>)`](crate::output::CreateRoomOutput::room): <p>The room details.</p>
-    /// - On failure, responds with [`SdkError<CreateRoomError>`](crate::error::CreateRoomError)
-    pub fn create_room(&self) -> crate::client::fluent_builders::CreateRoom {
-        crate::client::fluent_builders::CreateRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRoomMembership`](crate::client::fluent_builders::CreateRoomMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoomMembership::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateRoomMembership::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoomMembership::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::CreateRoomMembership::set_room_id): <p>The room ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateRoomMembership::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateRoomMembership::set_member_id): <p>The Amazon Chime member ID (user ID or bot ID).</p>
-    ///   - [`role(RoomMembershipRole)`](crate::client::fluent_builders::CreateRoomMembership::role) / [`set_role(Option<RoomMembershipRole>)`](crate::client::fluent_builders::CreateRoomMembership::set_role): <p>The role of the member.</p>
-    /// - On success, responds with [`CreateRoomMembershipOutput`](crate::output::CreateRoomMembershipOutput) with field(s):
-    ///   - [`room_membership(Option<RoomMembership>)`](crate::output::CreateRoomMembershipOutput::room_membership): <p>The room membership details.</p>
-    /// - On failure, responds with [`SdkError<CreateRoomMembershipError>`](crate::error::CreateRoomMembershipError)
-    pub fn create_room_membership(&self) -> crate::client::fluent_builders::CreateRoomMembership {
-        crate::client::fluent_builders::CreateRoomMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSipMediaApplication`](crate::client::fluent_builders::CreateSipMediaApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`aws_region(impl Into<String>)`](crate::client::fluent_builders::CreateSipMediaApplication::aws_region) / [`set_aws_region(Option<String>)`](crate::client::fluent_builders::CreateSipMediaApplication::set_aws_region): <p>The AWS Region assigned to the SIP media application.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSipMediaApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSipMediaApplication::set_name): <p>The SIP media application name.</p>
-    ///   - [`endpoints(Vec<SipMediaApplicationEndpoint>)`](crate::client::fluent_builders::CreateSipMediaApplication::endpoints) / [`set_endpoints(Option<Vec<SipMediaApplicationEndpoint>>)`](crate::client::fluent_builders::CreateSipMediaApplication::set_endpoints): <p>List of endpoints (Lambda Amazon Resource Names) specified for the SIP media application. Currently, only one endpoint is supported.</p>
-    /// - On success, responds with [`CreateSipMediaApplicationOutput`](crate::output::CreateSipMediaApplicationOutput) with field(s):
-    ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::output::CreateSipMediaApplicationOutput::sip_media_application): <p>The SIP media application details.</p>
-    /// - On failure, responds with [`SdkError<CreateSipMediaApplicationError>`](crate::error::CreateSipMediaApplicationError)
-    pub fn create_sip_media_application(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSipMediaApplication {
-        crate::client::fluent_builders::CreateSipMediaApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSipMediaApplicationCall`](crate::client::fluent_builders::CreateSipMediaApplicationCall) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`from_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::from_phone_number) / [`set_from_phone_number(Option<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::set_from_phone_number): <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
-    ///   - [`to_phone_number(impl Into<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::to_phone_number) / [`set_to_phone_number(Option<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::set_to_phone_number): <p>The phone number that the service should call.</p>
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::set_sip_media_application_id): <p>The ID of the SIP media application.</p>
-    ///   - [`sip_headers(HashMap<String, String>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::sip_headers) / [`set_sip_headers(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSipMediaApplicationCall::set_sip_headers): <p>The SIP headers added to an outbound call leg.</p>
-    /// - On success, responds with [`CreateSipMediaApplicationCallOutput`](crate::output::CreateSipMediaApplicationCallOutput) with field(s):
-    ///   - [`sip_media_application_call(Option<SipMediaApplicationCall>)`](crate::output::CreateSipMediaApplicationCallOutput::sip_media_application_call): <p>The actual call.</p>
-    /// - On failure, responds with [`SdkError<CreateSipMediaApplicationCallError>`](crate::error::CreateSipMediaApplicationCallError)
-    pub fn create_sip_media_application_call(
-        &self,
-    ) -> crate::client::fluent_builders::CreateSipMediaApplicationCall {
-        crate::client::fluent_builders::CreateSipMediaApplicationCall::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSipRule`](crate::client::fluent_builders::CreateSipRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSipRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSipRule::set_name): <p>The name of the SIP rule.</p>
-    ///   - [`trigger_type(SipRuleTriggerType)`](crate::client::fluent_builders::CreateSipRule::trigger_type) / [`set_trigger_type(Option<SipRuleTriggerType>)`](crate::client::fluent_builders::CreateSipRule::set_trigger_type): <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
-    ///   - [`trigger_value(impl Into<String>)`](crate::client::fluent_builders::CreateSipRule::trigger_value) / [`set_trigger_value(Option<String>)`](crate::client::fluent_builders::CreateSipRule::set_trigger_value): <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
-    ///   - [`disabled(bool)`](crate::client::fluent_builders::CreateSipRule::disabled) / [`set_disabled(Option<bool>)`](crate::client::fluent_builders::CreateSipRule::set_disabled): <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
-    ///   - [`target_applications(Vec<SipRuleTargetApplication>)`](crate::client::fluent_builders::CreateSipRule::target_applications) / [`set_target_applications(Option<Vec<SipRuleTargetApplication>>)`](crate::client::fluent_builders::CreateSipRule::set_target_applications): <p>List of SIP media applications with priority and AWS Region. Only one SIP application per AWS Region can be used.</p>
-    /// - On success, responds with [`CreateSipRuleOutput`](crate::output::CreateSipRuleOutput) with field(s):
-    ///   - [`sip_rule(Option<SipRule>)`](crate::output::CreateSipRuleOutput::sip_rule): <p>Returns the SIP rule information, including the rule ID, triggers, and target applications.</p>
-    /// - On failure, responds with [`SdkError<CreateSipRuleError>`](crate::error::CreateSipRuleError)
-    pub fn create_sip_rule(&self) -> crate::client::fluent_builders::CreateSipRule {
-        crate::client::fluent_builders::CreateSipRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateUser`](crate::client::fluent_builders::CreateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::CreateUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::CreateUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::CreateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::CreateUser::set_username): <p>The user name.</p>
-    ///   - [`email(impl Into<String>)`](crate::client::fluent_builders::CreateUser::email) / [`set_email(Option<String>)`](crate::client::fluent_builders::CreateUser::set_email): <p>The user's email address.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::CreateUser::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::CreateUser::set_user_type): <p>The user type.</p>
-    /// - On success, responds with [`CreateUserOutput`](crate::output::CreateUserOutput) with field(s):
-    ///   - [`user(Option<User>)`](crate::output::CreateUserOutput::user): <p>The user on the Amazon Chime account.</p>
-    /// - On failure, responds with [`SdkError<CreateUserError>`](crate::error::CreateUserError)
-    pub fn create_user(&self) -> crate::client::fluent_builders::CreateUser {
-        crate::client::fluent_builders::CreateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateVoiceConnector`](crate::client::fluent_builders::CreateVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVoiceConnector::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVoiceConnector::set_name): <p>The name of the Amazon Chime Voice Connector.</p>
-    ///   - [`aws_region(VoiceConnectorAwsRegion)`](crate::client::fluent_builders::CreateVoiceConnector::aws_region) / [`set_aws_region(Option<VoiceConnectorAwsRegion>)`](crate::client::fluent_builders::CreateVoiceConnector::set_aws_region): <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
-    ///   - [`require_encryption(bool)`](crate::client::fluent_builders::CreateVoiceConnector::require_encryption) / [`set_require_encryption(Option<bool>)`](crate::client::fluent_builders::CreateVoiceConnector::set_require_encryption): <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
-    /// - On success, responds with [`CreateVoiceConnectorOutput`](crate::output::CreateVoiceConnectorOutput) with field(s):
-    ///   - [`voice_connector(Option<VoiceConnector>)`](crate::output::CreateVoiceConnectorOutput::voice_connector): <p>The Amazon Chime Voice Connector details.</p>
-    /// - On failure, responds with [`SdkError<CreateVoiceConnectorError>`](crate::error::CreateVoiceConnectorError)
-    pub fn create_voice_connector(&self) -> crate::client::fluent_builders::CreateVoiceConnector {
-        crate::client::fluent_builders::CreateVoiceConnector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateVoiceConnectorGroup`](crate::client::fluent_builders::CreateVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateVoiceConnectorGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateVoiceConnectorGroup::set_name): <p>The name of the Amazon Chime Voice Connector group.</p>
-    ///   - [`voice_connector_items(Vec<VoiceConnectorItem>)`](crate::client::fluent_builders::CreateVoiceConnectorGroup::voice_connector_items) / [`set_voice_connector_items(Option<Vec<VoiceConnectorItem>>)`](crate::client::fluent_builders::CreateVoiceConnectorGroup::set_voice_connector_items): <p>The Amazon Chime Voice Connectors to route inbound calls to.</p>
-    /// - On success, responds with [`CreateVoiceConnectorGroupOutput`](crate::output::CreateVoiceConnectorGroupOutput) with field(s):
-    ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::output::CreateVoiceConnectorGroupOutput::voice_connector_group): <p>The Amazon Chime Voice Connector group details.</p>
-    /// - On failure, responds with [`SdkError<CreateVoiceConnectorGroupError>`](crate::error::CreateVoiceConnectorGroupError)
-    pub fn create_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::CreateVoiceConnectorGroup {
-        crate::client::fluent_builders::CreateVoiceConnectorGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAccount`](crate::client::fluent_builders::DeleteAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteAccount::set_account_id): <p>The Amazon Chime account ID.</p>
-    /// - On success, responds with [`DeleteAccountOutput`](crate::output::DeleteAccountOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAccountError>`](crate::error::DeleteAccountError)
-    pub fn delete_account(&self) -> crate::client::fluent_builders::DeleteAccount {
-        crate::client::fluent_builders::DeleteAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAppInstance`](crate::client::fluent_builders::DeleteAppInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAppInstanceError>`](crate::error::DeleteAppInstanceError)
-    pub fn delete_app_instance(&self) -> crate::client::fluent_builders::DeleteAppInstance {
-        crate::client::fluent_builders::DeleteAppInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAppInstanceAdmin`](crate::client::fluent_builders::DeleteAppInstanceAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAppInstanceAdminError>`](crate::error::DeleteAppInstanceAdminError)
-    pub fn delete_app_instance_admin(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteAppInstanceAdmin {
-        crate::client::fluent_builders::DeleteAppInstanceAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAppInstanceStreamingConfigurations`](crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations::set_app_instance_arn): <p>The ARN of the streaming configurations being deleted.</p>
-    /// - On success, responds with [`DeleteAppInstanceStreamingConfigurationsOutput`](crate::output::DeleteAppInstanceStreamingConfigurationsOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAppInstanceStreamingConfigurationsError>`](crate::error::DeleteAppInstanceStreamingConfigurationsError)
-    pub fn delete_app_instance_streaming_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations {
-        crate::client::fluent_builders::DeleteAppInstanceStreamingConfigurations::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteAppInstanceUser`](crate::client::fluent_builders::DeleteAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DeleteAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user request being deleted.</p>
-    /// - On success, responds with [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAppInstanceUserError>`](crate::error::DeleteAppInstanceUserError)
-    pub fn delete_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteAppInstanceUser {
-        crate::client::fluent_builders::DeleteAppInstanceUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAttendee`](crate::client::fluent_builders::DeleteAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::DeleteAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    /// - On success, responds with [`DeleteAttendeeOutput`](crate::output::DeleteAttendeeOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAttendeeError>`](crate::error::DeleteAttendeeError)
-    pub fn delete_attendee(&self) -> crate::client::fluent_builders::DeleteAttendee {
-        crate::client::fluent_builders::DeleteAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteChannel`](crate::client::fluent_builders::DeleteChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_channel_arn): <p>The ARN of the channel being deleted.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DeleteChannelOutput`](crate::output::DeleteChannelOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::error::DeleteChannelError)
-    pub fn delete_channel(&self) -> crate::client::fluent_builders::DeleteChannel {
-        crate::client::fluent_builders::DeleteChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteChannelBan`](crate::client::fluent_builders::DeleteChannelBan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_channel_arn): <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_member_arn): <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteChannelBanError>`](crate::error::DeleteChannelBanError)
-    pub fn delete_channel_ban(&self) -> crate::client::fluent_builders::DeleteChannelBan {
-        crate::client::fluent_builders::DeleteChannelBan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteChannelMembership`](crate::client::fluent_builders::DeleteChannelMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_channel_arn): <p>The ARN of the channel from which you want to remove the user.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_member_arn): <p>The ARN of the member that you're removing from the channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteChannelMembershipError>`](crate::error::DeleteChannelMembershipError)
-    pub fn delete_channel_membership(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteChannelMembership {
-        crate::client::fluent_builders::DeleteChannelMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteChannelMessage`](crate::client::fluent_builders::DeleteChannelMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_message_id): <p>The ID of the message being deleted.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteChannelMessageError>`](crate::error::DeleteChannelMessageError)
-    pub fn delete_channel_message(&self) -> crate::client::fluent_builders::DeleteChannelMessage {
-        crate::client::fluent_builders::DeleteChannelMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteChannelModerator`](crate::client::fluent_builders::DeleteChannelModerator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_channel_moderator_arn): <p>The ARN of the moderator being deleted.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DeleteChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DeleteChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteChannelModeratorError>`](crate::error::DeleteChannelModeratorError)
-    pub fn delete_channel_moderator(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteChannelModerator {
-        crate::client::fluent_builders::DeleteChannelModerator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEventsConfiguration`](crate::client::fluent_builders::DeleteEventsConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEventsConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteEventsConfiguration::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEventsConfiguration::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::DeleteEventsConfiguration::set_bot_id): <p>The bot ID.</p>
-    /// - On success, responds with [`DeleteEventsConfigurationOutput`](crate::output::DeleteEventsConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEventsConfigurationError>`](crate::error::DeleteEventsConfigurationError)
-    pub fn delete_events_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteEventsConfiguration {
-        crate::client::fluent_builders::DeleteEventsConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMediaCapturePipeline`](crate::client::fluent_builders::DeleteMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMediaCapturePipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::DeleteMediaCapturePipeline::set_media_pipeline_id): <p>The ID of the media capture pipeline being deleted. </p>
-    /// - On success, responds with [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMediaCapturePipelineError>`](crate::error::DeleteMediaCapturePipelineError)
-    pub fn delete_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteMediaCapturePipeline {
-        crate::client::fluent_builders::DeleteMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMeeting`](crate::client::fluent_builders::DeleteMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::DeleteMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    /// - On success, responds with [`DeleteMeetingOutput`](crate::output::DeleteMeetingOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMeetingError>`](crate::error::DeleteMeetingError)
-    pub fn delete_meeting(&self) -> crate::client::fluent_builders::DeleteMeeting {
-        crate::client::fluent_builders::DeleteMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePhoneNumber`](crate::client::fluent_builders::DeletePhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::DeletePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::DeletePhoneNumber::set_phone_number_id): <p>The phone number ID.</p>
-    /// - On success, responds with [`DeletePhoneNumberOutput`](crate::output::DeletePhoneNumberOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePhoneNumberError>`](crate::error::DeletePhoneNumberError)
-    pub fn delete_phone_number(&self) -> crate::client::fluent_builders::DeletePhoneNumber {
-        crate::client::fluent_builders::DeletePhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteProxySession`](crate::client::fluent_builders::DeleteProxySession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProxySession::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteProxySession::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::client::fluent_builders::DeleteProxySession::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::client::fluent_builders::DeleteProxySession::set_proxy_session_id): <p>The proxy session ID.</p>
-    /// - On success, responds with [`DeleteProxySessionOutput`](crate::output::DeleteProxySessionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteProxySessionError>`](crate::error::DeleteProxySessionError)
-    pub fn delete_proxy_session(&self) -> crate::client::fluent_builders::DeleteProxySession {
-        crate::client::fluent_builders::DeleteProxySession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRoom`](crate::client::fluent_builders::DeleteRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoom::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteRoom::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoom::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::DeleteRoom::set_room_id): <p>The chat room ID.</p>
-    /// - On success, responds with [`DeleteRoomOutput`](crate::output::DeleteRoomOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRoomError>`](crate::error::DeleteRoomError)
-    pub fn delete_room(&self) -> crate::client::fluent_builders::DeleteRoom {
-        crate::client::fluent_builders::DeleteRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRoomMembership`](crate::client::fluent_builders::DeleteRoomMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomMembership::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DeleteRoomMembership::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomMembership::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::DeleteRoomMembership::set_room_id): <p>The room ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::DeleteRoomMembership::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::DeleteRoomMembership::set_member_id): <p>The member ID (user ID or bot ID).</p>
-    /// - On success, responds with [`DeleteRoomMembershipOutput`](crate::output::DeleteRoomMembershipOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRoomMembershipError>`](crate::error::DeleteRoomMembershipError)
-    pub fn delete_room_membership(&self) -> crate::client::fluent_builders::DeleteRoomMembership {
-        crate::client::fluent_builders::DeleteRoomMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSipMediaApplication`](crate::client::fluent_builders::DeleteSipMediaApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSipMediaApplication::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::DeleteSipMediaApplication::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    /// - On success, responds with [`DeleteSipMediaApplicationOutput`](crate::output::DeleteSipMediaApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSipMediaApplicationError>`](crate::error::DeleteSipMediaApplicationError)
-    pub fn delete_sip_media_application(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteSipMediaApplication {
-        crate::client::fluent_builders::DeleteSipMediaApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSipRule`](crate::client::fluent_builders::DeleteSipRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_rule_id(impl Into<String>)`](crate::client::fluent_builders::DeleteSipRule::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::client::fluent_builders::DeleteSipRule::set_sip_rule_id): <p>The SIP rule ID.</p>
-    /// - On success, responds with [`DeleteSipRuleOutput`](crate::output::DeleteSipRuleOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSipRuleError>`](crate::error::DeleteSipRuleError)
-    pub fn delete_sip_rule(&self) -> crate::client::fluent_builders::DeleteSipRule {
-        crate::client::fluent_builders::DeleteSipRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnector`](crate::client::fluent_builders::DeleteVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnector::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnector::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorOutput`](crate::output::DeleteVoiceConnectorOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorError>`](crate::error::DeleteVoiceConnectorError)
-    pub fn delete_voice_connector(&self) -> crate::client::fluent_builders::DeleteVoiceConnector {
-        crate::client::fluent_builders::DeleteVoiceConnector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorEmergencyCallingConfiguration`](crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorEmergencyCallingConfigurationError>`](crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError)
-    pub fn delete_voice_connector_emergency_calling_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration {
-        crate::client::fluent_builders::DeleteVoiceConnectorEmergencyCallingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorGroup`](crate::client::fluent_builders::DeleteVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_group_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorGroup::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorGroup::set_voice_connector_group_id): <p>The Amazon Chime Voice Connector group ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorGroupOutput`](crate::output::DeleteVoiceConnectorGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorGroupError>`](crate::error::DeleteVoiceConnectorGroupError)
-    pub fn delete_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorGroup {
-        crate::client::fluent_builders::DeleteVoiceConnectorGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorOrigination`](crate::client::fluent_builders::DeleteVoiceConnectorOrigination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorOrigination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorOrigination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorOriginationOutput`](crate::output::DeleteVoiceConnectorOriginationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorOriginationError>`](crate::error::DeleteVoiceConnectorOriginationError)
-    pub fn delete_voice_connector_origination(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorOrigination {
-        crate::client::fluent_builders::DeleteVoiceConnectorOrigination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorProxy`](crate::client::fluent_builders::DeleteVoiceConnectorProxy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorProxy::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorProxy::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorProxyOutput`](crate::output::DeleteVoiceConnectorProxyOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorProxyError>`](crate::error::DeleteVoiceConnectorProxyError)
-    pub fn delete_voice_connector_proxy(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorProxy {
-        crate::client::fluent_builders::DeleteVoiceConnectorProxy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorStreamingConfiguration`](crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorStreamingConfigurationOutput`](crate::output::DeleteVoiceConnectorStreamingConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorStreamingConfigurationError>`](crate::error::DeleteVoiceConnectorStreamingConfigurationError)
-    pub fn delete_voice_connector_streaming_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration {
-        crate::client::fluent_builders::DeleteVoiceConnectorStreamingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorTermination`](crate::client::fluent_builders::DeleteVoiceConnectorTermination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorTermination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorTermination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorTerminationOutput`](crate::output::DeleteVoiceConnectorTerminationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorTerminationError>`](crate::error::DeleteVoiceConnectorTerminationError)
-    pub fn delete_voice_connector_termination(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorTermination {
-        crate::client::fluent_builders::DeleteVoiceConnectorTermination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteVoiceConnectorTerminationCredentials`](crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`usernames(Vec<String>)`](crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials::usernames) / [`set_usernames(Option<Vec<String>>)`](crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials::set_usernames): <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    /// - On success, responds with [`DeleteVoiceConnectorTerminationCredentialsOutput`](crate::output::DeleteVoiceConnectorTerminationCredentialsOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteVoiceConnectorTerminationCredentialsError>`](crate::error::DeleteVoiceConnectorTerminationCredentialsError)
-    pub fn delete_voice_connector_termination_credentials(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials {
-        crate::client::fluent_builders::DeleteVoiceConnectorTerminationCredentials::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeAppInstance`](crate::client::fluent_builders::DescribeAppInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput) with field(s):
-    ///   - [`app_instance(Option<AppInstance>)`](crate::output::DescribeAppInstanceOutput::app_instance): <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
-    /// - On failure, responds with [`SdkError<DescribeAppInstanceError>`](crate::error::DescribeAppInstanceError)
-    pub fn describe_app_instance(&self) -> crate::client::fluent_builders::DescribeAppInstance {
-        crate::client::fluent_builders::DescribeAppInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAppInstanceAdmin`](crate::client::fluent_builders::DescribeAppInstanceAdmin) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_admin_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::app_instance_admin_arn) / [`set_app_instance_admin_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::set_app_instance_admin_arn): <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceAdmin::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput) with field(s):
-    ///   - [`app_instance_admin(Option<AppInstanceAdmin>)`](crate::output::DescribeAppInstanceAdminOutput::app_instance_admin): <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
-    /// - On failure, responds with [`SdkError<DescribeAppInstanceAdminError>`](crate::error::DescribeAppInstanceAdminError)
-    pub fn describe_app_instance_admin(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAppInstanceAdmin {
-        crate::client::fluent_builders::DescribeAppInstanceAdmin::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAppInstanceUser`](crate::client::fluent_builders::DescribeAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    /// - On success, responds with [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput) with field(s):
-    ///   - [`app_instance_user(Option<AppInstanceUser>)`](crate::output::DescribeAppInstanceUserOutput::app_instance_user): <p>The name of the <code>AppInstanceUser</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeAppInstanceUserError>`](crate::error::DescribeAppInstanceUserError)
-    pub fn describe_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAppInstanceUser {
-        crate::client::fluent_builders::DescribeAppInstanceUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeChannel`](crate::client::fluent_builders::DescribeChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelOutput`](crate::output::DescribeChannelOutput) with field(s):
-    ///   - [`channel(Option<Channel>)`](crate::output::DescribeChannelOutput::channel): <p>The channel details.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::error::DescribeChannelError)
-    pub fn describe_channel(&self) -> crate::client::fluent_builders::DescribeChannel {
-        crate::client::fluent_builders::DescribeChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeChannelBan`](crate::client::fluent_builders::DescribeChannelBan) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_channel_arn): <p>The ARN of the channel from which the user is banned.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_member_arn): <p>The ARN of the member being banned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelBan::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelBan::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput) with field(s):
-    ///   - [`channel_ban(Option<ChannelBan>)`](crate::output::DescribeChannelBanOutput::channel_ban): <p>The details of the ban.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelBanError>`](crate::error::DescribeChannelBanError)
-    pub fn describe_channel_ban(&self) -> crate::client::fluent_builders::DescribeChannelBan {
-        crate::client::fluent_builders::DescribeChannelBan::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeChannelMembership`](crate::client::fluent_builders::DescribeChannelMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`member_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::member_arn) / [`set_member_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_member_arn): <p>The ARN of the member.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembership::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembership::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput) with field(s):
-    ///   - [`channel_membership(Option<ChannelMembership>)`](crate::output::DescribeChannelMembershipOutput::channel_membership): <p>The details of the membership.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelMembershipError>`](crate::error::DescribeChannelMembershipError)
-    pub fn describe_channel_membership(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeChannelMembership {
-        crate::client::fluent_builders::DescribeChannelMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeChannelMembershipForAppInstanceUser`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_channel_arn): <p>The ARN of the channel to which the user belongs.</p>
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user in a channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput) with field(s):
-    ///   - [`channel_membership(Option<ChannelMembershipForAppInstanceUserSummary>)`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput::channel_membership): <p>The channel to which a user belongs.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelMembershipForAppInstanceUserError>`](crate::error::DescribeChannelMembershipForAppInstanceUserError)
-    pub fn describe_channel_membership_for_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser {
-        crate::client::fluent_builders::DescribeChannelMembershipForAppInstanceUser::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeChannelModeratedByAppInstanceUser`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_channel_arn): <p>The ARN of the moderated channel.</p>
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput) with field(s):
-    ///   - [`channel(Option<ChannelModeratedByAppInstanceUserSummary>)`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput::channel): <p>The moderated channel.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelModeratedByAppInstanceUserError>`](crate::error::DescribeChannelModeratedByAppInstanceUserError)
-    pub fn describe_channel_moderated_by_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser {
-        crate::client::fluent_builders::DescribeChannelModeratedByAppInstanceUser::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeChannelModerator`](crate::client::fluent_builders::DescribeChannelModerator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_moderator_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::channel_moderator_arn) / [`set_channel_moderator_arn(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_channel_moderator_arn): <p>The ARN of the channel moderator.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::DescribeChannelModerator::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::DescribeChannelModerator::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput) with field(s):
-    ///   - [`channel_moderator(Option<ChannelModerator>)`](crate::output::DescribeChannelModeratorOutput::channel_moderator): <p>The details of the channel moderator.</p>
-    /// - On failure, responds with [`SdkError<DescribeChannelModeratorError>`](crate::error::DescribeChannelModeratorError)
-    pub fn describe_channel_moderator(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeChannelModerator {
-        crate::client::fluent_builders::DescribeChannelModerator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociatePhoneNumberFromUser`](crate::client::fluent_builders::DisassociatePhoneNumberFromUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberFromUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberFromUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberFromUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumberFromUser::set_user_id): <p>The user ID.</p>
-    /// - On success, responds with [`DisassociatePhoneNumberFromUserOutput`](crate::output::DisassociatePhoneNumberFromUserOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociatePhoneNumberFromUserError>`](crate::error::DisassociatePhoneNumberFromUserError)
-    pub fn disassociate_phone_number_from_user(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociatePhoneNumberFromUser {
-        crate::client::fluent_builders::DisassociatePhoneNumberFromUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociatePhoneNumbersFromVoiceConnector`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    /// - On success, responds with [`DisassociatePhoneNumbersFromVoiceConnectorOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<DisassociatePhoneNumbersFromVoiceConnectorError>`](crate::error::DisassociatePhoneNumbersFromVoiceConnectorError)
-    pub fn disassociate_phone_numbers_from_voice_connector(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector {
-        crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnector::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DisassociatePhoneNumbersFromVoiceConnectorGroup`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_group_id(impl Into<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup::set_voice_connector_group_id): <p>The Amazon Chime Voice Connector group ID.</p>
-    ///   - [`e164_phone_numbers(Vec<String>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup::e164_phone_numbers) / [`set_e164_phone_numbers(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup::set_e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    /// - On success, responds with [`DisassociatePhoneNumbersFromVoiceConnectorGroupOutput`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput) with field(s):
-    ///   - [`phone_number_errors(Option<Vec<PhoneNumberError>>)`](crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput::phone_number_errors): <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
-    /// - On failure, responds with [`SdkError<DisassociatePhoneNumbersFromVoiceConnectorGroupError>`](crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError)
-    pub fn disassociate_phone_numbers_from_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup {
-        crate::client::fluent_builders::DisassociatePhoneNumbersFromVoiceConnectorGroup::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DisassociateSigninDelegateGroupsFromAccount`](crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`group_names(Vec<String>)`](crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount::group_names) / [`set_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount::set_group_names): <p>The sign-in delegate group names.</p>
-    /// - On success, responds with [`DisassociateSigninDelegateGroupsFromAccountOutput`](crate::output::DisassociateSigninDelegateGroupsFromAccountOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateSigninDelegateGroupsFromAccountError>`](crate::error::DisassociateSigninDelegateGroupsFromAccountError)
-    pub fn disassociate_signin_delegate_groups_from_account(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount {
-        crate::client::fluent_builders::DisassociateSigninDelegateGroupsFromAccount::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetAccount`](crate::client::fluent_builders::GetAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccount::set_account_id): <p>The Amazon Chime account ID.</p>
-    /// - On success, responds with [`GetAccountOutput`](crate::output::GetAccountOutput) with field(s):
-    ///   - [`account(Option<Account>)`](crate::output::GetAccountOutput::account): <p>The Amazon Chime account details.</p>
-    /// - On failure, responds with [`SdkError<GetAccountError>`](crate::error::GetAccountError)
-    pub fn get_account(&self) -> crate::client::fluent_builders::GetAccount {
-        crate::client::fluent_builders::GetAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccountSettings`](crate::client::fluent_builders::GetAccountSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetAccountSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetAccountSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    /// - On success, responds with [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput) with field(s):
-    ///   - [`account_settings(Option<AccountSettings>)`](crate::output::GetAccountSettingsOutput::account_settings): <p>The Amazon Chime account settings.</p>
-    /// - On failure, responds with [`SdkError<GetAccountSettingsError>`](crate::error::GetAccountSettingsError)
-    pub fn get_account_settings(&self) -> crate::client::fluent_builders::GetAccountSettings {
-        crate::client::fluent_builders::GetAccountSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAppInstanceRetentionSettings`](crate::client::fluent_builders::GetAppInstanceRetentionSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetAppInstanceRetentionSettings::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::GetAppInstanceRetentionSettings::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput) with field(s):
-    ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::output::GetAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The retention settings for the <code>AppInstance</code>.</p>
-    ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::GetAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
-    /// - On failure, responds with [`SdkError<GetAppInstanceRetentionSettingsError>`](crate::error::GetAppInstanceRetentionSettingsError)
-    pub fn get_app_instance_retention_settings(
-        &self,
-    ) -> crate::client::fluent_builders::GetAppInstanceRetentionSettings {
-        crate::client::fluent_builders::GetAppInstanceRetentionSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAppInstanceStreamingConfigurations`](crate::client::fluent_builders::GetAppInstanceStreamingConfigurations) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::GetAppInstanceStreamingConfigurations::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::GetAppInstanceStreamingConfigurations::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    /// - On success, responds with [`GetAppInstanceStreamingConfigurationsOutput`](crate::output::GetAppInstanceStreamingConfigurationsOutput) with field(s):
-    ///   - [`app_instance_streaming_configurations(Option<Vec<AppInstanceStreamingConfiguration>>)`](crate::output::GetAppInstanceStreamingConfigurationsOutput::app_instance_streaming_configurations): <p>The streaming settings.</p>
-    /// - On failure, responds with [`SdkError<GetAppInstanceStreamingConfigurationsError>`](crate::error::GetAppInstanceStreamingConfigurationsError)
-    pub fn get_app_instance_streaming_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::GetAppInstanceStreamingConfigurations {
-        crate::client::fluent_builders::GetAppInstanceStreamingConfigurations::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetAttendee`](crate::client::fluent_builders::GetAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::GetAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::GetAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    /// - On success, responds with [`GetAttendeeOutput`](crate::output::GetAttendeeOutput) with field(s):
-    ///   - [`attendee(Option<Attendee>)`](crate::output::GetAttendeeOutput::attendee): <p>The Amazon Chime SDK attendee information.</p>
-    /// - On failure, responds with [`SdkError<GetAttendeeError>`](crate::error::GetAttendeeError)
-    pub fn get_attendee(&self) -> crate::client::fluent_builders::GetAttendee {
-        crate::client::fluent_builders::GetAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBot`](crate::client::fluent_builders::GetBot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetBot::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetBot::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::GetBot::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::GetBot::set_bot_id): <p>The bot ID.</p>
-    /// - On success, responds with [`GetBotOutput`](crate::output::GetBotOutput) with field(s):
-    ///   - [`bot(Option<Bot>)`](crate::output::GetBotOutput::bot): <p>The chat bot details.</p>
-    /// - On failure, responds with [`SdkError<GetBotError>`](crate::error::GetBotError)
-    pub fn get_bot(&self) -> crate::client::fluent_builders::GetBot {
-        crate::client::fluent_builders::GetBot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetChannelMessage`](crate::client::fluent_builders::GetChannelMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_message_id): <p>The ID of the message.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::GetChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::GetChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput) with field(s):
-    ///   - [`channel_message(Option<ChannelMessage>)`](crate::output::GetChannelMessageOutput::channel_message): <p>The details of and content in the message.</p>
-    /// - On failure, responds with [`SdkError<GetChannelMessageError>`](crate::error::GetChannelMessageError)
-    pub fn get_channel_message(&self) -> crate::client::fluent_builders::GetChannelMessage {
-        crate::client::fluent_builders::GetChannelMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetEventsConfiguration`](crate::client::fluent_builders::GetEventsConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetEventsConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetEventsConfiguration::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::GetEventsConfiguration::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::GetEventsConfiguration::set_bot_id): <p>The bot ID.</p>
-    /// - On success, responds with [`GetEventsConfigurationOutput`](crate::output::GetEventsConfigurationOutput) with field(s):
-    ///   - [`events_configuration(Option<EventsConfiguration>)`](crate::output::GetEventsConfigurationOutput::events_configuration): <p>The events configuration details.</p>
-    /// - On failure, responds with [`SdkError<GetEventsConfigurationError>`](crate::error::GetEventsConfigurationError)
-    pub fn get_events_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetEventsConfiguration {
-        crate::client::fluent_builders::GetEventsConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGlobalSettings`](crate::client::fluent_builders::GetGlobalSettings) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetGlobalSettings::send) it.
-
-    /// - On success, responds with [`GetGlobalSettingsOutput`](crate::output::GetGlobalSettingsOutput) with field(s):
-    ///   - [`business_calling(Option<BusinessCallingSettings>)`](crate::output::GetGlobalSettingsOutput::business_calling): <p>The Amazon Chime Business Calling settings.</p>
-    ///   - [`voice_connector(Option<VoiceConnectorSettings>)`](crate::output::GetGlobalSettingsOutput::voice_connector): <p>The Amazon Chime Voice Connector settings.</p>
-    /// - On failure, responds with [`SdkError<GetGlobalSettingsError>`](crate::error::GetGlobalSettingsError)
-    pub fn get_global_settings(&self) -> crate::client::fluent_builders::GetGlobalSettings {
-        crate::client::fluent_builders::GetGlobalSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMediaCapturePipeline`](crate::client::fluent_builders::GetMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::GetMediaCapturePipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::GetMediaCapturePipeline::set_media_pipeline_id): <p>The ID of the pipeline that you want to get.</p>
-    /// - On success, responds with [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput) with field(s):
-    ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::output::GetMediaCapturePipelineOutput::media_capture_pipeline): <p>The media capture pipeline object.</p>
-    /// - On failure, responds with [`SdkError<GetMediaCapturePipelineError>`](crate::error::GetMediaCapturePipelineError)
-    pub fn get_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::GetMediaCapturePipeline {
-        crate::client::fluent_builders::GetMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMeeting`](crate::client::fluent_builders::GetMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::GetMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::GetMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    /// - On success, responds with [`GetMeetingOutput`](crate::output::GetMeetingOutput) with field(s):
-    ///   - [`meeting(Option<Meeting>)`](crate::output::GetMeetingOutput::meeting): <p>The Amazon Chime SDK meeting information.</p>
-    /// - On failure, responds with [`SdkError<GetMeetingError>`](crate::error::GetMeetingError)
-    pub fn get_meeting(&self) -> crate::client::fluent_builders::GetMeeting {
-        crate::client::fluent_builders::GetMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMessagingSessionEndpoint`](crate::client::fluent_builders::GetMessagingSessionEndpoint) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetMessagingSessionEndpoint::send) it.
-
-    /// - On success, responds with [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput) with field(s):
-    ///   - [`endpoint(Option<MessagingSessionEndpoint>)`](crate::output::GetMessagingSessionEndpointOutput::endpoint): <p>The endpoint returned in the response.</p>
-    /// - On failure, responds with [`SdkError<GetMessagingSessionEndpointError>`](crate::error::GetMessagingSessionEndpointError)
-    pub fn get_messaging_session_endpoint(
-        &self,
-    ) -> crate::client::fluent_builders::GetMessagingSessionEndpoint {
-        crate::client::fluent_builders::GetMessagingSessionEndpoint::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPhoneNumber`](crate::client::fluent_builders::GetPhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::GetPhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::GetPhoneNumber::set_phone_number_id): <p>The phone number ID.</p>
-    /// - On success, responds with [`GetPhoneNumberOutput`](crate::output::GetPhoneNumberOutput) with field(s):
-    ///   - [`phone_number(Option<PhoneNumber>)`](crate::output::GetPhoneNumberOutput::phone_number): <p>The phone number details.</p>
-    /// - On failure, responds with [`SdkError<GetPhoneNumberError>`](crate::error::GetPhoneNumberError)
-    pub fn get_phone_number(&self) -> crate::client::fluent_builders::GetPhoneNumber {
-        crate::client::fluent_builders::GetPhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPhoneNumberOrder`](crate::client::fluent_builders::GetPhoneNumberOrder) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_order_id(impl Into<String>)`](crate::client::fluent_builders::GetPhoneNumberOrder::phone_number_order_id) / [`set_phone_number_order_id(Option<String>)`](crate::client::fluent_builders::GetPhoneNumberOrder::set_phone_number_order_id): <p>The ID for the phone number order.</p>
-    /// - On success, responds with [`GetPhoneNumberOrderOutput`](crate::output::GetPhoneNumberOrderOutput) with field(s):
-    ///   - [`phone_number_order(Option<PhoneNumberOrder>)`](crate::output::GetPhoneNumberOrderOutput::phone_number_order): <p>The phone number order details.</p>
-    /// - On failure, responds with [`SdkError<GetPhoneNumberOrderError>`](crate::error::GetPhoneNumberOrderError)
-    pub fn get_phone_number_order(&self) -> crate::client::fluent_builders::GetPhoneNumberOrder {
-        crate::client::fluent_builders::GetPhoneNumberOrder::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPhoneNumberSettings`](crate::client::fluent_builders::GetPhoneNumberSettings) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetPhoneNumberSettings::send) it.
-
-    /// - On success, responds with [`GetPhoneNumberSettingsOutput`](crate::output::GetPhoneNumberSettingsOutput) with field(s):
-    ///   - [`calling_name(Option<String>)`](crate::output::GetPhoneNumberSettingsOutput::calling_name): <p>The default outbound calling name for the account.</p>
-    ///   - [`calling_name_updated_timestamp(Option<DateTime>)`](crate::output::GetPhoneNumberSettingsOutput::calling_name_updated_timestamp): <p>The updated outbound calling name timestamp, in ISO 8601 format.</p>
-    /// - On failure, responds with [`SdkError<GetPhoneNumberSettingsError>`](crate::error::GetPhoneNumberSettingsError)
-    pub fn get_phone_number_settings(
-        &self,
-    ) -> crate::client::fluent_builders::GetPhoneNumberSettings {
-        crate::client::fluent_builders::GetPhoneNumberSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProxySession`](crate::client::fluent_builders::GetProxySession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetProxySession::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetProxySession::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::client::fluent_builders::GetProxySession::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::client::fluent_builders::GetProxySession::set_proxy_session_id): <p>The proxy session ID.</p>
-    /// - On success, responds with [`GetProxySessionOutput`](crate::output::GetProxySessionOutput) with field(s):
-    ///   - [`proxy_session(Option<ProxySession>)`](crate::output::GetProxySessionOutput::proxy_session): <p>The proxy session details.</p>
-    /// - On failure, responds with [`SdkError<GetProxySessionError>`](crate::error::GetProxySessionError)
-    pub fn get_proxy_session(&self) -> crate::client::fluent_builders::GetProxySession {
-        crate::client::fluent_builders::GetProxySession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRetentionSettings`](crate::client::fluent_builders::GetRetentionSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetRetentionSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetRetentionSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    /// - On success, responds with [`GetRetentionSettingsOutput`](crate::output::GetRetentionSettingsOutput) with field(s):
-    ///   - [`retention_settings(Option<RetentionSettings>)`](crate::output::GetRetentionSettingsOutput::retention_settings): <p>The retention settings.</p>
-    ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::GetRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    /// - On failure, responds with [`SdkError<GetRetentionSettingsError>`](crate::error::GetRetentionSettingsError)
-    pub fn get_retention_settings(&self) -> crate::client::fluent_builders::GetRetentionSettings {
-        crate::client::fluent_builders::GetRetentionSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRoom`](crate::client::fluent_builders::GetRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetRoom::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetRoom::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::GetRoom::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::GetRoom::set_room_id): <p>The room ID.</p>
-    /// - On success, responds with [`GetRoomOutput`](crate::output::GetRoomOutput) with field(s):
-    ///   - [`room(Option<Room>)`](crate::output::GetRoomOutput::room): <p>The room details.</p>
-    /// - On failure, responds with [`SdkError<GetRoomError>`](crate::error::GetRoomError)
-    pub fn get_room(&self) -> crate::client::fluent_builders::GetRoom {
-        crate::client::fluent_builders::GetRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSipMediaApplication`](crate::client::fluent_builders::GetSipMediaApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::GetSipMediaApplication::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::GetSipMediaApplication::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    /// - On success, responds with [`GetSipMediaApplicationOutput`](crate::output::GetSipMediaApplicationOutput) with field(s):
-    ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::output::GetSipMediaApplicationOutput::sip_media_application): <p>The SIP media application details.</p>
-    /// - On failure, responds with [`SdkError<GetSipMediaApplicationError>`](crate::error::GetSipMediaApplicationError)
-    pub fn get_sip_media_application(
-        &self,
-    ) -> crate::client::fluent_builders::GetSipMediaApplication {
-        crate::client::fluent_builders::GetSipMediaApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSipMediaApplicationLoggingConfiguration`](crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    /// - On success, responds with [`GetSipMediaApplicationLoggingConfigurationOutput`](crate::output::GetSipMediaApplicationLoggingConfigurationOutput) with field(s):
-    ///   - [`sip_media_application_logging_configuration(Option<SipMediaApplicationLoggingConfiguration>)`](crate::output::GetSipMediaApplicationLoggingConfigurationOutput::sip_media_application_logging_configuration): <p>The actual logging configuration.</p>
-    /// - On failure, responds with [`SdkError<GetSipMediaApplicationLoggingConfigurationError>`](crate::error::GetSipMediaApplicationLoggingConfigurationError)
-    pub fn get_sip_media_application_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration {
-        crate::client::fluent_builders::GetSipMediaApplicationLoggingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetSipRule`](crate::client::fluent_builders::GetSipRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_rule_id(impl Into<String>)`](crate::client::fluent_builders::GetSipRule::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::client::fluent_builders::GetSipRule::set_sip_rule_id): <p>The SIP rule ID.</p>
-    /// - On success, responds with [`GetSipRuleOutput`](crate::output::GetSipRuleOutput) with field(s):
-    ///   - [`sip_rule(Option<SipRule>)`](crate::output::GetSipRuleOutput::sip_rule): <p>The SIP rule details.</p>
-    /// - On failure, responds with [`SdkError<GetSipRuleError>`](crate::error::GetSipRuleError)
-    pub fn get_sip_rule(&self) -> crate::client::fluent_builders::GetSipRule {
-        crate::client::fluent_builders::GetSipRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetUser`](crate::client::fluent_builders::GetUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetUser::set_user_id): <p>The user ID.</p>
-    /// - On success, responds with [`GetUserOutput`](crate::output::GetUserOutput) with field(s):
-    ///   - [`user(Option<User>)`](crate::output::GetUserOutput::user): <p>The user details.</p>
-    /// - On failure, responds with [`SdkError<GetUserError>`](crate::error::GetUserError)
-    pub fn get_user(&self) -> crate::client::fluent_builders::GetUser {
-        crate::client::fluent_builders::GetUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetUserSettings`](crate::client::fluent_builders::GetUserSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::GetUserSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::GetUserSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::GetUserSettings::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::GetUserSettings::set_user_id): <p>The user ID.</p>
-    /// - On success, responds with [`GetUserSettingsOutput`](crate::output::GetUserSettingsOutput) with field(s):
-    ///   - [`user_settings(Option<UserSettings>)`](crate::output::GetUserSettingsOutput::user_settings): <p>The user settings.</p>
-    /// - On failure, responds with [`SdkError<GetUserSettingsError>`](crate::error::GetUserSettingsError)
-    pub fn get_user_settings(&self) -> crate::client::fluent_builders::GetUserSettings {
-        crate::client::fluent_builders::GetUserSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnector`](crate::client::fluent_builders::GetVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnector::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnector::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorOutput`](crate::output::GetVoiceConnectorOutput) with field(s):
-    ///   - [`voice_connector(Option<VoiceConnector>)`](crate::output::GetVoiceConnectorOutput::voice_connector): <p>The Amazon Chime Voice Connector details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorError>`](crate::error::GetVoiceConnectorError)
-    pub fn get_voice_connector(&self) -> crate::client::fluent_builders::GetVoiceConnector {
-        crate::client::fluent_builders::GetVoiceConnector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorEmergencyCallingConfiguration`](crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput) with field(s):
-    ///   - [`emergency_calling_configuration(Option<EmergencyCallingConfiguration>)`](crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput::emergency_calling_configuration): <p>The emergency calling configuration details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorEmergencyCallingConfigurationError>`](crate::error::GetVoiceConnectorEmergencyCallingConfigurationError)
-    pub fn get_voice_connector_emergency_calling_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration {
-        crate::client::fluent_builders::GetVoiceConnectorEmergencyCallingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorGroup`](crate::client::fluent_builders::GetVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_group_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorGroup::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorGroup::set_voice_connector_group_id): <p>The Amazon Chime Voice Connector group ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorGroupOutput`](crate::output::GetVoiceConnectorGroupOutput) with field(s):
-    ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::output::GetVoiceConnectorGroupOutput::voice_connector_group): <p>The Amazon Chime Voice Connector group details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorGroupError>`](crate::error::GetVoiceConnectorGroupError)
-    pub fn get_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorGroup {
-        crate::client::fluent_builders::GetVoiceConnectorGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorLoggingConfiguration`](crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorLoggingConfigurationOutput`](crate::output::GetVoiceConnectorLoggingConfigurationOutput) with field(s):
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::GetVoiceConnectorLoggingConfigurationOutput::logging_configuration): <p>The logging configuration details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorLoggingConfigurationError>`](crate::error::GetVoiceConnectorLoggingConfigurationError)
-    pub fn get_voice_connector_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration {
-        crate::client::fluent_builders::GetVoiceConnectorLoggingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorOrigination`](crate::client::fluent_builders::GetVoiceConnectorOrigination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorOrigination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorOrigination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorOriginationOutput`](crate::output::GetVoiceConnectorOriginationOutput) with field(s):
-    ///   - [`origination(Option<Origination>)`](crate::output::GetVoiceConnectorOriginationOutput::origination): <p>The origination setting details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorOriginationError>`](crate::error::GetVoiceConnectorOriginationError)
-    pub fn get_voice_connector_origination(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorOrigination {
-        crate::client::fluent_builders::GetVoiceConnectorOrigination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorProxy`](crate::client::fluent_builders::GetVoiceConnectorProxy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorProxy::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorProxy::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorProxyOutput`](crate::output::GetVoiceConnectorProxyOutput) with field(s):
-    ///   - [`proxy(Option<Proxy>)`](crate::output::GetVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorProxyError>`](crate::error::GetVoiceConnectorProxyError)
-    pub fn get_voice_connector_proxy(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorProxy {
-        crate::client::fluent_builders::GetVoiceConnectorProxy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorStreamingConfiguration`](crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorStreamingConfigurationOutput`](crate::output::GetVoiceConnectorStreamingConfigurationOutput) with field(s):
-    ///   - [`streaming_configuration(Option<StreamingConfiguration>)`](crate::output::GetVoiceConnectorStreamingConfigurationOutput::streaming_configuration): <p>The streaming configuration details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorStreamingConfigurationError>`](crate::error::GetVoiceConnectorStreamingConfigurationError)
-    pub fn get_voice_connector_streaming_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration {
-        crate::client::fluent_builders::GetVoiceConnectorStreamingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorTermination`](crate::client::fluent_builders::GetVoiceConnectorTermination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorTermination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorTermination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorTerminationOutput`](crate::output::GetVoiceConnectorTerminationOutput) with field(s):
-    ///   - [`termination(Option<Termination>)`](crate::output::GetVoiceConnectorTerminationOutput::termination): <p>The termination setting details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorTerminationError>`](crate::error::GetVoiceConnectorTerminationError)
-    pub fn get_voice_connector_termination(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorTermination {
-        crate::client::fluent_builders::GetVoiceConnectorTermination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetVoiceConnectorTerminationHealth`](crate::client::fluent_builders::GetVoiceConnectorTerminationHealth) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::GetVoiceConnectorTerminationHealth::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::GetVoiceConnectorTerminationHealth::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`GetVoiceConnectorTerminationHealthOutput`](crate::output::GetVoiceConnectorTerminationHealthOutput) with field(s):
-    ///   - [`termination_health(Option<TerminationHealth>)`](crate::output::GetVoiceConnectorTerminationHealthOutput::termination_health): <p>The termination health details.</p>
-    /// - On failure, responds with [`SdkError<GetVoiceConnectorTerminationHealthError>`](crate::error::GetVoiceConnectorTerminationHealthError)
-    pub fn get_voice_connector_termination_health(
-        &self,
-    ) -> crate::client::fluent_builders::GetVoiceConnectorTerminationHealth {
-        crate::client::fluent_builders::GetVoiceConnectorTerminationHealth::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`InviteUsers`](crate::client::fluent_builders::InviteUsers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::InviteUsers::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::InviteUsers::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_email_list(Vec<String>)`](crate::client::fluent_builders::InviteUsers::user_email_list) / [`set_user_email_list(Option<Vec<String>>)`](crate::client::fluent_builders::InviteUsers::set_user_email_list): <p>The user email addresses to which to send the email invitation.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::InviteUsers::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::InviteUsers::set_user_type): <p>The user type.</p>
-    /// - On success, responds with [`InviteUsersOutput`](crate::output::InviteUsersOutput) with field(s):
-    ///   - [`invites(Option<Vec<Invite>>)`](crate::output::InviteUsersOutput::invites): <p>The email invitation details.</p>
-    /// - On failure, responds with [`SdkError<InviteUsersError>`](crate::error::InviteUsersError)
-    pub fn invite_users(&self) -> crate::client::fluent_builders::InviteUsers {
-        crate::client::fluent_builders::InviteUsers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAccounts`](crate::client::fluent_builders::ListAccounts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccounts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_name): <p>Amazon Chime account name prefix with which to filter results.</p>
-    ///   - [`user_email(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::user_email) / [`set_user_email(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_user_email): <p>User email address with which to filter results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccounts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccounts::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccounts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccounts::set_max_results): <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-    /// - On success, responds with [`ListAccountsOutput`](crate::output::ListAccountsOutput) with field(s):
-    ///   - [`accounts(Option<Vec<Account>>)`](crate::output::ListAccountsOutput::accounts): <p>List of Amazon Chime accounts and account details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccountsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAccountsError>`](crate::error::ListAccountsError)
-    pub fn list_accounts(&self) -> crate::client::fluent_builders::ListAccounts {
-        crate::client::fluent_builders::ListAccounts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAppInstanceAdmins`](crate::client::fluent_builders::ListAppInstanceAdmins) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceAdmins::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstanceAdmins::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_max_results): <p>The maximum number of administrators that you want to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstanceAdmins::set_next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    /// - On success, responds with [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::output::ListAppInstanceAdminsOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_admins(Option<Vec<AppInstanceAdminSummary>>)`](crate::output::ListAppInstanceAdminsOutput::app_instance_admins): <p>The information for each administrator.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAppInstanceAdminsOutput::next_token): <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstanceAdminsError>`](crate::error::ListAppInstanceAdminsError)
-    pub fn list_app_instance_admins(
-        &self,
-    ) -> crate::client::fluent_builders::ListAppInstanceAdmins {
-        crate::client::fluent_builders::ListAppInstanceAdmins::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAppInstances`](crate::client::fluent_builders::ListAppInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstances::set_max_results): <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstances::set_next_token): <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
-    /// - On success, responds with [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput) with field(s):
-    ///   - [`app_instances(Option<Vec<AppInstanceSummary>>)`](crate::output::ListAppInstancesOutput::app_instances): <p>The information for each <code>AppInstance</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAppInstancesOutput::next_token): <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstancesError>`](crate::error::ListAppInstancesError)
-    pub fn list_app_instances(&self) -> crate::client::fluent_builders::ListAppInstances {
-        crate::client::fluent_builders::ListAppInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAppInstanceUsers`](crate::client::fluent_builders::ListAppInstanceUsers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAppInstanceUsers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAppInstanceUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_max_results): <p>The maximum number of requests that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAppInstanceUsers::set_next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
-    /// - On success, responds with [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::output::ListAppInstanceUsersOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_users(Option<Vec<AppInstanceUserSummary>>)`](crate::output::ListAppInstanceUsersOutput::app_instance_users): <p>The information for each requested <code>AppInstanceUser</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAppInstanceUsersOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
-    /// - On failure, responds with [`SdkError<ListAppInstanceUsersError>`](crate::error::ListAppInstanceUsersError)
-    pub fn list_app_instance_users(&self) -> crate::client::fluent_builders::ListAppInstanceUsers {
-        crate::client::fluent_builders::ListAppInstanceUsers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAttendees`](crate::client::fluent_builders::ListAttendees) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttendees::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttendees::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttendees::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttendees::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttendees::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListAttendeesOutput`](crate::output::ListAttendeesOutput) with field(s):
-    ///   - [`attendees(Option<Vec<Attendee>>)`](crate::output::ListAttendeesOutput::attendees): <p>The Amazon Chime SDK attendee information.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAttendeesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListAttendeesError>`](crate::error::ListAttendeesError)
-    pub fn list_attendees(&self) -> crate::client::fluent_builders::ListAttendees {
-        crate::client::fluent_builders::ListAttendees::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAttendeeTags`](crate::client::fluent_builders::ListAttendeeTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::ListAttendeeTags::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::ListAttendeeTags::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::ListAttendeeTags::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::ListAttendeeTags::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    /// - On success, responds with [`ListAttendeeTagsOutput`](crate::output::ListAttendeeTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListAttendeeTagsOutput::tags): <p>A list of tag key-value pairs.</p>
-    /// - On failure, responds with [`SdkError<ListAttendeeTagsError>`](crate::error::ListAttendeeTagsError)
-    pub fn list_attendee_tags(&self) -> crate::client::fluent_builders::ListAttendeeTags {
-        crate::client::fluent_builders::ListAttendeeTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBots`](crate::client::fluent_builders::ListBots) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBots::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListBots::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListBots::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBots::set_max_results): <p>The maximum number of results to return in a single call. The default is 10.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBots::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListBotsOutput`](crate::output::ListBotsOutput) with field(s):
-    ///   - [`bots(Option<Vec<Bot>>)`](crate::output::ListBotsOutput::bots): <p>List of bots and bot details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBotsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListBotsError>`](crate::error::ListBotsError)
-    pub fn list_bots(&self) -> crate::client::fluent_builders::ListBots {
-        crate::client::fluent_builders::ListBots::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannelBans`](crate::client::fluent_builders::ListChannelBans) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelBans::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelBans::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelBans::set_max_results): <p>The maximum number of bans that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelBans::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelBans::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelBansOutput`](crate::output::ListChannelBansOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelBansOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelBansOutput::next_token): <p>The token passed by previous API calls until all requested bans are returned.</p>
-    ///   - [`channel_bans(Option<Vec<ChannelBanSummary>>)`](crate::output::ListChannelBansOutput::channel_bans): <p>The information for each requested ban.</p>
-    /// - On failure, responds with [`SdkError<ListChannelBansError>`](crate::error::ListChannelBansError)
-    pub fn list_channel_bans(&self) -> crate::client::fluent_builders::ListChannelBans {
-        crate::client::fluent_builders::ListChannelBans::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannelMemberships`](crate::client::fluent_builders::ListChannelMemberships) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMemberships::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_channel_arn): <p>The maximum number of channel memberships that you want returned.</p>
-    ///   - [`r#type(ChannelMembershipType)`](crate::client::fluent_builders::ListChannelMemberships::type) / [`set_type(Option<ChannelMembershipType>)`](crate::client::fluent_builders::ListChannelMemberships::set_type): <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMemberships::set_max_results): <p>The maximum number of channel memberships that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMemberships::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMemberships::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMembershipsOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`channel_memberships(Option<Vec<ChannelMembershipSummary>>)`](crate::output::ListChannelMembershipsOutput::channel_memberships): <p>The information for the requested channel memberships.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsOutput::next_token): <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMembershipsError>`](crate::error::ListChannelMembershipsError)
-    pub fn list_channel_memberships(
-        &self,
-    ) -> crate::client::fluent_builders::ListChannelMemberships {
-        crate::client::fluent_builders::ListChannelMemberships::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannelMembershipsForAppInstanceUser`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>s</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_max_results): <p>The maximum number of users that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_next_token): <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput) with field(s):
-    ///   - [`channel_memberships(Option<Vec<ChannelMembershipForAppInstanceUserSummary>>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::channel_memberships): <p>The token passed by previous API calls until all requested users are returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMembershipsForAppInstanceUserOutput::next_token): <p>The token passed by previous API calls until all requested users are returned.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMembershipsForAppInstanceUserError>`](crate::error::ListChannelMembershipsForAppInstanceUserError)
-    pub fn list_channel_memberships_for_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser {
-        crate::client::fluent_builders::ListChannelMembershipsForAppInstanceUser::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListChannelMessages`](crate::client::fluent_builders::ListChannelMessages) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelMessages::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`sort_order(SortOrder)`](crate::client::fluent_builders::ListChannelMessages::sort_order) / [`set_sort_order(Option<SortOrder>)`](crate::client::fluent_builders::ListChannelMessages::set_sort_order): <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
-    ///   - [`not_before(DateTime)`](crate::client::fluent_builders::ListChannelMessages::not_before) / [`set_not_before(Option<DateTime>)`](crate::client::fluent_builders::ListChannelMessages::set_not_before): <p>The initial or starting time stamp for your requested messages.</p>
-    ///   - [`not_after(DateTime)`](crate::client::fluent_builders::ListChannelMessages::not_after) / [`set_not_after(Option<DateTime>)`](crate::client::fluent_builders::ListChannelMessages::set_not_after): <p>The final or ending time stamp for your requested messages.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelMessages::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelMessages::set_max_results): <p>The maximum number of messages that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelMessages::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelMessages::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelMessagesOutput::channel_arn): <p>The ARN of the channel containing the requested messages.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelMessagesOutput::next_token): <p>The token passed by previous API calls until all requested messages are returned.</p>
-    ///   - [`channel_messages(Option<Vec<ChannelMessageSummary>>)`](crate::output::ListChannelMessagesOutput::channel_messages): <p>The information about, and content of, each requested message.</p>
-    /// - On failure, responds with [`SdkError<ListChannelMessagesError>`](crate::error::ListChannelMessagesError)
-    pub fn list_channel_messages(&self) -> crate::client::fluent_builders::ListChannelMessages {
-        crate::client::fluent_builders::ListChannelMessages::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannelModerators`](crate::client::fluent_builders::ListChannelModerators) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelModerators::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelModerators::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelModerators::set_max_results): <p>The maximum number of moderators that you want returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelModerators::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelModerators::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::ListChannelModeratorsOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelModeratorsOutput::next_token): <p>The token passed by previous API calls until all requested moderators are returned.</p>
-    ///   - [`channel_moderators(Option<Vec<ChannelModeratorSummary>>)`](crate::output::ListChannelModeratorsOutput::channel_moderators): <p>The information about and names of each moderator.</p>
-    /// - On failure, responds with [`SdkError<ListChannelModeratorsError>`](crate::error::ListChannelModeratorsError)
-    pub fn list_channel_moderators(&self) -> crate::client::fluent_builders::ListChannelModerators {
-        crate::client::fluent_builders::ListChannelModerators::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannels`](crate::client::fluent_builders::ListChannels) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannels::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannels::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::ListChannels::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`privacy(ChannelPrivacy)`](crate::client::fluent_builders::ListChannels::privacy) / [`set_privacy(Option<ChannelPrivacy>)`](crate::client::fluent_builders::ListChannels::set_privacy): <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannels::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannels::set_max_results): <p>The maximum number of channels that you want to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannels::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannels::set_next_token): <p>The token passed by previous API calls until all requested channels are returned.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannels::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannels::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelsOutput`](crate::output::ListChannelsOutput) with field(s):
-    ///   - [`channels(Option<Vec<ChannelSummary>>)`](crate::output::ListChannelsOutput::channels): <p>The information about each channel.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsOutput::next_token): <p>The token returned from previous API requests until the number of channels is reached.</p>
-    /// - On failure, responds with [`SdkError<ListChannelsError>`](crate::error::ListChannelsError)
-    pub fn list_channels(&self) -> crate::client::fluent_builders::ListChannels {
-        crate::client::fluent_builders::ListChannels::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListChannelsModeratedByAppInstanceUser`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the user in the moderated channel.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_max_results): <p>The maximum number of channels in the request.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput) with field(s):
-    ///   - [`channels(Option<Vec<ChannelModeratedByAppInstanceUserSummary>>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::channels): <p>The moderated channels in the request.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListChannelsModeratedByAppInstanceUserOutput::next_token): <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    /// - On failure, responds with [`SdkError<ListChannelsModeratedByAppInstanceUserError>`](crate::error::ListChannelsModeratedByAppInstanceUserError)
-    pub fn list_channels_moderated_by_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser {
-        crate::client::fluent_builders::ListChannelsModeratedByAppInstanceUser::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListMediaCapturePipelines`](crate::client::fluent_builders::ListMediaCapturePipelines) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMediaCapturePipelines::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMediaCapturePipelines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMediaCapturePipelines::set_next_token): <p>The token used to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMediaCapturePipelines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMediaCapturePipelines::set_max_results): <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
-    /// - On success, responds with [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput) with field(s):
-    ///   - [`media_capture_pipelines(Option<Vec<MediaCapturePipeline>>)`](crate::output::ListMediaCapturePipelinesOutput::media_capture_pipelines): <p>The media capture pipeline objects in the list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMediaCapturePipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
-    /// - On failure, responds with [`SdkError<ListMediaCapturePipelinesError>`](crate::error::ListMediaCapturePipelinesError)
-    pub fn list_media_capture_pipelines(
-        &self,
-    ) -> crate::client::fluent_builders::ListMediaCapturePipelines {
-        crate::client::fluent_builders::ListMediaCapturePipelines::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMeetings`](crate::client::fluent_builders::ListMeetings) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMeetings::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMeetings::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMeetings::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMeetings::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMeetings::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListMeetingsOutput`](crate::output::ListMeetingsOutput) with field(s):
-    ///   - [`meetings(Option<Vec<Meeting>>)`](crate::output::ListMeetingsOutput::meetings): <p>The Amazon Chime SDK meeting information.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMeetingsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListMeetingsError>`](crate::error::ListMeetingsError)
-    pub fn list_meetings(&self) -> crate::client::fluent_builders::ListMeetings {
-        crate::client::fluent_builders::ListMeetings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMeetingTags`](crate::client::fluent_builders::ListMeetingTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::ListMeetingTags::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::ListMeetingTags::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    /// - On success, responds with [`ListMeetingTagsOutput`](crate::output::ListMeetingTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListMeetingTagsOutput::tags): <p>A list of tag key-value pairs.</p>
-    /// - On failure, responds with [`SdkError<ListMeetingTagsError>`](crate::error::ListMeetingTagsError)
-    pub fn list_meeting_tags(&self) -> crate::client::fluent_builders::ListMeetingTags {
-        crate::client::fluent_builders::ListMeetingTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPhoneNumberOrders`](crate::client::fluent_builders::ListPhoneNumberOrders) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumberOrders::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumberOrders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumberOrders::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumberOrders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPhoneNumberOrders::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListPhoneNumberOrdersOutput`](crate::output::ListPhoneNumberOrdersOutput) with field(s):
-    ///   - [`phone_number_orders(Option<Vec<PhoneNumberOrder>>)`](crate::output::ListPhoneNumberOrdersOutput::phone_number_orders): <p>The phone number order details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumberOrdersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumberOrdersError>`](crate::error::ListPhoneNumberOrdersError)
-    pub fn list_phone_number_orders(
-        &self,
-    ) -> crate::client::fluent_builders::ListPhoneNumberOrders {
-        crate::client::fluent_builders::ListPhoneNumberOrders::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPhoneNumbers`](crate::client::fluent_builders::ListPhoneNumbers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPhoneNumbers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`status(PhoneNumberStatus)`](crate::client::fluent_builders::ListPhoneNumbers::status) / [`set_status(Option<PhoneNumberStatus>)`](crate::client::fluent_builders::ListPhoneNumbers::set_status): <p>The phone number status.</p>
-    ///   - [`product_type(PhoneNumberProductType)`](crate::client::fluent_builders::ListPhoneNumbers::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::client::fluent_builders::ListPhoneNumbers::set_product_type): <p>The phone number product type.</p>
-    ///   - [`filter_name(PhoneNumberAssociationName)`](crate::client::fluent_builders::ListPhoneNumbers::filter_name) / [`set_filter_name(Option<PhoneNumberAssociationName>)`](crate::client::fluent_builders::ListPhoneNumbers::set_filter_name): <p>The filter to use to limit the number of results.</p>
-    ///   - [`filter_value(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbers::filter_value) / [`set_filter_value(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbers::set_filter_value): <p>The value to use for the filter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPhoneNumbers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPhoneNumbers::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPhoneNumbers::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListPhoneNumbersOutput`](crate::output::ListPhoneNumbersOutput) with field(s):
-    ///   - [`phone_numbers(Option<Vec<PhoneNumber>>)`](crate::output::ListPhoneNumbersOutput::phone_numbers): <p>The phone number details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPhoneNumbersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPhoneNumbersError>`](crate::error::ListPhoneNumbersError)
-    pub fn list_phone_numbers(&self) -> crate::client::fluent_builders::ListPhoneNumbers {
-        crate::client::fluent_builders::ListPhoneNumbers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProxySessions`](crate::client::fluent_builders::ListProxySessions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProxySessions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::ListProxySessions::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::ListProxySessions::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`status(ProxySessionStatus)`](crate::client::fluent_builders::ListProxySessions::status) / [`set_status(Option<ProxySessionStatus>)`](crate::client::fluent_builders::ListProxySessions::set_status): <p>The proxy session status.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProxySessions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProxySessions::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProxySessions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProxySessions::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListProxySessionsOutput`](crate::output::ListProxySessionsOutput) with field(s):
-    ///   - [`proxy_sessions(Option<Vec<ProxySession>>)`](crate::output::ListProxySessionsOutput::proxy_sessions): <p>The proxy session details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListProxySessionsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListProxySessionsError>`](crate::error::ListProxySessionsError)
-    pub fn list_proxy_sessions(&self) -> crate::client::fluent_builders::ListProxySessions {
-        crate::client::fluent_builders::ListProxySessions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRoomMemberships`](crate::client::fluent_builders::ListRoomMemberships) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoomMemberships::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListRoomMemberships::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListRoomMemberships::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::ListRoomMemberships::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::ListRoomMemberships::set_room_id): <p>The room ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoomMemberships::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoomMemberships::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoomMemberships::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoomMemberships::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListRoomMembershipsOutput`](crate::output::ListRoomMembershipsOutput) with field(s):
-    ///   - [`room_memberships(Option<Vec<RoomMembership>>)`](crate::output::ListRoomMembershipsOutput::room_memberships): <p>The room membership details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRoomMembershipsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRoomMembershipsError>`](crate::error::ListRoomMembershipsError)
-    pub fn list_room_memberships(&self) -> crate::client::fluent_builders::ListRoomMemberships {
-        crate::client::fluent_builders::ListRoomMemberships::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRooms`](crate::client::fluent_builders::ListRooms) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRooms::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListRooms::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListRooms::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::ListRooms::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::ListRooms::set_member_id): <p>The member ID (user ID or bot ID).</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRooms::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRooms::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRooms::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRooms::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListRoomsOutput`](crate::output::ListRoomsOutput) with field(s):
-    ///   - [`rooms(Option<Vec<Room>>)`](crate::output::ListRoomsOutput::rooms): <p>The room details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRoomsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListRoomsError>`](crate::error::ListRoomsError)
-    pub fn list_rooms(&self) -> crate::client::fluent_builders::ListRooms {
-        crate::client::fluent_builders::ListRooms::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSipMediaApplications`](crate::client::fluent_builders::ListSipMediaApplications) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSipMediaApplications::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSipMediaApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSipMediaApplications::set_max_results): <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSipMediaApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSipMediaApplications::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListSipMediaApplicationsOutput`](crate::output::ListSipMediaApplicationsOutput) with field(s):
-    ///   - [`sip_media_applications(Option<Vec<SipMediaApplication>>)`](crate::output::ListSipMediaApplicationsOutput::sip_media_applications): <p>List of SIP media applications and application details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSipMediaApplicationsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSipMediaApplicationsError>`](crate::error::ListSipMediaApplicationsError)
-    pub fn list_sip_media_applications(
-        &self,
-    ) -> crate::client::fluent_builders::ListSipMediaApplications {
-        crate::client::fluent_builders::ListSipMediaApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSipRules`](crate::client::fluent_builders::ListSipRules) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSipRules::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::ListSipRules::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::ListSipRules::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSipRules::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSipRules::set_max_results): <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSipRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSipRules::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListSipRulesOutput`](crate::output::ListSipRulesOutput) with field(s):
-    ///   - [`sip_rules(Option<Vec<SipRule>>)`](crate::output::ListSipRulesOutput::sip_rules): <p>List of SIP rules and rule details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSipRulesOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListSipRulesError>`](crate::error::ListSipRulesError)
-    pub fn list_sip_rules(&self) -> crate::client::fluent_builders::ListSipRules {
-        crate::client::fluent_builders::ListSipRules::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSupportedPhoneNumberCountries`](crate::client::fluent_builders::ListSupportedPhoneNumberCountries) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product_type(PhoneNumberProductType)`](crate::client::fluent_builders::ListSupportedPhoneNumberCountries::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::client::fluent_builders::ListSupportedPhoneNumberCountries::set_product_type): <p>The phone number product type.</p>
-    /// - On success, responds with [`ListSupportedPhoneNumberCountriesOutput`](crate::output::ListSupportedPhoneNumberCountriesOutput) with field(s):
-    ///   - [`phone_number_countries(Option<Vec<PhoneNumberCountry>>)`](crate::output::ListSupportedPhoneNumberCountriesOutput::phone_number_countries): <p>The supported phone number countries.</p>
-    /// - On failure, responds with [`SdkError<ListSupportedPhoneNumberCountriesError>`](crate::error::ListSupportedPhoneNumberCountriesError)
-    pub fn list_supported_phone_number_countries(
-        &self,
-    ) -> crate::client::fluent_builders::ListSupportedPhoneNumberCountries {
-        crate::client::fluent_builders::ListSupportedPhoneNumberCountries::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The resource ARN.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag-key value pairs.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListUsers`](crate::client::fluent_builders::ListUsers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUsers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ListUsers::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ListUsers::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_email(impl Into<String>)`](crate::client::fluent_builders::ListUsers::user_email) / [`set_user_email(Option<String>)`](crate::client::fluent_builders::ListUsers::set_user_email): <p>Optional. The user email address used to filter results. Maximum 1.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::ListUsers::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::ListUsers::set_user_type): <p>The user type.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUsers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUsers::set_max_results): <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUsers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUsers::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On success, responds with [`ListUsersOutput`](crate::output::ListUsersOutput) with field(s):
-    ///   - [`users(Option<Vec<User>>)`](crate::output::ListUsersOutput::users): <p>List of users and user details.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListUsersOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListUsersError>`](crate::error::ListUsersError)
-    pub fn list_users(&self) -> crate::client::fluent_builders::ListUsers {
-        crate::client::fluent_builders::ListUsers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListVoiceConnectorGroups`](crate::client::fluent_builders::ListVoiceConnectorGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVoiceConnectorGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVoiceConnectorGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVoiceConnectorGroups::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVoiceConnectorGroups::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVoiceConnectorGroups::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListVoiceConnectorGroupsOutput`](crate::output::ListVoiceConnectorGroupsOutput) with field(s):
-    ///   - [`voice_connector_groups(Option<Vec<VoiceConnectorGroup>>)`](crate::output::ListVoiceConnectorGroupsOutput::voice_connector_groups): <p>The details of the Amazon Chime Voice Connector groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListVoiceConnectorGroupsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceConnectorGroupsError>`](crate::error::ListVoiceConnectorGroupsError)
-    pub fn list_voice_connector_groups(
-        &self,
-    ) -> crate::client::fluent_builders::ListVoiceConnectorGroups {
-        crate::client::fluent_builders::ListVoiceConnectorGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListVoiceConnectors`](crate::client::fluent_builders::ListVoiceConnectors) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListVoiceConnectors::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListVoiceConnectors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListVoiceConnectors::set_next_token): <p>The token to use to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListVoiceConnectors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListVoiceConnectors::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    /// - On success, responds with [`ListVoiceConnectorsOutput`](crate::output::ListVoiceConnectorsOutput) with field(s):
-    ///   - [`voice_connectors(Option<Vec<VoiceConnector>>)`](crate::output::ListVoiceConnectorsOutput::voice_connectors): <p>The details of the Amazon Chime Voice Connectors.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListVoiceConnectorsOutput::next_token): <p>The token to use to retrieve the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceConnectorsError>`](crate::error::ListVoiceConnectorsError)
-    pub fn list_voice_connectors(&self) -> crate::client::fluent_builders::ListVoiceConnectors {
-        crate::client::fluent_builders::ListVoiceConnectors::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListVoiceConnectorTerminationCredentials`](crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    /// - On success, responds with [`ListVoiceConnectorTerminationCredentialsOutput`](crate::output::ListVoiceConnectorTerminationCredentialsOutput) with field(s):
-    ///   - [`usernames(Option<Vec<String>>)`](crate::output::ListVoiceConnectorTerminationCredentialsOutput::usernames): <p>A list of user names.</p>
-    /// - On failure, responds with [`SdkError<ListVoiceConnectorTerminationCredentialsError>`](crate::error::ListVoiceConnectorTerminationCredentialsError)
-    pub fn list_voice_connector_termination_credentials(
-        &self,
-    ) -> crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials {
-        crate::client::fluent_builders::ListVoiceConnectorTerminationCredentials::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`LogoutUser`](crate::client::fluent_builders::LogoutUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::LogoutUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::LogoutUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::LogoutUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::LogoutUser::set_user_id): <p>The user ID.</p>
-    /// - On success, responds with [`LogoutUserOutput`](crate::output::LogoutUserOutput)
-
-    /// - On failure, responds with [`SdkError<LogoutUserError>`](crate::error::LogoutUserError)
-    pub fn logout_user(&self) -> crate::client::fluent_builders::LogoutUser {
-        crate::client::fluent_builders::LogoutUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAppInstanceRetentionSettings`](crate::client::fluent_builders::PutAppInstanceRetentionSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_retention_settings(AppInstanceRetentionSettings)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::app_instance_retention_settings) / [`set_app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::client::fluent_builders::PutAppInstanceRetentionSettings::set_app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
-    /// - On success, responds with [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput) with field(s):
-    ///   - [`app_instance_retention_settings(Option<AppInstanceRetentionSettings>)`](crate::output::PutAppInstanceRetentionSettingsOutput::app_instance_retention_settings): <p>The time in days to retain data. Data type: number.</p>
-    ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::PutAppInstanceRetentionSettingsOutput::initiate_deletion_timestamp): <p>The time at which the API deletes data.</p>
-    /// - On failure, responds with [`SdkError<PutAppInstanceRetentionSettingsError>`](crate::error::PutAppInstanceRetentionSettingsError)
-    pub fn put_app_instance_retention_settings(
-        &self,
-    ) -> crate::client::fluent_builders::PutAppInstanceRetentionSettings {
-        crate::client::fluent_builders::PutAppInstanceRetentionSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAppInstanceStreamingConfigurations`](crate::client::fluent_builders::PutAppInstanceStreamingConfigurations) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::PutAppInstanceStreamingConfigurations::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::PutAppInstanceStreamingConfigurations::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`app_instance_streaming_configurations(Vec<AppInstanceStreamingConfiguration>)`](crate::client::fluent_builders::PutAppInstanceStreamingConfigurations::app_instance_streaming_configurations) / [`set_app_instance_streaming_configurations(Option<Vec<AppInstanceStreamingConfiguration>>)`](crate::client::fluent_builders::PutAppInstanceStreamingConfigurations::set_app_instance_streaming_configurations): <p>The streaming configurations set for an <code>AppInstance</code>.</p>
-    /// - On success, responds with [`PutAppInstanceStreamingConfigurationsOutput`](crate::output::PutAppInstanceStreamingConfigurationsOutput) with field(s):
-    ///   - [`app_instance_streaming_configurations(Option<Vec<AppInstanceStreamingConfiguration>>)`](crate::output::PutAppInstanceStreamingConfigurationsOutput::app_instance_streaming_configurations): <p>The streaming configurations of an <code>AppInstance</code>.</p>
-    /// - On failure, responds with [`SdkError<PutAppInstanceStreamingConfigurationsError>`](crate::error::PutAppInstanceStreamingConfigurationsError)
-    pub fn put_app_instance_streaming_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::PutAppInstanceStreamingConfigurations {
-        crate::client::fluent_builders::PutAppInstanceStreamingConfigurations::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutEventsConfiguration`](crate::client::fluent_builders::PutEventsConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutEventsConfiguration::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutEventsConfiguration::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::PutEventsConfiguration::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::PutEventsConfiguration::set_bot_id): <p>The bot ID.</p>
-    ///   - [`outbound_events_https_endpoint(impl Into<String>)`](crate::client::fluent_builders::PutEventsConfiguration::outbound_events_https_endpoint) / [`set_outbound_events_https_endpoint(Option<String>)`](crate::client::fluent_builders::PutEventsConfiguration::set_outbound_events_https_endpoint): <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
-    ///   - [`lambda_function_arn(impl Into<String>)`](crate::client::fluent_builders::PutEventsConfiguration::lambda_function_arn) / [`set_lambda_function_arn(Option<String>)`](crate::client::fluent_builders::PutEventsConfiguration::set_lambda_function_arn): <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-    /// - On success, responds with [`PutEventsConfigurationOutput`](crate::output::PutEventsConfigurationOutput) with field(s):
-    ///   - [`events_configuration(Option<EventsConfiguration>)`](crate::output::PutEventsConfigurationOutput::events_configuration): <p>The configuration that allows a bot to receive outgoing events. Can be either an HTTPS endpoint or a Lambda function ARN.</p>
-    /// - On failure, responds with [`SdkError<PutEventsConfigurationError>`](crate::error::PutEventsConfigurationError)
-    pub fn put_events_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutEventsConfiguration {
-        crate::client::fluent_builders::PutEventsConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutRetentionSettings`](crate::client::fluent_builders::PutRetentionSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::PutRetentionSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::PutRetentionSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`retention_settings(RetentionSettings)`](crate::client::fluent_builders::PutRetentionSettings::retention_settings) / [`set_retention_settings(Option<RetentionSettings>)`](crate::client::fluent_builders::PutRetentionSettings::set_retention_settings): <p>The retention settings.</p>
-    /// - On success, responds with [`PutRetentionSettingsOutput`](crate::output::PutRetentionSettingsOutput) with field(s):
-    ///   - [`retention_settings(Option<RetentionSettings>)`](crate::output::PutRetentionSettingsOutput::retention_settings): <p>The retention settings.</p>
-    ///   - [`initiate_deletion_timestamp(Option<DateTime>)`](crate::output::PutRetentionSettingsOutput::initiate_deletion_timestamp): <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    /// - On failure, responds with [`SdkError<PutRetentionSettingsError>`](crate::error::PutRetentionSettingsError)
-    pub fn put_retention_settings(&self) -> crate::client::fluent_builders::PutRetentionSettings {
-        crate::client::fluent_builders::PutRetentionSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutSipMediaApplicationLoggingConfiguration`](crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    ///   - [`sip_media_application_logging_configuration(SipMediaApplicationLoggingConfiguration)`](crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration::sip_media_application_logging_configuration) / [`set_sip_media_application_logging_configuration(Option<SipMediaApplicationLoggingConfiguration>)`](crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration::set_sip_media_application_logging_configuration): <p>The actual logging configuration.</p>
-    /// - On success, responds with [`PutSipMediaApplicationLoggingConfigurationOutput`](crate::output::PutSipMediaApplicationLoggingConfigurationOutput) with field(s):
-    ///   - [`sip_media_application_logging_configuration(Option<SipMediaApplicationLoggingConfiguration>)`](crate::output::PutSipMediaApplicationLoggingConfigurationOutput::sip_media_application_logging_configuration): <p>Logging configuration of the SIP media application.</p>
-    /// - On failure, responds with [`SdkError<PutSipMediaApplicationLoggingConfigurationError>`](crate::error::PutSipMediaApplicationLoggingConfigurationError)
-    pub fn put_sip_media_application_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration {
-        crate::client::fluent_builders::PutSipMediaApplicationLoggingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorEmergencyCallingConfiguration`](crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`emergency_calling_configuration(EmergencyCallingConfiguration)`](crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration::emergency_calling_configuration) / [`set_emergency_calling_configuration(Option<EmergencyCallingConfiguration>)`](crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration::set_emergency_calling_configuration): <p>The emergency calling configuration details.</p>
-    /// - On success, responds with [`PutVoiceConnectorEmergencyCallingConfigurationOutput`](crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput) with field(s):
-    ///   - [`emergency_calling_configuration(Option<EmergencyCallingConfiguration>)`](crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput::emergency_calling_configuration): <p>The emergency calling configuration details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorEmergencyCallingConfigurationError>`](crate::error::PutVoiceConnectorEmergencyCallingConfigurationError)
-    pub fn put_voice_connector_emergency_calling_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration {
-        crate::client::fluent_builders::PutVoiceConnectorEmergencyCallingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorLoggingConfiguration`](crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`logging_configuration(LoggingConfiguration)`](crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration::logging_configuration) / [`set_logging_configuration(Option<LoggingConfiguration>)`](crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration::set_logging_configuration): <p>The logging configuration details to add.</p>
-    /// - On success, responds with [`PutVoiceConnectorLoggingConfigurationOutput`](crate::output::PutVoiceConnectorLoggingConfigurationOutput) with field(s):
-    ///   - [`logging_configuration(Option<LoggingConfiguration>)`](crate::output::PutVoiceConnectorLoggingConfigurationOutput::logging_configuration): <p>The updated logging configuration details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorLoggingConfigurationError>`](crate::error::PutVoiceConnectorLoggingConfigurationError)
-    pub fn put_voice_connector_logging_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration {
-        crate::client::fluent_builders::PutVoiceConnectorLoggingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorOrigination`](crate::client::fluent_builders::PutVoiceConnectorOrigination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorOrigination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorOrigination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`origination(Origination)`](crate::client::fluent_builders::PutVoiceConnectorOrigination::origination) / [`set_origination(Option<Origination>)`](crate::client::fluent_builders::PutVoiceConnectorOrigination::set_origination): <p>The origination setting details to add.</p>
-    /// - On success, responds with [`PutVoiceConnectorOriginationOutput`](crate::output::PutVoiceConnectorOriginationOutput) with field(s):
-    ///   - [`origination(Option<Origination>)`](crate::output::PutVoiceConnectorOriginationOutput::origination): <p>The updated origination setting details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorOriginationError>`](crate::error::PutVoiceConnectorOriginationError)
-    pub fn put_voice_connector_origination(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorOrigination {
-        crate::client::fluent_builders::PutVoiceConnectorOrigination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorProxy`](crate::client::fluent_builders::PutVoiceConnectorProxy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`default_session_expiry_minutes(i32)`](crate::client::fluent_builders::PutVoiceConnectorProxy::default_session_expiry_minutes) / [`set_default_session_expiry_minutes(Option<i32>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::set_default_session_expiry_minutes): <p>The default number of minutes allowed for proxy sessions.</p>
-    ///   - [`phone_number_pool_countries(Vec<String>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::phone_number_pool_countries) / [`set_phone_number_pool_countries(Option<Vec<String>>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::set_phone_number_pool_countries): <p>The countries for proxy phone numbers to be selected from.</p>
-    ///   - [`fall_back_phone_number(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::fall_back_phone_number) / [`set_fall_back_phone_number(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::set_fall_back_phone_number): <p>The phone number to route calls to after a proxy session expires.</p>
-    ///   - [`disabled(bool)`](crate::client::fluent_builders::PutVoiceConnectorProxy::disabled) / [`set_disabled(Option<bool>)`](crate::client::fluent_builders::PutVoiceConnectorProxy::set_disabled): <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
-    /// - On success, responds with [`PutVoiceConnectorProxyOutput`](crate::output::PutVoiceConnectorProxyOutput) with field(s):
-    ///   - [`proxy(Option<Proxy>)`](crate::output::PutVoiceConnectorProxyOutput::proxy): <p>The proxy configuration details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorProxyError>`](crate::error::PutVoiceConnectorProxyError)
-    pub fn put_voice_connector_proxy(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorProxy {
-        crate::client::fluent_builders::PutVoiceConnectorProxy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorStreamingConfiguration`](crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`streaming_configuration(StreamingConfiguration)`](crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration::streaming_configuration) / [`set_streaming_configuration(Option<StreamingConfiguration>)`](crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration::set_streaming_configuration): <p>The streaming configuration details to add.</p>
-    /// - On success, responds with [`PutVoiceConnectorStreamingConfigurationOutput`](crate::output::PutVoiceConnectorStreamingConfigurationOutput) with field(s):
-    ///   - [`streaming_configuration(Option<StreamingConfiguration>)`](crate::output::PutVoiceConnectorStreamingConfigurationOutput::streaming_configuration): <p>The updated streaming configuration details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorStreamingConfigurationError>`](crate::error::PutVoiceConnectorStreamingConfigurationError)
-    pub fn put_voice_connector_streaming_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration {
-        crate::client::fluent_builders::PutVoiceConnectorStreamingConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorTermination`](crate::client::fluent_builders::PutVoiceConnectorTermination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorTermination::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorTermination::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`termination(Termination)`](crate::client::fluent_builders::PutVoiceConnectorTermination::termination) / [`set_termination(Option<Termination>)`](crate::client::fluent_builders::PutVoiceConnectorTermination::set_termination): <p>The termination setting details to add.</p>
-    /// - On success, responds with [`PutVoiceConnectorTerminationOutput`](crate::output::PutVoiceConnectorTerminationOutput) with field(s):
-    ///   - [`termination(Option<Termination>)`](crate::output::PutVoiceConnectorTerminationOutput::termination): <p>The updated termination setting details.</p>
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorTerminationError>`](crate::error::PutVoiceConnectorTerminationError)
-    pub fn put_voice_connector_termination(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorTermination {
-        crate::client::fluent_builders::PutVoiceConnectorTermination::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutVoiceConnectorTerminationCredentials`](crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`credentials(Vec<Credential>)`](crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials::credentials) / [`set_credentials(Option<Vec<Credential>>)`](crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials::set_credentials): <p>The termination SIP credentials.</p>
-    /// - On success, responds with [`PutVoiceConnectorTerminationCredentialsOutput`](crate::output::PutVoiceConnectorTerminationCredentialsOutput)
-
-    /// - On failure, responds with [`SdkError<PutVoiceConnectorTerminationCredentialsError>`](crate::error::PutVoiceConnectorTerminationCredentialsError)
-    pub fn put_voice_connector_termination_credentials(
-        &self,
-    ) -> crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials {
-        crate::client::fluent_builders::PutVoiceConnectorTerminationCredentials::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`RedactChannelMessage`](crate::client::fluent_builders::RedactChannelMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_message_id): <p>The ID of the message being redacted.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::RedactChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::RedactChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::RedactChannelMessageOutput::channel_arn): <p>The ARN of the channel containing the messages that you want to redact.</p>
-    ///   - [`message_id(Option<String>)`](crate::output::RedactChannelMessageOutput::message_id): <p>The ID of the message being redacted.</p>
-    /// - On failure, responds with [`SdkError<RedactChannelMessageError>`](crate::error::RedactChannelMessageError)
-    pub fn redact_channel_message(&self) -> crate::client::fluent_builders::RedactChannelMessage {
-        crate::client::fluent_builders::RedactChannelMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RedactConversationMessage`](crate::client::fluent_builders::RedactConversationMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::RedactConversationMessage::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::RedactConversationMessage::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`conversation_id(impl Into<String>)`](crate::client::fluent_builders::RedactConversationMessage::conversation_id) / [`set_conversation_id(Option<String>)`](crate::client::fluent_builders::RedactConversationMessage::set_conversation_id): <p>The conversation ID.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::RedactConversationMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::RedactConversationMessage::set_message_id): <p>The message ID.</p>
-    /// - On success, responds with [`RedactConversationMessageOutput`](crate::output::RedactConversationMessageOutput)
-
-    /// - On failure, responds with [`SdkError<RedactConversationMessageError>`](crate::error::RedactConversationMessageError)
-    pub fn redact_conversation_message(
-        &self,
-    ) -> crate::client::fluent_builders::RedactConversationMessage {
-        crate::client::fluent_builders::RedactConversationMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RedactRoomMessage`](crate::client::fluent_builders::RedactRoomMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::RedactRoomMessage::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::RedactRoomMessage::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::RedactRoomMessage::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::RedactRoomMessage::set_room_id): <p>The room ID.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::RedactRoomMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::RedactRoomMessage::set_message_id): <p>The message ID.</p>
-    /// - On success, responds with [`RedactRoomMessageOutput`](crate::output::RedactRoomMessageOutput)
-
-    /// - On failure, responds with [`SdkError<RedactRoomMessageError>`](crate::error::RedactRoomMessageError)
-    pub fn redact_room_message(&self) -> crate::client::fluent_builders::RedactRoomMessage {
-        crate::client::fluent_builders::RedactRoomMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RegenerateSecurityToken`](crate::client::fluent_builders::RegenerateSecurityToken) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::RegenerateSecurityToken::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::RegenerateSecurityToken::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::RegenerateSecurityToken::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::RegenerateSecurityToken::set_bot_id): <p>The bot ID.</p>
-    /// - On success, responds with [`RegenerateSecurityTokenOutput`](crate::output::RegenerateSecurityTokenOutput) with field(s):
-    ///   - [`bot(Option<Bot>)`](crate::output::RegenerateSecurityTokenOutput::bot): <p>A resource that allows Enterprise account administrators to configure an interface to receive events from Amazon Chime.</p>
-    /// - On failure, responds with [`SdkError<RegenerateSecurityTokenError>`](crate::error::RegenerateSecurityTokenError)
-    pub fn regenerate_security_token(
-        &self,
-    ) -> crate::client::fluent_builders::RegenerateSecurityToken {
-        crate::client::fluent_builders::RegenerateSecurityToken::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ResetPersonalPIN`](crate::client::fluent_builders::ResetPersonalPIN) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::ResetPersonalPIN::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::ResetPersonalPIN::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ResetPersonalPIN::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ResetPersonalPIN::set_user_id): <p>The user ID.</p>
-    /// - On success, responds with [`ResetPersonalPinOutput`](crate::output::ResetPersonalPinOutput) with field(s):
-    ///   - [`user(Option<User>)`](crate::output::ResetPersonalPinOutput::user): <p>The user details and new personal meeting PIN.</p>
-    /// - On failure, responds with [`SdkError<ResetPersonalPINError>`](crate::error::ResetPersonalPINError)
-    pub fn reset_personal_pin(&self) -> crate::client::fluent_builders::ResetPersonalPIN {
-        crate::client::fluent_builders::ResetPersonalPIN::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RestorePhoneNumber`](crate::client::fluent_builders::RestorePhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::RestorePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::RestorePhoneNumber::set_phone_number_id): <p>The phone number.</p>
-    /// - On success, responds with [`RestorePhoneNumberOutput`](crate::output::RestorePhoneNumberOutput) with field(s):
-    ///   - [`phone_number(Option<PhoneNumber>)`](crate::output::RestorePhoneNumberOutput::phone_number): <p>The phone number details.</p>
-    /// - On failure, responds with [`SdkError<RestorePhoneNumberError>`](crate::error::RestorePhoneNumberError)
-    pub fn restore_phone_number(&self) -> crate::client::fluent_builders::RestorePhoneNumber {
-        crate::client::fluent_builders::RestorePhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchAvailablePhoneNumbers`](crate::client::fluent_builders::SearchAvailablePhoneNumbers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`area_code(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::area_code) / [`set_area_code(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_area_code): <p>The area code used to filter results. Only applies to the US.</p>
-    ///   - [`city(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::city) / [`set_city(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_city): <p>The city used to filter results. Only applies to the US.</p>
-    ///   - [`country(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::country) / [`set_country(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_country): <p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p>
-    ///   - [`state(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::state) / [`set_state(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_state): <p>The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</p>
-    ///   - [`toll_free_prefix(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::toll_free_prefix) / [`set_toll_free_prefix(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_toll_free_prefix): <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-    ///   - [`phone_number_type(PhoneNumberType)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::phone_number_type) / [`set_phone_number_type(Option<PhoneNumberType>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_phone_number_type): <p>The phone number type used to filter results. Required for non-US numbers.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_max_results): <p>The maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::SearchAvailablePhoneNumbers::set_next_token): <p>The token used to retrieve the next page of results.</p>
-    /// - On success, responds with [`SearchAvailablePhoneNumbersOutput`](crate::output::SearchAvailablePhoneNumbersOutput) with field(s):
-    ///   - [`e164_phone_numbers(Option<Vec<String>>)`](crate::output::SearchAvailablePhoneNumbersOutput::e164_phone_numbers): <p>List of phone numbers, in E.164 format.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::SearchAvailablePhoneNumbersOutput::next_token): <p>The token used to retrieve the next page of search results.</p>
-    /// - On failure, responds with [`SdkError<SearchAvailablePhoneNumbersError>`](crate::error::SearchAvailablePhoneNumbersError)
-    pub fn search_available_phone_numbers(
-        &self,
-    ) -> crate::client::fluent_builders::SearchAvailablePhoneNumbers {
-        crate::client::fluent_builders::SearchAvailablePhoneNumbers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendChannelMessage`](crate::client::fluent_builders::SendChannelMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_content): <p>The content of the message.</p>
-    ///   - [`r#type(ChannelMessageType)`](crate::client::fluent_builders::SendChannelMessage::type) / [`set_type(Option<ChannelMessageType>)`](crate::client::fluent_builders::SendChannelMessage::set_type): <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-    ///   - [`persistence(ChannelMessagePersistenceType)`](crate::client::fluent_builders::SendChannelMessage::persistence) / [`set_persistence(Option<ChannelMessagePersistenceType>)`](crate::client::fluent_builders::SendChannelMessage::set_persistence): <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_metadata): <p>The optional metadata for each message.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_client_request_token): <p>The <code>Idempotency</code> token for each client request.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::SendChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::SendChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::SendChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(Option<String>)`](crate::output::SendChannelMessageOutput::message_id): <p>The ID string assigned to each message.</p>
-    /// - On failure, responds with [`SdkError<SendChannelMessageError>`](crate::error::SendChannelMessageError)
-    pub fn send_channel_message(&self) -> crate::client::fluent_builders::SendChannelMessage {
-        crate::client::fluent_builders::SendChannelMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartMeetingTranscription`](crate::client::fluent_builders::StartMeetingTranscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StartMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StartMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting being transcribed.</p>
-    ///   - [`transcription_configuration(TranscriptionConfiguration)`](crate::client::fluent_builders::StartMeetingTranscription::transcription_configuration) / [`set_transcription_configuration(Option<TranscriptionConfiguration>)`](crate::client::fluent_builders::StartMeetingTranscription::set_transcription_configuration): <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
-    /// - On success, responds with [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<StartMeetingTranscriptionError>`](crate::error::StartMeetingTranscriptionError)
-    pub fn start_meeting_transcription(
-        &self,
-    ) -> crate::client::fluent_builders::StartMeetingTranscription {
-        crate::client::fluent_builders::StartMeetingTranscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopMeetingTranscription`](crate::client::fluent_builders::StopMeetingTranscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::StopMeetingTranscription::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::StopMeetingTranscription::set_meeting_id): <p>The unique ID of the meeting for which you stop transcription.</p>
-    /// - On success, responds with [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
-
-    /// - On failure, responds with [`SdkError<StopMeetingTranscriptionError>`](crate::error::StopMeetingTranscriptionError)
-    pub fn stop_meeting_transcription(
-        &self,
-    ) -> crate::client::fluent_builders::StopMeetingTranscription {
-        crate::client::fluent_builders::StopMeetingTranscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagAttendee`](crate::client::fluent_builders::TagAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::TagAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::TagAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::TagAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::TagAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagAttendee::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagAttendee::set_tags): <p>The tag key-value pairs.</p>
-    /// - On success, responds with [`TagAttendeeOutput`](crate::output::TagAttendeeOutput)
-
-    /// - On failure, responds with [`SdkError<TagAttendeeError>`](crate::error::TagAttendeeError)
-    pub fn tag_attendee(&self) -> crate::client::fluent_builders::TagAttendee {
-        crate::client::fluent_builders::TagAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagMeeting`](crate::client::fluent_builders::TagMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::TagMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::TagMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagMeeting::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagMeeting::set_tags): <p>The tag key-value pairs.</p>
-    /// - On success, responds with [`TagMeetingOutput`](crate::output::TagMeetingOutput)
-
-    /// - On failure, responds with [`SdkError<TagMeetingError>`](crate::error::TagMeetingError)
-    pub fn tag_meeting(&self) -> crate::client::fluent_builders::TagMeeting {
-        crate::client::fluent_builders::TagMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The resource ARN.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tag key-value pairs.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagAttendee`](crate::client::fluent_builders::UntagAttendee) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::UntagAttendee::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::UntagAttendee::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`attendee_id(impl Into<String>)`](crate::client::fluent_builders::UntagAttendee::attendee_id) / [`set_attendee_id(Option<String>)`](crate::client::fluent_builders::UntagAttendee::set_attendee_id): <p>The Amazon Chime SDK attendee ID.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagAttendee::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagAttendee::set_tag_keys): <p>The tag keys.</p>
-    /// - On success, responds with [`UntagAttendeeOutput`](crate::output::UntagAttendeeOutput)
-
-    /// - On failure, responds with [`SdkError<UntagAttendeeError>`](crate::error::UntagAttendeeError)
-    pub fn untag_attendee(&self) -> crate::client::fluent_builders::UntagAttendee {
-        crate::client::fluent_builders::UntagAttendee::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagMeeting`](crate::client::fluent_builders::UntagMeeting) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::client::fluent_builders::UntagMeeting::meeting_id) / [`set_meeting_id(Option<String>)`](crate::client::fluent_builders::UntagMeeting::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagMeeting::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagMeeting::set_tag_keys): <p>The tag keys.</p>
-    /// - On success, responds with [`UntagMeetingOutput`](crate::output::UntagMeetingOutput)
-
-    /// - On failure, responds with [`SdkError<UntagMeetingError>`](crate::error::UntagMeetingError)
-    pub fn untag_meeting(&self) -> crate::client::fluent_builders::UntagMeeting {
-        crate::client::fluent_builders::UntagMeeting::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The resource ARN.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAccount`](crate::client::fluent_builders::UpdateAccount) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccount::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccount::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAccount::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAccount::set_name): <p>The new name for the specified Amazon Chime account.</p>
-    ///   - [`default_license(License)`](crate::client::fluent_builders::UpdateAccount::default_license) / [`set_default_license(Option<License>)`](crate::client::fluent_builders::UpdateAccount::set_default_license): <p>The default license applied when you add users to an Amazon Chime account.</p>
-    /// - On success, responds with [`UpdateAccountOutput`](crate::output::UpdateAccountOutput) with field(s):
-    ///   - [`account(Option<Account>)`](crate::output::UpdateAccountOutput::account): <p>The updated Amazon Chime account details.</p>
-    /// - On failure, responds with [`SdkError<UpdateAccountError>`](crate::error::UpdateAccountError)
-    pub fn update_account(&self) -> crate::client::fluent_builders::UpdateAccount {
-        crate::client::fluent_builders::UpdateAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAccountSettings`](crate::client::fluent_builders::UpdateAccountSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateAccountSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateAccountSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`account_settings(AccountSettings)`](crate::client::fluent_builders::UpdateAccountSettings::account_settings) / [`set_account_settings(Option<AccountSettings>)`](crate::client::fluent_builders::UpdateAccountSettings::set_account_settings): <p>The Amazon Chime account settings to update.</p>
-    /// - On success, responds with [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateAccountSettingsError>`](crate::error::UpdateAccountSettingsError)
-    pub fn update_account_settings(&self) -> crate::client::fluent_builders::UpdateAccountSettings {
-        crate::client::fluent_builders::UpdateAccountSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAppInstance`](crate::client::fluent_builders::UpdateAppInstance) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::app_instance_arn) / [`set_app_instance_arn(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_app_instance_arn): <p>The ARN of the <code>AppInstance</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_name): <p>The name that you want to change.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstance::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateAppInstance::set_metadata): <p>The metadata that you want to change.</p>
-    /// - On success, responds with [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput) with field(s):
-    ///   - [`app_instance_arn(Option<String>)`](crate::output::UpdateAppInstanceOutput::app_instance_arn): <p>The ARN of the <code>AppInstance</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdateAppInstanceError>`](crate::error::UpdateAppInstanceError)
-    pub fn update_app_instance(&self) -> crate::client::fluent_builders::UpdateAppInstance {
-        crate::client::fluent_builders::UpdateAppInstance::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAppInstanceUser`](crate::client::fluent_builders::UpdateAppInstanceUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_name): <p>The name of the <code>AppInstanceUser</code>.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateAppInstanceUser::set_metadata): <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    /// - On success, responds with [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput) with field(s):
-    ///   - [`app_instance_user_arn(Option<String>)`](crate::output::UpdateAppInstanceUserOutput::app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    /// - On failure, responds with [`SdkError<UpdateAppInstanceUserError>`](crate::error::UpdateAppInstanceUserError)
-    pub fn update_app_instance_user(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateAppInstanceUser {
-        crate::client::fluent_builders::UpdateAppInstanceUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateBot`](crate::client::fluent_builders::UpdateBot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBot::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateBot::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::client::fluent_builders::UpdateBot::bot_id) / [`set_bot_id(Option<String>)`](crate::client::fluent_builders::UpdateBot::set_bot_id): <p>The bot ID.</p>
-    ///   - [`disabled(bool)`](crate::client::fluent_builders::UpdateBot::disabled) / [`set_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateBot::set_disabled): <p>When true, stops the specified bot from running in your account.</p>
-    /// - On success, responds with [`UpdateBotOutput`](crate::output::UpdateBotOutput) with field(s):
-    ///   - [`bot(Option<Bot>)`](crate::output::UpdateBotOutput::bot): <p>The updated bot details.</p>
-    /// - On failure, responds with [`SdkError<UpdateBotError>`](crate::error::UpdateBotError)
-    pub fn update_bot(&self) -> crate::client::fluent_builders::UpdateBot {
-        crate::client::fluent_builders::UpdateBot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateChannel`](crate::client::fluent_builders::UpdateChannel) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_name): <p>The name of the channel.</p>
-    ///   - [`mode(ChannelMode)`](crate::client::fluent_builders::UpdateChannel::mode) / [`set_mode(Option<ChannelMode>)`](crate::client::fluent_builders::UpdateChannel::set_mode): <p>The mode of the update request.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_metadata): <p>The metadata for the update request.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannel::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannel::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`UpdateChannelOutput`](crate::output::UpdateChannelOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelOutput::channel_arn): <p>The ARN of the channel.</p>
-    /// - On failure, responds with [`SdkError<UpdateChannelError>`](crate::error::UpdateChannelError)
-    pub fn update_channel(&self) -> crate::client::fluent_builders::UpdateChannel {
-        crate::client::fluent_builders::UpdateChannel::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateChannelMessage`](crate::client::fluent_builders::UpdateChannelMessage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::message_id) / [`set_message_id(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_message_id): <p>The ID string of the message being updated.</p>
-    ///   - [`content(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::content) / [`set_content(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_content): <p>The content of the message being updated.</p>
-    ///   - [`metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::metadata) / [`set_metadata(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_metadata): <p>The metadata of the message being updated.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelMessage::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannelMessage::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelMessageOutput::channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`message_id(Option<String>)`](crate::output::UpdateChannelMessageOutput::message_id): <p>The ID string of the message being updated.</p>
-    /// - On failure, responds with [`SdkError<UpdateChannelMessageError>`](crate::error::UpdateChannelMessageError)
-    pub fn update_channel_message(&self) -> crate::client::fluent_builders::UpdateChannelMessage {
-        crate::client::fluent_builders::UpdateChannelMessage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateChannelReadMarker`](crate::client::fluent_builders::UpdateChannelReadMarker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::set_channel_arn): <p>The ARN of the channel.</p>
-    ///   - [`chime_bearer(impl Into<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::chime_bearer) / [`set_chime_bearer(Option<String>)`](crate::client::fluent_builders::UpdateChannelReadMarker::set_chime_bearer): <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    /// - On success, responds with [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput) with field(s):
-    ///   - [`channel_arn(Option<String>)`](crate::output::UpdateChannelReadMarkerOutput::channel_arn): <p>The ARN of the channel.</p>
-    /// - On failure, responds with [`SdkError<UpdateChannelReadMarkerError>`](crate::error::UpdateChannelReadMarkerError)
-    pub fn update_channel_read_marker(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateChannelReadMarker {
-        crate::client::fluent_builders::UpdateChannelReadMarker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateGlobalSettings`](crate::client::fluent_builders::UpdateGlobalSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`business_calling(BusinessCallingSettings)`](crate::client::fluent_builders::UpdateGlobalSettings::business_calling) / [`set_business_calling(Option<BusinessCallingSettings>)`](crate::client::fluent_builders::UpdateGlobalSettings::set_business_calling): <p>The Amazon Chime Business Calling settings.</p>
-    ///   - [`voice_connector(VoiceConnectorSettings)`](crate::client::fluent_builders::UpdateGlobalSettings::voice_connector) / [`set_voice_connector(Option<VoiceConnectorSettings>)`](crate::client::fluent_builders::UpdateGlobalSettings::set_voice_connector): <p>The Amazon Chime Voice Connector settings.</p>
-    /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::output::UpdateGlobalSettingsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::error::UpdateGlobalSettingsError)
-    pub fn update_global_settings(&self) -> crate::client::fluent_builders::UpdateGlobalSettings {
-        crate::client::fluent_builders::UpdateGlobalSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePhoneNumber`](crate::client::fluent_builders::UpdatePhoneNumber) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_phone_number_id): <p>The phone number ID.</p>
-    ///   - [`product_type(PhoneNumberProductType)`](crate::client::fluent_builders::UpdatePhoneNumber::product_type) / [`set_product_type(Option<PhoneNumberProductType>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_product_type): <p>The product type.</p>
-    ///   - [`calling_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::calling_name) / [`set_calling_name(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumber::set_calling_name): <p>The outbound calling name associated with the phone number.</p>
-    /// - On success, responds with [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput) with field(s):
-    ///   - [`phone_number(Option<PhoneNumber>)`](crate::output::UpdatePhoneNumberOutput::phone_number): <p>The updated phone number details.</p>
-    /// - On failure, responds with [`SdkError<UpdatePhoneNumberError>`](crate::error::UpdatePhoneNumberError)
-    pub fn update_phone_number(&self) -> crate::client::fluent_builders::UpdatePhoneNumber {
-        crate::client::fluent_builders::UpdatePhoneNumber::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePhoneNumberSettings`](crate::client::fluent_builders::UpdatePhoneNumberSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calling_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePhoneNumberSettings::calling_name) / [`set_calling_name(Option<String>)`](crate::client::fluent_builders::UpdatePhoneNumberSettings::set_calling_name): <p>The default outbound calling name for the account.</p>
-    /// - On success, responds with [`UpdatePhoneNumberSettingsOutput`](crate::output::UpdatePhoneNumberSettingsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdatePhoneNumberSettingsError>`](crate::error::UpdatePhoneNumberSettingsError)
-    pub fn update_phone_number_settings(
-        &self,
-    ) -> crate::client::fluent_builders::UpdatePhoneNumberSettings {
-        crate::client::fluent_builders::UpdatePhoneNumberSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateProxySession`](crate::client::fluent_builders::UpdateProxySession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProxySession::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::UpdateProxySession::set_voice_connector_id): <p>The Amazon Chime voice connector ID.</p>
-    ///   - [`proxy_session_id(impl Into<String>)`](crate::client::fluent_builders::UpdateProxySession::proxy_session_id) / [`set_proxy_session_id(Option<String>)`](crate::client::fluent_builders::UpdateProxySession::set_proxy_session_id): <p>The proxy session ID.</p>
-    ///   - [`capabilities(Vec<Capability>)`](crate::client::fluent_builders::UpdateProxySession::capabilities) / [`set_capabilities(Option<Vec<Capability>>)`](crate::client::fluent_builders::UpdateProxySession::set_capabilities): <p>The proxy session capabilities.</p>
-    ///   - [`expiry_minutes(i32)`](crate::client::fluent_builders::UpdateProxySession::expiry_minutes) / [`set_expiry_minutes(Option<i32>)`](crate::client::fluent_builders::UpdateProxySession::set_expiry_minutes): <p>The number of minutes allowed for the proxy session.</p>
-    /// - On success, responds with [`UpdateProxySessionOutput`](crate::output::UpdateProxySessionOutput) with field(s):
-    ///   - [`proxy_session(Option<ProxySession>)`](crate::output::UpdateProxySessionOutput::proxy_session): <p>The proxy session details.</p>
-    /// - On failure, responds with [`SdkError<UpdateProxySessionError>`](crate::error::UpdateProxySessionError)
-    pub fn update_proxy_session(&self) -> crate::client::fluent_builders::UpdateProxySession {
-        crate::client::fluent_builders::UpdateProxySession::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoom`](crate::client::fluent_builders::UpdateRoom) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_room_id): <p>The room ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateRoom::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateRoom::set_name): <p>The room name.</p>
-    /// - On success, responds with [`UpdateRoomOutput`](crate::output::UpdateRoomOutput) with field(s):
-    ///   - [`room(Option<Room>)`](crate::output::UpdateRoomOutput::room): <p>The room details.</p>
-    /// - On failure, responds with [`SdkError<UpdateRoomError>`](crate::error::UpdateRoomError)
-    pub fn update_room(&self) -> crate::client::fluent_builders::UpdateRoom {
-        crate::client::fluent_builders::UpdateRoom::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoomMembership`](crate::client::fluent_builders::UpdateRoomMembership) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoomMembership::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateRoomMembership::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoomMembership::room_id) / [`set_room_id(Option<String>)`](crate::client::fluent_builders::UpdateRoomMembership::set_room_id): <p>The room ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRoomMembership::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::UpdateRoomMembership::set_member_id): <p>The member ID.</p>
-    ///   - [`role(RoomMembershipRole)`](crate::client::fluent_builders::UpdateRoomMembership::role) / [`set_role(Option<RoomMembershipRole>)`](crate::client::fluent_builders::UpdateRoomMembership::set_role): <p>The role of the member.</p>
-    /// - On success, responds with [`UpdateRoomMembershipOutput`](crate::output::UpdateRoomMembershipOutput) with field(s):
-    ///   - [`room_membership(Option<RoomMembership>)`](crate::output::UpdateRoomMembershipOutput::room_membership): <p>The room membership details.</p>
-    /// - On failure, responds with [`SdkError<UpdateRoomMembershipError>`](crate::error::UpdateRoomMembershipError)
-    pub fn update_room_membership(&self) -> crate::client::fluent_builders::UpdateRoomMembership {
-        crate::client::fluent_builders::UpdateRoomMembership::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSipMediaApplication`](crate::client::fluent_builders::UpdateSipMediaApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSipMediaApplication::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::UpdateSipMediaApplication::set_sip_media_application_id): <p>The SIP media application ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSipMediaApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSipMediaApplication::set_name): <p>The new name for the specified SIP media application.</p>
-    ///   - [`endpoints(Vec<SipMediaApplicationEndpoint>)`](crate::client::fluent_builders::UpdateSipMediaApplication::endpoints) / [`set_endpoints(Option<Vec<SipMediaApplicationEndpoint>>)`](crate::client::fluent_builders::UpdateSipMediaApplication::set_endpoints): <p>The new set of endpoints for the specified SIP media application.</p>
-    /// - On success, responds with [`UpdateSipMediaApplicationOutput`](crate::output::UpdateSipMediaApplicationOutput) with field(s):
-    ///   - [`sip_media_application(Option<SipMediaApplication>)`](crate::output::UpdateSipMediaApplicationOutput::sip_media_application): <p>The updated SIP media application details.</p>
-    /// - On failure, responds with [`SdkError<UpdateSipMediaApplicationError>`](crate::error::UpdateSipMediaApplicationError)
-    pub fn update_sip_media_application(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSipMediaApplication {
-        crate::client::fluent_builders::UpdateSipMediaApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSipMediaApplicationCall`](crate::client::fluent_builders::UpdateSipMediaApplicationCall) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_media_application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::sip_media_application_id) / [`set_sip_media_application_id(Option<String>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::set_sip_media_application_id): <p>The ID of the SIP media application handling the call.</p>
-    ///   - [`transaction_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::transaction_id) / [`set_transaction_id(Option<String>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::set_transaction_id): <p>The ID of the call transaction.</p>
-    ///   - [`arguments(HashMap<String, String>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::arguments) / [`set_arguments(Option<HashMap<String, String>>)`](crate::client::fluent_builders::UpdateSipMediaApplicationCall::set_arguments): <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
-    /// - On success, responds with [`UpdateSipMediaApplicationCallOutput`](crate::output::UpdateSipMediaApplicationCallOutput) with field(s):
-    ///   - [`sip_media_application_call(Option<SipMediaApplicationCall>)`](crate::output::UpdateSipMediaApplicationCallOutput::sip_media_application_call): <p>A <code>Call</code> instance for a SIP media application.</p>
-    /// - On failure, responds with [`SdkError<UpdateSipMediaApplicationCallError>`](crate::error::UpdateSipMediaApplicationCallError)
-    pub fn update_sip_media_application_call(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateSipMediaApplicationCall {
-        crate::client::fluent_builders::UpdateSipMediaApplicationCall::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateSipRule`](crate::client::fluent_builders::UpdateSipRule) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sip_rule_id(impl Into<String>)`](crate::client::fluent_builders::UpdateSipRule::sip_rule_id) / [`set_sip_rule_id(Option<String>)`](crate::client::fluent_builders::UpdateSipRule::set_sip_rule_id): <p>The SIP rule ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateSipRule::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateSipRule::set_name): <p>The new name for the specified SIP rule.</p>
-    ///   - [`disabled(bool)`](crate::client::fluent_builders::UpdateSipRule::disabled) / [`set_disabled(Option<bool>)`](crate::client::fluent_builders::UpdateSipRule::set_disabled): <p>The new value specified to indicate whether the rule is disabled.</p>
-    ///   - [`target_applications(Vec<SipRuleTargetApplication>)`](crate::client::fluent_builders::UpdateSipRule::target_applications) / [`set_target_applications(Option<Vec<SipRuleTargetApplication>>)`](crate::client::fluent_builders::UpdateSipRule::set_target_applications): <p>The new value of the list of target applications.</p>
-    /// - On success, responds with [`UpdateSipRuleOutput`](crate::output::UpdateSipRuleOutput) with field(s):
-    ///   - [`sip_rule(Option<SipRule>)`](crate::output::UpdateSipRuleOutput::sip_rule): <p>Updated SIP rule details.</p>
-    /// - On failure, responds with [`SdkError<UpdateSipRuleError>`](crate::error::UpdateSipRuleError)
-    pub fn update_sip_rule(&self) -> crate::client::fluent_builders::UpdateSipRule {
-        crate::client::fluent_builders::UpdateSipRule::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateUser`](crate::client::fluent_builders::UpdateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUser::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUser::set_user_id): <p>The user ID.</p>
-    ///   - [`license_type(License)`](crate::client::fluent_builders::UpdateUser::license_type) / [`set_license_type(Option<License>)`](crate::client::fluent_builders::UpdateUser::set_license_type): <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::UpdateUser::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::UpdateUser::set_user_type): <p>The user type.</p>
-    ///   - [`alexa_for_business_metadata(AlexaForBusinessMetadata)`](crate::client::fluent_builders::UpdateUser::alexa_for_business_metadata) / [`set_alexa_for_business_metadata(Option<AlexaForBusinessMetadata>)`](crate::client::fluent_builders::UpdateUser::set_alexa_for_business_metadata): <p>The Alexa for Business metadata.</p>
-    /// - On success, responds with [`UpdateUserOutput`](crate::output::UpdateUserOutput) with field(s):
-    ///   - [`user(Option<User>)`](crate::output::UpdateUserOutput::user): <p>The updated user details.</p>
-    /// - On failure, responds with [`SdkError<UpdateUserError>`](crate::error::UpdateUserError)
-    pub fn update_user(&self) -> crate::client::fluent_builders::UpdateUser {
-        crate::client::fluent_builders::UpdateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateUserSettings`](crate::client::fluent_builders::UpdateUserSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserSettings::account_id) / [`set_account_id(Option<String>)`](crate::client::fluent_builders::UpdateUserSettings::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::UpdateUserSettings::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::UpdateUserSettings::set_user_id): <p>The user ID.</p>
-    ///   - [`user_settings(UserSettings)`](crate::client::fluent_builders::UpdateUserSettings::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::client::fluent_builders::UpdateUserSettings::set_user_settings): <p>The user settings to update.</p>
-    /// - On success, responds with [`UpdateUserSettingsOutput`](crate::output::UpdateUserSettingsOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateUserSettingsError>`](crate::error::UpdateUserSettingsError)
-    pub fn update_user_settings(&self) -> crate::client::fluent_builders::UpdateUserSettings {
-        crate::client::fluent_builders::UpdateUserSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateVoiceConnector`](crate::client::fluent_builders::UpdateVoiceConnector) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceConnector::voice_connector_id) / [`set_voice_connector_id(Option<String>)`](crate::client::fluent_builders::UpdateVoiceConnector::set_voice_connector_id): <p>The Amazon Chime Voice Connector ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceConnector::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateVoiceConnector::set_name): <p>The name of the Amazon Chime Voice Connector.</p>
-    ///   - [`require_encryption(bool)`](crate::client::fluent_builders::UpdateVoiceConnector::require_encryption) / [`set_require_encryption(Option<bool>)`](crate::client::fluent_builders::UpdateVoiceConnector::set_require_encryption): <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
-    /// - On success, responds with [`UpdateVoiceConnectorOutput`](crate::output::UpdateVoiceConnectorOutput) with field(s):
-    ///   - [`voice_connector(Option<VoiceConnector>)`](crate::output::UpdateVoiceConnectorOutput::voice_connector): <p>The updated Amazon Chime Voice Connector details.</p>
-    /// - On failure, responds with [`SdkError<UpdateVoiceConnectorError>`](crate::error::UpdateVoiceConnectorError)
-    pub fn update_voice_connector(&self) -> crate::client::fluent_builders::UpdateVoiceConnector {
-        crate::client::fluent_builders::UpdateVoiceConnector::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateVoiceConnectorGroup`](crate::client::fluent_builders::UpdateVoiceConnectorGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`voice_connector_group_id(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::voice_connector_group_id) / [`set_voice_connector_group_id(Option<String>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::set_voice_connector_group_id): <p>The Amazon Chime Voice Connector group ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::set_name): <p>The name of the Amazon Chime Voice Connector group.</p>
-    ///   - [`voice_connector_items(Vec<VoiceConnectorItem>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::voice_connector_items) / [`set_voice_connector_items(Option<Vec<VoiceConnectorItem>>)`](crate::client::fluent_builders::UpdateVoiceConnectorGroup::set_voice_connector_items): <p>The <code>VoiceConnectorItems</code> to associate with the group.</p>
-    /// - On success, responds with [`UpdateVoiceConnectorGroupOutput`](crate::output::UpdateVoiceConnectorGroupOutput) with field(s):
-    ///   - [`voice_connector_group(Option<VoiceConnectorGroup>)`](crate::output::UpdateVoiceConnectorGroupOutput::voice_connector_group): <p>The updated Amazon Chime Voice Connector group details.</p>
-    /// - On failure, responds with [`SdkError<UpdateVoiceConnectorGroupError>`](crate::error::UpdateVoiceConnectorGroupError)
-    pub fn update_voice_connector_group(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateVoiceConnectorGroup {
-        crate::client::fluent_builders::UpdateVoiceConnectorGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ValidateE911Address`](crate::client::fluent_builders::ValidateE911Address) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`aws_account_id(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::aws_account_id) / [`set_aws_account_id(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_aws_account_id): <p>The AWS account ID.</p>
-    ///   - [`street_number(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::street_number) / [`set_street_number(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_street_number): <p>The address street number, such as <code>200</code> or <code>2121</code>.</p>
-    ///   - [`street_info(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::street_info) / [`set_street_info(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_street_info): <p>The address street information, such as <code>8th Avenue</code>.</p>
-    ///   - [`city(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::city) / [`set_city(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_city): <p>The address city, such as <code>Portland</code>.</p>
-    ///   - [`state(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::state) / [`set_state(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_state): <p>The address state, such as <code>ME</code>.</p>
-    ///   - [`country(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::country) / [`set_country(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_country): <p>The address country, such as <code>US</code>. </p>
-    ///   - [`postal_code(impl Into<String>)`](crate::client::fluent_builders::ValidateE911Address::postal_code) / [`set_postal_code(Option<String>)`](crate::client::fluent_builders::ValidateE911Address::set_postal_code): <p>The address postal code, such as <code>04352</code>.</p>
-    /// - On success, responds with [`ValidateE911AddressOutput`](crate::output::ValidateE911AddressOutput) with field(s):
-    ///   - [`validation_result(i32)`](crate::output::ValidateE911AddressOutput::validation_result): <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
-    ///   - [`address_external_id(Option<String>)`](crate::output::ValidateE911AddressOutput::address_external_id): <p>The ID that represents the address.</p>
-    ///   - [`address(Option<Address>)`](crate::output::ValidateE911AddressOutput::address): <p>The validated address.</p>
-    ///   - [`candidate_address_list(Option<Vec<CandidateAddress>>)`](crate::output::ValidateE911AddressOutput::candidate_address_list): <p>The list of address suggestions.</p>
-    /// - On failure, responds with [`SdkError<ValidateE911AddressError>`](crate::error::ValidateE911AddressError)
-    pub fn validate_e911_address(&self) -> crate::client::fluent_builders::ValidateE911Address {
-        crate::client::fluent_builders::ValidateE911Address::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -2697,9 +174,391 @@ impl Client {
     }
 }
 
+mod associate_phone_number_with_user;
+
+mod associate_phone_numbers_with_voice_connector;
+
+mod associate_phone_numbers_with_voice_connector_group;
+
+mod associate_signin_delegate_groups_with_account;
+
+mod batch_create_attendee;
+
+mod batch_create_channel_membership;
+
+mod batch_create_room_membership;
+
+mod batch_delete_phone_number;
+
+mod batch_suspend_user;
+
+mod batch_unsuspend_user;
+
+mod batch_update_phone_number;
+
+mod batch_update_user;
+
+mod create_account;
+
+mod create_app_instance;
+
+mod create_app_instance_admin;
+
+mod create_app_instance_user;
+
+mod create_attendee;
+
+mod create_bot;
+
+mod create_channel;
+
+mod create_channel_ban;
+
+mod create_channel_membership;
+
+mod create_channel_moderator;
+
+mod create_media_capture_pipeline;
+
+mod create_meeting;
+
+mod create_meeting_dial_out;
+
+mod create_meeting_with_attendees;
+
+mod create_phone_number_order;
+
+mod create_proxy_session;
+
+mod create_room;
+
+mod create_room_membership;
+
+mod create_sip_media_application;
+
+mod create_sip_media_application_call;
+
+mod create_sip_rule;
+
+mod create_user;
+
+mod create_voice_connector;
+
+mod create_voice_connector_group;
+
+mod delete_account;
+
+mod delete_app_instance;
+
+mod delete_app_instance_admin;
+
+mod delete_app_instance_streaming_configurations;
+
+mod delete_app_instance_user;
+
+mod delete_attendee;
+
+mod delete_channel;
+
+mod delete_channel_ban;
+
+mod delete_channel_membership;
+
+mod delete_channel_message;
+
+mod delete_channel_moderator;
+
+mod delete_events_configuration;
+
+mod delete_media_capture_pipeline;
+
+mod delete_meeting;
+
+mod delete_phone_number;
+
+mod delete_proxy_session;
+
+mod delete_room;
+
+mod delete_room_membership;
+
+mod delete_sip_media_application;
+
+mod delete_sip_rule;
+
+mod delete_voice_connector;
+
+mod delete_voice_connector_emergency_calling_configuration;
+
+mod delete_voice_connector_group;
+
+mod delete_voice_connector_origination;
+
+mod delete_voice_connector_proxy;
+
+mod delete_voice_connector_streaming_configuration;
+
+mod delete_voice_connector_termination;
+
+mod delete_voice_connector_termination_credentials;
+
+mod describe_app_instance;
+
+mod describe_app_instance_admin;
+
+mod describe_app_instance_user;
+
+mod describe_channel;
+
+mod describe_channel_ban;
+
+mod describe_channel_membership;
+
+mod describe_channel_membership_for_app_instance_user;
+
+mod describe_channel_moderated_by_app_instance_user;
+
+mod describe_channel_moderator;
+
+mod disassociate_phone_number_from_user;
+
+mod disassociate_phone_numbers_from_voice_connector;
+
+mod disassociate_phone_numbers_from_voice_connector_group;
+
+mod disassociate_signin_delegate_groups_from_account;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_account;
+
+mod get_account_settings;
+
+mod get_app_instance_retention_settings;
+
+mod get_app_instance_streaming_configurations;
+
+mod get_attendee;
+
+mod get_bot;
+
+mod get_channel_message;
+
+mod get_events_configuration;
+
+mod get_global_settings;
+
+mod get_media_capture_pipeline;
+
+mod get_meeting;
+
+mod get_messaging_session_endpoint;
+
+mod get_phone_number;
+
+mod get_phone_number_order;
+
+mod get_phone_number_settings;
+
+mod get_proxy_session;
+
+mod get_retention_settings;
+
+mod get_room;
+
+mod get_sip_media_application;
+
+mod get_sip_media_application_logging_configuration;
+
+mod get_sip_rule;
+
+mod get_user;
+
+mod get_user_settings;
+
+mod get_voice_connector;
+
+mod get_voice_connector_emergency_calling_configuration;
+
+mod get_voice_connector_group;
+
+mod get_voice_connector_logging_configuration;
+
+mod get_voice_connector_origination;
+
+mod get_voice_connector_proxy;
+
+mod get_voice_connector_streaming_configuration;
+
+mod get_voice_connector_termination;
+
+mod get_voice_connector_termination_health;
+
+mod invite_users;
+
+mod list_accounts;
+
+mod list_app_instance_admins;
+
+mod list_app_instance_users;
+
+mod list_app_instances;
+
+mod list_attendee_tags;
+
+mod list_attendees;
+
+mod list_bots;
+
+mod list_channel_bans;
+
+mod list_channel_memberships;
+
+mod list_channel_memberships_for_app_instance_user;
+
+mod list_channel_messages;
+
+mod list_channel_moderators;
+
+mod list_channels;
+
+mod list_channels_moderated_by_app_instance_user;
+
+mod list_media_capture_pipelines;
+
+mod list_meeting_tags;
+
+mod list_meetings;
+
+mod list_phone_number_orders;
+
+mod list_phone_numbers;
+
+mod list_proxy_sessions;
+
+mod list_room_memberships;
+
+mod list_rooms;
+
+mod list_sip_media_applications;
+
+mod list_sip_rules;
+
+mod list_supported_phone_number_countries;
+
+mod list_tags_for_resource;
+
+mod list_users;
+
+mod list_voice_connector_groups;
+
+mod list_voice_connector_termination_credentials;
+
+mod list_voice_connectors;
+
+mod logout_user;
+
+mod put_app_instance_retention_settings;
+
+mod put_app_instance_streaming_configurations;
+
+mod put_events_configuration;
+
+mod put_retention_settings;
+
+mod put_sip_media_application_logging_configuration;
+
+mod put_voice_connector_emergency_calling_configuration;
+
+mod put_voice_connector_logging_configuration;
+
+mod put_voice_connector_origination;
+
+mod put_voice_connector_proxy;
+
+mod put_voice_connector_streaming_configuration;
+
+mod put_voice_connector_termination;
+
+mod put_voice_connector_termination_credentials;
+
+mod redact_channel_message;
+
+mod redact_conversation_message;
+
+mod redact_room_message;
+
+mod regenerate_security_token;
+
+mod reset_personal_pin;
+
+mod restore_phone_number;
+
+mod search_available_phone_numbers;
+
+mod send_channel_message;
+
+mod start_meeting_transcription;
+
+mod stop_meeting_transcription;
+
+mod tag_attendee;
+
+mod tag_meeting;
+
+mod tag_resource;
+
+mod untag_attendee;
+
+mod untag_meeting;
+
+mod untag_resource;
+
+mod update_account;
+
+mod update_account_settings;
+
+mod update_app_instance;
+
+mod update_app_instance_user;
+
+mod update_bot;
+
+mod update_channel;
+
+mod update_channel_message;
+
+mod update_channel_read_marker;
+
+mod update_global_settings;
+
+mod update_phone_number;
+
+mod update_phone_number_settings;
+
+mod update_proxy_session;
+
+mod update_room;
+
+mod update_room_membership;
+
+mod update_sip_media_application;
+
+mod update_sip_media_application_call;
+
+mod update_sip_rule;
+
+mod update_user;
+
+mod update_user_settings;
+
+mod update_voice_connector;
+
+mod update_voice_connector_group;
+
+mod validate_e911_address;

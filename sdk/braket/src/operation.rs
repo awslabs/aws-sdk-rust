@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_job_error(response)
+            crate::protocol_serde::shape_cancel_job::de_cancel_job_http_error(response)
         } else {
-            crate::operation_deser::parse_cancel_job_response(response)
+            crate::protocol_serde::shape_cancel_job::de_cancel_job_http_response(response)
         }
     }
 }
@@ -59,9 +59,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuantumTask {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_quantum_task_error(response)
+            crate::protocol_serde::shape_cancel_quantum_task::de_cancel_quantum_task_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_cancel_quantum_task_response(response)
+            crate::protocol_serde::shape_cancel_quantum_task::de_cancel_quantum_task_http_response(
+                response,
+            )
         }
     }
 }
@@ -91,9 +95,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_job_error(response)
+            crate::protocol_serde::shape_create_job::de_create_job_http_error(response)
         } else {
-            crate::operation_deser::parse_create_job_response(response)
+            crate::protocol_serde::shape_create_job::de_create_job_http_response(response)
         }
     }
 }
@@ -126,9 +130,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQuantumTask {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_quantum_task_error(response)
+            crate::protocol_serde::shape_create_quantum_task::de_create_quantum_task_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_quantum_task_response(response)
+            crate::protocol_serde::shape_create_quantum_task::de_create_quantum_task_http_response(
+                response,
+            )
         }
     }
 }
@@ -158,9 +166,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_device_error(response)
+            crate::protocol_serde::shape_get_device::de_get_device_http_error(response)
         } else {
-            crate::operation_deser::parse_get_device_response(response)
+            crate::protocol_serde::shape_get_device::de_get_device_http_response(response)
         }
     }
 }
@@ -190,9 +198,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_job_error(response)
+            crate::protocol_serde::shape_get_job::de_get_job_http_error(response)
         } else {
-            crate::operation_deser::parse_get_job_response(response)
+            crate::protocol_serde::shape_get_job::de_get_job_http_response(response)
         }
     }
 }
@@ -223,9 +231,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQuantumTask {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_quantum_task_error(response)
+            crate::protocol_serde::shape_get_quantum_task::de_get_quantum_task_http_error(response)
         } else {
-            crate::operation_deser::parse_get_quantum_task_response(response)
+            crate::protocol_serde::shape_get_quantum_task::de_get_quantum_task_http_response(
+                response,
+            )
         }
     }
 }
@@ -258,9 +268,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -291,9 +301,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchDevices {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_devices_error(response)
+            crate::protocol_serde::shape_search_devices::de_search_devices_http_error(response)
         } else {
-            crate::operation_deser::parse_search_devices_response(response)
+            crate::protocol_serde::shape_search_devices::de_search_devices_http_response(response)
         }
     }
 }
@@ -324,9 +334,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchJobs {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_jobs_error(response)
+            crate::protocol_serde::shape_search_jobs::de_search_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_search_jobs_response(response)
+            crate::protocol_serde::shape_search_jobs::de_search_jobs_http_response(response)
         }
     }
 }
@@ -359,9 +369,13 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_quantum_tasks_error(response)
+            crate::protocol_serde::shape_search_quantum_tasks::de_search_quantum_tasks_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_search_quantum_tasks_response(response)
+            crate::protocol_serde::shape_search_quantum_tasks::de_search_quantum_tasks_http_response(
+                response,
+            )
         }
     }
 }
@@ -392,9 +406,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -425,9 +439,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }

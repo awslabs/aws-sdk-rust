@@ -90,7 +90,8 @@ impl ListAttachedLinksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attached_links_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attached_links_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,7 @@ impl ListLinksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_links_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_links_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +327,7 @@ impl ListSinksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sinks_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_sinks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +374,7 @@ impl ListAttachedLinksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_attached_links_output_items(page)
+            crate::lens::lens_list_attached_links_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -400,7 +401,7 @@ impl ListLinksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_links_output_items(page)
+            crate::lens::lens_list_links_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -427,7 +428,7 @@ impl ListSinksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_sinks_output_items(page)
+            crate::lens::lens_list_sinks_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })

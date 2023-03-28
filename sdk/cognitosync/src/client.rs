@@ -89,244 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`BulkPublish`](crate::client::fluent_builders::BulkPublish) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::BulkPublish::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::BulkPublish::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    /// - On success, responds with [`BulkPublishOutput`](crate::output::BulkPublishOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::BulkPublishOutput::identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    /// - On failure, responds with [`SdkError<BulkPublishError>`](crate::error::BulkPublishError)
-    pub fn bulk_publish(&self) -> crate::client::fluent_builders::BulkPublish {
-        crate::client::fluent_builders::BulkPublish::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteDataset`](crate::client::fluent_builders::DeleteDataset) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDataset::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::DeleteDataset::set_dataset_name): A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    /// - On success, responds with [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput) with field(s):
-    ///   - [`dataset(Option<Dataset>)`](crate::output::DeleteDatasetOutput::dataset): A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    /// - On failure, responds with [`SdkError<DeleteDatasetError>`](crate::error::DeleteDatasetError)
-    pub fn delete_dataset(&self) -> crate::client::fluent_builders::DeleteDataset {
-        crate::client::fluent_builders::DeleteDataset::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDataset`](crate::client::fluent_builders::DescribeDataset) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataset::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeDataset::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDataset::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DescribeDataset::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDataset::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::DescribeDataset::set_dataset_name): A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    /// - On success, responds with [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput) with field(s):
-    ///   - [`dataset(Option<Dataset>)`](crate::output::DescribeDatasetOutput::dataset): Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
-    /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::error::DescribeDatasetError)
-    pub fn describe_dataset(&self) -> crate::client::fluent_builders::DescribeDataset {
-        crate::client::fluent_builders::DescribeDataset::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIdentityPoolUsage`](crate::client::fluent_builders::DescribeIdentityPoolUsage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityPoolUsage::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityPoolUsage::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    /// - On success, responds with [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput) with field(s):
-    ///   - [`identity_pool_usage(Option<IdentityPoolUsage>)`](crate::output::DescribeIdentityPoolUsageOutput::identity_pool_usage): Information about the usage of the identity pool.
-    /// - On failure, responds with [`SdkError<DescribeIdentityPoolUsageError>`](crate::error::DescribeIdentityPoolUsageError)
-    pub fn describe_identity_pool_usage(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeIdentityPoolUsage {
-        crate::client::fluent_builders::DescribeIdentityPoolUsage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIdentityUsage`](crate::client::fluent_builders::DescribeIdentityUsage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityUsage::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityUsage::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityUsage::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::DescribeIdentityUsage::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    /// - On success, responds with [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput) with field(s):
-    ///   - [`identity_usage(Option<IdentityUsage>)`](crate::output::DescribeIdentityUsageOutput::identity_usage): Usage information for the identity.
-    /// - On failure, responds with [`SdkError<DescribeIdentityUsageError>`](crate::error::DescribeIdentityUsageError)
-    pub fn describe_identity_usage(&self) -> crate::client::fluent_builders::DescribeIdentityUsage {
-        crate::client::fluent_builders::DescribeIdentityUsage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBulkPublishDetails`](crate::client::fluent_builders::GetBulkPublishDetails) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetBulkPublishDetails::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetBulkPublishDetails::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    /// - On success, responds with [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::GetBulkPublishDetailsOutput::identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`bulk_publish_start_time(Option<DateTime>)`](crate::output::GetBulkPublishDetailsOutput::bulk_publish_start_time): The date/time at which the last bulk publish was initiated.
-    ///   - [`bulk_publish_complete_time(Option<DateTime>)`](crate::output::GetBulkPublishDetailsOutput::bulk_publish_complete_time): If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    ///   - [`bulk_publish_status(Option<BulkPublishStatus>)`](crate::output::GetBulkPublishDetailsOutput::bulk_publish_status): Status of the last bulk publish operation, valid values are:  <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>  <p>IN_PROGRESS - Data is being published to the configured stream</p>  <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>  <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    ///   - [`failure_message(Option<String>)`](crate::output::GetBulkPublishDetailsOutput::failure_message): If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    /// - On failure, responds with [`SdkError<GetBulkPublishDetailsError>`](crate::error::GetBulkPublishDetailsError)
-    pub fn get_bulk_publish_details(
-        &self,
-    ) -> crate::client::fluent_builders::GetBulkPublishDetails {
-        crate::client::fluent_builders::GetBulkPublishDetails::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCognitoEvents`](crate::client::fluent_builders::GetCognitoEvents) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetCognitoEvents::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetCognitoEvents::set_identity_pool_id): <p>The Cognito Identity Pool ID for the request</p>
-    /// - On success, responds with [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput) with field(s):
-    ///   - [`events(Option<HashMap<String, String>>)`](crate::output::GetCognitoEventsOutput::events): <p>The Cognito Events returned from the GetCognitoEvents request</p>
-    /// - On failure, responds with [`SdkError<GetCognitoEventsError>`](crate::error::GetCognitoEventsError)
-    pub fn get_cognito_events(&self) -> crate::client::fluent_builders::GetCognitoEvents {
-        crate::client::fluent_builders::GetCognitoEvents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetIdentityPoolConfiguration`](crate::client::fluent_builders::GetIdentityPoolConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::GetIdentityPoolConfiguration::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::GetIdentityPoolConfiguration::set_identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>
-    /// - On success, responds with [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::GetIdentityPoolConfigurationOutput::identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    ///   - [`push_sync(Option<PushSync>)`](crate::output::GetIdentityPoolConfigurationOutput::push_sync): <p>Options to apply to this identity pool for push synchronization.</p>
-    ///   - [`cognito_streams(Option<CognitoStreams>)`](crate::output::GetIdentityPoolConfigurationOutput::cognito_streams): Options to apply to this identity pool for Amazon Cognito streams.
-    /// - On failure, responds with [`SdkError<GetIdentityPoolConfigurationError>`](crate::error::GetIdentityPoolConfigurationError)
-    pub fn get_identity_pool_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::GetIdentityPoolConfiguration {
-        crate::client::fluent_builders::GetIdentityPoolConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDatasets`](crate::client::fluent_builders::ListDatasets) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDatasets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDatasets::set_next_token): A pagination token for obtaining the next page of results.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDatasets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListDatasets::set_max_results): The maximum number of results to be returned.
-    /// - On success, responds with [`ListDatasetsOutput`](crate::output::ListDatasetsOutput) with field(s):
-    ///   - [`datasets(Option<Vec<Dataset>>)`](crate::output::ListDatasetsOutput::datasets): A set of datasets.
-    ///   - [`count(i32)`](crate::output::ListDatasetsOutput::count): Number of datasets returned.
-    ///   - [`next_token(Option<String>)`](crate::output::ListDatasetsOutput::next_token): A pagination token for obtaining the next page of results.
-    /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::error::ListDatasetsError)
-    pub fn list_datasets(&self) -> crate::client::fluent_builders::ListDatasets {
-        crate::client::fluent_builders::ListDatasets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListIdentityPoolUsage`](crate::client::fluent_builders::ListIdentityPoolUsage) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentityPoolUsage::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentityPoolUsage::set_next_token): A pagination token for obtaining the next page of results.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentityPoolUsage::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListIdentityPoolUsage::set_max_results): The maximum number of results to be returned.
-    /// - On success, responds with [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput) with field(s):
-    ///   - [`identity_pool_usages(Option<Vec<IdentityPoolUsage>>)`](crate::output::ListIdentityPoolUsageOutput::identity_pool_usages): Usage information for the identity pools.
-    ///   - [`max_results(i32)`](crate::output::ListIdentityPoolUsageOutput::max_results): The maximum number of results to be returned.
-    ///   - [`count(i32)`](crate::output::ListIdentityPoolUsageOutput::count): Total number of identities for the identity pool.
-    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityPoolUsageOutput::next_token): A pagination token for obtaining the next page of results.
-    /// - On failure, responds with [`SdkError<ListIdentityPoolUsageError>`](crate::error::ListIdentityPoolUsageError)
-    pub fn list_identity_pool_usage(
-        &self,
-    ) -> crate::client::fluent_builders::ListIdentityPoolUsage {
-        crate::client::fluent_builders::ListIdentityPoolUsage::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRecords`](crate::client::fluent_builders::ListRecords) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::ListRecords::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::ListRecords::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::ListRecords::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::ListRecords::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::ListRecords::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::ListRecords::set_dataset_name): A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    ///   - [`last_sync_count(i64)`](crate::client::fluent_builders::ListRecords::last_sync_count) / [`set_last_sync_count(Option<i64>)`](crate::client::fluent_builders::ListRecords::set_last_sync_count): The last server sync count for this record.
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecords::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecords::set_next_token): A pagination token for obtaining the next page of results.
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecords::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecords::set_max_results): The maximum number of results to be returned.
-    ///   - [`sync_session_token(impl Into<String>)`](crate::client::fluent_builders::ListRecords::sync_session_token) / [`set_sync_session_token(Option<String>)`](crate::client::fluent_builders::ListRecords::set_sync_session_token): A token containing a session ID, identity ID, and expiration.
-    /// - On success, responds with [`ListRecordsOutput`](crate::output::ListRecordsOutput) with field(s):
-    ///   - [`records(Option<Vec<Record>>)`](crate::output::ListRecordsOutput::records): A list of all records.
-    ///   - [`next_token(Option<String>)`](crate::output::ListRecordsOutput::next_token): A pagination token for obtaining the next page of results.
-    ///   - [`count(i32)`](crate::output::ListRecordsOutput::count): Total number of records.
-    ///   - [`dataset_sync_count(Option<i64>)`](crate::output::ListRecordsOutput::dataset_sync_count): Server sync count for this dataset.
-    ///   - [`last_modified_by(Option<String>)`](crate::output::ListRecordsOutput::last_modified_by): The user/device that made the last change to this record.
-    ///   - [`merged_dataset_names(Option<Vec<String>>)`](crate::output::ListRecordsOutput::merged_dataset_names): Names of merged datasets.
-    ///   - [`dataset_exists(bool)`](crate::output::ListRecordsOutput::dataset_exists): Indicates whether the dataset exists.
-    ///   - [`dataset_deleted_after_requested_sync_count(bool)`](crate::output::ListRecordsOutput::dataset_deleted_after_requested_sync_count): A boolean value specifying whether to delete the dataset locally.
-    ///   - [`sync_session_token(Option<String>)`](crate::output::ListRecordsOutput::sync_session_token): A token containing a session ID, identity ID, and expiration.
-    /// - On failure, responds with [`SdkError<ListRecordsError>`](crate::error::ListRecordsError)
-    pub fn list_records(&self) -> crate::client::fluent_builders::ListRecords {
-        crate::client::fluent_builders::ListRecords::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RegisterDevice`](crate::client::fluent_builders::RegisterDevice) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::RegisterDevice::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::RegisterDevice::set_identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::RegisterDevice::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::RegisterDevice::set_identity_id): <p>The unique ID for this identity.</p>
-    ///   - [`platform(Platform)`](crate::client::fluent_builders::RegisterDevice::platform) / [`set_platform(Option<Platform>)`](crate::client::fluent_builders::RegisterDevice::set_platform): <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    ///   - [`token(impl Into<String>)`](crate::client::fluent_builders::RegisterDevice::token) / [`set_token(Option<String>)`](crate::client::fluent_builders::RegisterDevice::set_token): <p>The push token.</p>
-    /// - On success, responds with [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::output::RegisterDeviceOutput::device_id): <p>The unique ID generated for this device by Cognito.</p>
-    /// - On failure, responds with [`SdkError<RegisterDeviceError>`](crate::error::RegisterDeviceError)
-    pub fn register_device(&self) -> crate::client::fluent_builders::RegisterDevice {
-        crate::client::fluent_builders::RegisterDevice::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetCognitoEvents`](crate::client::fluent_builders::SetCognitoEvents) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetCognitoEvents::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::SetCognitoEvents::set_identity_pool_id): <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    ///   - [`events(HashMap<String, String>)`](crate::client::fluent_builders::SetCognitoEvents::events) / [`set_events(Option<HashMap<String, String>>)`](crate::client::fluent_builders::SetCognitoEvents::set_events): <p>The events to configure</p>
-    /// - On success, responds with [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput)
-
-    /// - On failure, responds with [`SdkError<SetCognitoEventsError>`](crate::error::SetCognitoEventsError)
-    pub fn set_cognito_events(&self) -> crate::client::fluent_builders::SetCognitoEvents {
-        crate::client::fluent_builders::SetCognitoEvents::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetIdentityPoolConfiguration`](crate::client::fluent_builders::SetIdentityPoolConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::set_identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>
-    ///   - [`push_sync(PushSync)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::push_sync) / [`set_push_sync(Option<PushSync>)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::set_push_sync): <p>Options to apply to this identity pool for push synchronization.</p>
-    ///   - [`cognito_streams(CognitoStreams)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::cognito_streams) / [`set_cognito_streams(Option<CognitoStreams>)`](crate::client::fluent_builders::SetIdentityPoolConfiguration::set_cognito_streams): Options to apply to this identity pool for Amazon Cognito streams.
-    /// - On success, responds with [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput) with field(s):
-    ///   - [`identity_pool_id(Option<String>)`](crate::output::SetIdentityPoolConfigurationOutput::identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
-    ///   - [`push_sync(Option<PushSync>)`](crate::output::SetIdentityPoolConfigurationOutput::push_sync): <p>Options to apply to this identity pool for push synchronization.</p>
-    ///   - [`cognito_streams(Option<CognitoStreams>)`](crate::output::SetIdentityPoolConfigurationOutput::cognito_streams): Options to apply to this identity pool for Amazon Cognito streams.
-    /// - On failure, responds with [`SdkError<SetIdentityPoolConfigurationError>`](crate::error::SetIdentityPoolConfigurationError)
-    pub fn set_identity_pool_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::SetIdentityPoolConfiguration {
-        crate::client::fluent_builders::SetIdentityPoolConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SubscribeToDataset`](crate::client::fluent_builders::SubscribeToDataset) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::SubscribeToDataset::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::SubscribeToDataset::set_identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::SubscribeToDataset::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::SubscribeToDataset::set_identity_id): <p>Unique ID for this identity.</p>
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::SubscribeToDataset::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::SubscribeToDataset::set_dataset_name): <p>The name of the dataset to subcribe to.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::SubscribeToDataset::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::SubscribeToDataset::set_device_id): <p>The unique ID generated for this device by Cognito.</p>
-    /// - On success, responds with [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput)
-
-    /// - On failure, responds with [`SdkError<SubscribeToDatasetError>`](crate::error::SubscribeToDatasetError)
-    pub fn subscribe_to_dataset(&self) -> crate::client::fluent_builders::SubscribeToDataset {
-        crate::client::fluent_builders::SubscribeToDataset::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UnsubscribeFromDataset`](crate::client::fluent_builders::UnsubscribeFromDataset) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::set_identity_pool_id): <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::set_identity_id): <p>Unique ID for this identity.</p>
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::set_dataset_name): <p>The name of the dataset from which to unsubcribe.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UnsubscribeFromDataset::set_device_id): <p>The unique ID generated for this device by Cognito.</p>
-    /// - On success, responds with [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput)
-
-    /// - On failure, responds with [`SdkError<UnsubscribeFromDatasetError>`](crate::error::UnsubscribeFromDatasetError)
-    pub fn unsubscribe_from_dataset(
-        &self,
-    ) -> crate::client::fluent_builders::UnsubscribeFromDataset {
-        crate::client::fluent_builders::UnsubscribeFromDataset::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRecords`](crate::client::fluent_builders::UpdateRecords) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_identity_pool_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`identity_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::identity_id) / [`set_identity_id(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_identity_id): A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    ///   - [`dataset_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::dataset_name) / [`set_dataset_name(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_dataset_name): A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_device_id): <p>The unique ID generated for this device by Cognito.</p>
-    ///   - [`record_patches(Vec<RecordPatch>)`](crate::client::fluent_builders::UpdateRecords::record_patches) / [`set_record_patches(Option<Vec<RecordPatch>>)`](crate::client::fluent_builders::UpdateRecords::set_record_patches): A list of patch operations.
-    ///   - [`sync_session_token(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::sync_session_token) / [`set_sync_session_token(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_sync_session_token): The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    ///   - [`client_context(impl Into<String>)`](crate::client::fluent_builders::UpdateRecords::client_context) / [`set_client_context(Option<String>)`](crate::client::fluent_builders::UpdateRecords::set_client_context): Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-    /// - On success, responds with [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput) with field(s):
-    ///   - [`records(Option<Vec<Record>>)`](crate::output::UpdateRecordsOutput::records): A list of records that have been updated.
-    /// - On failure, responds with [`SdkError<UpdateRecordsError>`](crate::error::UpdateRecordsError)
-    pub fn update_records(&self) -> crate::client::fluent_builders::UpdateRecords {
-        crate::client::fluent_builders::UpdateRecords::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -412,9 +174,43 @@ impl Client {
     }
 }
 
+mod bulk_publish;
+
+mod delete_dataset;
+
+mod describe_dataset;
+
+mod describe_identity_pool_usage;
+
+mod describe_identity_usage;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_bulk_publish_details;
+
+mod get_cognito_events;
+
+mod get_identity_pool_configuration;
+
+mod list_datasets;
+
+mod list_identity_pool_usage;
+
+mod list_records;
+
+mod register_device;
+
+mod set_cognito_events;
+
+mod set_identity_pool_configuration;
+
+mod subscribe_to_dataset;
+
+mod unsubscribe_from_dataset;
+
+mod update_records;

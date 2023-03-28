@@ -125,9 +125,7 @@ impl CreateComponentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_component_input(
-                &self.component_to_create,
-            )?,
+            crate::protocol_serde::shape_create_component_input::ser_component_to_create_http_payload(& self.component_to_create)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -310,7 +308,9 @@ impl CreateFormInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_form_input(&self.form_to_create)?,
+            crate::protocol_serde::shape_create_form_input::ser_form_to_create_http_payload(
+                &self.form_to_create,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -493,7 +493,9 @@ impl CreateThemeInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_theme_input(&self.theme_to_create)?,
+            crate::protocol_serde::shape_create_theme_input::ser_theme_to_create_http_payload(
+                &self.theme_to_create,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1155,7 +1157,9 @@ impl ExchangeCodeForTokenInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_exchange_code_for_token_input(&self.request)?,
+            crate::protocol_serde::shape_exchange_code_for_token_input::ser_request_http_payload(
+                &self.request,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3022,7 +3026,9 @@ impl PutMetadataFlagInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_metadata_flag_input(&self.body)?,
+            crate::protocol_serde::shape_put_metadata_flag_input::ser_body_http_payload(
+                &self.body,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3165,7 +3171,9 @@ impl RefreshTokenInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_refresh_token_input(&self.refresh_token_body)?,
+            crate::protocol_serde::shape_refresh_token_input::ser_refresh_token_body_http_payload(
+                &self.refresh_token_body,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3371,9 +3379,7 @@ impl UpdateComponentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_component_input(
-                &self.updated_component,
-            )?,
+            crate::protocol_serde::shape_update_component_input::ser_updated_component_http_payload(& self.updated_component)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3579,7 +3585,9 @@ impl UpdateFormInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_form_input(&self.updated_form)?,
+            crate::protocol_serde::shape_update_form_input::ser_updated_form_http_payload(
+                &self.updated_form,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3785,7 +3793,9 @@ impl UpdateThemeInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_theme_input(&self.updated_theme)?,
+            crate::protocol_serde::shape_update_theme_input::ser_updated_theme_http_payload(
+                &self.updated_theme,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

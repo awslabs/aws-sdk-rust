@@ -90,7 +90,7 @@ impl ListLinuxSubscriptionInstancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_linux_subscription_instances_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_linux_subscription_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +208,10 @@ impl ListLinuxSubscriptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_linux_subscriptions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_linux_subscriptions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -254,7 +257,11 @@ impl ListLinuxSubscriptionInstancesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListLinuxSubscriptionInstancesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_linux_subscription_instances_output_instances(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_linux_subscription_instances_output_instances(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -278,11 +285,9 @@ impl ListLinuxSubscriptionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_linux_subscriptions_output_subscriptions(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_linux_subscriptions_output_subscriptions(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }

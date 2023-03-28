@@ -809,7 +809,8 @@ impl PublishInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_publish(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_publish::ser_publish_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -823,7 +824,7 @@ impl PublishInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_publish_input(self.payload)?,
+            crate::protocol_serde::shape_publish_input::ser_payload_http_payload(self.payload)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -977,7 +978,9 @@ impl UpdateThingShadowInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_update_thing_shadow_input(self.payload)?,
+            crate::protocol_serde::shape_update_thing_shadow_input::ser_payload_http_payload(
+                self.payload,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

@@ -89,153 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateConnection`](crate::client::fluent_builders::CreateConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`provider_type(ProviderType)`](crate::client::fluent_builders::CreateConnection::provider_type) / [`set_provider_type(Option<ProviderType>)`](crate::client::fluent_builders::CreateConnection::set_provider_type): <p>The name of the external provider where your third-party code repository is configured.</p>
-    ///   - [`connection_name(impl Into<String>)`](crate::client::fluent_builders::CreateConnection::connection_name) / [`set_connection_name(Option<String>)`](crate::client::fluent_builders::CreateConnection::set_connection_name): <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConnection::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConnection::set_tags): <p>The key-value pair to use when tagging the resource.</p>
-    ///   - [`host_arn(impl Into<String>)`](crate::client::fluent_builders::CreateConnection::host_arn) / [`set_host_arn(Option<String>)`](crate::client::fluent_builders::CreateConnection::set_host_arn): <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-    /// - On success, responds with [`CreateConnectionOutput`](crate::output::CreateConnectionOutput) with field(s):
-    ///   - [`connection_arn(Option<String>)`](crate::output::CreateConnectionOutput::connection_arn): <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>   <p>The ARN is never reused if the connection is deleted.</p>  </note>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateConnectionOutput::tags): <p>Specifies the tags applied to the resource.</p>
-    /// - On failure, responds with [`SdkError<CreateConnectionError>`](crate::error::CreateConnectionError)
-    pub fn create_connection(&self) -> crate::client::fluent_builders::CreateConnection {
-        crate::client::fluent_builders::CreateConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateHost`](crate::client::fluent_builders::CreateHost) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateHost::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateHost::set_name): <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
-    ///   - [`provider_type(ProviderType)`](crate::client::fluent_builders::CreateHost::provider_type) / [`set_provider_type(Option<ProviderType>)`](crate::client::fluent_builders::CreateHost::set_provider_type): <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
-    ///   - [`provider_endpoint(impl Into<String>)`](crate::client::fluent_builders::CreateHost::provider_endpoint) / [`set_provider_endpoint(Option<String>)`](crate::client::fluent_builders::CreateHost::set_provider_endpoint): <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
-    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::CreateHost::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::CreateHost::set_vpc_configuration): <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateHost::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateHost::set_tags): (undocumented)
-    /// - On success, responds with [`CreateHostOutput`](crate::output::CreateHostOutput) with field(s):
-    ///   - [`host_arn(Option<String>)`](crate::output::CreateHostOutput::host_arn): <p>The Amazon Resource Name (ARN) of the host to be created.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::CreateHostOutput::tags): (undocumented)
-    /// - On failure, responds with [`SdkError<CreateHostError>`](crate::error::CreateHostError)
-    pub fn create_host(&self) -> crate::client::fluent_builders::CreateHost {
-        crate::client::fluent_builders::CreateHost::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConnection`](crate::client::fluent_builders::DeleteConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connection_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteConnection::connection_arn) / [`set_connection_arn(Option<String>)`](crate::client::fluent_builders::DeleteConnection::set_connection_arn): <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>   <p>The ARN is never reused if the connection is deleted.</p>  </note>
-    /// - On success, responds with [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConnectionError>`](crate::error::DeleteConnectionError)
-    pub fn delete_connection(&self) -> crate::client::fluent_builders::DeleteConnection {
-        crate::client::fluent_builders::DeleteConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteHost`](crate::client::fluent_builders::DeleteHost) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteHost::host_arn) / [`set_host_arn(Option<String>)`](crate::client::fluent_builders::DeleteHost::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be deleted.</p>
-    /// - On success, responds with [`DeleteHostOutput`](crate::output::DeleteHostOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteHostError>`](crate::error::DeleteHostError)
-    pub fn delete_host(&self) -> crate::client::fluent_builders::DeleteHost {
-        crate::client::fluent_builders::DeleteHost::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConnection`](crate::client::fluent_builders::GetConnection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`connection_arn(impl Into<String>)`](crate::client::fluent_builders::GetConnection::connection_arn) / [`set_connection_arn(Option<String>)`](crate::client::fluent_builders::GetConnection::set_connection_arn): <p>The Amazon Resource Name (ARN) of a connection.</p>
-    /// - On success, responds with [`GetConnectionOutput`](crate::output::GetConnectionOutput) with field(s):
-    ///   - [`connection(Option<Connection>)`](crate::output::GetConnectionOutput::connection): <p>The connection details, such as status, owner, and provider type.</p>
-    /// - On failure, responds with [`SdkError<GetConnectionError>`](crate::error::GetConnectionError)
-    pub fn get_connection(&self) -> crate::client::fluent_builders::GetConnection {
-        crate::client::fluent_builders::GetConnection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetHost`](crate::client::fluent_builders::GetHost) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl Into<String>)`](crate::client::fluent_builders::GetHost::host_arn) / [`set_host_arn(Option<String>)`](crate::client::fluent_builders::GetHost::set_host_arn): <p>The Amazon Resource Name (ARN) of the requested host.</p>
-    /// - On success, responds with [`GetHostOutput`](crate::output::GetHostOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetHostOutput::name): <p>The name of the requested host.</p>
-    ///   - [`status(Option<String>)`](crate::output::GetHostOutput::status): <p>The status of the requested host.</p>
-    ///   - [`provider_type(Option<ProviderType>)`](crate::output::GetHostOutput::provider_type): <p>The provider type of the requested host, such as GitHub Enterprise Server.</p>
-    ///   - [`provider_endpoint(Option<String>)`](crate::output::GetHostOutput::provider_endpoint): <p>The endpoint of the infrastructure represented by the requested host.</p>
-    ///   - [`vpc_configuration(Option<VpcConfiguration>)`](crate::output::GetHostOutput::vpc_configuration): <p>The VPC configuration of the requested host.</p>
-    /// - On failure, responds with [`SdkError<GetHostError>`](crate::error::GetHostError)
-    pub fn get_host(&self) -> crate::client::fluent_builders::GetHost {
-        crate::client::fluent_builders::GetHost::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListConnections`](crate::client::fluent_builders::ListConnections) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConnections::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`provider_type_filter(ProviderType)`](crate::client::fluent_builders::ListConnections::provider_type_filter) / [`set_provider_type_filter(Option<ProviderType>)`](crate::client::fluent_builders::ListConnections::set_provider_type_filter): <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    ///   - [`host_arn_filter(impl Into<String>)`](crate::client::fluent_builders::ListConnections::host_arn_filter) / [`set_host_arn_filter(Option<String>)`](crate::client::fluent_builders::ListConnections::set_host_arn_filter): <p>Filters the list of connections to those associated with a specified host.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListConnections::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListConnections::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConnections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConnections::set_next_token): <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
-    /// - On success, responds with [`ListConnectionsOutput`](crate::output::ListConnectionsOutput) with field(s):
-    ///   - [`connections(Option<Vec<Connection>>)`](crate::output::ListConnectionsOutput::connections): <p>A list of connections and the details for each connection, such as status, owner, and provider type.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListConnectionsOutput::next_token): <p>A token that can be used in the next <code>ListConnections</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    /// - On failure, responds with [`SdkError<ListConnectionsError>`](crate::error::ListConnectionsError)
-    pub fn list_connections(&self) -> crate::client::fluent_builders::ListConnections {
-        crate::client::fluent_builders::ListConnections::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListHosts`](crate::client::fluent_builders::ListHosts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListHosts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListHosts::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListHosts::set_max_results): <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListHosts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListHosts::set_next_token): <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
-    /// - On success, responds with [`ListHostsOutput`](crate::output::ListHostsOutput) with field(s):
-    ///   - [`hosts(Option<Vec<Host>>)`](crate::output::ListHostsOutput::hosts): <p>A list of hosts and the details for each host, such as status, endpoint, and provider type.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListHostsOutput::next_token): <p>A token that can be used in the next <code>ListHosts</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more <code>nextToken</code> values are returned.</p>
-    /// - On failure, responds with [`SdkError<ListHostsError>`](crate::error::ListHostsError)
-    pub fn list_hosts(&self) -> crate::client::fluent_builders::ListHosts {
-        crate::client::fluent_builders::ListHosts::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>A list of tag key and value pairs associated with the specified resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags you want to modify or add to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of keys for the tags to be removed from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateHost`](crate::client::fluent_builders::UpdateHost) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`host_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateHost::host_arn) / [`set_host_arn(Option<String>)`](crate::client::fluent_builders::UpdateHost::set_host_arn): <p>The Amazon Resource Name (ARN) of the host to be updated.</p>
-    ///   - [`provider_endpoint(impl Into<String>)`](crate::client::fluent_builders::UpdateHost::provider_endpoint) / [`set_provider_endpoint(Option<String>)`](crate::client::fluent_builders::UpdateHost::set_provider_endpoint): <p>The URL or endpoint of the host to be updated.</p>
-    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::UpdateHost::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::UpdateHost::set_vpc_configuration): <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
-    /// - On success, responds with [`UpdateHostOutput`](crate::output::UpdateHostOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateHostError>`](crate::error::UpdateHostError)
-    pub fn update_host(&self) -> crate::client::fluent_builders::UpdateHost {
-        crate::client::fluent_builders::UpdateHost::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -321,9 +174,33 @@ impl Client {
     }
 }
 
+mod create_connection;
+
+mod create_host;
+
+mod delete_connection;
+
+mod delete_host;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_connection;
+
+mod get_host;
+
+mod list_connections;
+
+mod list_hosts;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_host;

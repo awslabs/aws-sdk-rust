@@ -89,63 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`GetRoutingControlState`](crate::client::fluent_builders::GetRoutingControlState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::GetRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::GetRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Name (ARN) for the routing control that you want to get the state for.</p>
-    /// - On success, responds with [`GetRoutingControlStateOutput`](crate::output::GetRoutingControlStateOutput) with field(s):
-    ///   - [`routing_control_arn(Option<String>)`](crate::output::GetRoutingControlStateOutput::routing_control_arn): <p>The Amazon Resource Name (ARN) of the response.</p>
-    ///   - [`routing_control_state(Option<RoutingControlState>)`](crate::output::GetRoutingControlStateOutput::routing_control_state): <p>The state of the routing control.</p>
-    ///   - [`routing_control_name(Option<String>)`](crate::output::GetRoutingControlStateOutput::routing_control_name): <p>The routing control name.</p>
-    /// - On failure, responds with [`SdkError<GetRoutingControlStateError>`](crate::error::GetRoutingControlStateError)
-    pub fn get_routing_control_state(
-        &self,
-    ) -> crate::client::fluent_builders::GetRoutingControlState {
-        crate::client::fluent_builders::GetRoutingControlState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRoutingControls`](crate::client::fluent_builders::ListRoutingControls) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRoutingControls::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`control_panel_arn(impl Into<String>)`](crate::client::fluent_builders::ListRoutingControls::control_panel_arn) / [`set_control_panel_arn(Option<String>)`](crate::client::fluent_builders::ListRoutingControls::set_control_panel_arn): <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRoutingControls::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRoutingControls::set_next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRoutingControls::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRoutingControls::set_max_results): <p>The number of routing controls objects that you want to return with this call. The default value is 500.</p>
-    /// - On success, responds with [`ListRoutingControlsOutput`](crate::output::ListRoutingControlsOutput) with field(s):
-    ///   - [`routing_controls(Option<Vec<RoutingControl>>)`](crate::output::ListRoutingControlsOutput::routing_controls): <p>The list of routing controls.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRoutingControlsOutput::next_token): <p>The token for the next set of results. You receive this token from a previous call.</p>
-    /// - On failure, responds with [`SdkError<ListRoutingControlsError>`](crate::error::ListRoutingControlsError)
-    pub fn list_routing_controls(&self) -> crate::client::fluent_builders::ListRoutingControls {
-        crate::client::fluent_builders::ListRoutingControls::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoutingControlState`](crate::client::fluent_builders::UpdateRoutingControlState) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`routing_control_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_arn) / [`set_routing_control_arn(Option<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_arn): <p>The Amazon Resource Name (ARN) for the routing control that you want to update the state for.</p>
-    ///   - [`routing_control_state(RoutingControlState)`](crate::client::fluent_builders::UpdateRoutingControlState::routing_control_state) / [`set_routing_control_state(Option<RoutingControlState>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_routing_control_state): <p>The state of the routing control. You can set the value to be On or Off.</p>
-    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlState::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlState::set_safety_rules_to_override): <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// - On success, responds with [`UpdateRoutingControlStateOutput`](crate::output::UpdateRoutingControlStateOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRoutingControlStateError>`](crate::error::UpdateRoutingControlStateError)
-    pub fn update_routing_control_state(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateRoutingControlState {
-        crate::client::fluent_builders::UpdateRoutingControlState::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRoutingControlStates`](crate::client::fluent_builders::UpdateRoutingControlStates) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`update_routing_control_state_entries(Vec<UpdateRoutingControlStateEntry>)`](crate::client::fluent_builders::UpdateRoutingControlStates::update_routing_control_state_entries) / [`set_update_routing_control_state_entries(Option<Vec<UpdateRoutingControlStateEntry>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_update_routing_control_state_entries): <p>A set of routing control entries that you want to update.</p>
-    ///   - [`safety_rules_to_override(Vec<String>)`](crate::client::fluent_builders::UpdateRoutingControlStates::safety_rules_to_override) / [`set_safety_rules_to_override(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRoutingControlStates::set_safety_rules_to_override): <p>The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html"> Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
-    /// - On success, responds with [`UpdateRoutingControlStatesOutput`](crate::output::UpdateRoutingControlStatesOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateRoutingControlStatesError>`](crate::error::UpdateRoutingControlStatesError)
-    pub fn update_routing_control_states(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateRoutingControlStates {
-        crate::client::fluent_builders::UpdateRoutingControlStates::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -237,3 +180,11 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_routing_control_state;
+
+mod list_routing_controls;
+
+mod update_routing_control_state;
+
+mod update_routing_control_states;

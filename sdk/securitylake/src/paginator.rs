@@ -90,7 +90,8 @@ impl GetDatalakeStatusPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_datalake_status_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_datalake_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,10 @@ impl ListDatalakeExceptionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_datalake_exceptions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_datalake_exceptions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,8 @@ impl ListLogSourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_log_sources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_log_sources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +449,8 @@ impl ListSubscribersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_subscribers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_subscribers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -490,7 +496,11 @@ impl GetDatalakeStatusPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetDatalakeStatusError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_datalake_status_output_account_sources_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_datalake_status_output_account_sources_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -513,7 +523,11 @@ impl ListDatalakeExceptionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListDatalakeExceptionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_datalake_exceptions_output_non_retryable_failures(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_datalake_exceptions_output_non_retryable_failures(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -539,7 +553,11 @@ impl ListLogSourcesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListLogSourcesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_log_sources_output_region_source_types_accounts_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_log_sources_output_region_source_types_accounts_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -563,7 +581,7 @@ impl ListSubscribersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_subscribers_output_subscribers(page)
+            crate::lens::lens_list_subscribers_output_subscribers(page)
                 .unwrap_or_default()
                 .into_iter()
         })

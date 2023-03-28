@@ -89,18 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`JoinStorageSession`](crate::client::fluent_builders::JoinStorageSession) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::client::fluent_builders::JoinStorageSession::channel_arn) / [`set_channel_arn(Option<String>)`](crate::client::fluent_builders::JoinStorageSession::set_channel_arn): <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
-    /// - On success, responds with [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput)
-
-    /// - On failure, responds with [`SdkError<JoinStorageSessionError>`](crate::error::JoinStorageSessionError)
-    pub fn join_storage_session(&self) -> crate::client::fluent_builders::JoinStorageSession {
-        crate::client::fluent_builders::JoinStorageSession::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -192,3 +180,5 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod join_storage_session;

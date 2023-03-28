@@ -90,7 +90,8 @@ impl DescribeImagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_images_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_images_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -200,7 +201,10 @@ impl DescribeImageScanFindingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_image_scan_findings_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_image_scan_findings_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -310,7 +314,7 @@ impl DescribePullThroughCacheRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_pull_through_cache_rules_output_next_token(resp);
+                            let new_token = crate::lens::reflens_describe_pull_through_cache_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -428,7 +432,8 @@ impl DescribeRepositoriesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_repositories_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_repositories_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -546,7 +551,10 @@ impl GetLifecyclePolicyPreviewPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_lifecycle_policy_preview_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_lifecycle_policy_preview_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -664,7 +672,8 @@ impl ListImagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_images_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_images_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -711,7 +720,7 @@ impl DescribeImagesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_images_output_image_details(page)
+            crate::lens::lens_describe_images_output_image_details(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -738,7 +747,7 @@ impl DescribeRepositoriesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_describe_repositories_output_repositories(page)
+            crate::lens::lens_describe_repositories_output_repositories(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -764,7 +773,11 @@ impl GetLifecyclePolicyPreviewPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetLifecyclePolicyPreviewError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_lifecycle_policy_preview_output_preview_results(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_lifecycle_policy_preview_output_preview_results(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -788,7 +801,7 @@ impl ListImagesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_images_output_image_ids(page)
+            crate::lens::lens_list_images_output_image_ids(page)
                 .unwrap_or_default()
                 .into_iter()
         })

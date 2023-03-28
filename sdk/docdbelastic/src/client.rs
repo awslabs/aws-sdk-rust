@@ -89,175 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateCluster`](crate::client::fluent_builders::CreateCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_cluster_name): <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>  <p> <i>Constraints</i>:</p>  <ul>   <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>  </ul>  <p> <i>Example</i>: <code>my-cluster</code> </p>
-    ///   - [`auth_type(Auth)`](crate::client::fluent_builders::CreateCluster::auth_type) / [`set_auth_type(Option<Auth>)`](crate::client::fluent_builders::CreateCluster::set_auth_type): <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    ///   - [`admin_user_name(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::admin_user_name) / [`set_admin_user_name(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_admin_user_name): <p>The name of the Elastic DocumentDB cluster administrator.</p>  <p> <i>Constraints</i>:</p>  <ul>   <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>   <li> <p>The first character must be a letter.</p> </li>   <li> <p>Cannot be a reserved word.</p> </li>  </ul>
-    ///   - [`admin_user_password(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::admin_user_password) / [`set_admin_user_password(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_admin_user_password): <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>  <p> <i>Constraints</i>:</p>  <ul>   <li> <p>Must contain from 8 to 100 characters.</p> </li>   <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>  </ul>
-    ///   - [`shard_capacity(i32)`](crate::client::fluent_builders::CreateCluster::shard_capacity) / [`set_shard_capacity(Option<i32>)`](crate::client::fluent_builders::CreateCluster::set_shard_capacity): <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
-    ///   - [`shard_count(i32)`](crate::client::fluent_builders::CreateCluster::shard_count) / [`set_shard_count(Option<i32>)`](crate::client::fluent_builders::CreateCluster::set_shard_count): <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
-    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateCluster::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCluster::set_subnet_ids): <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_kms_key_id): <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>  <p>If an encryption key is not specified, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_client_token): <p>The client token for the Elastic DocumentDB cluster.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>  <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCluster::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCluster::set_tags): <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    /// - On success, responds with [`CreateClusterOutput`](crate::output::CreateClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::CreateClusterOutput::cluster): <p>The new Elastic DocumentDB cluster that has been created.</p>
-    /// - On failure, responds with [`SdkError<CreateClusterError>`](crate::error::CreateClusterError)
-    pub fn create_cluster(&self) -> crate::client::fluent_builders::CreateCluster {
-        crate::client::fluent_builders::CreateCluster::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateClusterSnapshot`](crate::client::fluent_builders::CreateClusterSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::CreateClusterSnapshot::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::CreateClusterSnapshot::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
-    ///   - [`snapshot_name(impl Into<String>)`](crate::client::fluent_builders::CreateClusterSnapshot::snapshot_name) / [`set_snapshot_name(Option<String>)`](crate::client::fluent_builders::CreateClusterSnapshot::set_snapshot_name): <p>The name of the Elastic DocumentDB snapshot.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateClusterSnapshot::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateClusterSnapshot::set_tags): <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
-    /// - On success, responds with [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::output::CreateClusterSnapshotOutput::snapshot): <p>Returns information about the new Elastic DocumentDB snapshot.</p>
-    /// - On failure, responds with [`SdkError<CreateClusterSnapshotError>`](crate::error::CreateClusterSnapshotError)
-    pub fn create_cluster_snapshot(&self) -> crate::client::fluent_builders::CreateClusterSnapshot {
-        crate::client::fluent_builders::CreateClusterSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCluster`](crate::client::fluent_builders::DeleteCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteCluster::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::DeleteCluster::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster that is to be deleted.</p>
-    /// - On success, responds with [`DeleteClusterOutput`](crate::output::DeleteClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::DeleteClusterOutput::cluster): <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
-    /// - On failure, responds with [`SdkError<DeleteClusterError>`](crate::error::DeleteClusterError)
-    pub fn delete_cluster(&self) -> crate::client::fluent_builders::DeleteCluster {
-        crate::client::fluent_builders::DeleteCluster::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteClusterSnapshot`](crate::client::fluent_builders::DeleteClusterSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteClusterSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::DeleteClusterSnapshot::set_snapshot_arn): <p>The arn of the Elastic DocumentDB snapshot that is to be deleted.</p>
-    /// - On success, responds with [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::output::DeleteClusterSnapshotOutput::snapshot): <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
-    /// - On failure, responds with [`SdkError<DeleteClusterSnapshotError>`](crate::error::DeleteClusterSnapshotError)
-    pub fn delete_cluster_snapshot(&self) -> crate::client::fluent_builders::DeleteClusterSnapshot {
-        crate::client::fluent_builders::DeleteClusterSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCluster`](crate::client::fluent_builders::GetCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::GetCluster::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::GetCluster::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster.</p>
-    /// - On success, responds with [`GetClusterOutput`](crate::output::GetClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::GetClusterOutput::cluster): <p>Returns information about a specific Elastic DocumentDB cluster.</p>
-    /// - On failure, responds with [`SdkError<GetClusterError>`](crate::error::GetClusterError)
-    pub fn get_cluster(&self) -> crate::client::fluent_builders::GetCluster {
-        crate::client::fluent_builders::GetCluster::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetClusterSnapshot`](crate::client::fluent_builders::GetClusterSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::GetClusterSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::GetClusterSnapshot::set_snapshot_arn): <p>The arn of the Elastic DocumentDB snapshot.</p>
-    /// - On success, responds with [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput) with field(s):
-    ///   - [`snapshot(Option<ClusterSnapshot>)`](crate::output::GetClusterSnapshotOutput::snapshot): <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
-    /// - On failure, responds with [`SdkError<GetClusterSnapshotError>`](crate::error::GetClusterSnapshotError)
-    pub fn get_cluster_snapshot(&self) -> crate::client::fluent_builders::GetClusterSnapshot {
-        crate::client::fluent_builders::GetClusterSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListClusters`](crate::client::fluent_builders::ListClusters) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusters::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClusters::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClusters::set_next_token): <p>The nextToken which is used the get the next page of data.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClusters::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListClusters::set_max_results): <p>The maximum number of entries to recieve in the response.</p>
-    /// - On success, responds with [`ListClustersOutput`](crate::output::ListClustersOutput) with field(s):
-    ///   - [`clusters(Option<Vec<ClusterInList>>)`](crate::output::ListClustersOutput::clusters): <p>A list of Elastic DocumentDB cluster.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListClustersOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>  <p>If there is no more data in the responce, the nextToken will not be returned.</p>
-    /// - On failure, responds with [`SdkError<ListClustersError>`](crate::error::ListClustersError)
-    pub fn list_clusters(&self) -> crate::client::fluent_builders::ListClusters {
-        crate::client::fluent_builders::ListClusters::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListClusterSnapshots`](crate::client::fluent_builders::ListClusterSnapshots) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListClusterSnapshots::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::ListClusterSnapshots::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::ListClusterSnapshots::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListClusterSnapshots::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListClusterSnapshots::set_next_token): <p>The nextToken which is used the get the next page of data.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListClusterSnapshots::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListClusterSnapshots::set_max_results): <p>The maximum number of entries to recieve in the response.</p>
-    /// - On success, responds with [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput) with field(s):
-    ///   - [`snapshots(Option<Vec<ClusterSnapshotInList>>)`](crate::output::ListClusterSnapshotsOutput::snapshots): <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListClusterSnapshotsOutput::next_token): <p>The response will provide a nextToken if there is more data beyond the maxResults.</p>  <p>If there is no more data in the responce, the nextToken will not be returned.</p>
-    /// - On failure, responds with [`SdkError<ListClusterSnapshotsError>`](crate::error::ListClusterSnapshotsError)
-    pub fn list_cluster_snapshots(&self) -> crate::client::fluent_builders::ListClusterSnapshots {
-        crate::client::fluent_builders::ListClusterSnapshots::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The arn of the Elastic DocumentDB resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags for the specified Elastic DocumentDB resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RestoreClusterFromSnapshot`](crate::client::fluent_builders::RestoreClusterFromSnapshot) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_name(impl Into<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::cluster_name) / [`set_cluster_name(Option<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_cluster_name): <p>The name of the Elastic DocumentDB cluster.</p>
-    ///   - [`snapshot_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::snapshot_arn) / [`set_snapshot_arn(Option<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_snapshot_arn): <p>The arn of the Elastic DocumentDB snapshot.</p>
-    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_subnet_ids): <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_kms_key_id): <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>  <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>  <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::RestoreClusterFromSnapshot::set_tags): <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    /// - On success, responds with [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::RestoreClusterFromSnapshotOutput::cluster): <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
-    /// - On failure, responds with [`SdkError<RestoreClusterFromSnapshotError>`](crate::error::RestoreClusterFromSnapshotError)
-    pub fn restore_cluster_from_snapshot(
-        &self,
-    ) -> crate::client::fluent_builders::RestoreClusterFromSnapshot {
-        crate::client::fluent_builders::RestoreClusterFromSnapshot::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The arn of the Elastic DocumentDB resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to be assigned to the Elastic DocumentDB resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The arn of the Elastic DocumentDB resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys to be removed from the Elastic DocumentDB resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCluster`](crate::client::fluent_builders::UpdateCluster) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cluster_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::cluster_arn) / [`set_cluster_arn(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_cluster_arn): <p>The arn of the Elastic DocumentDB cluster.</p>
-    ///   - [`auth_type(Auth)`](crate::client::fluent_builders::UpdateCluster::auth_type) / [`set_auth_type(Option<Auth>)`](crate::client::fluent_builders::UpdateCluster::set_auth_type): <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    ///   - [`shard_capacity(i32)`](crate::client::fluent_builders::UpdateCluster::shard_capacity) / [`set_shard_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateCluster::set_shard_capacity): <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
-    ///   - [`shard_count(i32)`](crate::client::fluent_builders::UpdateCluster::shard_count) / [`set_shard_count(Option<i32>)`](crate::client::fluent_builders::UpdateCluster::set_shard_count): <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    ///   - [`vpc_security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCluster::vpc_security_group_ids) / [`set_vpc_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCluster::set_vpc_security_group_ids): <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCluster::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCluster::set_subnet_ids): <p>The number of shards to create in the Elastic DocumentDB cluster.</p>
-    ///   - [`admin_user_password(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::admin_user_password) / [`set_admin_user_password(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_admin_user_password): <p>The password for the Elastic DocumentDB cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>  <p> <i>Constraints</i>: Must contain from 8 to 100 characters.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_client_token): <p>The client token for the Elastic DocumentDB cluster.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateCluster::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateCluster::set_preferred_maintenance_window): <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>  <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>  <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>  <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>  <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    /// - On success, responds with [`UpdateClusterOutput`](crate::output::UpdateClusterOutput) with field(s):
-    ///   - [`cluster(Option<Cluster>)`](crate::output::UpdateClusterOutput::cluster): <p>Returns information about the updated Elastic DocumentDB cluster.</p>
-    /// - On failure, responds with [`SdkError<UpdateClusterError>`](crate::error::UpdateClusterError)
-    pub fn update_cluster(&self) -> crate::client::fluent_builders::UpdateCluster {
-        crate::client::fluent_builders::UpdateCluster::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -343,9 +174,35 @@ impl Client {
     }
 }
 
+mod create_cluster;
+
+mod create_cluster_snapshot;
+
+mod delete_cluster;
+
+mod delete_cluster_snapshot;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_cluster;
+
+mod get_cluster_snapshot;
+
+mod list_cluster_snapshots;
+
+mod list_clusters;
+
+mod list_tags_for_resource;
+
+mod restore_cluster_from_snapshot;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_cluster;

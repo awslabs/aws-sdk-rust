@@ -109,7 +109,7 @@ impl CloneBackendInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_clone_backend(&self)?,
+            crate::protocol_serde::shape_clone_backend::ser_clone_backend_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -232,7 +232,7 @@ impl CreateBackendInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend(&self)?,
+            crate::protocol_serde::shape_create_backend::ser_create_backend_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -375,7 +375,7 @@ impl CreateBackendApiInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_api(&self)?,
+            crate::protocol_serde::shape_create_backend_api::ser_create_backend_api_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -518,7 +518,7 @@ impl CreateBackendAuthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_auth(&self)?,
+            crate::protocol_serde::shape_create_backend_auth::ser_create_backend_auth_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -661,7 +661,9 @@ impl CreateBackendConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_config(&self)?,
+            crate::protocol_serde::shape_create_backend_config::ser_create_backend_config_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -804,7 +806,7 @@ impl CreateBackendStorageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_storage(
+            crate::protocol_serde::shape_create_backend_storage::ser_create_backend_storage_input(
                 &self,
             )?,
         );
@@ -1255,7 +1257,7 @@ impl DeleteBackendApiInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_api(&self)?,
+            crate::protocol_serde::shape_delete_backend_api::ser_delete_backend_api_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1422,7 +1424,7 @@ impl DeleteBackendAuthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_auth(&self)?,
+            crate::protocol_serde::shape_delete_backend_auth::ser_delete_backend_auth_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1589,7 +1591,7 @@ impl DeleteBackendStorageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_backend_storage(
+            crate::protocol_serde::shape_delete_backend_storage::ser_delete_backend_storage_input(
                 &self,
             )?,
         );
@@ -1911,9 +1913,7 @@ impl GenerateBackendApiModelsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_generate_backend_api_models(
-                &self,
-            )?,
+            crate::protocol_serde::shape_generate_backend_api_models::ser_generate_backend_api_models_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2056,7 +2056,7 @@ impl GetBackendInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_backend(&self)?,
+            crate::protocol_serde::shape_get_backend::ser_get_backend_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2223,7 +2223,7 @@ impl GetBackendApiInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_api(&self)?,
+            crate::protocol_serde::shape_get_backend_api::ser_get_backend_api_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2390,7 +2390,7 @@ impl GetBackendApiModelsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_api_models(
+            crate::protocol_serde::shape_get_backend_api_models::ser_get_backend_api_models_input(
                 &self,
             )?,
         );
@@ -2559,7 +2559,7 @@ impl GetBackendAuthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_auth(&self)?,
+            crate::protocol_serde::shape_get_backend_auth::ser_get_backend_auth_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2899,7 +2899,7 @@ impl GetBackendStorageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_backend_storage(&self)?,
+            crate::protocol_serde::shape_get_backend_storage::ser_get_backend_storage_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3217,7 +3217,7 @@ impl ImportBackendAuthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_backend_auth(&self)?,
+            crate::protocol_serde::shape_import_backend_auth::ser_import_backend_auth_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3384,7 +3384,7 @@ impl ImportBackendStorageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_import_backend_storage(
+            crate::protocol_serde::shape_import_backend_storage::ser_import_backend_storage_input(
                 &self,
             )?,
         );
@@ -3553,7 +3553,7 @@ impl ListBackendJobsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_backend_jobs(&self)?,
+            crate::protocol_serde::shape_list_backend_jobs::ser_list_backend_jobs_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3676,7 +3676,7 @@ impl ListS3BucketsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_s3_buckets(&self)?,
+            crate::protocol_serde::shape_list_s3_buckets::ser_list_s3_buckets_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3819,7 +3819,7 @@ impl RemoveAllBackendsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_all_backends(&self)?,
+            crate::protocol_serde::shape_remove_all_backends::ser_remove_all_backends_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4115,7 +4115,7 @@ impl UpdateBackendApiInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_api(&self)?,
+            crate::protocol_serde::shape_update_backend_api::ser_update_backend_api_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4282,7 +4282,7 @@ impl UpdateBackendAuthInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_auth(&self)?,
+            crate::protocol_serde::shape_update_backend_auth::ser_update_backend_auth_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4425,7 +4425,9 @@ impl UpdateBackendConfigInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_config(&self)?,
+            crate::protocol_serde::shape_update_backend_config::ser_update_backend_config_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4612,7 +4614,7 @@ impl UpdateBackendJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_job(&self)?,
+            crate::protocol_serde::shape_update_backend_job::ser_update_backend_job_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4779,7 +4781,7 @@ impl UpdateBackendStorageInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_backend_storage(
+            crate::protocol_serde::shape_update_backend_storage::ser_update_backend_storage_input(
                 &self,
             )?,
         );

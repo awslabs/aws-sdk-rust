@@ -90,7 +90,8 @@ impl ListEnvironmentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_environments_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_environments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -137,7 +138,7 @@ impl ListEnvironmentsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_environments_output_environments(page)
+            crate::lens::lens_list_environments_output_environments(page)
                 .unwrap_or_default()
                 .into_iter()
         })

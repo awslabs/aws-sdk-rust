@@ -82,7 +82,8 @@ impl ListCodeReviewsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_code_reviews_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_code_reviews_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,10 @@ impl ListRecommendationFeedbackPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_recommendation_feedback_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_recommendation_feedback_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +306,8 @@ impl ListRecommendationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_recommendations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_recommendations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -420,7 +425,10 @@ impl ListRepositoryAssociationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_repository_associations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_repository_associations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -466,6 +474,12 @@ impl ListRepositoryAssociationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListRepositoryAssociationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_repository_associations_output_repository_association_summaries(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_repository_associations_output_repository_association_summaries(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }

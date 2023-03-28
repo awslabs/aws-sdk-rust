@@ -90,7 +90,8 @@ impl ListAliasesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_aliases_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_aliases_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -208,7 +209,10 @@ impl ListCodeSigningConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_code_signing_configs_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_code_signing_configs_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -326,7 +330,10 @@ impl ListEventSourceMappingsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_event_source_mappings_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_event_source_mappings_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -444,7 +451,7 @@ impl ListFunctionEventInvokeConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_function_event_invoke_configs_output_next_marker(resp);
+                            let new_token = crate::lens::reflens_list_function_event_invoke_configs_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -562,7 +569,8 @@ impl ListFunctionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_functions_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_functions_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -680,7 +688,7 @@ impl ListFunctionsByCodeSigningConfigPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_functions_by_code_signing_config_output_next_marker(resp);
+                            let new_token = crate::lens::reflens_list_functions_by_code_signing_config_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -798,7 +806,10 @@ impl ListFunctionUrlConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_function_url_configs_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_function_url_configs_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -916,7 +927,8 @@ impl ListLayersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_layers_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_layers_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1034,7 +1046,8 @@ impl ListLayerVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_layer_versions_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_layer_versions_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1152,7 +1165,7 @@ impl ListProvisionedConcurrencyConfigsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_provisioned_concurrency_configs_output_next_marker(resp);
+                            let new_token = crate::lens::reflens_list_provisioned_concurrency_configs_output_next_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1270,7 +1283,10 @@ impl ListVersionsByFunctionPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_versions_by_function_output_next_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_versions_by_function_output_next_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1317,7 +1333,7 @@ impl ListAliasesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_aliases_output_aliases(page)
+            crate::lens::lens_list_aliases_output_aliases(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1343,7 +1359,11 @@ impl ListCodeSigningConfigsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListCodeSigningConfigsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_code_signing_configs_output_code_signing_configs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_code_signing_configs_output_code_signing_configs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1366,7 +1386,11 @@ impl ListEventSourceMappingsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListEventSourceMappingsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_event_source_mappings_output_event_source_mappings(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_event_source_mappings_output_event_source_mappings(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1389,7 +1413,7 @@ impl ListFunctionEventInvokeConfigsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListFunctionEventInvokeConfigsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_function_event_invoke_configs_output_function_event_invoke_configs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_function_event_invoke_configs_output_function_event_invoke_configs(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1413,7 +1437,7 @@ impl ListFunctionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_functions_output_functions(page)
+            crate::lens::lens_list_functions_output_functions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1441,7 +1465,11 @@ impl ListFunctionsByCodeSigningConfigPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListFunctionsByCodeSigningConfigError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_functions_by_code_signing_config_output_function_arns(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_functions_by_code_signing_config_output_function_arns(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1464,7 +1492,11 @@ impl ListFunctionUrlConfigsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListFunctionUrlConfigsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_function_url_configs_output_function_url_configs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_function_url_configs_output_function_url_configs(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1488,7 +1520,7 @@ impl ListLayersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_layers_output_layers(page)
+            crate::lens::lens_list_layers_output_layers(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1515,7 +1547,7 @@ impl ListLayerVersionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_layer_versions_output_layer_versions(page)
+            crate::lens::lens_list_layer_versions_output_layer_versions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1543,7 +1575,7 @@ impl ListProvisionedConcurrencyConfigsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListProvisionedConcurrencyConfigsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_provisioned_concurrency_configs_output_provisioned_concurrency_configs(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_provisioned_concurrency_configs_output_provisioned_concurrency_configs(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -1567,7 +1599,7 @@ impl ListVersionsByFunctionPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_versions_by_function_output_versions(page)
+            crate::lens::lens_list_versions_by_function_output_versions(page)
                 .unwrap_or_default()
                 .into_iter()
         })

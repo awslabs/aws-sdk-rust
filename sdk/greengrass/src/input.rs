@@ -89,9 +89,7 @@ impl AssociateRoleToGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_role_to_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_role_to_group::ser_associate_role_to_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -214,7 +212,7 @@ impl AssociateServiceRoleToAccountInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_service_role_to_account(&self)?
+            crate::protocol_serde::shape_associate_service_role_to_account::ser_associate_service_role_to_account_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -325,8 +323,7 @@ impl CreateConnectorDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_connector_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_connector_definition::ser_create_connector_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -340,9 +337,7 @@ impl CreateConnectorDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_connector_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_connector_definition::ser_create_connector_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -476,9 +471,7 @@ impl CreateConnectorDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_connector_definition_version(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_connector_definition_version::ser_create_connector_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -492,7 +485,7 @@ impl CreateConnectorDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_connector_definition_version(&self)?
+            crate::protocol_serde::shape_create_connector_definition_version::ser_create_connector_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -602,8 +595,7 @@ impl CreateCoreDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_core_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_core_definition::ser_create_core_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -617,7 +609,7 @@ impl CreateCoreDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_core_definition(
+            crate::protocol_serde::shape_create_core_definition::ser_create_core_definition_input(
                 &self,
             )?,
         );
@@ -753,8 +745,7 @@ impl CreateCoreDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_core_definition_version(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_core_definition_version::ser_create_core_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -768,7 +759,7 @@ impl CreateCoreDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_core_definition_version(&self)?
+            crate::protocol_serde::shape_create_core_definition_version::ser_create_core_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -902,7 +893,10 @@ impl CreateDeploymentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_deployment(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_deployment::ser_create_deployment_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -916,7 +910,7 @@ impl CreateDeploymentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?,
+            crate::protocol_serde::shape_create_deployment::ser_create_deployment_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1027,8 +1021,7 @@ impl CreateDeviceDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_device_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_device_definition::ser_create_device_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1042,9 +1035,7 @@ impl CreateDeviceDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_device_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_device_definition::ser_create_device_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1178,9 +1169,7 @@ impl CreateDeviceDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_device_definition_version(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_device_definition_version::ser_create_device_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1194,7 +1183,7 @@ impl CreateDeviceDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_device_definition_version(&self)?
+            crate::protocol_serde::shape_create_device_definition_version::ser_create_device_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1305,8 +1294,7 @@ impl CreateFunctionDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_function_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_function_definition::ser_create_function_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1320,9 +1308,7 @@ impl CreateFunctionDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_function_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_function_definition::ser_create_function_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1456,9 +1442,7 @@ impl CreateFunctionDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_function_definition_version(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_function_definition_version::ser_create_function_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1472,7 +1456,7 @@ impl CreateFunctionDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_function_definition_version(&self)?
+            crate::protocol_serde::shape_create_function_definition_version::ser_create_function_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1582,7 +1566,9 @@ impl CreateGroupInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_group(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_group::ser_create_group_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1596,7 +1582,7 @@ impl CreateGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_group(&self)?,
+            crate::protocol_serde::shape_create_group::ser_create_group_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1730,9 +1716,7 @@ impl CreateGroupCertificateAuthorityInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_group_certificate_authority(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_group_certificate_authority::ser_create_group_certificate_authority_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1866,7 +1850,7 @@ impl CreateGroupVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_group_version(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_group_version::ser_create_group_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1880,7 +1864,9 @@ impl CreateGroupVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_group_version(&self)?,
+            crate::protocol_serde::shape_create_group_version::ser_create_group_version_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1991,8 +1977,7 @@ impl CreateLoggerDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_logger_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_logger_definition::ser_create_logger_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2006,9 +1991,7 @@ impl CreateLoggerDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_logger_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_logger_definition::ser_create_logger_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2142,9 +2125,7 @@ impl CreateLoggerDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_logger_definition_version(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_logger_definition_version::ser_create_logger_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2158,7 +2139,7 @@ impl CreateLoggerDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_logger_definition_version(&self)?
+            crate::protocol_serde::shape_create_logger_definition_version::ser_create_logger_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2269,8 +2250,7 @@ impl CreateResourceDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_resource_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_resource_definition::ser_create_resource_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2284,9 +2264,7 @@ impl CreateResourceDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_resource_definition::ser_create_resource_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2420,9 +2398,7 @@ impl CreateResourceDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_resource_definition_version(
-                    input, builder,
-                )?;
+                let builder = crate::protocol_serde::shape_create_resource_definition_version::ser_create_resource_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2436,7 +2412,7 @@ impl CreateResourceDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_definition_version(&self)?
+            crate::protocol_serde::shape_create_resource_definition_version::ser_create_resource_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2546,8 +2522,7 @@ impl CreateSoftwareUpdateJobInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_software_update_job(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_software_update_job::ser_create_software_update_job_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2561,9 +2536,7 @@ impl CreateSoftwareUpdateJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_software_update_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_software_update_job::ser_create_software_update_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2674,8 +2647,7 @@ impl CreateSubscriptionDefinitionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_subscription_definition(input, builder)?;
+                let builder = crate::protocol_serde::shape_create_subscription_definition::ser_create_subscription_definition_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2689,7 +2661,7 @@ impl CreateSubscriptionDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition(&self)?
+            crate::protocol_serde::shape_create_subscription_definition::ser_create_subscription_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2823,10 +2795,7 @@ impl CreateSubscriptionDefinitionVersionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_create_subscription_definition_version(
-                        input, builder,
-                    )?;
+                let builder = crate::protocol_serde::shape_create_subscription_definition_version::ser_create_subscription_definition_version_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -2840,7 +2809,7 @@ impl CreateSubscriptionDefinitionVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_subscription_definition_version(&self)?
+            crate::protocol_serde::shape_create_subscription_definition_version::ser_create_subscription_definition_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10591,7 +10560,10 @@ impl ResetDeploymentsInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_reset_deployments(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_reset_deployments::ser_reset_deployments_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -10605,7 +10577,7 @@ impl ResetDeploymentsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_reset_deployments(&self)?,
+            crate::protocol_serde::shape_reset_deployments::ser_reset_deployments_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10715,7 +10687,7 @@ impl StartBulkDeploymentInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_start_bulk_deployment(input, builder)?;
+                let builder = crate::protocol_serde::shape_start_bulk_deployment::ser_start_bulk_deployment_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -10729,7 +10701,9 @@ impl StartBulkDeploymentInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_bulk_deployment(&self)?,
+            crate::protocol_serde::shape_start_bulk_deployment::ser_start_bulk_deployment_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11005,7 +10979,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11299,9 +11273,7 @@ impl UpdateConnectivityInfoInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_connectivity_info(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_connectivity_info::ser_update_connectivity_info_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11448,9 +11420,7 @@ impl UpdateConnectorDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_connector_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_connector_definition::ser_update_connector_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11597,7 +11567,7 @@ impl UpdateCoreDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_core_definition(
+            crate::protocol_serde::shape_update_core_definition::ser_update_core_definition_input(
                 &self,
             )?,
         );
@@ -11746,9 +11716,7 @@ impl UpdateDeviceDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_device_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_device_definition::ser_update_device_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11895,9 +11863,7 @@ impl UpdateFunctionDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_function_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_function_definition::ser_update_function_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12040,7 +12006,7 @@ impl UpdateGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_group(&self)?,
+            crate::protocol_serde::shape_update_group::ser_update_group_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12187,7 +12153,7 @@ impl UpdateGroupCertificateConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_group_certificate_configuration(&self)?
+            crate::protocol_serde::shape_update_group_certificate_configuration::ser_update_group_certificate_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12334,9 +12300,7 @@ impl UpdateLoggerDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_logger_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_logger_definition::ser_update_logger_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12483,9 +12447,7 @@ impl UpdateResourceDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_resource_definition(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_resource_definition::ser_update_resource_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12632,7 +12594,7 @@ impl UpdateSubscriptionDefinitionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_subscription_definition(&self)?
+            crate::protocol_serde::shape_update_subscription_definition::ser_update_subscription_definition_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -12779,7 +12741,7 @@ impl UpdateThingRuntimeConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_runtime_configuration(&self)?
+            crate::protocol_serde::shape_update_thing_runtime_configuration::ser_update_thing_runtime_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

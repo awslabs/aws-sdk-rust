@@ -213,9 +213,7 @@ impl AddThingToBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_thing_to_billing_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_add_thing_to_billing_group::ser_add_thing_to_billing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -339,9 +337,7 @@ impl AddThingToThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_add_thing_to_thing_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_add_thing_to_thing_group::ser_add_thing_to_thing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -497,9 +493,7 @@ impl AssociateTargetsWithJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_associate_targets_with_job(
-                &self,
-            )?,
+            crate::protocol_serde::shape_associate_targets_with_job::ser_associate_targets_with_job_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -646,7 +640,7 @@ impl AttachPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_attach_policy(&self)?,
+            crate::protocol_serde::shape_attach_policy::ser_attach_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -780,8 +774,7 @@ impl AttachPrincipalPolicyInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_attach_principal_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_attach_principal_policy::ser_attach_principal_policy_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1075,8 +1068,7 @@ impl AttachThingPrincipalInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_attach_thing_principal(input, builder)?;
+                let builder = crate::protocol_serde::shape_attach_thing_principal::ser_attach_thing_principal_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -1761,7 +1753,7 @@ impl CancelJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_job(&self)?,
+            crate::protocol_serde::shape_cancel_job::ser_cancel_job_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -1940,7 +1932,9 @@ impl CancelJobExecutionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_cancel_job_execution(&self)?,
+            crate::protocol_serde::shape_cancel_job_execution::ser_cancel_job_execution_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2308,9 +2302,7 @@ impl CreateAuditSuppressionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_audit_suppression(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_audit_suppression::ser_create_audit_suppression_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2457,7 +2449,7 @@ impl CreateAuthorizerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)?,
+            crate::protocol_serde::shape_create_authorizer::ser_create_authorizer_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2604,7 +2596,9 @@ impl CreateBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_billing_group(&self)?,
+            crate::protocol_serde::shape_create_billing_group::ser_create_billing_group_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2741,9 +2735,7 @@ impl CreateCertificateFromCsrInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_certificate_from_csr(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_certificate_from_csr::ser_create_certificate_from_csr_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -2893,7 +2885,9 @@ impl CreateCustomMetricInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_metric(&self)?,
+            crate::protocol_serde::shape_create_custom_metric::ser_create_custom_metric_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3039,7 +3033,7 @@ impl CreateDimensionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_dimension(&self)?,
+            crate::protocol_serde::shape_create_dimension::ser_create_dimension_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3186,9 +3180,7 @@ impl CreateDomainConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_domain_configuration(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_domain_configuration::ser_create_domain_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3335,9 +3327,7 @@ impl CreateDynamicThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_dynamic_thing_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_dynamic_thing_group::ser_create_dynamic_thing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3484,7 +3474,7 @@ impl CreateFleetMetricInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_fleet_metric(&self)?,
+            crate::protocol_serde::shape_create_fleet_metric::ser_create_fleet_metric_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3626,7 +3616,7 @@ impl CreateJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job(&self)?,
+            crate::protocol_serde::shape_create_job::ser_create_job_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -3771,7 +3761,7 @@ impl CreateJobTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_job_template(&self)?,
+            crate::protocol_serde::shape_create_job_template::ser_create_job_template_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4041,9 +4031,7 @@ impl CreateMitigationActionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_mitigation_action(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_mitigation_action::ser_create_mitigation_action_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4190,7 +4178,7 @@ impl CreateOtaUpdateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_ota_update(&self)?,
+            crate::protocol_serde::shape_create_ota_update::ser_create_ota_update_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4333,7 +4321,7 @@ impl CreatePolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_policy(&self)?,
+            crate::protocol_serde::shape_create_policy::ser_create_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4494,7 +4482,9 @@ impl CreatePolicyVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_policy_version(&self)?,
+            crate::protocol_serde::shape_create_policy_version::ser_create_policy_version_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4750,9 +4740,7 @@ impl CreateProvisioningTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_provisioning_template::ser_create_provisioning_template_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -4913,7 +4901,7 @@ impl CreateProvisioningTemplateVersionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_provisioning_template_version(&self)?
+            crate::protocol_serde::shape_create_provisioning_template_version::ser_create_provisioning_template_version_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5056,7 +5044,7 @@ impl CreateRoleAliasInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_role_alias(&self)?,
+            crate::protocol_serde::shape_create_role_alias::ser_create_role_alias_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5203,7 +5191,7 @@ impl CreateScheduledAuditInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_scheduled_audit(
+            crate::protocol_serde::shape_create_scheduled_audit::ser_create_scheduled_audit_input(
                 &self,
             )?,
         );
@@ -5352,9 +5340,7 @@ impl CreateSecurityProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_security_profile(
-                &self,
-            )?,
+            crate::protocol_serde::shape_create_security_profile::ser_create_security_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5497,7 +5483,7 @@ impl CreateStreamInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_stream(&self)?,
+            crate::protocol_serde::shape_create_stream::ser_create_stream_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5640,7 +5626,7 @@ impl CreateThingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_thing(&self)?,
+            crate::protocol_serde::shape_create_thing::ser_create_thing_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5787,7 +5773,7 @@ impl CreateThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_thing_group(&self)?,
+            crate::protocol_serde::shape_create_thing_group::ser_create_thing_group_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -5934,7 +5920,7 @@ impl CreateThingTypeInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_thing_type(&self)?,
+            crate::protocol_serde::shape_create_thing_type::ser_create_thing_type_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6064,7 +6050,10 @@ impl CreateTopicRuleInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_create_topic_rule(input, builder)?;
+                let builder =
+                    crate::protocol_serde::shape_create_topic_rule::ser_create_topic_rule_headers(
+                        input, builder,
+                    )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -6078,9 +6067,7 @@ impl CreateTopicRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_create_topic_rule_input(
-                &self.topic_rule_payload,
-            )?,
+            crate::protocol_serde::shape_create_topic_rule_input::ser_topic_rule_payload_http_payload(& self.topic_rule_payload)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6203,7 +6190,7 @@ impl CreateTopicRuleDestinationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_topic_rule_destination(&self)?
+            crate::protocol_serde::shape_create_topic_rule_destination::ser_create_topic_rule_destination_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -6450,9 +6437,7 @@ impl DeleteAuditSuppressionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_audit_suppression(
-                &self,
-            )?,
+            crate::protocol_serde::shape_delete_audit_suppression::ser_delete_audit_suppression_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -10657,7 +10642,9 @@ impl DeprecateThingTypeInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_deprecate_thing_type(&self)?,
+            crate::protocol_serde::shape_deprecate_thing_type::ser_deprecate_thing_type_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -11155,9 +11142,7 @@ impl DescribeAuditSuppressionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_audit_suppression(
-                &self,
-            )?,
+            crate::protocol_serde::shape_describe_audit_suppression::ser_describe_audit_suppression_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -15146,7 +15131,7 @@ impl DetachPolicyInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_detach_policy(&self)?,
+            crate::protocol_serde::shape_detach_policy::ser_detach_policy_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -15280,8 +15265,7 @@ impl DetachPrincipalPolicyInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_detach_principal_policy(input, builder)?;
+                let builder = crate::protocol_serde::shape_detach_principal_policy::ser_detach_principal_policy_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -15575,8 +15559,7 @@ impl DetachThingPrincipalInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_detach_thing_principal(input, builder)?;
+                let builder = crate::protocol_serde::shape_detach_thing_principal::ser_detach_thing_principal_headers(input, builder)?;
                 Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -16096,9 +16079,7 @@ impl GetBucketsAggregationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_buckets_aggregation(
-                &self,
-            )?,
+            crate::protocol_serde::shape_get_buckets_aggregation::ser_get_buckets_aggregation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -16221,7 +16202,7 @@ impl GetCardinalityInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_cardinality(&self)?,
+            crate::protocol_serde::shape_get_cardinality::ser_get_cardinality_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -16357,7 +16338,7 @@ impl GetEffectivePoliciesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_effective_policies(
+            crate::protocol_serde::shape_get_effective_policies::ser_get_effective_policies_input(
                 &self,
             )?,
         );
@@ -16962,7 +16943,7 @@ impl GetPercentilesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_percentiles(&self)?,
+            crate::protocol_serde::shape_get_percentiles::ser_get_percentiles_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -17474,7 +17455,7 @@ impl GetStatisticsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_statistics(&self)?,
+            crate::protocol_serde::shape_get_statistics::ser_get_statistics_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18287,7 +18268,7 @@ impl ListAuditFindingsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_audit_findings(&self)?,
+            crate::protocol_serde::shape_list_audit_findings::ser_list_audit_findings_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -18761,9 +18742,7 @@ impl ListAuditSuppressionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_audit_suppressions(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_audit_suppressions::ser_list_audit_suppressions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -22288,8 +22267,7 @@ impl ListPolicyPrincipalsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_policy_principals(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_policy_principals::ser_list_policy_principals_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -22559,8 +22537,7 @@ impl ListPrincipalPoliciesInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder =
-                    crate::http_serde::add_headers_list_principal_policies(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_principal_policies::ser_list_principal_policies_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -22691,7 +22668,7 @@ impl ListPrincipalThingsInput {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_list_principal_things(input, builder)?;
+                let builder = crate::protocol_serde::shape_list_principal_things::ser_list_principal_things_headers(input, builder)?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -26403,7 +26380,7 @@ impl PutVerificationStateOnViolationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_verification_state_on_violation(&self)?
+            crate::protocol_serde::shape_put_verification_state_on_violation::ser_put_verification_state_on_violation_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -26547,9 +26524,7 @@ impl RegisterCaCertificateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_ca_certificate(
-                &self,
-            )?,
+            crate::protocol_serde::shape_register_ca_certificate::ser_register_ca_certificate_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -26688,7 +26663,9 @@ impl RegisterCertificateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_certificate(&self)?,
+            crate::protocol_serde::shape_register_certificate::ser_register_certificate_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -26811,7 +26788,7 @@ impl RegisterCertificateWithoutCaInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_certificate_without_ca(&self)?
+            crate::protocol_serde::shape_register_certificate_without_ca::ser_register_certificate_without_ca_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -26934,7 +26911,7 @@ impl RegisterThingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_register_thing(&self)?,
+            crate::protocol_serde::shape_register_thing::ser_register_thing_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27081,9 +27058,7 @@ impl RejectCertificateTransferInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_reject_certificate_transfer(
-                &self,
-            )?,
+            crate::protocol_serde::shape_reject_certificate_transfer::ser_reject_certificate_transfer_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27207,7 +27182,7 @@ impl RemoveThingFromBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_billing_group(&self)?
+            crate::protocol_serde::shape_remove_thing_from_billing_group::ser_remove_thing_from_billing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27331,7 +27306,7 @@ impl RemoveThingFromThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_remove_thing_from_thing_group(&self)?
+            crate::protocol_serde::shape_remove_thing_from_thing_group::ser_remove_thing_from_thing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27474,9 +27449,7 @@ impl ReplaceTopicRuleInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_replace_topic_rule_input(
-                &self.topic_rule_payload,
-            )?,
+            crate::protocol_serde::shape_replace_topic_rule_input::ser_topic_rule_payload_http_payload(& self.topic_rule_payload)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27599,7 +27572,7 @@ impl SearchIndexInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_search_index(&self)?,
+            crate::protocol_serde::shape_search_index::ser_search_index_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -27722,7 +27695,7 @@ impl SetDefaultAuthorizerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_default_authorizer(
+            crate::protocol_serde::shape_set_default_authorizer::ser_set_default_authorizer_input(
                 &self,
             )?,
         );
@@ -28000,9 +27973,7 @@ impl SetLoggingOptionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_set_logging_options_input(
-                &self.logging_options_payload,
-            )?,
+            crate::protocol_serde::shape_set_logging_options_input::ser_logging_options_payload_http_payload(& self.logging_options_payload)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -28125,7 +28096,9 @@ impl SetV2LoggingLevelInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_level(&self)?,
+            crate::protocol_serde::shape_set_v2_logging_level::ser_set_v2_logging_level_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -28248,7 +28221,7 @@ impl SetV2LoggingOptionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_v2_logging_options(
+            crate::protocol_serde::shape_set_v2_logging_options::ser_set_v2_logging_options_input(
                 &self,
             )?,
         );
@@ -28400,7 +28373,7 @@ impl StartAuditMitigationActionsTaskInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_audit_mitigation_actions_task(&self)?
+            crate::protocol_serde::shape_start_audit_mitigation_actions_task::ser_start_audit_mitigation_actions_task_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -28550,7 +28523,7 @@ impl StartDetectMitigationActionsTaskInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_detect_mitigation_actions_task(&self)?
+            crate::protocol_serde::shape_start_detect_mitigation_actions_task::ser_start_detect_mitigation_actions_task_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -28673,9 +28646,7 @@ impl StartOnDemandAuditTaskInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_on_demand_audit_task(
-                &self,
-            )?,
+            crate::protocol_serde::shape_start_on_demand_audit_task::ser_start_on_demand_audit_task_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -28798,7 +28769,7 @@ impl StartThingRegistrationTaskInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_thing_registration_task(&self)?
+            crate::protocol_serde::shape_start_thing_registration_task::ser_start_thing_registration_task_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29054,7 +29025,7 @@ impl TagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::protocol_serde::shape_tag_resource::ser_tag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29190,7 +29161,7 @@ impl TestAuthorizationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_test_authorization(&self)?,
+            crate::protocol_serde::shape_test_authorization::ser_test_authorization_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29337,7 +29308,7 @@ impl TestInvokeAuthorizerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_test_invoke_authorizer(
+            crate::protocol_serde::shape_test_invoke_authorizer::ser_test_invoke_authorizer_input(
                 &self,
             )?,
         );
@@ -29513,7 +29484,9 @@ impl TransferCertificateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_transfer_certificate(&self)?,
+            crate::protocol_serde::shape_transfer_certificate::ser_transfer_certificate_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29636,7 +29609,7 @@ impl UntagResourceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::protocol_serde::shape_untag_resource::ser_untag_resource_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29759,7 +29732,7 @@ impl UpdateAccountAuditConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_account_audit_configuration(&self)?
+            crate::protocol_serde::shape_update_account_audit_configuration::ser_update_account_audit_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -29882,9 +29855,7 @@ impl UpdateAuditSuppressionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_audit_suppression(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_audit_suppression::ser_update_audit_suppression_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30031,7 +30002,7 @@ impl UpdateAuthorizerInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)?,
+            crate::protocol_serde::shape_update_authorizer::ser_update_authorizer_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30178,7 +30149,9 @@ impl UpdateBillingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_billing_group(&self)?,
+            crate::protocol_serde::shape_update_billing_group::ser_update_billing_group_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30346,7 +30319,9 @@ impl UpdateCaCertificateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_ca_certificate(&self)?,
+            crate::protocol_serde::shape_update_ca_certificate::ser_update_ca_certificate_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30642,7 +30617,9 @@ impl UpdateCustomMetricInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_metric(&self)?,
+            crate::protocol_serde::shape_update_custom_metric::ser_update_custom_metric_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30785,7 +30762,7 @@ impl UpdateDimensionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_dimension(&self)?,
+            crate::protocol_serde::shape_update_dimension::ser_update_dimension_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -30932,9 +30909,7 @@ impl UpdateDomainConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_configuration(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_domain_configuration::ser_update_domain_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31081,9 +31056,7 @@ impl UpdateDynamicThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_dynamic_thing_group(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_dynamic_thing_group::ser_update_dynamic_thing_group_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31206,9 +31179,7 @@ impl UpdateEventConfigurationsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_event_configurations(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_event_configurations::ser_update_event_configurations_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31355,7 +31326,7 @@ impl UpdateFleetMetricInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_fleet_metric(&self)?,
+            crate::protocol_serde::shape_update_fleet_metric::ser_update_fleet_metric_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31478,7 +31449,7 @@ impl UpdateIndexingConfigurationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_indexing_configuration(&self)?
+            crate::protocol_serde::shape_update_indexing_configuration::ser_update_indexing_configuration_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31636,7 +31607,7 @@ impl UpdateJobInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_job(&self)?,
+            crate::protocol_serde::shape_update_job::ser_update_job_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31781,9 +31752,7 @@ impl UpdateMitigationActionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_mitigation_action(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_mitigation_action::ser_update_mitigation_action_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -31930,9 +31899,7 @@ impl UpdateProvisioningTemplateInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_provisioning_template(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_provisioning_template::ser_update_provisioning_template_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32075,7 +32042,7 @@ impl UpdateRoleAliasInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_role_alias(&self)?,
+            crate::protocol_serde::shape_update_role_alias::ser_update_role_alias_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32222,7 +32189,7 @@ impl UpdateScheduledAuditInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_scheduled_audit(
+            crate::protocol_serde::shape_update_scheduled_audit::ser_update_scheduled_audit_input(
                 &self,
             )?,
         );
@@ -32387,9 +32354,7 @@ impl UpdateSecurityProfileInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_security_profile(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_security_profile::ser_update_security_profile_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32532,7 +32497,7 @@ impl UpdateStreamInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_stream(&self)?,
+            crate::protocol_serde::shape_update_stream::ser_update_stream_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32675,7 +32640,7 @@ impl UpdateThingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_thing(&self)?,
+            crate::protocol_serde::shape_update_thing::ser_update_thing_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32822,7 +32787,7 @@ impl UpdateThingGroupInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_group(&self)?,
+            crate::protocol_serde::shape_update_thing_group::ser_update_thing_group_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -32946,7 +32911,7 @@ impl UpdateThingGroupsForThingInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_thing_groups_for_thing(&self)?
+            crate::protocol_serde::shape_update_thing_groups_for_thing::ser_update_thing_groups_for_thing_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -33069,7 +33034,7 @@ impl UpdateTopicRuleDestinationInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_topic_rule_destination(&self)?
+            crate::protocol_serde::shape_update_topic_rule_destination::ser_update_topic_rule_destination_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -33193,7 +33158,7 @@ impl ValidateSecurityProfileBehaviorsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_validate_security_profile_behaviors(&self)?
+            crate::protocol_serde::shape_validate_security_profile_behaviors::ser_validate_security_profile_behaviors_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

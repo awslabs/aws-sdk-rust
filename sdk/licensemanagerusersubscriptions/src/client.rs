@@ -89,166 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateUser`](crate::client::fluent_builders::AssociateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::AssociateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::AssociateUser::set_username): <p>The user name from the identity provider for the user.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::AssociateUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::AssociateUser::set_instance_id): <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::AssociateUser::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::AssociateUser::set_identity_provider): <p>The identity provider of the user.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::AssociateUser::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::AssociateUser::set_domain): <p>The domain name of the user.</p>
-    /// - On success, responds with [`AssociateUserOutput`](crate::output::AssociateUserOutput) with field(s):
-    ///   - [`instance_user_summary(Option<InstanceUserSummary>)`](crate::output::AssociateUserOutput::instance_user_summary): <p>Metadata that describes the associate user operation.</p>
-    /// - On failure, responds with [`SdkError<AssociateUserError>`](crate::error::AssociateUserError)
-    pub fn associate_user(&self) -> crate::client::fluent_builders::AssociateUser {
-        crate::client::fluent_builders::AssociateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeregisterIdentityProvider`](crate::client::fluent_builders::DeregisterIdentityProvider) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::DeregisterIdentityProvider::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::DeregisterIdentityProvider::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::DeregisterIdentityProvider::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::DeregisterIdentityProvider::set_product): <p>The name of the user-based subscription product.</p>
-    /// - On success, responds with [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput) with field(s):
-    ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::output::DeregisterIdentityProviderOutput::identity_provider_summary): <p>Metadata that describes the results of an identity provider operation.</p>
-    /// - On failure, responds with [`SdkError<DeregisterIdentityProviderError>`](crate::error::DeregisterIdentityProviderError)
-    pub fn deregister_identity_provider(
-        &self,
-    ) -> crate::client::fluent_builders::DeregisterIdentityProvider {
-        crate::client::fluent_builders::DeregisterIdentityProvider::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateUser`](crate::client::fluent_builders::DisassociateUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::DisassociateUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::DisassociateUser::set_username): <p>The user name from the identity provider for the user.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateUser::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::DisassociateUser::set_instance_id): <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::DisassociateUser::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::DisassociateUser::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::DisassociateUser::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::DisassociateUser::set_domain): <p>The domain name of the user.</p>
-    /// - On success, responds with [`DisassociateUserOutput`](crate::output::DisassociateUserOutput) with field(s):
-    ///   - [`instance_user_summary(Option<InstanceUserSummary>)`](crate::output::DisassociateUserOutput::instance_user_summary): <p>Metadata that describes the associate user operation.</p>
-    /// - On failure, responds with [`SdkError<DisassociateUserError>`](crate::error::DisassociateUserError)
-    pub fn disassociate_user(&self) -> crate::client::fluent_builders::DisassociateUser {
-        crate::client::fluent_builders::DisassociateUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListIdentityProviders`](crate::client::fluent_builders::ListIdentityProviders) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListIdentityProviders::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListIdentityProviders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListIdentityProviders::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListIdentityProviders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListIdentityProviders::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput) with field(s):
-    ///   - [`identity_provider_summaries(Option<Vec<IdentityProviderSummary>>)`](crate::output::ListIdentityProvidersOutput::identity_provider_summaries): <p>Metadata that describes the list identity providers operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListIdentityProvidersOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListIdentityProvidersError>`](crate::error::ListIdentityProvidersError)
-    pub fn list_identity_providers(&self) -> crate::client::fluent_builders::ListIdentityProviders {
-        crate::client::fluent_builders::ListIdentityProviders::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInstances`](crate::client::fluent_builders::ListInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInstances::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInstances::set_next_token): <p>Token for the next set of results.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListInstances::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    /// - On success, responds with [`ListInstancesOutput`](crate::output::ListInstancesOutput) with field(s):
-    ///   - [`instance_summaries(Option<Vec<InstanceSummary>>)`](crate::output::ListInstancesOutput::instance_summaries): <p>Metadata that describes the list instances operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListInstancesOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListInstancesError>`](crate::error::ListInstancesError)
-    pub fn list_instances(&self) -> crate::client::fluent_builders::ListInstances {
-        crate::client::fluent_builders::ListInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProductSubscriptions`](crate::client::fluent_builders::ListProductSubscriptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProductSubscriptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::ListProductSubscriptions::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::ListProductSubscriptions::set_product): <p>The name of the user-based subscription product.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::ListProductSubscriptions::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::ListProductSubscriptions::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProductSubscriptions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProductSubscriptions::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListProductSubscriptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListProductSubscriptions::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProductSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProductSubscriptions::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput) with field(s):
-    ///   - [`product_user_summaries(Option<Vec<ProductUserSummary>>)`](crate::output::ListProductSubscriptionsOutput::product_user_summaries): <p>Metadata that describes the list product subscriptions operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListProductSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListProductSubscriptionsError>`](crate::error::ListProductSubscriptionsError)
-    pub fn list_product_subscriptions(
-        &self,
-    ) -> crate::client::fluent_builders::ListProductSubscriptions {
-        crate::client::fluent_builders::ListProductSubscriptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListUserAssociations`](crate::client::fluent_builders::ListUserAssociations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListUserAssociations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::ListUserAssociations::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::ListUserAssociations::set_instance_id): <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::ListUserAssociations::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::ListUserAssociations::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListUserAssociations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListUserAssociations::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListUserAssociations::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListUserAssociations::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListUserAssociations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListUserAssociations::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput) with field(s):
-    ///   - [`instance_user_summaries(Option<Vec<InstanceUserSummary>>)`](crate::output::ListUserAssociationsOutput::instance_user_summaries): <p>Metadata that describes the list user association operation.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListUserAssociationsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListUserAssociationsError>`](crate::error::ListUserAssociationsError)
-    pub fn list_user_associations(&self) -> crate::client::fluent_builders::ListUserAssociations {
-        crate::client::fluent_builders::ListUserAssociations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RegisterIdentityProvider`](crate::client::fluent_builders::RegisterIdentityProvider) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::RegisterIdentityProvider::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::RegisterIdentityProvider::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_product): <p>The name of the user-based subscription product.</p>
-    ///   - [`settings(Settings)`](crate::client::fluent_builders::RegisterIdentityProvider::settings) / [`set_settings(Option<Settings>)`](crate::client::fluent_builders::RegisterIdentityProvider::set_settings): <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    /// - On success, responds with [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput) with field(s):
-    ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::output::RegisterIdentityProviderOutput::identity_provider_summary): <p>Metadata that describes the results of an identity provider operation.</p>
-    /// - On failure, responds with [`SdkError<RegisterIdentityProviderError>`](crate::error::RegisterIdentityProviderError)
-    pub fn register_identity_provider(
-        &self,
-    ) -> crate::client::fluent_builders::RegisterIdentityProvider {
-        crate::client::fluent_builders::RegisterIdentityProvider::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartProductSubscription`](crate::client::fluent_builders::StartProductSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::StartProductSubscription::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::StartProductSubscription::set_username): <p>The user name from the identity provider of the user.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::StartProductSubscription::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::StartProductSubscription::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::StartProductSubscription::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::StartProductSubscription::set_product): <p>The name of the user-based subscription product.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::StartProductSubscription::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::StartProductSubscription::set_domain): <p>The domain name of the user.</p>
-    /// - On success, responds with [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput) with field(s):
-    ///   - [`product_user_summary(Option<ProductUserSummary>)`](crate::output::StartProductSubscriptionOutput::product_user_summary): <p>Metadata that describes the start product subscription operation.</p>
-    /// - On failure, responds with [`SdkError<StartProductSubscriptionError>`](crate::error::StartProductSubscriptionError)
-    pub fn start_product_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::StartProductSubscription {
-        crate::client::fluent_builders::StartProductSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopProductSubscription`](crate::client::fluent_builders::StopProductSubscription) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::StopProductSubscription::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::StopProductSubscription::set_username): <p>The user name from the identity provider for the user.</p>
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::StopProductSubscription::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::StopProductSubscription::set_identity_provider): <p>An object that specifies details for the identity provider.</p>
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::StopProductSubscription::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::StopProductSubscription::set_product): <p>The name of the user-based subscription product.</p>
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::StopProductSubscription::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::StopProductSubscription::set_domain): <p>The domain name of the user.</p>
-    /// - On success, responds with [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput) with field(s):
-    ///   - [`product_user_summary(Option<ProductUserSummary>)`](crate::output::StopProductSubscriptionOutput::product_user_summary): <p>Metadata that describes the start product subscription operation.</p>
-    /// - On failure, responds with [`SdkError<StopProductSubscriptionError>`](crate::error::StopProductSubscriptionError)
-    pub fn stop_product_subscription(
-        &self,
-    ) -> crate::client::fluent_builders::StopProductSubscription {
-        crate::client::fluent_builders::StopProductSubscription::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateIdentityProviderSettings`](crate::client::fluent_builders::UpdateIdentityProviderSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identity_provider(IdentityProvider)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::identity_provider) / [`set_identity_provider(Option<IdentityProvider>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_identity_provider): <p>Details about an identity provider.</p>
-    ///   - [`product(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::product) / [`set_product(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_product): <p>The name of the user-based subscription product.</p>
-    ///   - [`update_settings(UpdateSettings)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::update_settings) / [`set_update_settings(Option<UpdateSettings>)`](crate::client::fluent_builders::UpdateIdentityProviderSettings::set_update_settings): <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>  <ul>   <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>   <li> <p>Subnets which you want to remove the VPC endpoints from.</p> </li>   <li> <p>Security group ID which permits traffic to the VPC endpoints.</p> </li>  </ul>
-    /// - On success, responds with [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput) with field(s):
-    ///   - [`identity_provider_summary(Option<IdentityProviderSummary>)`](crate::output::UpdateIdentityProviderSettingsOutput::identity_provider_summary): <p>Describes an identity provider.</p>
-    /// - On failure, responds with [`SdkError<UpdateIdentityProviderSettingsError>`](crate::error::UpdateIdentityProviderSettingsError)
-    pub fn update_identity_provider_settings(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateIdentityProviderSettings {
-        crate::client::fluent_builders::UpdateIdentityProviderSettings::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -334,9 +174,31 @@ impl Client {
     }
 }
 
+mod associate_user;
+
+mod deregister_identity_provider;
+
+mod disassociate_user;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_identity_providers;
+
+mod list_instances;
+
+mod list_product_subscriptions;
+
+mod list_user_associations;
+
+mod register_identity_provider;
+
+mod start_product_subscription;
+
+mod stop_product_subscription;
+
+mod update_identity_provider_settings;

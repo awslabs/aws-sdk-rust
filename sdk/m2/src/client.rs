@@ -89,502 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CancelBatchJobExecution`](crate::client::fluent_builders::CancelBatchJobExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CancelBatchJobExecution::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CancelBatchJobExecution::set_application_id): <p>The unique identifier of the application.</p>
-    ///   - [`execution_id(impl Into<String>)`](crate::client::fluent_builders::CancelBatchJobExecution::execution_id) / [`set_execution_id(Option<String>)`](crate::client::fluent_builders::CancelBatchJobExecution::set_execution_id): <p>The unique identifier of the batch job execution.</p>
-    /// - On success, responds with [`CancelBatchJobExecutionOutput`](crate::output::CancelBatchJobExecutionOutput)
-
-    /// - On failure, responds with [`SdkError<CancelBatchJobExecutionError>`](crate::error::CancelBatchJobExecutionError)
-    pub fn cancel_batch_job_execution(
-        &self,
-    ) -> crate::client::fluent_builders::CancelBatchJobExecution {
-        crate::client::fluent_builders::CancelBatchJobExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateApplication`](crate::client::fluent_builders::CreateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_name): <p>The unique identifier of the application.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_description): <p>The description of the application.</p>
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateApplication::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateApplication::set_engine_type): <p>The type of the target platform for this application.</p>
-    ///   - [`definition(Definition)`](crate::client::fluent_builders::CreateApplication::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::CreateApplication::set_definition): <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateApplication::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateApplication::set_tags): <p>A list of tags to apply to the application.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_client_token): <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateApplication::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateApplication::set_kms_key_id): <p>The identifier of a customer managed key.</p>
-    /// - On success, responds with [`CreateApplicationOutput`](crate::output::CreateApplicationOutput) with field(s):
-    ///   - [`application_arn(Option<String>)`](crate::output::CreateApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::CreateApplicationOutput::application_id): <p>The unique application identifier.</p>
-    ///   - [`application_version(Option<i32>)`](crate::output::CreateApplicationOutput::application_version): <p>The version number of the application.</p>
-    /// - On failure, responds with [`SdkError<CreateApplicationError>`](crate::error::CreateApplicationError)
-    pub fn create_application(&self) -> crate::client::fluent_builders::CreateApplication {
-        crate::client::fluent_builders::CreateApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDataSetImportTask`](crate::client::fluent_builders::CreateDataSetImportTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateDataSetImportTask::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateDataSetImportTask::set_application_id): <p>The unique identifier of the application for which you want to import data sets.</p>
-    ///   - [`import_config(DataSetImportConfig)`](crate::client::fluent_builders::CreateDataSetImportTask::import_config) / [`set_import_config(Option<DataSetImportConfig>)`](crate::client::fluent_builders::CreateDataSetImportTask::set_import_config): <p>The data set import task configuration.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDataSetImportTask::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDataSetImportTask::set_client_token): <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a data set import. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    /// - On success, responds with [`CreateDataSetImportTaskOutput`](crate::output::CreateDataSetImportTaskOutput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::output::CreateDataSetImportTaskOutput::task_id): <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
-    /// - On failure, responds with [`SdkError<CreateDataSetImportTaskError>`](crate::error::CreateDataSetImportTaskError)
-    pub fn create_data_set_import_task(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDataSetImportTask {
-        crate::client::fluent_builders::CreateDataSetImportTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDeployment`](crate::client::fluent_builders::CreateDeployment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_environment_id): <p>The identifier of the runtime environment where you want to deploy this application.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_application_id): <p>The application identifier.</p>
-    ///   - [`application_version(i32)`](crate::client::fluent_builders::CreateDeployment::application_version) / [`set_application_version(Option<i32>)`](crate::client::fluent_builders::CreateDeployment::set_application_version): <p>The version of the application to deploy.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateDeployment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateDeployment::set_client_token): <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    /// - On success, responds with [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput) with field(s):
-    ///   - [`deployment_id(Option<String>)`](crate::output::CreateDeploymentOutput::deployment_id): <p>The unique identifier of the deployment.</p>
-    /// - On failure, responds with [`SdkError<CreateDeploymentError>`](crate::error::CreateDeploymentError)
-    pub fn create_deployment(&self) -> crate::client::fluent_builders::CreateDeployment {
-        crate::client::fluent_builders::CreateDeployment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateEnvironment`](crate::client::fluent_builders::CreateEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_name): <p>The name of the runtime environment. Must be unique within the account.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_instance_type): <p>The type of instance for the runtime environment.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_description): <p>The description of the runtime environment.</p>
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::CreateEnvironment::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_type): <p>The engine type for the runtime environment.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_engine_version): <p>The version of the engine type for the runtime environment.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_subnet_ids): <p>The list of subnets associated with the VPC for this runtime environment.</p>
-    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::CreateEnvironment::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::CreateEnvironment::set_security_group_ids): <p>The list of security groups for the VPC associated with this runtime environment.</p>
-    ///   - [`storage_configurations(Vec<StorageConfiguration>)`](crate::client::fluent_builders::CreateEnvironment::storage_configurations) / [`set_storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::client::fluent_builders::CreateEnvironment::set_storage_configurations): <p>Optional. The storage configurations for this runtime environment.</p>
-    ///   - [`publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::publicly_accessible) / [`set_publicly_accessible(bool)`](crate::client::fluent_builders::CreateEnvironment::set_publicly_accessible): <p>Specifies whether the runtime environment is publicly accessible.</p>
-    ///   - [`high_availability_config(HighAvailabilityConfig)`](crate::client::fluent_builders::CreateEnvironment::high_availability_config) / [`set_high_availability_config(Option<HighAvailabilityConfig>)`](crate::client::fluent_builders::CreateEnvironment::set_high_availability_config): <p>The details of a high availability configuration for this runtime environment.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateEnvironment::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateEnvironment::set_tags): <p>The tags for the runtime environment.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_client_token): <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create an environment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateEnvironment::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateEnvironment::set_kms_key_id): <p>The identifier of a customer managed key.</p>
-    /// - On success, responds with [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::output::CreateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
-    /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::error::CreateEnvironmentError)
-    pub fn create_environment(&self) -> crate::client::fluent_builders::CreateEnvironment {
-        crate::client::fluent_builders::CreateEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteApplication`](crate::client::fluent_builders::DeleteApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplication::set_application_id): <p>The unique identifier of the application you want to delete.</p>
-    /// - On success, responds with [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::error::DeleteApplicationError)
-    pub fn delete_application(&self) -> crate::client::fluent_builders::DeleteApplication {
-        crate::client::fluent_builders::DeleteApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteApplicationFromEnvironment`](crate::client::fluent_builders::DeleteApplicationFromEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationFromEnvironment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationFromEnvironment::set_application_id): <p>The unique identifier of the application you want to delete.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteApplicationFromEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteApplicationFromEnvironment::set_environment_id): <p>The unique identifier of the runtime environment where the application was previously deployed.</p>
-    /// - On success, responds with [`DeleteApplicationFromEnvironmentOutput`](crate::output::DeleteApplicationFromEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteApplicationFromEnvironmentError>`](crate::error::DeleteApplicationFromEnvironmentError)
-    pub fn delete_application_from_environment(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteApplicationFromEnvironment {
-        crate::client::fluent_builders::DeleteApplicationFromEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::client::fluent_builders::DeleteEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::DeleteEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::DeleteEnvironment::set_environment_id): <p>The unique identifier of the runtime environment you want to delete.</p>
-    /// - On success, responds with [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::error::DeleteEnvironmentError)
-    pub fn delete_environment(&self) -> crate::client::fluent_builders::DeleteEnvironment {
-        crate::client::fluent_builders::DeleteEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetApplication`](crate::client::fluent_builders::GetApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplication::set_application_id): <p>The identifier of the application.</p>
-    /// - On success, responds with [`GetApplicationOutput`](crate::output::GetApplicationOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetApplicationOutput::name): <p>The unique identifier of the application.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetApplicationOutput::description): <p>The description of the application.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::GetApplicationOutput::application_id): <p>The identifier of the application.</p>
-    ///   - [`application_arn(Option<String>)`](crate::output::GetApplicationOutput::application_arn): <p>The Amazon Resource Name (ARN) of the application.</p>
-    ///   - [`status(Option<ApplicationLifecycle>)`](crate::output::GetApplicationOutput::status): <p>The status of the application.</p>
-    ///   - [`latest_version(Option<ApplicationVersionSummary>)`](crate::output::GetApplicationOutput::latest_version): <p>The latest version of the application.</p>
-    ///   - [`deployed_version(Option<DeployedVersionSummary>)`](crate::output::GetApplicationOutput::deployed_version): <p>The version of the application that is deployed.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::output::GetApplicationOutput::engine_type): <p>The type of the target platform for the application.</p>
-    ///   - [`log_groups(Option<Vec<LogGroupSummary>>)`](crate::output::GetApplicationOutput::log_groups): <p>The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the customer's account.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::GetApplicationOutput::creation_time): <p>The timestamp when this application was created.</p>
-    ///   - [`last_start_time(Option<DateTime>)`](crate::output::GetApplicationOutput::last_start_time): <p>The timestamp when you last started the application. Null until the application runs for the first time.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetApplicationOutput::tags): <p>A list of tags associated with the application.</p>
-    ///   - [`environment_id(Option<String>)`](crate::output::GetApplicationOutput::environment_id): <p>The identifier of the runtime environment where you want to deploy the application.</p>
-    ///   - [`target_group_arns(Option<Vec<String>>)`](crate::output::GetApplicationOutput::target_group_arns): <p>Returns the Amazon Resource Names (ARNs) of the target groups that are attached to the network load balancer.</p>
-    ///   - [`listener_arns(Option<Vec<String>>)`](crate::output::GetApplicationOutput::listener_arns): <p>The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an application.</p>
-    ///   - [`listener_ports(Option<Vec<i32>>)`](crate::output::GetApplicationOutput::listener_ports): <p>The port associated with the network load balancer listener created in your Amazon Web Services account.</p>
-    ///   - [`load_balancer_dns_name(Option<String>)`](crate::output::GetApplicationOutput::load_balancer_dns_name): <p>The public DNS name of the load balancer created in your Amazon Web Services account.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetApplicationOutput::status_reason): <p>The reason for the reported status.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::GetApplicationOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
-    /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::error::GetApplicationError)
-    pub fn get_application(&self) -> crate::client::fluent_builders::GetApplication {
-        crate::client::fluent_builders::GetApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetApplicationVersion`](crate::client::fluent_builders::GetApplicationVersion) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetApplicationVersion::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetApplicationVersion::set_application_id): <p>The unique identifier of the application.</p>
-    ///   - [`application_version(i32)`](crate::client::fluent_builders::GetApplicationVersion::application_version) / [`set_application_version(Option<i32>)`](crate::client::fluent_builders::GetApplicationVersion::set_application_version): <p>The specific version of the application.</p>
-    /// - On success, responds with [`GetApplicationVersionOutput`](crate::output::GetApplicationVersionOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetApplicationVersionOutput::name): <p>The name of the application version.</p>
-    ///   - [`application_version(Option<i32>)`](crate::output::GetApplicationVersionOutput::application_version): <p>The specific version of the application.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetApplicationVersionOutput::description): <p>The application description.</p>
-    ///   - [`definition_content(Option<String>)`](crate::output::GetApplicationVersionOutput::definition_content): <p>The content of the application definition. This is a JSON object that contains the resource configuration and definitions that identify an application.</p>
-    ///   - [`status(Option<ApplicationVersionLifecycle>)`](crate::output::GetApplicationVersionOutput::status): <p>The status of the application version.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::GetApplicationVersionOutput::creation_time): <p>The timestamp when the application version was created.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetApplicationVersionOutput::status_reason): <p>The reason for the reported status.</p>
-    /// - On failure, responds with [`SdkError<GetApplicationVersionError>`](crate::error::GetApplicationVersionError)
-    pub fn get_application_version(&self) -> crate::client::fluent_builders::GetApplicationVersion {
-        crate::client::fluent_builders::GetApplicationVersion::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBatchJobExecution`](crate::client::fluent_builders::GetBatchJobExecution) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetBatchJobExecution::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetBatchJobExecution::set_application_id): <p>The identifier of the application.</p>
-    ///   - [`execution_id(impl Into<String>)`](crate::client::fluent_builders::GetBatchJobExecution::execution_id) / [`set_execution_id(Option<String>)`](crate::client::fluent_builders::GetBatchJobExecution::set_execution_id): <p>The unique identifier of the batch job execution.</p>
-    /// - On success, responds with [`GetBatchJobExecutionOutput`](crate::output::GetBatchJobExecutionOutput) with field(s):
-    ///   - [`execution_id(Option<String>)`](crate::output::GetBatchJobExecutionOutput::execution_id): <p>The unique identifier for this batch job execution.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::GetBatchJobExecutionOutput::application_id): <p>The identifier of the application.</p>
-    ///   - [`job_id(Option<String>)`](crate::output::GetBatchJobExecutionOutput::job_id): <p>The unique identifier for this batch job.</p>
-    ///   - [`job_name(Option<String>)`](crate::output::GetBatchJobExecutionOutput::job_name): <p>The name of this batch job.</p>
-    ///   - [`job_user(Option<String>)`](crate::output::GetBatchJobExecutionOutput::job_user): <p>The user for the job.</p>
-    ///   - [`job_type(Option<BatchJobType>)`](crate::output::GetBatchJobExecutionOutput::job_type): <p>The type of job.</p>
-    ///   - [`status(Option<BatchJobExecutionStatus>)`](crate::output::GetBatchJobExecutionOutput::status): <p>The status of the batch job execution.</p>
-    ///   - [`start_time(Option<DateTime>)`](crate::output::GetBatchJobExecutionOutput::start_time): <p>The timestamp when the batch job execution started.</p>
-    ///   - [`end_time(Option<DateTime>)`](crate::output::GetBatchJobExecutionOutput::end_time): <p>The timestamp when the batch job execution ended.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetBatchJobExecutionOutput::status_reason): <p>The reason for the reported status.</p>
-    /// - On failure, responds with [`SdkError<GetBatchJobExecutionError>`](crate::error::GetBatchJobExecutionError)
-    pub fn get_batch_job_execution(&self) -> crate::client::fluent_builders::GetBatchJobExecution {
-        crate::client::fluent_builders::GetBatchJobExecution::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDataSetDetails`](crate::client::fluent_builders::GetDataSetDetails) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDataSetDetails::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDataSetDetails::set_application_id): <p>The unique identifier of the application that this data set is associated with.</p>
-    ///   - [`data_set_name(impl Into<String>)`](crate::client::fluent_builders::GetDataSetDetails::data_set_name) / [`set_data_set_name(Option<String>)`](crate::client::fluent_builders::GetDataSetDetails::set_data_set_name): <p>The name of the data set.</p>
-    /// - On success, responds with [`GetDataSetDetailsOutput`](crate::output::GetDataSetDetailsOutput) with field(s):
-    ///   - [`data_set_name(Option<String>)`](crate::output::GetDataSetDetailsOutput::data_set_name): <p>The name of the data set.</p>
-    ///   - [`data_set_org(Option<DatasetDetailOrgAttributes>)`](crate::output::GetDataSetDetailsOutput::data_set_org): <p>The type of data set. The only supported value is VSAM.</p>
-    ///   - [`record_length(Option<i32>)`](crate::output::GetDataSetDetailsOutput::record_length): <p>The length of records in the data set.</p>
-    ///   - [`location(Option<String>)`](crate::output::GetDataSetDetailsOutput::location): <p>The location where the data set is stored.</p>
-    ///   - [`blocksize(Option<i32>)`](crate::output::GetDataSetDetailsOutput::blocksize): <p>The size of the block on disk. </p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::GetDataSetDetailsOutput::creation_time): <p>The timestamp when the data set was created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::GetDataSetDetailsOutput::last_updated_time): <p>The last time the data set was updated.</p>
-    ///   - [`last_referenced_time(Option<DateTime>)`](crate::output::GetDataSetDetailsOutput::last_referenced_time): <p>The last time the data set was referenced.</p>
-    /// - On failure, responds with [`SdkError<GetDataSetDetailsError>`](crate::error::GetDataSetDetailsError)
-    pub fn get_data_set_details(&self) -> crate::client::fluent_builders::GetDataSetDetails {
-        crate::client::fluent_builders::GetDataSetDetails::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDataSetImportTask`](crate::client::fluent_builders::GetDataSetImportTask) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDataSetImportTask::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDataSetImportTask::set_application_id): <p>The application identifier.</p>
-    ///   - [`task_id(impl Into<String>)`](crate::client::fluent_builders::GetDataSetImportTask::task_id) / [`set_task_id(Option<String>)`](crate::client::fluent_builders::GetDataSetImportTask::set_task_id): <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
-    /// - On success, responds with [`GetDataSetImportTaskOutput`](crate::output::GetDataSetImportTaskOutput) with field(s):
-    ///   - [`task_id(Option<String>)`](crate::output::GetDataSetImportTaskOutput::task_id): <p>The task identifier.</p>
-    ///   - [`status(Option<DataSetTaskLifecycle>)`](crate::output::GetDataSetImportTaskOutput::status): <p>The status of the task.</p>
-    ///   - [`summary(Option<DataSetImportSummary>)`](crate::output::GetDataSetImportTaskOutput::summary): <p>A summary of the status of the task.</p>
-    /// - On failure, responds with [`SdkError<GetDataSetImportTaskError>`](crate::error::GetDataSetImportTaskError)
-    pub fn get_data_set_import_task(&self) -> crate::client::fluent_builders::GetDataSetImportTask {
-        crate::client::fluent_builders::GetDataSetImportTask::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeployment`](crate::client::fluent_builders::GetDeployment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::deployment_id) / [`set_deployment_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_deployment_id): <p>The unique identifier for the deployment.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::GetDeployment::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::GetDeployment::set_application_id): <p>The unique identifier of the application.</p>
-    /// - On success, responds with [`GetDeploymentOutput`](crate::output::GetDeploymentOutput) with field(s):
-    ///   - [`deployment_id(Option<String>)`](crate::output::GetDeploymentOutput::deployment_id): <p>The unique identifier of the deployment.</p>
-    ///   - [`application_id(Option<String>)`](crate::output::GetDeploymentOutput::application_id): <p>The unique identifier of the application.</p>
-    ///   - [`environment_id(Option<String>)`](crate::output::GetDeploymentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
-    ///   - [`application_version(Option<i32>)`](crate::output::GetDeploymentOutput::application_version): <p>The application version.</p>
-    ///   - [`status(Option<DeploymentLifecycle>)`](crate::output::GetDeploymentOutput::status): <p>The status of the deployment.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::GetDeploymentOutput::creation_time): <p>The timestamp when the deployment was created.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetDeploymentOutput::status_reason): <p>The reason for the reported status.</p>
-    /// - On failure, responds with [`SdkError<GetDeploymentError>`](crate::error::GetDeploymentError)
-    pub fn get_deployment(&self) -> crate::client::fluent_builders::GetDeployment {
-        crate::client::fluent_builders::GetDeployment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetEnvironment`](crate::client::fluent_builders::GetEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::GetEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::GetEnvironment::set_environment_id): <p>The unique identifier of the runtime environment.</p>
-    /// - On success, responds with [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput) with field(s):
-    ///   - [`name(Option<String>)`](crate::output::GetEnvironmentOutput::name): <p>The name of the runtime environment. Must be unique within the account.</p>
-    ///   - [`description(Option<String>)`](crate::output::GetEnvironmentOutput::description): <p>The description of the runtime environment.</p>
-    ///   - [`environment_arn(Option<String>)`](crate::output::GetEnvironmentOutput::environment_arn): <p>The Amazon Resource Name (ARN) of the runtime environment.</p>
-    ///   - [`environment_id(Option<String>)`](crate::output::GetEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment.</p>
-    ///   - [`instance_type(Option<String>)`](crate::output::GetEnvironmentOutput::instance_type): <p>The type of instance underlying the runtime environment.</p>
-    ///   - [`status(Option<EnvironmentLifecycle>)`](crate::output::GetEnvironmentOutput::status): <p>The status of the runtime environment.</p>
-    ///   - [`engine_type(Option<EngineType>)`](crate::output::GetEnvironmentOutput::engine_type): <p>The target platform for the runtime environment.</p>
-    ///   - [`engine_version(Option<String>)`](crate::output::GetEnvironmentOutput::engine_version): <p>The version of the runtime engine.</p>
-    ///   - [`vpc_id(Option<String>)`](crate::output::GetEnvironmentOutput::vpc_id): <p>The unique identifier for the VPC used with this runtime environment.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::output::GetEnvironmentOutput::subnet_ids): <p>The unique identifiers of the subnets assigned to this runtime environment.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::GetEnvironmentOutput::security_group_ids): <p>The unique identifiers of the security groups assigned to this runtime environment.</p>
-    ///   - [`creation_time(Option<DateTime>)`](crate::output::GetEnvironmentOutput::creation_time): <p>The timestamp when the runtime environment was created.</p>
-    ///   - [`storage_configurations(Option<Vec<StorageConfiguration>>)`](crate::output::GetEnvironmentOutput::storage_configurations): <p>The storage configurations defined for the runtime environment.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetEnvironmentOutput::tags): <p>The tags defined for this runtime environment.</p>
-    ///   - [`high_availability_config(Option<HighAvailabilityConfig>)`](crate::output::GetEnvironmentOutput::high_availability_config): <p>The desired capacity of the high availability configuration for the runtime environment.</p>
-    ///   - [`publicly_accessible(bool)`](crate::output::GetEnvironmentOutput::publicly_accessible): <p>Whether applications running in this runtime environment are publicly accessible. </p>
-    ///   - [`actual_capacity(Option<i32>)`](crate::output::GetEnvironmentOutput::actual_capacity): <p>The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two instances. </p>
-    ///   - [`load_balancer_arn(Option<String>)`](crate::output::GetEnvironmentOutput::load_balancer_arn): <p>The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.</p>
-    ///   - [`status_reason(Option<String>)`](crate::output::GetEnvironmentOutput::status_reason): <p>The reason for the reported status.</p>
-    ///   - [`preferred_maintenance_window(Option<String>)`](crate::output::GetEnvironmentOutput::preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    ///   - [`pending_maintenance(Option<PendingMaintenance>)`](crate::output::GetEnvironmentOutput::pending_maintenance): <p>Indicates the pending maintenance scheduled on this environment.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::GetEnvironmentOutput::kms_key_id): <p>The identifier of a customer managed key.</p>
-    /// - On failure, responds with [`SdkError<GetEnvironmentError>`](crate::error::GetEnvironmentError)
-    pub fn get_environment(&self) -> crate::client::fluent_builders::GetEnvironment {
-        crate::client::fluent_builders::GetEnvironment::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplications`](crate::client::fluent_builders::ListApplications) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplications::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplications::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplications::set_next_token): <p>A pagination token to control the number of applications displayed in the list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplications::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplications::set_max_results): <p>The maximum number of applications to return.</p>
-    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::ListApplications::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::ListApplications::set_names): <p>The names of the applications.</p>
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::ListApplications::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::ListApplications::set_environment_id): <p>The unique identifier of the runtime environment where the applications are deployed.</p>
-    /// - On success, responds with [`ListApplicationsOutput`](crate::output::ListApplicationsOutput) with field(s):
-    ///   - [`applications(Option<Vec<ApplicationSummary>>)`](crate::output::ListApplicationsOutput::applications): <p>Returns a list of summary details for all the applications in a runtime environment.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all applications.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationsError>`](crate::error::ListApplicationsError)
-    pub fn list_applications(&self) -> crate::client::fluent_builders::ListApplications {
-        crate::client::fluent_builders::ListApplications::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListApplicationVersions`](crate::client::fluent_builders::ListApplicationVersions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListApplicationVersions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListApplicationVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListApplicationVersions::set_max_results): <p>The maximum number of application versions to return.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListApplicationVersions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListApplicationVersions::set_application_id): <p>The unique identifier of the application.</p>
-    /// - On success, responds with [`ListApplicationVersionsOutput`](crate::output::ListApplicationVersionsOutput) with field(s):
-    ///   - [`application_versions(Option<Vec<ApplicationVersionSummary>>)`](crate::output::ListApplicationVersionsOutput::application_versions): <p>The list of application versions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListApplicationVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListApplicationVersionsError>`](crate::error::ListApplicationVersionsError)
-    pub fn list_application_versions(
-        &self,
-    ) -> crate::client::fluent_builders::ListApplicationVersions {
-        crate::client::fluent_builders::ListApplicationVersions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBatchJobDefinitions`](crate::client::fluent_builders::ListBatchJobDefinitions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBatchJobDefinitions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBatchJobDefinitions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBatchJobDefinitions::set_max_results): <p>The maximum number of batch job definitions to return.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::set_application_id): <p>The identifier of the application.</p>
-    ///   - [`prefix(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::prefix) / [`set_prefix(Option<String>)`](crate::client::fluent_builders::ListBatchJobDefinitions::set_prefix): <p>If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</p>
-    /// - On success, responds with [`ListBatchJobDefinitionsOutput`](crate::output::ListBatchJobDefinitionsOutput) with field(s):
-    ///   - [`batch_job_definitions(Option<Vec<BatchJobDefinition>>)`](crate::output::ListBatchJobDefinitionsOutput::batch_job_definitions): <p>The list of batch job definitions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBatchJobDefinitionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListBatchJobDefinitionsError>`](crate::error::ListBatchJobDefinitionsError)
-    pub fn list_batch_job_definitions(
-        &self,
-    ) -> crate::client::fluent_builders::ListBatchJobDefinitions {
-        crate::client::fluent_builders::ListBatchJobDefinitions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListBatchJobExecutions`](crate::client::fluent_builders::ListBatchJobExecutions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListBatchJobExecutions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_next_token): <p>A pagination token to control the number of batch job executions displayed in the list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListBatchJobExecutions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_max_results): <p>The maximum number of batch job executions to return.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_application_id): <p>The unique identifier of the application.</p>
-    ///   - [`execution_ids(Vec<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::execution_ids) / [`set_execution_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_execution_ids): <p>The unique identifier of each batch job execution.</p>
-    ///   - [`job_name(impl Into<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::job_name) / [`set_job_name(Option<String>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_job_name): <p>The name of each batch job execution.</p>
-    ///   - [`status(BatchJobExecutionStatus)`](crate::client::fluent_builders::ListBatchJobExecutions::status) / [`set_status(Option<BatchJobExecutionStatus>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_status): <p>The status of the batch job executions.</p>
-    ///   - [`started_after(DateTime)`](crate::client::fluent_builders::ListBatchJobExecutions::started_after) / [`set_started_after(Option<DateTime>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_started_after): <p>The time after which the batch job executions started.</p>
-    ///   - [`started_before(DateTime)`](crate::client::fluent_builders::ListBatchJobExecutions::started_before) / [`set_started_before(Option<DateTime>)`](crate::client::fluent_builders::ListBatchJobExecutions::set_started_before): <p>The time before the batch job executions started.</p>
-    /// - On success, responds with [`ListBatchJobExecutionsOutput`](crate::output::ListBatchJobExecutionsOutput) with field(s):
-    ///   - [`batch_job_executions(Option<Vec<BatchJobExecutionSummary>>)`](crate::output::ListBatchJobExecutionsOutput::batch_job_executions): <p>Returns a list of batch job executions for an application.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListBatchJobExecutionsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all batch job executions.</p>
-    /// - On failure, responds with [`SdkError<ListBatchJobExecutionsError>`](crate::error::ListBatchJobExecutionsError)
-    pub fn list_batch_job_executions(
-        &self,
-    ) -> crate::client::fluent_builders::ListBatchJobExecutions {
-        crate::client::fluent_builders::ListBatchJobExecutions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDataSetImportHistory`](crate::client::fluent_builders::ListDataSetImportHistory) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSetImportHistory::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSetImportHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSetImportHistory::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSetImportHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSetImportHistory::set_max_results): <p>The maximum number of objects to return.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSetImportHistory::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDataSetImportHistory::set_application_id): <p>The unique identifier of the application.</p>
-    /// - On success, responds with [`ListDataSetImportHistoryOutput`](crate::output::ListDataSetImportHistoryOutput) with field(s):
-    ///   - [`data_set_import_tasks(Option<Vec<DataSetImportTask>>)`](crate::output::ListDataSetImportHistoryOutput::data_set_import_tasks): <p>The data set import tasks.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDataSetImportHistoryOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetImportHistoryError>`](crate::error::ListDataSetImportHistoryError)
-    pub fn list_data_set_import_history(
-        &self,
-    ) -> crate::client::fluent_builders::ListDataSetImportHistory {
-        crate::client::fluent_builders::ListDataSetImportHistory::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDataSets`](crate::client::fluent_builders::ListDataSets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDataSets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_application_id): <p>The unique identifier of the application for which you want to list the associated data sets.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDataSets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDataSets::set_max_results): <p>The maximum number of objects to return.</p>
-    ///   - [`prefix(impl Into<String>)`](crate::client::fluent_builders::ListDataSets::prefix) / [`set_prefix(Option<String>)`](crate::client::fluent_builders::ListDataSets::set_prefix): <p>The prefix of the data set name, which you can use to filter the list of data sets.</p>
-    /// - On success, responds with [`ListDataSetsOutput`](crate::output::ListDataSetsOutput) with field(s):
-    ///   - [`data_sets(Option<Vec<DataSetSummary>>)`](crate::output::ListDataSetsOutput::data_sets): <p>The list of data sets, containing information including the creation time, the data set name, the data set organization, the data set format, and the last time the data set was referenced or updated.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDataSetsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListDataSetsError>`](crate::error::ListDataSetsError)
-    pub fn list_data_sets(&self) -> crate::client::fluent_builders::ListDataSets {
-        crate::client::fluent_builders::ListDataSets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDeployments`](crate::client::fluent_builders::ListDeployments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeployments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDeployments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDeployments::set_max_results): <p>The maximum number of objects to return.</p>
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::ListDeployments::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::ListDeployments::set_application_id): <p>The application identifier.</p>
-    /// - On success, responds with [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput) with field(s):
-    ///   - [`deployments(Option<Vec<DeploymentSummary>>)`](crate::output::ListDeploymentsOutput::deployments): <p>The list of deployments that is returned.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDeploymentsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListDeploymentsError>`](crate::error::ListDeploymentsError)
-    pub fn list_deployments(&self) -> crate::client::fluent_builders::ListDeployments {
-        crate::client::fluent_builders::ListDeployments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEngineVersions`](crate::client::fluent_builders::ListEngineVersions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEngineVersions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListEngineVersions::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListEngineVersions::set_engine_type): <p>The type of target platform.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEngineVersions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEngineVersions::set_next_token): <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEngineVersions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEngineVersions::set_max_results): <p>The maximum number of objects to return.</p>
-    /// - On success, responds with [`ListEngineVersionsOutput`](crate::output::ListEngineVersionsOutput) with field(s):
-    ///   - [`engine_versions(Option<Vec<EngineVersionsSummary>>)`](crate::output::ListEngineVersionsOutput::engine_versions): <p>Returns the engine versions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEngineVersionsOutput::next_token): <p>If there are more items to return, this contains a token that is passed to a subsequent call to this operation to retrieve the next set of items.</p>
-    /// - On failure, responds with [`SdkError<ListEngineVersionsError>`](crate::error::ListEngineVersionsError)
-    pub fn list_engine_versions(&self) -> crate::client::fluent_builders::ListEngineVersions {
-        crate::client::fluent_builders::ListEngineVersions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEnvironments`](crate::client::fluent_builders::ListEnvironments) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEnvironments::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEnvironments::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEnvironments::set_next_token): <p>A pagination token to control the number of runtime environments displayed in the list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListEnvironments::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListEnvironments::set_max_results): <p>The maximum number of runtime environments to return.</p>
-    ///   - [`names(Vec<String>)`](crate::client::fluent_builders::ListEnvironments::names) / [`set_names(Option<Vec<String>>)`](crate::client::fluent_builders::ListEnvironments::set_names): <p>The names of the runtime environments. Must be unique within the account.</p>
-    ///   - [`engine_type(EngineType)`](crate::client::fluent_builders::ListEnvironments::engine_type) / [`set_engine_type(Option<EngineType>)`](crate::client::fluent_builders::ListEnvironments::set_engine_type): <p>The engine type for the runtime environment.</p>
-    /// - On success, responds with [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput) with field(s):
-    ///   - [`environments(Option<Vec<EnvironmentSummary>>)`](crate::output::ListEnvironmentsOutput::environments): <p>Returns a list of summary details for all the runtime environments in your account. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEnvironmentsOutput::next_token): <p>A pagination token that's returned when the response doesn't contain all the runtime environments.</p>
-    /// - On failure, responds with [`SdkError<ListEnvironmentsError>`](crate::error::ListEnvironmentsError)
-    pub fn list_environments(&self) -> crate::client::fluent_builders::ListEnvironments {
-        crate::client::fluent_builders::ListEnvironments::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags for the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartApplication`](crate::client::fluent_builders::StartApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::StartApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::StartApplication::set_application_id): <p>The unique identifier of the application you want to start.</p>
-    /// - On success, responds with [`StartApplicationOutput`](crate::output::StartApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::error::StartApplicationError)
-    pub fn start_application(&self) -> crate::client::fluent_builders::StartApplication {
-        crate::client::fluent_builders::StartApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartBatchJob`](crate::client::fluent_builders::StartBatchJob) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::StartBatchJob::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::StartBatchJob::set_application_id): <p>The unique identifier of the application associated with this batch job.</p>
-    ///   - [`batch_job_identifier(BatchJobIdentifier)`](crate::client::fluent_builders::StartBatchJob::batch_job_identifier) / [`set_batch_job_identifier(Option<BatchJobIdentifier>)`](crate::client::fluent_builders::StartBatchJob::set_batch_job_identifier): <p>The unique identifier of the batch job.</p>
-    ///   - [`job_params(HashMap<String, String>)`](crate::client::fluent_builders::StartBatchJob::job_params) / [`set_job_params(Option<HashMap<String, String>>)`](crate::client::fluent_builders::StartBatchJob::set_job_params): <p>The collection of batch job parameters. For details about limits for keys and values, see <a href="https://www.ibm.com/docs/en/workload-automation/9.3.0?topic=zos-coding-variables-in-jcl">Coding variables in JCL</a>.</p>
-    /// - On success, responds with [`StartBatchJobOutput`](crate::output::StartBatchJobOutput) with field(s):
-    ///   - [`execution_id(Option<String>)`](crate::output::StartBatchJobOutput::execution_id): <p>The unique identifier of this execution of the batch job.</p>
-    /// - On failure, responds with [`SdkError<StartBatchJobError>`](crate::error::StartBatchJobError)
-    pub fn start_batch_job(&self) -> crate::client::fluent_builders::StartBatchJob {
-        crate::client::fluent_builders::StartBatchJob::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StopApplication`](crate::client::fluent_builders::StopApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::StopApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::StopApplication::set_application_id): <p>The unique identifier of the application you want to stop.</p>
-    ///   - [`force_stop(bool)`](crate::client::fluent_builders::StopApplication::force_stop) / [`set_force_stop(bool)`](crate::client::fluent_builders::StopApplication::set_force_stop): <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
-    /// - On success, responds with [`StopApplicationOutput`](crate::output::StopApplicationOutput)
-
-    /// - On failure, responds with [`SdkError<StopApplicationError>`](crate::error::StopApplicationError)
-    pub fn stop_application(&self) -> crate::client::fluent_builders::StopApplication {
-        crate::client::fluent_builders::StopApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys of the tags to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateApplication`](crate::client::fluent_builders::UpdateApplication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::application_id) / [`set_application_id(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_application_id): <p>The unique identifier of the application you want to update.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateApplication::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateApplication::set_description): <p>The description of the application to update.</p>
-    ///   - [`current_application_version(i32)`](crate::client::fluent_builders::UpdateApplication::current_application_version) / [`set_current_application_version(Option<i32>)`](crate::client::fluent_builders::UpdateApplication::set_current_application_version): <p>The current version of the application to update.</p>
-    ///   - [`definition(Definition)`](crate::client::fluent_builders::UpdateApplication::definition) / [`set_definition(Option<Definition>)`](crate::client::fluent_builders::UpdateApplication::set_definition): <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    /// - On success, responds with [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput) with field(s):
-    ///   - [`application_version(Option<i32>)`](crate::output::UpdateApplicationOutput::application_version): <p>The new version of the application.</p>
-    /// - On failure, responds with [`SdkError<UpdateApplicationError>`](crate::error::UpdateApplicationError)
-    pub fn update_application(&self) -> crate::client::fluent_builders::UpdateApplication {
-        crate::client::fluent_builders::UpdateApplication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateEnvironment`](crate::client::fluent_builders::UpdateEnvironment) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::environment_id) / [`set_environment_id(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_environment_id): <p>The unique identifier of the runtime environment that you want to update.</p>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::UpdateEnvironment::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateEnvironment::set_desired_capacity): <p>The desired capacity for the runtime environment to update.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_instance_type): <p>The instance type for the runtime environment to update.</p>
-    ///   - [`engine_version(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::engine_version) / [`set_engine_version(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_engine_version): <p>The version of the runtime engine for the runtime environment.</p>
-    ///   - [`preferred_maintenance_window(impl Into<String>)`](crate::client::fluent_builders::UpdateEnvironment::preferred_maintenance_window) / [`set_preferred_maintenance_window(Option<String>)`](crate::client::fluent_builders::UpdateEnvironment::set_preferred_maintenance_window): <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
-    ///   - [`apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::apply_during_maintenance_window) / [`set_apply_during_maintenance_window(bool)`](crate::client::fluent_builders::UpdateEnvironment::set_apply_during_maintenance_window): <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    /// - On success, responds with [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput) with field(s):
-    ///   - [`environment_id(Option<String>)`](crate::output::UpdateEnvironmentOutput::environment_id): <p>The unique identifier of the runtime environment that was updated.</p>
-    /// - On failure, responds with [`SdkError<UpdateEnvironmentError>`](crate::error::UpdateEnvironmentError)
-    pub fn update_environment(&self) -> crate::client::fluent_builders::UpdateEnvironment {
-        crate::client::fluent_builders::UpdateEnvironment::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -670,9 +174,73 @@ impl Client {
     }
 }
 
+mod cancel_batch_job_execution;
+
+mod create_application;
+
+mod create_data_set_import_task;
+
+mod create_deployment;
+
+mod create_environment;
+
+mod delete_application;
+
+mod delete_application_from_environment;
+
+mod delete_environment;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_application;
+
+mod get_application_version;
+
+mod get_batch_job_execution;
+
+mod get_data_set_details;
+
+mod get_data_set_import_task;
+
+mod get_deployment;
+
+mod get_environment;
+
+mod list_application_versions;
+
+mod list_applications;
+
+mod list_batch_job_definitions;
+
+mod list_batch_job_executions;
+
+mod list_data_set_import_history;
+
+mod list_data_sets;
+
+mod list_deployments;
+
+mod list_engine_versions;
+
+mod list_environments;
+
+mod list_tags_for_resource;
+
+mod start_application;
+
+mod start_batch_job;
+
+mod stop_application;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_application;
+
+mod update_environment;

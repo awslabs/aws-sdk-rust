@@ -28,9 +28,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_abort_multipart_upload_error(response)
+            crate::protocol_serde::shape_abort_multipart_upload::de_abort_multipart_upload_http_error(response)
         } else {
-            crate::operation_deser::parse_abort_multipart_upload_response(response)
+            crate::protocol_serde::shape_abort_multipart_upload::de_abort_multipart_upload_http_response(response)
         }
     }
 }
@@ -64,9 +64,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteMultipartUpload 
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_complete_multipart_upload_error(response)
+            crate::protocol_serde::shape_complete_multipart_upload::de_complete_multipart_upload_http_error(response)
         } else {
-            crate::operation_deser::parse_complete_multipart_upload_response(response)
+            crate::protocol_serde::shape_complete_multipart_upload::de_complete_multipart_upload_http_response(response)
         }
     }
 }
@@ -98,9 +98,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyObject {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_copy_object_error(response)
+            crate::protocol_serde::shape_copy_object::de_copy_object_http_error(response)
         } else {
-            crate::operation_deser::parse_copy_object_response(response)
+            crate::protocol_serde::shape_copy_object::de_copy_object_http_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_bucket_error(response)
+            crate::protocol_serde::shape_create_bucket::de_create_bucket_http_error(response)
         } else {
-            crate::operation_deser::parse_create_bucket_response(response)
+            crate::protocol_serde::shape_create_bucket::de_create_bucket_http_response(response)
         }
     }
 }
@@ -168,9 +168,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_multipart_upload_error(response)
+            crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_error(response)
         } else {
-            crate::operation_deser::parse_create_multipart_upload_response(response)
+            crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_response(response)
         }
     }
 }
@@ -232,9 +232,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_error(response)
+            crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_response(response)
+            crate::protocol_serde::shape_delete_bucket::de_delete_bucket_http_response(response)
         }
     }
 }
@@ -268,9 +268,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsCon
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_analytics_configuration_error(response)
+            crate::protocol_serde::shape_delete_bucket_analytics_configuration::de_delete_bucket_analytics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_analytics_configuration_response(response)
+            crate::protocol_serde::shape_delete_bucket_analytics_configuration::de_delete_bucket_analytics_configuration_http_response(response)
         }
     }
 }
@@ -304,9 +304,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketCors {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_cors_error(response)
+            crate::protocol_serde::shape_delete_bucket_cors::de_delete_bucket_cors_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_bucket_cors_response(response)
+            crate::protocol_serde::shape_delete_bucket_cors::de_delete_bucket_cors_http_response(
+                response,
+            )
         }
     }
 }
@@ -340,9 +344,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_encryption_error(response)
+            crate::protocol_serde::shape_delete_bucket_encryption::de_delete_bucket_encryption_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_encryption_response(response)
+            crate::protocol_serde::shape_delete_bucket_encryption::de_delete_bucket_encryption_http_response(response)
         }
     }
 }
@@ -379,13 +383,9 @@ impl aws_smithy_http::response::ParseStrictResponse
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_intelligent_tiering_configuration_error(
-                response,
-            )
+            crate::protocol_serde::shape_delete_bucket_intelligent_tiering_configuration::de_delete_bucket_intelligent_tiering_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_intelligent_tiering_configuration_response(
-                response,
-            )
+            crate::protocol_serde::shape_delete_bucket_intelligent_tiering_configuration::de_delete_bucket_intelligent_tiering_configuration_http_response(response)
         }
     }
 }
@@ -419,9 +419,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketInventoryCon
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_inventory_configuration_error(response)
+            crate::protocol_serde::shape_delete_bucket_inventory_configuration::de_delete_bucket_inventory_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_inventory_configuration_response(response)
+            crate::protocol_serde::shape_delete_bucket_inventory_configuration::de_delete_bucket_inventory_configuration_http_response(response)
         }
     }
 }
@@ -455,9 +455,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_lifecycle_error(response)
+            crate::protocol_serde::shape_delete_bucket_lifecycle::de_delete_bucket_lifecycle_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_lifecycle_response(response)
+            crate::protocol_serde::shape_delete_bucket_lifecycle::de_delete_bucket_lifecycle_http_response(response)
         }
     }
 }
@@ -491,9 +491,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfi
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_metrics_configuration_error(response)
+            crate::protocol_serde::shape_delete_bucket_metrics_configuration::de_delete_bucket_metrics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_metrics_configuration_response(response)
+            crate::protocol_serde::shape_delete_bucket_metrics_configuration::de_delete_bucket_metrics_configuration_http_response(response)
         }
     }
 }
@@ -527,9 +527,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipCon
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_ownership_controls_error(response)
+            crate::protocol_serde::shape_delete_bucket_ownership_controls::de_delete_bucket_ownership_controls_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_ownership_controls_response(response)
+            crate::protocol_serde::shape_delete_bucket_ownership_controls::de_delete_bucket_ownership_controls_http_response(response)
         }
     }
 }
@@ -563,9 +563,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_policy_error(response)
+            crate::protocol_serde::shape_delete_bucket_policy::de_delete_bucket_policy_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_bucket_policy_response(response)
+            crate::protocol_serde::shape_delete_bucket_policy::de_delete_bucket_policy_http_response(
+                response,
+            )
         }
     }
 }
@@ -599,9 +603,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketReplication 
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_replication_error(response)
+            crate::protocol_serde::shape_delete_bucket_replication::de_delete_bucket_replication_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_bucket_replication_response(response)
+            crate::protocol_serde::shape_delete_bucket_replication::de_delete_bucket_replication_http_response(response)
         }
     }
 }
@@ -635,9 +639,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_tagging_error(response)
+            crate::protocol_serde::shape_delete_bucket_tagging::de_delete_bucket_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_bucket_tagging_response(response)
+            crate::protocol_serde::shape_delete_bucket_tagging::de_delete_bucket_tagging_http_response(response)
         }
     }
 }
@@ -671,9 +677,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_bucket_website_error(response)
+            crate::protocol_serde::shape_delete_bucket_website::de_delete_bucket_website_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_bucket_website_response(response)
+            crate::protocol_serde::shape_delete_bucket_website::de_delete_bucket_website_http_response(response)
         }
     }
 }
@@ -705,9 +713,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_object_error(response)
+            crate::protocol_serde::shape_delete_object::de_delete_object_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_object_response(response)
+            crate::protocol_serde::shape_delete_object::de_delete_object_http_response(response)
         }
     }
 }
@@ -739,9 +747,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjects {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_objects_error(response)
+            crate::protocol_serde::shape_delete_objects::de_delete_objects_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_objects_response(response)
+            crate::protocol_serde::shape_delete_objects::de_delete_objects_http_response(response)
         }
     }
 }
@@ -775,9 +783,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_object_tagging_error(response)
+            crate::protocol_serde::shape_delete_object_tagging::de_delete_object_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_object_tagging_response(response)
+            crate::protocol_serde::shape_delete_object_tagging::de_delete_object_tagging_http_response(response)
         }
     }
 }
@@ -811,9 +821,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
-            crate::operation_deser::parse_delete_public_access_block_error(response)
+            crate::protocol_serde::shape_delete_public_access_block::de_delete_public_access_block_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_public_access_block_response(response)
+            crate::protocol_serde::shape_delete_public_access_block::de_delete_public_access_block_http_response(response)
         }
     }
 }
@@ -847,9 +857,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfi
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_accelerate_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_accelerate_configuration::de_get_bucket_accelerate_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_accelerate_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_accelerate_configuration::de_get_bucket_accelerate_configuration_http_response(response)
         }
     }
 }
@@ -881,9 +891,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAcl {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_acl_error(response)
+            crate::protocol_serde::shape_get_bucket_acl::de_get_bucket_acl_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_acl_response(response)
+            crate::protocol_serde::shape_get_bucket_acl::de_get_bucket_acl_http_response(response)
         }
     }
 }
@@ -917,9 +927,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_analytics_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_analytics_configuration::de_get_bucket_analytics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_analytics_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_analytics_configuration::de_get_bucket_analytics_configuration_http_response(response)
         }
     }
 }
@@ -951,9 +961,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketCors {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_cors_error(response)
+            crate::protocol_serde::shape_get_bucket_cors::de_get_bucket_cors_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_cors_response(response)
+            crate::protocol_serde::shape_get_bucket_cors::de_get_bucket_cors_http_response(response)
         }
     }
 }
@@ -987,9 +997,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketEncryption {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_encryption_error(response)
+            crate::protocol_serde::shape_get_bucket_encryption::de_get_bucket_encryption_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_encryption_response(response)
+            crate::protocol_serde::shape_get_bucket_encryption::de_get_bucket_encryption_http_response(response)
         }
     }
 }
@@ -1023,13 +1035,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketIntelligentTier
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_intelligent_tiering_configuration_error(
-                response,
-            )
+            crate::protocol_serde::shape_get_bucket_intelligent_tiering_configuration::de_get_bucket_intelligent_tiering_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_intelligent_tiering_configuration_response(
-                response,
-            )
+            crate::protocol_serde::shape_get_bucket_intelligent_tiering_configuration::de_get_bucket_intelligent_tiering_configuration_http_response(response)
         }
     }
 }
@@ -1063,9 +1071,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketInventoryConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_inventory_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_inventory_configuration::de_get_bucket_inventory_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_inventory_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_inventory_configuration::de_get_bucket_inventory_configuration_http_response(response)
         }
     }
 }
@@ -1099,9 +1107,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_lifecycle_configuration::de_get_bucket_lifecycle_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_lifecycle_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_lifecycle_configuration::de_get_bucket_lifecycle_configuration_http_response(response)
         }
     }
 }
@@ -1135,9 +1143,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLocation {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_location_error(response)
+            crate::protocol_serde::shape_get_bucket_location::de_get_bucket_location_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_location_response(response)
+            crate::protocol_serde::shape_get_bucket_location::de_get_bucket_location_http_response(
+                response,
+            )
         }
     }
 }
@@ -1204,9 +1216,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLogging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_logging_error(response)
+            crate::protocol_serde::shape_get_bucket_logging::de_get_bucket_logging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_logging_response(response)
+            crate::protocol_serde::shape_get_bucket_logging::de_get_bucket_logging_http_response(
+                response,
+            )
         }
     }
 }
@@ -1240,9 +1256,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketMetricsConfigur
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_metrics_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_metrics_configuration::de_get_bucket_metrics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_metrics_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_metrics_configuration::de_get_bucket_metrics_configuration_http_response(response)
         }
     }
 }
@@ -1276,9 +1292,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketNotificationCon
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_notification_configuration_error(response)
+            crate::protocol_serde::shape_get_bucket_notification_configuration::de_get_bucket_notification_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_notification_configuration_response(response)
+            crate::protocol_serde::shape_get_bucket_notification_configuration::de_get_bucket_notification_configuration_http_response(response)
         }
     }
 }
@@ -1312,9 +1328,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketOwnershipContro
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_ownership_controls_error(response)
+            crate::protocol_serde::shape_get_bucket_ownership_controls::de_get_bucket_ownership_controls_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_ownership_controls_response(response)
+            crate::protocol_serde::shape_get_bucket_ownership_controls::de_get_bucket_ownership_controls_http_response(response)
         }
     }
 }
@@ -1348,9 +1364,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_policy_error(response)
+            crate::protocol_serde::shape_get_bucket_policy::de_get_bucket_policy_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_policy_response(response)
+            crate::protocol_serde::shape_get_bucket_policy::de_get_bucket_policy_http_response(
+                response,
+            )
         }
     }
 }
@@ -1384,9 +1404,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_policy_status_error(response)
+            crate::protocol_serde::shape_get_bucket_policy_status::de_get_bucket_policy_status_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_policy_status_response(response)
+            crate::protocol_serde::shape_get_bucket_policy_status::de_get_bucket_policy_status_http_response(response)
         }
     }
 }
@@ -1420,9 +1440,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketReplication {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_replication_error(response)
+            crate::protocol_serde::shape_get_bucket_replication::de_get_bucket_replication_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_replication_response(response)
+            crate::protocol_serde::shape_get_bucket_replication::de_get_bucket_replication_http_response(response)
         }
     }
 }
@@ -1456,9 +1476,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketRequestPayment 
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_request_payment_error(response)
+            crate::protocol_serde::shape_get_bucket_request_payment::de_get_bucket_request_payment_http_error(response)
         } else {
-            crate::operation_deser::parse_get_bucket_request_payment_response(response)
+            crate::protocol_serde::shape_get_bucket_request_payment::de_get_bucket_request_payment_http_response(response)
         }
     }
 }
@@ -1492,9 +1512,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_tagging_error(response)
+            crate::protocol_serde::shape_get_bucket_tagging::de_get_bucket_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_tagging_response(response)
+            crate::protocol_serde::shape_get_bucket_tagging::de_get_bucket_tagging_http_response(
+                response,
+            )
         }
     }
 }
@@ -1528,9 +1552,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_versioning_error(response)
+            crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_versioning_response(response)
+            crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning_http_response(response)
         }
     }
 }
@@ -1564,9 +1590,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketWebsite {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_bucket_website_error(response)
+            crate::protocol_serde::shape_get_bucket_website::de_get_bucket_website_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_bucket_website_response(response)
+            crate::protocol_serde::shape_get_bucket_website::de_get_bucket_website_http_response(
+                response,
+            )
         }
     }
 }
@@ -1601,11 +1631,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_object(response))
+        Some(crate::protocol_serde::shape_get_object::de_get_object_http_response(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_object_error(response)
+        crate::protocol_serde::shape_get_object::de_get_object_http_error(response)
     }
 }
 
@@ -1636,9 +1666,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAcl {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_acl_error(response)
+            crate::protocol_serde::shape_get_object_acl::de_get_object_acl_http_error(response)
         } else {
-            crate::operation_deser::parse_get_object_acl_response(response)
+            crate::protocol_serde::shape_get_object_acl::de_get_object_acl_http_response(response)
         }
     }
 }
@@ -1672,9 +1702,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAttributes {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_attributes_error(response)
+            crate::protocol_serde::shape_get_object_attributes::de_get_object_attributes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_object_attributes_response(response)
+            crate::protocol_serde::shape_get_object_attributes::de_get_object_attributes_http_response(response)
         }
     }
 }
@@ -1708,9 +1740,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_legal_hold_error(response)
+            crate::protocol_serde::shape_get_object_legal_hold::de_get_object_legal_hold_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_object_legal_hold_response(response)
+            crate::protocol_serde::shape_get_object_legal_hold::de_get_object_legal_hold_http_response(response)
         }
     }
 }
@@ -1744,9 +1778,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLockConfigurati
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_lock_configuration_error(response)
+            crate::protocol_serde::shape_get_object_lock_configuration::de_get_object_lock_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_get_object_lock_configuration_response(response)
+            crate::protocol_serde::shape_get_object_lock_configuration::de_get_object_lock_configuration_http_response(response)
         }
     }
 }
@@ -1780,9 +1814,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectRetention {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_retention_error(response)
+            crate::protocol_serde::shape_get_object_retention::de_get_object_retention_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_object_retention_response(response)
+            crate::protocol_serde::shape_get_object_retention::de_get_object_retention_http_response(
+                response,
+            )
         }
     }
 }
@@ -1816,9 +1854,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_object_tagging_error(response)
+            crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_object_tagging_response(response)
+            crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging_http_response(
+                response,
+            )
         }
     }
 }
@@ -1856,11 +1898,15 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObjectTorrent {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_object_torrent(response))
+        Some(
+            crate::protocol_serde::shape_get_object_torrent::de_get_object_torrent_http_response(
+                response,
+            ),
+        )
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_object_torrent_error(response)
+        crate::protocol_serde::shape_get_object_torrent::de_get_object_torrent_http_error(response)
     }
 }
 
@@ -1893,9 +1939,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_public_access_block_error(response)
+            crate::protocol_serde::shape_get_public_access_block::de_get_public_access_block_http_error(response)
         } else {
-            crate::operation_deser::parse_get_public_access_block_response(response)
+            crate::protocol_serde::shape_get_public_access_block::de_get_public_access_block_http_response(response)
         }
     }
 }
@@ -1927,9 +1973,9 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadBucket {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_head_bucket_error(response)
+            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(response)
         } else {
-            crate::operation_deser::parse_head_bucket_response(response)
+            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(response)
         }
     }
 }
@@ -2005,9 +2051,9 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadObject {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_head_object_error(response)
+            crate::protocol_serde::shape_head_object::de_head_object_http_error(response)
         } else {
-            crate::operation_deser::parse_head_object_response(response)
+            crate::protocol_serde::shape_head_object::de_head_object_http_response(response)
         }
     }
 }
@@ -2106,9 +2152,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfi
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_analytics_configurations_error(response)
+            crate::protocol_serde::shape_list_bucket_analytics_configurations::de_list_bucket_analytics_configurations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_analytics_configurations_response(response)
+            crate::protocol_serde::shape_list_bucket_analytics_configurations::de_list_bucket_analytics_configurations_http_response(response)
         }
     }
 }
@@ -2143,13 +2189,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketIntelligentTie
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_intelligent_tiering_configurations_error(
-                response,
-            )
+            crate::protocol_serde::shape_list_bucket_intelligent_tiering_configurations::de_list_bucket_intelligent_tiering_configurations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_intelligent_tiering_configurations_response(
-                response,
-            )
+            crate::protocol_serde::shape_list_bucket_intelligent_tiering_configurations::de_list_bucket_intelligent_tiering_configurations_http_response(response)
         }
     }
 }
@@ -2183,9 +2225,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketInventoryConfi
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_inventory_configurations_error(response)
+            crate::protocol_serde::shape_list_bucket_inventory_configurations::de_list_bucket_inventory_configurations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_inventory_configurations_response(response)
+            crate::protocol_serde::shape_list_bucket_inventory_configurations::de_list_bucket_inventory_configurations_http_response(response)
         }
     }
 }
@@ -2219,9 +2261,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigu
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_bucket_metrics_configurations_error(response)
+            crate::protocol_serde::shape_list_bucket_metrics_configurations::de_list_bucket_metrics_configurations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_bucket_metrics_configurations_response(response)
+            crate::protocol_serde::shape_list_bucket_metrics_configurations::de_list_bucket_metrics_configurations_http_response(response)
         }
     }
 }
@@ -2253,9 +2295,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuckets {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_buckets_error(response)
+            crate::protocol_serde::shape_list_buckets::de_list_buckets_http_error(response)
         } else {
-            crate::operation_deser::parse_list_buckets_response(response)
+            crate::protocol_serde::shape_list_buckets::de_list_buckets_http_response(response)
         }
     }
 }
@@ -2289,9 +2331,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultipartUploads {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_multipart_uploads_error(response)
+            crate::protocol_serde::shape_list_multipart_uploads::de_list_multipart_uploads_http_error(response)
         } else {
-            crate::operation_deser::parse_list_multipart_uploads_response(response)
+            crate::protocol_serde::shape_list_multipart_uploads::de_list_multipart_uploads_http_response(response)
         }
     }
 }
@@ -2323,9 +2365,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_objects_error(response)
+            crate::protocol_serde::shape_list_objects::de_list_objects_http_error(response)
         } else {
-            crate::operation_deser::parse_list_objects_response(response)
+            crate::protocol_serde::shape_list_objects::de_list_objects_http_response(response)
         }
     }
 }
@@ -2463,9 +2505,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectsV2 {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_objects_v2_error(response)
+            crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2_http_error(response)
         } else {
-            crate::operation_deser::parse_list_objects_v2_response(response)
+            crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2_http_response(response)
         }
     }
 }
@@ -2499,9 +2541,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectVersions {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_object_versions_error(response)
+            crate::protocol_serde::shape_list_object_versions::de_list_object_versions_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_object_versions_response(response)
+            crate::protocol_serde::shape_list_object_versions::de_list_object_versions_http_response(
+                response,
+            )
         }
     }
 }
@@ -2532,9 +2578,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListParts {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_parts_error(response)
+            crate::protocol_serde::shape_list_parts::de_list_parts_http_error(response)
         } else {
-            crate::operation_deser::parse_list_parts_response(response)
+            crate::protocol_serde::shape_list_parts::de_list_parts_http_response(response)
         }
     }
 }
@@ -2568,9 +2614,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfi
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_accelerate_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_accelerate_configuration::de_put_bucket_accelerate_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_accelerate_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_accelerate_configuration::de_put_bucket_accelerate_configuration_http_response(response)
         }
     }
 }
@@ -2602,9 +2648,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAcl {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_acl_error(response)
+            crate::protocol_serde::shape_put_bucket_acl::de_put_bucket_acl_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_acl_response(response)
+            crate::protocol_serde::shape_put_bucket_acl::de_put_bucket_acl_http_response(response)
         }
     }
 }
@@ -2638,9 +2684,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_analytics_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_analytics_configuration::de_put_bucket_analytics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_analytics_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_analytics_configuration::de_put_bucket_analytics_configuration_http_response(response)
         }
     }
 }
@@ -2672,9 +2718,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketCors {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_cors_error(response)
+            crate::protocol_serde::shape_put_bucket_cors::de_put_bucket_cors_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_cors_response(response)
+            crate::protocol_serde::shape_put_bucket_cors::de_put_bucket_cors_http_response(response)
         }
     }
 }
@@ -2708,9 +2754,11 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketEncryption {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_encryption_error(response)
+            crate::protocol_serde::shape_put_bucket_encryption::de_put_bucket_encryption_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_encryption_response(response)
+            crate::protocol_serde::shape_put_bucket_encryption::de_put_bucket_encryption_http_response(response)
         }
     }
 }
@@ -2744,13 +2792,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketIntelligentTier
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_intelligent_tiering_configuration_error(
-                response,
-            )
+            crate::protocol_serde::shape_put_bucket_intelligent_tiering_configuration::de_put_bucket_intelligent_tiering_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_intelligent_tiering_configuration_response(
-                response,
-            )
+            crate::protocol_serde::shape_put_bucket_intelligent_tiering_configuration::de_put_bucket_intelligent_tiering_configuration_http_response(response)
         }
     }
 }
@@ -2784,9 +2828,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketInventoryConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_inventory_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_inventory_configuration::de_put_bucket_inventory_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_inventory_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_inventory_configuration::de_put_bucket_inventory_configuration_http_response(response)
         }
     }
 }
@@ -2820,9 +2864,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_lifecycle_configuration::de_put_bucket_lifecycle_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_lifecycle_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_lifecycle_configuration::de_put_bucket_lifecycle_configuration_http_response(response)
         }
     }
 }
@@ -2902,9 +2946,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLogging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_logging_error(response)
+            crate::protocol_serde::shape_put_bucket_logging::de_put_bucket_logging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_logging_response(response)
+            crate::protocol_serde::shape_put_bucket_logging::de_put_bucket_logging_http_response(
+                response,
+            )
         }
     }
 }
@@ -2938,9 +2986,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketMetricsConfigur
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_metrics_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_metrics_configuration::de_put_bucket_metrics_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_metrics_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_metrics_configuration::de_put_bucket_metrics_configuration_http_response(response)
         }
     }
 }
@@ -2974,9 +3022,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketNotificationCon
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_notification_configuration_error(response)
+            crate::protocol_serde::shape_put_bucket_notification_configuration::de_put_bucket_notification_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_notification_configuration_response(response)
+            crate::protocol_serde::shape_put_bucket_notification_configuration::de_put_bucket_notification_configuration_http_response(response)
         }
     }
 }
@@ -3010,9 +3058,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketOwnershipContro
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_ownership_controls_error(response)
+            crate::protocol_serde::shape_put_bucket_ownership_controls::de_put_bucket_ownership_controls_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_ownership_controls_response(response)
+            crate::protocol_serde::shape_put_bucket_ownership_controls::de_put_bucket_ownership_controls_http_response(response)
         }
     }
 }
@@ -3046,9 +3094,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_policy_error(response)
+            crate::protocol_serde::shape_put_bucket_policy::de_put_bucket_policy_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_policy_response(response)
+            crate::protocol_serde::shape_put_bucket_policy::de_put_bucket_policy_http_response(
+                response,
+            )
         }
     }
 }
@@ -3082,9 +3134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketReplication {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_replication_error(response)
+            crate::protocol_serde::shape_put_bucket_replication::de_put_bucket_replication_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_replication_response(response)
+            crate::protocol_serde::shape_put_bucket_replication::de_put_bucket_replication_http_response(response)
         }
     }
 }
@@ -3118,9 +3170,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketRequestPayment 
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_request_payment_error(response)
+            crate::protocol_serde::shape_put_bucket_request_payment::de_put_bucket_request_payment_http_error(response)
         } else {
-            crate::operation_deser::parse_put_bucket_request_payment_response(response)
+            crate::protocol_serde::shape_put_bucket_request_payment::de_put_bucket_request_payment_http_response(response)
         }
     }
 }
@@ -3154,9 +3206,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_tagging_error(response)
+            crate::protocol_serde::shape_put_bucket_tagging::de_put_bucket_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_tagging_response(response)
+            crate::protocol_serde::shape_put_bucket_tagging::de_put_bucket_tagging_http_response(
+                response,
+            )
         }
     }
 }
@@ -3190,9 +3246,11 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_versioning_error(response)
+            crate::protocol_serde::shape_put_bucket_versioning::de_put_bucket_versioning_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_versioning_response(response)
+            crate::protocol_serde::shape_put_bucket_versioning::de_put_bucket_versioning_http_response(response)
         }
     }
 }
@@ -3226,9 +3284,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketWebsite {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_bucket_website_error(response)
+            crate::protocol_serde::shape_put_bucket_website::de_put_bucket_website_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_bucket_website_response(response)
+            crate::protocol_serde::shape_put_bucket_website::de_put_bucket_website_http_response(
+                response,
+            )
         }
     }
 }
@@ -3259,9 +3321,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObject {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_error(response)
+            crate::protocol_serde::shape_put_object::de_put_object_http_error(response)
         } else {
-            crate::operation_deser::parse_put_object_response(response)
+            crate::protocol_serde::shape_put_object::de_put_object_http_response(response)
         }
     }
 }
@@ -3354,9 +3416,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectAcl {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_acl_error(response)
+            crate::protocol_serde::shape_put_object_acl::de_put_object_acl_http_error(response)
         } else {
-            crate::operation_deser::parse_put_object_acl_response(response)
+            crate::protocol_serde::shape_put_object_acl::de_put_object_acl_http_response(response)
         }
     }
 }
@@ -3390,9 +3452,11 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_legal_hold_error(response)
+            crate::protocol_serde::shape_put_object_legal_hold::de_put_object_legal_hold_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_object_legal_hold_response(response)
+            crate::protocol_serde::shape_put_object_legal_hold::de_put_object_legal_hold_http_response(response)
         }
     }
 }
@@ -3426,9 +3490,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLockConfigurati
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_lock_configuration_error(response)
+            crate::protocol_serde::shape_put_object_lock_configuration::de_put_object_lock_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_put_object_lock_configuration_response(response)
+            crate::protocol_serde::shape_put_object_lock_configuration::de_put_object_lock_configuration_http_response(response)
         }
     }
 }
@@ -3462,9 +3526,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectRetention {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_retention_error(response)
+            crate::protocol_serde::shape_put_object_retention::de_put_object_retention_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_object_retention_response(response)
+            crate::protocol_serde::shape_put_object_retention::de_put_object_retention_http_response(
+                response,
+            )
         }
     }
 }
@@ -3498,9 +3566,13 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectTagging {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_object_tagging_error(response)
+            crate::protocol_serde::shape_put_object_tagging::de_put_object_tagging_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_put_object_tagging_response(response)
+            crate::protocol_serde::shape_put_object_tagging::de_put_object_tagging_http_response(
+                response,
+            )
         }
     }
 }
@@ -3534,9 +3606,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_public_access_block_error(response)
+            crate::protocol_serde::shape_put_public_access_block::de_put_public_access_block_http_error(response)
         } else {
-            crate::operation_deser::parse_put_public_access_block_response(response)
+            crate::protocol_serde::shape_put_public_access_block::de_put_public_access_block_http_response(response)
         }
     }
 }
@@ -3568,9 +3640,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreObject {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_restore_object_error(response)
+            crate::protocol_serde::shape_restore_object::de_restore_object_http_error(response)
         } else {
-            crate::operation_deser::parse_restore_object_response(response)
+            crate::protocol_serde::shape_restore_object::de_restore_object_http_response(response)
         }
     }
 }
@@ -3608,13 +3680,13 @@ impl aws_smithy_http::response::ParseHttpResponse for SelectObjectContent {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_select_object_content(
-            response,
-        ))
+        Some(crate::protocol_serde::shape_select_object_content::de_select_object_content_http_response(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_select_object_content_error(response)
+        crate::protocol_serde::shape_select_object_content::de_select_object_content_http_error(
+            response,
+        )
     }
 }
 
@@ -3645,9 +3717,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPart {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_part_error(response)
+            crate::protocol_serde::shape_upload_part::de_upload_part_http_error(response)
         } else {
-            crate::operation_deser::parse_upload_part_response(response)
+            crate::protocol_serde::shape_upload_part::de_upload_part_http_response(response)
         }
     }
 }
@@ -3679,9 +3751,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPartCopy {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_part_copy_error(response)
+            crate::protocol_serde::shape_upload_part_copy::de_upload_part_copy_http_error(response)
         } else {
-            crate::operation_deser::parse_upload_part_copy_response(response)
+            crate::protocol_serde::shape_upload_part_copy::de_upload_part_copy_http_response(
+                response,
+            )
         }
     }
 }
@@ -3715,9 +3789,9 @@ impl aws_smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
         tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_write_get_object_response_error(response)
+            crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_error(response)
         } else {
-            crate::operation_deser::parse_write_get_object_response_response(response)
+            crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_response(response)
         }
     }
 }

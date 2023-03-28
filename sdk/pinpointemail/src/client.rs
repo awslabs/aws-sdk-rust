@@ -89,577 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::client::fluent_builders::CreateConfigurationSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSet::set_configuration_set_name): <p>The name of the configuration set.</p>
-    ///   - [`tracking_options(TrackingOptions)`](crate::client::fluent_builders::CreateConfigurationSet::tracking_options) / [`set_tracking_options(Option<TrackingOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    ///   - [`delivery_options(DeliveryOptions)`](crate::client::fluent_builders::CreateConfigurationSet::delivery_options) / [`set_delivery_options(Option<DeliveryOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_delivery_options): <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    ///   - [`reputation_options(ReputationOptions)`](crate::client::fluent_builders::CreateConfigurationSet::reputation_options) / [`set_reputation_options(Option<ReputationOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_reputation_options): <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    ///   - [`sending_options(SendingOptions)`](crate::client::fluent_builders::CreateConfigurationSet::sending_options) / [`set_sending_options(Option<SendingOptions>)`](crate::client::fluent_builders::CreateConfigurationSet::set_sending_options): <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateConfigurationSet::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateConfigurationSet::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the configuration set.</p>
-    /// - On success, responds with [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput)
-
-    /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::error::CreateConfigurationSetError)
-    pub fn create_configuration_set(
-        &self,
-    ) -> crate::client::fluent_builders::CreateConfigurationSet {
-        crate::client::fluent_builders::CreateConfigurationSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateConfigurationSetEventDestination`](crate::client::fluent_builders::CreateConfigurationSetEventDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set that you want to add an event destination to.</p>
-    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination_name): <p>A name that identifies the event destination within the configuration set.</p>
-    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::CreateConfigurationSetEventDestination::set_event_destination): <p>An object that defines the event destination.</p>
-    /// - On success, responds with [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput)
-
-    /// - On failure, responds with [`SdkError<CreateConfigurationSetEventDestinationError>`](crate::error::CreateConfigurationSetEventDestinationError)
-    pub fn create_configuration_set_event_destination(
-        &self,
-    ) -> crate::client::fluent_builders::CreateConfigurationSetEventDestination {
-        crate::client::fluent_builders::CreateConfigurationSetEventDestination::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateDedicatedIpPool`](crate::client::fluent_builders::CreateDedicatedIpPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDedicatedIpPool::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDedicatedIpPool::set_tags): <p>An object that defines the tags (keys and values) that you want to associate with the pool.</p>
-    /// - On success, responds with [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput)
-
-    /// - On failure, responds with [`SdkError<CreateDedicatedIpPoolError>`](crate::error::CreateDedicatedIpPoolError)
-    pub fn create_dedicated_ip_pool(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDedicatedIpPool {
-        crate::client::fluent_builders::CreateDedicatedIpPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateDeliverabilityTestReport`](crate::client::fluent_builders::CreateDeliverabilityTestReport) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_name(impl Into<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::report_name) / [`set_report_name(Option<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_report_name): <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_from_email_address): <p>The email address that the predictive inbox placement test email was sent from.</p>
-    ///   - [`content(EmailContent)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::content) / [`set_content(Option<EmailContent>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_content): <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateDeliverabilityTestReport::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    /// - On success, responds with [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput) with field(s):
-    ///   - [`report_id(Option<String>)`](crate::output::CreateDeliverabilityTestReportOutput::report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
-    ///   - [`deliverability_test_status(Option<DeliverabilityTestStatus>)`](crate::output::CreateDeliverabilityTestReportOutput::deliverability_test_status): <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    /// - On failure, responds with [`SdkError<CreateDeliverabilityTestReportError>`](crate::error::CreateDeliverabilityTestReportError)
-    pub fn create_deliverability_test_report(
-        &self,
-    ) -> crate::client::fluent_builders::CreateDeliverabilityTestReport {
-        crate::client::fluent_builders::CreateDeliverabilityTestReport::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateEmailIdentity`](crate::client::fluent_builders::CreateEmailIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::CreateEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::CreateEmailIdentity::set_email_identity): <p>The email address or domain that you want to verify.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateEmailIdentity::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateEmailIdentity::set_tags): <p>An array of objects that define the tags (keys and values) that you want to associate with the email identity.</p>
-    /// - On success, responds with [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput) with field(s):
-    ///   - [`identity_type(Option<IdentityType>)`](crate::output::CreateEmailIdentityOutput::identity_type): <p>The email identity type.</p>
-    ///   - [`verified_for_sending_status(bool)`](crate::output::CreateEmailIdentityOutput::verified_for_sending_status): <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    ///   - [`dkim_attributes(Option<DkimAttributes>)`](crate::output::CreateEmailIdentityOutput::dkim_attributes): <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
-    /// - On failure, responds with [`SdkError<CreateEmailIdentityError>`](crate::error::CreateEmailIdentityError)
-    pub fn create_email_identity(&self) -> crate::client::fluent_builders::CreateEmailIdentity {
-        crate::client::fluent_builders::CreateEmailIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConfigurationSet`](crate::client::fluent_builders::DeleteConfigurationSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSet::set_configuration_set_name): <p>The name of the configuration set that you want to delete.</p>
-    /// - On success, responds with [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConfigurationSetError>`](crate::error::DeleteConfigurationSetError)
-    pub fn delete_configuration_set(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteConfigurationSet {
-        crate::client::fluent_builders::DeleteConfigurationSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteConfigurationSetEventDestination`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set that contains the event destination that you want to delete.</p>
-    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::DeleteConfigurationSetEventDestination::set_event_destination_name): <p>The name of the event destination that you want to delete.</p>
-    /// - On success, responds with [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteConfigurationSetEventDestinationError>`](crate::error::DeleteConfigurationSetEventDestinationError)
-    pub fn delete_configuration_set_event_destination(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteConfigurationSetEventDestination {
-        crate::client::fluent_builders::DeleteConfigurationSetEventDestination::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DeleteDedicatedIpPool`](crate::client::fluent_builders::DeleteDedicatedIpPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::DeleteDedicatedIpPool::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::DeleteDedicatedIpPool::set_pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
-    /// - On success, responds with [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteDedicatedIpPoolError>`](crate::error::DeleteDedicatedIpPoolError)
-    pub fn delete_dedicated_ip_pool(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteDedicatedIpPool {
-        crate::client::fluent_builders::DeleteDedicatedIpPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteEmailIdentity`](crate::client::fluent_builders::DeleteEmailIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::DeleteEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::DeleteEmailIdentity::set_email_identity): <p>The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.</p>
-    /// - On success, responds with [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteEmailIdentityError>`](crate::error::DeleteEmailIdentityError)
-    pub fn delete_email_identity(&self) -> crate::client::fluent_builders::DeleteEmailIdentity {
-        crate::client::fluent_builders::DeleteEmailIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccount`](crate::client::fluent_builders::GetAccount) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetAccount::send) it.
-
-    /// - On success, responds with [`GetAccountOutput`](crate::output::GetAccountOutput) with field(s):
-    ///   - [`send_quota(Option<SendQuota>)`](crate::output::GetAccountOutput::send_quota): <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
-    ///   - [`sending_enabled(bool)`](crate::output::GetAccountOutput::sending_enabled): <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
-    ///   - [`dedicated_ip_auto_warmup_enabled(bool)`](crate::output::GetAccountOutput::dedicated_ip_auto_warmup_enabled): <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
-    ///   - [`enforcement_status(Option<String>)`](crate::output::GetAccountOutput::enforcement_status): <p>The reputation status of your Amazon Pinpoint account. The status can be one of the following:</p>  <ul>   <li> <p> <code>HEALTHY</code> – There are no reputation-related issues that currently impact your account.</p> </li>   <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>   <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>  </ul>
-    ///   - [`production_access_enabled(bool)`](crate::output::GetAccountOutput::production_access_enabled): <p>Indicates whether or not your account has production access in the current AWS Region.</p>  <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>  <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    /// - On failure, responds with [`SdkError<GetAccountError>`](crate::error::GetAccountError)
-    pub fn get_account(&self) -> crate::client::fluent_builders::GetAccount {
-        crate::client::fluent_builders::GetAccount::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetBlacklistReports`](crate::client::fluent_builders::GetBlacklistReports) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`blacklist_item_names(Vec<String>)`](crate::client::fluent_builders::GetBlacklistReports::blacklist_item_names) / [`set_blacklist_item_names(Option<Vec<String>>)`](crate::client::fluent_builders::GetBlacklistReports::set_blacklist_item_names): <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.</p>
-    /// - On success, responds with [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput) with field(s):
-    ///   - [`blacklist_report(Option<HashMap<String, Vec<BlacklistEntry>>>)`](crate::output::GetBlacklistReportsOutput::blacklist_report): <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
-    /// - On failure, responds with [`SdkError<GetBlacklistReportsError>`](crate::error::GetBlacklistReportsError)
-    pub fn get_blacklist_reports(&self) -> crate::client::fluent_builders::GetBlacklistReports {
-        crate::client::fluent_builders::GetBlacklistReports::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConfigurationSet`](crate::client::fluent_builders::GetConfigurationSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationSet::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::GetConfigurationSet::set_configuration_set_name): <p>The name of the configuration set that you want to obtain more information about.</p>
-    /// - On success, responds with [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput) with field(s):
-    ///   - [`configuration_set_name(Option<String>)`](crate::output::GetConfigurationSetOutput::configuration_set_name): <p>The name of the configuration set.</p>
-    ///   - [`tracking_options(Option<TrackingOptions>)`](crate::output::GetConfigurationSetOutput::tracking_options): <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    ///   - [`delivery_options(Option<DeliveryOptions>)`](crate::output::GetConfigurationSetOutput::delivery_options): <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    ///   - [`reputation_options(Option<ReputationOptions>)`](crate::output::GetConfigurationSetOutput::reputation_options): <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    ///   - [`sending_options(Option<SendingOptions>)`](crate::output::GetConfigurationSetOutput::sending_options): <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetConfigurationSetOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    /// - On failure, responds with [`SdkError<GetConfigurationSetError>`](crate::error::GetConfigurationSetError)
-    pub fn get_configuration_set(&self) -> crate::client::fluent_builders::GetConfigurationSet {
-        crate::client::fluent_builders::GetConfigurationSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetConfigurationSetEventDestinations`](crate::client::fluent_builders::GetConfigurationSetEventDestinations) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::GetConfigurationSetEventDestinations::set_configuration_set_name): <p>The name of the configuration set that contains the event destination.</p>
-    /// - On success, responds with [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput) with field(s):
-    ///   - [`event_destinations(Option<Vec<EventDestination>>)`](crate::output::GetConfigurationSetEventDestinationsOutput::event_destinations): <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
-    /// - On failure, responds with [`SdkError<GetConfigurationSetEventDestinationsError>`](crate::error::GetConfigurationSetEventDestinationsError)
-    pub fn get_configuration_set_event_destinations(
-        &self,
-    ) -> crate::client::fluent_builders::GetConfigurationSetEventDestinations {
-        crate::client::fluent_builders::GetConfigurationSetEventDestinations::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`GetDedicatedIp`](crate::client::fluent_builders::GetDedicatedIp) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIp::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::GetDedicatedIp::set_ip): <p>The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Pinpoint account.</p>
-    /// - On success, responds with [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput) with field(s):
-    ///   - [`dedicated_ip(Option<DedicatedIp>)`](crate::output::GetDedicatedIpOutput::dedicated_ip): <p>An object that contains information about a dedicated IP address.</p>
-    /// - On failure, responds with [`SdkError<GetDedicatedIpError>`](crate::error::GetDedicatedIpError)
-    pub fn get_dedicated_ip(&self) -> crate::client::fluent_builders::GetDedicatedIp {
-        crate::client::fluent_builders::GetDedicatedIp::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDedicatedIps`](crate::client::fluent_builders::GetDedicatedIps) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDedicatedIps::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIps::pool_name) / [`set_pool_name(Option<String>)`](crate::client::fluent_builders::GetDedicatedIps::set_pool_name): <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDedicatedIps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDedicatedIps::set_next_token): <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the position of the dedicated IP pool in the list of IP pools.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::GetDedicatedIps::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::GetDedicatedIps::set_page_size): <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput) with field(s):
-    ///   - [`dedicated_ips(Option<Vec<DedicatedIp>>)`](crate::output::GetDedicatedIpsOutput::dedicated_ips): <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetDedicatedIpsOutput::next_token): <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<GetDedicatedIpsError>`](crate::error::GetDedicatedIpsError)
-    pub fn get_dedicated_ips(&self) -> crate::client::fluent_builders::GetDedicatedIps {
-        crate::client::fluent_builders::GetDedicatedIps::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeliverabilityDashboardOptions`](crate::client::fluent_builders::GetDeliverabilityDashboardOptions) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetDeliverabilityDashboardOptions::send) it.
-
-    /// - On success, responds with [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput) with field(s):
-    ///   - [`dashboard_enabled(bool)`](crate::output::GetDeliverabilityDashboardOptionsOutput::dashboard_enabled): <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
-    ///   - [`subscription_expiry_date(Option<DateTime>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::subscription_expiry_date): <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard is scheduled to expire, if your subscription is scheduled to expire at the end of the current calendar month. This value is null if you have an active subscription that isn’t due to expire at the end of the month.</p>
-    ///   - [`account_status(Option<DeliverabilityDashboardAccountStatus>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::account_status): <p>The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.</p>
-    ///   - [`active_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::active_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at the end of the current calendar month.</p>
-    ///   - [`pending_expiration_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::output::GetDeliverabilityDashboardOptionsOutput::pending_expiration_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and currently has an active Deliverability dashboard subscription that's scheduled to expire at the end of the current calendar month.</p>
-    /// - On failure, responds with [`SdkError<GetDeliverabilityDashboardOptionsError>`](crate::error::GetDeliverabilityDashboardOptionsError)
-    pub fn get_deliverability_dashboard_options(
-        &self,
-    ) -> crate::client::fluent_builders::GetDeliverabilityDashboardOptions {
-        crate::client::fluent_builders::GetDeliverabilityDashboardOptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDeliverabilityTestReport`](crate::client::fluent_builders::GetDeliverabilityTestReport) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::client::fluent_builders::GetDeliverabilityTestReport::report_id) / [`set_report_id(Option<String>)`](crate::client::fluent_builders::GetDeliverabilityTestReport::set_report_id): <p>A unique string that identifies the predictive inbox placement test.</p>
-    /// - On success, responds with [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput) with field(s):
-    ///   - [`deliverability_test_report(Option<DeliverabilityTestReport>)`](crate::output::GetDeliverabilityTestReportOutput::deliverability_test_report): <p>An object that contains the results of the predictive inbox placement test.</p>
-    ///   - [`overall_placement(Option<PlacementStatistics>)`](crate::output::GetDeliverabilityTestReportOutput::overall_placement): <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
-    ///   - [`isp_placements(Option<Vec<IspPlacement>>)`](crate::output::GetDeliverabilityTestReportOutput::isp_placements): <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    ///   - [`message(Option<String>)`](crate::output::GetDeliverabilityTestReportOutput::message): <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetDeliverabilityTestReportOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-    /// - On failure, responds with [`SdkError<GetDeliverabilityTestReportError>`](crate::error::GetDeliverabilityTestReportError)
-    pub fn get_deliverability_test_report(
-        &self,
-    ) -> crate::client::fluent_builders::GetDeliverabilityTestReport {
-        crate::client::fluent_builders::GetDeliverabilityTestReport::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDomainDeliverabilityCampaign`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`campaign_id(impl Into<String>)`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign::campaign_id) / [`set_campaign_id(Option<String>)`](crate::client::fluent_builders::GetDomainDeliverabilityCampaign::set_campaign_id): <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
-    /// - On success, responds with [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput) with field(s):
-    ///   - [`domain_deliverability_campaign(Option<DomainDeliverabilityCampaign>)`](crate::output::GetDomainDeliverabilityCampaignOutput::domain_deliverability_campaign): <p>An object that contains the deliverability data for the campaign.</p>
-    /// - On failure, responds with [`SdkError<GetDomainDeliverabilityCampaignError>`](crate::error::GetDomainDeliverabilityCampaignError)
-    pub fn get_domain_deliverability_campaign(
-        &self,
-    ) -> crate::client::fluent_builders::GetDomainDeliverabilityCampaign {
-        crate::client::fluent_builders::GetDomainDeliverabilityCampaign::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDomainStatisticsReport`](crate::client::fluent_builders::GetDomainStatisticsReport) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::client::fluent_builders::GetDomainStatisticsReport::domain) / [`set_domain(Option<String>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_domain): <p>The domain that you want to obtain deliverability metrics for.</p>
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::GetDomainStatisticsReport::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_start_date): <p>The first day (in Unix time) that you want to obtain domain deliverability metrics for.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::GetDomainStatisticsReport::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::GetDomainStatisticsReport::set_end_date): <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for. The <code>EndDate</code> that you specify has to be less than or equal to 30 days after the <code>StartDate</code>.</p>
-    /// - On success, responds with [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput) with field(s):
-    ///   - [`overall_volume(Option<OverallVolume>)`](crate::output::GetDomainStatisticsReportOutput::overall_volume): <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-    ///   - [`daily_volumes(Option<Vec<DailyVolume>>)`](crate::output::GetDomainStatisticsReportOutput::daily_volumes): <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    /// - On failure, responds with [`SdkError<GetDomainStatisticsReportError>`](crate::error::GetDomainStatisticsReportError)
-    pub fn get_domain_statistics_report(
-        &self,
-    ) -> crate::client::fluent_builders::GetDomainStatisticsReport {
-        crate::client::fluent_builders::GetDomainStatisticsReport::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetEmailIdentity`](crate::client::fluent_builders::GetEmailIdentity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::GetEmailIdentity::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::GetEmailIdentity::set_email_identity): <p>The email identity that you want to retrieve details for.</p>
-    /// - On success, responds with [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput) with field(s):
-    ///   - [`identity_type(Option<IdentityType>)`](crate::output::GetEmailIdentityOutput::identity_type): <p>The email identity type.</p>
-    ///   - [`feedback_forwarding_status(bool)`](crate::output::GetEmailIdentityOutput::feedback_forwarding_status): <p>The feedback forwarding configuration for the identity.</p>  <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>  <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    ///   - [`verified_for_sending_status(bool)`](crate::output::GetEmailIdentityOutput::verified_for_sending_status): <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    ///   - [`dkim_attributes(Option<DkimAttributes>)`](crate::output::GetEmailIdentityOutput::dkim_attributes): <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
-    ///   - [`mail_from_attributes(Option<MailFromAttributes>)`](crate::output::GetEmailIdentityOutput::mail_from_attributes): <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::GetEmailIdentityOutput::tags): <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    /// - On failure, responds with [`SdkError<GetEmailIdentityError>`](crate::error::GetEmailIdentityError)
-    pub fn get_email_identity(&self) -> crate::client::fluent_builders::GetEmailIdentity {
-        crate::client::fluent_builders::GetEmailIdentity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListConfigurationSets`](crate::client::fluent_builders::ListConfigurationSets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListConfigurationSets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListConfigurationSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListConfigurationSets::set_next_token): <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListConfigurationSets::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListConfigurationSets::set_page_size): <p>The number of results to show in a single call to <code>ListConfigurationSets</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput) with field(s):
-    ///   - [`configuration_sets(Option<Vec<String>>)`](crate::output::ListConfigurationSetsOutput::configuration_sets): <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListConfigurationSetsOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListConfigurationSetsError>`](crate::error::ListConfigurationSetsError)
-    pub fn list_configuration_sets(&self) -> crate::client::fluent_builders::ListConfigurationSets {
-        crate::client::fluent_builders::ListConfigurationSets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDedicatedIpPools`](crate::client::fluent_builders::ListDedicatedIpPools) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDedicatedIpPools::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDedicatedIpPools::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDedicatedIpPools::set_next_token): <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDedicatedIpPools::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDedicatedIpPools::set_page_size): <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput) with field(s):
-    ///   - [`dedicated_ip_pools(Option<Vec<String>>)`](crate::output::ListDedicatedIpPoolsOutput::dedicated_ip_pools): <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDedicatedIpPoolsOutput::next_token): <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListDedicatedIpPoolsError>`](crate::error::ListDedicatedIpPoolsError)
-    pub fn list_dedicated_ip_pools(&self) -> crate::client::fluent_builders::ListDedicatedIpPools {
-        crate::client::fluent_builders::ListDedicatedIpPools::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDeliverabilityTestReports`](crate::client::fluent_builders::ListDeliverabilityTestReports) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDeliverabilityTestReports::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::set_next_token): <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to indicate the position in the list of predictive inbox placement tests.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDeliverabilityTestReports::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDeliverabilityTestReports::set_page_size): <p>The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-    /// - On success, responds with [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput) with field(s):
-    ///   - [`deliverability_test_reports(Option<Vec<DeliverabilityTestReport>>)`](crate::output::ListDeliverabilityTestReportsOutput::deliverability_test_reports): <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDeliverabilityTestReportsOutput::next_token): <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListDeliverabilityTestReportsError>`](crate::error::ListDeliverabilityTestReportsError)
-    pub fn list_deliverability_test_reports(
-        &self,
-    ) -> crate::client::fluent_builders::ListDeliverabilityTestReports {
-        crate::client::fluent_builders::ListDeliverabilityTestReports::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDomainDeliverabilityCampaigns`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`start_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::start_date) / [`set_start_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_start_date): <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    ///   - [`end_date(DateTime)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::end_date) / [`set_end_date(Option<DateTime>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_end_date): <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    ///   - [`subscribed_domain(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::subscribed_domain) / [`set_subscribed_domain(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_subscribed_domain): <p>The domain to obtain deliverability data for.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::set_page_size): <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    /// - On success, responds with [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput) with field(s):
-    ///   - [`domain_deliverability_campaigns(Option<Vec<DomainDeliverabilityCampaign>>)`](crate::output::ListDomainDeliverabilityCampaignsOutput::domain_deliverability_campaigns): <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDomainDeliverabilityCampaignsOutput::next_token): <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
-    /// - On failure, responds with [`SdkError<ListDomainDeliverabilityCampaignsError>`](crate::error::ListDomainDeliverabilityCampaignsError)
-    pub fn list_domain_deliverability_campaigns(
-        &self,
-    ) -> crate::client::fluent_builders::ListDomainDeliverabilityCampaigns {
-        crate::client::fluent_builders::ListDomainDeliverabilityCampaigns::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListEmailIdentities`](crate::client::fluent_builders::ListEmailIdentities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListEmailIdentities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListEmailIdentities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListEmailIdentities::set_next_token): <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
-    ///   - [`page_size(i32)`](crate::client::fluent_builders::ListEmailIdentities::page_size) / [`set_page_size(Option<i32>)`](crate::client::fluent_builders::ListEmailIdentities::set_page_size): <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>  <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-    /// - On success, responds with [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput) with field(s):
-    ///   - [`email_identities(Option<Vec<IdentityInfo>>)`](crate::output::ListEmailIdentitiesOutput::email_identities): <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListEmailIdentitiesOutput::next_token): <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    /// - On failure, responds with [`SdkError<ListEmailIdentitiesError>`](crate::error::ListEmailIdentitiesError)
-    pub fn list_email_identities(&self) -> crate::client::fluent_builders::ListEmailIdentities {
-        crate::client::fluent_builders::ListEmailIdentities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutAccountDedicatedIpWarmupAttributes`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_warmup_enabled(bool)`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes::auto_warmup_enabled) / [`set_auto_warmup_enabled(bool)`](crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes::set_auto_warmup_enabled): <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon Pinpoint account in the current AWS Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
-    /// - On success, responds with [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutAccountDedicatedIpWarmupAttributesError>`](crate::error::PutAccountDedicatedIpWarmupAttributesError)
-    pub fn put_account_dedicated_ip_warmup_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes {
-        crate::client::fluent_builders::PutAccountDedicatedIpWarmupAttributes::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutAccountSendingAttributes`](crate::client::fluent_builders::PutAccountSendingAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sending_enabled(bool)`](crate::client::fluent_builders::PutAccountSendingAttributes::sending_enabled) / [`set_sending_enabled(bool)`](crate::client::fluent_builders::PutAccountSendingAttributes::set_sending_enabled): <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>   <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>  </note>
-    /// - On success, responds with [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutAccountSendingAttributesError>`](crate::error::PutAccountSendingAttributesError)
-    pub fn put_account_sending_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutAccountSendingAttributes {
-        crate::client::fluent_builders::PutAccountSendingAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutConfigurationSetDeliveryOptions`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_configuration_set_name): <p>The name of the configuration set that you want to associate with a dedicated IP pool.</p>
-    ///   - [`tls_policy(TlsPolicy)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::tls_policy) / [`set_tls_policy(Option<TlsPolicy>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_tls_policy): <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    ///   - [`sending_pool_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::sending_pool_name) / [`set_sending_pool_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::set_sending_pool_name): <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-    /// - On success, responds with [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput)
-
-    /// - On failure, responds with [`SdkError<PutConfigurationSetDeliveryOptionsError>`](crate::error::PutConfigurationSetDeliveryOptionsError)
-    pub fn put_configuration_set_delivery_options(
-        &self,
-    ) -> crate::client::fluent_builders::PutConfigurationSetDeliveryOptions {
-        crate::client::fluent_builders::PutConfigurationSetDeliveryOptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutConfigurationSetReputationOptions`](crate::client::fluent_builders::PutConfigurationSetReputationOptions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::set_configuration_set_name): <p>The name of the configuration set that you want to enable or disable reputation metric tracking for.</p>
-    ///   - [`reputation_metrics_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::reputation_metrics_enabled) / [`set_reputation_metrics_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetReputationOptions::set_reputation_metrics_enabled): <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
-    /// - On success, responds with [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput)
-
-    /// - On failure, responds with [`SdkError<PutConfigurationSetReputationOptionsError>`](crate::error::PutConfigurationSetReputationOptionsError)
-    pub fn put_configuration_set_reputation_options(
-        &self,
-    ) -> crate::client::fluent_builders::PutConfigurationSetReputationOptions {
-        crate::client::fluent_builders::PutConfigurationSetReputationOptions::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`PutConfigurationSetSendingOptions`](crate::client::fluent_builders::PutConfigurationSetSendingOptions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::set_configuration_set_name): <p>The name of the configuration set that you want to enable or disable email sending for.</p>
-    ///   - [`sending_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::sending_enabled) / [`set_sending_enabled(bool)`](crate::client::fluent_builders::PutConfigurationSetSendingOptions::set_sending_enabled): <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
-    /// - On success, responds with [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput)
-
-    /// - On failure, responds with [`SdkError<PutConfigurationSetSendingOptionsError>`](crate::error::PutConfigurationSetSendingOptionsError)
-    pub fn put_configuration_set_sending_options(
-        &self,
-    ) -> crate::client::fluent_builders::PutConfigurationSetSendingOptions {
-        crate::client::fluent_builders::PutConfigurationSetSendingOptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutConfigurationSetTrackingOptions`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::set_configuration_set_name): <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    ///   - [`custom_redirect_domain(impl Into<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::custom_redirect_domain) / [`set_custom_redirect_domain(Option<String>)`](crate::client::fluent_builders::PutConfigurationSetTrackingOptions::set_custom_redirect_domain): <p>The domain that you want to use to track open and click events.</p>
-    /// - On success, responds with [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput)
-
-    /// - On failure, responds with [`SdkError<PutConfigurationSetTrackingOptionsError>`](crate::error::PutConfigurationSetTrackingOptionsError)
-    pub fn put_configuration_set_tracking_options(
-        &self,
-    ) -> crate::client::fluent_builders::PutConfigurationSetTrackingOptions {
-        crate::client::fluent_builders::PutConfigurationSetTrackingOptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutDedicatedIpInPool`](crate::client::fluent_builders::PutDedicatedIpInPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::set_ip): <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Pinpoint account.</p>
-    ///   - [`destination_pool_name(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::destination_pool_name) / [`set_destination_pool_name(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpInPool::set_destination_pool_name): <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    /// - On success, responds with [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput)
-
-    /// - On failure, responds with [`SdkError<PutDedicatedIpInPoolError>`](crate::error::PutDedicatedIpInPoolError)
-    pub fn put_dedicated_ip_in_pool(&self) -> crate::client::fluent_builders::PutDedicatedIpInPool {
-        crate::client::fluent_builders::PutDedicatedIpInPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutDedicatedIpWarmupAttributes`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`ip(impl Into<String>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::ip) / [`set_ip(Option<String>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::set_ip): <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-    ///   - [`warmup_percentage(i32)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::warmup_percentage) / [`set_warmup_percentage(Option<i32>)`](crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::set_warmup_percentage): <p>The warm-up percentage that you want to associate with the dedicated IP address.</p>
-    /// - On success, responds with [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutDedicatedIpWarmupAttributesError>`](crate::error::PutDedicatedIpWarmupAttributesError)
-    pub fn put_dedicated_ip_warmup_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutDedicatedIpWarmupAttributes {
-        crate::client::fluent_builders::PutDedicatedIpWarmupAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutDeliverabilityDashboardOption`](crate::client::fluent_builders::PutDeliverabilityDashboardOption) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`dashboard_enabled(bool)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::dashboard_enabled) / [`set_dashboard_enabled(bool)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::set_dashboard_enabled): <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
-    ///   - [`subscribed_domains(Vec<DomainDeliverabilityTrackingOption>)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::subscribed_domains) / [`set_subscribed_domains(Option<Vec<DomainDeliverabilityTrackingOption>>)`](crate::client::fluent_builders::PutDeliverabilityDashboardOption::set_subscribed_domains): <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
-    /// - On success, responds with [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput)
-
-    /// - On failure, responds with [`SdkError<PutDeliverabilityDashboardOptionError>`](crate::error::PutDeliverabilityDashboardOptionError)
-    pub fn put_deliverability_dashboard_option(
-        &self,
-    ) -> crate::client::fluent_builders::PutDeliverabilityDashboardOption {
-        crate::client::fluent_builders::PutDeliverabilityDashboardOption::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutEmailIdentityDkimAttributes`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::set_email_identity): <p>The email identity that you want to change the DKIM settings for.</p>
-    ///   - [`signing_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::signing_enabled) / [`set_signing_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityDkimAttributes::set_signing_enabled): <p>Sets the DKIM signing configuration for the identity.</p>  <p>When you set this value <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
-    /// - On success, responds with [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutEmailIdentityDkimAttributesError>`](crate::error::PutEmailIdentityDkimAttributesError)
-    pub fn put_email_identity_dkim_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutEmailIdentityDkimAttributes {
-        crate::client::fluent_builders::PutEmailIdentityDkimAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutEmailIdentityFeedbackAttributes`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::set_email_identity): <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    ///   - [`email_forwarding_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::email_forwarding_enabled) / [`set_email_forwarding_enabled(bool)`](crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::set_email_forwarding_enabled): <p>Sets the feedback forwarding configuration for the identity.</p>  <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>  <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    /// - On success, responds with [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutEmailIdentityFeedbackAttributesError>`](crate::error::PutEmailIdentityFeedbackAttributesError)
-    pub fn put_email_identity_feedback_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes {
-        crate::client::fluent_builders::PutEmailIdentityFeedbackAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutEmailIdentityMailFromAttributes`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`email_identity(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::email_identity) / [`set_email_identity(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_email_identity): <p>The verified email identity that you want to set up the custom MAIL FROM domain for.</p>
-    ///   - [`mail_from_domain(impl Into<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::mail_from_domain) / [`set_mail_from_domain(Option<String>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_mail_from_domain): <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:</p>  <ul>   <li> <p>It has to be a subdomain of the verified identity.</p> </li>   <li> <p>It can't be used to receive email.</p> </li>   <li> <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>  </ul>
-    ///   - [`behavior_on_mx_failure(BehaviorOnMxFailure)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::behavior_on_mx_failure) / [`set_behavior_on_mx_failure(Option<BehaviorOnMxFailure>)`](crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::set_behavior_on_mx_failure): <p>The action that you want Amazon Pinpoint to take if it can't read the required MX record when you send an email. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>  <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    /// - On success, responds with [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput)
-
-    /// - On failure, responds with [`SdkError<PutEmailIdentityMailFromAttributesError>`](crate::error::PutEmailIdentityMailFromAttributesError)
-    pub fn put_email_identity_mail_from_attributes(
-        &self,
-    ) -> crate::client::fluent_builders::PutEmailIdentityMailFromAttributes {
-        crate::client::fluent_builders::PutEmailIdentityMailFromAttributes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SendEmail`](crate::client::fluent_builders::SendEmail) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`from_email_address(impl Into<String>)`](crate::client::fluent_builders::SendEmail::from_email_address) / [`set_from_email_address(Option<String>)`](crate::client::fluent_builders::SendEmail::set_from_email_address): <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    ///   - [`destination(Destination)`](crate::client::fluent_builders::SendEmail::destination) / [`set_destination(Option<Destination>)`](crate::client::fluent_builders::SendEmail::set_destination): <p>An object that contains the recipients of the email message.</p>
-    ///   - [`reply_to_addresses(Vec<String>)`](crate::client::fluent_builders::SendEmail::reply_to_addresses) / [`set_reply_to_addresses(Option<Vec<String>>)`](crate::client::fluent_builders::SendEmail::set_reply_to_addresses): <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    ///   - [`feedback_forwarding_email_address(impl Into<String>)`](crate::client::fluent_builders::SendEmail::feedback_forwarding_email_address) / [`set_feedback_forwarding_email_address(Option<String>)`](crate::client::fluent_builders::SendEmail::set_feedback_forwarding_email_address): <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    ///   - [`content(EmailContent)`](crate::client::fluent_builders::SendEmail::content) / [`set_content(Option<EmailContent>)`](crate::client::fluent_builders::SendEmail::set_content): <p>An object that contains the body of the message. You can send either a Simple message or a Raw message.</p>
-    ///   - [`email_tags(Vec<MessageTag>)`](crate::client::fluent_builders::SendEmail::email_tags) / [`set_email_tags(Option<Vec<MessageTag>>)`](crate::client::fluent_builders::SendEmail::set_email_tags): <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::SendEmail::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::SendEmail::set_configuration_set_name): <p>The name of the configuration set that you want to use when sending the email.</p>
-    /// - On success, responds with [`SendEmailOutput`](crate::output::SendEmailOutput) with field(s):
-    ///   - [`message_id(Option<String>)`](crate::output::SendEmailOutput::message_id): <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>   <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen when the message you're trying to send has an attachment doesn't pass a virus check, or when you send a templated email that contains invalid personalization content, for example.</p>  </note>
-    /// - On failure, responds with [`SdkError<SendEmailError>`](crate::error::SendEmailError)
-    pub fn send_email(&self) -> crate::client::fluent_builders::SendEmail {
-        crate::client::fluent_builders::SendEmail::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>A list of the tags that you want to add to the resource. A tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.</p>  <p>To remove more than one tag from the resource, append the <code>TagKeys</code> parameter and argument for each additional tag to remove, separated by an ampersand. For example: <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code> </p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateConfigurationSetEventDestination`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_configuration_set_name): <p>The name of the configuration set that contains the event destination that you want to modify.</p>
-    ///   - [`event_destination_name(impl Into<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination_name) / [`set_event_destination_name(Option<String>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination_name): <p>The name of the event destination that you want to modify.</p>
-    ///   - [`event_destination(EventDestinationDefinition)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::event_destination) / [`set_event_destination(Option<EventDestinationDefinition>)`](crate::client::fluent_builders::UpdateConfigurationSetEventDestination::set_event_destination): <p>An object that defines the event destination.</p>
-    /// - On success, responds with [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateConfigurationSetEventDestinationError>`](crate::error::UpdateConfigurationSetEventDestinationError)
-    pub fn update_configuration_set_event_destination(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateConfigurationSetEventDestination {
-        crate::client::fluent_builders::UpdateConfigurationSetEventDestination::new(
-            self.handle.clone(),
-        )
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -745,9 +174,93 @@ impl Client {
     }
 }
 
+mod create_configuration_set;
+
+mod create_configuration_set_event_destination;
+
+mod create_dedicated_ip_pool;
+
+mod create_deliverability_test_report;
+
+mod create_email_identity;
+
+mod delete_configuration_set;
+
+mod delete_configuration_set_event_destination;
+
+mod delete_dedicated_ip_pool;
+
+mod delete_email_identity;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_account;
+
+mod get_blacklist_reports;
+
+mod get_configuration_set;
+
+mod get_configuration_set_event_destinations;
+
+mod get_dedicated_ip;
+
+mod get_dedicated_ips;
+
+mod get_deliverability_dashboard_options;
+
+mod get_deliverability_test_report;
+
+mod get_domain_deliverability_campaign;
+
+mod get_domain_statistics_report;
+
+mod get_email_identity;
+
+mod list_configuration_sets;
+
+mod list_dedicated_ip_pools;
+
+mod list_deliverability_test_reports;
+
+mod list_domain_deliverability_campaigns;
+
+mod list_email_identities;
+
+mod list_tags_for_resource;
+
+mod put_account_dedicated_ip_warmup_attributes;
+
+mod put_account_sending_attributes;
+
+mod put_configuration_set_delivery_options;
+
+mod put_configuration_set_reputation_options;
+
+mod put_configuration_set_sending_options;
+
+mod put_configuration_set_tracking_options;
+
+mod put_dedicated_ip_in_pool;
+
+mod put_dedicated_ip_warmup_attributes;
+
+mod put_deliverability_dashboard_option;
+
+mod put_email_identity_dkim_attributes;
+
+mod put_email_identity_feedback_attributes;
+
+mod put_email_identity_mail_from_attributes;
+
+mod send_email;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_configuration_set_event_destination;

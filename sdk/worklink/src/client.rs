@@ -89,559 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateDomain`](crate::client::fluent_builders::AssociateDomain) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDomain::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::AssociateDomain::set_fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociateDomain::set_domain_name): <p>The fully qualified domain name (FQDN).</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::AssociateDomain::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::AssociateDomain::set_display_name): <p>The name to display.</p>
-    ///   - [`acm_certificate_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateDomain::acm_certificate_arn) / [`set_acm_certificate_arn(Option<String>)`](crate::client::fluent_builders::AssociateDomain::set_acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    /// - On success, responds with [`AssociateDomainOutput`](crate::output::AssociateDomainOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateDomainError>`](crate::error::AssociateDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_domain(&self) -> crate::client::fluent_builders::AssociateDomain {
-        crate::client::fluent_builders::AssociateDomain::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AssociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`authorization_provider_type(AuthorizationProviderType)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::authorization_provider_type) / [`set_authorization_provider_type(Option<AuthorizationProviderType>)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::set_authorization_provider_type): <p>The authorization provider type.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::set_domain_name): <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
-    /// - On success, responds with [`AssociateWebsiteAuthorizationProviderOutput`](crate::output::AssociateWebsiteAuthorizationProviderOutput) with field(s):
-    ///   - [`authorization_provider_id(Option<String>)`](crate::output::AssociateWebsiteAuthorizationProviderOutput::authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
-    /// - On failure, responds with [`SdkError<AssociateWebsiteAuthorizationProviderError>`](crate::error::AssociateWebsiteAuthorizationProviderError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_website_authorization_provider(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider {
-        crate::client::fluent_builders::AssociateWebsiteAuthorizationProvider::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`AssociateWebsiteCertificateAuthority`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`certificate(impl Into<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::certificate) / [`set_certificate(Option<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::set_certificate): <p>The root certificate of the CA.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::set_display_name): <p>The certificate name to display.</p>
-    /// - On success, responds with [`AssociateWebsiteCertificateAuthorityOutput`](crate::output::AssociateWebsiteCertificateAuthorityOutput) with field(s):
-    ///   - [`website_ca_id(Option<String>)`](crate::output::AssociateWebsiteCertificateAuthorityOutput::website_ca_id): <p>A unique identifier for the CA.</p>
-    /// - On failure, responds with [`SdkError<AssociateWebsiteCertificateAuthorityError>`](crate::error::AssociateWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn associate_website_certificate_authority(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateWebsiteCertificateAuthority {
-        crate::client::fluent_builders::AssociateWebsiteCertificateAuthority::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`CreateFleet`](crate::client::fluent_builders::CreateFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::fleet_name) / [`set_fleet_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_fleet_name): <p>A unique name for the fleet.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::CreateFleet::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::CreateFleet::set_display_name): <p>The fleet name to display.</p>
-    ///   - [`optimize_for_end_user_location(bool)`](crate::client::fluent_builders::CreateFleet::optimize_for_end_user_location) / [`set_optimize_for_end_user_location(Option<bool>)`](crate::client::fluent_builders::CreateFleet::set_optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateFleet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateFleet::set_tags): <p> The tags to add to the resource. A tag is a key-value pair.</p>
-    /// - On success, responds with [`CreateFleetOutput`](crate::output::CreateFleetOutput) with field(s):
-    ///   - [`fleet_arn(Option<String>)`](crate::output::CreateFleetOutput::fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    /// - On failure, responds with [`SdkError<CreateFleetError>`](crate::error::CreateFleetError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn create_fleet(&self) -> crate::client::fluent_builders::CreateFleet {
-        crate::client::fluent_builders::CreateFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteFleet`](crate::client::fluent_builders::DeleteFleet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteFleet::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DeleteFleet::set_fleet_arn): <p>The ARN of the fleet.</p>
-    /// - On success, responds with [`DeleteFleetOutput`](crate::output::DeleteFleetOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteFleetError>`](crate::error::DeleteFleetError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn delete_fleet(&self) -> crate::client::fluent_builders::DeleteFleet {
-        crate::client::fluent_builders::DeleteFleet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAuditStreamConfiguration`](crate::client::fluent_builders::DescribeAuditStreamConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeAuditStreamConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeAuditStreamConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    /// - On success, responds with [`DescribeAuditStreamConfigurationOutput`](crate::output::DescribeAuditStreamConfigurationOutput) with field(s):
-    ///   - [`audit_stream_arn(Option<String>)`](crate::output::DescribeAuditStreamConfigurationOutput::audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that will receive the audit events.</p>
-    /// - On failure, responds with [`SdkError<DescribeAuditStreamConfigurationError>`](crate::error::DescribeAuditStreamConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_audit_stream_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAuditStreamConfiguration {
-        crate::client::fluent_builders::DescribeAuditStreamConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeCompanyNetworkConfiguration`](crate::client::fluent_builders::DescribeCompanyNetworkConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeCompanyNetworkConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeCompanyNetworkConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    /// - On success, responds with [`DescribeCompanyNetworkConfigurationOutput`](crate::output::DescribeCompanyNetworkConfigurationOutput) with field(s):
-    ///   - [`vpc_id(Option<String>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::vpc_id): <p>The VPC with connectivity to associated websites.</p>
-    ///   - [`subnet_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    ///   - [`security_group_ids(Option<Vec<String>>)`](crate::output::DescribeCompanyNetworkConfigurationOutput::security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
-    /// - On failure, responds with [`SdkError<DescribeCompanyNetworkConfigurationError>`](crate::error::DescribeCompanyNetworkConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_company_network_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeCompanyNetworkConfiguration {
-        crate::client::fluent_builders::DescribeCompanyNetworkConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeDevice`](crate::client::fluent_builders::DescribeDevice) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::DescribeDevice::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::DescribeDevice::set_device_id): <p>A unique identifier for a registered user's device.</p>
-    /// - On success, responds with [`DescribeDeviceOutput`](crate::output::DescribeDeviceOutput) with field(s):
-    ///   - [`status(Option<DeviceStatus>)`](crate::output::DescribeDeviceOutput::status): <p>The current state of the device.</p>
-    ///   - [`model(Option<String>)`](crate::output::DescribeDeviceOutput::model): <p>The model of the device.</p>
-    ///   - [`manufacturer(Option<String>)`](crate::output::DescribeDeviceOutput::manufacturer): <p>The manufacturer of the device.</p>
-    ///   - [`operating_system(Option<String>)`](crate::output::DescribeDeviceOutput::operating_system): <p>The operating system of the device.</p>
-    ///   - [`operating_system_version(Option<String>)`](crate::output::DescribeDeviceOutput::operating_system_version): <p>The operating system version of the device.</p>
-    ///   - [`patch_level(Option<String>)`](crate::output::DescribeDeviceOutput::patch_level): <p>The operating system patch level of the device.</p>
-    ///   - [`first_accessed_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::first_accessed_time): <p>The date that the device first signed in to Amazon WorkLink.</p>
-    ///   - [`last_accessed_time(Option<DateTime>)`](crate::output::DescribeDeviceOutput::last_accessed_time): <p>The date that the device last accessed Amazon WorkLink.</p>
-    ///   - [`username(Option<String>)`](crate::output::DescribeDeviceOutput::username): <p>The user name associated with the device.</p>
-    /// - On failure, responds with [`SdkError<DescribeDeviceError>`](crate::error::DescribeDeviceError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_device(&self) -> crate::client::fluent_builders::DescribeDevice {
-        crate::client::fluent_builders::DescribeDevice::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDevicePolicyConfiguration`](crate::client::fluent_builders::DescribeDevicePolicyConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDevicePolicyConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeDevicePolicyConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    /// - On success, responds with [`DescribeDevicePolicyConfigurationOutput`](crate::output::DescribeDevicePolicyConfigurationOutput) with field(s):
-    ///   - [`device_ca_certificate(Option<String>)`](crate::output::DescribeDevicePolicyConfigurationOutput::device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    /// - On failure, responds with [`SdkError<DescribeDevicePolicyConfigurationError>`](crate::error::DescribeDevicePolicyConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_device_policy_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeDevicePolicyConfiguration {
-        crate::client::fluent_builders::DescribeDevicePolicyConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeDomain`](crate::client::fluent_builders::DescribeDomain) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DescribeDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DescribeDomain::set_domain_name): <p>The name of the domain.</p>
-    /// - On success, responds with [`DescribeDomainOutput`](crate::output::DescribeDomainOutput) with field(s):
-    ///   - [`domain_name(Option<String>)`](crate::output::DescribeDomainOutput::domain_name): <p>The name of the domain.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeDomainOutput::display_name): <p>The name to display.</p>
-    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeDomainOutput::created_time): <p>The time that the domain was added.</p>
-    ///   - [`domain_status(Option<DomainStatus>)`](crate::output::DescribeDomainOutput::domain_status): <p>The current state for the domain.</p>
-    ///   - [`acm_certificate_arn(Option<String>)`](crate::output::DescribeDomainOutput::acm_certificate_arn): <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    /// - On failure, responds with [`SdkError<DescribeDomainError>`](crate::error::DescribeDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_domain(&self) -> crate::client::fluent_builders::DescribeDomain {
-        crate::client::fluent_builders::DescribeDomain::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeFleetMetadata`](crate::client::fluent_builders::DescribeFleetMetadata) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeFleetMetadata::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeFleetMetadata::set_fleet_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    /// - On success, responds with [`DescribeFleetMetadataOutput`](crate::output::DescribeFleetMetadataOutput) with field(s):
-    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeFleetMetadataOutput::created_time): <p>The time that the fleet was created.</p>
-    ///   - [`last_updated_time(Option<DateTime>)`](crate::output::DescribeFleetMetadataOutput::last_updated_time): <p>The time that the fleet was last updated.</p>
-    ///   - [`fleet_name(Option<String>)`](crate::output::DescribeFleetMetadataOutput::fleet_name): <p>The name of the fleet.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeFleetMetadataOutput::display_name): <p>The name to display.</p>
-    ///   - [`optimize_for_end_user_location(Option<bool>)`](crate::output::DescribeFleetMetadataOutput::optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    ///   - [`company_code(Option<String>)`](crate::output::DescribeFleetMetadataOutput::company_code): <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
-    ///   - [`fleet_status(Option<FleetStatus>)`](crate::output::DescribeFleetMetadataOutput::fleet_status): <p>The current state of the fleet.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeFleetMetadataOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    /// - On failure, responds with [`SdkError<DescribeFleetMetadataError>`](crate::error::DescribeFleetMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_fleet_metadata(&self) -> crate::client::fluent_builders::DescribeFleetMetadata {
-        crate::client::fluent_builders::DescribeFleetMetadata::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeIdentityProviderConfiguration`](crate::client::fluent_builders::DescribeIdentityProviderConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeIdentityProviderConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeIdentityProviderConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    /// - On success, responds with [`DescribeIdentityProviderConfigurationOutput`](crate::output::DescribeIdentityProviderConfigurationOutput) with field(s):
-    ///   - [`identity_provider_type(Option<IdentityProviderType>)`](crate::output::DescribeIdentityProviderConfigurationOutput::identity_provider_type): <p>The type of identity provider.</p>
-    ///   - [`service_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::service_provider_saml_metadata): <p>The SAML metadata document uploaded to the user’s identity provider.</p>
-    ///   - [`identity_provider_saml_metadata(Option<String>)`](crate::output::DescribeIdentityProviderConfigurationOutput::identity_provider_saml_metadata): <p>The SAML metadata document provided by the user’s identity provider.</p>
-    /// - On failure, responds with [`SdkError<DescribeIdentityProviderConfigurationError>`](crate::error::DescribeIdentityProviderConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_identity_provider_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeIdentityProviderConfiguration {
-        crate::client::fluent_builders::DescribeIdentityProviderConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeWebsiteCertificateAuthority`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`website_ca_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority::website_ca_id) / [`set_website_ca_id(Option<String>)`](crate::client::fluent_builders::DescribeWebsiteCertificateAuthority::set_website_ca_id): <p>A unique identifier for the certificate authority.</p>
-    /// - On success, responds with [`DescribeWebsiteCertificateAuthorityOutput`](crate::output::DescribeWebsiteCertificateAuthorityOutput) with field(s):
-    ///   - [`certificate(Option<String>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::certificate): <p>The root certificate of the certificate authority.</p>
-    ///   - [`created_time(Option<DateTime>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::created_time): <p>The time that the certificate authority was added.</p>
-    ///   - [`display_name(Option<String>)`](crate::output::DescribeWebsiteCertificateAuthorityOutput::display_name): <p>The certificate name to display.</p>
-    /// - On failure, responds with [`SdkError<DescribeWebsiteCertificateAuthorityError>`](crate::error::DescribeWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn describe_website_certificate_authority(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeWebsiteCertificateAuthority {
-        crate::client::fluent_builders::DescribeWebsiteCertificateAuthority::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DisassociateDomain`](crate::client::fluent_builders::DisassociateDomain) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateDomain::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DisassociateDomain::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateDomain::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::DisassociateDomain::set_domain_name): <p>The name of the domain.</p>
-    /// - On success, responds with [`DisassociateDomainOutput`](crate::output::DisassociateDomainOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateDomainError>`](crate::error::DisassociateDomainError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_domain(&self) -> crate::client::fluent_builders::DisassociateDomain {
-        crate::client::fluent_builders::DisassociateDomain::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateWebsiteAuthorizationProvider`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`authorization_provider_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider::authorization_provider_id) / [`set_authorization_provider_id(Option<String>)`](crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider::set_authorization_provider_id): <p>A unique identifier for the authorization provider.</p>
-    /// - On success, responds with [`DisassociateWebsiteAuthorizationProviderOutput`](crate::output::DisassociateWebsiteAuthorizationProviderOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateWebsiteAuthorizationProviderError>`](crate::error::DisassociateWebsiteAuthorizationProviderError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_website_authorization_provider(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider {
-        crate::client::fluent_builders::DisassociateWebsiteAuthorizationProvider::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DisassociateWebsiteCertificateAuthority`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`website_ca_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority::website_ca_id) / [`set_website_ca_id(Option<String>)`](crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority::set_website_ca_id): <p>A unique identifier for the CA.</p>
-    /// - On success, responds with [`DisassociateWebsiteCertificateAuthorityOutput`](crate::output::DisassociateWebsiteCertificateAuthorityOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateWebsiteCertificateAuthorityError>`](crate::error::DisassociateWebsiteCertificateAuthorityError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn disassociate_website_certificate_authority(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority {
-        crate::client::fluent_builders::DisassociateWebsiteCertificateAuthority::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`ListDevices`](crate::client::fluent_builders::ListDevices) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevices::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::ListDevices::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::ListDevices::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevices::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevices::set_max_results): <p>The maximum number of results to be included in the next page.</p>
-    /// - On success, responds with [`ListDevicesOutput`](crate::output::ListDevicesOutput) with field(s):
-    ///   - [`devices(Option<Vec<DeviceSummary>>)`](crate::output::ListDevicesOutput::devices): <p>Information about the devices.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDevicesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListDevicesError>`](crate::error::ListDevicesError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_devices(&self) -> crate::client::fluent_builders::ListDevices {
-        crate::client::fluent_builders::ListDevices::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDomains`](crate::client::fluent_builders::ListDomains) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDomains::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::ListDomains::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::ListDomains::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDomains::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDomains::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDomains::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDomains::set_max_results): <p>The maximum number of results to be included in the next page.</p>
-    /// - On success, responds with [`ListDomainsOutput`](crate::output::ListDomainsOutput) with field(s):
-    ///   - [`domains(Option<Vec<DomainSummary>>)`](crate::output::ListDomainsOutput::domains): <p>Information about the domains.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDomainsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListDomainsError>`](crate::error::ListDomainsError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_domains(&self) -> crate::client::fluent_builders::ListDomains {
-        crate::client::fluent_builders::ListDomains::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListFleets`](crate::client::fluent_builders::ListFleets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListFleets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListFleets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListFleets::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListFleets::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListFleets::set_max_results): <p>The maximum number of results to be included in the next page.</p>
-    /// - On success, responds with [`ListFleetsOutput`](crate::output::ListFleetsOutput) with field(s):
-    ///   - [`fleet_summary_list(Option<Vec<FleetSummary>>)`](crate::output::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListFleetsOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListFleetsError>`](crate::error::ListFleetsError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_fleets(&self) -> crate::client::fluent_builders::ListFleets {
-        crate::client::fluent_builders::ListFleets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags attached to the resource. A tag is a key-value pair.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWebsiteAuthorizationProviders`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::set_next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWebsiteAuthorizationProviders::set_max_results): <p>The maximum number of results to be included in the next page.</p>
-    /// - On success, responds with [`ListWebsiteAuthorizationProvidersOutput`](crate::output::ListWebsiteAuthorizationProvidersOutput) with field(s):
-    ///   - [`website_authorization_providers(Option<Vec<WebsiteAuthorizationProviderSummary>>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::website_authorization_providers): <p>The website authorization providers.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteAuthorizationProvidersOutput::next_token): <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    /// - On failure, responds with [`SdkError<ListWebsiteAuthorizationProvidersError>`](crate::error::ListWebsiteAuthorizationProvidersError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_website_authorization_providers(
-        &self,
-    ) -> crate::client::fluent_builders::ListWebsiteAuthorizationProviders {
-        crate::client::fluent_builders::ListWebsiteAuthorizationProviders::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWebsiteCertificateAuthorities`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::set_max_results): <p>The maximum number of results to be included in the next page.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWebsiteCertificateAuthorities::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    /// - On success, responds with [`ListWebsiteCertificateAuthoritiesOutput`](crate::output::ListWebsiteCertificateAuthoritiesOutput) with field(s):
-    ///   - [`website_certificate_authorities(Option<Vec<WebsiteCaSummary>>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::website_certificate_authorities): <p>Information about the certificates.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListWebsiteCertificateAuthoritiesOutput::next_token): <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
-    /// - On failure, responds with [`SdkError<ListWebsiteCertificateAuthoritiesError>`](crate::error::ListWebsiteCertificateAuthoritiesError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn list_website_certificate_authorities(
-        &self,
-    ) -> crate::client::fluent_builders::ListWebsiteCertificateAuthorities {
-        crate::client::fluent_builders::ListWebsiteCertificateAuthorities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RestoreDomainAccess`](crate::client::fluent_builders::RestoreDomainAccess) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::RestoreDomainAccess::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::RestoreDomainAccess::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RestoreDomainAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RestoreDomainAccess::set_domain_name): <p>The name of the domain.</p>
-    /// - On success, responds with [`RestoreDomainAccessOutput`](crate::output::RestoreDomainAccessOutput)
-
-    /// - On failure, responds with [`SdkError<RestoreDomainAccessError>`](crate::error::RestoreDomainAccessError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn restore_domain_access(&self) -> crate::client::fluent_builders::RestoreDomainAccess {
-        crate::client::fluent_builders::RestoreDomainAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RevokeDomainAccess`](crate::client::fluent_builders::RevokeDomainAccess) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::RevokeDomainAccess::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::RevokeDomainAccess::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::RevokeDomainAccess::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::RevokeDomainAccess::set_domain_name): <p>The name of the domain.</p>
-    /// - On success, responds with [`RevokeDomainAccessOutput`](crate::output::RevokeDomainAccessOutput)
-
-    /// - On failure, responds with [`SdkError<RevokeDomainAccessError>`](crate::error::RevokeDomainAccessError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn revoke_domain_access(&self) -> crate::client::fluent_builders::RevokeDomainAccess {
-        crate::client::fluent_builders::RevokeDomainAccess::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SignOutUser`](crate::client::fluent_builders::SignOutUser) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::SignOutUser::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::SignOutUser::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`username(impl Into<String>)`](crate::client::fluent_builders::SignOutUser::username) / [`set_username(Option<String>)`](crate::client::fluent_builders::SignOutUser::set_username): <p>The name of the user.</p>
-    /// - On success, responds with [`SignOutUserOutput`](crate::output::SignOutUserOutput)
-
-    /// - On failure, responds with [`SdkError<SignOutUserError>`](crate::error::SignOutUserError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn sign_out_user(&self) -> crate::client::fluent_builders::SignOutUser {
-        crate::client::fluent_builders::SignOutUser::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to add to the resource. A tag is a key-value pair.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateAuditStreamConfiguration`](crate::client::fluent_builders::UpdateAuditStreamConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAuditStreamConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateAuditStreamConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`audit_stream_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAuditStreamConfiguration::audit_stream_arn) / [`set_audit_stream_arn(Option<String>)`](crate::client::fluent_builders::UpdateAuditStreamConfiguration::set_audit_stream_arn): <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
-    /// - On success, responds with [`UpdateAuditStreamConfigurationOutput`](crate::output::UpdateAuditStreamConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateAuditStreamConfigurationError>`](crate::error::UpdateAuditStreamConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_audit_stream_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateAuditStreamConfiguration {
-        crate::client::fluent_builders::UpdateAuditStreamConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCompanyNetworkConfiguration`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`vpc_id(impl Into<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::vpc_id) / [`set_vpc_id(Option<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::set_vpc_id): <p>The VPC with connectivity to associated websites.</p>
-    ///   - [`subnet_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::subnet_ids) / [`set_subnet_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::set_subnet_ids): <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    ///   - [`security_group_ids(Vec<String>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::security_group_ids) / [`set_security_group_ids(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::set_security_group_ids): <p>The security groups associated with access to the provided subnets.</p>
-    /// - On success, responds with [`UpdateCompanyNetworkConfigurationOutput`](crate::output::UpdateCompanyNetworkConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateCompanyNetworkConfigurationError>`](crate::error::UpdateCompanyNetworkConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_company_network_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateCompanyNetworkConfiguration {
-        crate::client::fluent_builders::UpdateCompanyNetworkConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDevicePolicyConfiguration`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`device_ca_certificate(impl Into<String>)`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration::device_ca_certificate) / [`set_device_ca_certificate(Option<String>)`](crate::client::fluent_builders::UpdateDevicePolicyConfiguration::set_device_ca_certificate): <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    /// - On success, responds with [`UpdateDevicePolicyConfigurationOutput`](crate::output::UpdateDevicePolicyConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDevicePolicyConfigurationError>`](crate::error::UpdateDevicePolicyConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_device_policy_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateDevicePolicyConfiguration {
-        crate::client::fluent_builders::UpdateDevicePolicyConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateDomainMetadata`](crate::client::fluent_builders::UpdateDomainMetadata) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::domain_name) / [`set_domain_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::set_domain_name): <p>The name of the domain.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateDomainMetadata::set_display_name): <p>The name to display.</p>
-    /// - On success, responds with [`UpdateDomainMetadataOutput`](crate::output::UpdateDomainMetadataOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateDomainMetadataError>`](crate::error::UpdateDomainMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_domain_metadata(&self) -> crate::client::fluent_builders::UpdateDomainMetadata {
-        crate::client::fluent_builders::UpdateDomainMetadata::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateFleetMetadata`](crate::client::fluent_builders::UpdateFleetMetadata) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetadata::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetadata::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`display_name(impl Into<String>)`](crate::client::fluent_builders::UpdateFleetMetadata::display_name) / [`set_display_name(Option<String>)`](crate::client::fluent_builders::UpdateFleetMetadata::set_display_name): <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
-    ///   - [`optimize_for_end_user_location(bool)`](crate::client::fluent_builders::UpdateFleetMetadata::optimize_for_end_user_location) / [`set_optimize_for_end_user_location(Option<bool>)`](crate::client::fluent_builders::UpdateFleetMetadata::set_optimize_for_end_user_location): <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
-    /// - On success, responds with [`UpdateFleetMetadataOutput`](crate::output::UpdateFleetMetadataOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateFleetMetadataError>`](crate::error::UpdateFleetMetadataError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_fleet_metadata(&self) -> crate::client::fluent_builders::UpdateFleetMetadata {
-        crate::client::fluent_builders::UpdateFleetMetadata::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateIdentityProviderConfiguration`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`identity_provider_type(IdentityProviderType)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::identity_provider_type) / [`set_identity_provider_type(Option<IdentityProviderType>)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::set_identity_provider_type): <p>The type of identity provider.</p>
-    ///   - [`identity_provider_saml_metadata(impl Into<String>)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::identity_provider_saml_metadata) / [`set_identity_provider_saml_metadata(Option<String>)`](crate::client::fluent_builders::UpdateIdentityProviderConfiguration::set_identity_provider_saml_metadata): <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
-    /// - On success, responds with [`UpdateIdentityProviderConfigurationOutput`](crate::output::UpdateIdentityProviderConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateIdentityProviderConfigurationError>`](crate::error::UpdateIdentityProviderConfigurationError)
-    #[deprecated(
-        note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
-    )]
-    pub fn update_identity_provider_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateIdentityProviderConfiguration {
-        crate::client::fluent_builders::UpdateIdentityProviderConfiguration::new(
-            self.handle.clone(),
-        )
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -727,9 +174,75 @@ impl Client {
     }
 }
 
+mod associate_domain;
+
+mod associate_website_authorization_provider;
+
+mod associate_website_certificate_authority;
+
+mod create_fleet;
+
+mod delete_fleet;
+
+mod describe_audit_stream_configuration;
+
+mod describe_company_network_configuration;
+
+mod describe_device;
+
+mod describe_device_policy_configuration;
+
+mod describe_domain;
+
+mod describe_fleet_metadata;
+
+mod describe_identity_provider_configuration;
+
+mod describe_website_certificate_authority;
+
+mod disassociate_domain;
+
+mod disassociate_website_authorization_provider;
+
+mod disassociate_website_certificate_authority;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_devices;
+
+mod list_domains;
+
+mod list_fleets;
+
+mod list_tags_for_resource;
+
+mod list_website_authorization_providers;
+
+mod list_website_certificate_authorities;
+
+mod restore_domain_access;
+
+mod revoke_domain_access;
+
+mod sign_out_user;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_audit_stream_configuration;
+
+mod update_company_network_configuration;
+
+mod update_device_policy_configuration;
+
+mod update_domain_metadata;
+
+mod update_fleet_metadata;
+
+mod update_identity_provider_configuration;

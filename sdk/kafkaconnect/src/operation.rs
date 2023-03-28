@@ -27,9 +27,11 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnector {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_connector_error(response)
+            crate::protocol_serde::shape_create_connector::de_create_connector_http_error(response)
         } else {
-            crate::operation_deser::parse_create_connector_response(response)
+            crate::protocol_serde::shape_create_connector::de_create_connector_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +64,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomPlugin {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_custom_plugin_error(response)
+            crate::protocol_serde::shape_create_custom_plugin::de_create_custom_plugin_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_custom_plugin_response(response)
+            crate::protocol_serde::shape_create_custom_plugin::de_create_custom_plugin_http_response(
+                response,
+            )
         }
     }
 }
@@ -97,9 +103,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerConfiguratio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_worker_configuration_error(response)
+            crate::protocol_serde::shape_create_worker_configuration::de_create_worker_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_create_worker_configuration_response(response)
+            crate::protocol_serde::shape_create_worker_configuration::de_create_worker_configuration_http_response(response)
         }
     }
 }
@@ -132,9 +138,11 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnector {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_connector_error(response)
+            crate::protocol_serde::shape_delete_connector::de_delete_connector_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_connector_response(response)
+            crate::protocol_serde::shape_delete_connector::de_delete_connector_http_response(
+                response,
+            )
         }
     }
 }
@@ -167,9 +175,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomPlugin {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_custom_plugin_error(response)
+            crate::protocol_serde::shape_delete_custom_plugin::de_delete_custom_plugin_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_custom_plugin_response(response)
+            crate::protocol_serde::shape_delete_custom_plugin::de_delete_custom_plugin_http_response(
+                response,
+            )
         }
     }
 }
@@ -202,9 +214,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_connector_error(response)
+            crate::protocol_serde::shape_describe_connector::de_describe_connector_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_connector_response(response)
+            crate::protocol_serde::shape_describe_connector::de_describe_connector_http_response(
+                response,
+            )
         }
     }
 }
@@ -237,9 +253,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomPlugin {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_custom_plugin_error(response)
+            crate::protocol_serde::shape_describe_custom_plugin::de_describe_custom_plugin_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_custom_plugin_response(response)
+            crate::protocol_serde::shape_describe_custom_plugin::de_describe_custom_plugin_http_response(response)
         }
     }
 }
@@ -272,9 +288,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkerConfigurat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_worker_configuration_error(response)
+            crate::protocol_serde::shape_describe_worker_configuration::de_describe_worker_configuration_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_worker_configuration_response(response)
+            crate::protocol_serde::shape_describe_worker_configuration::de_describe_worker_configuration_http_response(response)
         }
     }
 }
@@ -305,9 +321,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_connectors_error(response)
+            crate::protocol_serde::shape_list_connectors::de_list_connectors_http_error(response)
         } else {
-            crate::operation_deser::parse_list_connectors_response(response)
+            crate::protocol_serde::shape_list_connectors::de_list_connectors_http_response(response)
         }
     }
 }
@@ -340,9 +356,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomPlugins {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_custom_plugins_error(response)
+            crate::protocol_serde::shape_list_custom_plugins::de_list_custom_plugins_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_custom_plugins_response(response)
+            crate::protocol_serde::shape_list_custom_plugins::de_list_custom_plugins_http_response(
+                response,
+            )
         }
     }
 }
@@ -375,9 +395,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerConfigurations
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_worker_configurations_error(response)
+            crate::protocol_serde::shape_list_worker_configurations::de_list_worker_configurations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_worker_configurations_response(response)
+            crate::protocol_serde::shape_list_worker_configurations::de_list_worker_configurations_http_response(response)
         }
     }
 }
@@ -410,9 +430,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnector {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_connector_error(response)
+            crate::protocol_serde::shape_update_connector::de_update_connector_http_error(response)
         } else {
-            crate::operation_deser::parse_update_connector_response(response)
+            crate::protocol_serde::shape_update_connector::de_update_connector_http_response(
+                response,
+            )
         }
     }
 }

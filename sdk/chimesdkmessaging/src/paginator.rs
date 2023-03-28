@@ -82,7 +82,8 @@ impl ListChannelBansPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_bans_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channel_bans_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,8 @@ impl ListChannelFlowsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_flows_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channel_flows_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +304,10 @@ impl ListChannelMembershipsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_memberships_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channel_memberships_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -414,7 +419,7 @@ impl ListChannelMembershipsForAppInstanceUserPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_memberships_for_app_instance_user_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_channel_memberships_for_app_instance_user_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -524,7 +529,8 @@ impl ListChannelMessagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_messages_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channel_messages_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -634,7 +640,10 @@ impl ListChannelModeratorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channel_moderators_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channel_moderators_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -744,7 +753,8 @@ impl ListChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -856,7 +866,7 @@ impl ListChannelsAssociatedWithChannelFlowPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_associated_with_channel_flow_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_channels_associated_with_channel_flow_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -968,7 +978,7 @@ impl ListChannelsModeratedByAppInstanceUserPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_moderated_by_app_instance_user_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_channels_moderated_by_app_instance_user_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1078,7 +1088,8 @@ impl ListSubChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_sub_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_sub_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1188,7 +1199,8 @@ impl SearchChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_search_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_search_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

@@ -24,9 +24,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_error(response)
+            crate::protocol_serde::shape_search::de_search_http_error(response)
         } else {
-            crate::operation_deser::parse_search_response(response)
+            crate::protocol_serde::shape_search::de_search_http_response(response)
         }
     }
 }
@@ -56,9 +56,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Suggest {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_suggest_error(response)
+            crate::protocol_serde::shape_suggest::de_suggest_http_error(response)
         } else {
-            crate::operation_deser::parse_suggest_response(response)
+            crate::protocol_serde::shape_suggest::de_suggest_http_response(response)
         }
     }
 }
@@ -91,9 +91,11 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadDocuments {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upload_documents_error(response)
+            crate::protocol_serde::shape_upload_documents::de_upload_documents_http_error(response)
         } else {
-            crate::operation_deser::parse_upload_documents_response(response)
+            crate::protocol_serde::shape_upload_documents::de_upload_documents_http_response(
+                response,
+            )
         }
     }
 }

@@ -90,7 +90,7 @@ impl ListAwsDefaultServiceQuotasPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_aws_default_service_quotas_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_aws_default_service_quotas_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -210,7 +210,7 @@ impl ListRequestedServiceQuotaChangeHistoryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_requested_service_quota_change_history_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_requested_service_quota_change_history_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -332,7 +332,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_requested_service_quota_change_history_by_quota_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_requested_service_quota_change_history_by_quota_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -454,7 +454,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplatePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_service_quota_increase_requests_in_template_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_service_quota_increase_requests_in_template_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -572,7 +572,8 @@ impl ListServiceQuotasPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_service_quotas_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_service_quotas_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -690,7 +691,8 @@ impl ListServicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_services_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_services_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -737,11 +739,9 @@ impl ListAwsDefaultServiceQuotasPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_aws_default_service_quotas_output_quotas(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_aws_default_service_quotas_output_quotas(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -769,7 +769,13 @@ impl ListRequestedServiceQuotaChangeHistoryPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_requested_service_quota_change_history_output_requested_quotas(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_requested_service_quota_change_history_output_requested_quotas(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }
 
@@ -796,7 +802,7 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaPaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_requested_service_quota_change_history_by_quota_output_requested_quotas(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_requested_service_quota_change_history_by_quota_output_requested_quotas(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -823,7 +829,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplatePaginatorItems {
             >,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_service_quota_increase_requests_in_template_output_service_quota_increase_request_in_template_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_list_service_quota_increase_requests_in_template_output_service_quota_increase_request_in_template_list(page).unwrap_or_default().into_iter())
     }
 }
 
@@ -847,7 +853,7 @@ impl ListServiceQuotasPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_service_quotas_output_quotas(page)
+            crate::lens::lens_list_service_quotas_output_quotas(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -874,7 +880,7 @@ impl ListServicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_services_output_services(page)
+            crate::lens::lens_list_services_output_services(page)
                 .unwrap_or_default()
                 .into_iter()
         })

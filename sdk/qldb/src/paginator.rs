@@ -84,7 +84,7 @@ impl ListJournalKinesisStreamsForLedgerPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_journal_kinesis_streams_for_ledger_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_journal_kinesis_streams_for_ledger_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -194,7 +194,10 @@ impl ListJournalS3ExportsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_journal_s3_exports_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_journal_s3_exports_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -304,7 +307,7 @@ impl ListJournalS3ExportsForLedgerPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_journal_s3_exports_for_ledger_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_journal_s3_exports_for_ledger_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -414,7 +417,8 @@ impl ListLedgersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_ledgers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_ledgers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()

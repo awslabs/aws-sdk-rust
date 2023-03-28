@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRepository {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_repository_error(response)
+            crate::protocol_serde::shape_associate_repository::de_associate_repository_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_associate_repository_response(response)
+            crate::protocol_serde::shape_associate_repository::de_associate_repository_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +66,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCodeReview {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_code_review_error(response)
+            crate::protocol_serde::shape_create_code_review::de_create_code_review_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_code_review_response(response)
+            crate::protocol_serde::shape_create_code_review::de_create_code_review_http_response(
+                response,
+            )
         }
     }
 }
@@ -97,9 +105,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeReview {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_code_review_error(response)
+            crate::protocol_serde::shape_describe_code_review::de_describe_code_review_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_code_review_response(response)
+            crate::protocol_serde::shape_describe_code_review::de_describe_code_review_http_response(
+                response,
+            )
         }
     }
 }
@@ -132,9 +144,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationFe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_recommendation_feedback_error(response)
+            crate::protocol_serde::shape_describe_recommendation_feedback::de_describe_recommendation_feedback_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_recommendation_feedback_response(response)
+            crate::protocol_serde::shape_describe_recommendation_feedback::de_describe_recommendation_feedback_http_response(response)
         }
     }
 }
@@ -167,9 +179,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositoryAssoci
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_repository_association_error(response)
+            crate::protocol_serde::shape_describe_repository_association::de_describe_repository_association_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_repository_association_response(response)
+            crate::protocol_serde::shape_describe_repository_association::de_describe_repository_association_http_response(response)
         }
     }
 }
@@ -202,9 +214,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRepository {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_repository_error(response)
+            crate::protocol_serde::shape_disassociate_repository::de_disassociate_repository_http_error(response)
         } else {
-            crate::operation_deser::parse_disassociate_repository_response(response)
+            crate::protocol_serde::shape_disassociate_repository::de_disassociate_repository_http_response(response)
         }
     }
 }
@@ -237,9 +249,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCodeReviews {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_code_reviews_error(response)
+            crate::protocol_serde::shape_list_code_reviews::de_list_code_reviews_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_code_reviews_response(response)
+            crate::protocol_serde::shape_list_code_reviews::de_list_code_reviews_http_response(
+                response,
+            )
         }
     }
 }
@@ -272,9 +288,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendationFeedba
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_recommendation_feedback_error(response)
+            crate::protocol_serde::shape_list_recommendation_feedback::de_list_recommendation_feedback_http_error(response)
         } else {
-            crate::operation_deser::parse_list_recommendation_feedback_response(response)
+            crate::protocol_serde::shape_list_recommendation_feedback::de_list_recommendation_feedback_http_response(response)
         }
     }
 }
@@ -307,9 +323,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecommendations {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_recommendations_error(response)
+            crate::protocol_serde::shape_list_recommendations::de_list_recommendations_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_recommendations_response(response)
+            crate::protocol_serde::shape_list_recommendations::de_list_recommendations_http_response(
+                response,
+            )
         }
     }
 }
@@ -342,9 +362,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoryAssociatio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_repository_associations_error(response)
+            crate::protocol_serde::shape_list_repository_associations::de_list_repository_associations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_repository_associations_response(response)
+            crate::protocol_serde::shape_list_repository_associations::de_list_repository_associations_http_response(response)
         }
     }
 }
@@ -377,9 +397,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -412,9 +432,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationFeedbac
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_recommendation_feedback_error(response)
+            crate::protocol_serde::shape_put_recommendation_feedback::de_put_recommendation_feedback_http_error(response)
         } else {
-            crate::operation_deser::parse_put_recommendation_feedback_response(response)
+            crate::protocol_serde::shape_put_recommendation_feedback::de_put_recommendation_feedback_http_response(response)
         }
     }
 }
@@ -445,9 +465,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -478,9 +498,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }

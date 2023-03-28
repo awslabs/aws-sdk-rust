@@ -90,7 +90,8 @@ impl ListConnectorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_connectors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_connectors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListCustomPluginsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_custom_plugins_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_custom_plugins_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,10 @@ impl ListWorkerConfigurationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_worker_configurations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_worker_configurations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +378,7 @@ impl ListConnectorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_connectors_output_connectors(page)
+            crate::lens::lens_list_connectors_output_connectors(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -400,7 +405,7 @@ impl ListCustomPluginsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_custom_plugins_output_custom_plugins(page)
+            crate::lens::lens_list_custom_plugins_output_custom_plugins(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -426,6 +431,10 @@ impl ListWorkerConfigurationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListWorkerConfigurationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_worker_configurations_output_worker_configurations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_worker_configurations_output_worker_configurations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

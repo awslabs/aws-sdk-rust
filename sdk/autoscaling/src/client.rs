@@ -89,934 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AttachInstances`](crate::client::fluent_builders::AttachInstances) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::AttachInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::AttachInstances::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachInstances::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachInstances::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    /// - On success, responds with [`AttachInstancesOutput`](crate::output::AttachInstancesOutput)
-
-    /// - On failure, responds with [`SdkError<AttachInstancesError>`](crate::error::AttachInstancesError)
-    pub fn attach_instances(&self) -> crate::client::fluent_builders::AttachInstances {
-        crate::client::fluent_builders::AttachInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AttachLoadBalancers`](crate::client::fluent_builders::AttachLoadBalancers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachLoadBalancers::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachLoadBalancers::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`load_balancer_names(Vec<String>)`](crate::client::fluent_builders::AttachLoadBalancers::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::client::fluent_builders::AttachLoadBalancers::set_load_balancer_names): <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    /// - On success, responds with [`AttachLoadBalancersOutput`](crate::output::AttachLoadBalancersOutput)
-
-    /// - On failure, responds with [`SdkError<AttachLoadBalancersError>`](crate::error::AttachLoadBalancersError)
-    pub fn attach_load_balancers(&self) -> crate::client::fluent_builders::AttachLoadBalancers {
-        crate::client::fluent_builders::AttachLoadBalancers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AttachLoadBalancerTargetGroups`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::AttachLoadBalancerTargetGroups::set_target_group_ar_ns): <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    /// - On success, responds with [`AttachLoadBalancerTargetGroupsOutput`](crate::output::AttachLoadBalancerTargetGroupsOutput)
-
-    /// - On failure, responds with [`SdkError<AttachLoadBalancerTargetGroupsError>`](crate::error::AttachLoadBalancerTargetGroupsError)
-    pub fn attach_load_balancer_target_groups(
-        &self,
-    ) -> crate::client::fluent_builders::AttachLoadBalancerTargetGroups {
-        crate::client::fluent_builders::AttachLoadBalancerTargetGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`AttachTrafficSources`](crate::client::fluent_builders::AttachTrafficSources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::AttachTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::AttachTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::AttachTrafficSources::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::AttachTrafficSources::set_traffic_sources): <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
-    /// - On success, responds with [`AttachTrafficSourcesOutput`](crate::output::AttachTrafficSourcesOutput)
-
-    /// - On failure, responds with [`SdkError<AttachTrafficSourcesError>`](crate::error::AttachTrafficSourcesError)
-    pub fn attach_traffic_sources(&self) -> crate::client::fluent_builders::AttachTrafficSources {
-        crate::client::fluent_builders::AttachTrafficSources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteScheduledAction`](crate::client::fluent_builders::BatchDeleteScheduledAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteScheduledAction::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteScheduledAction::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scheduled_action_names(Vec<String>)`](crate::client::fluent_builders::BatchDeleteScheduledAction::scheduled_action_names) / [`set_scheduled_action_names(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteScheduledAction::set_scheduled_action_names): <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
-    /// - On success, responds with [`BatchDeleteScheduledActionOutput`](crate::output::BatchDeleteScheduledActionOutput) with field(s):
-    ///   - [`failed_scheduled_actions(Option<Vec<FailedScheduledUpdateGroupActionRequest>>)`](crate::output::BatchDeleteScheduledActionOutput::failed_scheduled_actions): <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteScheduledActionError>`](crate::error::BatchDeleteScheduledActionError)
-    pub fn batch_delete_scheduled_action(
-        &self,
-    ) -> crate::client::fluent_builders::BatchDeleteScheduledAction {
-        crate::client::fluent_builders::BatchDeleteScheduledAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchPutScheduledUpdateGroupAction`](crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scheduled_update_group_actions(Vec<ScheduledUpdateGroupActionRequest>)`](crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction::scheduled_update_group_actions) / [`set_scheduled_update_group_actions(Option<Vec<ScheduledUpdateGroupActionRequest>>)`](crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction::set_scheduled_update_group_actions): <p>One or more scheduled actions. The maximum number allowed is 50.</p>
-    /// - On success, responds with [`BatchPutScheduledUpdateGroupActionOutput`](crate::output::BatchPutScheduledUpdateGroupActionOutput) with field(s):
-    ///   - [`failed_scheduled_update_group_actions(Option<Vec<FailedScheduledUpdateGroupActionRequest>>)`](crate::output::BatchPutScheduledUpdateGroupActionOutput::failed_scheduled_update_group_actions): <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
-    /// - On failure, responds with [`SdkError<BatchPutScheduledUpdateGroupActionError>`](crate::error::BatchPutScheduledUpdateGroupActionError)
-    pub fn batch_put_scheduled_update_group_action(
-        &self,
-    ) -> crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction {
-        crate::client::fluent_builders::BatchPutScheduledUpdateGroupAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CancelInstanceRefresh`](crate::client::fluent_builders::CancelInstanceRefresh) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::CancelInstanceRefresh::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::CancelInstanceRefresh::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    /// - On success, responds with [`CancelInstanceRefreshOutput`](crate::output::CancelInstanceRefreshOutput) with field(s):
-    ///   - [`instance_refresh_id(Option<String>)`](crate::output::CancelInstanceRefreshOutput::instance_refresh_id): <p>The instance refresh ID.</p>
-    /// - On failure, responds with [`SdkError<CancelInstanceRefreshError>`](crate::error::CancelInstanceRefreshError)
-    pub fn cancel_instance_refresh(&self) -> crate::client::fluent_builders::CancelInstanceRefresh {
-        crate::client::fluent_builders::CancelInstanceRefresh::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CompleteLifecycleAction`](crate::client::fluent_builders::CompleteLifecycleAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`lifecycle_hook_name(impl Into<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`lifecycle_action_token(impl Into<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::lifecycle_action_token) / [`set_lifecycle_action_token(Option<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::set_lifecycle_action_token): <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
-    ///   - [`lifecycle_action_result(impl Into<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::lifecycle_action_result) / [`set_lifecycle_action_result(Option<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::set_lifecycle_action_result): <p>The action for the group to take. You can specify either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CompleteLifecycleAction::set_instance_id): <p>The ID of the instance.</p>
-    /// - On success, responds with [`CompleteLifecycleActionOutput`](crate::output::CompleteLifecycleActionOutput)
-
-    /// - On failure, responds with [`SdkError<CompleteLifecycleActionError>`](crate::error::CompleteLifecycleActionError)
-    pub fn complete_lifecycle_action(
-        &self,
-    ) -> crate::client::fluent_builders::CompleteLifecycleAction {
-        crate::client::fluent_builders::CompleteLifecycleAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateAutoScalingGroup`](crate::client::fluent_builders::CreateAutoScalingGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>  <p>The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters.</p> <note>   <p>You cannot use a colon (:) in the name.</p>  </note>
-    ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_launch_configuration_name): <p>The name of the launch configuration to use to launch instances. </p>  <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
-    ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::CreateAutoScalingGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_launch_template): <p>Information used to specify the launch template and version to use to launch instances. </p>  <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>   <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  </note>
-    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::CreateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_mixed_instances_policy): <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_instance_id): <p>The ID of the instance used to base the launch configuration on. If specified, Amazon EC2 Auto Scaling uses the configuration values from the specified instance to create a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`min_size(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_min_size): <p>The minimum size of the group.</p>
-    ///   - [`max_size(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_max_size): <p>The maximum size of the group.</p> <note>   <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>  </note>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_desired_capacity): <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure auto scaling. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.</p>
-    ///   - [`default_cooldown(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::default_cooldown) / [`set_default_cooldown(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_default_cooldown): <p> <i>Only needed if you use simple scaling policies.</i> </p>  <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: <code>300</code> seconds</p>
-    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_availability_zones): <p>A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the <code>VPCZoneIdentifier</code> property, or for attaching a network interface when an existing network interface ID is specified in a launch template.</p>
-    ///   - [`load_balancer_names(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_load_balancer_names): <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancer, specify the <code>TargetGroupARNs</code> property instead.</p>
-    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_type): <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
-    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: <code>0</code> seconds</p>
-    ///   - [`placement_group(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::placement_group) / [`set_placement_group(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_placement_group): <p>The name of the placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>   <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>  </note>
-    ///   - [`vpc_zone_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::vpc_zone_identifier) / [`set_vpc_zone_identifier(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_vpc_zone_identifier): <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in those Availability Zones.</p>
-    ///   - [`termination_policies(Vec<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::termination_policies) / [`set_termination_policies(Option<Vec<String>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_termination_policies): <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
-    ///   - [`new_instances_protected_from_scale_in(bool)`](crate::client::fluent_builders::CreateAutoScalingGroup::new_instances_protected_from_scale_in) / [`set_new_instances_protected_from_scale_in(Option<bool>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_new_instances_protected_from_scale_in): <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`capacity_rebalance(bool)`](crate::client::fluent_builders::CreateAutoScalingGroup::capacity_rebalance) / [`set_capacity_rebalance(Option<bool>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_capacity_rebalance): <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`lifecycle_hook_specification_list(Vec<LifecycleHookSpecification>)`](crate::client::fluent_builders::CreateAutoScalingGroup::lifecycle_hook_specification_list) / [`set_lifecycle_hook_specification_list(Option<Vec<LifecycleHookSpecification>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_lifecycle_hook_specification_list): <p>One or more lifecycle hooks to add to the Auto Scaling group before instances are launched.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateAutoScalingGroup::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_tags): <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`service_linked_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::service_linked_role_arn) / [`set_service_linked_role_arn(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_service_linked_role_arn): <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services service on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`max_instance_lifetime(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::max_instance_lifetime) / [`set_max_instance_lifetime(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_max_instance_lifetime): <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`context(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::context) / [`set_context(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_context): <p>Reserved.</p>
-    ///   - [`desired_capacity_type(impl Into<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::desired_capacity_type) / [`set_desired_capacity_type(Option<String>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_desired_capacity_type): <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>  <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
-    ///   - [`default_instance_warmup(i32)`](crate::client::fluent_builders::CreateAutoScalingGroup::default_instance_warmup) / [`set_default_instance_warmup(Option<i32>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_default_instance_warmup): <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>   <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>   <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>  </important>  <p>Default: None </p>
-    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::CreateAutoScalingGroup::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::CreateAutoScalingGroup::set_traffic_sources): <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use this parameter for production workloads. It is also subject to change.</b> </p>  <p>The unique identifiers of one or more traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming traffic and route requests to one or more registered targets.</p>
-    /// - On success, responds with [`CreateAutoScalingGroupOutput`](crate::output::CreateAutoScalingGroupOutput)
-
-    /// - On failure, responds with [`SdkError<CreateAutoScalingGroupError>`](crate::error::CreateAutoScalingGroupError)
-    pub fn create_auto_scaling_group(
-        &self,
-    ) -> crate::client::fluent_builders::CreateAutoScalingGroup {
-        crate::client::fluent_builders::CreateAutoScalingGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateLaunchConfiguration`](crate::client::fluent_builders::CreateLaunchConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_launch_configuration_name): <p>The name of the launch configuration. This name must be unique per Region per account.</p>
-    ///   - [`image_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::image_id) / [`set_image_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_image_id): <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  <p>If you specify <code>InstanceId</code>, an <code>ImageId</code> is not required.</p>
-    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_key_name): <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    ///   - [`security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::security_groups) / [`set_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_security_groups): <p>A list that contains the security group IDs to assign to the instances in the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-    ///   - [`classic_link_vpc_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_id) / [`set_classic_link_vpc_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_id): <p>Available for backward compatibility.</p>
-    ///   - [`classic_link_vpc_security_groups(Vec<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::classic_link_vpc_security_groups) / [`set_classic_link_vpc_security_groups(Option<Vec<String>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_classic_link_vpc_security_groups): <p>Available for backward compatibility.</p>
-    ///   - [`user_data(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::user_data) / [`set_user_data(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_user_data): <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_instance_id): <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>  <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`instance_type(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::instance_type) / [`set_instance_type(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_instance_type): <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
-    ///   - [`kernel_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::kernel_id) / [`set_kernel_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_kernel_id): <p>The ID of the kernel associated with the AMI.</p> <note>   <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  </note>
-    ///   - [`ramdisk_id(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::ramdisk_id) / [`set_ramdisk_id(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_ramdisk_id): <p>The ID of the RAM disk to select.</p> <note>   <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  </note>
-    ///   - [`block_device_mappings(Vec<BlockDeviceMapping>)`](crate::client::fluent_builders::CreateLaunchConfiguration::block_device_mappings) / [`set_block_device_mappings(Option<Vec<BlockDeviceMapping>>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_block_device_mappings): <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    ///   - [`instance_monitoring(InstanceMonitoring)`](crate::client::fluent_builders::CreateLaunchConfiguration::instance_monitoring) / [`set_instance_monitoring(Option<InstanceMonitoring>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_instance_monitoring): <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>  <p>The default value is <code>true</code> (enabled).</p> <important>   <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  </important>
-    ///   - [`spot_price(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::spot_price) / [`set_spot_price(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_spot_price): <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Valid Range: Minimum value of 0.001</p> <note>   <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>  </note>
-    ///   - [`iam_instance_profile(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::iam_instance_profile) / [`set_iam_instance_profile(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_iam_instance_profile): <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`ebs_optimized(bool)`](crate::client::fluent_builders::CreateLaunchConfiguration::ebs_optimized) / [`set_ebs_optimized(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_ebs_optimized): <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization is not available with all instance types. Additional fees are incurred when you enable EBS optimization for an instance type that is not EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>  <p>The default value is <code>false</code>.</p>
-    ///   - [`associate_public_ip_address(bool)`](crate::client::fluent_builders::CreateLaunchConfiguration::associate_public_ip_address) / [`set_associate_public_ip_address(Option<bool>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_associate_public_ip_address): <p>Specifies whether to assign a public IPv4 address to the group's instances. If the instance is launched into a default subnet, the default is to assign a public IPv4 address, unless you disabled the option to assign a public IPv4 address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IPv4 address, unless you enabled the option to assign a public IPv4 address on the subnet.</p>  <p>If you specify <code>true</code>, each instance in the Auto Scaling group receives a unique public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>If you specify this property, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
-    ///   - [`placement_tenancy(impl Into<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::placement_tenancy) / [`set_placement_tenancy(Option<String>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_placement_tenancy): <p>The tenancy of the instance, either <code>default</code> or <code>dedicated</code>. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this property to <code>dedicated</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>  <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
-    ///   - [`metadata_options(InstanceMetadataOptions)`](crate::client::fluent_builders::CreateLaunchConfiguration::metadata_options) / [`set_metadata_options(Option<InstanceMetadataOptions>)`](crate::client::fluent_builders::CreateLaunchConfiguration::set_metadata_options): <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// - On success, responds with [`CreateLaunchConfigurationOutput`](crate::output::CreateLaunchConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<CreateLaunchConfigurationError>`](crate::error::CreateLaunchConfigurationError)
-    pub fn create_launch_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::CreateLaunchConfiguration {
-        crate::client::fluent_builders::CreateLaunchConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateOrUpdateTags`](crate::client::fluent_builders::CreateOrUpdateTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateOrUpdateTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateOrUpdateTags::set_tags): <p>One or more tags.</p>
-    /// - On success, responds with [`CreateOrUpdateTagsOutput`](crate::output::CreateOrUpdateTagsOutput)
-
-    /// - On failure, responds with [`SdkError<CreateOrUpdateTagsError>`](crate::error::CreateOrUpdateTagsError)
-    pub fn create_or_update_tags(&self) -> crate::client::fluent_builders::CreateOrUpdateTags {
-        crate::client::fluent_builders::CreateOrUpdateTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAutoScalingGroup`](crate::client::fluent_builders::DeleteAutoScalingGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteAutoScalingGroup::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteAutoScalingGroup::set_force_delete): <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
-    /// - On success, responds with [`DeleteAutoScalingGroupOutput`](crate::output::DeleteAutoScalingGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAutoScalingGroupError>`](crate::error::DeleteAutoScalingGroupError)
-    pub fn delete_auto_scaling_group(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteAutoScalingGroup {
-        crate::client::fluent_builders::DeleteAutoScalingGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLaunchConfiguration`](crate::client::fluent_builders::DeleteLaunchConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLaunchConfiguration::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::DeleteLaunchConfiguration::set_launch_configuration_name): <p>The name of the launch configuration.</p>
-    /// - On success, responds with [`DeleteLaunchConfigurationOutput`](crate::output::DeleteLaunchConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLaunchConfigurationError>`](crate::error::DeleteLaunchConfigurationError)
-    pub fn delete_launch_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteLaunchConfiguration {
-        crate::client::fluent_builders::DeleteLaunchConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLifecycleHook`](crate::client::fluent_builders::DeleteLifecycleHook) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`lifecycle_hook_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecycleHook::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::client::fluent_builders::DeleteLifecycleHook::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteLifecycleHook::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteLifecycleHook::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    /// - On success, responds with [`DeleteLifecycleHookOutput`](crate::output::DeleteLifecycleHookOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLifecycleHookError>`](crate::error::DeleteLifecycleHookError)
-    pub fn delete_lifecycle_hook(&self) -> crate::client::fluent_builders::DeleteLifecycleHook {
-        crate::client::fluent_builders::DeleteLifecycleHook::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteNotificationConfiguration`](crate::client::fluent_builders::DeleteNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteNotificationConfiguration::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteNotificationConfiguration::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::DeleteNotificationConfiguration::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::DeleteNotificationConfiguration::set_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    /// - On success, responds with [`DeleteNotificationConfigurationOutput`](crate::output::DeleteNotificationConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteNotificationConfigurationError>`](crate::error::DeleteNotificationConfigurationError)
-    pub fn delete_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteNotificationConfiguration {
-        crate::client::fluent_builders::DeleteNotificationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePolicy`](crate::client::fluent_builders::DeletePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeletePolicy::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeletePolicy::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::DeletePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::DeletePolicy::set_policy_name): <p>The name or Amazon Resource Name (ARN) of the policy.</p>
-    /// - On success, responds with [`DeletePolicyOutput`](crate::output::DeletePolicyOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePolicyError>`](crate::error::DeletePolicyError)
-    pub fn delete_policy(&self) -> crate::client::fluent_builders::DeletePolicy {
-        crate::client::fluent_builders::DeletePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteScheduledAction`](crate::client::fluent_builders::DeleteScheduledAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteScheduledAction::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteScheduledAction::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scheduled_action_name(impl Into<String>)`](crate::client::fluent_builders::DeleteScheduledAction::scheduled_action_name) / [`set_scheduled_action_name(Option<String>)`](crate::client::fluent_builders::DeleteScheduledAction::set_scheduled_action_name): <p>The name of the action to delete.</p>
-    /// - On success, responds with [`DeleteScheduledActionOutput`](crate::output::DeleteScheduledActionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteScheduledActionError>`](crate::error::DeleteScheduledActionError)
-    pub fn delete_scheduled_action(&self) -> crate::client::fluent_builders::DeleteScheduledAction {
-        crate::client::fluent_builders::DeleteScheduledAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTags`](crate::client::fluent_builders::DeleteTags) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::DeleteTags::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::DeleteTags::set_tags): <p>One or more tags.</p>
-    /// - On success, responds with [`DeleteTagsOutput`](crate::output::DeleteTagsOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteTagsError>`](crate::error::DeleteTagsError)
-    pub fn delete_tags(&self) -> crate::client::fluent_builders::DeleteTags {
-        crate::client::fluent_builders::DeleteTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWarmPool`](crate::client::fluent_builders::DeleteWarmPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWarmPool::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DeleteWarmPool::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`force_delete(bool)`](crate::client::fluent_builders::DeleteWarmPool::force_delete) / [`set_force_delete(Option<bool>)`](crate::client::fluent_builders::DeleteWarmPool::set_force_delete): <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
-    /// - On success, responds with [`DeleteWarmPoolOutput`](crate::output::DeleteWarmPoolOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteWarmPoolError>`](crate::error::DeleteWarmPoolError)
-    pub fn delete_warm_pool(&self) -> crate::client::fluent_builders::DeleteWarmPool {
-        crate::client::fluent_builders::DeleteWarmPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAccountLimits`](crate::client::fluent_builders::DescribeAccountLimits) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAccountLimits::send) it.
-
-    /// - On success, responds with [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput) with field(s):
-    ///   - [`max_number_of_auto_scaling_groups(Option<i32>)`](crate::output::DescribeAccountLimitsOutput::max_number_of_auto_scaling_groups): <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
-    ///   - [`max_number_of_launch_configurations(Option<i32>)`](crate::output::DescribeAccountLimitsOutput::max_number_of_launch_configurations): <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
-    ///   - [`number_of_auto_scaling_groups(Option<i32>)`](crate::output::DescribeAccountLimitsOutput::number_of_auto_scaling_groups): <p>The current number of groups for your account.</p>
-    ///   - [`number_of_launch_configurations(Option<i32>)`](crate::output::DescribeAccountLimitsOutput::number_of_launch_configurations): <p>The current number of launch configurations for your account.</p>
-    /// - On failure, responds with [`SdkError<DescribeAccountLimitsError>`](crate::error::DescribeAccountLimitsError)
-    pub fn describe_account_limits(&self) -> crate::client::fluent_builders::DescribeAccountLimits {
-        crate::client::fluent_builders::DescribeAccountLimits::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAdjustmentTypes`](crate::client::fluent_builders::DescribeAdjustmentTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAdjustmentTypes::send) it.
-
-    /// - On success, responds with [`DescribeAdjustmentTypesOutput`](crate::output::DescribeAdjustmentTypesOutput) with field(s):
-    ///   - [`adjustment_types(Option<Vec<AdjustmentType>>)`](crate::output::DescribeAdjustmentTypesOutput::adjustment_types): <p>The policy adjustment types.</p>
-    /// - On failure, responds with [`SdkError<DescribeAdjustmentTypesError>`](crate::error::DescribeAdjustmentTypesError)
-    pub fn describe_adjustment_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAdjustmentTypes {
-        crate::client::fluent_builders::DescribeAdjustmentTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAutoScalingGroups`](crate::client::fluent_builders::DescribeAutoScalingGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAutoScalingGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_names(Vec<String>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::auto_scaling_group_names) / [`set_auto_scaling_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::set_auto_scaling_group_names): <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> property.</p>  <p>If you omit this property, all Auto Scaling groups are described.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeAutoScalingGroups::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeAutoScalingGroups::set_filters): <p>One or more filters to limit the results based on specific tags. </p>
-    /// - On success, responds with [`DescribeAutoScalingGroupsOutput`](crate::output::DescribeAutoScalingGroupsOutput) with field(s):
-    ///   - [`auto_scaling_groups(Option<Vec<AutoScalingGroup>>)`](crate::output::DescribeAutoScalingGroupsOutput::auto_scaling_groups): <p>The groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeAutoScalingGroupsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeAutoScalingGroupsError>`](crate::error::DescribeAutoScalingGroupsError)
-    pub fn describe_auto_scaling_groups(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAutoScalingGroups {
-        crate::client::fluent_builders::DescribeAutoScalingGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAutoScalingInstances`](crate::client::fluent_builders::DescribeAutoScalingInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeAutoScalingInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DescribeAutoScalingInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeAutoScalingInstances::set_instance_ids): <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>  <p>Array Members: Maximum number of 50 items.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeAutoScalingInstances::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeAutoScalingInstances::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeAutoScalingInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeAutoScalingInstances::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    /// - On success, responds with [`DescribeAutoScalingInstancesOutput`](crate::output::DescribeAutoScalingInstancesOutput) with field(s):
-    ///   - [`auto_scaling_instances(Option<Vec<AutoScalingInstanceDetails>>)`](crate::output::DescribeAutoScalingInstancesOutput::auto_scaling_instances): <p>The instances.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeAutoScalingInstancesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeAutoScalingInstancesError>`](crate::error::DescribeAutoScalingInstancesError)
-    pub fn describe_auto_scaling_instances(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAutoScalingInstances {
-        crate::client::fluent_builders::DescribeAutoScalingInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeAutoScalingNotificationTypes`](crate::client::fluent_builders::DescribeAutoScalingNotificationTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeAutoScalingNotificationTypes::send) it.
-
-    /// - On success, responds with [`DescribeAutoScalingNotificationTypesOutput`](crate::output::DescribeAutoScalingNotificationTypesOutput) with field(s):
-    ///   - [`auto_scaling_notification_types(Option<Vec<String>>)`](crate::output::DescribeAutoScalingNotificationTypesOutput::auto_scaling_notification_types): <p>The notification types.</p>
-    /// - On failure, responds with [`SdkError<DescribeAutoScalingNotificationTypesError>`](crate::error::DescribeAutoScalingNotificationTypesError)
-    pub fn describe_auto_scaling_notification_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeAutoScalingNotificationTypes {
-        crate::client::fluent_builders::DescribeAutoScalingNotificationTypes::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`DescribeInstanceRefreshes`](crate::client::fluent_builders::DescribeInstanceRefreshes) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`instance_refresh_ids(Vec<String>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::instance_refresh_ids) / [`set_instance_refresh_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::set_instance_refresh_ids): <p>One or more instance refresh IDs.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeInstanceRefreshes::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeInstanceRefreshes::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeInstanceRefreshesOutput`](crate::output::DescribeInstanceRefreshesOutput) with field(s):
-    ///   - [`instance_refreshes(Option<Vec<InstanceRefresh>>)`](crate::output::DescribeInstanceRefreshesOutput::instance_refreshes): <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeInstanceRefreshesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeInstanceRefreshesError>`](crate::error::DescribeInstanceRefreshesError)
-    pub fn describe_instance_refreshes(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeInstanceRefreshes {
-        crate::client::fluent_builders::DescribeInstanceRefreshes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLaunchConfigurations`](crate::client::fluent_builders::DescribeLaunchConfigurations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeLaunchConfigurations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`launch_configuration_names(Vec<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurations::launch_configuration_names) / [`set_launch_configuration_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLaunchConfigurations::set_launch_configuration_names): <p>The launch configuration names. If you omit this property, all launch configurations are described.</p>  <p>Array Members: Maximum number of 50 items.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLaunchConfigurations::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeLaunchConfigurations::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeLaunchConfigurations::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeLaunchConfigurationsOutput`](crate::output::DescribeLaunchConfigurationsOutput) with field(s):
-    ///   - [`launch_configurations(Option<Vec<LaunchConfiguration>>)`](crate::output::DescribeLaunchConfigurationsOutput::launch_configurations): <p>The launch configurations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeLaunchConfigurationsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeLaunchConfigurationsError>`](crate::error::DescribeLaunchConfigurationsError)
-    pub fn describe_launch_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLaunchConfigurations {
-        crate::client::fluent_builders::DescribeLaunchConfigurations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLifecycleHooks`](crate::client::fluent_builders::DescribeLifecycleHooks) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLifecycleHooks::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLifecycleHooks::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`lifecycle_hook_names(Vec<String>)`](crate::client::fluent_builders::DescribeLifecycleHooks::lifecycle_hook_names) / [`set_lifecycle_hook_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeLifecycleHooks::set_lifecycle_hook_names): <p>The names of one or more lifecycle hooks. If you omit this property, all lifecycle hooks are described.</p>
-    /// - On success, responds with [`DescribeLifecycleHooksOutput`](crate::output::DescribeLifecycleHooksOutput) with field(s):
-    ///   - [`lifecycle_hooks(Option<Vec<LifecycleHook>>)`](crate::output::DescribeLifecycleHooksOutput::lifecycle_hooks): <p>The lifecycle hooks for the specified group.</p>
-    /// - On failure, responds with [`SdkError<DescribeLifecycleHooksError>`](crate::error::DescribeLifecycleHooksError)
-    pub fn describe_lifecycle_hooks(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLifecycleHooks {
-        crate::client::fluent_builders::DescribeLifecycleHooks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLifecycleHookTypes`](crate::client::fluent_builders::DescribeLifecycleHookTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeLifecycleHookTypes::send) it.
-
-    /// - On success, responds with [`DescribeLifecycleHookTypesOutput`](crate::output::DescribeLifecycleHookTypesOutput) with field(s):
-    ///   - [`lifecycle_hook_types(Option<Vec<String>>)`](crate::output::DescribeLifecycleHookTypesOutput::lifecycle_hook_types): <p>The lifecycle hook types.</p>
-    /// - On failure, responds with [`SdkError<DescribeLifecycleHookTypesError>`](crate::error::DescribeLifecycleHookTypesError)
-    pub fn describe_lifecycle_hook_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLifecycleHookTypes {
-        crate::client::fluent_builders::DescribeLifecycleHookTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLoadBalancers`](crate::client::fluent_builders::DescribeLoadBalancers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLoadBalancers::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLoadBalancers::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLoadBalancers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLoadBalancers::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeLoadBalancers::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeLoadBalancers::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeLoadBalancersOutput`](crate::output::DescribeLoadBalancersOutput) with field(s):
-    ///   - [`load_balancers(Option<Vec<LoadBalancerState>>)`](crate::output::DescribeLoadBalancersOutput::load_balancers): <p>The load balancers.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeLoadBalancersOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeLoadBalancersError>`](crate::error::DescribeLoadBalancersError)
-    pub fn describe_load_balancers(&self) -> crate::client::fluent_builders::DescribeLoadBalancers {
-        crate::client::fluent_builders::DescribeLoadBalancers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeLoadBalancerTargetGroups`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeLoadBalancerTargetGroupsOutput`](crate::output::DescribeLoadBalancerTargetGroupsOutput) with field(s):
-    ///   - [`load_balancer_target_groups(Option<Vec<LoadBalancerTargetGroupState>>)`](crate::output::DescribeLoadBalancerTargetGroupsOutput::load_balancer_target_groups): <p>Information about the target groups.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeLoadBalancerTargetGroupsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeLoadBalancerTargetGroupsError>`](crate::error::DescribeLoadBalancerTargetGroupsError)
-    pub fn describe_load_balancer_target_groups(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeLoadBalancerTargetGroups {
-        crate::client::fluent_builders::DescribeLoadBalancerTargetGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeMetricCollectionTypes`](crate::client::fluent_builders::DescribeMetricCollectionTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeMetricCollectionTypes::send) it.
-
-    /// - On success, responds with [`DescribeMetricCollectionTypesOutput`](crate::output::DescribeMetricCollectionTypesOutput) with field(s):
-    ///   - [`metrics(Option<Vec<MetricCollectionType>>)`](crate::output::DescribeMetricCollectionTypesOutput::metrics): <p>The metrics.</p>
-    ///   - [`granularities(Option<Vec<MetricGranularityType>>)`](crate::output::DescribeMetricCollectionTypesOutput::granularities): <p>The granularities for the metrics.</p>
-    /// - On failure, responds with [`SdkError<DescribeMetricCollectionTypesError>`](crate::error::DescribeMetricCollectionTypesError)
-    pub fn describe_metric_collection_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeMetricCollectionTypes {
-        crate::client::fluent_builders::DescribeMetricCollectionTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeNotificationConfigurations`](crate::client::fluent_builders::DescribeNotificationConfigurations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeNotificationConfigurations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_names(Vec<String>)`](crate::client::fluent_builders::DescribeNotificationConfigurations::auto_scaling_group_names) / [`set_auto_scaling_group_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeNotificationConfigurations::set_auto_scaling_group_names): <p>The name of the Auto Scaling group.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeNotificationConfigurations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeNotificationConfigurations::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeNotificationConfigurations::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeNotificationConfigurations::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeNotificationConfigurationsOutput`](crate::output::DescribeNotificationConfigurationsOutput) with field(s):
-    ///   - [`notification_configurations(Option<Vec<NotificationConfiguration>>)`](crate::output::DescribeNotificationConfigurationsOutput::notification_configurations): <p>The notification configurations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeNotificationConfigurationsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeNotificationConfigurationsError>`](crate::error::DescribeNotificationConfigurationsError)
-    pub fn describe_notification_configurations(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeNotificationConfigurations {
-        crate::client::fluent_builders::DescribeNotificationConfigurations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePolicies`](crate::client::fluent_builders::DescribePolicies) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribePolicies::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribePolicies::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribePolicies::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`policy_names(Vec<String>)`](crate::client::fluent_builders::DescribePolicies::policy_names) / [`set_policy_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribePolicies::set_policy_names): <p>The names of one or more policies. If you omit this property, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>  <p>Array Members: Maximum number of 50 items.</p>
-    ///   - [`policy_types(Vec<String>)`](crate::client::fluent_builders::DescribePolicies::policy_types) / [`set_policy_types(Option<Vec<String>>)`](crate::client::fluent_builders::DescribePolicies::set_policy_types): <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribePolicies::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribePolicies::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribePolicies::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribePolicies::set_max_records): <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribePoliciesOutput`](crate::output::DescribePoliciesOutput) with field(s):
-    ///   - [`scaling_policies(Option<Vec<ScalingPolicy>>)`](crate::output::DescribePoliciesOutput::scaling_policies): <p>The scaling policies.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribePoliciesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribePoliciesError>`](crate::error::DescribePoliciesError)
-    pub fn describe_policies(&self) -> crate::client::fluent_builders::DescribePolicies {
-        crate::client::fluent_builders::DescribePolicies::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeScalingActivities`](crate::client::fluent_builders::DescribeScalingActivities) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeScalingActivities::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`activity_ids(Vec<String>)`](crate::client::fluent_builders::DescribeScalingActivities::activity_ids) / [`set_activity_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeScalingActivities::set_activity_ids): <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>  <p>Array Members: Maximum number of 50 IDs.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingActivities::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeScalingActivities::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`include_deleted_groups(bool)`](crate::client::fluent_builders::DescribeScalingActivities::include_deleted_groups) / [`set_include_deleted_groups(Option<bool>)`](crate::client::fluent_builders::DescribeScalingActivities::set_include_deleted_groups): <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeScalingActivities::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeScalingActivities::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScalingActivities::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScalingActivities::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    /// - On success, responds with [`DescribeScalingActivitiesOutput`](crate::output::DescribeScalingActivitiesOutput) with field(s):
-    ///   - [`activities(Option<Vec<Activity>>)`](crate::output::DescribeScalingActivitiesOutput::activities): <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeScalingActivitiesOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeScalingActivitiesError>`](crate::error::DescribeScalingActivitiesError)
-    pub fn describe_scaling_activities(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeScalingActivities {
-        crate::client::fluent_builders::DescribeScalingActivities::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeScalingProcessTypes`](crate::client::fluent_builders::DescribeScalingProcessTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeScalingProcessTypes::send) it.
-
-    /// - On success, responds with [`DescribeScalingProcessTypesOutput`](crate::output::DescribeScalingProcessTypesOutput) with field(s):
-    ///   - [`processes(Option<Vec<ProcessType>>)`](crate::output::DescribeScalingProcessTypesOutput::processes): <p>The names of the process types.</p>
-    /// - On failure, responds with [`SdkError<DescribeScalingProcessTypesError>`](crate::error::DescribeScalingProcessTypesError)
-    pub fn describe_scaling_process_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeScalingProcessTypes {
-        crate::client::fluent_builders::DescribeScalingProcessTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeScheduledActions`](crate::client::fluent_builders::DescribeScheduledActions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeScheduledActions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeScheduledActions::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeScheduledActions::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scheduled_action_names(Vec<String>)`](crate::client::fluent_builders::DescribeScheduledActions::scheduled_action_names) / [`set_scheduled_action_names(Option<Vec<String>>)`](crate::client::fluent_builders::DescribeScheduledActions::set_scheduled_action_names): <p>The names of one or more scheduled actions. If you omit this property, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>  <p>Array Members: Maximum number of 50 actions.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::DescribeScheduledActions::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeScheduledActions::set_start_time): <p>The earliest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::DescribeScheduledActions::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::DescribeScheduledActions::set_end_time): <p>The latest scheduled start time to return. If scheduled action names are provided, this property is ignored.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeScheduledActions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeScheduledActions::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeScheduledActions::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeScheduledActions::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeScheduledActionsOutput`](crate::output::DescribeScheduledActionsOutput) with field(s):
-    ///   - [`scheduled_update_group_actions(Option<Vec<ScheduledUpdateGroupAction>>)`](crate::output::DescribeScheduledActionsOutput::scheduled_update_group_actions): <p>The scheduled actions.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeScheduledActionsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeScheduledActionsError>`](crate::error::DescribeScheduledActionsError)
-    pub fn describe_scheduled_actions(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeScheduledActions {
-        crate::client::fluent_builders::DescribeScheduledActions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTags`](crate::client::fluent_builders::DescribeTags) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeTags::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::DescribeTags::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::DescribeTags::set_filters): <p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeTags::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeTags::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeTags::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeTags::set_max_records): <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
-    /// - On success, responds with [`DescribeTagsOutput`](crate::output::DescribeTagsOutput) with field(s):
-    ///   - [`tags(Option<Vec<TagDescription>>)`](crate::output::DescribeTagsOutput::tags): <p>One or more tags.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeTagsOutput::next_token): <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeTagsError>`](crate::error::DescribeTagsError)
-    pub fn describe_tags(&self) -> crate::client::fluent_builders::DescribeTags {
-        crate::client::fluent_builders::DescribeTags::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTerminationPolicyTypes`](crate::client::fluent_builders::DescribeTerminationPolicyTypes) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::DescribeTerminationPolicyTypes::send) it.
-
-    /// - On success, responds with [`DescribeTerminationPolicyTypesOutput`](crate::output::DescribeTerminationPolicyTypesOutput) with field(s):
-    ///   - [`termination_policy_types(Option<Vec<String>>)`](crate::output::DescribeTerminationPolicyTypesOutput::termination_policy_types): <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeTerminationPolicyTypesError>`](crate::error::DescribeTerminationPolicyTypesError)
-    pub fn describe_termination_policy_types(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeTerminationPolicyTypes {
-        crate::client::fluent_builders::DescribeTerminationPolicyTypes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTrafficSources`](crate::client::fluent_builders::DescribeTrafficSources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`traffic_source_type(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::traffic_source_type) / [`set_traffic_source_type(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_traffic_source_type): <p>The type of traffic source you are describing. Currently, the only valid value is <code>vpc-lattice</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeTrafficSources::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeTrafficSources::set_next_token): <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeTrafficSources::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeTrafficSources::set_max_records): <p>The maximum number of items to return with this call. The maximum value is <code>50</code>.</p>
-    /// - On success, responds with [`DescribeTrafficSourcesOutput`](crate::output::DescribeTrafficSourcesOutput) with field(s):
-    ///   - [`traffic_sources(Option<Vec<TrafficSourceState>>)`](crate::output::DescribeTrafficSourcesOutput::traffic_sources): <p>Information about the traffic sources.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeTrafficSourcesOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeTrafficSourcesError>`](crate::error::DescribeTrafficSourcesError)
-    pub fn describe_traffic_sources(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeTrafficSources {
-        crate::client::fluent_builders::DescribeTrafficSources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeWarmPool`](crate::client::fluent_builders::DescribeWarmPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DescribeWarmPool::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DescribeWarmPool::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`max_records(i32)`](crate::client::fluent_builders::DescribeWarmPool::max_records) / [`set_max_records(Option<i32>)`](crate::client::fluent_builders::DescribeWarmPool::set_max_records): <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeWarmPool::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeWarmPool::set_next_token): <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
-    /// - On success, responds with [`DescribeWarmPoolOutput`](crate::output::DescribeWarmPoolOutput) with field(s):
-    ///   - [`warm_pool_configuration(Option<WarmPoolConfiguration>)`](crate::output::DescribeWarmPoolOutput::warm_pool_configuration): <p>The warm pool configuration details. </p>
-    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::DescribeWarmPoolOutput::instances): <p>The instances that are currently in the warm pool.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeWarmPoolOutput::next_token): <p>This string indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    /// - On failure, responds with [`SdkError<DescribeWarmPoolError>`](crate::error::DescribeWarmPoolError)
-    pub fn describe_warm_pool(&self) -> crate::client::fluent_builders::DescribeWarmPool {
-        crate::client::fluent_builders::DescribeWarmPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DetachInstances`](crate::client::fluent_builders::DetachInstances) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::DetachInstances::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::DetachInstances::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DetachInstances::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DetachInstances::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`should_decrement_desired_capacity(bool)`](crate::client::fluent_builders::DetachInstances::should_decrement_desired_capacity) / [`set_should_decrement_desired_capacity(Option<bool>)`](crate::client::fluent_builders::DetachInstances::set_should_decrement_desired_capacity): <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
-    /// - On success, responds with [`DetachInstancesOutput`](crate::output::DetachInstancesOutput) with field(s):
-    ///   - [`activities(Option<Vec<Activity>>)`](crate::output::DetachInstancesOutput::activities): <p>The activities related to detaching the instances from the Auto Scaling group.</p>
-    /// - On failure, responds with [`SdkError<DetachInstancesError>`](crate::error::DetachInstancesError)
-    pub fn detach_instances(&self) -> crate::client::fluent_builders::DetachInstances {
-        crate::client::fluent_builders::DetachInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DetachLoadBalancers`](crate::client::fluent_builders::DetachLoadBalancers) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DetachLoadBalancers::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DetachLoadBalancers::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`load_balancer_names(Vec<String>)`](crate::client::fluent_builders::DetachLoadBalancers::load_balancer_names) / [`set_load_balancer_names(Option<Vec<String>>)`](crate::client::fluent_builders::DetachLoadBalancers::set_load_balancer_names): <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    /// - On success, responds with [`DetachLoadBalancersOutput`](crate::output::DetachLoadBalancersOutput)
-
-    /// - On failure, responds with [`SdkError<DetachLoadBalancersError>`](crate::error::DetachLoadBalancersError)
-    pub fn detach_load_balancers(&self) -> crate::client::fluent_builders::DetachLoadBalancers {
-        crate::client::fluent_builders::DetachLoadBalancers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DetachLoadBalancerTargetGroups`](crate::client::fluent_builders::DetachLoadBalancerTargetGroups) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DetachLoadBalancerTargetGroups::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DetachLoadBalancerTargetGroups::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`target_group_ar_ns(Vec<String>)`](crate::client::fluent_builders::DetachLoadBalancerTargetGroups::target_group_ar_ns) / [`set_target_group_ar_ns(Option<Vec<String>>)`](crate::client::fluent_builders::DetachLoadBalancerTargetGroups::set_target_group_ar_ns): <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    /// - On success, responds with [`DetachLoadBalancerTargetGroupsOutput`](crate::output::DetachLoadBalancerTargetGroupsOutput)
-
-    /// - On failure, responds with [`SdkError<DetachLoadBalancerTargetGroupsError>`](crate::error::DetachLoadBalancerTargetGroupsError)
-    pub fn detach_load_balancer_target_groups(
-        &self,
-    ) -> crate::client::fluent_builders::DetachLoadBalancerTargetGroups {
-        crate::client::fluent_builders::DetachLoadBalancerTargetGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DetachTrafficSources`](crate::client::fluent_builders::DetachTrafficSources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DetachTrafficSources::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DetachTrafficSources::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::client::fluent_builders::DetachTrafficSources::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::client::fluent_builders::DetachTrafficSources::set_traffic_sources): <p>The unique identifiers of one or more traffic sources you are detaching. You can specify up to 10 traffic sources.</p>  <p>Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. When you detach a target group, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the target group using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
-    /// - On success, responds with [`DetachTrafficSourcesOutput`](crate::output::DetachTrafficSourcesOutput)
-
-    /// - On failure, responds with [`SdkError<DetachTrafficSourcesError>`](crate::error::DetachTrafficSourcesError)
-    pub fn detach_traffic_sources(&self) -> crate::client::fluent_builders::DetachTrafficSources {
-        crate::client::fluent_builders::DetachTrafficSources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisableMetricsCollection`](crate::client::fluent_builders::DisableMetricsCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::DisableMetricsCollection::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::DisableMetricsCollection::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`metrics(Vec<String>)`](crate::client::fluent_builders::DisableMetricsCollection::metrics) / [`set_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::DisableMetricsCollection::set_metrics): <p>Identifies the metrics to disable.</p>  <p>You can specify one or more of the following metrics:</p>  <ul>   <li> <p> <code>GroupMinSize</code> </p> </li>   <li> <p> <code>GroupMaxSize</code> </p> </li>   <li> <p> <code>GroupDesiredCapacity</code> </p> </li>   <li> <p> <code>GroupInServiceInstances</code> </p> </li>   <li> <p> <code>GroupPendingInstances</code> </p> </li>   <li> <p> <code>GroupStandbyInstances</code> </p> </li>   <li> <p> <code>GroupTerminatingInstances</code> </p> </li>   <li> <p> <code>GroupTotalInstances</code> </p> </li>   <li> <p> <code>GroupInServiceCapacity</code> </p> </li>   <li> <p> <code>GroupPendingCapacity</code> </p> </li>   <li> <p> <code>GroupStandbyCapacity</code> </p> </li>   <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>   <li> <p> <code>GroupTotalCapacity</code> </p> </li>   <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>   <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>   <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>   <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>   <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>   <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>   <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>  </ul>  <p>If you omit this property, all metrics are disabled.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// - On success, responds with [`DisableMetricsCollectionOutput`](crate::output::DisableMetricsCollectionOutput)
-
-    /// - On failure, responds with [`SdkError<DisableMetricsCollectionError>`](crate::error::DisableMetricsCollectionError)
-    pub fn disable_metrics_collection(
-        &self,
-    ) -> crate::client::fluent_builders::DisableMetricsCollection {
-        crate::client::fluent_builders::DisableMetricsCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnableMetricsCollection`](crate::client::fluent_builders::EnableMetricsCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::EnableMetricsCollection::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::EnableMetricsCollection::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`metrics(Vec<String>)`](crate::client::fluent_builders::EnableMetricsCollection::metrics) / [`set_metrics(Option<Vec<String>>)`](crate::client::fluent_builders::EnableMetricsCollection::set_metrics): <p>Identifies the metrics to enable.</p>  <p>You can specify one or more of the following metrics:</p>  <ul>   <li> <p> <code>GroupMinSize</code> </p> </li>   <li> <p> <code>GroupMaxSize</code> </p> </li>   <li> <p> <code>GroupDesiredCapacity</code> </p> </li>   <li> <p> <code>GroupInServiceInstances</code> </p> </li>   <li> <p> <code>GroupPendingInstances</code> </p> </li>   <li> <p> <code>GroupStandbyInstances</code> </p> </li>   <li> <p> <code>GroupTerminatingInstances</code> </p> </li>   <li> <p> <code>GroupTotalInstances</code> </p> </li>   <li> <p> <code>GroupInServiceCapacity</code> </p> </li>   <li> <p> <code>GroupPendingCapacity</code> </p> </li>   <li> <p> <code>GroupStandbyCapacity</code> </p> </li>   <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>   <li> <p> <code>GroupTotalCapacity</code> </p> </li>   <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>   <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>   <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>   <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>   <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>   <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>   <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>  </ul>  <p>If you specify <code>Granularity</code> and don't specify any metrics, all metrics are enabled.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`granularity(impl Into<String>)`](crate::client::fluent_builders::EnableMetricsCollection::granularity) / [`set_granularity(Option<String>)`](crate::client::fluent_builders::EnableMetricsCollection::set_granularity): <p>The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is <code>1Minute</code>.</p>
-    /// - On success, responds with [`EnableMetricsCollectionOutput`](crate::output::EnableMetricsCollectionOutput)
-
-    /// - On failure, responds with [`SdkError<EnableMetricsCollectionError>`](crate::error::EnableMetricsCollectionError)
-    pub fn enable_metrics_collection(
-        &self,
-    ) -> crate::client::fluent_builders::EnableMetricsCollection {
-        crate::client::fluent_builders::EnableMetricsCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`EnterStandby`](crate::client::fluent_builders::EnterStandby) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::EnterStandby::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::EnterStandby::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::EnterStandby::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::EnterStandby::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`should_decrement_desired_capacity(bool)`](crate::client::fluent_builders::EnterStandby::should_decrement_desired_capacity) / [`set_should_decrement_desired_capacity(Option<bool>)`](crate::client::fluent_builders::EnterStandby::set_should_decrement_desired_capacity): <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
-    /// - On success, responds with [`EnterStandbyOutput`](crate::output::EnterStandbyOutput) with field(s):
-    ///   - [`activities(Option<Vec<Activity>>)`](crate::output::EnterStandbyOutput::activities): <p>The activities related to moving instances into <code>Standby</code> mode.</p>
-    /// - On failure, responds with [`SdkError<EnterStandbyError>`](crate::error::EnterStandbyError)
-    pub fn enter_standby(&self) -> crate::client::fluent_builders::EnterStandby {
-        crate::client::fluent_builders::EnterStandby::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExecutePolicy`](crate::client::fluent_builders::ExecutePolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::ExecutePolicy::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::ExecutePolicy::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::ExecutePolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::ExecutePolicy::set_policy_name): <p>The name or ARN of the policy.</p>
-    ///   - [`honor_cooldown(bool)`](crate::client::fluent_builders::ExecutePolicy::honor_cooldown) / [`set_honor_cooldown(Option<bool>)`](crate::client::fluent_builders::ExecutePolicy::set_honor_cooldown): <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>  <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`metric_value(f64)`](crate::client::fluent_builders::ExecutePolicy::metric_value) / [`set_metric_value(Option<f64>)`](crate::client::fluent_builders::ExecutePolicy::set_metric_value): <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>  <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>  <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
-    ///   - [`breach_threshold(f64)`](crate::client::fluent_builders::ExecutePolicy::breach_threshold) / [`set_breach_threshold(Option<f64>)`](crate::client::fluent_builders::ExecutePolicy::set_breach_threshold): <p>The breach threshold for the alarm.</p>  <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
-    /// - On success, responds with [`ExecutePolicyOutput`](crate::output::ExecutePolicyOutput)
-
-    /// - On failure, responds with [`SdkError<ExecutePolicyError>`](crate::error::ExecutePolicyError)
-    pub fn execute_policy(&self) -> crate::client::fluent_builders::ExecutePolicy {
-        crate::client::fluent_builders::ExecutePolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ExitStandby`](crate::client::fluent_builders::ExitStandby) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::ExitStandby::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::ExitStandby::set_instance_ids): <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::ExitStandby::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::ExitStandby::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    /// - On success, responds with [`ExitStandbyOutput`](crate::output::ExitStandbyOutput) with field(s):
-    ///   - [`activities(Option<Vec<Activity>>)`](crate::output::ExitStandbyOutput::activities): <p>The activities related to moving instances out of <code>Standby</code> mode.</p>
-    /// - On failure, responds with [`SdkError<ExitStandbyError>`](crate::error::ExitStandbyError)
-    pub fn exit_standby(&self) -> crate::client::fluent_builders::ExitStandby {
-        crate::client::fluent_builders::ExitStandby::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPredictiveScalingForecast`](crate::client::fluent_builders::GetPredictiveScalingForecast) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::set_policy_name): <p>The name of the policy.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::GetPredictiveScalingForecast::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::set_start_time): <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::GetPredictiveScalingForecast::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::GetPredictiveScalingForecast::set_end_time): <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>  <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    /// - On success, responds with [`GetPredictiveScalingForecastOutput`](crate::output::GetPredictiveScalingForecastOutput) with field(s):
-    ///   - [`load_forecast(Option<Vec<LoadForecast>>)`](crate::output::GetPredictiveScalingForecastOutput::load_forecast): <p>The load forecast.</p>
-    ///   - [`capacity_forecast(Option<CapacityForecast>)`](crate::output::GetPredictiveScalingForecastOutput::capacity_forecast): <p>The capacity forecast.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::GetPredictiveScalingForecastOutput::update_time): <p>The time the forecast was made.</p>
-    /// - On failure, responds with [`SdkError<GetPredictiveScalingForecastError>`](crate::error::GetPredictiveScalingForecastError)
-    pub fn get_predictive_scaling_forecast(
-        &self,
-    ) -> crate::client::fluent_builders::GetPredictiveScalingForecast {
-        crate::client::fluent_builders::GetPredictiveScalingForecast::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutLifecycleHook`](crate::client::fluent_builders::PutLifecycleHook) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`lifecycle_hook_name(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`lifecycle_transition(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::lifecycle_transition) / [`set_lifecycle_transition(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_lifecycle_transition): <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>  <ul>   <li> <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p> </li>   <li> <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p> </li>  </ul>  <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::role_arn) / [`set_role_arn(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_role_arn): <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target.</p>  <p>Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue. Required for new lifecycle hooks, but optional when updating existing hooks.</p>
-    ///   - [`notification_target_arn(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::notification_target_arn) / [`set_notification_target_arn(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_notification_target_arn): <p>The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in a wait state for the lifecycle hook. You can specify either an Amazon SNS topic or an Amazon SQS queue.</p>  <p>If you specify an empty string, this overrides the current ARN.</p>  <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value pair format when sending notifications to an Amazon SNS topic.</p>  <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
-    ///   - [`notification_metadata(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::notification_metadata) / [`set_notification_metadata(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_notification_metadata): <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
-    ///   - [`heartbeat_timeout(i32)`](crate::client::fluent_builders::PutLifecycleHook::heartbeat_timeout) / [`set_heartbeat_timeout(Option<i32>)`](crate::client::fluent_builders::PutLifecycleHook::set_heartbeat_timeout): <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
-    ///   - [`default_result(impl Into<String>)`](crate::client::fluent_builders::PutLifecycleHook::default_result) / [`set_default_result(Option<String>)`](crate::client::fluent_builders::PutLifecycleHook::set_default_result): <p>The action the Auto Scaling group takes when the lifecycle hook timeout elapses or if an unexpected failure occurs. The default value is <code>ABANDON</code>.</p>  <p>Valid values: <code>CONTINUE</code> | <code>ABANDON</code> </p>
-    /// - On success, responds with [`PutLifecycleHookOutput`](crate::output::PutLifecycleHookOutput)
-
-    /// - On failure, responds with [`SdkError<PutLifecycleHookError>`](crate::error::PutLifecycleHookError)
-    pub fn put_lifecycle_hook(&self) -> crate::client::fluent_builders::PutLifecycleHook {
-        crate::client::fluent_builders::PutLifecycleHook::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutNotificationConfiguration`](crate::client::fluent_builders::PutNotificationConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutNotificationConfiguration::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::PutNotificationConfiguration::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`topic_arn(impl Into<String>)`](crate::client::fluent_builders::PutNotificationConfiguration::topic_arn) / [`set_topic_arn(Option<String>)`](crate::client::fluent_builders::PutNotificationConfiguration::set_topic_arn): <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    ///   - [`notification_types(Vec<String>)`](crate::client::fluent_builders::PutNotificationConfiguration::notification_types) / [`set_notification_types(Option<Vec<String>>)`](crate::client::fluent_builders::PutNotificationConfiguration::set_notification_types): <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
-    /// - On success, responds with [`PutNotificationConfigurationOutput`](crate::output::PutNotificationConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<PutNotificationConfigurationError>`](crate::error::PutNotificationConfigurationError)
-    pub fn put_notification_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::PutNotificationConfiguration {
-        crate::client::fluent_builders::PutNotificationConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutScalingPolicy`](crate::client::fluent_builders::PutScalingPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutScalingPolicy::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::PutScalingPolicy::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`policy_name(impl Into<String>)`](crate::client::fluent_builders::PutScalingPolicy::policy_name) / [`set_policy_name(Option<String>)`](crate::client::fluent_builders::PutScalingPolicy::set_policy_name): <p>The name of the policy.</p>
-    ///   - [`policy_type(impl Into<String>)`](crate::client::fluent_builders::PutScalingPolicy::policy_type) / [`set_policy_type(Option<String>)`](crate::client::fluent_builders::PutScalingPolicy::set_policy_type): <p>One of the following policy types: </p>  <ul>   <li> <p> <code>TargetTrackingScaling</code> </p> </li>   <li> <p> <code>StepScaling</code> </p> </li>   <li> <p> <code>SimpleScaling</code> (default)</p> </li>   <li> <p> <code>PredictiveScaling</code> </p> </li>  </ul>
-    ///   - [`adjustment_type(impl Into<String>)`](crate::client::fluent_builders::PutScalingPolicy::adjustment_type) / [`set_adjustment_type(Option<String>)`](crate::client::fluent_builders::PutScalingPolicy::set_adjustment_type): <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>  <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`min_adjustment_step(i32)`](crate::client::fluent_builders::PutScalingPolicy::min_adjustment_step) / [`set_min_adjustment_step(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_min_adjustment_step): <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    ///   - [`min_adjustment_magnitude(i32)`](crate::client::fluent_builders::PutScalingPolicy::min_adjustment_magnitude) / [`set_min_adjustment_magnitude(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_min_adjustment_magnitude): <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>  <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>   <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>  </note>
-    ///   - [`scaling_adjustment(i32)`](crate::client::fluent_builders::PutScalingPolicy::scaling_adjustment) / [`set_scaling_adjustment(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_scaling_adjustment): <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>  <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
-    ///   - [`cooldown(i32)`](crate::client::fluent_builders::PutScalingPolicy::cooldown) / [`set_cooldown(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_cooldown): <p>A cooldown period, in seconds, that applies to a specific simple scaling policy. When a cooldown period is specified here, it overrides the default cooldown.</p>  <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Default: None</p>
-    ///   - [`metric_aggregation_type(impl Into<String>)`](crate::client::fluent_builders::PutScalingPolicy::metric_aggregation_type) / [`set_metric_aggregation_type(Option<String>)`](crate::client::fluent_builders::PutScalingPolicy::set_metric_aggregation_type): <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>  <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-    ///   - [`step_adjustments(Vec<StepAdjustment>)`](crate::client::fluent_builders::PutScalingPolicy::step_adjustments) / [`set_step_adjustments(Option<Vec<StepAdjustment>>)`](crate::client::fluent_builders::PutScalingPolicy::set_step_adjustments): <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>  <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
-    ///   - [`estimated_instance_warmup(i32)`](crate::client::fluent_builders::PutScalingPolicy::estimated_instance_warmup) / [`set_estimated_instance_warmup(Option<i32>)`](crate::client::fluent_builders::PutScalingPolicy::set_estimated_instance_warmup): <p> <i>Not needed if the default instance warmup is defined for the group.</i> </p>  <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This warm-up period applies to instances launched due to a specific target tracking or step scaling policy. When a warm-up period is specified here, it overrides the default instance warmup.</p>  <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>   <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>  </note>
-    ///   - [`target_tracking_configuration(TargetTrackingConfiguration)`](crate::client::fluent_builders::PutScalingPolicy::target_tracking_configuration) / [`set_target_tracking_configuration(Option<TargetTrackingConfiguration>)`](crate::client::fluent_builders::PutScalingPolicy::set_target_tracking_configuration): <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>  <p>The following predefined metrics are available:</p>  <ul>   <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>   <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>   <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>   <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>  </ul>  <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>  <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
-    ///   - [`enabled(bool)`](crate::client::fluent_builders::PutScalingPolicy::enabled) / [`set_enabled(Option<bool>)`](crate::client::fluent_builders::PutScalingPolicy::set_enabled): <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`predictive_scaling_configuration(PredictiveScalingConfiguration)`](crate::client::fluent_builders::PutScalingPolicy::predictive_scaling_configuration) / [`set_predictive_scaling_configuration(Option<PredictiveScalingConfiguration>)`](crate::client::fluent_builders::PutScalingPolicy::set_predictive_scaling_configuration): <p>A predictive scaling policy. Provides support for predefined and custom metrics.</p>  <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>  <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
-    /// - On success, responds with [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput) with field(s):
-    ///   - [`policy_arn(Option<String>)`](crate::output::PutScalingPolicyOutput::policy_arn): <p>The Amazon Resource Name (ARN) of the policy.</p>
-    ///   - [`alarms(Option<Vec<Alarm>>)`](crate::output::PutScalingPolicyOutput::alarms): <p>The CloudWatch alarms created for the target tracking scaling policy.</p>
-    /// - On failure, responds with [`SdkError<PutScalingPolicyError>`](crate::error::PutScalingPolicyError)
-    pub fn put_scaling_policy(&self) -> crate::client::fluent_builders::PutScalingPolicy {
-        crate::client::fluent_builders::PutScalingPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutScheduledUpdateGroupAction`](crate::client::fluent_builders::PutScheduledUpdateGroupAction) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scheduled_action_name(impl Into<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::scheduled_action_name) / [`set_scheduled_action_name(Option<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_scheduled_action_name): <p>The name of this scaling action.</p>
-    ///   - [`time(DateTime)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::time) / [`set_time(Option<DateTime>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_time): <p>This property is no longer used.</p>
-    ///   - [`start_time(DateTime)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::start_time) / [`set_start_time(Option<DateTime>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_start_time): <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).</p>  <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
-    ///   - [`end_time(DateTime)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::end_time) / [`set_end_time(Option<DateTime>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_end_time): <p>The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.</p>
-    ///   - [`recurrence(impl Into<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::recurrence) / [`set_recurrence(Option<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_recurrence): <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>  <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>  <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
-    ///   - [`min_size(i32)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_min_size): <p>The minimum size of the Auto Scaling group.</p>
-    ///   - [`max_size(i32)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_max_size): <p>The maximum size of the Auto Scaling group.</p>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_desired_capacity): <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions. </p> <note>   <p>You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>, or <code>DesiredCapacity</code>. </p>  </note>
-    ///   - [`time_zone(impl Into<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::time_zone) / [`set_time_zone(Option<String>)`](crate::client::fluent_builders::PutScheduledUpdateGroupAction::set_time_zone): <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>  <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
-    /// - On success, responds with [`PutScheduledUpdateGroupActionOutput`](crate::output::PutScheduledUpdateGroupActionOutput)
-
-    /// - On failure, responds with [`SdkError<PutScheduledUpdateGroupActionError>`](crate::error::PutScheduledUpdateGroupActionError)
-    pub fn put_scheduled_update_group_action(
-        &self,
-    ) -> crate::client::fluent_builders::PutScheduledUpdateGroupAction {
-        crate::client::fluent_builders::PutScheduledUpdateGroupAction::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutWarmPool`](crate::client::fluent_builders::PutWarmPool) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::PutWarmPool::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::PutWarmPool::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`max_group_prepared_capacity(i32)`](crate::client::fluent_builders::PutWarmPool::max_group_prepared_capacity) / [`set_max_group_prepared_capacity(Option<i32>)`](crate::client::fluent_builders::PutWarmPool::set_max_group_prepared_capacity): <p>Specifies the maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional property. Specify it only if you do not want the warm pool size to be determined by the difference between the group's maximum capacity and its desired capacity. </p> <important>   <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling launches and maintains the difference between the group's maximum capacity and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and the desired capacity instead. </p>   <p>The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the same value does the warm pool have an absolute size.</p>  </important>  <p>If the desired capacity of the Auto Scaling group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless you specify a value for <code>MinSize</code>. To remove a value that you previously set, include the property but specify -1 for the value. </p>
-    ///   - [`min_size(i32)`](crate::client::fluent_builders::PutWarmPool::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::PutWarmPool::set_min_size): <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.</p>
-    ///   - [`pool_state(WarmPoolState)`](crate::client::fluent_builders::PutWarmPool::pool_state) / [`set_pool_state(Option<WarmPoolState>)`](crate::client::fluent_builders::PutWarmPool::set_pool_state): <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
-    ///   - [`instance_reuse_policy(InstanceReusePolicy)`](crate::client::fluent_builders::PutWarmPool::instance_reuse_policy) / [`set_instance_reuse_policy(Option<InstanceReusePolicy>)`](crate::client::fluent_builders::PutWarmPool::set_instance_reuse_policy): <p>Indicates whether instances in the Auto Scaling group can be returned to the warm pool on scale in. The default is to terminate instances in the Auto Scaling group when the group scales in.</p>
-    /// - On success, responds with [`PutWarmPoolOutput`](crate::output::PutWarmPoolOutput)
-
-    /// - On failure, responds with [`SdkError<PutWarmPoolError>`](crate::error::PutWarmPoolError)
-    pub fn put_warm_pool(&self) -> crate::client::fluent_builders::PutWarmPool {
-        crate::client::fluent_builders::PutWarmPool::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RecordLifecycleActionHeartbeat`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`lifecycle_hook_name(impl Into<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`lifecycle_action_token(impl Into<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::lifecycle_action_token) / [`set_lifecycle_action_token(Option<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::set_lifecycle_action_token): <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::RecordLifecycleActionHeartbeat::set_instance_id): <p>The ID of the instance.</p>
-    /// - On success, responds with [`RecordLifecycleActionHeartbeatOutput`](crate::output::RecordLifecycleActionHeartbeatOutput)
-
-    /// - On failure, responds with [`SdkError<RecordLifecycleActionHeartbeatError>`](crate::error::RecordLifecycleActionHeartbeatError)
-    pub fn record_lifecycle_action_heartbeat(
-        &self,
-    ) -> crate::client::fluent_builders::RecordLifecycleActionHeartbeat {
-        crate::client::fluent_builders::RecordLifecycleActionHeartbeat::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ResumeProcesses`](crate::client::fluent_builders::ResumeProcesses) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::ResumeProcesses::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::ResumeProcesses::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scaling_processes(Vec<String>)`](crate::client::fluent_builders::ResumeProcesses::scaling_processes) / [`set_scaling_processes(Option<Vec<String>>)`](crate::client::fluent_builders::ResumeProcesses::set_scaling_processes): <p>One or more of the following processes:</p>  <ul>   <li> <p> <code>Launch</code> </p> </li>   <li> <p> <code>Terminate</code> </p> </li>   <li> <p> <code>AddToLoadBalancer</code> </p> </li>   <li> <p> <code>AlarmNotification</code> </p> </li>   <li> <p> <code>AZRebalance</code> </p> </li>   <li> <p> <code>HealthCheck</code> </p> </li>   <li> <p> <code>InstanceRefresh</code> </p> </li>   <li> <p> <code>ReplaceUnhealthy</code> </p> </li>   <li> <p> <code>ScheduledActions</code> </p> </li>  </ul>  <p>If you omit this property, all processes are specified.</p>
-    /// - On success, responds with [`ResumeProcessesOutput`](crate::output::ResumeProcessesOutput)
-
-    /// - On failure, responds with [`SdkError<ResumeProcessesError>`](crate::error::ResumeProcessesError)
-    pub fn resume_processes(&self) -> crate::client::fluent_builders::ResumeProcesses {
-        crate::client::fluent_builders::ResumeProcesses::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetDesiredCapacity`](crate::client::fluent_builders::SetDesiredCapacity) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::SetDesiredCapacity::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::SetDesiredCapacity::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::SetDesiredCapacity::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::SetDesiredCapacity::set_desired_capacity): <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
-    ///   - [`honor_cooldown(bool)`](crate::client::fluent_builders::SetDesiredCapacity::honor_cooldown) / [`set_honor_cooldown(Option<bool>)`](crate::client::fluent_builders::SetDesiredCapacity::set_honor_cooldown): <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
-    /// - On success, responds with [`SetDesiredCapacityOutput`](crate::output::SetDesiredCapacityOutput)
-
-    /// - On failure, responds with [`SdkError<SetDesiredCapacityError>`](crate::error::SetDesiredCapacityError)
-    pub fn set_desired_capacity(&self) -> crate::client::fluent_builders::SetDesiredCapacity {
-        crate::client::fluent_builders::SetDesiredCapacity::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetInstanceHealth`](crate::client::fluent_builders::SetInstanceHealth) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::SetInstanceHealth::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::SetInstanceHealth::set_instance_id): <p>The ID of the instance.</p>
-    ///   - [`health_status(impl Into<String>)`](crate::client::fluent_builders::SetInstanceHealth::health_status) / [`set_health_status(Option<String>)`](crate::client::fluent_builders::SetInstanceHealth::set_health_status): <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
-    ///   - [`should_respect_grace_period(bool)`](crate::client::fluent_builders::SetInstanceHealth::should_respect_grace_period) / [`set_should_respect_grace_period(Option<bool>)`](crate::client::fluent_builders::SetInstanceHealth::set_should_respect_grace_period): <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>  <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
-    /// - On success, responds with [`SetInstanceHealthOutput`](crate::output::SetInstanceHealthOutput)
-
-    /// - On failure, responds with [`SdkError<SetInstanceHealthError>`](crate::error::SetInstanceHealthError)
-    pub fn set_instance_health(&self) -> crate::client::fluent_builders::SetInstanceHealth {
-        crate::client::fluent_builders::SetInstanceHealth::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SetInstanceProtection`](crate::client::fluent_builders::SetInstanceProtection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_ids(Vec<String>)`](crate::client::fluent_builders::SetInstanceProtection::instance_ids) / [`set_instance_ids(Option<Vec<String>>)`](crate::client::fluent_builders::SetInstanceProtection::set_instance_ids): <p>One or more instance IDs. You can specify up to 50 instances.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::SetInstanceProtection::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::SetInstanceProtection::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`protected_from_scale_in(bool)`](crate::client::fluent_builders::SetInstanceProtection::protected_from_scale_in) / [`set_protected_from_scale_in(Option<bool>)`](crate::client::fluent_builders::SetInstanceProtection::set_protected_from_scale_in): <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
-    /// - On success, responds with [`SetInstanceProtectionOutput`](crate::output::SetInstanceProtectionOutput)
-
-    /// - On failure, responds with [`SdkError<SetInstanceProtectionError>`](crate::error::SetInstanceProtectionError)
-    pub fn set_instance_protection(&self) -> crate::client::fluent_builders::SetInstanceProtection {
-        crate::client::fluent_builders::SetInstanceProtection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`StartInstanceRefresh`](crate::client::fluent_builders::StartInstanceRefresh) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::StartInstanceRefresh::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::StartInstanceRefresh::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`strategy(RefreshStrategy)`](crate::client::fluent_builders::StartInstanceRefresh::strategy) / [`set_strategy(Option<RefreshStrategy>)`](crate::client::fluent_builders::StartInstanceRefresh::set_strategy): <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>  <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
-    ///   - [`desired_configuration(DesiredConfiguration)`](crate::client::fluent_builders::StartInstanceRefresh::desired_configuration) / [`set_desired_configuration(Option<DesiredConfiguration>)`](crate::client::fluent_builders::StartInstanceRefresh::set_desired_configuration): <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>  <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>   <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>  </note>
-    ///   - [`preferences(RefreshPreferences)`](crate::client::fluent_builders::StartInstanceRefresh::preferences) / [`set_preferences(Option<RefreshPreferences>)`](crate::client::fluent_builders::StartInstanceRefresh::set_preferences): <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
-    /// - On success, responds with [`StartInstanceRefreshOutput`](crate::output::StartInstanceRefreshOutput) with field(s):
-    ///   - [`instance_refresh_id(Option<String>)`](crate::output::StartInstanceRefreshOutput::instance_refresh_id): <p>A unique ID for tracking the progress of the request.</p>
-    /// - On failure, responds with [`SdkError<StartInstanceRefreshError>`](crate::error::StartInstanceRefreshError)
-    pub fn start_instance_refresh(&self) -> crate::client::fluent_builders::StartInstanceRefresh {
-        crate::client::fluent_builders::StartInstanceRefresh::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SuspendProcesses`](crate::client::fluent_builders::SuspendProcesses) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::SuspendProcesses::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::SuspendProcesses::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`scaling_processes(Vec<String>)`](crate::client::fluent_builders::SuspendProcesses::scaling_processes) / [`set_scaling_processes(Option<Vec<String>>)`](crate::client::fluent_builders::SuspendProcesses::set_scaling_processes): <p>One or more of the following processes:</p>  <ul>   <li> <p> <code>Launch</code> </p> </li>   <li> <p> <code>Terminate</code> </p> </li>   <li> <p> <code>AddToLoadBalancer</code> </p> </li>   <li> <p> <code>AlarmNotification</code> </p> </li>   <li> <p> <code>AZRebalance</code> </p> </li>   <li> <p> <code>HealthCheck</code> </p> </li>   <li> <p> <code>InstanceRefresh</code> </p> </li>   <li> <p> <code>ReplaceUnhealthy</code> </p> </li>   <li> <p> <code>ScheduledActions</code> </p> </li>  </ul>  <p>If you omit this property, all processes are specified.</p>
-    /// - On success, responds with [`SuspendProcessesOutput`](crate::output::SuspendProcessesOutput)
-
-    /// - On failure, responds with [`SdkError<SuspendProcessesError>`](crate::error::SuspendProcessesError)
-    pub fn suspend_processes(&self) -> crate::client::fluent_builders::SuspendProcesses {
-        crate::client::fluent_builders::SuspendProcesses::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TerminateInstanceInAutoScalingGroup`](crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup::instance_id) / [`set_instance_id(Option<String>)`](crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup::set_instance_id): <p>The ID of the instance.</p>
-    ///   - [`should_decrement_desired_capacity(bool)`](crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup::should_decrement_desired_capacity) / [`set_should_decrement_desired_capacity(Option<bool>)`](crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup::set_should_decrement_desired_capacity): <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
-    /// - On success, responds with [`TerminateInstanceInAutoScalingGroupOutput`](crate::output::TerminateInstanceInAutoScalingGroupOutput) with field(s):
-    ///   - [`activity(Option<Activity>)`](crate::output::TerminateInstanceInAutoScalingGroupOutput::activity): <p>A scaling activity.</p>
-    /// - On failure, responds with [`SdkError<TerminateInstanceInAutoScalingGroupError>`](crate::error::TerminateInstanceInAutoScalingGroupError)
-    pub fn terminate_instance_in_auto_scaling_group(
-        &self,
-    ) -> crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup {
-        crate::client::fluent_builders::TerminateInstanceInAutoScalingGroup::new(
-            self.handle.clone(),
-        )
-    }
-    /// Constructs a fluent builder for the [`UpdateAutoScalingGroup`](crate::client::fluent_builders::UpdateAutoScalingGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
-    ///   - [`launch_configuration_name(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::launch_configuration_name) / [`set_launch_configuration_name(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_launch_configuration_name): <p>The name of the launch configuration. If you specify <code>LaunchConfigurationName</code> in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-    ///   - [`launch_template(LaunchTemplateSpecification)`](crate::client::fluent_builders::UpdateAutoScalingGroup::launch_template) / [`set_launch_template(Option<LaunchTemplateSpecification>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_launch_template): <p>The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code> in your update request, you can't specify <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
-    ///   - [`mixed_instances_policy(MixedInstancesPolicy)`](crate::client::fluent_builders::UpdateAutoScalingGroup::mixed_instances_policy) / [`set_mixed_instances_policy(Option<MixedInstancesPolicy>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_mixed_instances_policy): <p>The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`min_size(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::min_size) / [`set_min_size(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_min_size): <p>The minimum size of the Auto Scaling group.</p>
-    ///   - [`max_size(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::max_size) / [`set_max_size(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_max_size): <p>The maximum size of the Auto Scaling group.</p> <note>   <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>  </note>
-    ///   - [`desired_capacity(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::desired_capacity) / [`set_desired_capacity(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_desired_capacity): <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
-    ///   - [`default_cooldown(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::default_cooldown) / [`set_default_cooldown(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_default_cooldown): <p> <i>Only needed if you use simple scaling policies.</i> </p>  <p>The amount of time, in seconds, between one scaling activity ending and another one starting due to simple scaling policies. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`availability_zones(Vec<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::availability_zones) / [`set_availability_zones(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_availability_zones): <p>One or more Availability Zones for the group.</p>
-    ///   - [`health_check_type(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_type) / [`set_health_check_type(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_type): <p>Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health checks are always on.</p>  <p>The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and is subject to change.</p>
-    ///   - [`health_check_grace_period(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::health_check_grace_period) / [`set_health_check_grace_period(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_health_check_grace_period): <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`placement_group(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::placement_group) / [`set_placement_group(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_placement_group): <p>The name of an existing placement group into which to launch your instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>   <p>A <i>cluster</i> placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group. </p>  </note>
-    ///   - [`vpc_zone_identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::vpc_zone_identifier) / [`set_vpc_zone_identifier(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_vpc_zone_identifier): <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify must reside in those Availability Zones.</p>
-    ///   - [`termination_policies(Vec<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::termination_policies) / [`set_termination_policies(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_termination_policies): <p>A policy or a list of policies that are used to select the instances to terminate. The policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code> | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code> | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code> </p>
-    ///   - [`new_instances_protected_from_scale_in(bool)`](crate::client::fluent_builders::UpdateAutoScalingGroup::new_instances_protected_from_scale_in) / [`set_new_instances_protected_from_scale_in(Option<bool>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_new_instances_protected_from_scale_in): <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`service_linked_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::service_linked_role_arn) / [`set_service_linked_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_service_linked_role_arn): <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`max_instance_lifetime(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::max_instance_lifetime) / [`set_max_instance_lifetime(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_max_instance_lifetime): <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). To clear a previously set value, specify a new value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`capacity_rebalance(bool)`](crate::client::fluent_builders::UpdateAutoScalingGroup::capacity_rebalance) / [`set_capacity_rebalance(Option<bool>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_capacity_rebalance): <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Use Capacity Rebalancing to handle Amazon EC2 Spot Interruptions</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    ///   - [`context(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::context) / [`set_context(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_context): <p>Reserved.</p>
-    ///   - [`desired_capacity_type(impl Into<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::desired_capacity_type) / [`set_desired_capacity_type(Option<String>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_desired_capacity_type): <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>  <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>  <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
-    ///   - [`default_instance_warmup(i32)`](crate::client::fluent_builders::UpdateAutoScalingGroup::default_instance_warmup) / [`set_default_instance_warmup(Option<i32>)`](crate::client::fluent_builders::UpdateAutoScalingGroup::set_default_instance_warmup): <p>The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource consumption to become stable after an instance reaches the <code>InService</code> state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <important>   <p>To manage your warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale continuously, such as target tracking and step scaling policies. </p>   <p>If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value of <code>0</code>.</p>  </important>
-    /// - On success, responds with [`UpdateAutoScalingGroupOutput`](crate::output::UpdateAutoScalingGroupOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateAutoScalingGroupError>`](crate::error::UpdateAutoScalingGroupError)
-    pub fn update_auto_scaling_group(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateAutoScalingGroup {
-        crate::client::fluent_builders::UpdateAutoScalingGroup::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -1102,9 +174,137 @@ impl Client {
     }
 }
 
+mod attach_instances;
+
+mod attach_load_balancer_target_groups;
+
+mod attach_load_balancers;
+
+mod attach_traffic_sources;
+
+mod batch_delete_scheduled_action;
+
+mod batch_put_scheduled_update_group_action;
+
+mod cancel_instance_refresh;
+
+mod complete_lifecycle_action;
+
+mod create_auto_scaling_group;
+
+mod create_launch_configuration;
+
+mod create_or_update_tags;
+
+mod delete_auto_scaling_group;
+
+mod delete_launch_configuration;
+
+mod delete_lifecycle_hook;
+
+mod delete_notification_configuration;
+
+mod delete_policy;
+
+mod delete_scheduled_action;
+
+mod delete_tags;
+
+mod delete_warm_pool;
+
+mod describe_account_limits;
+
+mod describe_adjustment_types;
+
+mod describe_auto_scaling_groups;
+
+mod describe_auto_scaling_instances;
+
+mod describe_auto_scaling_notification_types;
+
+mod describe_instance_refreshes;
+
+mod describe_launch_configurations;
+
+mod describe_lifecycle_hook_types;
+
+mod describe_lifecycle_hooks;
+
+mod describe_load_balancer_target_groups;
+
+mod describe_load_balancers;
+
+mod describe_metric_collection_types;
+
+mod describe_notification_configurations;
+
+mod describe_policies;
+
+mod describe_scaling_activities;
+
+mod describe_scaling_process_types;
+
+mod describe_scheduled_actions;
+
+mod describe_tags;
+
+mod describe_termination_policy_types;
+
+mod describe_traffic_sources;
+
+mod describe_warm_pool;
+
+mod detach_instances;
+
+mod detach_load_balancer_target_groups;
+
+mod detach_load_balancers;
+
+mod detach_traffic_sources;
+
+mod disable_metrics_collection;
+
+mod enable_metrics_collection;
+
+mod enter_standby;
+
+mod execute_policy;
+
+mod exit_standby;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_predictive_scaling_forecast;
+
+mod put_lifecycle_hook;
+
+mod put_notification_configuration;
+
+mod put_scaling_policy;
+
+mod put_scheduled_update_group_action;
+
+mod put_warm_pool;
+
+mod record_lifecycle_action_heartbeat;
+
+mod resume_processes;
+
+mod set_desired_capacity;
+
+mod set_instance_health;
+
+mod set_instance_protection;
+
+mod start_instance_refresh;
+
+mod suspend_processes;
+
+mod terminate_instance_in_auto_scaling_group;
+
+mod update_auto_scaling_group;

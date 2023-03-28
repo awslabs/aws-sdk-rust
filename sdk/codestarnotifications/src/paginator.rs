@@ -90,7 +90,8 @@ impl ListEventTypesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_event_types_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_event_types_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,10 @@ impl ListNotificationRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_notification_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_notification_rules_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,8 @@ impl ListTargetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_targets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_targets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -373,7 +378,7 @@ impl ListEventTypesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_event_types_output_event_types(page)
+            crate::lens::lens_list_event_types_output_event_types(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -399,7 +404,11 @@ impl ListNotificationRulesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListNotificationRulesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_notification_rules_output_notification_rules(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_notification_rules_output_notification_rules(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -423,7 +432,7 @@ impl ListTargetsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_targets_output_targets(page)
+            crate::lens::lens_list_targets_output_targets(page)
                 .unwrap_or_default()
                 .into_iter()
         })

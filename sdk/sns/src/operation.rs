@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_permission_error(response)
+            crate::protocol_serde::shape_add_permission::de_add_permission_http_error(response)
         } else {
-            crate::operation_deser::parse_add_permission_response(response)
+            crate::protocol_serde::shape_add_permission::de_add_permission_http_response(response)
         }
     }
 }
@@ -60,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckIfPhoneNumberIsOpte
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_check_if_phone_number_is_opted_out_error(response)
+            crate::protocol_serde::shape_check_if_phone_number_is_opted_out::de_check_if_phone_number_is_opted_out_http_error(response)
         } else {
-            crate::operation_deser::parse_check_if_phone_number_is_opted_out_response(response)
+            crate::protocol_serde::shape_check_if_phone_number_is_opted_out::de_check_if_phone_number_is_opted_out_http_response(response)
         }
     }
 }
@@ -95,9 +95,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmSubscription {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_confirm_subscription_error(response)
+            crate::protocol_serde::shape_confirm_subscription::de_confirm_subscription_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_confirm_subscription_response(response)
+            crate::protocol_serde::shape_confirm_subscription::de_confirm_subscription_http_response(
+                response,
+            )
         }
     }
 }
@@ -130,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlatformApplicatio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_platform_application_error(response)
+            crate::protocol_serde::shape_create_platform_application::de_create_platform_application_http_error(response)
         } else {
-            crate::operation_deser::parse_create_platform_application_response(response)
+            crate::protocol_serde::shape_create_platform_application::de_create_platform_application_http_response(response)
         }
     }
 }
@@ -165,9 +169,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlatformEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_platform_endpoint_error(response)
+            crate::protocol_serde::shape_create_platform_endpoint::de_create_platform_endpoint_http_error(response)
         } else {
-            crate::operation_deser::parse_create_platform_endpoint_response(response)
+            crate::protocol_serde::shape_create_platform_endpoint::de_create_platform_endpoint_http_response(response)
         }
     }
 }
@@ -200,9 +204,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSMSSandboxPhoneNum
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_sms_sandbox_phone_number_error(response)
+            crate::protocol_serde::shape_create_sms_sandbox_phone_number::de_create_sms_sandbox_phone_number_http_error(response)
         } else {
-            crate::operation_deser::parse_create_sms_sandbox_phone_number_response(response)
+            crate::protocol_serde::shape_create_sms_sandbox_phone_number::de_create_sms_sandbox_phone_number_http_response(response)
         }
     }
 }
@@ -233,9 +237,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTopic {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_topic_error(response)
+            crate::protocol_serde::shape_create_topic::de_create_topic_http_error(response)
         } else {
-            crate::operation_deser::parse_create_topic_response(response)
+            crate::protocol_serde::shape_create_topic::de_create_topic_http_response(response)
         }
     }
 }
@@ -266,9 +270,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_endpoint_error(response)
+            crate::protocol_serde::shape_delete_endpoint::de_delete_endpoint_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_endpoint_response(response)
+            crate::protocol_serde::shape_delete_endpoint::de_delete_endpoint_http_response(response)
         }
     }
 }
@@ -301,9 +305,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlatformApplicatio
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_platform_application_error(response)
+            crate::protocol_serde::shape_delete_platform_application::de_delete_platform_application_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_platform_application_response(response)
+            crate::protocol_serde::shape_delete_platform_application::de_delete_platform_application_http_response(response)
         }
     }
 }
@@ -336,9 +340,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSMSSandboxPhoneNum
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_sms_sandbox_phone_number_error(response)
+            crate::protocol_serde::shape_delete_sms_sandbox_phone_number::de_delete_sms_sandbox_phone_number_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_sms_sandbox_phone_number_response(response)
+            crate::protocol_serde::shape_delete_sms_sandbox_phone_number::de_delete_sms_sandbox_phone_number_http_response(response)
         }
     }
 }
@@ -369,9 +373,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTopic {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_topic_error(response)
+            crate::protocol_serde::shape_delete_topic::de_delete_topic_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_topic_response(response)
+            crate::protocol_serde::shape_delete_topic::de_delete_topic_http_response(response)
         }
     }
 }
@@ -404,9 +408,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataProtectionPolicy 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_data_protection_policy_error(response)
+            crate::protocol_serde::shape_get_data_protection_policy::de_get_data_protection_policy_http_error(response)
         } else {
-            crate::operation_deser::parse_get_data_protection_policy_response(response)
+            crate::protocol_serde::shape_get_data_protection_policy::de_get_data_protection_policy_http_response(response)
         }
     }
 }
@@ -439,9 +443,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpointAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_endpoint_attributes_error(response)
+            crate::protocol_serde::shape_get_endpoint_attributes::de_get_endpoint_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_get_endpoint_attributes_response(response)
+            crate::protocol_serde::shape_get_endpoint_attributes::de_get_endpoint_attributes_http_response(response)
         }
     }
 }
@@ -474,9 +478,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPlatformApplicationAt
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_platform_application_attributes_error(response)
+            crate::protocol_serde::shape_get_platform_application_attributes::de_get_platform_application_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_get_platform_application_attributes_response(response)
+            crate::protocol_serde::shape_get_platform_application_attributes::de_get_platform_application_attributes_http_response(response)
         }
     }
 }
@@ -509,9 +513,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSMSAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_sms_attributes_error(response)
+            crate::protocol_serde::shape_get_sms_attributes::de_get_sms_attributes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_sms_attributes_response(response)
+            crate::protocol_serde::shape_get_sms_attributes::de_get_sms_attributes_http_response(
+                response,
+            )
         }
     }
 }
@@ -544,9 +552,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSMSSandboxAccountStat
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_sms_sandbox_account_status_error(response)
+            crate::protocol_serde::shape_get_sms_sandbox_account_status::de_get_sms_sandbox_account_status_http_error(response)
         } else {
-            crate::operation_deser::parse_get_sms_sandbox_account_status_response(response)
+            crate::protocol_serde::shape_get_sms_sandbox_account_status::de_get_sms_sandbox_account_status_http_response(response)
         }
     }
 }
@@ -579,9 +587,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscriptionAttribute
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_subscription_attributes_error(response)
+            crate::protocol_serde::shape_get_subscription_attributes::de_get_subscription_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_get_subscription_attributes_response(response)
+            crate::protocol_serde::shape_get_subscription_attributes::de_get_subscription_attributes_http_response(response)
         }
     }
 }
@@ -614,9 +622,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTopicAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_topic_attributes_error(response)
+            crate::protocol_serde::shape_get_topic_attributes::de_get_topic_attributes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_topic_attributes_response(response)
+            crate::protocol_serde::shape_get_topic_attributes::de_get_topic_attributes_http_response(
+                response,
+            )
         }
     }
 }
@@ -649,9 +661,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointsByPlatformA
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_endpoints_by_platform_application_error(response)
+            crate::protocol_serde::shape_list_endpoints_by_platform_application::de_list_endpoints_by_platform_application_http_error(response)
         } else {
-            crate::operation_deser::parse_list_endpoints_by_platform_application_response(response)
+            crate::protocol_serde::shape_list_endpoints_by_platform_application::de_list_endpoints_by_platform_application_http_response(response)
         }
     }
 }
@@ -684,9 +696,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginationNumbers {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_origination_numbers_error(response)
+            crate::protocol_serde::shape_list_origination_numbers::de_list_origination_numbers_http_error(response)
         } else {
-            crate::operation_deser::parse_list_origination_numbers_response(response)
+            crate::protocol_serde::shape_list_origination_numbers::de_list_origination_numbers_http_response(response)
         }
     }
 }
@@ -719,9 +731,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersOptedOut
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_phone_numbers_opted_out_error(response)
+            crate::protocol_serde::shape_list_phone_numbers_opted_out::de_list_phone_numbers_opted_out_http_error(response)
         } else {
-            crate::operation_deser::parse_list_phone_numbers_opted_out_response(response)
+            crate::protocol_serde::shape_list_phone_numbers_opted_out::de_list_phone_numbers_opted_out_http_response(response)
         }
     }
 }
@@ -754,9 +766,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlatformApplications
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_platform_applications_error(response)
+            crate::protocol_serde::shape_list_platform_applications::de_list_platform_applications_http_error(response)
         } else {
-            crate::operation_deser::parse_list_platform_applications_response(response)
+            crate::protocol_serde::shape_list_platform_applications::de_list_platform_applications_http_response(response)
         }
     }
 }
@@ -789,9 +801,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSMSSandboxPhoneNumbe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_sms_sandbox_phone_numbers_error(response)
+            crate::protocol_serde::shape_list_sms_sandbox_phone_numbers::de_list_sms_sandbox_phone_numbers_http_error(response)
         } else {
-            crate::operation_deser::parse_list_sms_sandbox_phone_numbers_response(response)
+            crate::protocol_serde::shape_list_sms_sandbox_phone_numbers::de_list_sms_sandbox_phone_numbers_http_response(response)
         }
     }
 }
@@ -824,9 +836,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscriptions {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_subscriptions_error(response)
+            crate::protocol_serde::shape_list_subscriptions::de_list_subscriptions_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_subscriptions_response(response)
+            crate::protocol_serde::shape_list_subscriptions::de_list_subscriptions_http_response(
+                response,
+            )
         }
     }
 }
@@ -859,9 +875,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscriptionsByTopic
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_subscriptions_by_topic_error(response)
+            crate::protocol_serde::shape_list_subscriptions_by_topic::de_list_subscriptions_by_topic_http_error(response)
         } else {
-            crate::operation_deser::parse_list_subscriptions_by_topic_response(response)
+            crate::protocol_serde::shape_list_subscriptions_by_topic::de_list_subscriptions_by_topic_http_response(response)
         }
     }
 }
@@ -894,9 +910,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -927,9 +943,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTopics {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_topics_error(response)
+            crate::protocol_serde::shape_list_topics::de_list_topics_http_error(response)
         } else {
-            crate::operation_deser::parse_list_topics_response(response)
+            crate::protocol_serde::shape_list_topics::de_list_topics_http_response(response)
         }
     }
 }
@@ -962,9 +978,13 @@ impl aws_smithy_http::response::ParseStrictResponse for OptInPhoneNumber {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_opt_in_phone_number_error(response)
+            crate::protocol_serde::shape_opt_in_phone_number::de_opt_in_phone_number_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_opt_in_phone_number_response(response)
+            crate::protocol_serde::shape_opt_in_phone_number::de_opt_in_phone_number_http_response(
+                response,
+            )
         }
     }
 }
@@ -994,9 +1014,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Publish {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_publish_error(response)
+            crate::protocol_serde::shape_publish::de_publish_http_error(response)
         } else {
-            crate::operation_deser::parse_publish_response(response)
+            crate::protocol_serde::shape_publish::de_publish_http_response(response)
         }
     }
 }
@@ -1027,9 +1047,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishBatch {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_publish_batch_error(response)
+            crate::protocol_serde::shape_publish_batch::de_publish_batch_http_error(response)
         } else {
-            crate::operation_deser::parse_publish_batch_response(response)
+            crate::protocol_serde::shape_publish_batch::de_publish_batch_http_response(response)
         }
     }
 }
@@ -1062,9 +1082,9 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDataProtectionPolicy 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_put_data_protection_policy_error(response)
+            crate::protocol_serde::shape_put_data_protection_policy::de_put_data_protection_policy_http_error(response)
         } else {
-            crate::operation_deser::parse_put_data_protection_policy_response(response)
+            crate::protocol_serde::shape_put_data_protection_policy::de_put_data_protection_policy_http_response(response)
         }
     }
 }
@@ -1097,9 +1117,13 @@ impl aws_smithy_http::response::ParseStrictResponse for RemovePermission {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_permission_error(response)
+            crate::protocol_serde::shape_remove_permission::de_remove_permission_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_remove_permission_response(response)
+            crate::protocol_serde::shape_remove_permission::de_remove_permission_http_response(
+                response,
+            )
         }
     }
 }
@@ -1132,9 +1156,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SetEndpointAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_endpoint_attributes_error(response)
+            crate::protocol_serde::shape_set_endpoint_attributes::de_set_endpoint_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_set_endpoint_attributes_response(response)
+            crate::protocol_serde::shape_set_endpoint_attributes::de_set_endpoint_attributes_http_response(response)
         }
     }
 }
@@ -1167,9 +1191,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SetPlatformApplicationAt
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_platform_application_attributes_error(response)
+            crate::protocol_serde::shape_set_platform_application_attributes::de_set_platform_application_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_set_platform_application_attributes_response(response)
+            crate::protocol_serde::shape_set_platform_application_attributes::de_set_platform_application_attributes_http_response(response)
         }
     }
 }
@@ -1202,9 +1226,13 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSMSAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_sms_attributes_error(response)
+            crate::protocol_serde::shape_set_sms_attributes::de_set_sms_attributes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_set_sms_attributes_response(response)
+            crate::protocol_serde::shape_set_sms_attributes::de_set_sms_attributes_http_response(
+                response,
+            )
         }
     }
 }
@@ -1237,9 +1265,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSubscriptionAttribute
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_subscription_attributes_error(response)
+            crate::protocol_serde::shape_set_subscription_attributes::de_set_subscription_attributes_http_error(response)
         } else {
-            crate::operation_deser::parse_set_subscription_attributes_response(response)
+            crate::protocol_serde::shape_set_subscription_attributes::de_set_subscription_attributes_http_response(response)
         }
     }
 }
@@ -1272,9 +1300,13 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTopicAttributes {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_set_topic_attributes_error(response)
+            crate::protocol_serde::shape_set_topic_attributes::de_set_topic_attributes_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_set_topic_attributes_response(response)
+            crate::protocol_serde::shape_set_topic_attributes::de_set_topic_attributes_http_response(
+                response,
+            )
         }
     }
 }
@@ -1304,9 +1336,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_subscribe_error(response)
+            crate::protocol_serde::shape_subscribe::de_subscribe_http_error(response)
         } else {
-            crate::operation_deser::parse_subscribe_response(response)
+            crate::protocol_serde::shape_subscribe::de_subscribe_http_response(response)
         }
     }
 }
@@ -1337,9 +1369,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -1370,9 +1402,9 @@ impl aws_smithy_http::response::ParseStrictResponse for Unsubscribe {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_unsubscribe_error(response)
+            crate::protocol_serde::shape_unsubscribe::de_unsubscribe_http_error(response)
         } else {
-            crate::operation_deser::parse_unsubscribe_response(response)
+            crate::protocol_serde::shape_unsubscribe::de_unsubscribe_http_response(response)
         }
     }
 }
@@ -1403,9 +1435,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -1438,9 +1470,9 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifySMSSandboxPhoneNum
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_verify_sms_sandbox_phone_number_error(response)
+            crate::protocol_serde::shape_verify_sms_sandbox_phone_number::de_verify_sms_sandbox_phone_number_http_error(response)
         } else {
-            crate::operation_deser::parse_verify_sms_sandbox_phone_number_response(response)
+            crate::protocol_serde::shape_verify_sms_sandbox_phone_number::de_verify_sms_sandbox_phone_number_http_response(response)
         }
     }
 }

@@ -89,70 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`GetServiceSettings`](crate::client::fluent_builders::GetServiceSettings) operation.
-    ///
-    /// - The fluent builder takes no input, just [`send`](crate::client::fluent_builders::GetServiceSettings::send) it.
-
-    /// - On success, responds with [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput) with field(s):
-    ///   - [`linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::output::GetServiceSettingsOutput::linux_subscriptions_discovery): <p>Lists if discovery has been enabled for Linux subscriptions.</p>
-    ///   - [`linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::output::GetServiceSettingsOutput::linux_subscriptions_discovery_settings): <p>Lists the settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`status(Option<Status>)`](crate::output::GetServiceSettingsOutput::status): <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    ///   - [`status_message(Option<HashMap<String, String>>)`](crate::output::GetServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
-    ///   - [`home_regions(Option<Vec<String>>)`](crate::output::GetServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    /// - On failure, responds with [`SdkError<GetServiceSettingsError>`](crate::error::GetServiceSettingsError)
-    pub fn get_service_settings(&self) -> crate::client::fluent_builders::GetServiceSettings {
-        crate::client::fluent_builders::GetServiceSettings::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLinuxSubscriptionInstances`](crate::client::fluent_builders::ListLinuxSubscriptionInstances) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p>  <p>The valid names for this filter are:</p>  <ul>   <li> <p> <code>AmiID</code> </p> </li>   <li> <p> <code>InstanceID</code> </p> </li>   <li> <p> <code>AccountID</code> </p> </li>   <li> <p> <code>Status</code> </p> </li>   <li> <p> <code>Region</code> </p> </li>   <li> <p> <code>UsageOperation</code> </p> </li>   <li> <p> <code>ProductCode</code> </p> </li>   <li> <p> <code>InstanceType</code> </p> </li>  </ul>  <p>The valid Operators for this filter are:</p>  <ul>   <li> <p> <code>contains</code> </p> </li>   <li> <p> <code>equals</code> </p> </li>   <li> <p> <code>Notequal</code> </p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLinuxSubscriptionInstances::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput) with field(s):
-    ///   - [`instances(Option<Vec<Instance>>)`](crate::output::ListLinuxSubscriptionInstancesOutput::instances): <p>An array that contains instance objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLinuxSubscriptionInstancesOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLinuxSubscriptionInstancesError>`](crate::error::ListLinuxSubscriptionInstancesError)
-    pub fn list_linux_subscription_instances(
-        &self,
-    ) -> crate::client::fluent_builders::ListLinuxSubscriptionInstances {
-        crate::client::fluent_builders::ListLinuxSubscriptionInstances::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLinuxSubscriptions`](crate::client::fluent_builders::ListLinuxSubscriptions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLinuxSubscriptions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::ListLinuxSubscriptions::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_filters): <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p>  <p>The valid names for this filter are:</p>  <ul>   <li> <p> <code>Subscription</code> </p> </li>  </ul>  <p>The valid Operators for this filter are:</p>  <ul>   <li> <p> <code>contains</code> </p> </li>   <li> <p> <code>equals</code> </p> </li>   <li> <p> <code>Notequal</code> </p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLinuxSubscriptions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLinuxSubscriptions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLinuxSubscriptions::set_next_token): <p>Token for the next set of results.</p>
-    /// - On success, responds with [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput) with field(s):
-    ///   - [`subscriptions(Option<Vec<Subscription>>)`](crate::output::ListLinuxSubscriptionsOutput::subscriptions): <p>An array that contains subscription objects.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLinuxSubscriptionsOutput::next_token): <p>Token for the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListLinuxSubscriptionsError>`](crate::error::ListLinuxSubscriptionsError)
-    pub fn list_linux_subscriptions(
-        &self,
-    ) -> crate::client::fluent_builders::ListLinuxSubscriptions {
-        crate::client::fluent_builders::ListLinuxSubscriptions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateServiceSettings`](crate::client::fluent_builders::UpdateServiceSettings) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`linux_subscriptions_discovery(LinuxSubscriptionsDiscovery)`](crate::client::fluent_builders::UpdateServiceSettings::linux_subscriptions_discovery) / [`set_linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::client::fluent_builders::UpdateServiceSettings::set_linux_subscriptions_discovery): <p>Describes if the discovery of Linux subscriptions is enabled.</p>
-    ///   - [`linux_subscriptions_discovery_settings(LinuxSubscriptionsDiscoverySettings)`](crate::client::fluent_builders::UpdateServiceSettings::linux_subscriptions_discovery_settings) / [`set_linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::client::fluent_builders::UpdateServiceSettings::set_linux_subscriptions_discovery_settings): <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`allow_update(bool)`](crate::client::fluent_builders::UpdateServiceSettings::allow_update) / [`set_allow_update(Option<bool>)`](crate::client::fluent_builders::UpdateServiceSettings::set_allow_update): <p>Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.</p>
-    /// - On success, responds with [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput) with field(s):
-    ///   - [`linux_subscriptions_discovery(Option<LinuxSubscriptionsDiscovery>)`](crate::output::UpdateServiceSettingsOutput::linux_subscriptions_discovery): <p>Lists if discovery has been enabled for Linux subscriptions.</p>
-    ///   - [`linux_subscriptions_discovery_settings(Option<LinuxSubscriptionsDiscoverySettings>)`](crate::output::UpdateServiceSettingsOutput::linux_subscriptions_discovery_settings): <p>The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.</p>
-    ///   - [`status(Option<Status>)`](crate::output::UpdateServiceSettingsOutput::status): <p>Indicates the status of Linux subscriptions settings being applied.</p>
-    ///   - [`status_message(Option<HashMap<String, String>>)`](crate::output::UpdateServiceSettingsOutput::status_message): <p>A message which details the Linux subscriptions service settings current status.</p>
-    ///   - [`home_regions(Option<Vec<String>>)`](crate::output::UpdateServiceSettingsOutput::home_regions): <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
-    /// - On failure, responds with [`SdkError<UpdateServiceSettingsError>`](crate::error::UpdateServiceSettingsError)
-    pub fn update_service_settings(&self) -> crate::client::fluent_builders::UpdateServiceSettings {
-        crate::client::fluent_builders::UpdateServiceSettings::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -244,3 +180,11 @@ impl Client {
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_service_settings;
+
+mod list_linux_subscription_instances;
+
+mod list_linux_subscriptions;
+
+mod update_service_settings;

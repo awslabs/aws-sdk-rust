@@ -89,204 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateLink`](crate::client::fluent_builders::CreateLink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`label_template(impl Into<String>)`](crate::client::fluent_builders::CreateLink::label_template) / [`set_label_template(Option<String>)`](crate::client::fluent_builders::CreateLink::set_label_template): <p>Specify a friendly human-readable name to use to identify this source account when you are viewing data from it in the monitoring account.</p>  <p>You can use a custom label or use the following variables:</p>  <ul>   <li> <p> <code>$AccountName</code> is the name of the account</p> </li>   <li> <p> <code>$AccountEmail</code> is the globally unique email address of the account</p> </li>   <li> <p> <code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p> </li>  </ul>
-    ///   - [`resource_types(Vec<ResourceType>)`](crate::client::fluent_builders::CreateLink::resource_types) / [`set_resource_types(Option<Vec<ResourceType>>)`](crate::client::fluent_builders::CreateLink::set_resource_types): <p>An array of strings that define which types of data that the source account shares with the monitoring account.</p>
-    ///   - [`sink_identifier(impl Into<String>)`](crate::client::fluent_builders::CreateLink::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::client::fluent_builders::CreateLink::set_sink_identifier): <p>The ARN of the sink to use to create this link. You can use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html">ListSinks</a> to find the ARNs of sinks.</p>  <p>For more information about sinks, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateLink::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateLink::set_tags): <p>Assigns one or more tags (key-value pairs) to the link. </p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    /// - On success, responds with [`CreateLinkOutput`](crate::output::CreateLinkOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateLinkOutput::arn): <p>The ARN of the link that is newly created.</p>
-    ///   - [`id(Option<String>)`](crate::output::CreateLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    ///   - [`label(Option<String>)`](crate::output::CreateLinkOutput::label): <p>The label that you assigned to this link. If the <code>labelTemplate</code> includes variables, this field displays the variables resolved to their actual values.</p>
-    ///   - [`label_template(Option<String>)`](crate::output::CreateLinkOutput::label_template): <p>The exact label template that you specified, with the variables not resolved.</p>
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::CreateLinkOutput::resource_types): <p>The resource types supported by this link.</p>
-    ///   - [`sink_arn(Option<String>)`](crate::output::CreateLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateLinkOutput::tags): <p>The tags assigned to the link.</p>
-    /// - On failure, responds with [`SdkError<CreateLinkError>`](crate::error::CreateLinkError)
-    pub fn create_link(&self) -> crate::client::fluent_builders::CreateLink {
-        crate::client::fluent_builders::CreateLink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateSink`](crate::client::fluent_builders::CreateSink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateSink::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateSink::set_name): <p>A name for the sink.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateSink::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateSink::set_tags): <p>Assigns one or more tags (key-value pairs) to the link. </p>  <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>  <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
-    /// - On success, responds with [`CreateSinkOutput`](crate::output::CreateSinkOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::CreateSinkOutput::arn): <p>The ARN of the sink that is newly created.</p>
-    ///   - [`id(Option<String>)`](crate::output::CreateSinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::CreateSinkOutput::name): <p>The name of the sink.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateSinkOutput::tags): <p>The tags assigned to the sink.</p>
-    /// - On failure, responds with [`SdkError<CreateSinkError>`](crate::error::CreateSinkError)
-    pub fn create_sink(&self) -> crate::client::fluent_builders::CreateSink {
-        crate::client::fluent_builders::CreateSink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteLink`](crate::client::fluent_builders::DeleteLink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteLink::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteLink::set_identifier): <p>The ARN of the link to delete.</p>
-    /// - On success, responds with [`DeleteLinkOutput`](crate::output::DeleteLinkOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteLinkError>`](crate::error::DeleteLinkError)
-    pub fn delete_link(&self) -> crate::client::fluent_builders::DeleteLink {
-        crate::client::fluent_builders::DeleteLink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteSink`](crate::client::fluent_builders::DeleteSink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::DeleteSink::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::DeleteSink::set_identifier): <p>The ARN of the sink to delete.</p>
-    /// - On success, responds with [`DeleteSinkOutput`](crate::output::DeleteSinkOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteSinkError>`](crate::error::DeleteSinkError)
-    pub fn delete_sink(&self) -> crate::client::fluent_builders::DeleteSink {
-        crate::client::fluent_builders::DeleteSink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetLink`](crate::client::fluent_builders::GetLink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetLink::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetLink::set_identifier): <p>The ARN of the link to retrieve information for.</p>
-    /// - On success, responds with [`GetLinkOutput`](crate::output::GetLinkOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetLinkOutput::arn): <p>The ARN of the link.</p>
-    ///   - [`id(Option<String>)`](crate::output::GetLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the link ARN.</p>
-    ///   - [`label(Option<String>)`](crate::output::GetLinkOutput::label): <p>The label that you assigned to this link, with the variables resolved to their actual values.</p>
-    ///   - [`label_template(Option<String>)`](crate::output::GetLinkOutput::label_template): <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::GetLinkOutput::resource_types): <p>The resource types supported by this link.</p>
-    ///   - [`sink_arn(Option<String>)`](crate::output::GetLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetLinkOutput::tags): <p>The tags assigned to the link.</p>
-    /// - On failure, responds with [`SdkError<GetLinkError>`](crate::error::GetLinkError)
-    pub fn get_link(&self) -> crate::client::fluent_builders::GetLink {
-        crate::client::fluent_builders::GetLink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSink`](crate::client::fluent_builders::GetSink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::GetSink::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::GetSink::set_identifier): <p>The ARN of the sink to retrieve information for.</p>
-    /// - On success, responds with [`GetSinkOutput`](crate::output::GetSinkOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::GetSinkOutput::arn): <p>The ARN of the sink.</p>
-    ///   - [`id(Option<String>)`](crate::output::GetSinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    ///   - [`name(Option<String>)`](crate::output::GetSinkOutput::name): <p>The name of the sink.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetSinkOutput::tags): <p>The tags assigned to the sink.</p>
-    /// - On failure, responds with [`SdkError<GetSinkError>`](crate::error::GetSinkError)
-    pub fn get_sink(&self) -> crate::client::fluent_builders::GetSink {
-        crate::client::fluent_builders::GetSink::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetSinkPolicy`](crate::client::fluent_builders::GetSinkPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sink_identifier(impl Into<String>)`](crate::client::fluent_builders::GetSinkPolicy::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::client::fluent_builders::GetSinkPolicy::set_sink_identifier): <p>The ARN of the sink to retrieve the policy of.</p>
-    /// - On success, responds with [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput) with field(s):
-    ///   - [`sink_arn(Option<String>)`](crate::output::GetSinkPolicyOutput::sink_arn): <p>The ARN of the sink.</p>
-    ///   - [`sink_id(Option<String>)`](crate::output::GetSinkPolicyOutput::sink_id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    ///   - [`policy(Option<String>)`](crate::output::GetSinkPolicyOutput::policy): <p>The policy that you specified, in JSON format.</p>
-    /// - On failure, responds with [`SdkError<GetSinkPolicyError>`](crate::error::GetSinkPolicyError)
-    pub fn get_sink_policy(&self) -> crate::client::fluent_builders::GetSinkPolicy {
-        crate::client::fluent_builders::GetSinkPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAttachedLinks`](crate::client::fluent_builders::ListAttachedLinks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAttachedLinks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAttachedLinks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAttachedLinks::set_max_results): <p>Limits the number of returned links to the specified number.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAttachedLinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAttachedLinks::set_next_token): <p>The token for the next set of items to return. You received this token from a previous call.</p>
-    ///   - [`sink_identifier(impl Into<String>)`](crate::client::fluent_builders::ListAttachedLinks::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::client::fluent_builders::ListAttachedLinks::set_sink_identifier): <p>The ARN of the sink that you want to retrieve links for.</p>
-    /// - On success, responds with [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput) with field(s):
-    ///   - [`items(Option<Vec<ListAttachedLinksItem>>)`](crate::output::ListAttachedLinksOutput::items): <p>An array of structures that contain the information about the attached links.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAttachedLinksOutput::next_token): <p>The token to use when requesting the next set of links.</p>
-    /// - On failure, responds with [`SdkError<ListAttachedLinksError>`](crate::error::ListAttachedLinksError)
-    pub fn list_attached_links(&self) -> crate::client::fluent_builders::ListAttachedLinks {
-        crate::client::fluent_builders::ListAttachedLinks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListLinks`](crate::client::fluent_builders::ListLinks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListLinks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListLinks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListLinks::set_max_results): <p>Limits the number of returned links to the specified number.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListLinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListLinks::set_next_token): <p>The token for the next set of items to return. You received this token from a previous call.</p>
-    /// - On success, responds with [`ListLinksOutput`](crate::output::ListLinksOutput) with field(s):
-    ///   - [`items(Option<Vec<ListLinksItem>>)`](crate::output::ListLinksOutput::items): <p>An array of structures that contain the information about the returned links.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListLinksOutput::next_token): <p>The token to use when requesting the next set of links.</p>
-    /// - On failure, responds with [`SdkError<ListLinksError>`](crate::error::ListLinksError)
-    pub fn list_links(&self) -> crate::client::fluent_builders::ListLinks {
-        crate::client::fluent_builders::ListLinks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListSinks`](crate::client::fluent_builders::ListSinks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListSinks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListSinks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListSinks::set_max_results): <p>Limits the number of returned links to the specified number.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListSinks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListSinks::set_next_token): <p>The token for the next set of items to return. You received this token from a previous call.</p>
-    /// - On success, responds with [`ListSinksOutput`](crate::output::ListSinksOutput) with field(s):
-    ///   - [`items(Option<Vec<ListSinksItem>>)`](crate::output::ListSinksOutput::items): <p>An array of structures that contain the information about the returned sinks.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListSinksOutput::next_token): <p>The token to use when requesting the next set of sinks.</p>
-    /// - On failure, responds with [`SdkError<ListSinksError>`](crate::error::ListSinksError)
-    pub fn list_sinks(&self) -> crate::client::fluent_builders::ListSinks {
-        crate::client::fluent_builders::ListSinks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource that you want to view tags for.</p>  <p>The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code> </p>  <p>The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p> <important>   <p>Unlike tagging permissions in other Amazon Web Services services, to retrieve the list of tags for links or sinks you must have the <code>oam:RequestTag</code> permission. The <code>aws:ReguestTag</code> permission does not allow you to tag and untag links and sinks.</p>  </important>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags associated with the requested resource.&gt;</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutSinkPolicy`](crate::client::fluent_builders::PutSinkPolicy) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sink_identifier(impl Into<String>)`](crate::client::fluent_builders::PutSinkPolicy::sink_identifier) / [`set_sink_identifier(Option<String>)`](crate::client::fluent_builders::PutSinkPolicy::set_sink_identifier): <p>The ARN of the sink to attach this policy to.</p>
-    ///   - [`policy(impl Into<String>)`](crate::client::fluent_builders::PutSinkPolicy::policy) / [`set_policy(Option<String>)`](crate::client::fluent_builders::PutSinkPolicy::set_policy): <p>The JSON policy to use. If you are updating an existing policy, the entire existing policy is replaced by what you specify here.</p>  <p>The policy must be in JSON string format with quotation marks escaped and no newlines.</p>  <p>For examples of different types of policies, see the <b>Examples</b> section on this page.</p>
-    /// - On success, responds with [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput) with field(s):
-    ///   - [`sink_arn(Option<String>)`](crate::output::PutSinkPolicyOutput::sink_arn): <p>The ARN of the sink.</p>
-    ///   - [`sink_id(Option<String>)`](crate::output::PutSinkPolicyOutput::sink_id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    ///   - [`policy(Option<String>)`](crate::output::PutSinkPolicyOutput::policy): <p>The policy that you specified.</p>
-    /// - On failure, responds with [`SdkError<PutSinkPolicyError>`](crate::error::PutSinkPolicyError)
-    pub fn put_sink_policy(&self) -> crate::client::fluent_builders::PutSinkPolicy {
-        crate::client::fluent_builders::PutSinkPolicy::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource that you're adding tags to.</p>  <p>The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code> </p>  <p>The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of key-value pairs to associate with the resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource that you're removing tags from.</p>  <p>The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i> </code> </p>  <p>The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i> </code> </p>  <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html">CloudWatch Logs resources and operations</a>.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateLink`](crate::client::fluent_builders::UpdateLink) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::client::fluent_builders::UpdateLink::identifier) / [`set_identifier(Option<String>)`](crate::client::fluent_builders::UpdateLink::set_identifier): <p>The ARN of the link that you want to update.</p>
-    ///   - [`resource_types(Vec<ResourceType>)`](crate::client::fluent_builders::UpdateLink::resource_types) / [`set_resource_types(Option<Vec<ResourceType>>)`](crate::client::fluent_builders::UpdateLink::set_resource_types): <p>An array of strings that define which types of data that the source account will send to the monitoring account.</p>  <p>Your input here replaces the current set of data types that are shared.</p>
-    /// - On success, responds with [`UpdateLinkOutput`](crate::output::UpdateLinkOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::output::UpdateLinkOutput::arn): <p>The ARN of the link that you have updated.</p>
-    ///   - [`id(Option<String>)`](crate::output::UpdateLinkOutput::id): <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    ///   - [`label(Option<String>)`](crate::output::UpdateLinkOutput::label): <p>The label assigned to this link, with the variables resolved to their actual values.</p>
-    ///   - [`label_template(Option<String>)`](crate::output::UpdateLinkOutput::label_template): <p>The exact label template that was specified when the link was created, with the template variables not resolved.</p>
-    ///   - [`resource_types(Option<Vec<String>>)`](crate::output::UpdateLinkOutput::resource_types): <p>The resource types now supported by this link.</p>
-    ///   - [`sink_arn(Option<String>)`](crate::output::UpdateLinkOutput::sink_arn): <p>The ARN of the sink that is used for this link.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateLinkOutput::tags): <p>The tags assigned to the link.</p>
-    /// - On failure, responds with [`SdkError<UpdateLinkError>`](crate::error::UpdateLinkError)
-    pub fn update_link(&self) -> crate::client::fluent_builders::UpdateLink {
-        crate::client::fluent_builders::UpdateLink::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -372,9 +174,39 @@ impl Client {
     }
 }
 
+mod create_link;
+
+mod create_sink;
+
+mod delete_link;
+
+mod delete_sink;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_link;
+
+mod get_sink;
+
+mod get_sink_policy;
+
+mod list_attached_links;
+
+mod list_links;
+
+mod list_sinks;
+
+mod list_tags_for_resource;
+
+mod put_sink_policy;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_link;

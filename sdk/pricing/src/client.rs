@@ -89,56 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`DescribeServices`](crate::client::fluent_builders::DescribeServices) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::DescribeServices::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_code(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::service_code) / [`set_service_code(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_service_code): <p>The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code> call. To retrieve a list of all services, leave this blank.</p>
-    ///   - [`format_version(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::format_version) / [`set_format_version(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_format_version): <p>The format version that you want the response to be in.</p>  <p>Valid values are: <code>aws_v1</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::DescribeServices::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::DescribeServices::set_next_token): <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::DescribeServices::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::DescribeServices::set_max_results): <p>The maximum number of results that you want returned in the response.</p>
-    /// - On success, responds with [`DescribeServicesOutput`](crate::output::DescribeServicesOutput) with field(s):
-    ///   - [`services(Option<Vec<Service>>)`](crate::output::DescribeServicesOutput::services): <p>The service metadata for the service or services in the response.</p>
-    ///   - [`format_version(Option<String>)`](crate::output::DescribeServicesOutput::format_version): <p>The format version of the response. For example, <code>aws_v1</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::DescribeServicesOutput::next_token): <p>The pagination token for the next set of retrievable results.</p>
-    /// - On failure, responds with [`SdkError<DescribeServicesError>`](crate::error::DescribeServicesError)
-    pub fn describe_services(&self) -> crate::client::fluent_builders::DescribeServices {
-        crate::client::fluent_builders::DescribeServices::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAttributeValues`](crate::client::fluent_builders::GetAttributeValues) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetAttributeValues::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_code(impl Into<String>)`](crate::client::fluent_builders::GetAttributeValues::service_code) / [`set_service_code(Option<String>)`](crate::client::fluent_builders::GetAttributeValues::set_service_code): <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
-    ///   - [`attribute_name(impl Into<String>)`](crate::client::fluent_builders::GetAttributeValues::attribute_name) / [`set_attribute_name(Option<String>)`](crate::client::fluent_builders::GetAttributeValues::set_attribute_name): <p>The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetAttributeValues::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetAttributeValues::set_next_token): <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetAttributeValues::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetAttributeValues::set_max_results): <p>The maximum number of results to return in response.</p>
-    /// - On success, responds with [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput) with field(s):
-    ///   - [`attribute_values(Option<Vec<AttributeValue>>)`](crate::output::GetAttributeValuesOutput::attribute_values): <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetAttributeValuesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<GetAttributeValuesError>`](crate::error::GetAttributeValuesError)
-    pub fn get_attribute_values(&self) -> crate::client::fluent_builders::GetAttributeValues {
-        crate::client::fluent_builders::GetAttributeValues::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProducts`](crate::client::fluent_builders::GetProducts) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetProducts::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`service_code(impl Into<String>)`](crate::client::fluent_builders::GetProducts::service_code) / [`set_service_code(Option<String>)`](crate::client::fluent_builders::GetProducts::set_service_code): <p>The code for the service whose products you want to retrieve. </p>
-    ///   - [`filters(Vec<Filter>)`](crate::client::fluent_builders::GetProducts::filters) / [`set_filters(Option<Vec<Filter>>)`](crate::client::fluent_builders::GetProducts::set_filters): <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    ///   - [`format_version(impl Into<String>)`](crate::client::fluent_builders::GetProducts::format_version) / [`set_format_version(Option<String>)`](crate::client::fluent_builders::GetProducts::set_format_version): <p>The format version that you want the response to be in.</p>  <p>Valid values are: <code>aws_v1</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetProducts::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetProducts::set_next_token): <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetProducts::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetProducts::set_max_results): <p>The maximum number of results to return in the response.</p>
-    /// - On success, responds with [`GetProductsOutput`](crate::output::GetProductsOutput) with field(s):
-    ///   - [`format_version(Option<String>)`](crate::output::GetProductsOutput::format_version): <p>The format version of the response. For example, aws_v1.</p>
-    ///   - [`price_list(Option<Vec<String>>)`](crate::output::GetProductsOutput::price_list): <p>The list of products that match your filters. The list contains both the product metadata and the price information.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetProductsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<GetProductsError>`](crate::error::GetProductsError)
-    pub fn get_products(&self) -> crate::client::fluent_builders::GetProducts {
-        crate::client::fluent_builders::GetProducts::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -224,9 +174,15 @@ impl Client {
     }
 }
 
+mod describe_services;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_attribute_values;
+
+mod get_products;

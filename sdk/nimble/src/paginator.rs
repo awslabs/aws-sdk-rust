@@ -82,7 +82,8 @@ impl ListEulaAcceptancesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_eula_acceptances_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_eula_acceptances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +193,7 @@ impl ListEulasPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_eulas_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_eulas_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -310,7 +311,10 @@ impl ListLaunchProfileMembersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_launch_profile_members_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_launch_profile_members_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -428,7 +432,8 @@ impl ListLaunchProfilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_launch_profiles_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_launch_profiles_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -538,7 +543,8 @@ impl ListStreamingImagesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_streaming_images_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_streaming_images_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -648,7 +654,7 @@ impl ListStreamingSessionBackupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_streaming_session_backups_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_streaming_session_backups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -758,7 +764,10 @@ impl ListStreamingSessionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_streaming_sessions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_streaming_sessions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -876,7 +885,8 @@ impl ListStudioComponentsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_studio_components_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_studio_components_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -994,7 +1004,8 @@ impl ListStudioMembersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_studio_members_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_studio_members_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1104,7 +1115,8 @@ impl ListStudiosPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_studios_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_studios_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1151,11 +1163,9 @@ impl ListEulaAcceptancesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_eula_acceptances_output_eula_acceptances(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_eula_acceptances_output_eula_acceptances(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1180,7 +1190,7 @@ impl ListEulasPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_eulas_output_eulas(page)
+            crate::lens::lens_list_eulas_output_eulas(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1207,11 +1217,9 @@ impl ListLaunchProfileMembersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_launch_profile_members_output_members(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_launch_profile_members_output_members(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1236,11 +1244,9 @@ impl ListLaunchProfilesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_launch_profiles_output_launch_profiles(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_launch_profiles_output_launch_profiles(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1265,11 +1271,9 @@ impl ListStreamingImagesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_streaming_images_output_streaming_images(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_streaming_images_output_streaming_images(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1293,7 +1297,11 @@ impl ListStreamingSessionBackupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListStreamingSessionBackupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_streaming_session_backups_output_streaming_session_backups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_streaming_session_backups_output_streaming_session_backups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1317,7 +1325,7 @@ impl ListStreamingSessionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_streaming_sessions_output_sessions(page)
+            crate::lens::lens_list_streaming_sessions_output_sessions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1343,7 +1351,11 @@ impl ListStudioComponentsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListStudioComponentsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_studio_components_output_studio_components(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_studio_components_output_studio_components(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1367,7 +1379,7 @@ impl ListStudioMembersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_studio_members_output_members(page)
+            crate::lens::lens_list_studio_members_output_members(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1394,7 +1406,7 @@ impl ListStudiosPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_studios_output_studios(page)
+            crate::lens::lens_list_studios_output_studios(page)
                 .unwrap_or_default()
                 .into_iter()
         })

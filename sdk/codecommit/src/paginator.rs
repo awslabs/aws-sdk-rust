@@ -82,7 +82,10 @@ impl DescribeMergeConflictsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_merge_conflicts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_merge_conflicts_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -192,7 +195,10 @@ impl DescribePullRequestEventsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_pull_request_events_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_pull_request_events_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -302,7 +308,8 @@ impl GetCommentReactionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_comment_reactions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_comment_reactions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -412,7 +419,7 @@ impl GetCommentsForComparedCommitPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_comments_for_compared_commit_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_comments_for_compared_commit_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -522,7 +529,7 @@ impl GetCommentsForPullRequestPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_comments_for_pull_request_output_next_token(resp);
+                            let new_token = crate::lens::reflens_get_comments_for_pull_request_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -632,7 +639,8 @@ impl GetDifferencesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_differences_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_differences_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -742,7 +750,8 @@ impl GetMergeConflictsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_merge_conflicts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_merge_conflicts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -852,7 +861,10 @@ impl ListApprovalRuleTemplatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_approval_rule_templates_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_approval_rule_templates_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -964,7 +976,7 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_associated_approval_rule_templates_for_repository_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_associated_approval_rule_templates_for_repository_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1074,7 +1086,8 @@ impl ListBranchesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_branches_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_branches_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1184,7 +1197,8 @@ impl ListPullRequestsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_pull_requests_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_pull_requests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1294,7 +1308,8 @@ impl ListRepositoriesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_repositories_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_repositories_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1406,7 +1421,7 @@ impl ListRepositoriesForApprovalRuleTemplatePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_repositories_for_approval_rule_template_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_repositories_for_approval_rule_template_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1453,7 +1468,7 @@ impl ListBranchesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_branches_output_branches(page)
+            crate::lens::lens_list_branches_output_branches(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1480,7 +1495,7 @@ impl ListRepositoriesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_repositories_output_repositories(page)
+            crate::lens::lens_list_repositories_output_repositories(page)
                 .unwrap_or_default()
                 .into_iter()
         })

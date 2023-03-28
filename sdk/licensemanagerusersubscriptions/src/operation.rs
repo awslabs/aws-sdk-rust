@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateUser {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_user_error(response)
+            crate::protocol_serde::shape_associate_user::de_associate_user_http_error(response)
         } else {
-            crate::operation_deser::parse_associate_user_response(response)
+            crate::protocol_serde::shape_associate_user::de_associate_user_http_response(response)
         }
     }
 }
@@ -60,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterIdentityProvid
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_deregister_identity_provider_error(response)
+            crate::protocol_serde::shape_deregister_identity_provider::de_deregister_identity_provider_http_error(response)
         } else {
-            crate::operation_deser::parse_deregister_identity_provider_response(response)
+            crate::protocol_serde::shape_deregister_identity_provider::de_deregister_identity_provider_http_response(response)
         }
     }
 }
@@ -95,9 +95,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUser {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disassociate_user_error(response)
+            crate::protocol_serde::shape_disassociate_user::de_disassociate_user_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_disassociate_user_response(response)
+            crate::protocol_serde::shape_disassociate_user::de_disassociate_user_http_response(
+                response,
+            )
         }
     }
 }
@@ -130,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviders {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_identity_providers_error(response)
+            crate::protocol_serde::shape_list_identity_providers::de_list_identity_providers_http_error(response)
         } else {
-            crate::operation_deser::parse_list_identity_providers_response(response)
+            crate::protocol_serde::shape_list_identity_providers::de_list_identity_providers_http_response(response)
         }
     }
 }
@@ -163,9 +167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_instances_error(response)
+            crate::protocol_serde::shape_list_instances::de_list_instances_http_error(response)
         } else {
-            crate::operation_deser::parse_list_instances_response(response)
+            crate::protocol_serde::shape_list_instances::de_list_instances_http_response(response)
         }
     }
 }
@@ -198,9 +202,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProductSubscriptions
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_product_subscriptions_error(response)
+            crate::protocol_serde::shape_list_product_subscriptions::de_list_product_subscriptions_http_error(response)
         } else {
-            crate::operation_deser::parse_list_product_subscriptions_response(response)
+            crate::protocol_serde::shape_list_product_subscriptions::de_list_product_subscriptions_http_response(response)
         }
     }
 }
@@ -233,9 +237,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserAssociations {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_user_associations_error(response)
+            crate::protocol_serde::shape_list_user_associations::de_list_user_associations_http_error(response)
         } else {
-            crate::operation_deser::parse_list_user_associations_response(response)
+            crate::protocol_serde::shape_list_user_associations::de_list_user_associations_http_response(response)
         }
     }
 }
@@ -268,9 +272,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterIdentityProvider
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_register_identity_provider_error(response)
+            crate::protocol_serde::shape_register_identity_provider::de_register_identity_provider_http_error(response)
         } else {
-            crate::operation_deser::parse_register_identity_provider_response(response)
+            crate::protocol_serde::shape_register_identity_provider::de_register_identity_provider_http_response(response)
         }
     }
 }
@@ -303,9 +307,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProductSubscription
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_product_subscription_error(response)
+            crate::protocol_serde::shape_start_product_subscription::de_start_product_subscription_http_error(response)
         } else {
-            crate::operation_deser::parse_start_product_subscription_response(response)
+            crate::protocol_serde::shape_start_product_subscription::de_start_product_subscription_http_response(response)
         }
     }
 }
@@ -338,9 +342,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_product_subscription_error(response)
+            crate::protocol_serde::shape_stop_product_subscription::de_stop_product_subscription_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_product_subscription_response(response)
+            crate::protocol_serde::shape_stop_product_subscription::de_stop_product_subscription_http_response(response)
         }
     }
 }
@@ -373,9 +377,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProviderSe
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_identity_provider_settings_error(response)
+            crate::protocol_serde::shape_update_identity_provider_settings::de_update_identity_provider_settings_http_error(response)
         } else {
-            crate::operation_deser::parse_update_identity_provider_settings_response(response)
+            crate::protocol_serde::shape_update_identity_provider_settings::de_update_identity_provider_settings_http_response(response)
         }
     }
 }

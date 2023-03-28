@@ -89,251 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateLicense`](crate::client::fluent_builders::AssociateLicense) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::AssociateLicense::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::AssociateLicense::set_workspace_id): <p>The ID of the workspace to associate the license with.</p>
-    ///   - [`license_type(LicenseType)`](crate::client::fluent_builders::AssociateLicense::license_type) / [`set_license_type(Option<LicenseType>)`](crate::client::fluent_builders::AssociateLicense::set_license_type): <p>The type of license to associate with the workspace.</p>
-    /// - On success, responds with [`AssociateLicenseOutput`](crate::output::AssociateLicenseOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::AssociateLicenseOutput::workspace): <p>A structure containing data about the workspace.</p>
-    /// - On failure, responds with [`SdkError<AssociateLicenseError>`](crate::error::AssociateLicenseError)
-    pub fn associate_license(&self) -> crate::client::fluent_builders::AssociateLicense {
-        crate::client::fluent_builders::AssociateLicense::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateWorkspace`](crate::client::fluent_builders::CreateWorkspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_access_type(AccountAccessType)`](crate::client::fluent_builders::CreateWorkspace::account_access_type) / [`set_account_access_type(Option<AccountAccessType>)`](crate::client::fluent_builders::CreateWorkspace::set_account_access_type): <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::client_token) / [`set_client_token(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_client_token): <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-    ///   - [`organization_role_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::organization_role_name) / [`set_organization_role_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_organization_role_name): <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
-    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::CreateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::CreateWorkspace::set_permission_type): <p>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization that is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-    ///   - [`stack_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::stack_set_name) / [`set_stack_set_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_stack_set_name): <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    ///   - [`workspace_data_sources(Vec<DataSourceType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_data_sources) / [`set_workspace_data_sources(Option<Vec<DataSourceType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_data_sources): <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>  <p>If you don't specify a data source here, you can still add it as a data source in the workspace console later. However, you will then have to manually configure permissions for it.</p>
-    ///   - [`workspace_description(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_description) / [`set_workspace_description(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_description): <p>A description for the workspace. This is used only to help you identify this workspace.</p>  <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-    ///   - [`workspace_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_name) / [`set_workspace_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_name): <p>The name for the workspace. It does not have to be unique.</p>
-    ///   - [`workspace_notification_destinations(Vec<NotificationDestinationType>)`](crate::client::fluent_builders::CreateWorkspace::workspace_notification_destinations) / [`set_workspace_notification_destinations(Option<Vec<NotificationDestinationType>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_notification_destinations): <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    ///   - [`workspace_organizational_units(Vec<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_organizational_units) / [`set_workspace_organizational_units(Option<Vec<String>>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_organizational_units): <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</p>
-    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::CreateWorkspace::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::CreateWorkspace::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateWorkspace::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateWorkspace::set_tags): <p>The list of tags associated with the workspace.</p>
-    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::CreateWorkspace::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::CreateWorkspace::set_vpc_configuration): <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspace::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::CreateWorkspace::set_configuration): <p>The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    /// - On success, responds with [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::CreateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
-    /// - On failure, responds with [`SdkError<CreateWorkspaceError>`](crate::error::CreateWorkspaceError)
-    pub fn create_workspace(&self) -> crate::client::fluent_builders::CreateWorkspace {
-        crate::client::fluent_builders::CreateWorkspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateWorkspaceApiKey`](crate::client::fluent_builders::CreateWorkspaceApiKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_name): <p>Specifies the name of the key. Keynames must be unique to the workspace.</p>
-    ///   - [`key_role(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::key_role) / [`set_key_role(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_key_role): <p>Specifies the permission level of the key.</p>  <p> Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> </p>
-    ///   - [`seconds_to_live(i32)`](crate::client::fluent_builders::CreateWorkspaceApiKey::seconds_to_live) / [`set_seconds_to_live(Option<i32>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_seconds_to_live): <p>Specifies the time in seconds until the key expires. Keys can be valid for up to 30 days.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::CreateWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace to create an API key.</p>
-    /// - On success, responds with [`CreateWorkspaceApiKeyOutput`](crate::output::CreateWorkspaceApiKeyOutput) with field(s):
-    ///   - [`key_name(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key_name): <p>The name of the key that was created.</p>
-    ///   - [`key(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::key): <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    ///   - [`workspace_id(Option<String>)`](crate::output::CreateWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace that the key is valid for.</p>
-    /// - On failure, responds with [`SdkError<CreateWorkspaceApiKeyError>`](crate::error::CreateWorkspaceApiKeyError)
-    pub fn create_workspace_api_key(
-        &self,
-    ) -> crate::client::fluent_builders::CreateWorkspaceApiKey {
-        crate::client::fluent_builders::CreateWorkspaceApiKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::client::fluent_builders::DeleteWorkspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspace::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspace::set_workspace_id): <p>The ID of the workspace to delete.</p>
-    /// - On success, responds with [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DeleteWorkspaceOutput::workspace): <p>A structure containing information about the workspace that was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::error::DeleteWorkspaceError)
-    pub fn delete_workspace(&self) -> crate::client::fluent_builders::DeleteWorkspace {
-        crate::client::fluent_builders::DeleteWorkspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteWorkspaceApiKey`](crate::client::fluent_builders::DeleteWorkspaceApiKey) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`key_name(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::key_name) / [`set_key_name(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_key_name): <p>The name of the API key to delete.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DeleteWorkspaceApiKey::set_workspace_id): <p>The ID of the workspace to delete.</p>
-    /// - On success, responds with [`DeleteWorkspaceApiKeyOutput`](crate::output::DeleteWorkspaceApiKeyOutput) with field(s):
-    ///   - [`key_name(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::key_name): <p>The name of the key that was deleted.</p>
-    ///   - [`workspace_id(Option<String>)`](crate::output::DeleteWorkspaceApiKeyOutput::workspace_id): <p>The ID of the workspace where the key was deleted.</p>
-    /// - On failure, responds with [`SdkError<DeleteWorkspaceApiKeyError>`](crate::error::DeleteWorkspaceApiKeyError)
-    pub fn delete_workspace_api_key(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteWorkspaceApiKey {
-        crate::client::fluent_builders::DeleteWorkspaceApiKey::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::client::fluent_builders::DescribeWorkspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspace::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspace::set_workspace_id): <p>The ID of the workspace to display information about.</p>
-    /// - On success, responds with [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DescribeWorkspaceOutput::workspace): <p>A structure containing information about the workspace.</p>
-    /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::error::DescribeWorkspaceError)
-    pub fn describe_workspace(&self) -> crate::client::fluent_builders::DescribeWorkspace {
-        crate::client::fluent_builders::DescribeWorkspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeWorkspaceAuthentication`](crate::client::fluent_builders::DescribeWorkspaceAuthentication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceAuthentication::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceAuthentication::set_workspace_id): <p>The ID of the workspace to return authentication information about.</p>
-    /// - On success, responds with [`DescribeWorkspaceAuthenticationOutput`](crate::output::DescribeWorkspaceAuthenticationOutput) with field(s):
-    ///   - [`authentication(Option<AuthenticationDescription>)`](crate::output::DescribeWorkspaceAuthenticationOutput::authentication): <p>A structure containing information about the authentication methods used in the workspace.</p>
-    /// - On failure, responds with [`SdkError<DescribeWorkspaceAuthenticationError>`](crate::error::DescribeWorkspaceAuthenticationError)
-    pub fn describe_workspace_authentication(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeWorkspaceAuthentication {
-        crate::client::fluent_builders::DescribeWorkspaceAuthentication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeWorkspaceConfiguration`](crate::client::fluent_builders::DescribeWorkspaceConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DescribeWorkspaceConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DescribeWorkspaceConfiguration::set_workspace_id): <p>The ID of the workspace to get configuration information for.</p>
-    /// - On success, responds with [`DescribeWorkspaceConfigurationOutput`](crate::output::DescribeWorkspaceConfigurationOutput) with field(s):
-    ///   - [`configuration(Option<String>)`](crate::output::DescribeWorkspaceConfigurationOutput::configuration): <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    /// - On failure, responds with [`SdkError<DescribeWorkspaceConfigurationError>`](crate::error::DescribeWorkspaceConfigurationError)
-    pub fn describe_workspace_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeWorkspaceConfiguration {
-        crate::client::fluent_builders::DescribeWorkspaceConfiguration::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateLicense`](crate::client::fluent_builders::DisassociateLicense) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::DisassociateLicense::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::DisassociateLicense::set_workspace_id): <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-    ///   - [`license_type(LicenseType)`](crate::client::fluent_builders::DisassociateLicense::license_type) / [`set_license_type(Option<LicenseType>)`](crate::client::fluent_builders::DisassociateLicense::set_license_type): <p>The type of license to remove from the workspace.</p>
-    /// - On success, responds with [`DisassociateLicenseOutput`](crate::output::DisassociateLicenseOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::DisassociateLicenseOutput::workspace): <p>A structure containing information about the workspace.</p>
-    /// - On failure, responds with [`SdkError<DisassociateLicenseError>`](crate::error::DisassociateLicenseError)
-    pub fn disassociate_license(&self) -> crate::client::fluent_builders::DisassociateLicense {
-        crate::client::fluent_builders::DisassociateLicense::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPermissions`](crate::client::fluent_builders::ListPermissions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPermissions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPermissions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPermissions::set_max_results): <p>The maximum number of results to include in the response.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_next_token): <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</p>
-    ///   - [`user_type(UserType)`](crate::client::fluent_builders::ListPermissions::user_type) / [`set_user_type(Option<UserType>)`](crate::client::fluent_builders::ListPermissions::set_user_type): <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::user_id) / [`set_user_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_user_id): <p>(Optional) Limits the results to only the user that matches this ID.</p>
-    ///   - [`group_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::group_id) / [`set_group_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_group_id): <p>(Optional) Limits the results to only the group that matches this ID.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::ListPermissions::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::ListPermissions::set_workspace_id): <p>The ID of the workspace to list permissions for. This parameter is required.</p>
-    /// - On success, responds with [`ListPermissionsOutput`](crate::output::ListPermissionsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListPermissionsOutput::next_token): <p>The token to use in a subsequent <code>ListPermissions</code> operation to return the next set of results.</p>
-    ///   - [`permissions(Option<Vec<PermissionEntry>>)`](crate::output::ListPermissionsOutput::permissions): <p>The permissions returned by the operation.</p>
-    /// - On failure, responds with [`SdkError<ListPermissionsError>`](crate::error::ListPermissionsError)
-    pub fn list_permissions(&self) -> crate::client::fluent_builders::ListPermissions {
-        crate::client::fluent_builders::ListPermissions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the resource the list of tags are associated with.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The list of tags that are associated with the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListWorkspaces`](crate::client::fluent_builders::ListWorkspaces) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListWorkspaces::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListWorkspaces::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListWorkspaces::set_max_results): <p>The maximum number of workspaces to include in the results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListWorkspaces::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListWorkspaces::set_next_token): <p>The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)</p>
-    /// - On success, responds with [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput) with field(s):
-    ///   - [`workspaces(Option<Vec<WorkspaceSummary>>)`](crate::output::ListWorkspacesOutput::workspaces): <p>An array of structures that contain some information about the workspaces in the account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListWorkspacesOutput::next_token): <p>The token to use when requesting the next set of workspaces.</p>
-    /// - On failure, responds with [`SdkError<ListWorkspacesError>`](crate::error::ListWorkspacesError)
-    pub fn list_workspaces(&self) -> crate::client::fluent_builders::ListWorkspaces {
-        crate::client::fluent_builders::ListWorkspaces::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the resource the tag is associated with.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The list of tag keys and values to associate with the resource. You can associate tag keys only, tags (key and values) only or a combination of tag keys and tags.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the resource the tag association is removed from. </p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key values of the tag to be removed from the resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePermissions`](crate::client::fluent_builders::UpdatePermissions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`update_instruction_batch(Vec<UpdateInstruction>)`](crate::client::fluent_builders::UpdatePermissions::update_instruction_batch) / [`set_update_instruction_batch(Option<Vec<UpdateInstruction>>)`](crate::client::fluent_builders::UpdatePermissions::set_update_instruction_batch): <p>An array of structures that contain the permission updates to make.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdatePermissions::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdatePermissions::set_workspace_id): <p>The ID of the workspace to update.</p>
-    /// - On success, responds with [`UpdatePermissionsOutput`](crate::output::UpdatePermissionsOutput) with field(s):
-    ///   - [`errors(Option<Vec<UpdateError>>)`](crate::output::UpdatePermissionsOutput::errors): <p>An array of structures that contain the errors from the operation, if any.</p>
-    /// - On failure, responds with [`SdkError<UpdatePermissionsError>`](crate::error::UpdatePermissionsError)
-    pub fn update_permissions(&self) -> crate::client::fluent_builders::UpdatePermissions {
-        crate::client::fluent_builders::UpdatePermissions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWorkspace`](crate::client::fluent_builders::UpdateWorkspace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`account_access_type(AccountAccessType)`](crate::client::fluent_builders::UpdateWorkspace::account_access_type) / [`set_account_access_type(Option<AccountAccessType>)`](crate::client::fluent_builders::UpdateWorkspace::set_account_access_type): <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    ///   - [`organization_role_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::organization_role_name) / [`set_organization_role_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_organization_role_name): <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
-    ///   - [`permission_type(PermissionType)`](crate::client::fluent_builders::UpdateWorkspace::permission_type) / [`set_permission_type(Option<PermissionType>)`](crate::client::fluent_builders::UpdateWorkspace::set_permission_type): <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>  <p>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are creating this workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.</p>  <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-    ///   - [`stack_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::stack_set_name) / [`set_stack_set_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_stack_set_name): <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
-    ///   - [`workspace_data_sources(Vec<DataSourceType>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_data_sources) / [`set_workspace_data_sources(Option<Vec<DataSourceType>>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_data_sources): <p>Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.</p>  <p>If you don't specify a data source here, you can still add it as a data source later in the workspace console. However, you will then have to manually configure permissions for it.</p>
-    ///   - [`workspace_description(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_description) / [`set_workspace_description(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_description): <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_id): <p>The ID of the workspace to update.</p>
-    ///   - [`workspace_name(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_name) / [`set_workspace_name(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_name): <p>A new name for the workspace to update.</p>
-    ///   - [`workspace_notification_destinations(Vec<NotificationDestinationType>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_notification_destinations) / [`set_workspace_notification_destinations(Option<Vec<NotificationDestinationType>>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_notification_destinations): <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
-    ///   - [`workspace_organizational_units(Vec<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_organizational_units) / [`set_workspace_organizational_units(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_organizational_units): <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    ///   - [`workspace_role_arn(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspace::workspace_role_arn) / [`set_workspace_role_arn(Option<String>)`](crate::client::fluent_builders::UpdateWorkspace::set_workspace_role_arn): <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. If you already have a role that you want to use, specify it here. If you omit this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is automatically created.</p>
-    ///   - [`vpc_configuration(VpcConfiguration)`](crate::client::fluent_builders::UpdateWorkspace::vpc_configuration) / [`set_vpc_configuration(Option<VpcConfiguration>)`](crate::client::fluent_builders::UpdateWorkspace::set_vpc_configuration): <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p>
-    ///   - [`remove_vpc_configuration(bool)`](crate::client::fluent_builders::UpdateWorkspace::remove_vpc_configuration) / [`set_remove_vpc_configuration(Option<bool>)`](crate::client::fluent_builders::UpdateWorkspace::set_remove_vpc_configuration): <p>Whether to remove the VPC configuration from the workspace.</p>  <p>Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.</p>
-    /// - On success, responds with [`UpdateWorkspaceOutput`](crate::output::UpdateWorkspaceOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::output::UpdateWorkspaceOutput::workspace): <p>A structure containing data about the workspace that was created.</p>
-    /// - On failure, responds with [`SdkError<UpdateWorkspaceError>`](crate::error::UpdateWorkspaceError)
-    pub fn update_workspace(&self) -> crate::client::fluent_builders::UpdateWorkspace {
-        crate::client::fluent_builders::UpdateWorkspace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWorkspaceAuthentication`](crate::client::fluent_builders::UpdateWorkspaceAuthentication) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_workspace_id): <p>The ID of the workspace to update the authentication for.</p>
-    ///   - [`authentication_providers(Vec<AuthenticationProviderTypes>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::authentication_providers) / [`set_authentication_providers(Option<Vec<AuthenticationProviderTypes>>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_authentication_providers): <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    ///   - [`saml_configuration(SamlConfiguration)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::saml_configuration) / [`set_saml_configuration(Option<SamlConfiguration>)`](crate::client::fluent_builders::UpdateWorkspaceAuthentication::set_saml_configuration): <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
-    /// - On success, responds with [`UpdateWorkspaceAuthenticationOutput`](crate::output::UpdateWorkspaceAuthenticationOutput) with field(s):
-    ///   - [`authentication(Option<AuthenticationDescription>)`](crate::output::UpdateWorkspaceAuthenticationOutput::authentication): <p>A structure that describes the user authentication for this workspace after the update is made.</p>
-    /// - On failure, responds with [`SdkError<UpdateWorkspaceAuthenticationError>`](crate::error::UpdateWorkspaceAuthenticationError)
-    pub fn update_workspace_authentication(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateWorkspaceAuthentication {
-        crate::client::fluent_builders::UpdateWorkspaceAuthentication::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateWorkspaceConfiguration`](crate::client::fluent_builders::UpdateWorkspaceConfiguration) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`configuration(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::configuration) / [`set_configuration(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::set_configuration): <p>The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    ///   - [`workspace_id(impl Into<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::workspace_id) / [`set_workspace_id(Option<String>)`](crate::client::fluent_builders::UpdateWorkspaceConfiguration::set_workspace_id): <p>The ID of the workspace to update.</p>
-    /// - On success, responds with [`UpdateWorkspaceConfigurationOutput`](crate::output::UpdateWorkspaceConfigurationOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateWorkspaceConfigurationError>`](crate::error::UpdateWorkspaceConfigurationError)
-    pub fn update_workspace_configuration(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateWorkspaceConfiguration {
-        crate::client::fluent_builders::UpdateWorkspaceConfiguration::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -419,9 +174,45 @@ impl Client {
     }
 }
 
+mod associate_license;
+
+mod create_workspace;
+
+mod create_workspace_api_key;
+
+mod delete_workspace;
+
+mod delete_workspace_api_key;
+
+mod describe_workspace;
+
+mod describe_workspace_authentication;
+
+mod describe_workspace_configuration;
+
+mod disassociate_license;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod list_permissions;
+
+mod list_tags_for_resource;
+
+mod list_workspaces;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_permissions;
+
+mod update_workspace;
+
+mod update_workspace_authentication;
+
+mod update_workspace_configuration;

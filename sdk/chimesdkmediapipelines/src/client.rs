@@ -89,160 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateMediaCapturePipeline`](crate::client::fluent_builders::CreateMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`source_type(MediaPipelineSourceType)`](crate::client::fluent_builders::CreateMediaCapturePipeline::source_type) / [`set_source_type(Option<MediaPipelineSourceType>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_source_type): <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
-    ///   - [`source_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::source_arn) / [`set_source_arn(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_source_arn): <p>ARN of the source from which the media artifacts are captured.</p>
-    ///   - [`sink_type(MediaPipelineSinkType)`](crate::client::fluent_builders::CreateMediaCapturePipeline::sink_type) / [`set_sink_type(Option<MediaPipelineSinkType>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_sink_type): <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
-    ///   - [`sink_arn(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::sink_arn) / [`set_sink_arn(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_sink_arn): <p>The ARN of the sink type.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_client_request_token): <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    ///   - [`chime_sdk_meeting_configuration(ChimeSdkMeetingConfiguration)`](crate::client::fluent_builders::CreateMediaCapturePipeline::chime_sdk_meeting_configuration) / [`set_chime_sdk_meeting_configuration(Option<ChimeSdkMeetingConfiguration>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_chime_sdk_meeting_configuration): <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMediaCapturePipeline::set_tags): <p>The tag key-value pairs.</p>
-    /// - On success, responds with [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput) with field(s):
-    ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::output::CreateMediaCapturePipelineOutput::media_capture_pipeline): <p>A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media pipeline object.</p>
-    /// - On failure, responds with [`SdkError<CreateMediaCapturePipelineError>`](crate::error::CreateMediaCapturePipelineError)
-    pub fn create_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMediaCapturePipeline {
-        crate::client::fluent_builders::CreateMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMediaConcatenationPipeline`](crate::client::fluent_builders::CreateMediaConcatenationPipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sources(Vec<ConcatenationSource>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::sources) / [`set_sources(Option<Vec<ConcatenationSource>>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::set_sources): <p>An object that specifies the sources for the media concatenation pipeline.</p>
-    ///   - [`sinks(Vec<ConcatenationSink>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::sinks) / [`set_sinks(Option<Vec<ConcatenationSink>>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::set_sinks): <p>An object that specifies the data sinks for the media concatenation pipeline.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::set_client_request_token): <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMediaConcatenationPipeline::set_tags): <p>The tags associated with the media concatenation pipeline.</p>
-    /// - On success, responds with [`CreateMediaConcatenationPipelineOutput`](crate::output::CreateMediaConcatenationPipelineOutput) with field(s):
-    ///   - [`media_concatenation_pipeline(Option<MediaConcatenationPipeline>)`](crate::output::CreateMediaConcatenationPipelineOutput::media_concatenation_pipeline): <p>A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>, and sink of a media concatenation pipeline object.</p>
-    /// - On failure, responds with [`SdkError<CreateMediaConcatenationPipelineError>`](crate::error::CreateMediaConcatenationPipelineError)
-    pub fn create_media_concatenation_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMediaConcatenationPipeline {
-        crate::client::fluent_builders::CreateMediaConcatenationPipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMediaLiveConnectorPipeline`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`sources(Vec<LiveConnectorSourceConfiguration>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::sources) / [`set_sources(Option<Vec<LiveConnectorSourceConfiguration>>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::set_sources): <p>The media pipeline's data sources.</p>
-    ///   - [`sinks(Vec<LiveConnectorSinkConfiguration>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::sinks) / [`set_sinks(Option<Vec<LiveConnectorSinkConfiguration>>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::set_sinks): <p>The media pipeline's data sinks.</p>
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::set_client_request_token): <p>The token assigned to the client making the request.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::set_tags): <p>The tags associated with the media pipeline.</p>
-    /// - On success, responds with [`CreateMediaLiveConnectorPipelineOutput`](crate::output::CreateMediaLiveConnectorPipelineOutput) with field(s):
-    ///   - [`media_live_connector_pipeline(Option<MediaLiveConnectorPipeline>)`](crate::output::CreateMediaLiveConnectorPipelineOutput::media_live_connector_pipeline): <p>The new media pipeline.</p>
-    /// - On failure, responds with [`SdkError<CreateMediaLiveConnectorPipelineError>`](crate::error::CreateMediaLiveConnectorPipelineError)
-    pub fn create_media_live_connector_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::CreateMediaLiveConnectorPipeline {
-        crate::client::fluent_builders::CreateMediaLiveConnectorPipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMediaCapturePipeline`](crate::client::fluent_builders::DeleteMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMediaCapturePipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::DeleteMediaCapturePipeline::set_media_pipeline_id): <p>The ID of the media pipeline being deleted. </p>
-    /// - On success, responds with [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMediaCapturePipelineError>`](crate::error::DeleteMediaCapturePipelineError)
-    pub fn delete_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteMediaCapturePipeline {
-        crate::client::fluent_builders::DeleteMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMediaPipeline`](crate::client::fluent_builders::DeleteMediaPipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMediaPipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::DeleteMediaPipeline::set_media_pipeline_id): <p>The ID of the media pipeline to delete.</p>
-    /// - On success, responds with [`DeleteMediaPipelineOutput`](crate::output::DeleteMediaPipelineOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMediaPipelineError>`](crate::error::DeleteMediaPipelineError)
-    pub fn delete_media_pipeline(&self) -> crate::client::fluent_builders::DeleteMediaPipeline {
-        crate::client::fluent_builders::DeleteMediaPipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMediaCapturePipeline`](crate::client::fluent_builders::GetMediaCapturePipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::GetMediaCapturePipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::GetMediaCapturePipeline::set_media_pipeline_id): <p>The ID of the pipeline that you want to get.</p>
-    /// - On success, responds with [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput) with field(s):
-    ///   - [`media_capture_pipeline(Option<MediaCapturePipeline>)`](crate::output::GetMediaCapturePipelineOutput::media_capture_pipeline): <p>The media pipeline object.</p>
-    /// - On failure, responds with [`SdkError<GetMediaCapturePipelineError>`](crate::error::GetMediaCapturePipelineError)
-    pub fn get_media_capture_pipeline(
-        &self,
-    ) -> crate::client::fluent_builders::GetMediaCapturePipeline {
-        crate::client::fluent_builders::GetMediaCapturePipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMediaPipeline`](crate::client::fluent_builders::GetMediaPipeline) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`media_pipeline_id(impl Into<String>)`](crate::client::fluent_builders::GetMediaPipeline::media_pipeline_id) / [`set_media_pipeline_id(Option<String>)`](crate::client::fluent_builders::GetMediaPipeline::set_media_pipeline_id): <p>The ID of the pipeline that you want to get.</p>
-    /// - On success, responds with [`GetMediaPipelineOutput`](crate::output::GetMediaPipelineOutput) with field(s):
-    ///   - [`media_pipeline(Option<MediaPipeline>)`](crate::output::GetMediaPipelineOutput::media_pipeline): <p>The media pipeline object.</p>
-    /// - On failure, responds with [`SdkError<GetMediaPipelineError>`](crate::error::GetMediaPipelineError)
-    pub fn get_media_pipeline(&self) -> crate::client::fluent_builders::GetMediaPipeline {
-        crate::client::fluent_builders::GetMediaPipeline::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMediaCapturePipelines`](crate::client::fluent_builders::ListMediaCapturePipelines) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMediaCapturePipelines::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMediaCapturePipelines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMediaCapturePipelines::set_next_token): <p>The token used to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMediaCapturePipelines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMediaCapturePipelines::set_max_results): <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
-    /// - On success, responds with [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput) with field(s):
-    ///   - [`media_capture_pipelines(Option<Vec<MediaCapturePipelineSummary>>)`](crate::output::ListMediaCapturePipelinesOutput::media_capture_pipelines): <p>The media pipeline objects in the list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMediaCapturePipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
-    /// - On failure, responds with [`SdkError<ListMediaCapturePipelinesError>`](crate::error::ListMediaCapturePipelinesError)
-    pub fn list_media_capture_pipelines(
-        &self,
-    ) -> crate::client::fluent_builders::ListMediaCapturePipelines {
-        crate::client::fluent_builders::ListMediaCapturePipelines::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMediaPipelines`](crate::client::fluent_builders::ListMediaPipelines) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMediaPipelines::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMediaPipelines::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMediaPipelines::set_next_token): <p>The token used to retrieve the next page of results.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMediaPipelines::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMediaPipelines::set_max_results): <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
-    /// - On success, responds with [`ListMediaPipelinesOutput`](crate::output::ListMediaPipelinesOutput) with field(s):
-    ///   - [`media_pipelines(Option<Vec<MediaPipelineSummary>>)`](crate::output::ListMediaPipelinesOutput::media_pipelines): <p>The media pipeline objects in the list.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMediaPipelinesOutput::next_token): <p>The token used to retrieve the next page of results. </p>
-    /// - On failure, responds with [`SdkError<ListMediaPipelinesError>`](crate::error::ListMediaPipelinesError)
-    pub fn list_media_pipelines(&self) -> crate::client::fluent_builders::ListMediaPipelines {
-        crate::client::fluent_builders::ListMediaPipelines::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<Vec<Tag>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags associated with the specified media pipeline.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags associated with the specified media pipeline.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The ARN of the pipeline that you want to untag.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The key/value pairs in the tag that you want to remove.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -328,9 +174,33 @@ impl Client {
     }
 }
 
+mod create_media_capture_pipeline;
+
+mod create_media_concatenation_pipeline;
+
+mod create_media_live_connector_pipeline;
+
+mod delete_media_capture_pipeline;
+
+mod delete_media_pipeline;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_media_capture_pipeline;
+
+mod get_media_pipeline;
+
+mod list_media_capture_pipelines;
+
+mod list_media_pipelines;
+
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;

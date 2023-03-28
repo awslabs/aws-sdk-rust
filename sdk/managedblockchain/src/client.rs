@@ -89,352 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateAccessor`](crate::client::fluent_builders::CreateAccessor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateAccessor::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateAccessor::set_client_request_token): <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.</p>
-    ///   - [`accessor_type(AccessorType)`](crate::client::fluent_builders::CreateAccessor::accessor_type) / [`set_accessor_type(Option<AccessorType>)`](crate::client::fluent_builders::CreateAccessor::set_accessor_type): <p>The type of accessor.</p> <note>   <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>  </note>
-    /// - On success, responds with [`CreateAccessorOutput`](crate::output::CreateAccessorOutput) with field(s):
-    ///   - [`accessor_id(Option<String>)`](crate::output::CreateAccessorOutput::accessor_id): <p>The unique identifier of the accessor.</p>
-    ///   - [`billing_token(Option<String>)`](crate::output::CreateAccessorOutput::billing_token): <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    /// - On failure, responds with [`SdkError<CreateAccessorError>`](crate::error::CreateAccessorError)
-    pub fn create_accessor(&self) -> crate::client::fluent_builders::CreateAccessor {
-        crate::client::fluent_builders::CreateAccessor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMember`](crate::client::fluent_builders::CreateMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateMember::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateMember::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::CreateMember::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::CreateMember::set_invitation_id): <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateMember::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateMember::set_network_id): <p>The unique identifier of the network in which the member is created.</p>
-    ///   - [`member_configuration(MemberConfiguration)`](crate::client::fluent_builders::CreateMember::member_configuration) / [`set_member_configuration(Option<MemberConfiguration>)`](crate::client::fluent_builders::CreateMember::set_member_configuration): <p>Member configuration parameters.</p>
-    /// - On success, responds with [`CreateMemberOutput`](crate::output::CreateMemberOutput) with field(s):
-    ///   - [`member_id(Option<String>)`](crate::output::CreateMemberOutput::member_id): <p>The unique identifier of the member.</p>
-    /// - On failure, responds with [`SdkError<CreateMemberError>`](crate::error::CreateMemberError)
-    pub fn create_member(&self) -> crate::client::fluent_builders::CreateMember {
-        crate::client::fluent_builders::CreateMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateNetwork`](crate::client::fluent_builders::CreateNetwork) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_client_request_token): <p>This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. </p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_name): <p>The name of the network.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_description): <p>An optional description for the network.</p>
-    ///   - [`framework(Framework)`](crate::client::fluent_builders::CreateNetwork::framework) / [`set_framework(Option<Framework>)`](crate::client::fluent_builders::CreateNetwork::set_framework): <p>The blockchain framework that the network uses.</p>
-    ///   - [`framework_version(impl Into<String>)`](crate::client::fluent_builders::CreateNetwork::framework_version) / [`set_framework_version(Option<String>)`](crate::client::fluent_builders::CreateNetwork::set_framework_version): <p>The version of the blockchain framework that the network uses.</p>
-    ///   - [`framework_configuration(NetworkFrameworkConfiguration)`](crate::client::fluent_builders::CreateNetwork::framework_configuration) / [`set_framework_configuration(Option<NetworkFrameworkConfiguration>)`](crate::client::fluent_builders::CreateNetwork::set_framework_configuration): <p> Configuration properties of the blockchain framework relevant to the network configuration. </p>
-    ///   - [`voting_policy(VotingPolicy)`](crate::client::fluent_builders::CreateNetwork::voting_policy) / [`set_voting_policy(Option<VotingPolicy>)`](crate::client::fluent_builders::CreateNetwork::set_voting_policy): <p> The voting rules used by the network to determine if a proposal is approved. </p>
-    ///   - [`member_configuration(MemberConfiguration)`](crate::client::fluent_builders::CreateNetwork::member_configuration) / [`set_member_configuration(Option<MemberConfiguration>)`](crate::client::fluent_builders::CreateNetwork::set_member_configuration): <p>Configuration properties for the first member within the network.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateNetwork::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNetwork::set_tags): <p>Tags to assign to the network. Each tag consists of a key and optional value.</p>  <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateNetworkOutput`](crate::output::CreateNetworkOutput) with field(s):
-    ///   - [`network_id(Option<String>)`](crate::output::CreateNetworkOutput::network_id): <p>The unique identifier for the network.</p>
-    ///   - [`member_id(Option<String>)`](crate::output::CreateNetworkOutput::member_id): <p>The unique identifier for the first member within the network.</p>
-    /// - On failure, responds with [`SdkError<CreateNetworkError>`](crate::error::CreateNetworkError)
-    pub fn create_network(&self) -> crate::client::fluent_builders::CreateNetwork {
-        crate::client::fluent_builders::CreateNetwork::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateNode`](crate::client::fluent_builders::CreateNode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateNode::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateNode::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateNode::set_network_id): <p>The unique identifier of the network for the node.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-goerli</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateNode::set_member_id): <p>The unique identifier of the member that owns this node.</p>  <p>Applies only to Hyperledger Fabric.</p>
-    ///   - [`node_configuration(NodeConfiguration)`](crate::client::fluent_builders::CreateNode::node_configuration) / [`set_node_configuration(Option<NodeConfiguration>)`](crate::client::fluent_builders::CreateNode::set_node_configuration): <p>The properties of a node configuration.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateNode::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateNode::set_tags): <p>Tags to assign to the node. Each tag consists of a key and optional value.</p>  <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateNodeOutput`](crate::output::CreateNodeOutput) with field(s):
-    ///   - [`node_id(Option<String>)`](crate::output::CreateNodeOutput::node_id): <p>The unique identifier of the node.</p>
-    /// - On failure, responds with [`SdkError<CreateNodeError>`](crate::error::CreateNodeError)
-    pub fn create_node(&self) -> crate::client::fluent_builders::CreateNode {
-        crate::client::fluent_builders::CreateNode::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateProposal`](crate::client::fluent_builders::CreateProposal) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`client_request_token(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::client_request_token) / [`set_client_request_token(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_client_request_token): <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.</p>
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_network_id): <p> The unique identifier of the network for which the proposal is made.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_member_id): <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.</p>
-    ///   - [`actions(ProposalActions)`](crate::client::fluent_builders::CreateProposal::actions) / [`set_actions(Option<ProposalActions>)`](crate::client::fluent_builders::CreateProposal::set_actions): <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateProposal::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateProposal::set_description): <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateProposal::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateProposal::set_tags): <p>Tags to assign to the proposal. Each tag consists of a key and optional value.</p>  <p>When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation inherits the tags added to the proposal.</p>  <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
-    /// - On success, responds with [`CreateProposalOutput`](crate::output::CreateProposalOutput) with field(s):
-    ///   - [`proposal_id(Option<String>)`](crate::output::CreateProposalOutput::proposal_id): <p>The unique identifier of the proposal.</p>
-    /// - On failure, responds with [`SdkError<CreateProposalError>`](crate::error::CreateProposalError)
-    pub fn create_proposal(&self) -> crate::client::fluent_builders::CreateProposal {
-        crate::client::fluent_builders::CreateProposal::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteAccessor`](crate::client::fluent_builders::DeleteAccessor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accessor_id(impl Into<String>)`](crate::client::fluent_builders::DeleteAccessor::accessor_id) / [`set_accessor_id(Option<String>)`](crate::client::fluent_builders::DeleteAccessor::set_accessor_id): <p>The unique identifier of the accessor.</p>
-    /// - On success, responds with [`DeleteAccessorOutput`](crate::output::DeleteAccessorOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteAccessorError>`](crate::error::DeleteAccessorError)
-    pub fn delete_accessor(&self) -> crate::client::fluent_builders::DeleteAccessor {
-        crate::client::fluent_builders::DeleteAccessor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMember`](crate::client::fluent_builders::DeleteMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_network_id): <p>The unique identifier of the network from which the member is removed.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::DeleteMember::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::DeleteMember::set_member_id): <p>The unique identifier of the member to remove.</p>
-    /// - On success, responds with [`DeleteMemberOutput`](crate::output::DeleteMemberOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMemberError>`](crate::error::DeleteMemberError)
-    pub fn delete_member(&self) -> crate::client::fluent_builders::DeleteMember {
-        crate::client::fluent_builders::DeleteMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteNode`](crate::client::fluent_builders::DeleteNode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_network_id): <p>The unique identifier of the network that the node is on.</p>  <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>  <ul>   <li> <p> <code>n-ethereum-mainnet</code> </p> </li>   <li> <p> <code>n-ethereum-goerli</code> </p> </li>   <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>   <li> <p> <code>n-ethereum-ropsten</code> </p> </li>  </ul>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_member_id): <p>The unique identifier of the member that owns this node.</p>  <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::DeleteNode::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::DeleteNode::set_node_id): <p>The unique identifier of the node.</p>
-    /// - On success, responds with [`DeleteNodeOutput`](crate::output::DeleteNodeOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteNodeError>`](crate::error::DeleteNodeError)
-    pub fn delete_node(&self) -> crate::client::fluent_builders::DeleteNode {
-        crate::client::fluent_builders::DeleteNode::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetAccessor`](crate::client::fluent_builders::GetAccessor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`accessor_id(impl Into<String>)`](crate::client::fluent_builders::GetAccessor::accessor_id) / [`set_accessor_id(Option<String>)`](crate::client::fluent_builders::GetAccessor::set_accessor_id): <p>The unique identifier of the accessor.</p>
-    /// - On success, responds with [`GetAccessorOutput`](crate::output::GetAccessorOutput) with field(s):
-    ///   - [`accessor(Option<Accessor>)`](crate::output::GetAccessorOutput::accessor): <p>The properties of the accessor.</p>
-    /// - On failure, responds with [`SdkError<GetAccessorError>`](crate::error::GetAccessorError)
-    pub fn get_accessor(&self) -> crate::client::fluent_builders::GetAccessor {
-        crate::client::fluent_builders::GetAccessor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMember`](crate::client::fluent_builders::GetMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::GetMember::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_network_id): <p>The unique identifier of the network to which the member belongs.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::GetMember::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::GetMember::set_member_id): <p>The unique identifier of the member.</p>
-    /// - On success, responds with [`GetMemberOutput`](crate::output::GetMemberOutput) with field(s):
-    ///   - [`member(Option<Member>)`](crate::output::GetMemberOutput::member): <p>The properties of a member.</p>
-    /// - On failure, responds with [`SdkError<GetMemberError>`](crate::error::GetMemberError)
-    pub fn get_member(&self) -> crate::client::fluent_builders::GetMember {
-        crate::client::fluent_builders::GetMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetNetwork`](crate::client::fluent_builders::GetNetwork) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::GetNetwork::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::GetNetwork::set_network_id): <p>The unique identifier of the network to get information about.</p>
-    /// - On success, responds with [`GetNetworkOutput`](crate::output::GetNetworkOutput) with field(s):
-    ///   - [`network(Option<Network>)`](crate::output::GetNetworkOutput::network): <p>An object containing network configuration parameters.</p>
-    /// - On failure, responds with [`SdkError<GetNetworkError>`](crate::error::GetNetworkError)
-    pub fn get_network(&self) -> crate::client::fluent_builders::GetNetwork {
-        crate::client::fluent_builders::GetNetwork::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetNode`](crate::client::fluent_builders::GetNode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::GetNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::GetNode::set_network_id): <p>The unique identifier of the network that the node is on.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::GetNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::GetNode::set_member_id): <p>The unique identifier of the member that owns the node.</p>  <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::GetNode::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::GetNode::set_node_id): <p>The unique identifier of the node.</p>
-    /// - On success, responds with [`GetNodeOutput`](crate::output::GetNodeOutput) with field(s):
-    ///   - [`node(Option<Node>)`](crate::output::GetNodeOutput::node): <p>Properties of the node configuration.</p>
-    /// - On failure, responds with [`SdkError<GetNodeError>`](crate::error::GetNodeError)
-    pub fn get_node(&self) -> crate::client::fluent_builders::GetNode {
-        crate::client::fluent_builders::GetNode::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetProposal`](crate::client::fluent_builders::GetProposal) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::GetProposal::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::GetProposal::set_network_id): <p>The unique identifier of the network for which the proposal is made.</p>
-    ///   - [`proposal_id(impl Into<String>)`](crate::client::fluent_builders::GetProposal::proposal_id) / [`set_proposal_id(Option<String>)`](crate::client::fluent_builders::GetProposal::set_proposal_id): <p>The unique identifier of the proposal.</p>
-    /// - On success, responds with [`GetProposalOutput`](crate::output::GetProposalOutput) with field(s):
-    ///   - [`proposal(Option<Proposal>)`](crate::output::GetProposalOutput::proposal): <p>Information about a proposal.</p>
-    /// - On failure, responds with [`SdkError<GetProposalError>`](crate::error::GetProposalError)
-    pub fn get_proposal(&self) -> crate::client::fluent_builders::GetProposal {
-        crate::client::fluent_builders::GetProposal::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListAccessors`](crate::client::fluent_builders::ListAccessors) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListAccessors::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListAccessors::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListAccessors::set_max_results): <p> The maximum number of accessors to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListAccessors::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListAccessors::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
-    /// - On success, responds with [`ListAccessorsOutput`](crate::output::ListAccessorsOutput) with field(s):
-    ///   - [`accessors(Option<Vec<AccessorSummary>>)`](crate::output::ListAccessorsOutput::accessors): <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListAccessorsOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
-    /// - On failure, responds with [`SdkError<ListAccessorsError>`](crate::error::ListAccessorsError)
-    pub fn list_accessors(&self) -> crate::client::fluent_builders::ListAccessors {
-        crate::client::fluent_builders::ListAccessors::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListInvitations`](crate::client::fluent_builders::ListInvitations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListInvitations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListInvitations::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListInvitations::set_max_results): <p>The maximum number of invitations to return.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListInvitations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListInvitations::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListInvitationsOutput`](crate::output::ListInvitationsOutput) with field(s):
-    ///   - [`invitations(Option<Vec<Invitation>>)`](crate::output::ListInvitationsOutput::invitations): <p>The invitations for the network.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListInvitationsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListInvitationsError>`](crate::error::ListInvitationsError)
-    pub fn list_invitations(&self) -> crate::client::fluent_builders::ListInvitations {
-        crate::client::fluent_builders::ListInvitations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMembers`](crate::client::fluent_builders::ListMembers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMembers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::ListMembers::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::ListMembers::set_network_id): <p>The unique identifier of the network for which to list members.</p>
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListMembers::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListMembers::set_name): <p>The optional name of the member to list.</p>
-    ///   - [`status(MemberStatus)`](crate::client::fluent_builders::ListMembers::status) / [`set_status(Option<MemberStatus>)`](crate::client::fluent_builders::ListMembers::set_status): <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-    ///   - [`is_owned(bool)`](crate::client::fluent_builders::ListMembers::is_owned) / [`set_is_owned(Option<bool>)`](crate::client::fluent_builders::ListMembers::set_is_owned): <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMembers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMembers::set_max_results): <p>The maximum number of members to return in the request.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMembers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMembers::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListMembersOutput`](crate::output::ListMembersOutput) with field(s):
-    ///   - [`members(Option<Vec<MemberSummary>>)`](crate::output::ListMembersOutput::members): <p>An array of <code>MemberSummary</code> objects. Each object contains details about a network member.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMembersOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListMembersError>`](crate::error::ListMembersError)
-    pub fn list_members(&self) -> crate::client::fluent_builders::ListMembers {
-        crate::client::fluent_builders::ListMembers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListNetworks`](crate::client::fluent_builders::ListNetworks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNetworks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::client::fluent_builders::ListNetworks::name) / [`set_name(Option<String>)`](crate::client::fluent_builders::ListNetworks::set_name): <p>The name of the network.</p>
-    ///   - [`framework(Framework)`](crate::client::fluent_builders::ListNetworks::framework) / [`set_framework(Option<Framework>)`](crate::client::fluent_builders::ListNetworks::set_framework): <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
-    ///   - [`status(NetworkStatus)`](crate::client::fluent_builders::ListNetworks::status) / [`set_status(Option<NetworkStatus>)`](crate::client::fluent_builders::ListNetworks::set_status): <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>  <p>Applies only to Hyperledger Fabric.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNetworks::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNetworks::set_max_results): <p>The maximum number of networks to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNetworks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNetworks::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListNetworksOutput`](crate::output::ListNetworksOutput) with field(s):
-    ///   - [`networks(Option<Vec<NetworkSummary>>)`](crate::output::ListNetworksOutput::networks): <p>An array of <code>NetworkSummary</code> objects that contain configuration properties for each network.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListNetworksOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListNetworksError>`](crate::error::ListNetworksError)
-    pub fn list_networks(&self) -> crate::client::fluent_builders::ListNetworks {
-        crate::client::fluent_builders::ListNetworks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListNodes`](crate::client::fluent_builders::ListNodes) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListNodes::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::ListNodes::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::ListNodes::set_network_id): <p>The unique identifier of the network for which to list nodes.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::ListNodes::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::ListNodes::set_member_id): <p>The unique identifier of the member who owns the nodes to list.</p>  <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    ///   - [`status(NodeStatus)`](crate::client::fluent_builders::ListNodes::status) / [`set_status(Option<NodeStatus>)`](crate::client::fluent_builders::ListNodes::set_status): <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListNodes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListNodes::set_max_results): <p>The maximum number of nodes to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListNodes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListNodes::set_next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On success, responds with [`ListNodesOutput`](crate::output::ListNodesOutput) with field(s):
-    ///   - [`nodes(Option<Vec<NodeSummary>>)`](crate::output::ListNodesOutput::nodes): <p>An array of <code>NodeSummary</code> objects that contain configuration properties for each node.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListNodesOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListNodesError>`](crate::error::ListNodesError)
-    pub fn list_nodes(&self) -> crate::client::fluent_builders::ListNodes {
-        crate::client::fluent_builders::ListNodes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProposals`](crate::client::fluent_builders::ListProposals) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProposals::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::ListProposals::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::ListProposals::set_network_id): <p> The unique identifier of the network. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProposals::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProposals::set_max_results): <p> The maximum number of proposals to return. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProposals::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProposals::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
-    /// - On success, responds with [`ListProposalsOutput`](crate::output::ListProposalsOutput) with field(s):
-    ///   - [`proposals(Option<Vec<ProposalSummary>>)`](crate::output::ListProposalsOutput::proposals): <p>The summary of each proposal made on the network.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListProposalsOutput::next_token): <p>The pagination token that indicates the next set of results to retrieve.</p>
-    /// - On failure, responds with [`SdkError<ListProposalsError>`](crate::error::ListProposalsError)
-    pub fn list_proposals(&self) -> crate::client::fluent_builders::ListProposals {
-        crate::client::fluent_builders::ListProposals::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListProposalVotes`](crate::client::fluent_builders::ListProposalVotes) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListProposalVotes::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::ListProposalVotes::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::ListProposalVotes::set_network_id): <p> The unique identifier of the network. </p>
-    ///   - [`proposal_id(impl Into<String>)`](crate::client::fluent_builders::ListProposalVotes::proposal_id) / [`set_proposal_id(Option<String>)`](crate::client::fluent_builders::ListProposalVotes::set_proposal_id): <p> The unique identifier of the proposal. </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListProposalVotes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListProposalVotes::set_max_results): <p> The maximum number of votes to return. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListProposalVotes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListProposalVotes::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
-    /// - On success, responds with [`ListProposalVotesOutput`](crate::output::ListProposalVotesOutput) with field(s):
-    ///   - [`proposal_votes(Option<Vec<VoteSummary>>)`](crate::output::ListProposalVotesOutput::proposal_votes): <p> The list of votes. </p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListProposalVotesOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
-    /// - On failure, responds with [`SdkError<ListProposalVotesError>`](crate::error::ListProposalVotesError)
-    pub fn list_proposal_votes(&self) -> crate::client::fluent_builders::ListProposalVotes {
-        crate::client::fluent_builders::ListProposalVotes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>The tags assigned to the resource.</p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`RejectInvitation`](crate::client::fluent_builders::RejectInvitation) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`invitation_id(impl Into<String>)`](crate::client::fluent_builders::RejectInvitation::invitation_id) / [`set_invitation_id(Option<String>)`](crate::client::fluent_builders::RejectInvitation::set_invitation_id): <p>The unique identifier of the invitation to reject.</p>
-    /// - On success, responds with [`RejectInvitationOutput`](crate::output::RejectInvitationOutput)
-
-    /// - On failure, responds with [`SdkError<RejectInvitationError>`](crate::error::RejectInvitationError)
-    pub fn reject_invitation(&self) -> crate::client::fluent_builders::RejectInvitation {
-        crate::client::fluent_builders::RejectInvitation::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>The tags to assign to the specified resource. Tag values can be empty, for example, <code>"MyTagKey" : ""</code>. You can specify multiple key-value pairs in a single request, with an overall maximum of 50 tags added to each resource.</p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The tag keys.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateMember`](crate::client::fluent_builders::UpdateMember) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMember::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::UpdateMember::set_network_id): <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::UpdateMember::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::UpdateMember::set_member_id): <p>The unique identifier of the member.</p>
-    ///   - [`log_publishing_configuration(MemberLogPublishingConfiguration)`](crate::client::fluent_builders::UpdateMember::log_publishing_configuration) / [`set_log_publishing_configuration(Option<MemberLogPublishingConfiguration>)`](crate::client::fluent_builders::UpdateMember::set_log_publishing_configuration): <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    /// - On success, responds with [`UpdateMemberOutput`](crate::output::UpdateMemberOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateMemberError>`](crate::error::UpdateMemberError)
-    pub fn update_member(&self) -> crate::client::fluent_builders::UpdateMember {
-        crate::client::fluent_builders::UpdateMember::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateNode`](crate::client::fluent_builders::UpdateNode) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNode::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::UpdateNode::set_network_id): <p>The unique identifier of the network that the node is on.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNode::member_id) / [`set_member_id(Option<String>)`](crate::client::fluent_builders::UpdateNode::set_member_id): <p>The unique identifier of the member that owns the node.</p>  <p>Applies only to Hyperledger Fabric.</p>
-    ///   - [`node_id(impl Into<String>)`](crate::client::fluent_builders::UpdateNode::node_id) / [`set_node_id(Option<String>)`](crate::client::fluent_builders::UpdateNode::set_node_id): <p>The unique identifier of the node.</p>
-    ///   - [`log_publishing_configuration(NodeLogPublishingConfiguration)`](crate::client::fluent_builders::UpdateNode::log_publishing_configuration) / [`set_log_publishing_configuration(Option<NodeLogPublishingConfiguration>)`](crate::client::fluent_builders::UpdateNode::set_log_publishing_configuration): <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
-    /// - On success, responds with [`UpdateNodeOutput`](crate::output::UpdateNodeOutput)
-
-    /// - On failure, responds with [`SdkError<UpdateNodeError>`](crate::error::UpdateNodeError)
-    pub fn update_node(&self) -> crate::client::fluent_builders::UpdateNode {
-        crate::client::fluent_builders::UpdateNode::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`VoteOnProposal`](crate::client::fluent_builders::VoteOnProposal) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`network_id(impl Into<String>)`](crate::client::fluent_builders::VoteOnProposal::network_id) / [`set_network_id(Option<String>)`](crate::client::fluent_builders::VoteOnProposal::set_network_id): <p> The unique identifier of the network. </p>
-    ///   - [`proposal_id(impl Into<String>)`](crate::client::fluent_builders::VoteOnProposal::proposal_id) / [`set_proposal_id(Option<String>)`](crate::client::fluent_builders::VoteOnProposal::set_proposal_id): <p> The unique identifier of the proposal. </p>
-    ///   - [`voter_member_id(impl Into<String>)`](crate::client::fluent_builders::VoteOnProposal::voter_member_id) / [`set_voter_member_id(Option<String>)`](crate::client::fluent_builders::VoteOnProposal::set_voter_member_id): <p>The unique identifier of the member casting the vote. </p>
-    ///   - [`vote(VoteValue)`](crate::client::fluent_builders::VoteOnProposal::vote) / [`set_vote(Option<VoteValue>)`](crate::client::fluent_builders::VoteOnProposal::set_vote): <p> The value of the vote. </p>
-    /// - On success, responds with [`VoteOnProposalOutput`](crate::output::VoteOnProposalOutput)
-
-    /// - On failure, responds with [`SdkError<VoteOnProposalError>`](crate::error::VoteOnProposalError)
-    pub fn vote_on_proposal(&self) -> crate::client::fluent_builders::VoteOnProposal {
-        crate::client::fluent_builders::VoteOnProposal::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -520,9 +174,63 @@ impl Client {
     }
 }
 
+mod create_accessor;
+
+mod create_member;
+
+mod create_network;
+
+mod create_node;
+
+mod create_proposal;
+
+mod delete_accessor;
+
+mod delete_member;
+
+mod delete_node;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_accessor;
+
+mod get_member;
+
+mod get_network;
+
+mod get_node;
+
+mod get_proposal;
+
+mod list_accessors;
+
+mod list_invitations;
+
+mod list_members;
+
+mod list_networks;
+
+mod list_nodes;
+
+mod list_proposal_votes;
+
+mod list_proposals;
+
+mod list_tags_for_resource;
+
+mod reject_invitation;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_member;
+
+mod update_node;
+
+mod vote_on_proposal;

@@ -89,447 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`CreateCell`](crate::client::fluent_builders::CreateCell) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::CreateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::CreateCell::set_cell_name): <p>The name of the cell to create.</p>
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateCell::set_cells): <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateCell::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateCell::set_tags): <p>A collection of tags associated with a resource.</p>
-    /// - On success, responds with [`CreateCellOutput`](crate::output::CreateCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::CreateCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
-    ///   - [`cell_name(Option<String>)`](crate::output::CreateCellOutput::cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateCellOutput::cells): <p>A list of cell ARNs.</p>
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::CreateCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateCellOutput::tags): <p>Tags on the resources.</p>
-    /// - On failure, responds with [`SdkError<CreateCellError>`](crate::error::CreateCellError)
-    pub fn create_cell(&self) -> crate::client::fluent_builders::CreateCell {
-        crate::client::fluent_builders::CreateCell::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateCrossAccountAuthorization`](crate::client::fluent_builders::CreateCrossAccountAuthorization) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::CreateCrossAccountAuthorization::set_cross_account_authorization): <p>The cross-account authorization.</p>
-    /// - On success, responds with [`CreateCrossAccountAuthorizationOutput`](crate::output::CreateCrossAccountAuthorizationOutput) with field(s):
-    ///   - [`cross_account_authorization(Option<String>)`](crate::output::CreateCrossAccountAuthorizationOutput::cross_account_authorization): <p>The cross-account authorization.</p>
-    /// - On failure, responds with [`SdkError<CreateCrossAccountAuthorizationError>`](crate::error::CreateCrossAccountAuthorizationError)
-    pub fn create_cross_account_authorization(
-        &self,
-    ) -> crate::client::fluent_builders::CreateCrossAccountAuthorization {
-        crate::client::fluent_builders::CreateCrossAccountAuthorization::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateReadinessCheck`](crate::client::fluent_builders::CreateReadinessCheck) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_readiness_check_name): <p>The name of the readiness check to create.</p>
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateReadinessCheck::set_resource_set_name): <p>The name of the resource set to check.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateReadinessCheck::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateReadinessCheck::set_tags): <p>A collection of tags associated with a resource.</p>
-    /// - On success, responds with [`CreateReadinessCheckOutput`](crate::output::CreateReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::CreateReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
-    ///   - [`resource_set(Option<String>)`](crate::output::CreateReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<CreateReadinessCheckError>`](crate::error::CreateReadinessCheckError)
-    pub fn create_readiness_check(&self) -> crate::client::fluent_builders::CreateReadinessCheck {
-        crate::client::fluent_builders::CreateReadinessCheck::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRecoveryGroup`](crate::client::fluent_builders::CreateRecoveryGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_cells): <p>A list of the cell Amazon Resource Names (ARNs) in the recovery group.</p>
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_recovery_group_name): <p>The name of the recovery group to create.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRecoveryGroup::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRecoveryGroup::set_tags): <p>A collection of tags associated with a resource.</p>
-    /// - On success, responds with [`CreateRecoveryGroupOutput`](crate::output::CreateRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::CreateRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::CreateRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
-    /// - On failure, responds with [`SdkError<CreateRecoveryGroupError>`](crate::error::CreateRecoveryGroupError)
-    pub fn create_recovery_group(&self) -> crate::client::fluent_builders::CreateRecoveryGroup {
-        crate::client::fluent_builders::CreateRecoveryGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateResourceSet`](crate::client::fluent_builders::CreateResourceSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_name): <p>The name of the resource set to create.</p>
-    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::CreateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::CreateResourceSet::set_resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::CreateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::CreateResourceSet::set_resources): <p>A list of resource objects in the resource set.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateResourceSet::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateResourceSet::set_tags): <p>A tag to associate with the parameters for a resource set.</p>
-    /// - On success, responds with [`CreateResourceSetOutput`](crate::output::CreateResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    ///   - [`resource_set_name(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
-    ///   - [`resource_set_type(Option<String>)`](crate::output::CreateResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::CreateResourceSetOutput::resources): <p>A list of resource objects.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::CreateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<CreateResourceSetError>`](crate::error::CreateResourceSetError)
-    pub fn create_resource_set(&self) -> crate::client::fluent_builders::CreateResourceSet {
-        crate::client::fluent_builders::CreateResourceSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCell`](crate::client::fluent_builders::DeleteCell) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::DeleteCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::DeleteCell::set_cell_name): <p>The name of the cell.</p>
-    /// - On success, responds with [`DeleteCellOutput`](crate::output::DeleteCellOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCellError>`](crate::error::DeleteCellError)
-    pub fn delete_cell(&self) -> crate::client::fluent_builders::DeleteCell {
-        crate::client::fluent_builders::DeleteCell::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteCrossAccountAuthorization`](crate::client::fluent_builders::DeleteCrossAccountAuthorization) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cross_account_authorization(impl Into<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::cross_account_authorization) / [`set_cross_account_authorization(Option<String>)`](crate::client::fluent_builders::DeleteCrossAccountAuthorization::set_cross_account_authorization): <p>The cross-account authorization.</p>
-    /// - On success, responds with [`DeleteCrossAccountAuthorizationOutput`](crate::output::DeleteCrossAccountAuthorizationOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteCrossAccountAuthorizationError>`](crate::error::DeleteCrossAccountAuthorizationError)
-    pub fn delete_cross_account_authorization(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteCrossAccountAuthorization {
-        crate::client::fluent_builders::DeleteCrossAccountAuthorization::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteReadinessCheck`](crate::client::fluent_builders::DeleteReadinessCheck) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::DeleteReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
-    /// - On success, responds with [`DeleteReadinessCheckOutput`](crate::output::DeleteReadinessCheckOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteReadinessCheckError>`](crate::error::DeleteReadinessCheckError)
-    pub fn delete_readiness_check(&self) -> crate::client::fluent_builders::DeleteReadinessCheck {
-        crate::client::fluent_builders::DeleteReadinessCheck::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRecoveryGroup`](crate::client::fluent_builders::DeleteRecoveryGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::DeleteRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
-    /// - On success, responds with [`DeleteRecoveryGroupOutput`](crate::output::DeleteRecoveryGroupOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRecoveryGroupError>`](crate::error::DeleteRecoveryGroupError)
-    pub fn delete_recovery_group(&self) -> crate::client::fluent_builders::DeleteRecoveryGroup {
-        crate::client::fluent_builders::DeleteRecoveryGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteResourceSet`](crate::client::fluent_builders::DeleteResourceSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::DeleteResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::DeleteResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
-    /// - On success, responds with [`DeleteResourceSetOutput`](crate::output::DeleteResourceSetOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteResourceSetError>`](crate::error::DeleteResourceSetError)
-    pub fn delete_resource_set(&self) -> crate::client::fluent_builders::DeleteResourceSet {
-        crate::client::fluent_builders::DeleteResourceSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetArchitectureRecommendations`](crate::client::fluent_builders::GetArchitectureRecommendations) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetArchitectureRecommendations::set_recovery_group_name): <p>The name of a recovery group.</p>
-    /// - On success, responds with [`GetArchitectureRecommendationsOutput`](crate::output::GetArchitectureRecommendationsOutput) with field(s):
-    ///   - [`last_audit_timestamp(Option<DateTime>)`](crate::output::GetArchitectureRecommendationsOutput::last_audit_timestamp): <p>The time that a recovery group was last assessed for recommendations, in UTC ISO-8601 format.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetArchitectureRecommendationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recommendations(Option<Vec<Recommendation>>)`](crate::output::GetArchitectureRecommendationsOutput::recommendations): <p>A list of the recommendations for the customer's application.</p>
-    /// - On failure, responds with [`SdkError<GetArchitectureRecommendationsError>`](crate::error::GetArchitectureRecommendationsError)
-    pub fn get_architecture_recommendations(
-        &self,
-    ) -> crate::client::fluent_builders::GetArchitectureRecommendations {
-        crate::client::fluent_builders::GetArchitectureRecommendations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCell`](crate::client::fluent_builders::GetCell) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCell::set_cell_name): <p>The name of the cell.</p>
-    /// - On success, responds with [`GetCellOutput`](crate::output::GetCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::GetCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
-    ///   - [`cell_name(Option<String>)`](crate::output::GetCellOutput::cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetCellOutput::cells): <p>A list of cell ARNs.</p>
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::GetCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetCellOutput::tags): <p>Tags on the resources.</p>
-    /// - On failure, responds with [`SdkError<GetCellError>`](crate::error::GetCellError)
-    pub fn get_cell(&self) -> crate::client::fluent_builders::GetCell {
-        crate::client::fluent_builders::GetCell::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetCellReadinessSummary`](crate::client::fluent_builders::GetCellReadinessSummary) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetCellReadinessSummary::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_cell_name): <p>The name of the cell.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetCellReadinessSummary::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetCellReadinessSummary::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`GetCellReadinessSummaryOutput`](crate::output::GetCellReadinessSummaryOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetCellReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetCellReadinessSummaryOutput::readiness): <p>The readiness at a cell level.</p>
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetCellReadinessSummaryOutput::readiness_checks): <p>Summaries for the readiness checks that make up the cell.</p>
-    /// - On failure, responds with [`SdkError<GetCellReadinessSummaryError>`](crate::error::GetCellReadinessSummaryError)
-    pub fn get_cell_readiness_summary(
-        &self,
-    ) -> crate::client::fluent_builders::GetCellReadinessSummary {
-        crate::client::fluent_builders::GetCellReadinessSummary::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetReadinessCheck`](crate::client::fluent_builders::GetReadinessCheck) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
-    /// - On success, responds with [`GetReadinessCheckOutput`](crate::output::GetReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::GetReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
-    ///   - [`resource_set(Option<String>)`](crate::output::GetReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<GetReadinessCheckError>`](crate::error::GetReadinessCheckError)
-    pub fn get_readiness_check(&self) -> crate::client::fluent_builders::GetReadinessCheck {
-        crate::client::fluent_builders::GetReadinessCheck::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetReadinessCheckResourceStatus`](crate::client::fluent_builders::GetReadinessCheckResourceStatus) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_readiness_check_name): <p>Name of a readiness check.</p>
-    ///   - [`resource_identifier(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckResourceStatus::set_resource_identifier): <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    /// - On success, responds with [`GetReadinessCheckResourceStatusOutput`](crate::output::GetReadinessCheckResourceStatusOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckResourceStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckResourceStatusOutput::readiness): <p>The readiness at a rule level.</p>
-    ///   - [`rules(Option<Vec<RuleResult>>)`](crate::output::GetReadinessCheckResourceStatusOutput::rules): <p>Details of the rule's results.</p>
-    /// - On failure, responds with [`SdkError<GetReadinessCheckResourceStatusError>`](crate::error::GetReadinessCheckResourceStatusError)
-    pub fn get_readiness_check_resource_status(
-        &self,
-    ) -> crate::client::fluent_builders::GetReadinessCheckResourceStatus {
-        crate::client::fluent_builders::GetReadinessCheckResourceStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetReadinessCheckStatus`](crate::client::fluent_builders::GetReadinessCheckStatus) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetReadinessCheckStatus::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::GetReadinessCheckStatus::set_readiness_check_name): <p>Name of a readiness check.</p>
-    /// - On success, responds with [`GetReadinessCheckStatusOutput`](crate::output::GetReadinessCheckStatusOutput) with field(s):
-    ///   - [`messages(Option<Vec<Message>>)`](crate::output::GetReadinessCheckStatusOutput::messages): <p>Top level messages for readiness check status</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetReadinessCheckStatusOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetReadinessCheckStatusOutput::readiness): <p>The readiness at rule level.</p>
-    ///   - [`resources(Option<Vec<ResourceResult>>)`](crate::output::GetReadinessCheckStatusOutput::resources): <p>Summary of the readiness of resources.</p>
-    /// - On failure, responds with [`SdkError<GetReadinessCheckStatusError>`](crate::error::GetReadinessCheckStatusError)
-    pub fn get_readiness_check_status(
-        &self,
-    ) -> crate::client::fluent_builders::GetReadinessCheckStatus {
-        crate::client::fluent_builders::GetReadinessCheckStatus::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRecoveryGroup`](crate::client::fluent_builders::GetRecoveryGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
-    /// - On success, responds with [`GetRecoveryGroupOutput`](crate::output::GetRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::GetRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::GetRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
-    /// - On failure, responds with [`SdkError<GetRecoveryGroupError>`](crate::error::GetRecoveryGroupError)
-    pub fn get_recovery_group(&self) -> crate::client::fluent_builders::GetRecoveryGroup {
-        crate::client::fluent_builders::GetRecoveryGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetRecoveryGroupReadinessSummary`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::set_recovery_group_name): <p>The name of a recovery group.</p>
-    /// - On success, responds with [`GetRecoveryGroupReadinessSummaryOutput`](crate::output::GetRecoveryGroupReadinessSummaryOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness(Option<Readiness>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness): <p>The readiness status at a recovery group level.</p>
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckSummary>>)`](crate::output::GetRecoveryGroupReadinessSummaryOutput::readiness_checks): <p>Summaries of the readiness checks for the recovery group.</p>
-    /// - On failure, responds with [`SdkError<GetRecoveryGroupReadinessSummaryError>`](crate::error::GetRecoveryGroupReadinessSummaryError)
-    pub fn get_recovery_group_readiness_summary(
-        &self,
-    ) -> crate::client::fluent_builders::GetRecoveryGroupReadinessSummary {
-        crate::client::fluent_builders::GetRecoveryGroupReadinessSummary::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetResourceSet`](crate::client::fluent_builders::GetResourceSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::GetResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::GetResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
-    /// - On success, responds with [`GetResourceSetOutput`](crate::output::GetResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    ///   - [`resource_set_name(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
-    ///   - [`resource_set_type(Option<String>)`](crate::output::GetResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::GetResourceSetOutput::resources): <p>A list of resource objects.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::GetResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<GetResourceSetError>`](crate::error::GetResourceSetError)
-    pub fn get_resource_set(&self) -> crate::client::fluent_builders::GetResourceSet {
-        crate::client::fluent_builders::GetResourceSet::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCells`](crate::client::fluent_builders::ListCells) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCells::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCells::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCells::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCells::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCells::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`ListCellsOutput`](crate::output::ListCellsOutput) with field(s):
-    ///   - [`cells(Option<Vec<CellOutput>>)`](crate::output::ListCellsOutput::cells): <p>A list of cells.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListCellsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListCellsError>`](crate::error::ListCellsError)
-    pub fn list_cells(&self) -> crate::client::fluent_builders::ListCells {
-        crate::client::fluent_builders::ListCells::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListCrossAccountAuthorizations`](crate::client::fluent_builders::ListCrossAccountAuthorizations) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListCrossAccountAuthorizations::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListCrossAccountAuthorizations::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`ListCrossAccountAuthorizationsOutput`](crate::output::ListCrossAccountAuthorizationsOutput) with field(s):
-    ///   - [`cross_account_authorizations(Option<Vec<String>>)`](crate::output::ListCrossAccountAuthorizationsOutput::cross_account_authorizations): <p>A list of cross-account authorizations.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListCrossAccountAuthorizationsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On failure, responds with [`SdkError<ListCrossAccountAuthorizationsError>`](crate::error::ListCrossAccountAuthorizationsError)
-    pub fn list_cross_account_authorizations(
-        &self,
-    ) -> crate::client::fluent_builders::ListCrossAccountAuthorizations {
-        crate::client::fluent_builders::ListCrossAccountAuthorizations::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListReadinessChecks`](crate::client::fluent_builders::ListReadinessChecks) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListReadinessChecks::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListReadinessChecks::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListReadinessChecks::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListReadinessChecks::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`ListReadinessChecksOutput`](crate::output::ListReadinessChecksOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListReadinessChecksOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::output::ListReadinessChecksOutput::readiness_checks): <p>A list of readiness checks associated with the account.</p>
-    /// - On failure, responds with [`SdkError<ListReadinessChecksError>`](crate::error::ListReadinessChecksError)
-    pub fn list_readiness_checks(&self) -> crate::client::fluent_builders::ListReadinessChecks {
-        crate::client::fluent_builders::ListReadinessChecks::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRecoveryGroups`](crate::client::fluent_builders::ListRecoveryGroups) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRecoveryGroups::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRecoveryGroups::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRecoveryGroups::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRecoveryGroups::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`ListRecoveryGroupsOutput`](crate::output::ListRecoveryGroupsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListRecoveryGroupsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`recovery_groups(Option<Vec<RecoveryGroupOutput>>)`](crate::output::ListRecoveryGroupsOutput::recovery_groups): <p>A list of recovery groups.</p>
-    /// - On failure, responds with [`SdkError<ListRecoveryGroupsError>`](crate::error::ListRecoveryGroupsError)
-    pub fn list_recovery_groups(&self) -> crate::client::fluent_builders::ListRecoveryGroups {
-        crate::client::fluent_builders::ListRecoveryGroups::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListResourceSets`](crate::client::fluent_builders::ListResourceSets) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListResourceSets::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListResourceSets::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListResourceSets::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListResourceSets::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListResourceSets::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    /// - On success, responds with [`ListResourceSetsOutput`](crate::output::ListResourceSetsOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListResourceSetsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::output::ListResourceSetsOutput::resource_sets): <p>A list of resource sets associated with the account.</p>
-    /// - On failure, responds with [`SdkError<ListResourceSetsError>`](crate::error::ListResourceSetsError)
-    pub fn list_resource_sets(&self) -> crate::client::fluent_builders::ListResourceSets {
-        crate::client::fluent_builders::ListResourceSets::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRules`](crate::client::fluent_builders::ListRules) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRules::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRules::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::ListRules::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRules::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRules::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`resource_type(impl Into<String>)`](crate::client::fluent_builders::ListRules::resource_type) / [`set_resource_type(Option<String>)`](crate::client::fluent_builders::ListRules::set_resource_type): <p>The resource type that a readiness rule applies to.</p>
-    /// - On success, responds with [`ListRulesOutput`](crate::output::ListRulesOutput) with field(s):
-    ///   - [`next_token(Option<String>)`](crate::output::ListRulesOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
-    ///   - [`rules(Option<Vec<ListRulesOutput>>)`](crate::output::ListRulesOutput::rules): <p>A list of readiness rules for a specific resource type.</p>
-    /// - On failure, responds with [`SdkError<ListRulesError>`](crate::error::ListRulesError)
-    pub fn list_rules(&self) -> crate::client::fluent_builders::ListRules {
-        crate::client::fluent_builders::ListRules::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResources`](crate::client::fluent_builders::ListTagsForResources) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResources::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResources::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
-    /// - On success, responds with [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourcesOutput::tags): <p></p>
-    /// - On failure, responds with [`SdkError<ListTagsForResourcesError>`](crate::error::ListTagsForResourcesError)
-    pub fn list_tags_for_resources(&self) -> crate::client::fluent_builders::ListTagsForResources {
-        crate::client::fluent_builders::ListTagsForResources::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p></p>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) for a resource.</p>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The keys for tags you add to resources.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateCell`](crate::client::fluent_builders::UpdateCell) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::client::fluent_builders::UpdateCell::cell_name) / [`set_cell_name(Option<String>)`](crate::client::fluent_builders::UpdateCell::set_cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateCell::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateCell::set_cells): <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    /// - On success, responds with [`UpdateCellOutput`](crate::output::UpdateCellOutput) with field(s):
-    ///   - [`cell_arn(Option<String>)`](crate::output::UpdateCellOutput::cell_arn): <p>The Amazon Resource Name (ARN) for the cell.</p>
-    ///   - [`cell_name(Option<String>)`](crate::output::UpdateCellOutput::cell_name): <p>The name of the cell.</p>
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateCellOutput::cells): <p>A list of cell ARNs.</p>
-    ///   - [`parent_readiness_scopes(Option<Vec<String>>)`](crate::output::UpdateCellOutput::parent_readiness_scopes): <p>The readiness scope for the cell, which can be a cell Amazon Resource Name (ARN) or a recovery group ARN. This is a list but currently can have only one element.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateCellOutput::tags): <p>Tags on the resources.</p>
-    /// - On failure, responds with [`SdkError<UpdateCellError>`](crate::error::UpdateCellError)
-    pub fn update_cell(&self) -> crate::client::fluent_builders::UpdateCell {
-        crate::client::fluent_builders::UpdateCell::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateReadinessCheck`](crate::client::fluent_builders::UpdateReadinessCheck) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`readiness_check_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::readiness_check_name) / [`set_readiness_check_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_readiness_check_name): <p>Name of a readiness check.</p>
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateReadinessCheck::set_resource_set_name): <p>The name of the resource set to be checked.</p>
-    /// - On success, responds with [`UpdateReadinessCheckOutput`](crate::output::UpdateReadinessCheckOutput) with field(s):
-    ///   - [`readiness_check_arn(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_arn): <p>The Amazon Resource Name (ARN) associated with a readiness check.</p>
-    ///   - [`readiness_check_name(Option<String>)`](crate::output::UpdateReadinessCheckOutput::readiness_check_name): <p>Name of a readiness check.</p>
-    ///   - [`resource_set(Option<String>)`](crate::output::UpdateReadinessCheckOutput::resource_set): <p>Name of the resource set to be checked.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateReadinessCheckOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<UpdateReadinessCheckError>`](crate::error::UpdateReadinessCheckError)
-    pub fn update_readiness_check(&self) -> crate::client::fluent_builders::UpdateReadinessCheck {
-        crate::client::fluent_builders::UpdateReadinessCheck::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRecoveryGroup`](crate::client::fluent_builders::UpdateRecoveryGroup) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`cells(Vec<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::cells) / [`set_cells(Option<Vec<String>>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_cells): <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    ///   - [`recovery_group_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::recovery_group_name) / [`set_recovery_group_name(Option<String>)`](crate::client::fluent_builders::UpdateRecoveryGroup::set_recovery_group_name): <p>The name of a recovery group.</p>
-    /// - On success, responds with [`UpdateRecoveryGroupOutput`](crate::output::UpdateRecoveryGroupOutput) with field(s):
-    ///   - [`cells(Option<Vec<String>>)`](crate::output::UpdateRecoveryGroupOutput::cells): <p>A list of a cell's Amazon Resource Names (ARNs).</p>
-    ///   - [`recovery_group_arn(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_arn): <p>The Amazon Resource Name (ARN) for the recovery group.</p>
-    ///   - [`recovery_group_name(Option<String>)`](crate::output::UpdateRecoveryGroupOutput::recovery_group_name): <p>The name of the recovery group.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateRecoveryGroupOutput::tags): <p>The tags associated with the recovery group.</p>
-    /// - On failure, responds with [`SdkError<UpdateRecoveryGroupError>`](crate::error::UpdateRecoveryGroupError)
-    pub fn update_recovery_group(&self) -> crate::client::fluent_builders::UpdateRecoveryGroup {
-        crate::client::fluent_builders::UpdateRecoveryGroup::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateResourceSet`](crate::client::fluent_builders::UpdateResourceSet) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_set_name(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_name) / [`set_resource_set_name(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_name): <p>Name of a resource set.</p>
-    ///   - [`resource_set_type(impl Into<String>)`](crate::client::fluent_builders::UpdateResourceSet::resource_set_type) / [`set_resource_set_type(Option<String>)`](crate::client::fluent_builders::UpdateResourceSet::set_resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Vec<Resource>)`](crate::client::fluent_builders::UpdateResourceSet::resources) / [`set_resources(Option<Vec<Resource>>)`](crate::client::fluent_builders::UpdateResourceSet::set_resources): <p>A list of resource objects.</p>
-    /// - On success, responds with [`UpdateResourceSetOutput`](crate::output::UpdateResourceSetOutput) with field(s):
-    ///   - [`resource_set_arn(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_arn): <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    ///   - [`resource_set_name(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_name): <p>The name of the resource set.</p>
-    ///   - [`resource_set_type(Option<String>)`](crate::output::UpdateResourceSetOutput::resource_set_type): <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>  <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    ///   - [`resources(Option<Vec<Resource>>)`](crate::output::UpdateResourceSetOutput::resources): <p>A list of resource objects.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::UpdateResourceSetOutput::tags): <p>A collection of tags associated with a resource.</p>
-    /// - On failure, responds with [`SdkError<UpdateResourceSetError>`](crate::error::UpdateResourceSetError)
-    pub fn update_resource_set(&self) -> crate::client::fluent_builders::UpdateResourceSet {
-        crate::client::fluent_builders::UpdateResourceSet::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -615,9 +174,73 @@ impl Client {
     }
 }
 
+mod create_cell;
+
+mod create_cross_account_authorization;
+
+mod create_readiness_check;
+
+mod create_recovery_group;
+
+mod create_resource_set;
+
+mod delete_cell;
+
+mod delete_cross_account_authorization;
+
+mod delete_readiness_check;
+
+mod delete_recovery_group;
+
+mod delete_resource_set;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_architecture_recommendations;
+
+mod get_cell;
+
+mod get_cell_readiness_summary;
+
+mod get_readiness_check;
+
+mod get_readiness_check_resource_status;
+
+mod get_readiness_check_status;
+
+mod get_recovery_group;
+
+mod get_recovery_group_readiness_summary;
+
+mod get_resource_set;
+
+mod list_cells;
+
+mod list_cross_account_authorizations;
+
+mod list_readiness_checks;
+
+mod list_recovery_groups;
+
+mod list_resource_sets;
+
+mod list_rules;
+
+mod list_tags_for_resources;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_cell;
+
+mod update_readiness_check;
+
+mod update_recovery_group;
+
+mod update_resource_set;

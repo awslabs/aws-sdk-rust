@@ -176,7 +176,7 @@ impl ListLinuxSubscriptionInstancesInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_linux_subscription_instances(&self)?
+            crate::protocol_serde::shape_list_linux_subscription_instances::ser_list_linux_subscription_instances_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -300,9 +300,7 @@ impl ListLinuxSubscriptionsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_linux_subscriptions(
-                &self,
-            )?,
+            crate::protocol_serde::shape_list_linux_subscriptions::ser_list_linux_subscriptions_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -426,9 +424,7 @@ impl UpdateServiceSettingsInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_service_settings(
-                &self,
-            )?,
+            crate::protocol_serde::shape_update_service_settings::ser_update_service_settings_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

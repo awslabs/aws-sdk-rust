@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEarthObservationJo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_earth_observation_job_error(response)
+            crate::protocol_serde::shape_delete_earth_observation_job::de_delete_earth_observation_job_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_earth_observation_job_response(response)
+            crate::protocol_serde::shape_delete_earth_observation_job::de_delete_earth_observation_job_http_response(response)
         }
     }
 }
@@ -62,9 +62,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVectorEnrichmentJo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_vector_enrichment_job_error(response)
+            crate::protocol_serde::shape_delete_vector_enrichment_job::de_delete_vector_enrichment_job_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_vector_enrichment_job_response(response)
+            crate::protocol_serde::shape_delete_vector_enrichment_job::de_delete_vector_enrichment_job_http_response(response)
         }
     }
 }
@@ -97,9 +97,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEarthObservationJo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_export_earth_observation_job_error(response)
+            crate::protocol_serde::shape_export_earth_observation_job::de_export_earth_observation_job_http_error(response)
         } else {
-            crate::operation_deser::parse_export_earth_observation_job_response(response)
+            crate::protocol_serde::shape_export_earth_observation_job::de_export_earth_observation_job_http_response(response)
         }
     }
 }
@@ -132,9 +132,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportVectorEnrichmentJo
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_export_vector_enrichment_job_error(response)
+            crate::protocol_serde::shape_export_vector_enrichment_job::de_export_vector_enrichment_job_http_error(response)
         } else {
-            crate::operation_deser::parse_export_vector_enrichment_job_response(response)
+            crate::protocol_serde::shape_export_vector_enrichment_job::de_export_vector_enrichment_job_http_response(response)
         }
     }
 }
@@ -167,9 +167,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEarthObservationJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_earth_observation_job_error(response)
+            crate::protocol_serde::shape_get_earth_observation_job::de_get_earth_observation_job_http_error(response)
         } else {
-            crate::operation_deser::parse_get_earth_observation_job_response(response)
+            crate::protocol_serde::shape_get_earth_observation_job::de_get_earth_observation_job_http_response(response)
         }
     }
 }
@@ -202,9 +202,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRasterDataCollection 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_raster_data_collection_error(response)
+            crate::protocol_serde::shape_get_raster_data_collection::de_get_raster_data_collection_http_error(response)
         } else {
-            crate::operation_deser::parse_get_raster_data_collection_response(response)
+            crate::protocol_serde::shape_get_raster_data_collection::de_get_raster_data_collection_http_response(response)
         }
     }
 }
@@ -239,11 +239,11 @@ impl aws_smithy_http::response::ParseHttpResponse for GetTile {
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
-        Some(crate::operation_deser::parse_get_tile(response))
+        Some(crate::protocol_serde::shape_get_tile::de_get_tile_http_response(response))
     }
     fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
-        crate::operation_deser::parse_get_tile_error(response)
+        crate::protocol_serde::shape_get_tile::de_get_tile_http_error(response)
     }
 }
 
@@ -275,9 +275,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVectorEnrichmentJob {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_vector_enrichment_job_error(response)
+            crate::protocol_serde::shape_get_vector_enrichment_job::de_get_vector_enrichment_job_http_error(response)
         } else {
-            crate::operation_deser::parse_get_vector_enrichment_job_response(response)
+            crate::protocol_serde::shape_get_vector_enrichment_job::de_get_vector_enrichment_job_http_response(response)
         }
     }
 }
@@ -310,9 +310,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEarthObservationJobs
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_earth_observation_jobs_error(response)
+            crate::protocol_serde::shape_list_earth_observation_jobs::de_list_earth_observation_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_earth_observation_jobs_response(response)
+            crate::protocol_serde::shape_list_earth_observation_jobs::de_list_earth_observation_jobs_http_response(response)
         }
     }
 }
@@ -345,9 +345,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRasterDataCollection
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_raster_data_collections_error(response)
+            crate::protocol_serde::shape_list_raster_data_collections::de_list_raster_data_collections_http_error(response)
         } else {
-            crate::operation_deser::parse_list_raster_data_collections_response(response)
+            crate::protocol_serde::shape_list_raster_data_collections::de_list_raster_data_collections_http_response(response)
         }
     }
 }
@@ -380,9 +380,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -415,9 +415,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVectorEnrichmentJobs
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vector_enrichment_jobs_error(response)
+            crate::protocol_serde::shape_list_vector_enrichment_jobs::de_list_vector_enrichment_jobs_http_error(response)
         } else {
-            crate::operation_deser::parse_list_vector_enrichment_jobs_response(response)
+            crate::protocol_serde::shape_list_vector_enrichment_jobs::de_list_vector_enrichment_jobs_http_response(response)
         }
     }
 }
@@ -450,9 +450,9 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRasterDataCollecti
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_search_raster_data_collection_error(response)
+            crate::protocol_serde::shape_search_raster_data_collection::de_search_raster_data_collection_http_error(response)
         } else {
-            crate::operation_deser::parse_search_raster_data_collection_response(response)
+            crate::protocol_serde::shape_search_raster_data_collection::de_search_raster_data_collection_http_response(response)
         }
     }
 }
@@ -485,9 +485,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEarthObservationJob
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_earth_observation_job_error(response)
+            crate::protocol_serde::shape_start_earth_observation_job::de_start_earth_observation_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_earth_observation_job_response(response)
+            crate::protocol_serde::shape_start_earth_observation_job::de_start_earth_observation_job_http_response(response)
         }
     }
 }
@@ -520,9 +520,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVectorEnrichmentJob
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_vector_enrichment_job_error(response)
+            crate::protocol_serde::shape_start_vector_enrichment_job::de_start_vector_enrichment_job_http_error(response)
         } else {
-            crate::operation_deser::parse_start_vector_enrichment_job_response(response)
+            crate::protocol_serde::shape_start_vector_enrichment_job::de_start_vector_enrichment_job_http_response(response)
         }
     }
 }
@@ -555,9 +555,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEarthObservationJob 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_earth_observation_job_error(response)
+            crate::protocol_serde::shape_stop_earth_observation_job::de_stop_earth_observation_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_earth_observation_job_response(response)
+            crate::protocol_serde::shape_stop_earth_observation_job::de_stop_earth_observation_job_http_response(response)
         }
     }
 }
@@ -590,9 +590,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopVectorEnrichmentJob 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_vector_enrichment_job_error(response)
+            crate::protocol_serde::shape_stop_vector_enrichment_job::de_stop_vector_enrichment_job_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_vector_enrichment_job_response(response)
+            crate::protocol_serde::shape_stop_vector_enrichment_job::de_stop_vector_enrichment_job_http_response(response)
         }
     }
 }
@@ -623,9 +623,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -656,9 +656,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }

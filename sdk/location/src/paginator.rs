@@ -90,7 +90,10 @@ impl GetDevicePositionHistoryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_device_position_history_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_device_position_history_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,8 @@ impl ListDevicePositionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_device_positions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_device_positions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +330,10 @@ impl ListGeofenceCollectionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_geofence_collections_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_geofence_collections_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +451,8 @@ impl ListGeofencesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_geofences_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_geofences_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +570,7 @@ impl ListMapsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_maps_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_maps_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +688,8 @@ impl ListPlaceIndexesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_place_indexes_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_place_indexes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +807,8 @@ impl ListRouteCalculatorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_route_calculators_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_route_calculators_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +926,8 @@ impl ListTrackerConsumersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_tracker_consumers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_tracker_consumers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1034,7 +1045,8 @@ impl ListTrackersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_trackers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_trackers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -1080,7 +1092,11 @@ impl GetDevicePositionHistoryPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_get_device_position_history_output_device_positions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_get_device_position_history_output_device_positions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -1104,7 +1120,7 @@ impl ListDevicePositionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_device_positions_output_entries(page)
+            crate::lens::lens_list_device_positions_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1131,7 +1147,7 @@ impl ListGeofenceCollectionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_geofence_collections_output_entries(page)
+            crate::lens::lens_list_geofence_collections_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1158,7 +1174,7 @@ impl ListGeofencesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_geofences_output_entries(page)
+            crate::lens::lens_list_geofences_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1185,7 +1201,7 @@ impl ListMapsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_maps_output_entries(page)
+            crate::lens::lens_list_maps_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1212,7 +1228,7 @@ impl ListPlaceIndexesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_place_indexes_output_entries(page)
+            crate::lens::lens_list_place_indexes_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1239,7 +1255,7 @@ impl ListRouteCalculatorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_route_calculators_output_entries(page)
+            crate::lens::lens_list_route_calculators_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1266,11 +1282,9 @@ impl ListTrackerConsumersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_tracker_consumers_output_consumer_arns(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_tracker_consumers_output_consumer_arns(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -1295,7 +1309,7 @@ impl ListTrackersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_trackers_output_entries(page)
+            crate::lens::lens_list_trackers_output_entries(page)
                 .unwrap_or_default()
                 .into_iter()
         })

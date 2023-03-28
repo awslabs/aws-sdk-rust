@@ -90,7 +90,7 @@ impl ListAssociatedRoute53HealthChecksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_associated_route53_health_checks_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_associated_route53_health_checks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +208,8 @@ impl ListClustersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_clusters_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_clusters_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +327,8 @@ impl ListControlPanelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_control_panels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_control_panels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +446,8 @@ impl ListRoutingControlsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_routing_controls_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_routing_controls_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +565,8 @@ impl ListSafetyRulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_safety_rules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_safety_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -610,7 +614,11 @@ impl ListAssociatedRoute53HealthChecksPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAssociatedRoute53HealthChecksError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_associated_route53_health_checks_output_health_check_ids(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_associated_route53_health_checks_output_health_check_ids(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -634,7 +642,7 @@ impl ListClustersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_clusters_output_clusters(page)
+            crate::lens::lens_list_clusters_output_clusters(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -661,7 +669,7 @@ impl ListControlPanelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_control_panels_output_control_panels(page)
+            crate::lens::lens_list_control_panels_output_control_panels(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -688,11 +696,9 @@ impl ListRoutingControlsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_routing_controls_output_routing_controls(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_routing_controls_output_routing_controls(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -717,7 +723,7 @@ impl ListSafetyRulesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_safety_rules_output_safety_rules(page)
+            crate::lens::lens_list_safety_rules_output_safety_rules(page)
                 .unwrap_or_default()
                 .into_iter()
         })

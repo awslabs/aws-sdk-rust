@@ -28,13 +28,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInboundCrossCluste
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_accept_inbound_cross_cluster_search_connection_error(
-                response,
-            )
+            crate::protocol_serde::shape_accept_inbound_cross_cluster_search_connection::de_accept_inbound_cross_cluster_search_connection_http_error(response)
         } else {
-            crate::operation_deser::parse_accept_inbound_cross_cluster_search_connection_response(
-                response,
-            )
+            crate::protocol_serde::shape_accept_inbound_cross_cluster_search_connection::de_accept_inbound_cross_cluster_search_connection_http_response(response)
         }
     }
 }
@@ -64,9 +60,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTags {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_add_tags_error(response)
+            crate::protocol_serde::shape_add_tags::de_add_tags_http_error(response)
         } else {
-            crate::operation_deser::parse_add_tags_response(response)
+            crate::protocol_serde::shape_add_tags::de_add_tags_http_response(response)
         }
     }
 }
@@ -99,9 +95,13 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_associate_package_error(response)
+            crate::protocol_serde::shape_associate_package::de_associate_package_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_associate_package_response(response)
+            crate::protocol_serde::shape_associate_package::de_associate_package_http_response(
+                response,
+            )
         }
     }
 }
@@ -134,9 +134,9 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeVpcEndpointAcce
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_authorize_vpc_endpoint_access_error(response)
+            crate::protocol_serde::shape_authorize_vpc_endpoint_access::de_authorize_vpc_endpoint_access_http_error(response)
         } else {
-            crate::operation_deser::parse_authorize_vpc_endpoint_access_response(response)
+            crate::protocol_serde::shape_authorize_vpc_endpoint_access::de_authorize_vpc_endpoint_access_http_response(response)
         }
     }
 }
@@ -169,13 +169,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelElasticsearchServi
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_cancel_elasticsearch_service_software_update_error(
-                response,
-            )
+            crate::protocol_serde::shape_cancel_elasticsearch_service_software_update::de_cancel_elasticsearch_service_software_update_http_error(response)
         } else {
-            crate::operation_deser::parse_cancel_elasticsearch_service_software_update_response(
-                response,
-            )
+            crate::protocol_serde::shape_cancel_elasticsearch_service_software_update::de_cancel_elasticsearch_service_software_update_http_response(response)
         }
     }
 }
@@ -208,9 +204,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateElasticsearchDomai
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_elasticsearch_domain_error(response)
+            crate::protocol_serde::shape_create_elasticsearch_domain::de_create_elasticsearch_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_create_elasticsearch_domain_response(response)
+            crate::protocol_serde::shape_create_elasticsearch_domain::de_create_elasticsearch_domain_http_response(response)
         }
     }
 }
@@ -244,13 +240,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundCrossClust
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_outbound_cross_cluster_search_connection_error(
-                response,
-            )
+            crate::protocol_serde::shape_create_outbound_cross_cluster_search_connection::de_create_outbound_cross_cluster_search_connection_http_error(response)
         } else {
-            crate::operation_deser::parse_create_outbound_cross_cluster_search_connection_response(
-                response,
-            )
+            crate::protocol_serde::shape_create_outbound_cross_cluster_search_connection::de_create_outbound_cross_cluster_search_connection_http_response(response)
         }
     }
 }
@@ -281,9 +273,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_package_error(response)
+            crate::protocol_serde::shape_create_package::de_create_package_http_error(response)
         } else {
-            crate::operation_deser::parse_create_package_response(response)
+            crate::protocol_serde::shape_create_package::de_create_package_http_response(response)
         }
     }
 }
@@ -316,9 +308,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_create_vpc_endpoint_error(response)
+            crate::protocol_serde::shape_create_vpc_endpoint::de_create_vpc_endpoint_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_vpc_endpoint_response(response)
+            crate::protocol_serde::shape_create_vpc_endpoint::de_create_vpc_endpoint_http_response(
+                response,
+            )
         }
     }
 }
@@ -351,9 +347,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchDomai
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_elasticsearch_domain_error(response)
+            crate::protocol_serde::shape_delete_elasticsearch_domain::de_delete_elasticsearch_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_elasticsearch_domain_response(response)
+            crate::protocol_serde::shape_delete_elasticsearch_domain::de_delete_elasticsearch_domain_http_response(response)
         }
     }
 }
@@ -386,9 +382,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchServi
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_elasticsearch_service_role_error(response)
+            crate::protocol_serde::shape_delete_elasticsearch_service_role::de_delete_elasticsearch_service_role_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_elasticsearch_service_role_response(response)
+            crate::protocol_serde::shape_delete_elasticsearch_service_role::de_delete_elasticsearch_service_role_http_response(response)
         }
     }
 }
@@ -422,13 +418,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInboundCrossCluste
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_inbound_cross_cluster_search_connection_error(
-                response,
-            )
+            crate::protocol_serde::shape_delete_inbound_cross_cluster_search_connection::de_delete_inbound_cross_cluster_search_connection_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_inbound_cross_cluster_search_connection_response(
-                response,
-            )
+            crate::protocol_serde::shape_delete_inbound_cross_cluster_search_connection::de_delete_inbound_cross_cluster_search_connection_http_response(response)
         }
     }
 }
@@ -462,13 +454,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutboundCrossClust
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_outbound_cross_cluster_search_connection_error(
-                response,
-            )
+            crate::protocol_serde::shape_delete_outbound_cross_cluster_search_connection::de_delete_outbound_cross_cluster_search_connection_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_outbound_cross_cluster_search_connection_response(
-                response,
-            )
+            crate::protocol_serde::shape_delete_outbound_cross_cluster_search_connection::de_delete_outbound_cross_cluster_search_connection_http_response(response)
         }
     }
 }
@@ -499,9 +487,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_package_error(response)
+            crate::protocol_serde::shape_delete_package::de_delete_package_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_package_response(response)
+            crate::protocol_serde::shape_delete_package::de_delete_package_http_response(response)
         }
     }
 }
@@ -534,9 +522,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_vpc_endpoint_error(response)
+            crate::protocol_serde::shape_delete_vpc_endpoint::de_delete_vpc_endpoint_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_vpc_endpoint_response(response)
+            crate::protocol_serde::shape_delete_vpc_endpoint::de_delete_vpc_endpoint_http_response(
+                response,
+            )
         }
     }
 }
@@ -569,9 +561,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_domain_auto_tunes_error(response)
+            crate::protocol_serde::shape_describe_domain_auto_tunes::de_describe_domain_auto_tunes_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_domain_auto_tunes_response(response)
+            crate::protocol_serde::shape_describe_domain_auto_tunes::de_describe_domain_auto_tunes_http_response(response)
         }
     }
 }
@@ -604,9 +596,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProg
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_domain_change_progress_error(response)
+            crate::protocol_serde::shape_describe_domain_change_progress::de_describe_domain_change_progress_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_domain_change_progress_response(response)
+            crate::protocol_serde::shape_describe_domain_change_progress::de_describe_domain_change_progress_http_response(response)
         }
     }
 }
@@ -639,9 +631,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_elasticsearch_domain_error(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domain::de_describe_elasticsearch_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_elasticsearch_domain_response(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domain::de_describe_elasticsearch_domain_http_response(response)
         }
     }
 }
@@ -674,9 +666,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_elasticsearch_domain_config_error(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domain_config::de_describe_elasticsearch_domain_config_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_elasticsearch_domain_config_response(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domain_config::de_describe_elasticsearch_domain_config_http_response(response)
         }
     }
 }
@@ -709,9 +701,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_elasticsearch_domains_error(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domains::de_describe_elasticsearch_domains_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_elasticsearch_domains_response(response)
+            crate::protocol_serde::shape_describe_elasticsearch_domains::de_describe_elasticsearch_domains_http_response(response)
         }
     }
 }
@@ -744,13 +736,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchIns
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_elasticsearch_instance_type_limits_error(
-                response,
-            )
+            crate::protocol_serde::shape_describe_elasticsearch_instance_type_limits::de_describe_elasticsearch_instance_type_limits_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_elasticsearch_instance_type_limits_response(
-                response,
-            )
+            crate::protocol_serde::shape_describe_elasticsearch_instance_type_limits::de_describe_elasticsearch_instance_type_limits_http_response(response)
         }
     }
 }
@@ -786,13 +774,9 @@ impl aws_smithy_http::response::ParseStrictResponse
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_inbound_cross_cluster_search_connections_error(
-                response,
-            )
+            crate::protocol_serde::shape_describe_inbound_cross_cluster_search_connections::de_describe_inbound_cross_cluster_search_connections_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_inbound_cross_cluster_search_connections_response(
-                response,
-            )
+            crate::protocol_serde::shape_describe_inbound_cross_cluster_search_connections::de_describe_inbound_cross_cluster_search_connections_http_response(response)
         }
     }
 }
@@ -828,11 +812,9 @@ impl aws_smithy_http::response::ParseStrictResponse
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_outbound_cross_cluster_search_connections_error(
-                response,
-            )
+            crate::protocol_serde::shape_describe_outbound_cross_cluster_search_connections::de_describe_outbound_cross_cluster_search_connections_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_outbound_cross_cluster_search_connections_response(response)
+            crate::protocol_serde::shape_describe_outbound_cross_cluster_search_connections::de_describe_outbound_cross_cluster_search_connections_http_response(response)
         }
     }
 }
@@ -865,9 +847,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackages {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_packages_error(response)
+            crate::protocol_serde::shape_describe_packages::de_describe_packages_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_packages_response(response)
+            crate::protocol_serde::shape_describe_packages::de_describe_packages_http_response(
+                response,
+            )
         }
     }
 }
@@ -903,11 +889,9 @@ impl aws_smithy_http::response::ParseStrictResponse
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_reserved_elasticsearch_instance_offerings_error(
-                response,
-            )
+            crate::protocol_serde::shape_describe_reserved_elasticsearch_instance_offerings::de_describe_reserved_elasticsearch_instance_offerings_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_reserved_elasticsearch_instance_offerings_response(response)
+            crate::protocol_serde::shape_describe_reserved_elasticsearch_instance_offerings::de_describe_reserved_elasticsearch_instance_offerings_http_response(response)
         }
     }
 }
@@ -940,11 +924,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedElastics
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_reserved_elasticsearch_instances_error(response)
+            crate::protocol_serde::shape_describe_reserved_elasticsearch_instances::de_describe_reserved_elasticsearch_instances_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_reserved_elasticsearch_instances_response(
-                response,
-            )
+            crate::protocol_serde::shape_describe_reserved_elasticsearch_instances::de_describe_reserved_elasticsearch_instances_http_response(response)
         }
     }
 }
@@ -977,9 +959,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_vpc_endpoints_error(response)
+            crate::protocol_serde::shape_describe_vpc_endpoints::de_describe_vpc_endpoints_http_error(response)
         } else {
-            crate::operation_deser::parse_describe_vpc_endpoints_response(response)
+            crate::protocol_serde::shape_describe_vpc_endpoints::de_describe_vpc_endpoints_http_response(response)
         }
     }
 }
@@ -1012,9 +994,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DissociatePackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_dissociate_package_error(response)
+            crate::protocol_serde::shape_dissociate_package::de_dissociate_package_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_dissociate_package_response(response)
+            crate::protocol_serde::shape_dissociate_package::de_dissociate_package_http_response(
+                response,
+            )
         }
     }
 }
@@ -1047,9 +1033,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleElasticsear
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_compatible_elasticsearch_versions_error(response)
+            crate::protocol_serde::shape_get_compatible_elasticsearch_versions::de_get_compatible_elasticsearch_versions_http_error(response)
         } else {
-            crate::operation_deser::parse_get_compatible_elasticsearch_versions_response(response)
+            crate::protocol_serde::shape_get_compatible_elasticsearch_versions::de_get_compatible_elasticsearch_versions_http_response(response)
         }
     }
 }
@@ -1082,9 +1068,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_package_version_history_error(response)
+            crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_error(response)
         } else {
-            crate::operation_deser::parse_get_package_version_history_response(response)
+            crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_response(response)
         }
     }
 }
@@ -1117,9 +1103,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeHistory {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_upgrade_history_error(response)
+            crate::protocol_serde::shape_get_upgrade_history::de_get_upgrade_history_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_upgrade_history_response(response)
+            crate::protocol_serde::shape_get_upgrade_history::de_get_upgrade_history_http_response(
+                response,
+            )
         }
     }
 }
@@ -1152,9 +1142,13 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_upgrade_status_error(response)
+            crate::protocol_serde::shape_get_upgrade_status::de_get_upgrade_status_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_get_upgrade_status_response(response)
+            crate::protocol_serde::shape_get_upgrade_status::de_get_upgrade_status_http_response(
+                response,
+            )
         }
     }
 }
@@ -1187,9 +1181,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainNames {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_domain_names_error(response)
+            crate::protocol_serde::shape_list_domain_names::de_list_domain_names_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_domain_names_response(response)
+            crate::protocol_serde::shape_list_domain_names::de_list_domain_names_http_response(
+                response,
+            )
         }
     }
 }
@@ -1222,9 +1220,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainsForPackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_domains_for_package_error(response)
+            crate::protocol_serde::shape_list_domains_for_package::de_list_domains_for_package_http_error(response)
         } else {
-            crate::operation_deser::parse_list_domains_for_package_response(response)
+            crate::protocol_serde::shape_list_domains_for_package::de_list_domains_for_package_http_response(response)
         }
     }
 }
@@ -1257,9 +1255,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchInstanc
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_elasticsearch_instance_types_error(response)
+            crate::protocol_serde::shape_list_elasticsearch_instance_types::de_list_elasticsearch_instance_types_http_error(response)
         } else {
-            crate::operation_deser::parse_list_elasticsearch_instance_types_response(response)
+            crate::protocol_serde::shape_list_elasticsearch_instance_types::de_list_elasticsearch_instance_types_http_response(response)
         }
     }
 }
@@ -1292,9 +1290,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListElasticsearchVersion
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_elasticsearch_versions_error(response)
+            crate::protocol_serde::shape_list_elasticsearch_versions::de_list_elasticsearch_versions_http_error(response)
         } else {
-            crate::operation_deser::parse_list_elasticsearch_versions_response(response)
+            crate::protocol_serde::shape_list_elasticsearch_versions::de_list_elasticsearch_versions_http_response(response)
         }
     }
 }
@@ -1327,9 +1325,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackagesForDomain {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_packages_for_domain_error(response)
+            crate::protocol_serde::shape_list_packages_for_domain::de_list_packages_for_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_list_packages_for_domain_response(response)
+            crate::protocol_serde::shape_list_packages_for_domain::de_list_packages_for_domain_http_response(response)
         }
     }
 }
@@ -1359,9 +1357,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_error(response)
+            crate::protocol_serde::shape_list_tags::de_list_tags_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_response(response)
+            crate::protocol_serde::shape_list_tags::de_list_tags_http_response(response)
         }
     }
 }
@@ -1394,9 +1392,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointAccess {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vpc_endpoint_access_error(response)
+            crate::protocol_serde::shape_list_vpc_endpoint_access::de_list_vpc_endpoint_access_http_error(response)
         } else {
-            crate::operation_deser::parse_list_vpc_endpoint_access_response(response)
+            crate::protocol_serde::shape_list_vpc_endpoint_access::de_list_vpc_endpoint_access_http_response(response)
         }
     }
 }
@@ -1429,9 +1427,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpoints {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vpc_endpoints_error(response)
+            crate::protocol_serde::shape_list_vpc_endpoints::de_list_vpc_endpoints_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_vpc_endpoints_response(response)
+            crate::protocol_serde::shape_list_vpc_endpoints::de_list_vpc_endpoints_http_response(
+                response,
+            )
         }
     }
 }
@@ -1464,9 +1466,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVpcEndpointsForDomai
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_vpc_endpoints_for_domain_error(response)
+            crate::protocol_serde::shape_list_vpc_endpoints_for_domain::de_list_vpc_endpoints_for_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_list_vpc_endpoints_for_domain_response(response)
+            crate::protocol_serde::shape_list_vpc_endpoints_for_domain::de_list_vpc_endpoints_for_domain_http_response(response)
         }
     }
 }
@@ -1502,13 +1504,9 @@ impl aws_smithy_http::response::ParseStrictResponse
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_purchase_reserved_elasticsearch_instance_offering_error(
-                response,
-            )
+            crate::protocol_serde::shape_purchase_reserved_elasticsearch_instance_offering::de_purchase_reserved_elasticsearch_instance_offering_http_error(response)
         } else {
-            crate::operation_deser::parse_purchase_reserved_elasticsearch_instance_offering_response(
-                response,
-            )
+            crate::protocol_serde::shape_purchase_reserved_elasticsearch_instance_offering::de_purchase_reserved_elasticsearch_instance_offering_http_response(response)
         }
     }
 }
@@ -1542,13 +1540,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInboundCrossCluste
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_reject_inbound_cross_cluster_search_connection_error(
-                response,
-            )
+            crate::protocol_serde::shape_reject_inbound_cross_cluster_search_connection::de_reject_inbound_cross_cluster_search_connection_http_error(response)
         } else {
-            crate::operation_deser::parse_reject_inbound_cross_cluster_search_connection_response(
-                response,
-            )
+            crate::protocol_serde::shape_reject_inbound_cross_cluster_search_connection::de_reject_inbound_cross_cluster_search_connection_http_response(response)
         }
     }
 }
@@ -1579,9 +1573,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_remove_tags_error(response)
+            crate::protocol_serde::shape_remove_tags::de_remove_tags_http_error(response)
         } else {
-            crate::operation_deser::parse_remove_tags_response(response)
+            crate::protocol_serde::shape_remove_tags::de_remove_tags_http_response(response)
         }
     }
 }
@@ -1614,9 +1608,9 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeVpcEndpointAccess 
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_revoke_vpc_endpoint_access_error(response)
+            crate::protocol_serde::shape_revoke_vpc_endpoint_access::de_revoke_vpc_endpoint_access_http_error(response)
         } else {
-            crate::operation_deser::parse_revoke_vpc_endpoint_access_response(response)
+            crate::protocol_serde::shape_revoke_vpc_endpoint_access::de_revoke_vpc_endpoint_access_http_response(response)
         }
     }
 }
@@ -1649,13 +1643,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StartElasticsearchServic
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_elasticsearch_service_software_update_error(
-                response,
-            )
+            crate::protocol_serde::shape_start_elasticsearch_service_software_update::de_start_elasticsearch_service_software_update_http_error(response)
         } else {
-            crate::operation_deser::parse_start_elasticsearch_service_software_update_response(
-                response,
-            )
+            crate::protocol_serde::shape_start_elasticsearch_service_software_update::de_start_elasticsearch_service_software_update_http_response(response)
         }
     }
 }
@@ -1688,9 +1678,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateElasticsearchDomai
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_elasticsearch_domain_config_error(response)
+            crate::protocol_serde::shape_update_elasticsearch_domain_config::de_update_elasticsearch_domain_config_http_error(response)
         } else {
-            crate::operation_deser::parse_update_elasticsearch_domain_config_response(response)
+            crate::protocol_serde::shape_update_elasticsearch_domain_config::de_update_elasticsearch_domain_config_http_response(response)
         }
     }
 }
@@ -1721,9 +1711,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackage {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_package_error(response)
+            crate::protocol_serde::shape_update_package::de_update_package_http_error(response)
         } else {
-            crate::operation_deser::parse_update_package_response(response)
+            crate::protocol_serde::shape_update_package::de_update_package_http_response(response)
         }
     }
 }
@@ -1756,9 +1746,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcEndpoint {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_vpc_endpoint_error(response)
+            crate::protocol_serde::shape_update_vpc_endpoint::de_update_vpc_endpoint_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_vpc_endpoint_response(response)
+            crate::protocol_serde::shape_update_vpc_endpoint::de_update_vpc_endpoint_http_response(
+                response,
+            )
         }
     }
 }
@@ -1791,9 +1785,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeElasticsearchDoma
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_upgrade_elasticsearch_domain_error(response)
+            crate::protocol_serde::shape_upgrade_elasticsearch_domain::de_upgrade_elasticsearch_domain_http_error(response)
         } else {
-            crate::operation_deser::parse_upgrade_elasticsearch_domain_response(response)
+            crate::protocol_serde::shape_upgrade_elasticsearch_domain::de_upgrade_elasticsearch_domain_http_response(response)
         }
     }
 }

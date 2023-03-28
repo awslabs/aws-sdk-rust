@@ -498,7 +498,9 @@ impl PutSessionInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_session(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_session::ser_put_session_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -512,7 +514,7 @@ impl PutSessionInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_session(&self)?,
+            crate::protocol_serde::shape_put_session::ser_put_session_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -711,7 +713,7 @@ impl RecognizeTextInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_recognize_text(&self)?,
+            crate::protocol_serde::shape_recognize_text::ser_recognize_text_input(&self)?,
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(
@@ -897,7 +899,7 @@ impl RecognizeUtteranceInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_recognize_utterance(input, builder)?;
+                let builder = crate::protocol_serde::shape_recognize_utterance::ser_recognize_utterance_headers(input, builder)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -911,8 +913,10 @@ impl RecognizeUtteranceInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_recognize_utterance_input(self.input_stream)?
-                .into_inner(),
+            crate::protocol_serde::shape_recognize_utterance_input::ser_input_stream_http_payload(
+                self.input_stream,
+            )?
+            .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

@@ -25,9 +25,9 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_profile_error(response)
+            crate::protocol_serde::shape_create_profile::de_create_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_create_profile_response(response)
+            crate::protocol_serde::shape_create_profile::de_create_profile_http_response(response)
         }
     }
 }
@@ -60,9 +60,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_create_trust_anchor_error(response)
+            crate::protocol_serde::shape_create_trust_anchor::de_create_trust_anchor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_create_trust_anchor_response(response)
+            crate::protocol_serde::shape_create_trust_anchor::de_create_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }
@@ -92,9 +96,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_crl_error(response)
+            crate::protocol_serde::shape_delete_crl::de_delete_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_crl_response(response)
+            crate::protocol_serde::shape_delete_crl::de_delete_crl_http_response(response)
         }
     }
 }
@@ -125,9 +129,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_profile_error(response)
+            crate::protocol_serde::shape_delete_profile::de_delete_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_delete_profile_response(response)
+            crate::protocol_serde::shape_delete_profile::de_delete_profile_http_response(response)
         }
     }
 }
@@ -160,9 +164,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_trust_anchor_error(response)
+            crate::protocol_serde::shape_delete_trust_anchor::de_delete_trust_anchor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_trust_anchor_response(response)
+            crate::protocol_serde::shape_delete_trust_anchor::de_delete_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }
@@ -193,9 +201,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_crl_error(response)
+            crate::protocol_serde::shape_disable_crl::de_disable_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_disable_crl_response(response)
+            crate::protocol_serde::shape_disable_crl::de_disable_crl_http_response(response)
         }
     }
 }
@@ -226,9 +234,9 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_profile_error(response)
+            crate::protocol_serde::shape_disable_profile::de_disable_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_disable_profile_response(response)
+            crate::protocol_serde::shape_disable_profile::de_disable_profile_http_response(response)
         }
     }
 }
@@ -261,9 +269,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_disable_trust_anchor_error(response)
+            crate::protocol_serde::shape_disable_trust_anchor::de_disable_trust_anchor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_disable_trust_anchor_response(response)
+            crate::protocol_serde::shape_disable_trust_anchor::de_disable_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }
@@ -293,9 +305,9 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_crl_error(response)
+            crate::protocol_serde::shape_enable_crl::de_enable_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_enable_crl_response(response)
+            crate::protocol_serde::shape_enable_crl::de_enable_crl_http_response(response)
         }
     }
 }
@@ -326,9 +338,9 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_profile_error(response)
+            crate::protocol_serde::shape_enable_profile::de_enable_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_enable_profile_response(response)
+            crate::protocol_serde::shape_enable_profile::de_enable_profile_http_response(response)
         }
     }
 }
@@ -361,9 +373,13 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_enable_trust_anchor_error(response)
+            crate::protocol_serde::shape_enable_trust_anchor::de_enable_trust_anchor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_enable_trust_anchor_response(response)
+            crate::protocol_serde::shape_enable_trust_anchor::de_enable_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }
@@ -393,9 +409,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_crl_error(response)
+            crate::protocol_serde::shape_get_crl::de_get_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_get_crl_response(response)
+            crate::protocol_serde::shape_get_crl::de_get_crl_http_response(response)
         }
     }
 }
@@ -426,9 +442,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_profile_error(response)
+            crate::protocol_serde::shape_get_profile::de_get_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_get_profile_response(response)
+            crate::protocol_serde::shape_get_profile::de_get_profile_http_response(response)
         }
     }
 }
@@ -459,9 +475,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubject {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_subject_error(response)
+            crate::protocol_serde::shape_get_subject::de_get_subject_http_error(response)
         } else {
-            crate::operation_deser::parse_get_subject_response(response)
+            crate::protocol_serde::shape_get_subject::de_get_subject_http_response(response)
         }
     }
 }
@@ -492,9 +508,11 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_get_trust_anchor_error(response)
+            crate::protocol_serde::shape_get_trust_anchor::de_get_trust_anchor_http_error(response)
         } else {
-            crate::operation_deser::parse_get_trust_anchor_response(response)
+            crate::protocol_serde::shape_get_trust_anchor::de_get_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }
@@ -524,9 +542,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_import_crl_error(response)
+            crate::protocol_serde::shape_import_crl::de_import_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_import_crl_response(response)
+            crate::protocol_serde::shape_import_crl::de_import_crl_http_response(response)
         }
     }
 }
@@ -556,9 +574,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrls {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_crls_error(response)
+            crate::protocol_serde::shape_list_crls::de_list_crls_http_error(response)
         } else {
-            crate::operation_deser::parse_list_crls_response(response)
+            crate::protocol_serde::shape_list_crls::de_list_crls_http_response(response)
         }
     }
 }
@@ -589,9 +607,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfiles {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_profiles_error(response)
+            crate::protocol_serde::shape_list_profiles::de_list_profiles_http_error(response)
         } else {
-            crate::operation_deser::parse_list_profiles_response(response)
+            crate::protocol_serde::shape_list_profiles::de_list_profiles_http_response(response)
         }
     }
 }
@@ -622,9 +640,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubjects {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_subjects_error(response)
+            crate::protocol_serde::shape_list_subjects::de_list_subjects_http_error(response)
         } else {
-            crate::operation_deser::parse_list_subjects_response(response)
+            crate::protocol_serde::shape_list_subjects::de_list_subjects_http_response(response)
         }
     }
 }
@@ -657,9 +675,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_tags_for_resource_error(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_list_tags_for_resource_response(response)
+            crate::protocol_serde::shape_list_tags_for_resource::de_list_tags_for_resource_http_response(response)
         }
     }
 }
@@ -692,9 +710,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustAnchors {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_trust_anchors_error(response)
+            crate::protocol_serde::shape_list_trust_anchors::de_list_trust_anchors_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_list_trust_anchors_response(response)
+            crate::protocol_serde::shape_list_trust_anchors::de_list_trust_anchors_http_response(
+                response,
+            )
         }
     }
 }
@@ -725,9 +747,9 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::operation_deser::parse_tag_resource_error(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_tag_resource_response(response)
+            crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(response)
         }
     }
 }
@@ -758,9 +780,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_untag_resource_error(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_error(response)
         } else {
-            crate::operation_deser::parse_untag_resource_response(response)
+            crate::protocol_serde::shape_untag_resource::de_untag_resource_http_response(response)
         }
     }
 }
@@ -790,9 +812,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCrl {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_crl_error(response)
+            crate::protocol_serde::shape_update_crl::de_update_crl_http_error(response)
         } else {
-            crate::operation_deser::parse_update_crl_response(response)
+            crate::protocol_serde::shape_update_crl::de_update_crl_http_response(response)
         }
     }
 }
@@ -823,9 +845,9 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_profile_error(response)
+            crate::protocol_serde::shape_update_profile::de_update_profile_http_error(response)
         } else {
-            crate::operation_deser::parse_update_profile_response(response)
+            crate::protocol_serde::shape_update_profile::de_update_profile_http_response(response)
         }
     }
 }
@@ -858,9 +880,13 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrustAnchor {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_update_trust_anchor_error(response)
+            crate::protocol_serde::shape_update_trust_anchor::de_update_trust_anchor_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_update_trust_anchor_response(response)
+            crate::protocol_serde::shape_update_trust_anchor::de_update_trust_anchor_http_response(
+                response,
+            )
         }
     }
 }

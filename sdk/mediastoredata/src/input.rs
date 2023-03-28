@@ -327,7 +327,9 @@ impl GetObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_get_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -587,7 +589,9 @@ impl PutObjectInput {
             > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
-                let builder = crate::http_serde::add_headers_put_object(input, builder)?;
+                let builder = crate::protocol_serde::shape_put_object::ser_put_object_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -601,7 +605,8 @@ impl PutObjectInput {
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_payload_put_object_input(self.body)?.into_inner(),
+            crate::protocol_serde::shape_put_object_input::ser_body_http_payload(self.body)?
+                .into_inner(),
         );
         if let Some(content_length) = body.content_length() {
             request = aws_smithy_http::header::set_request_header_if_absent(

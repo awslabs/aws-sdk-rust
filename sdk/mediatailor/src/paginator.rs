@@ -90,7 +90,8 @@ impl GetChannelSchedulePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_channel_schedule_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_channel_schedule_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListAlertsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_alerts_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_alerts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListChannelsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_channels_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_channels_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl ListLiveSourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_live_sources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_live_sources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,10 @@ impl ListPlaybackConfigurationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_playback_configurations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_playback_configurations_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -680,7 +687,10 @@ impl ListPrefetchSchedulesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_prefetch_schedules_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_prefetch_schedules_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -798,7 +808,8 @@ impl ListSourceLocationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_source_locations_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_source_locations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -916,7 +927,8 @@ impl ListVodSourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_vod_sources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_vod_sources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -963,7 +975,7 @@ impl GetChannelSchedulePaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_channel_schedule_output_items(page)
+            crate::lens::lens_get_channel_schedule_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -990,7 +1002,7 @@ impl ListAlertsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_alerts_output_items(page)
+            crate::lens::lens_list_alerts_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1017,7 +1029,7 @@ impl ListChannelsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_channels_output_items(page)
+            crate::lens::lens_list_channels_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1044,7 +1056,7 @@ impl ListLiveSourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_live_sources_output_items(page)
+            crate::lens::lens_list_live_sources_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1071,7 +1083,7 @@ impl ListPlaybackConfigurationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_playback_configurations_output_items(page)
+            crate::lens::lens_list_playback_configurations_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1098,7 +1110,7 @@ impl ListPrefetchSchedulesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_prefetch_schedules_output_items(page)
+            crate::lens::lens_list_prefetch_schedules_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1125,7 +1137,7 @@ impl ListSourceLocationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_source_locations_output_items(page)
+            crate::lens::lens_list_source_locations_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -1152,7 +1164,7 @@ impl ListVodSourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_vod_sources_output_items(page)
+            crate::lens::lens_list_vod_sources_output_items(page)
                 .unwrap_or_default()
                 .into_iter()
         })

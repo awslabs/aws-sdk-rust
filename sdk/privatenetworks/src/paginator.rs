@@ -90,7 +90,10 @@ impl ListDeviceIdentifiersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_device_identifiers_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_device_identifiers_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.start_token.as_ref()
@@ -208,7 +211,8 @@ impl ListNetworkResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_network_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_network_resources_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.start_token.as_ref()
@@ -326,7 +330,8 @@ impl ListNetworksPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_networks_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_networks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.start_token.as_ref()
@@ -444,7 +449,8 @@ impl ListNetworkSitesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_network_sites_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_network_sites_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.start_token.as_ref()
@@ -562,7 +568,8 @@ impl ListOrdersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_orders_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_orders_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.start_token.as_ref()
@@ -608,7 +615,11 @@ impl ListDeviceIdentifiersPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListDeviceIdentifiersError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_device_identifiers_output_device_identifiers(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_device_identifiers_output_device_identifiers(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -631,7 +642,11 @@ impl ListNetworkResourcesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListNetworkResourcesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_network_resources_output_network_resources(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_network_resources_output_network_resources(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -655,7 +670,7 @@ impl ListNetworksPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_networks_output_networks(page)
+            crate::lens::lens_list_networks_output_networks(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -682,7 +697,7 @@ impl ListNetworkSitesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_network_sites_output_network_sites(page)
+            crate::lens::lens_list_network_sites_output_network_sites(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -709,7 +724,7 @@ impl ListOrdersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_orders_output_orders(page)
+            crate::lens::lens_list_orders_output_orders(page)
                 .unwrap_or_default()
                 .into_iter()
         })

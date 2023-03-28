@@ -27,9 +27,9 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_batch_execute_statement_error(response)
+            crate::protocol_serde::shape_batch_execute_statement::de_batch_execute_statement_http_error(response)
         } else {
-            crate::operation_deser::parse_batch_execute_statement_response(response)
+            crate::protocol_serde::shape_batch_execute_statement::de_batch_execute_statement_http_response(response)
         }
     }
 }
@@ -62,9 +62,13 @@ impl aws_smithy_http::response::ParseStrictResponse for BeginTransaction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_begin_transaction_error(response)
+            crate::protocol_serde::shape_begin_transaction::de_begin_transaction_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_begin_transaction_response(response)
+            crate::protocol_serde::shape_begin_transaction::de_begin_transaction_http_response(
+                response,
+            )
         }
     }
 }
@@ -97,9 +101,13 @@ impl aws_smithy_http::response::ParseStrictResponse for CommitTransaction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_commit_transaction_error(response)
+            crate::protocol_serde::shape_commit_transaction::de_commit_transaction_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_commit_transaction_response(response)
+            crate::protocol_serde::shape_commit_transaction::de_commit_transaction_http_response(
+                response,
+            )
         }
     }
 }
@@ -130,9 +138,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteSql {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_execute_sql_error(response)
+            crate::protocol_serde::shape_execute_sql::de_execute_sql_http_error(response)
         } else {
-            crate::operation_deser::parse_execute_sql_response(response)
+            crate::protocol_serde::shape_execute_sql::de_execute_sql_http_response(response)
         }
     }
 }
@@ -165,9 +173,13 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteStatement {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_execute_statement_error(response)
+            crate::protocol_serde::shape_execute_statement::de_execute_statement_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_execute_statement_response(response)
+            crate::protocol_serde::shape_execute_statement::de_execute_statement_http_response(
+                response,
+            )
         }
     }
 }
@@ -200,9 +212,13 @@ impl aws_smithy_http::response::ParseStrictResponse for RollbackTransaction {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_rollback_transaction_error(response)
+            crate::protocol_serde::shape_rollback_transaction::de_rollback_transaction_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_rollback_transaction_response(response)
+            crate::protocol_serde::shape_rollback_transaction::de_rollback_transaction_http_response(
+                response,
+            )
         }
     }
 }

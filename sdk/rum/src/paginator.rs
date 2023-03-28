@@ -90,7 +90,7 @@ impl BatchGetRumMetricDefinitionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_batch_get_rum_metric_definitions_output_next_token(resp);
+                            let new_token = crate::lens::reflens_batch_get_rum_metric_definitions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +208,8 @@ impl GetAppMonitorDataPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_app_monitor_data_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_app_monitor_data_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +327,8 @@ impl ListAppMonitorsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_app_monitors_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_app_monitors_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +446,7 @@ impl ListRumMetricsDestinationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_rum_metrics_destinations_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_rum_metrics_destinations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -490,7 +492,11 @@ impl BatchGetRumMetricDefinitionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::BatchGetRumMetricDefinitionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_batch_get_rum_metric_definitions_output_metric_definitions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_batch_get_rum_metric_definitions_output_metric_definitions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -514,7 +520,7 @@ impl GetAppMonitorDataPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_app_monitor_data_output_events(page)
+            crate::lens::lens_get_app_monitor_data_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -541,11 +547,9 @@ impl ListAppMonitorsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_app_monitors_output_app_monitor_summaries(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_app_monitors_output_app_monitor_summaries(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -569,6 +573,10 @@ impl ListRumMetricsDestinationsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListRumMetricsDestinationsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_rum_metrics_destinations_output_destinations(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_rum_metrics_destinations_output_destinations(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

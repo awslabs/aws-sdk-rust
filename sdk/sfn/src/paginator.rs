@@ -90,7 +90,8 @@ impl GetExecutionHistoryPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_execution_history_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_get_execution_history_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,8 @@ impl ListActivitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_activities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_activities_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +328,8 @@ impl ListExecutionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_executions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_executions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +447,8 @@ impl ListMapRunsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_map_runs_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_map_runs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +566,8 @@ impl ListStateMachinesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_state_machines_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_state_machines_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -609,7 +614,7 @@ impl GetExecutionHistoryPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_execution_history_output_events(page)
+            crate::lens::lens_get_execution_history_output_events(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -636,7 +641,7 @@ impl ListActivitiesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_activities_output_activities(page)
+            crate::lens::lens_list_activities_output_activities(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -663,7 +668,7 @@ impl ListExecutionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_executions_output_executions(page)
+            crate::lens::lens_list_executions_output_executions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -690,7 +695,7 @@ impl ListMapRunsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_map_runs_output_map_runs(page)
+            crate::lens::lens_list_map_runs_output_map_runs(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -717,7 +722,7 @@ impl ListStateMachinesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_state_machines_output_state_machines(page)
+            crate::lens::lens_list_state_machines_output_state_machines(page)
                 .unwrap_or_default()
                 .into_iter()
         })

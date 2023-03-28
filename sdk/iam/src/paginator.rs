@@ -82,7 +82,7 @@ impl GetAccountAuthorizationDetailsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_get_account_authorization_details_output_marker(resp);
+                            let new_token = crate::lens::reflens_get_account_authorization_details_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -200,10 +200,7 @@ impl GetGroupPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token =
-                                crate::lens::reflens_structure_crate_output_get_group_output_marker(
-                                    resp,
-                                );
+                            let new_token = crate::lens::reflens_get_group_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -321,7 +318,8 @@ impl ListAccessKeysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_access_keys_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_access_keys_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -439,7 +437,8 @@ impl ListAccountAliasesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_account_aliases_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_account_aliases_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -557,7 +556,10 @@ impl ListAttachedGroupPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attached_group_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attached_group_policies_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -675,7 +677,10 @@ impl ListAttachedRolePoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attached_role_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attached_role_policies_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -793,7 +798,10 @@ impl ListAttachedUserPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attached_user_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attached_user_policies_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -903,7 +911,8 @@ impl ListEntitiesForPolicyPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_entities_for_policy_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_entities_for_policy_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1021,7 +1030,8 @@ impl ListGroupPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_group_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_group_policies_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1139,7 +1149,7 @@ impl ListGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_groups_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_groups_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1257,7 +1267,8 @@ impl ListGroupsForUserPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_groups_for_user_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_groups_for_user_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1375,7 +1386,8 @@ impl ListInstanceProfilesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_instance_profiles_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_instance_profiles_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1493,7 +1505,10 @@ impl ListInstanceProfilesForRolePaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_instance_profiles_for_role_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_instance_profiles_for_role_output_marker(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1611,7 +1626,8 @@ impl ListMfaDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_mfa_devices_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_mfa_devices_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1729,7 +1745,7 @@ impl ListPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_policies_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_policies_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1847,7 +1863,8 @@ impl ListPolicyVersionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_policy_versions_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_policy_versions_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -1965,7 +1982,8 @@ impl ListRolePoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_role_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_role_policies_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2083,7 +2101,7 @@ impl ListRolesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_roles_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_roles_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2201,7 +2219,8 @@ impl ListServerCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_server_certificates_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_server_certificates_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2319,7 +2338,8 @@ impl ListSigningCertificatesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_signing_certificates_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_signing_certificates_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2437,7 +2457,8 @@ impl ListSshPublicKeysPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_ssh_public_keys_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_ssh_public_keys_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2555,7 +2576,8 @@ impl ListUserPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_user_policies_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_user_policies_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2673,7 +2695,7 @@ impl ListUsersPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_users_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_users_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2791,7 +2813,7 @@ impl ListUserTagsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_user_tags_output_marker(resp);
+                            let new_token = crate::lens::reflens_list_user_tags_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -2909,7 +2931,8 @@ impl ListVirtualMfaDevicesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_virtual_mfa_devices_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_list_virtual_mfa_devices_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3027,7 +3050,8 @@ impl SimulateCustomPolicyPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_simulate_custom_policy_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_simulate_custom_policy_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3145,7 +3169,8 @@ impl SimulatePrincipalPolicyPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_simulate_principal_policy_output_marker(resp);
+                            let new_token =
+                                crate::lens::reflens_simulate_principal_policy_output_marker(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.marker.as_ref()
@@ -3192,7 +3217,7 @@ impl GetGroupPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_get_group_output_users(page)
+            crate::lens::lens_get_group_output_users(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3219,11 +3244,9 @@ impl ListAccessKeysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_access_keys_output_access_key_metadata(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_access_keys_output_access_key_metadata(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -3248,11 +3271,9 @@ impl ListAccountAliasesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_account_aliases_output_account_aliases(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_account_aliases_output_account_aliases(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -3276,7 +3297,11 @@ impl ListAttachedGroupPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAttachedGroupPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_attached_group_policies_output_attached_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_attached_group_policies_output_attached_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3299,7 +3324,11 @@ impl ListAttachedRolePoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAttachedRolePoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_attached_role_policies_output_attached_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_attached_role_policies_output_attached_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3322,7 +3351,11 @@ impl ListAttachedUserPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAttachedUserPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_attached_user_policies_output_attached_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_attached_user_policies_output_attached_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3346,7 +3379,7 @@ impl ListGroupPoliciesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_group_policies_output_policy_names(page)
+            crate::lens::lens_list_group_policies_output_policy_names(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3373,7 +3406,7 @@ impl ListGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_groups_output_groups(page)
+            crate::lens::lens_list_groups_output_groups(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3400,7 +3433,7 @@ impl ListGroupsForUserPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_groups_for_user_output_groups(page)
+            crate::lens::lens_list_groups_for_user_output_groups(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3426,7 +3459,11 @@ impl ListInstanceProfilesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListInstanceProfilesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_instance_profiles_output_instance_profiles(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_instance_profiles_output_instance_profiles(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3449,7 +3486,11 @@ impl ListInstanceProfilesForRolePaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListInstanceProfilesForRoleError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_instance_profiles_for_role_output_instance_profiles(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_instance_profiles_for_role_output_instance_profiles(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3473,7 +3514,7 @@ impl ListMfaDevicesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_mfa_devices_output_mfa_devices(page)
+            crate::lens::lens_list_mfa_devices_output_mfa_devices(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3500,7 +3541,7 @@ impl ListPoliciesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_policies_output_policies(page)
+            crate::lens::lens_list_policies_output_policies(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3527,7 +3568,7 @@ impl ListPolicyVersionsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_policy_versions_output_versions(page)
+            crate::lens::lens_list_policy_versions_output_versions(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3554,7 +3595,7 @@ impl ListRolePoliciesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_role_policies_output_policy_names(page)
+            crate::lens::lens_list_role_policies_output_policy_names(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3581,7 +3622,7 @@ impl ListRolesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_roles_output_roles(page)
+            crate::lens::lens_list_roles_output_roles(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3607,7 +3648,11 @@ impl ListServerCertificatesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListServerCertificatesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_server_certificates_output_server_certificate_metadata_list(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_server_certificates_output_server_certificate_metadata_list(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3631,11 +3676,9 @@ impl ListSigningCertificatesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_signing_certificates_output_certificates(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_signing_certificates_output_certificates(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -3660,11 +3703,9 @@ impl ListSshPublicKeysPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_ssh_public_keys_output_ssh_public_keys(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_ssh_public_keys_output_ssh_public_keys(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -3689,7 +3730,7 @@ impl ListUserPoliciesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_user_policies_output_policy_names(page)
+            crate::lens::lens_list_user_policies_output_policy_names(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3716,7 +3757,7 @@ impl ListUsersPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_users_output_users(page)
+            crate::lens::lens_list_users_output_users(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3743,7 +3784,7 @@ impl ListUserTagsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_user_tags_output_tags(page)
+            crate::lens::lens_list_user_tags_output_tags(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -3769,7 +3810,11 @@ impl ListVirtualMfaDevicesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListVirtualMFADevicesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_virtual_mfa_devices_output_virtual_mfa_devices(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_virtual_mfa_devices_output_virtual_mfa_devices(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3792,7 +3837,11 @@ impl SimulateCustomPolicyPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::SimulateCustomPolicyError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_simulate_custom_policy_output_evaluation_results(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_simulate_custom_policy_output_evaluation_results(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -3815,6 +3864,10 @@ impl SimulatePrincipalPolicyPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::SimulatePrincipalPolicyError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_simulate_principal_policy_output_evaluation_results(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_simulate_principal_policy_output_evaluation_results(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

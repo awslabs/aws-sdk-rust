@@ -89,783 +89,6 @@ impl Client {
         &self.handle.conf
     }
 }
-impl Client {
-    /// Constructs a fluent builder for the [`AssociateTrackerConsumer`](crate::client::fluent_builders::AssociateTrackerConsumer) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::AssociateTrackerConsumer::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::AssociateTrackerConsumer::set_tracker_name): <p>The name of the tracker resource to be associated with a geofence collection.</p>
-    ///   - [`consumer_arn(impl Into<String>)`](crate::client::fluent_builders::AssociateTrackerConsumer::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::client::fluent_builders::AssociateTrackerConsumer::set_consumer_arn): <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>  </ul>
-    /// - On success, responds with [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput)
-
-    /// - On failure, responds with [`SdkError<AssociateTrackerConsumerError>`](crate::error::AssociateTrackerConsumerError)
-    pub fn associate_tracker_consumer(
-        &self,
-    ) -> crate::client::fluent_builders::AssociateTrackerConsumer {
-        crate::client::fluent_builders::AssociateTrackerConsumer::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteDevicePositionHistory`](crate::client::fluent_builders::BatchDeleteDevicePositionHistory) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteDevicePositionHistory::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteDevicePositionHistory::set_tracker_name): <p>The name of the tracker resource to delete the device position history from.</p>
-    ///   - [`device_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeleteDevicePositionHistory::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteDevicePositionHistory::set_device_ids): <p>Devices whose position history you want to delete.</p>  <ul>   <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>  </ul>
-    /// - On success, responds with [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchDeleteDevicePositionHistoryError>>)`](crate::output::BatchDeleteDevicePositionHistoryOutput::errors): <p>Contains error details for each device history that failed to delete.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteDevicePositionHistoryError>`](crate::error::BatchDeleteDevicePositionHistoryError)
-    pub fn batch_delete_device_position_history(
-        &self,
-    ) -> crate::client::fluent_builders::BatchDeleteDevicePositionHistory {
-        crate::client::fluent_builders::BatchDeleteDevicePositionHistory::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchDeleteGeofence`](crate::client::fluent_builders::BatchDeleteGeofence) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::BatchDeleteGeofence::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::BatchDeleteGeofence::set_collection_name): <p>The geofence collection storing the geofences to be deleted.</p>
-    ///   - [`geofence_ids(Vec<String>)`](crate::client::fluent_builders::BatchDeleteGeofence::geofence_ids) / [`set_geofence_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchDeleteGeofence::set_geofence_ids): <p>The batch of geofences to be deleted.</p>
-    /// - On success, responds with [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchDeleteGeofenceError>>)`](crate::output::BatchDeleteGeofenceOutput::errors): <p>Contains error details for each geofence that failed to delete.</p>
-    /// - On failure, responds with [`SdkError<BatchDeleteGeofenceError>`](crate::error::BatchDeleteGeofenceError)
-    pub fn batch_delete_geofence(&self) -> crate::client::fluent_builders::BatchDeleteGeofence {
-        crate::client::fluent_builders::BatchDeleteGeofence::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchEvaluateGeofences`](crate::client::fluent_builders::BatchEvaluateGeofences) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::BatchEvaluateGeofences::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::BatchEvaluateGeofences::set_collection_name): <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
-    ///   - [`device_position_updates(Vec<DevicePositionUpdate>)`](crate::client::fluent_builders::BatchEvaluateGeofences::device_position_updates) / [`set_device_position_updates(Option<Vec<DevicePositionUpdate>>)`](crate::client::fluent_builders::BatchEvaluateGeofences::set_device_position_updates): <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
-    /// - On success, responds with [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchEvaluateGeofencesError>>)`](crate::output::BatchEvaluateGeofencesOutput::errors): <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
-    /// - On failure, responds with [`SdkError<BatchEvaluateGeofencesError>`](crate::error::BatchEvaluateGeofencesError)
-    pub fn batch_evaluate_geofences(
-        &self,
-    ) -> crate::client::fluent_builders::BatchEvaluateGeofences {
-        crate::client::fluent_builders::BatchEvaluateGeofences::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchGetDevicePosition`](crate::client::fluent_builders::BatchGetDevicePosition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::BatchGetDevicePosition::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::BatchGetDevicePosition::set_tracker_name): <p>The tracker resource retrieving the device position.</p>
-    ///   - [`device_ids(Vec<String>)`](crate::client::fluent_builders::BatchGetDevicePosition::device_ids) / [`set_device_ids(Option<Vec<String>>)`](crate::client::fluent_builders::BatchGetDevicePosition::set_device_ids): <p>Devices whose position you want to retrieve.</p>  <ul>   <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>  </ul>
-    /// - On success, responds with [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchGetDevicePositionError>>)`](crate::output::BatchGetDevicePositionOutput::errors): <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    ///   - [`device_positions(Option<Vec<DevicePosition>>)`](crate::output::BatchGetDevicePositionOutput::device_positions): <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    /// - On failure, responds with [`SdkError<BatchGetDevicePositionError>`](crate::error::BatchGetDevicePositionError)
-    pub fn batch_get_device_position(
-        &self,
-    ) -> crate::client::fluent_builders::BatchGetDevicePosition {
-        crate::client::fluent_builders::BatchGetDevicePosition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchPutGeofence`](crate::client::fluent_builders::BatchPutGeofence) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::BatchPutGeofence::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::BatchPutGeofence::set_collection_name): <p>The geofence collection storing the geofences.</p>
-    ///   - [`entries(Vec<BatchPutGeofenceRequestEntry>)`](crate::client::fluent_builders::BatchPutGeofence::entries) / [`set_entries(Option<Vec<BatchPutGeofenceRequestEntry>>)`](crate::client::fluent_builders::BatchPutGeofence::set_entries): <p>The batch of geofences to be stored in a geofence collection.</p>
-    /// - On success, responds with [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput) with field(s):
-    ///   - [`successes(Option<Vec<BatchPutGeofenceSuccess>>)`](crate::output::BatchPutGeofenceOutput::successes): <p>Contains each geofence that was successfully stored in a geofence collection.</p>
-    ///   - [`errors(Option<Vec<BatchPutGeofenceError>>)`](crate::output::BatchPutGeofenceOutput::errors): <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
-    /// - On failure, responds with [`SdkError<BatchPutGeofenceError>`](crate::error::BatchPutGeofenceError)
-    pub fn batch_put_geofence(&self) -> crate::client::fluent_builders::BatchPutGeofence {
-        crate::client::fluent_builders::BatchPutGeofence::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`BatchUpdateDevicePosition`](crate::client::fluent_builders::BatchUpdateDevicePosition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::BatchUpdateDevicePosition::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::BatchUpdateDevicePosition::set_tracker_name): <p>The name of the tracker resource to update.</p>
-    ///   - [`updates(Vec<DevicePositionUpdate>)`](crate::client::fluent_builders::BatchUpdateDevicePosition::updates) / [`set_updates(Option<Vec<DevicePositionUpdate>>)`](crate::client::fluent_builders::BatchUpdateDevicePosition::set_updates): <p>Contains the position update details for each device.</p>
-    /// - On success, responds with [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput) with field(s):
-    ///   - [`errors(Option<Vec<BatchUpdateDevicePositionError>>)`](crate::output::BatchUpdateDevicePositionOutput::errors): <p>Contains error details for each device that failed to update its position.</p>
-    /// - On failure, responds with [`SdkError<BatchUpdateDevicePositionError>`](crate::error::BatchUpdateDevicePositionError)
-    pub fn batch_update_device_position(
-        &self,
-    ) -> crate::client::fluent_builders::BatchUpdateDevicePosition {
-        crate::client::fluent_builders::BatchUpdateDevicePosition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CalculateRoute`](crate::client::fluent_builders::CalculateRoute) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CalculateRoute::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CalculateRoute::set_calculator_name): <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    ///   - [`departure_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::departure_position) / [`set_departure_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_departure_position): <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>  </ul> <note>   <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`destination_position(Vec<f64>)`](crate::client::fluent_builders::CalculateRoute::destination_position) / [`set_destination_position(Option<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::set_destination_position): <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.</p>  <ul>   <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>  </ul> <note>   <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`waypoint_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRoute::waypoint_positions) / [`set_waypoint_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRoute::set_waypoint_positions): <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>  <ul>   <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>  </ul> <note>   <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves the position to the nearest road</a>. </p>   <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>   <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRoute::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRoute::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>, <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for the <code>TravelMode</code>.</p> <note>   <p> <code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as a data provider, and only within Southeast Asia.</p>   <p> <code>Truck</code> is not available for Grab.</p>   <p>For more details on the using Grab for routing, including areas of coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </note>  <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul>  <p>Default Value: <code>Car</code> </p>
-    ///   - [`departure_time(DateTime)`](crate::client::fluent_builders::CalculateRoute::departure_time) / [`set_departure_time(Option<DateTime>)`](crate::client::fluent_builders::CalculateRoute::set_departure_time): <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>   <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>  </note>  <ul>   <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
-    ///   - [`depart_now(bool)`](crate::client::fluent_builders::CalculateRoute::depart_now) / [`set_depart_now(Option<bool>)`](crate::client::fluent_builders::CalculateRoute::set_depart_now): <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>  <p>Default Value: <code>false</code> </p>  <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::CalculateRoute::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::CalculateRoute::set_distance_unit): <p>Set the unit system to specify the distance.</p>  <p>Default Value: <code>Kilometers</code> </p>
-    ///   - [`include_leg_geometry(bool)`](crate::client::fluent_builders::CalculateRoute::include_leg_geometry) / [`set_include_leg_geometry(Option<bool>)`](crate::client::fluent_builders::CalculateRoute::set_include_leg_geometry): <p>Set to include the geometry details in the result for each path between a pair of positions.</p>  <p>Default Value: <code>false</code> </p>  <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    ///   - [`car_mode_options(CalculateRouteCarModeOptions)`](crate::client::fluent_builders::CalculateRoute::car_mode_options) / [`set_car_mode_options(Option<CalculateRouteCarModeOptions>)`](crate::client::fluent_builders::CalculateRoute::set_car_mode_options): <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    ///   - [`truck_mode_options(CalculateRouteTruckModeOptions)`](crate::client::fluent_builders::CalculateRoute::truck_mode_options) / [`set_truck_mode_options(Option<CalculateRouteTruckModeOptions>)`](crate::client::fluent_builders::CalculateRoute::set_truck_mode_options): <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    /// - On success, responds with [`CalculateRouteOutput`](crate::output::CalculateRouteOutput) with field(s):
-    ///   - [`legs(Option<Vec<Leg>>)`](crate::output::CalculateRouteOutput::legs): <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>  <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped to a nearby road</a>:</p>  <ul>   <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>   <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>  </ul>  <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>  <ul>   <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>   <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>  </ul>
-    ///   - [`summary(Option<CalculateRouteSummary>)`](crate::output::CalculateRouteOutput::summary): <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
-    /// - On failure, responds with [`SdkError<CalculateRouteError>`](crate::error::CalculateRouteError)
-    pub fn calculate_route(&self) -> crate::client::fluent_builders::CalculateRoute {
-        crate::client::fluent_builders::CalculateRoute::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CalculateRouteMatrix`](crate::client::fluent_builders::CalculateRouteMatrix) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CalculateRouteMatrix::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_calculator_name): <p>The name of the route calculator resource that you want to use to calculate the route matrix. </p>
-    ///   - [`departure_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRouteMatrix::departure_positions) / [`set_departure_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_departure_positions): <p>The list of departure (origin) positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-123.115, 49.285]</code>.</p> <important>   <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </important> <note>   <p>For route calculators that use Esri as the data provider, if you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDeparturePositions</code>.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`destination_positions(Vec<Vec<f64>>)`](crate::client::fluent_builders::CalculateRouteMatrix::destination_positions) / [`set_destination_positions(Option<Vec<Vec<f64>>>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_destination_positions): <p>The list of destination positions for the route matrix. An array of points, each of which is itself a 2-value array defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>. For example, <code>[-122.339, 47.615]</code> </p> <important>   <p>Depending on the data provider selected in the route calculator resource there may be additional restrictions on the inputs you can choose. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html#matrix-routing-position-limits"> Position restrictions</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </important> <note>   <p>For route calculators that use Esri as the data provider, if you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html"> moves the position to the nearest road</a>. The snapped value is available in the result in <code>SnappedDestinationPositions</code>.</p>  </note>  <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    ///   - [`travel_mode(TravelMode)`](crate::client::fluent_builders::CalculateRouteMatrix::travel_mode) / [`set_travel_mode(Option<TravelMode>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_travel_mode): <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>  <p>The <code>TravelMode</code> you specify also determines how you specify route preferences: </p>  <ul>   <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>   <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>  </ul> <note>   <p> <code>Bicycle</code> or <code>Motorcycle</code> are only valid when using <code>Grab</code> as a data provider, and only within Southeast Asia.</p>   <p> <code>Truck</code> is not available for Grab.</p>   <p>For more information about using Grab as a data provider, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> in the <i>Amazon Location Service Developer Guide</i>.</p>  </note>  <p>Default Value: <code>Car</code> </p>
-    ///   - [`departure_time(DateTime)`](crate::client::fluent_builders::CalculateRouteMatrix::departure_time) / [`set_departure_time(Option<DateTime>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_departure_time): <p>Specifies the desired time of departure. Uses the given time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p> <note>   <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>  </note>  <ul>   <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
-    ///   - [`depart_now(bool)`](crate::client::fluent_builders::CalculateRouteMatrix::depart_now) / [`set_depart_now(Option<bool>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_depart_now): <p>Sets the time of departure as the current time. Uses the current time to calculate the route matrix. You can't set both <code>DepartureTime</code> and <code>DepartNow</code>. If neither is set, the best time of day to travel with the best traffic conditions is used to calculate the route matrix.</p>  <p>Default Value: <code>false</code> </p>  <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    ///   - [`distance_unit(DistanceUnit)`](crate::client::fluent_builders::CalculateRouteMatrix::distance_unit) / [`set_distance_unit(Option<DistanceUnit>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_distance_unit): <p>Set the unit system to specify the distance.</p>  <p>Default Value: <code>Kilometers</code> </p>
-    ///   - [`car_mode_options(CalculateRouteCarModeOptions)`](crate::client::fluent_builders::CalculateRouteMatrix::car_mode_options) / [`set_car_mode_options(Option<CalculateRouteCarModeOptions>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_car_mode_options): <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
-    ///   - [`truck_mode_options(CalculateRouteTruckModeOptions)`](crate::client::fluent_builders::CalculateRouteMatrix::truck_mode_options) / [`set_truck_mode_options(Option<CalculateRouteTruckModeOptions>)`](crate::client::fluent_builders::CalculateRouteMatrix::set_truck_mode_options): <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>  <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
-    /// - On success, responds with [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput) with field(s):
-    ///   - [`route_matrix(Option<Vec<Vec<RouteMatrixEntry>>>)`](crate::output::CalculateRouteMatrixOutput::route_matrix): <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
-    ///   - [`snapped_departure_positions(Option<Vec<Vec<f64>>>)`](crate::output::CalculateRouteMatrixOutput::snapped_departure_positions): <p>For routes calculated using an Esri route calculator resource, departure positions are snapped to the closest road. For Esri route calculator resources, this returns the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.</p>
-    ///   - [`snapped_destination_positions(Option<Vec<Vec<f64>>>)`](crate::output::CalculateRouteMatrixOutput::snapped_destination_positions): <p>The list of destination positions for the route matrix used for calculation of the <code>RouteMatrix</code>.</p>
-    ///   - [`summary(Option<CalculateRouteMatrixSummary>)`](crate::output::CalculateRouteMatrixOutput::summary): <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
-    /// - On failure, responds with [`SdkError<CalculateRouteMatrixError>`](crate::error::CalculateRouteMatrixError)
-    pub fn calculate_route_matrix(&self) -> crate::client::fluent_builders::CalculateRouteMatrix {
-        crate::client::fluent_builders::CalculateRouteMatrix::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateGeofenceCollection`](crate::client::fluent_builders::CreateGeofenceCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_collection_name): <p>A custom name for the geofence collection.</p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>   <li> <p>Must be a unique geofence collection name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>  </ul>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_description): <p>An optional description for the geofence collection.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateGeofenceCollection::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_tags): <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateGeofenceCollection::set_kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
-    /// - On success, responds with [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput) with field(s):
-    ///   - [`collection_name(Option<String>)`](crate::output::CreateGeofenceCollectionOutput::collection_name): <p>The name for the geofence collection.</p>
-    ///   - [`collection_arn(Option<String>)`](crate::output::CreateGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateGeofenceCollectionOutput::create_time): <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    /// - On failure, responds with [`SdkError<CreateGeofenceCollectionError>`](crate::error::CreateGeofenceCollectionError)
-    pub fn create_geofence_collection(
-        &self,
-    ) -> crate::client::fluent_builders::CreateGeofenceCollection {
-        crate::client::fluent_builders::CreateGeofenceCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateMap`](crate::client::fluent_builders::CreateMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::CreateMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::CreateMap::set_map_name): <p>The name for the map resource.</p>  <p>Requirements:</p>  <ul>   <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>   <li> <p>Must be a unique map resource name. </p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>  </ul>
-    ///   - [`configuration(MapConfiguration)`](crate::client::fluent_builders::CreateMap::configuration) / [`set_configuration(Option<MapConfiguration>)`](crate::client::fluent_builders::CreateMap::set_configuration): <p>Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateMap::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateMap::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateMap::set_description): <p>An optional description for the map resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateMap::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateMap::set_tags): <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    /// - On success, responds with [`CreateMapOutput`](crate::output::CreateMapOutput) with field(s):
-    ///   - [`map_name(Option<String>)`](crate::output::CreateMapOutput::map_name): <p>The name of the map resource.</p>
-    ///   - [`map_arn(Option<String>)`](crate::output::CreateMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    /// - On failure, responds with [`SdkError<CreateMapError>`](crate::error::CreateMapError)
-    pub fn create_map(&self) -> crate::client::fluent_builders::CreateMap {
-        crate::client::fluent_builders::CreateMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreatePlaceIndex`](crate::client::fluent_builders::CreatePlaceIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_index_name): <p>The name of the place index resource. </p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique place index resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>  </ul>
-    ///   - [`data_source(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::data_source) / [`set_data_source(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_data_source): <p>Specifies the geospatial data provider for the new place index.</p> <note>   <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>   <li> <p> <code>Grab</code> – Grab provides place index functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>   <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>     <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>    </important> </li>  </ul>  <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreatePlaceIndex::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreatePlaceIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreatePlaceIndex::set_description): <p>The optional description for the place index resource.</p>
-    ///   - [`data_source_configuration(DataSourceConfiguration)`](crate::client::fluent_builders::CreatePlaceIndex::data_source_configuration) / [`set_data_source_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::CreatePlaceIndex::set_data_source_configuration): <p>Specifies the data storage option requesting Places.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreatePlaceIndex::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreatePlaceIndex::set_tags): <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource.</p> </li>   <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    /// - On success, responds with [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::output::CreatePlaceIndexOutput::index_name): <p>The name for the place index resource.</p>
-    ///   - [`index_arn(Option<String>)`](crate::output::CreatePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreatePlaceIndexOutput::create_time): <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<CreatePlaceIndexError>`](crate::error::CreatePlaceIndexError)
-    pub fn create_place_index(&self) -> crate::client::fluent_builders::CreatePlaceIndex {
-        crate::client::fluent_builders::CreatePlaceIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateRouteCalculator`](crate::client::fluent_builders::CreateRouteCalculator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_calculator_name): <p>The name of the route calculator resource. </p>  <p>Requirements:</p>  <ul>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique Route calculator resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>  </ul>
-    ///   - [`data_source(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::data_source) / [`set_data_source(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_data_source): <p>Specifies the data provider of traffic and road network data.</p> <note>   <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>  </note>  <p>Valid values include:</p>  <ul>   <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> <p>Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p> </li>   <li> <p> <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>' coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps countries and areas covered</a>.</p> </li>   <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>  </ul>  <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateRouteCalculator::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateRouteCalculator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateRouteCalculator::set_description): <p>The optional description for the route calculator resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateRouteCalculator::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateRouteCalculator::set_tags): <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <ul>   <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>  </ul>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    /// - On success, responds with [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput) with field(s):
-    ///   - [`calculator_name(Option<String>)`](crate::output::CreateRouteCalculatorOutput::calculator_name): <p>The name of the route calculator resource. </p>  <ul>   <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>  </ul>
-    ///   - [`calculator_arn(Option<String>)`](crate::output::CreateRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateRouteCalculatorOutput::create_time): <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<CreateRouteCalculatorError>`](crate::error::CreateRouteCalculatorError)
-    pub fn create_route_calculator(&self) -> crate::client::fluent_builders::CreateRouteCalculator {
-        crate::client::fluent_builders::CreateRouteCalculator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`CreateTracker`](crate::client::fluent_builders::CreateTracker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_tracker_name): <p>The name for the tracker resource.</p>  <p>Requirements:</p>  <ul>   <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>   <li> <p>Must be a unique tracker resource name.</p> </li>   <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>  </ul>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::CreateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`kms_key_id(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::kms_key_id) / [`set_kms_key_id(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::CreateTracker::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::CreateTracker::set_description): <p>An optional description for the tracker resource.</p>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::CreateTracker::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::CreateTracker::set_tags): <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource</p> </li>   <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    ///   - [`position_filtering(PositionFiltering)`](crate::client::fluent_builders::CreateTracker::position_filtering) / [`set_position_filtering(Option<PositionFiltering>)`](crate::client::fluent_builders::CreateTracker::set_position_filtering): <p>Specifies the position filtering for the tracker resource.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>   <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>   <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This can reduce the effects of GPS noise when displaying device trajectories on a map, and can help control your costs by reducing the number of geofence evaluations. </p> </li>  </ul>  <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
-    /// - On success, responds with [`CreateTrackerOutput`](crate::output::CreateTrackerOutput) with field(s):
-    ///   - [`tracker_name(Option<String>)`](crate::output::CreateTrackerOutput::tracker_name): <p>The name of the tracker resource.</p>
-    ///   - [`tracker_arn(Option<String>)`](crate::output::CreateTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::CreateTrackerOutput::create_time): <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<CreateTrackerError>`](crate::error::CreateTrackerError)
-    pub fn create_tracker(&self) -> crate::client::fluent_builders::CreateTracker {
-        crate::client::fluent_builders::CreateTracker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteGeofenceCollection`](crate::client::fluent_builders::DeleteGeofenceCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::DeleteGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::DeleteGeofenceCollection::set_collection_name): <p>The name of the geofence collection to be deleted.</p>
-    /// - On success, responds with [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteGeofenceCollectionError>`](crate::error::DeleteGeofenceCollectionError)
-    pub fn delete_geofence_collection(
-        &self,
-    ) -> crate::client::fluent_builders::DeleteGeofenceCollection {
-        crate::client::fluent_builders::DeleteGeofenceCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteMap`](crate::client::fluent_builders::DeleteMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::DeleteMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::DeleteMap::set_map_name): <p>The name of the map resource to be deleted.</p>
-    /// - On success, responds with [`DeleteMapOutput`](crate::output::DeleteMapOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteMapError>`](crate::error::DeleteMapError)
-    pub fn delete_map(&self) -> crate::client::fluent_builders::DeleteMap {
-        crate::client::fluent_builders::DeleteMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeletePlaceIndex`](crate::client::fluent_builders::DeletePlaceIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::DeletePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::DeletePlaceIndex::set_index_name): <p>The name of the place index resource to be deleted.</p>
-    /// - On success, responds with [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput)
-
-    /// - On failure, responds with [`SdkError<DeletePlaceIndexError>`](crate::error::DeletePlaceIndexError)
-    pub fn delete_place_index(&self) -> crate::client::fluent_builders::DeletePlaceIndex {
-        crate::client::fluent_builders::DeletePlaceIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteRouteCalculator`](crate::client::fluent_builders::DeleteRouteCalculator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::DeleteRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::DeleteRouteCalculator::set_calculator_name): <p>The name of the route calculator resource to be deleted.</p>
-    /// - On success, responds with [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteRouteCalculatorError>`](crate::error::DeleteRouteCalculatorError)
-    pub fn delete_route_calculator(&self) -> crate::client::fluent_builders::DeleteRouteCalculator {
-        crate::client::fluent_builders::DeleteRouteCalculator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DeleteTracker`](crate::client::fluent_builders::DeleteTracker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::DeleteTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::DeleteTracker::set_tracker_name): <p>The name of the tracker resource to be deleted.</p>
-    /// - On success, responds with [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput)
-
-    /// - On failure, responds with [`SdkError<DeleteTrackerError>`](crate::error::DeleteTrackerError)
-    pub fn delete_tracker(&self) -> crate::client::fluent_builders::DeleteTracker {
-        crate::client::fluent_builders::DeleteTracker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeGeofenceCollection`](crate::client::fluent_builders::DescribeGeofenceCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::DescribeGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::DescribeGeofenceCollection::set_collection_name): <p>The name of the geofence collection.</p>
-    /// - On success, responds with [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput) with field(s):
-    ///   - [`collection_name(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::collection_name): <p>The name of the geofence collection.</p>
-    ///   - [`collection_arn(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
-    ///   - [`description(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::description): <p>The optional description for the geofence collection.</p>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::pricing_plan_data_source): <p>No longer used. Always returns an empty string.</p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeGeofenceCollectionOutput::kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeGeofenceCollectionOutput::tags): <p>Displays the key, value pairs of tags associated with this resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeGeofenceCollectionOutput::create_time): <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeGeofenceCollectionOutput::update_time): <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    /// - On failure, responds with [`SdkError<DescribeGeofenceCollectionError>`](crate::error::DescribeGeofenceCollectionError)
-    pub fn describe_geofence_collection(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeGeofenceCollection {
-        crate::client::fluent_builders::DescribeGeofenceCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeMap`](crate::client::fluent_builders::DescribeMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::DescribeMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::DescribeMap::set_map_name): <p>The name of the map resource.</p>
-    /// - On success, responds with [`DescribeMapOutput`](crate::output::DescribeMapOutput) with field(s):
-    ///   - [`map_name(Option<String>)`](crate::output::DescribeMapOutput::map_name): <p>The map style selected from an available provider.</p>
-    ///   - [`map_arn(Option<String>)`](crate::output::DescribeMapOutput::map_arn): <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeMapOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`data_source(Option<String>)`](crate::output::DescribeMapOutput::data_source): <p>Specifies the data provider for the associated map tiles.</p>
-    ///   - [`configuration(Option<MapConfiguration>)`](crate::output::DescribeMapOutput::configuration): <p>Specifies the map tile style selected from a partner data provider.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeMapOutput::description): <p>The optional description for the map resource.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeMapOutput::tags): <p>Tags associated with the map resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeMapOutput::create_time): <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeMapOutput::update_time): <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    /// - On failure, responds with [`SdkError<DescribeMapError>`](crate::error::DescribeMapError)
-    pub fn describe_map(&self) -> crate::client::fluent_builders::DescribeMap {
-        crate::client::fluent_builders::DescribeMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribePlaceIndex`](crate::client::fluent_builders::DescribePlaceIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::DescribePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::DescribePlaceIndex::set_index_name): <p>The name of the place index resource.</p>
-    /// - On success, responds with [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::output::DescribePlaceIndexOutput::index_name): <p>The name of the place index resource being described.</p>
-    ///   - [`index_arn(Option<String>)`](crate::output::DescribePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribePlaceIndexOutput::pricing_plan): <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribePlaceIndexOutput::description): <p>The optional description for the place index resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::DescribePlaceIndexOutput::create_time): <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::DescribePlaceIndexOutput::update_time): <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`data_source(Option<String>)`](crate::output::DescribePlaceIndexOutput::data_source): <p>The data provider of geospatial data. Values can be one of the following:</p>  <ul>   <li> <p> <code>Esri</code> </p> </li>   <li> <p> <code>Grab</code> </p> </li>   <li> <p> <code>Here</code> </p> </li>  </ul>  <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    ///   - [`data_source_configuration(Option<DataSourceConfiguration>)`](crate::output::DescribePlaceIndexOutput::data_source_configuration): <p>The specified data storage option for requesting Places.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribePlaceIndexOutput::tags): <p>Tags associated with place index resource.</p>
-    /// - On failure, responds with [`SdkError<DescribePlaceIndexError>`](crate::error::DescribePlaceIndexError)
-    pub fn describe_place_index(&self) -> crate::client::fluent_builders::DescribePlaceIndex {
-        crate::client::fluent_builders::DescribePlaceIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeRouteCalculator`](crate::client::fluent_builders::DescribeRouteCalculator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::DescribeRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::DescribeRouteCalculator::set_calculator_name): <p>The name of the route calculator resource.</p>
-    /// - On success, responds with [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput) with field(s):
-    ///   - [`calculator_name(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::calculator_name): <p>The name of the route calculator resource being described.</p>
-    ///   - [`calculator_arn(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>  </ul>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeRouteCalculatorOutput::pricing_plan): <p>Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::description): <p>The optional description of the route calculator resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeRouteCalculatorOutput::create_time): <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeRouteCalculatorOutput::update_time): <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>  <ul>   <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>  </ul>
-    ///   - [`data_source(Option<String>)`](crate::output::DescribeRouteCalculatorOutput::data_source): <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>  <ul>   <li> <p> <code>Esri</code> </p> </li>   <li> <p> <code>Grab</code> </p> </li>   <li> <p> <code>Here</code> </p> </li>  </ul>  <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeRouteCalculatorOutput::tags): <p>Tags associated with route calculator resource.</p>
-    /// - On failure, responds with [`SdkError<DescribeRouteCalculatorError>`](crate::error::DescribeRouteCalculatorError)
-    pub fn describe_route_calculator(
-        &self,
-    ) -> crate::client::fluent_builders::DescribeRouteCalculator {
-        crate::client::fluent_builders::DescribeRouteCalculator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DescribeTracker`](crate::client::fluent_builders::DescribeTracker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::DescribeTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::DescribeTracker::set_tracker_name): <p>The name of the tracker resource.</p>
-    /// - On success, responds with [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput) with field(s):
-    ///   - [`tracker_name(Option<String>)`](crate::output::DescribeTrackerOutput::tracker_name): <p>The name of the tracker resource.</p>
-    ///   - [`tracker_arn(Option<String>)`](crate::output::DescribeTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
-    ///   - [`description(Option<String>)`](crate::output::DescribeTrackerOutput::description): <p>The optional description for the tracker resource.</p>
-    ///   - [`pricing_plan(Option<PricingPlan>)`](crate::output::DescribeTrackerOutput::pricing_plan): <p>Always returns <code>RequestBasedUsage</code>.</p>
-    ///   - [`pricing_plan_data_source(Option<String>)`](crate::output::DescribeTrackerOutput::pricing_plan_data_source): <p>No longer used. Always returns an empty string.</p>
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::DescribeTrackerOutput::tags): <p>The tags associated with the tracker resource.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::DescribeTrackerOutput::create_time): <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::DescribeTrackerOutput::update_time): <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`kms_key_id(Option<String>)`](crate::output::DescribeTrackerOutput::kms_key_id): <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
-    ///   - [`position_filtering(Option<PositionFiltering>)`](crate::output::DescribeTrackerOutput::position_filtering): <p>The position filtering method of the tracker resource.</p>
-    /// - On failure, responds with [`SdkError<DescribeTrackerError>`](crate::error::DescribeTrackerError)
-    pub fn describe_tracker(&self) -> crate::client::fluent_builders::DescribeTracker {
-        crate::client::fluent_builders::DescribeTracker::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`DisassociateTrackerConsumer`](crate::client::fluent_builders::DisassociateTrackerConsumer) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrackerConsumer::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::DisassociateTrackerConsumer::set_tracker_name): <p>The name of the tracker resource to be dissociated from the consumer.</p>
-    ///   - [`consumer_arn(impl Into<String>)`](crate::client::fluent_builders::DisassociateTrackerConsumer::consumer_arn) / [`set_consumer_arn(Option<String>)`](crate::client::fluent_builders::DisassociateTrackerConsumer::set_consumer_arn): <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>  </ul>
-    /// - On success, responds with [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput)
-
-    /// - On failure, responds with [`SdkError<DisassociateTrackerConsumerError>`](crate::error::DisassociateTrackerConsumerError)
-    pub fn disassociate_tracker_consumer(
-        &self,
-    ) -> crate::client::fluent_builders::DisassociateTrackerConsumer {
-        crate::client::fluent_builders::DisassociateTrackerConsumer::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDevicePosition`](crate::client::fluent_builders::GetDevicePosition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::GetDevicePosition::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::GetDevicePosition::set_tracker_name): <p>The tracker resource receiving the position update.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::GetDevicePosition::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::GetDevicePosition::set_device_id): <p>The device whose position you want to retrieve.</p>
-    /// - On success, responds with [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput) with field(s):
-    ///   - [`device_id(Option<String>)`](crate::output::GetDevicePositionOutput::device_id): <p>The device whose position you retrieved.</p>
-    ///   - [`sample_time(Option<DateTime>)`](crate::output::GetDevicePositionOutput::sample_time): <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`received_time(Option<DateTime>)`](crate::output::GetDevicePositionOutput::received_time): <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    ///   - [`position(Option<Vec<f64>>)`](crate::output::GetDevicePositionOutput::position): <p>The last known device position.</p>
-    ///   - [`accuracy(Option<PositionalAccuracy>)`](crate::output::GetDevicePositionOutput::accuracy): <p>The accuracy of the device position.</p>
-    ///   - [`position_properties(Option<HashMap<String, String>>)`](crate::output::GetDevicePositionOutput::position_properties): <p>The properties associated with the position.</p>
-    /// - On failure, responds with [`SdkError<GetDevicePositionError>`](crate::error::GetDevicePositionError)
-    pub fn get_device_position(&self) -> crate::client::fluent_builders::GetDevicePosition {
-        crate::client::fluent_builders::GetDevicePosition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetDevicePositionHistory`](crate::client::fluent_builders::GetDevicePositionHistory) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::GetDevicePositionHistory::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_tracker_name): <p>The tracker resource receiving the request for the device position history.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::device_id) / [`set_device_id(Option<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_device_id): <p>The device whose position history you want to retrieve.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
-    ///   - [`start_time_inclusive(DateTime)`](crate::client::fluent_builders::GetDevicePositionHistory::start_time_inclusive) / [`set_start_time_inclusive(Option<DateTime>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_start_time_inclusive): <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>  <p>Requirement:</p>  <ul>   <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>  </ul>
-    ///   - [`end_time_exclusive(DateTime)`](crate::client::fluent_builders::GetDevicePositionHistory::end_time_exclusive) / [`set_end_time_exclusive(Option<DateTime>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_end_time_exclusive): <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>  <p>Requirement:</p>  <ul>   <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::GetDevicePositionHistory::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::GetDevicePositionHistory::set_max_results): <p>An optional limit for the number of device positions returned in a single call.</p>  <p>Default value: <code>100</code> </p>
-    /// - On success, responds with [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput) with field(s):
-    ///   - [`device_positions(Option<Vec<DevicePosition>>)`](crate::output::GetDevicePositionHistoryOutput::device_positions): <p>Contains the position history details for the requested device.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::GetDevicePositionHistoryOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<GetDevicePositionHistoryError>`](crate::error::GetDevicePositionHistoryError)
-    pub fn get_device_position_history(
-        &self,
-    ) -> crate::client::fluent_builders::GetDevicePositionHistory {
-        crate::client::fluent_builders::GetDevicePositionHistory::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetGeofence`](crate::client::fluent_builders::GetGeofence) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::GetGeofence::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::GetGeofence::set_collection_name): <p>The geofence collection storing the target geofence.</p>
-    ///   - [`geofence_id(impl Into<String>)`](crate::client::fluent_builders::GetGeofence::geofence_id) / [`set_geofence_id(Option<String>)`](crate::client::fluent_builders::GetGeofence::set_geofence_id): <p>The geofence you're retrieving details for.</p>
-    /// - On success, responds with [`GetGeofenceOutput`](crate::output::GetGeofenceOutput) with field(s):
-    ///   - [`geofence_id(Option<String>)`](crate::output::GetGeofenceOutput::geofence_id): <p>The geofence identifier.</p>
-    ///   - [`geometry(Option<GeofenceGeometry>)`](crate::output::GetGeofenceOutput::geometry): <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    ///   - [`status(Option<String>)`](crate::output::GetGeofenceOutput::status): <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>  <ul>   <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>   <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>   <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>   <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>   <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>  </ul>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::GetGeofenceOutput::create_time): <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::GetGeofenceOutput::update_time): <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    /// - On failure, responds with [`SdkError<GetGeofenceError>`](crate::error::GetGeofenceError)
-    pub fn get_geofence(&self) -> crate::client::fluent_builders::GetGeofence {
-        crate::client::fluent_builders::GetGeofence::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMapGlyphs`](crate::client::fluent_builders::GetMapGlyphs) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::GetMapGlyphs::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::GetMapGlyphs::set_map_name): <p>The map resource associated with the glyph ﬁle.</p>
-    ///   - [`font_stack(impl Into<String>)`](crate::client::fluent_builders::GetMapGlyphs::font_stack) / [`set_font_stack(Option<String>)`](crate::client::fluent_builders::GetMapGlyphs::set_font_stack): <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>  <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>  <ul>   <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li>   <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>   <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li>   <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>   <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>  </ul>  <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p>  <ul>   <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>   <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li>  </ul>  <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:</p>  <ul>   <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li>  </ul>  <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview)</a> styles:</p>  <ul>   <li> <p>VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p> </li>  </ul> <note>   <p>The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>  </note>
-    ///   - [`font_unicode_range(impl Into<String>)`](crate::client::fluent_builders::GetMapGlyphs::font_unicode_range) / [`set_font_unicode_range(Option<String>)`](crate::client::fluent_builders::GetMapGlyphs::set_font_unicode_range): <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    /// - On success, responds with [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput) with field(s):
-    ///   - [`blob(Option<Blob>)`](crate::output::GetMapGlyphsOutput::blob): <p>The blob's content type.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetMapGlyphsOutput::content_type): <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
-    /// - On failure, responds with [`SdkError<GetMapGlyphsError>`](crate::error::GetMapGlyphsError)
-    pub fn get_map_glyphs(&self) -> crate::client::fluent_builders::GetMapGlyphs {
-        crate::client::fluent_builders::GetMapGlyphs::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMapSprites`](crate::client::fluent_builders::GetMapSprites) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::GetMapSprites::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::GetMapSprites::set_map_name): <p>The map resource associated with the sprite ﬁle.</p>
-    ///   - [`file_name(impl Into<String>)`](crate::client::fluent_builders::GetMapSprites::file_name) / [`set_file_name(Option<String>)`](crate::client::fluent_builders::GetMapSprites::set_file_name): <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>  <ul>   <li> <p> <code>sprites.png</code> </p> </li>   <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>  </ul>  <p>For the JSON document containing image offsets. Use the following ﬁle names:</p>  <ul>   <li> <p> <code>sprites.json</code> </p> </li>   <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>  </ul>
-    /// - On success, responds with [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput) with field(s):
-    ///   - [`blob(Option<Blob>)`](crate::output::GetMapSpritesOutput::blob): <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetMapSpritesOutput::content_type): <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
-    /// - On failure, responds with [`SdkError<GetMapSpritesError>`](crate::error::GetMapSpritesError)
-    pub fn get_map_sprites(&self) -> crate::client::fluent_builders::GetMapSprites {
-        crate::client::fluent_builders::GetMapSprites::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMapStyleDescriptor`](crate::client::fluent_builders::GetMapStyleDescriptor) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::GetMapStyleDescriptor::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::GetMapStyleDescriptor::set_map_name): <p>The map resource to retrieve the style descriptor from.</p>
-    /// - On success, responds with [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput) with field(s):
-    ///   - [`blob(Option<Blob>)`](crate::output::GetMapStyleDescriptorOutput::blob): <p>Contains the body of the style descriptor.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetMapStyleDescriptorOutput::content_type): <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
-    /// - On failure, responds with [`SdkError<GetMapStyleDescriptorError>`](crate::error::GetMapStyleDescriptorError)
-    pub fn get_map_style_descriptor(
-        &self,
-    ) -> crate::client::fluent_builders::GetMapStyleDescriptor {
-        crate::client::fluent_builders::GetMapStyleDescriptor::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetMapTile`](crate::client::fluent_builders::GetMapTile) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::GetMapTile::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::GetMapTile::set_map_name): <p>The map resource to retrieve the map tiles from.</p>
-    ///   - [`z(impl Into<String>)`](crate::client::fluent_builders::GetMapTile::z) / [`set_z(Option<String>)`](crate::client::fluent_builders::GetMapTile::set_z): <p>The zoom value for the map tile.</p>
-    ///   - [`x(impl Into<String>)`](crate::client::fluent_builders::GetMapTile::x) / [`set_x(Option<String>)`](crate::client::fluent_builders::GetMapTile::set_x): <p>The X axis value for the map tile.</p>
-    ///   - [`y(impl Into<String>)`](crate::client::fluent_builders::GetMapTile::y) / [`set_y(Option<String>)`](crate::client::fluent_builders::GetMapTile::set_y): <p>The Y axis value for the map tile. </p>
-    /// - On success, responds with [`GetMapTileOutput`](crate::output::GetMapTileOutput) with field(s):
-    ///   - [`blob(Option<Blob>)`](crate::output::GetMapTileOutput::blob): <p>Contains Mapbox Vector Tile (MVT) data.</p>
-    ///   - [`content_type(Option<String>)`](crate::output::GetMapTileOutput::content_type): <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
-    /// - On failure, responds with [`SdkError<GetMapTileError>`](crate::error::GetMapTileError)
-    pub fn get_map_tile(&self) -> crate::client::fluent_builders::GetMapTile {
-        crate::client::fluent_builders::GetMapTile::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`GetPlace`](crate::client::fluent_builders::GetPlace) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::GetPlace::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::GetPlace::set_index_name): <p>The name of the place index resource that you want to use for the search.</p>
-    ///   - [`place_id(impl Into<String>)`](crate::client::fluent_builders::GetPlace::place_id) / [`set_place_id(Option<String>)`](crate::client::fluent_builders::GetPlace::set_place_id): <p>The identifier of the place to find.</p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::GetPlace::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::GetPlace::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    /// - On success, responds with [`GetPlaceOutput`](crate::output::GetPlaceOutput) with field(s):
-    ///   - [`place(Option<Place>)`](crate::output::GetPlaceOutput::place): <p>Details about the result, such as its address and position.</p>
-    /// - On failure, responds with [`SdkError<GetPlaceError>`](crate::error::GetPlaceError)
-    pub fn get_place(&self) -> crate::client::fluent_builders::GetPlace {
-        crate::client::fluent_builders::GetPlace::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListDevicePositions`](crate::client::fluent_builders::ListDevicePositions) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListDevicePositions::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::ListDevicePositions::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::ListDevicePositions::set_tracker_name): <p>The tracker resource containing the requested devices.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListDevicePositions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListDevicePositions::set_max_results): <p>An optional limit for the number of entries returned in a single call.</p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListDevicePositions::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListDevicePositions::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListDevicePositionsResponseEntry>>)`](crate::output::ListDevicePositionsOutput::entries): <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListDevicePositionsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListDevicePositionsError>`](crate::error::ListDevicePositionsError)
-    pub fn list_device_positions(&self) -> crate::client::fluent_builders::ListDevicePositions {
-        crate::client::fluent_builders::ListDevicePositions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGeofenceCollections`](crate::client::fluent_builders::ListGeofenceCollections) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGeofenceCollections::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGeofenceCollections::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGeofenceCollections::set_max_results): <p>An optional limit for the number of resources returned in a single call. </p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGeofenceCollections::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGeofenceCollections::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListGeofenceCollectionsResponseEntry>>)`](crate::output::ListGeofenceCollectionsOutput::entries): <p>Lists the geofence collections that exist in your AWS account.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGeofenceCollectionsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<ListGeofenceCollectionsError>`](crate::error::ListGeofenceCollectionsError)
-    pub fn list_geofence_collections(
-        &self,
-    ) -> crate::client::fluent_builders::ListGeofenceCollections {
-        crate::client::fluent_builders::ListGeofenceCollections::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListGeofences`](crate::client::fluent_builders::ListGeofences) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListGeofences::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::ListGeofences::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::ListGeofences::set_collection_name): <p>The name of the geofence collection storing the list of geofences.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListGeofences::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListGeofences::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListGeofences::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListGeofences::set_max_results): <p>An optional limit for the number of geofences returned in a single call. </p>  <p>Default value: <code>100</code> </p>
-    /// - On success, responds with [`ListGeofencesOutput`](crate::output::ListGeofencesOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListGeofenceResponseEntry>>)`](crate::output::ListGeofencesOutput::entries): <p>Contains a list of geofences stored in the geofence collection.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListGeofencesOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<ListGeofencesError>`](crate::error::ListGeofencesError)
-    pub fn list_geofences(&self) -> crate::client::fluent_builders::ListGeofences {
-        crate::client::fluent_builders::ListGeofences::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListMaps`](crate::client::fluent_builders::ListMaps) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListMaps::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListMaps::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListMaps::set_max_results): <p>An optional limit for the number of resources returned in a single call. </p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListMaps::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListMaps::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListMapsOutput`](crate::output::ListMapsOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListMapsResponseEntry>>)`](crate::output::ListMapsOutput::entries): <p>Contains a list of maps in your AWS account</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListMapsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<ListMapsError>`](crate::error::ListMapsError)
-    pub fn list_maps(&self) -> crate::client::fluent_builders::ListMaps {
-        crate::client::fluent_builders::ListMaps::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListPlaceIndexes`](crate::client::fluent_builders::ListPlaceIndexes) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListPlaceIndexes::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListPlaceIndexes::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListPlaceIndexes::set_max_results): <p>An optional limit for the maximum number of results returned in a single call.</p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListPlaceIndexes::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListPlaceIndexes::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListPlaceIndexesResponseEntry>>)`](crate::output::ListPlaceIndexesOutput::entries): <p>Lists the place index resources that exist in your AWS account</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListPlaceIndexesOutput::next_token): <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
-    /// - On failure, responds with [`SdkError<ListPlaceIndexesError>`](crate::error::ListPlaceIndexesError)
-    pub fn list_place_indexes(&self) -> crate::client::fluent_builders::ListPlaceIndexes {
-        crate::client::fluent_builders::ListPlaceIndexes::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListRouteCalculators`](crate::client::fluent_builders::ListRouteCalculators) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListRouteCalculators::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListRouteCalculators::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListRouteCalculators::set_max_results): <p>An optional maximum number of results returned in a single call.</p>  <p>Default Value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListRouteCalculators::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListRouteCalculators::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>  <p>Default Value: <code>null</code> </p>
-    /// - On success, responds with [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListRouteCalculatorsResponseEntry>>)`](crate::output::ListRouteCalculatorsOutput::entries): <p>Lists the route calculator resources that exist in your AWS account</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListRouteCalculatorsOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
-    /// - On failure, responds with [`SdkError<ListRouteCalculatorsError>`](crate::error::ListRouteCalculatorsError)
-    pub fn list_route_calculators(&self) -> crate::client::fluent_builders::ListRouteCalculators {
-        crate::client::fluent_builders::ListRouteCalculators::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTagsForResource`](crate::client::fluent_builders::ListTagsForResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::ListTagsForResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::ListTagsForResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>  </ul>
-    /// - On success, responds with [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput) with field(s):
-    ///   - [`tags(Option<HashMap<String, String>>)`](crate::output::ListTagsForResourceOutput::tags): <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>  <ul>   <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>  </ul>
-    /// - On failure, responds with [`SdkError<ListTagsForResourceError>`](crate::error::ListTagsForResourceError)
-    pub fn list_tags_for_resource(&self) -> crate::client::fluent_builders::ListTagsForResource {
-        crate::client::fluent_builders::ListTagsForResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTrackerConsumers`](crate::client::fluent_builders::ListTrackerConsumers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrackerConsumers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::ListTrackerConsumers::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::ListTrackerConsumers::set_tracker_name): <p>The tracker resource whose associated geofence collections you want to list.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrackerConsumers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrackerConsumers::set_max_results): <p>An optional limit for the number of resources returned in a single call. </p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrackerConsumers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrackerConsumers::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput) with field(s):
-    ///   - [`consumer_arns(Option<Vec<String>>)`](crate::output::ListTrackerConsumersOutput::consumer_arns): <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTrackerConsumersOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<ListTrackerConsumersError>`](crate::error::ListTrackerConsumersError)
-    pub fn list_tracker_consumers(&self) -> crate::client::fluent_builders::ListTrackerConsumers {
-        crate::client::fluent_builders::ListTrackerConsumers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`ListTrackers`](crate::client::fluent_builders::ListTrackers) operation.
-    /// This operation supports pagination; See [`into_paginator()`](crate::client::fluent_builders::ListTrackers::into_paginator).
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::ListTrackers::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::ListTrackers::set_max_results): <p>An optional limit for the number of resources returned in a single call. </p>  <p>Default value: <code>100</code> </p>
-    ///   - [`next_token(impl Into<String>)`](crate::client::fluent_builders::ListTrackers::next_token) / [`set_next_token(Option<String>)`](crate::client::fluent_builders::ListTrackers::set_next_token): <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>  <p>Default value: <code>null</code> </p>
-    /// - On success, responds with [`ListTrackersOutput`](crate::output::ListTrackersOutput) with field(s):
-    ///   - [`entries(Option<Vec<ListTrackersResponseEntry>>)`](crate::output::ListTrackersOutput::entries): <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
-    ///   - [`next_token(Option<String>)`](crate::output::ListTrackersOutput::next_token): <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
-    /// - On failure, responds with [`SdkError<ListTrackersError>`](crate::error::ListTrackersError)
-    pub fn list_trackers(&self) -> crate::client::fluent_builders::ListTrackers {
-        crate::client::fluent_builders::ListTrackers::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`PutGeofence`](crate::client::fluent_builders::PutGeofence) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::PutGeofence::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::PutGeofence::set_collection_name): <p>The geofence collection to store the geofence in.</p>
-    ///   - [`geofence_id(impl Into<String>)`](crate::client::fluent_builders::PutGeofence::geofence_id) / [`set_geofence_id(Option<String>)`](crate::client::fluent_builders::PutGeofence::set_geofence_id): <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
-    ///   - [`geometry(GeofenceGeometry)`](crate::client::fluent_builders::PutGeofence::geometry) / [`set_geometry(Option<GeofenceGeometry>)`](crate::client::fluent_builders::PutGeofence::set_geometry): <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>   <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>  </note>
-    /// - On success, responds with [`PutGeofenceOutput`](crate::output::PutGeofenceOutput) with field(s):
-    ///   - [`geofence_id(Option<String>)`](crate::output::PutGeofenceOutput::geofence_id): <p>The geofence identifier entered in the request.</p>
-    ///   - [`create_time(Option<DateTime>)`](crate::output::PutGeofenceOutput::create_time): <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::PutGeofenceOutput::update_time): <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    /// - On failure, responds with [`SdkError<PutGeofenceError>`](crate::error::PutGeofenceError)
-    pub fn put_geofence(&self) -> crate::client::fluent_builders::PutGeofence {
-        crate::client::fluent_builders::PutGeofence::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchPlaceIndexForPosition`](crate::client::fluent_builders::SearchPlaceIndexForPosition) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_index_name): <p>The name of the place index resource you want to use for the search.</p>
-    ///   - [`position(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::position) / [`set_position(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_position): <p>Specifies the longitude and latitude of the position to query.</p>  <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>  <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_max_results): <p>An optional parameter. The maximum number of results returned per request.</p>  <p>Default value: <code>50</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForPosition::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    /// - On success, responds with [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput) with field(s):
-    ///   - [`summary(Option<SearchPlaceIndexForPositionSummary>)`](crate::output::SearchPlaceIndexForPositionOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-    ///   - [`results(Option<Vec<SearchForPositionResult>>)`](crate::output::SearchPlaceIndexForPositionOutput::results): <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-    /// - On failure, responds with [`SdkError<SearchPlaceIndexForPositionError>`](crate::error::SearchPlaceIndexForPositionError)
-    pub fn search_place_index_for_position(
-        &self,
-    ) -> crate::client::fluent_builders::SearchPlaceIndexForPosition {
-        crate::client::fluent_builders::SearchPlaceIndexForPosition::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchPlaceIndexForSuggestions`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_index_name): <p>The name of the place index resource you want to use for the search.</p>
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_text): <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
-    ///   - [`bias_position(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::bias_position) / [`set_bias_position(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_bias_position): <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>  <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>  <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>   <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
-    ///   - [`filter_b_box(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::filter_b_box) / [`set_filter_b_box(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_filter_b_box): <p>An optional parameter that limits the search results by returning only suggestions within a specified bounding box.</p>  <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>  <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>   <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
-    ///   - [`filter_countries(Vec<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::filter_countries) / [`set_filter_countries(Option<Vec<String>>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_filter_countries): <p>An optional parameter that limits the search results by returning only suggestions within the provided list of countries.</p>  <ul>   <li> <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country code. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::max_results) / [`set_max_results(Option<i32>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_max_results): <p>An optional parameter. The maximum number of results returned per request. </p>  <p>The default: <code>5</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForSuggestions::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    /// - On success, responds with [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput) with field(s):
-    ///   - [`summary(Option<SearchPlaceIndexForSuggestionsSummary>)`](crate::output::SearchPlaceIndexForSuggestionsOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
-    ///   - [`results(Option<Vec<SearchForSuggestionsResult>>)`](crate::output::SearchPlaceIndexForSuggestionsOutput::results): <p>A list of place suggestions that best match the search text.</p>
-    /// - On failure, responds with [`SdkError<SearchPlaceIndexForSuggestionsError>`](crate::error::SearchPlaceIndexForSuggestionsError)
-    pub fn search_place_index_for_suggestions(
-        &self,
-    ) -> crate::client::fluent_builders::SearchPlaceIndexForSuggestions {
-        crate::client::fluent_builders::SearchPlaceIndexForSuggestions::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`SearchPlaceIndexForText`](crate::client::fluent_builders::SearchPlaceIndexForText) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_index_name): <p>The name of the place index resource you want to use for the search.</p>
-    ///   - [`text(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::text) / [`set_text(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_text): <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
-    ///   - [`bias_position(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForText::bias_position) / [`set_bias_position(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_bias_position): <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>  <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>  <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>   <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
-    ///   - [`filter_b_box(Vec<f64>)`](crate::client::fluent_builders::SearchPlaceIndexForText::filter_b_box) / [`set_filter_b_box(Option<Vec<f64>>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_filter_b_box): <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>  <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>  <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>   <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>  </note>
-    ///   - [`filter_countries(Vec<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::filter_countries) / [`set_filter_countries(Option<Vec<String>>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_filter_countries): <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>  <ul>   <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>  </ul>
-    ///   - [`max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForText::max_results) / [`set_max_results(i32)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_max_results): <p>An optional parameter. The maximum number of results returned per request. </p>  <p>The default: <code>50</code> </p>
-    ///   - [`language(impl Into<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::language) / [`set_language(Option<String>)`](crate::client::fluent_builders::SearchPlaceIndexForText::set_language): <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>  <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>  <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>  <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p>  <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    /// - On success, responds with [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput) with field(s):
-    ///   - [`summary(Option<SearchPlaceIndexForTextSummary>)`](crate::output::SearchPlaceIndexForTextOutput::summary): <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
-    ///   - [`results(Option<Vec<SearchForTextResult>>)`](crate::output::SearchPlaceIndexForTextOutput::results): <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>  <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
-    /// - On failure, responds with [`SdkError<SearchPlaceIndexForTextError>`](crate::error::SearchPlaceIndexForTextError)
-    pub fn search_place_index_for_text(
-        &self,
-    ) -> crate::client::fluent_builders::SearchPlaceIndexForText {
-        crate::client::fluent_builders::SearchPlaceIndexForText::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`TagResource`](crate::client::fluent_builders::TagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::TagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::TagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>  </ul>
-    ///   - [`tags(HashMap<String, String>)`](crate::client::fluent_builders::TagResource::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::client::fluent_builders::TagResource::set_tags): <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>  <p>Format: <code>"key" : "value"</code> </p>  <p>Restrictions:</p>  <ul>   <li> <p>Maximum 50 tags per resource.</p> </li>   <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>   <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>   <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>   <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>   <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>  </ul>
-    /// - On success, responds with [`TagResourceOutput`](crate::output::TagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<TagResourceError>`](crate::error::TagResourceError)
-    pub fn tag_resource(&self) -> crate::client::fluent_builders::TagResource {
-        crate::client::fluent_builders::TagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UntagResource`](crate::client::fluent_builders::UntagResource) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::client::fluent_builders::UntagResource::resource_arn) / [`set_resource_arn(Option<String>)`](crate::client::fluent_builders::UntagResource::set_resource_arn): <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>  </ul>
-    ///   - [`tag_keys(Vec<String>)`](crate::client::fluent_builders::UntagResource::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::client::fluent_builders::UntagResource::set_tag_keys): <p>The list of tag keys to remove from the specified resource.</p>
-    /// - On success, responds with [`UntagResourceOutput`](crate::output::UntagResourceOutput)
-
-    /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::error::UntagResourceError)
-    pub fn untag_resource(&self) -> crate::client::fluent_builders::UntagResource {
-        crate::client::fluent_builders::UntagResource::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateGeofenceCollection`](crate::client::fluent_builders::UpdateGeofenceCollection) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::collection_name) / [`set_collection_name(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_collection_name): <p>The name of the geofence collection to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateGeofenceCollection::set_description): <p>Updates the description for the geofence collection.</p>
-    /// - On success, responds with [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput) with field(s):
-    ///   - [`collection_name(Option<String>)`](crate::output::UpdateGeofenceCollectionOutput::collection_name): <p>The name of the updated geofence collection.</p>
-    ///   - [`collection_arn(Option<String>)`](crate::output::UpdateGeofenceCollectionOutput::collection_arn): <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateGeofenceCollectionOutput::update_time): <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    /// - On failure, responds with [`SdkError<UpdateGeofenceCollectionError>`](crate::error::UpdateGeofenceCollectionError)
-    pub fn update_geofence_collection(
-        &self,
-    ) -> crate::client::fluent_builders::UpdateGeofenceCollection {
-        crate::client::fluent_builders::UpdateGeofenceCollection::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateMap`](crate::client::fluent_builders::UpdateMap) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::client::fluent_builders::UpdateMap::map_name) / [`set_map_name(Option<String>)`](crate::client::fluent_builders::UpdateMap::set_map_name): <p>The name of the map resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateMap::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateMap::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateMap::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateMap::set_description): <p>Updates the description for the map resource.</p>
-    /// - On success, responds with [`UpdateMapOutput`](crate::output::UpdateMapOutput) with field(s):
-    ///   - [`map_name(Option<String>)`](crate::output::UpdateMapOutput::map_name): <p>The name of the updated map resource.</p>
-    ///   - [`map_arn(Option<String>)`](crate::output::UpdateMapOutput::map_arn): <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateMapOutput::update_time): <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdateMapError>`](crate::error::UpdateMapError)
-    pub fn update_map(&self) -> crate::client::fluent_builders::UpdateMap {
-        crate::client::fluent_builders::UpdateMap::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdatePlaceIndex`](crate::client::fluent_builders::UpdatePlaceIndex) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`index_name(impl Into<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::index_name) / [`set_index_name(Option<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_index_name): <p>The name of the place index resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdatePlaceIndex::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_description): <p>Updates the description for the place index resource.</p>
-    ///   - [`data_source_configuration(DataSourceConfiguration)`](crate::client::fluent_builders::UpdatePlaceIndex::data_source_configuration) / [`set_data_source_configuration(Option<DataSourceConfiguration>)`](crate::client::fluent_builders::UpdatePlaceIndex::set_data_source_configuration): <p>Updates the data storage option for the place index resource.</p>
-    /// - On success, responds with [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput) with field(s):
-    ///   - [`index_name(Option<String>)`](crate::output::UpdatePlaceIndexOutput::index_name): <p>The name of the updated place index resource.</p>
-    ///   - [`index_arn(Option<String>)`](crate::output::UpdatePlaceIndexOutput::index_arn): <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdatePlaceIndexOutput::update_time): <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdatePlaceIndexError>`](crate::error::UpdatePlaceIndexError)
-    pub fn update_place_index(&self) -> crate::client::fluent_builders::UpdatePlaceIndex {
-        crate::client::fluent_builders::UpdatePlaceIndex::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateRouteCalculator`](crate::client::fluent_builders::UpdateRouteCalculator) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`calculator_name(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::calculator_name) / [`set_calculator_name(Option<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_calculator_name): <p>The name of the route calculator resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateRouteCalculator::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateRouteCalculator::set_description): <p>Updates the description for the route calculator resource.</p>
-    /// - On success, responds with [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput) with field(s):
-    ///   - [`calculator_name(Option<String>)`](crate::output::UpdateRouteCalculatorOutput::calculator_name): <p>The name of the updated route calculator resource.</p>
-    ///   - [`calculator_arn(Option<String>)`](crate::output::UpdateRouteCalculatorOutput::calculator_arn): <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateRouteCalculatorOutput::update_time): <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdateRouteCalculatorError>`](crate::error::UpdateRouteCalculatorError)
-    pub fn update_route_calculator(&self) -> crate::client::fluent_builders::UpdateRouteCalculator {
-        crate::client::fluent_builders::UpdateRouteCalculator::new(self.handle.clone())
-    }
-    /// Constructs a fluent builder for the [`UpdateTracker`](crate::client::fluent_builders::UpdateTracker) operation.
-    ///
-    /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::tracker_name) / [`set_tracker_name(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_tracker_name): <p>The name of the tracker resource to update.</p>
-    ///   - [`pricing_plan(PricingPlan)`](crate::client::fluent_builders::UpdateTracker::pricing_plan) / [`set_pricing_plan(Option<PricingPlan>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan): <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    ///   - [`pricing_plan_data_source(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::pricing_plan_data_source) / [`set_pricing_plan_data_source(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_pricing_plan_data_source): <p>This parameter is no longer used.</p>
-    ///   - [`description(impl Into<String>)`](crate::client::fluent_builders::UpdateTracker::description) / [`set_description(Option<String>)`](crate::client::fluent_builders::UpdateTracker::set_description): <p>Updates the description for the tracker resource.</p>
-    ///   - [`position_filtering(PositionFiltering)`](crate::client::fluent_builders::UpdateTracker::position_filtering) / [`set_position_filtering(Option<PositionFiltering>)`](crate::client::fluent_builders::UpdateTracker::set_position_filtering): <p>Updates the position filtering for the tracker resource.</p>  <p>Valid values:</p>  <ul>   <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>   <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>   <li> <p> <code>AccuracyBased</code> - If the device has moved less than the measured accuracy, location updates are ignored. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has moved less than 15 m. Ignored location updates are neither evaluated against linked geofence collections, nor stored. This helps educe the effects of GPS noise when displaying device trajectories on a map, and can help control costs by reducing the number of geofence evaluations. </p> </li>  </ul>
-    /// - On success, responds with [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput) with field(s):
-    ///   - [`tracker_name(Option<String>)`](crate::output::UpdateTrackerOutput::tracker_name): <p>The name of the updated tracker resource.</p>
-    ///   - [`tracker_arn(Option<String>)`](crate::output::UpdateTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>
-    ///   - [`update_time(Option<DateTime>)`](crate::output::UpdateTrackerOutput::update_time): <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    /// - On failure, responds with [`SdkError<UpdateTrackerError>`](crate::error::UpdateTrackerError)
-    pub fn update_tracker(&self) -> crate::client::fluent_builders::UpdateTracker {
-        crate::client::fluent_builders::UpdateTracker::new(self.handle.clone())
-    }
-}
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
@@ -951,9 +174,115 @@ impl Client {
     }
 }
 
+mod associate_tracker_consumer;
+
+mod batch_delete_device_position_history;
+
+mod batch_delete_geofence;
+
+mod batch_evaluate_geofences;
+
+mod batch_get_device_position;
+
+mod batch_put_geofence;
+
+mod batch_update_device_position;
+
+mod calculate_route;
+
+mod calculate_route_matrix;
+
+mod create_geofence_collection;
+
+mod create_map;
+
+mod create_place_index;
+
+mod create_route_calculator;
+
+mod create_tracker;
+
+mod delete_geofence_collection;
+
+mod delete_map;
+
+mod delete_place_index;
+
+mod delete_route_calculator;
+
+mod delete_tracker;
+
+mod describe_geofence_collection;
+
+mod describe_map;
+
+mod describe_place_index;
+
+mod describe_route_calculator;
+
+mod describe_tracker;
+
+mod disassociate_tracker_consumer;
+
 /// Utilities to ergonomically construct a request to the service.
 ///
 /// Fluent builders are created through the [`Client`](crate::client::Client) by calling
 /// one if its operation methods. After parameters are set using the builder methods,
 /// the `send` method can be called to initiate the request.
 pub mod fluent_builders;
+
+mod get_device_position;
+
+mod get_device_position_history;
+
+mod get_geofence;
+
+mod get_map_glyphs;
+
+mod get_map_sprites;
+
+mod get_map_style_descriptor;
+
+mod get_map_tile;
+
+mod get_place;
+
+mod list_device_positions;
+
+mod list_geofence_collections;
+
+mod list_geofences;
+
+mod list_maps;
+
+mod list_place_indexes;
+
+mod list_route_calculators;
+
+mod list_tags_for_resource;
+
+mod list_tracker_consumers;
+
+mod list_trackers;
+
+mod put_geofence;
+
+mod search_place_index_for_position;
+
+mod search_place_index_for_suggestions;
+
+mod search_place_index_for_text;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_geofence_collection;
+
+mod update_map;
+
+mod update_place_index;
+
+mod update_route_calculator;
+
+mod update_tracker;

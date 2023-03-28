@@ -90,7 +90,8 @@ impl ListApplicationsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_applications_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_applications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +209,7 @@ impl ListAssociatedAttributeGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_associated_attribute_groups_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_associated_attribute_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +327,10 @@ impl ListAssociatedResourcesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_associated_resources_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_associated_resources_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +448,8 @@ impl ListAttributeGroupsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attribute_groups_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_list_attribute_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -562,7 +567,7 @@ impl ListAttributeGroupsForApplicationPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_list_attribute_groups_for_application_output_next_token(resp);
+                            let new_token = crate::lens::reflens_list_attribute_groups_for_application_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -609,7 +614,7 @@ impl ListApplicationsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_applications_output_applications(page)
+            crate::lens::lens_list_applications_output_applications(page)
                 .unwrap_or_default()
                 .into_iter()
         })
@@ -635,7 +640,11 @@ impl ListAssociatedAttributeGroupsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAssociatedAttributeGroupsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_associated_attribute_groups_output_attribute_groups(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_associated_attribute_groups_output_attribute_groups(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -659,11 +668,9 @@ impl ListAssociatedResourcesPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_associated_resources_output_resources(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_associated_resources_output_resources(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -688,11 +695,9 @@ impl ListAttributeGroupsPaginatorItems {
         >,
     > + Unpin {
         aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
-            crate::lens::lens_structure_crate_output_list_attribute_groups_output_attribute_groups(
-                page,
-            )
-            .unwrap_or_default()
-            .into_iter()
+            crate::lens::lens_list_attribute_groups_output_attribute_groups(page)
+                .unwrap_or_default()
+                .into_iter()
         })
     }
 }
@@ -718,6 +723,12 @@ impl ListAttributeGroupsForApplicationPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::ListAttributeGroupsForApplicationError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_list_attribute_groups_for_application_output_attribute_groups_details(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_list_attribute_groups_for_application_output_attribute_groups_details(
+                page,
+            )
+            .unwrap_or_default()
+            .into_iter()
+        })
     }
 }

@@ -101,24 +101,16 @@ pub mod types;
 
 mod event_stream_serde;
 
-mod http_serde;
-
 pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod json_deser;
-
-mod operation_ser;
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;
 
 mod json_errors;
-
-mod json_ser;
 
 #[doc(inline)]
 pub use client::Client;

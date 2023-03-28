@@ -97,23 +97,15 @@ pub mod middleware;
 
 mod no_credentials;
 
-mod operation_deser;
-
-mod operation_ser;
-
 /// Paginators for the service
 pub mod paginator;
 
 mod route53_resource_id_preprocessor;
 
-mod http_serde;
-
 /// Generated accessors for nested fields
 mod lens;
 
-mod xml_deser;
-
-mod xml_ser;
+pub(crate) mod protocol_serde;
 
 /// Endpoints standard library functions
 mod endpoint_lib;

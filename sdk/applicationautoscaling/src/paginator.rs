@@ -90,7 +90,10 @@ impl DescribeScalableTargetsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scalable_targets_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scalable_targets_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -208,7 +211,10 @@ impl DescribeScalingActivitiesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scaling_activities_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scaling_activities_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -326,7 +332,10 @@ impl DescribeScalingPoliciesPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scaling_policies_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scaling_policies_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -444,7 +453,10 @@ impl DescribeScheduledActionsPaginator {
                     // If the input member is None or it was an error
                     let done = match resp {
                         Ok(ref resp) => {
-                            let new_token = crate::lens::reflens_structure_crate_output_describe_scheduled_actions_output_next_token(resp);
+                            let new_token =
+                                crate::lens::reflens_describe_scheduled_actions_output_next_token(
+                                    resp,
+                                );
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
                             if !is_empty
                                 && new_token == input.next_token.as_ref()
@@ -490,7 +502,11 @@ impl DescribeScalableTargetsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScalableTargetsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scalable_targets_output_scalable_targets(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scalable_targets_output_scalable_targets(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -513,7 +529,11 @@ impl DescribeScalingActivitiesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScalingActivitiesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scaling_activities_output_scaling_activities(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scaling_activities_output_scaling_activities(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -536,7 +556,11 @@ impl DescribeScalingPoliciesPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScalingPoliciesError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scaling_policies_output_scaling_policies(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scaling_policies_output_scaling_policies(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }
 
@@ -559,6 +583,10 @@ impl DescribeScheduledActionsPaginatorItems {
             aws_smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>,
         >,
     > + Unpin {
-        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_structure_crate_output_describe_scheduled_actions_output_scheduled_actions(page).unwrap_or_default().into_iter())
+        aws_smithy_async::future::fn_stream::TryFlatMap::new(self.0.send()).flat_map(|page| {
+            crate::lens::lens_describe_scheduled_actions_output_scheduled_actions(page)
+                .unwrap_or_default()
+                .into_iter()
+        })
     }
 }

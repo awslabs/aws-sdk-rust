@@ -27,9 +27,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_delete_human_loop_error(response)
+            crate::protocol_serde::shape_delete_human_loop::de_delete_human_loop_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_delete_human_loop_response(response)
+            crate::protocol_serde::shape_delete_human_loop::de_delete_human_loop_http_response(
+                response,
+            )
         }
     }
 }
@@ -62,9 +66,13 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHumanLoop {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_describe_human_loop_error(response)
+            crate::protocol_serde::shape_describe_human_loop::de_describe_human_loop_http_error(
+                response,
+            )
         } else {
-            crate::operation_deser::parse_describe_human_loop_response(response)
+            crate::protocol_serde::shape_describe_human_loop::de_describe_human_loop_http_response(
+                response,
+            )
         }
     }
 }
@@ -95,9 +103,11 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanLoops {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_list_human_loops_error(response)
+            crate::protocol_serde::shape_list_human_loops::de_list_human_loops_http_error(response)
         } else {
-            crate::operation_deser::parse_list_human_loops_response(response)
+            crate::protocol_serde::shape_list_human_loops::de_list_human_loops_http_response(
+                response,
+            )
         }
     }
 }
@@ -128,9 +138,11 @@ impl aws_smithy_http::response::ParseStrictResponse for StartHumanLoop {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_start_human_loop_error(response)
+            crate::protocol_serde::shape_start_human_loop::de_start_human_loop_http_error(response)
         } else {
-            crate::operation_deser::parse_start_human_loop_response(response)
+            crate::protocol_serde::shape_start_human_loop::de_start_human_loop_http_response(
+                response,
+            )
         }
     }
 }
@@ -161,9 +173,9 @@ impl aws_smithy_http::response::ParseStrictResponse for StopHumanLoop {
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::operation_deser::parse_stop_human_loop_error(response)
+            crate::protocol_serde::shape_stop_human_loop::de_stop_human_loop_http_error(response)
         } else {
-            crate::operation_deser::parse_stop_human_loop_response(response)
+            crate::protocol_serde::shape_stop_human_loop::de_stop_human_loop_http_response(response)
         }
     }
 }
