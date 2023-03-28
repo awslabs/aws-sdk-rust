@@ -25,11 +25,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-glue]
 path = "../../sdk/glue"
-version = "0.31.0"
+version = "0.32.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.31.0"
+version = "0.32.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
