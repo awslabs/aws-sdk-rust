@@ -28,7 +28,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-kendraranking = "0.36.0"
+//! aws-sdk-kendraranking = "0.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

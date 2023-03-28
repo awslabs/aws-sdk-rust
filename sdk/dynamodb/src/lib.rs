@@ -32,7 +32,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-dynamodb = "0.58.0"
+//! aws-sdk-dynamodb = "0.59.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

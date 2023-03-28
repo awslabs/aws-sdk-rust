@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.0.0-smithy-rs-head"
-//! aws-sdk-securitylake = "0.36.0"
+//! aws-sdk-securitylake = "0.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -16,7 +16,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
-version = "0.58.0"
+version = "0.59.0"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
